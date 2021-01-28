@@ -27,6 +27,10 @@ CMD bundle exec sidekiq -C config/sidekiq.yml
 
 The app servers will available on port `3000`. Ensure the images are connected to the same database and Redis servers. Provide the configuration for these services via environment variables.
 
+### Initial database setup
+
+To setup the database for the first time, you must run `rails db:chatwoot_prepare`. You may get errors if you try to run `rails db:migrate` at this point.
+
 ### Upgrading
 
-Update the images using the latest image from chatwoot.  Run the `rails db:migrate` option after accessing console from one of the containers running latest image.
+Update the images using the latest image from chatwoot. Run the `rails db:migrate` option after accessing console from one of the containers running latest image.
