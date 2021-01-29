@@ -4,6 +4,7 @@ title: "Heroku Chatwoot Production deployment guide"
 ---
 
 ### Deploying on Heroku
+
 Deploy chatwoot on Heroku through the following steps
 
 1. Click on the [one click deploy button](https://heroku.com/deploy?template=https://github.com/chatwoot/chatwoot/tree/master) and deploy your app.
@@ -12,6 +13,7 @@ Deploy chatwoot on Heroku through the following steps
 4. Configure the environment variables for [mailer](https://www.chatwoot.com/docs/environment-variables#configure-emails) and [storage](https://www.chatwoot.com/docs/configuring-cloud-storage) as per the [documentation](https://www.chatwoot.com/docs/environment-variables).
 5. Head over to `yourapp.herokuapp.com` and enjoy using Chatwoot.
 
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/iN2Dl0QkvEg?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
 
 ### Updating the deployment on Heroku
 
@@ -25,4 +27,4 @@ Whenever a new version is out for chatwoot, you update your Heroku deployment th
 
 1. If you are on a free tier and you don’t access the application for a while Heroku will put your dynos to sleep. You can fix this by upgrading the dynos to paid tier.
 
-2. Heroku has an "ephemeral" hard disk. The files uploaded to Chatwoot would not persist after the application is restarted. By default, Chatwoot uses local disk as the upload destination. To overcome this problem, you will have to [configure a cloud storage](https://www.chatwoot.com/docs/configuring-cloud-storage). 
+2. Heroku has an "ephemeral" hard disk. The files uploaded to Chatwoot would not persist after the application is restarted. By default, Chatwoot uses local disk as the upload destination. To overcome this problem, you will have to [configure a cloud storage](https://www.chatwoot.com/docs/configuring-cloud-storage).
