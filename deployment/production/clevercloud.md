@@ -3,19 +3,19 @@ path: "/docs/deployment/deploy-chatwoot-to-clevercloud"
 title: "Deploy Chatwoot to Clever Cloud"
 ---
 
-Clever Cloud is a PaaS platform where you can deploy your applications with an ease. To setup Chatwoot on Clever Cloud, you can follow the steps described below.
+Clever Cloud is a PaaS platform where you can deploy your applications with ease. To setup Chatwoot on Clever Cloud, you can follow the steps described below.
 
 
 ### 1. Create CleverCloud application
 
 - Login to Clever Cloud dashboard
-- Click on create application
+- Click on create an application
 - Select your deployment type (> 2GB recommended)
 - Provide an app name and select the zone
 
 ### 2. Select addons
 
-Chatwoot needs PostgreSQL and Redis as addon. Select Postgres and Redis from CleverCloud addons.
+Chatwoot requires PostgreSQL and Redis to function properly. Select Postgres and Redis from CleverCloud addons.
 
 - Copy connection URI from Postgres Addon and set `DATABASE_URL` environment variable
 - Make sure you have set REDIS_URL
@@ -51,7 +51,7 @@ Push the latest code from your local machine to Clever Cloud.
 git push clever master
 ```
 
-Voila! After the deployment you would be able to access the application.
+Voila! After the deployment, you would be able to access the application.
 
 **Notes: **
 
