@@ -7,6 +7,9 @@ title: "Production deployment guide for Linux VM"
 
 This guide will help you to install **Chatwoot** on **Ubuntu 18.04 LTS / 20.04 LTS / 20.10**. We have prepared a deployment script for you to run. Refer the script and feel free to make changes accordingly to OS if you are on a non-Ubuntu system.
 
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/srolHJskK5Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
+
+
 For **Ubuntu 18.04**, use the following script
 
 ```bash

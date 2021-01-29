@@ -90,7 +90,7 @@ window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
 })
 ```
 
-To generate HMAC, read [identity validation](/website-sdk/identity-validation)
+To generate HMAC, read [identity validation](/docs/website-sdk/identity-validation)
 
 ### Set custom attributes
 
