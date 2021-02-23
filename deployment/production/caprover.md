@@ -17,7 +17,7 @@ Chatwoot is available in the one-click apps option in caprover, find Chatwoot by
 
 ### Finishing the setup
 
-Headover to the web seriver and set Websocket Support to true. Do this in HTTP settings tab. You could also enable `https` for the application
+Headover to the `web` service in caprover application and set Websocket Support to true. Do this in HTTP settings tab. You could also enable `https` for the application
 
 ### Configure the necessary environment variables
 
