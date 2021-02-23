@@ -41,7 +41,7 @@ Update the images using the latest image from chatwoot. Run the `rails db:chatwo
 ```
 # example in ubuntu
 apt-get update
-apt  install docker-compose
+apt install docker-compose
 ```
 
 2) Download the required files
