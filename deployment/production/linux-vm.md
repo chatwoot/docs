@@ -29,7 +29,7 @@ chmod 755 setup.sh
 1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation IP address
 2. Continue with the installation script by entering `yes` when prompted about domain setup.
 4. Enter your domain, and the script will take care of configuring Nginx and SSL
-4. Your Chatwoot installation should be accessible from the `https://yourdomain.com` now.
+4. Your Chatwoot installation should be accessible from the `https://chatwoot.mydomain.com` now.
 
 ### Configure the required environment variables
 
