@@ -15,6 +15,10 @@ Finish your caprover installation by referring to [Getting started guid](https:/
 
 Chatwoot is available in the one-click apps option in caprover, find Chatwoot by searching and clicking on it. Replace the default `version` with the latest `version` of chatwoot. User appropriate values for the Postgres and Redis passwords and click install. It should only take a few minutes.
 
+### Finishing the setup
+
+Headover to the web seriver and set Websocket Support to true. Do this in HTTP settings tab. You could also enable `https` for the application
+
 ### Configure the necessary environment variables
 
 Caprover will take care of the installation of Postgres and Redis along with the app and worker servers. We would advise you to replace the database/Redis services with managed/standalone servers once you start scaling.
@@ -34,7 +38,7 @@ To update your chatwoot installation to the latest version in caprover, Run the 
     "FROM chatwoot/chatwoot:latest",
     "RUN chmod +x docker/entrypoints/rails.sh",
     "ENTRYPOINT [\"docker/entrypoints/rails.sh\"]",
-    "CMD bundle exec rake db:setup; bundle exec rake db:migrate; bundle exec rails s -b 0.0.0.0 -p 3000"
+    "CMD bundle exec rake db:chatwoot_prepare; bundle exec rails s -b 0.0.0.0 -p 3000"
   ]
 }
 ```
