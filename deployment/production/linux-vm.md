@@ -5,29 +5,17 @@ title: "Production deployment guide for Linux VM"
 
 ### Deploying to Linux VM
 
-This guide will help you to install **Chatwoot** on **Ubuntu 18.04 LTS / 20.04 LTS / 20.10**. We have prepared a deployment script for you to run. Refer the script and feel free to make changes accordingly to OS if you are on a non-Ubuntu system.
+This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**. We have prepared a deployment script for you to run. Refer the script and feel free to make changes accordingly to OS if you are on a non-Ubuntu system.
 
 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/srolHJskK5Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
 
-
-For **Ubuntu 18.04**, use the following script
-
-```bash
-https://raw.githubusercontent.com/chatwoot/chatwoot/develop/deployment/setup_18.04.sh
-```
-
-For **Ubuntu 20.04** or **Ubuntu 20.10**, use the following script.
-
-```bash
-https://raw.githubusercontent.com/chatwoot/chatwoot/develop/deployment/setup_20.04.sh
-```
 
 ### Steps to install
 
 1. Create a **setup.sh** file and copy the content from the above link or use the following commands.
 
 ```bash
-wget <link-to-script> -O setup.sh
+wget https://raw.githubusercontent.com/chatwoot/chatwoot/develop/deployment/setup_20.04.sh -O setup.sh
 chmod 755 setup.sh
 ./setup.sh master
 ```
@@ -36,71 +24,12 @@ chmod 755 setup.sh
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000`
 
-### Configure Nginx and **Let's Encrypt**
+### Configuring The installation Domain**
 
-1. Configure Nginx to serve as a frontend proxy.
-
-```bash
-cd /etc/nginx/sites-enabled
-nano yourdomain.com.conf
-```
-
-2. Use the following Nginx config after replacing the `yourdomain.com` in `server_name` .
-
-```bash
-server {
-  server_name <yourdomain.com>;
-
-  # Point upstream to Chatwoot App Server
-  set $upstream 127.0.0.1:3000;
-
-  # Nginx strips out underscore in headers by default
-  # Chatwoot relies on underscore in headers for API
-  # Make sure that the config is turned on.
-  underscores_in_headers on;
-  location /.well-known {
-    alias /var/www/ssl-proof/chatwoot/.well-known;
-  }
-
-  location / {
-    proxy_pass_header Authorization;
-    proxy_pass http://$upstream;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade";
-    proxy_set_header Host $host;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Forwarded-Ssl on; # Optional
-
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-    proxy_http_version 1.1;
-    proxy_set_header Connection “”;
-    proxy_buffering off;
-
-    client_max_body_size 0;
-    proxy_read_timeout 36000s;
-    proxy_redirect off;
-  }
-  listen 80;
-}
-```
-
-3. Verify and reload your Nginx config by running following command.
-
-```bash
-nginx -t
-systemctl reload nginx
-```
-
-4. Run **Let's Encrypt** and configure **SSL certificate**.
-
-```bash
-mkdir -p /var/www/ssl-proof/chatwoot/.well-known
-certbot --webroot -w /var/www/ssl-proof/chatwoot/ -d yourdomain.com -i nginx
-```
-
-5. Your Chatwoot installation should be accessible from the `https://yourdomain.com` now.
+1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation ip address
+2. Continue with the installation script by entering `yes` when prompted about domain setup.
+4. Enter your domain and the script will take care of configuring nginx and SSL
+4. Your Chatwoot installation should be accessible from the `https://yourdomain.com` now.
 
 ### Configure the required environment variables
 
