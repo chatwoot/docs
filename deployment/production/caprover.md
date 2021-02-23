@@ -5,29 +5,29 @@ title: "Caprover Chatwoot Production deployment guide"
 
 ### Caprover Overview
 
-Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Chatwoot and hence the deployment process is very easy.
+Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Chatwoot, and the deployment process is straightforward.
 
 ### Install Caprover on your VM
 
-Finish your caprover installation by referring to [Getting started guid](https://caprover.com/docs/get-started.html).
+Finish your Caprover installation by referring to [Getting started guid](https://caprover.com/docs/get-started.html).
 
 ### Installing Chatwoot in Caprover
 
-Chatwoot is available in the one-click apps option in caprover, find Chatwoot by searching and clicking on it. Replace the default `version` with the latest `version` of chatwoot. User appropriate values for the Postgres and Redis passwords and click install. It should only take a few minutes.
+Chatwoot is available in the one-click apps option in Caprover. Find Chatwoot by searching and clicking on it. Replace the default `version` with the latest `version` of chatwoot. User appropriate values for the Postgres and Redis passwords and click install. It should only take a few minutes.
 
 ### Finishing the setup
 
-Headover to the `web` service in caprover application and set Websocket Support to true. Do this in HTTP settings tab. You could also enable `https` for the application
+Head over to the `web` service in the Caprover applications and set Websocket Support to true. Do this in the HTTP settings tab. You could also enable `https` for the application.
 
 ### Configure the necessary environment variables
 
-Caprover will take care of the installation of Postgres and Redis along with the app and worker servers. We would advise you to replace the database/Redis services with managed/standalone servers once you start scaling.
+Caprover will take care of Postgres and Redis installation, along with the app and worker servers. We would advise you to replace the Database/Redis services with managed/standalone servers once you start scaling.
 
-Also, ensure to set the appropriate environment variables for E-mail, Object Store service etc referring to our [Environment variables guide](./environment-variables)
+Also, ensure to set the appropriate environment variables for E-mail, Object Store service etc. referring to our [Environment variables guide](./environment-variables)
 
 ### Upgrading Chatwoot installation
 
-To update your chatwoot installation to the latest version in caprover, Run the following command in deployment tab for web and worker in the method 5: deploy captain-definition
+To update your chatwoot installation to the latest version in Caprover, Run the following command in the deployment tab for web and worker in the method 5: deploy captain-definition
 
 ### web
 
