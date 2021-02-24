@@ -4,7 +4,7 @@ title: "Docker Chatwoot Production deployment guide."
 ---
 
 
-### Steps to deploy Chatwoot using docker-compose
+## Steps to deploy Chatwoot using docker-compose
 
 1) Install Docker on your VM
 ```
@@ -110,7 +110,9 @@ certbot --webroot -w /var/www/ssl-proof/chatwoot/ -d yourdomain.com -i nginx
 
 5. Your Chatwoot installation should be accessible from the `https://yourdomain.com` now.
 
-### Steps to build images yourself
+---
+
+## Steps to build images yourself
 
 We publish our base images to the Docker hub. You should be able to build your Chatwoot web/worker images from these base images.
 
