@@ -3,39 +3,8 @@ path: "/docs/deployment/deploy-chatwoot-with-docker"
 title: "Docker Chatwoot Production deployment guide."
 ---
 
-### Deploying with Docker
 
-We publish our base images to the Docker hub. You should be able to build your chatwoot web/worker images from these base images.
-
-### Web
-
-```
-FROM chatwoot/chatwoot:latest
-RUN chmod +x docker/entrypoints/rails.sh
-ENTRYPOINT ["docker/entrypoints/rails.sh"]
-CMD bundle exec bundle exec rails s -b 0.0.0.0 -p 3000
-```
-
-### worker
-
-```
-FROM chatwoot/chatwoot:latest
-RUN chmod +x docker/entrypoints/rails.sh
-ENTRYPOINT ["docker/entrypoints/rails.sh"]
-CMD bundle exec sidekiq -C config/sidekiq.yml
-```
-
-The app servers will run available on port `3000`. Ensure the images connect to the same database and Redis servers. Provide the configuration for these services via [environment variables](https://www.chatwoot.com/docs/environment-variables).
-
-### Initial database setup
-
-To set up the database for the first time, you must run `rails db:chatwoot_prepare`. You may get errors if you try to run `rails db:migrate` at this point.
-
-### Upgrading
-
-Update the images using the latest image from chatwoot. Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
-
-### Deploy Chatwoot with Docker on your VM
+### Steps to deploy Chatwoot using docker-compose
 
 1) Install Docker on your VM
 ```
@@ -140,3 +109,35 @@ certbot --webroot -w /var/www/ssl-proof/chatwoot/ -d yourdomain.com -i nginx
 ```
 
 5. Your Chatwoot installation should be accessible from the `https://yourdomain.com` now.
+
+### Steps to build images yourself
+
+We publish our base images to the Docker hub. You should be able to build your Chatwoot web/worker images from these base images.
+
+### Web
+
+```
+FROM chatwoot/chatwoot:latest
+RUN chmod +x docker/entrypoints/rails.sh
+ENTRYPOINT ["docker/entrypoints/rails.sh"]
+CMD bundle exec bundle exec rails s -b 0.0.0.0 -p 3000
+```
+
+### worker
+
+```
+FROM chatwoot/chatwoot:latest
+RUN chmod +x docker/entrypoints/rails.sh
+ENTRYPOINT ["docker/entrypoints/rails.sh"]
+CMD bundle exec sidekiq -C config/sidekiq.yml
+```
+
+The app servers will run available on port `3000`. Ensure the images connect to the same database and Redis servers. Provide the configuration for these services via [environment variables](https://www.chatwoot.com/docs/environment-variables).
+
+### Initial database setup
+
+To set up the database for the first time, you must run `rails db:chatwoot_prepare`. You may get errors if you try to run `rails db:migrate` at this point.
+
+### Upgrading
+
+Update the images using the latest image from chatwoot. Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
