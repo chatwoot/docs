@@ -21,25 +21,26 @@ wget -O .env https://raw.githubusercontent.com/chatwoot/chatwoot/develop/.env.ex
 wget -O docker-compose.yml https://raw.githubusercontent.com/chatwoot/chatwoot/develop/docker-compose.production.yaml
 ```
 
-3) Tweak the `.env` and `docker-compose.yml` according to your preferences. Refer the available [environment variables](https://www.chatwoot.com/docs/environment-variables). You could also remove the dependant services like `postgres`, `redis` etc, in favor of managed services configured via environment variables.
-> update the `POSTGRES_PASSWORD` in both `docker-compose.yml` and `.env`
+3) Tweak the `.env` and `docker-compose.yml` according to your preferences. Refer to the available [environment variables](https://www.chatwoot.com/docs/environment-variables). You could also remove the dependant services like `Postgres`, `Redis` etc., in favor of managed services configured via environment variables.
 
-4) Prepare the database by migration and seeding
+> Update `POSTGRES_PASSWORD` in both `docker-compose.yml` and `.env`
+
+4) Prepare the database by running the migrations.
 ```
 docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
 ```
 
-5) Get the service up and running
+5) Get the service up and running.
 ```
 docker-compose up -d
 ```
 
-6) You chatwoot installation should be accessible with `http://{your_ip_address}:3000`
+6) Your Chatwoot installation should be accessible with `http://{your_ip_address}:3000`
 
 ### Additional Steps
 
-1) Have an `nginx` web server acting as a reverse proxy for chatwoot installation. So that you can access chatwoot from `https://chat.yourdomain.com`
-2) Run `docker-compose run --rm rails bundle exec rails db:chatwoot_prepare` whenever you decide to update the chatwoot images to handle the migrations.
+1) Have an `Nginx` web server acting as a reverse proxy for Chatwoot installation. So that you can access Chatwoot from `https://chat.yourdomain.com`
+2) Run `docker-compose run --rm rails bundle exec rails db:chatwoot_prepare` whenever you decide to update the Chatwoot images to handle the migrations.
 
 #### Configure Nginx and **Let's Encrypt**
 
@@ -62,7 +63,7 @@ server {
 
   # Nginx strips out underscore in headers by default
   # Chatwoot relies on underscore in headers for API
-  # Make sure that the config is turned on.
+  # Make sure that the config is set to on.
   underscores_in_headers on;
   location /.well-known {
     alias /var/www/ssl-proof/chatwoot/.well-known;
@@ -92,14 +93,14 @@ server {
 }
 ```
 
-3. Verify and reload your Nginx config by running following command.
+3. Verify and reload your Nginx config by running the following command.
 
 ```bash
 nginx -t
 systemctl reload nginx
 ```
 
-4. Run **Let's Encrypt** and configure **SSL certificate**.
+4. Run **Let's Encrypt** to configure **SSL certificate**.
 
 ```bash
 apt  install certbot
