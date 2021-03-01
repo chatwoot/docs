@@ -1,4 +1,3 @@
-
 ---
 path: "/docs/conversation-continuity"
 title: "Configuring Conversation Continuity with Email"
