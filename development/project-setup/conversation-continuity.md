@@ -41,7 +41,10 @@ MANDRILL_INGRESS_API_KEY=
 If you are using Mailgun as your email service, in the Mailgun dashboard configure it to forward your inbound emails to `https://example.com/rails/action_mailbox/mailgun/inbound_emails/mime` if `example.com` is where you have hosted the application.
 
 #### Sendgrid
-If you are choosing Sendgrid to be your email service, configure SendGrid Inbound Parse to forward inbound emails to forward your inbound emails to `/rails/action_mailbox/sendgrid/inbound_emails` with the username `actionmailbox` and the password you previously generated. If the deployed application was hosted at `example.com`, you can configure the following URL as the forward route.
+
+Ensure to set up the proper MX records for `your-domain.com` pointed towards Sendgrid
+
+Configure SendGrid Inbound Parse to forward inbound emails to forward your inbound emails to `/rails/action_mailbox/sendgrid/inbound_emails` with the username `actionmailbox` and the password you previously generated. If the deployed application was hosted at `example.com`, you can configure the following URL as the forward route.
 
 ```bash
 https://actionmailbox:PASSWORD@example.com/rails/action_mailbox/sendgrid/inbound_emails
@@ -69,7 +72,7 @@ account.save!
 
 ```
 account = Account.find(1)
-account.domain='domain.com'
+account.domain='your-domain.com'
 account.save!
 ```
 
