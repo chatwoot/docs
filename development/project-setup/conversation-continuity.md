@@ -9,6 +9,8 @@ title: "Configuring Conversation Continuity with Email"
 
 ### Configuring inbound reply emails
 
+*Conversation Continuity requires your chatwoot installation to have a [cloud storage configured](/docs/configuring-cloud-storage)*
+
 There are a couple of email infrastructure service providers to handle the incoming emails that we support at the moment. They are
 Sendgrid, Mandrill, Mailgun, Exim, Postfix, Qmail and Postmark.
 
