@@ -37,14 +37,19 @@ MAILGUN_INGRESS_API_KEY=
 MANDRILL_INGRESS_API_KEY=
 ```
 
+#### Mailgun
 If you are using Mailgun as your email service, in the Mailgun dashboard configure it to forward your inbound emails to `https://example.com/rails/action_mailbox/mailgun/inbound_emails/mime` if `example.com` is where you have hosted the application.
 
+#### Sendgrid
 If you are choosing Sendgrid to be your email service, configure SendGrid Inbound Parse to forward inbound emails to forward your inbound emails to `/rails/action_mailbox/sendgrid/inbound_emails` with the username `actionmailbox` and the password you previously generated. If the deployed application was hosted at `example.com`, you can configure the following URL as the forward route.
 
 ```bash
 https://actionmailbox:PASSWORD@example.com/rails/action_mailbox/sendgrid/inbound_emails
 ```
 
+When configuring your SendGrid Inbound Parse webhook, be sure to check the box labeled “Post the raw, full MIME message.” Action Mailbox needs the raw MIME message to work.
+
+#### Mandrill
 If you are configuring Mandrill as your email service, configure Mandrill to route your inbound emails to `https://example.com/rails/action_mailbox/mandrill/inbound_emails` if `example.com` is where you have hosted the application.
 
 If you want to know more about configuring other services visit [Action Mailbox Basics](https://edgeguides.rubyonrails.org/action_mailbox_basics.html#configuration)
