@@ -5,15 +5,11 @@ title: "Configuring Conversation Continuity with Email"
 
 ### Conversation continuity
 
-Conversation continuity is a de-facto most expected feature for all kind of support platforms. When we support multiple channels and integrations it becomes really difficult to implement this from the start. As for Chatwoot, with Facebook or Twitter channels, the users usually expect you to reach back on the same platform itself.
-
-When it comes to the Web Widget which is embedded in a website, this is not the case. There are technical limitations for us to maintain this conversation continuity. When an end-user initiates the chat from the Web Widget and an agent is not online, there are questions on how you reach back to that user and how a conversation can progress.
-
-As a first step what we did for this was to capture the email of the user when the chat is initiated. The chat window prompts the user for an email when the user starts a conversation. This is captured in the system as part of the contact's information. The agent can reach back to the user using this given email, but until now the replies used to come back to the agent's email address directly and not Chatwoot.
-
-With a second step that we have done, we are now introducing the capability of conversation continuity directly in Chatwoot Inbox. How this works is, once you have configured all the email settings (which will be discussed shortly in the upcoming sections below), you can send a reply as an email to any of the conversations with a contact having an email and receive the email reply in the conversation thread. This is irrespective of the channel from where the conversation was first initiated. It can be Facebook, Twitter, Web Widget, Twilio, Whatsapp and what not. You conversation always continues seamlessly.
+![101382999-9b0abf00-38de-11eb-845d-1bb1f52306df@2x](https://user-images.githubusercontent.com/73185/109548415-a1ca5c00-7af2-11eb-9b1d-fd636cf5189c.png)
 
 ### Configuring inbound reply emails
+
+*Conversation Continuity requires your chatwoot installation to have a [cloud storage configured](/docs/configuring-cloud-storage)*
 
 There are a couple of email infrastructure service providers to handle the incoming emails that we support at the moment. They are
 Sendgrid, Mandrill, Mailgun, Exim, Postfix, Qmail and Postmark.
@@ -43,14 +39,22 @@ MAILGUN_INGRESS_API_KEY=
 MANDRILL_INGRESS_API_KEY=
 ```
 
+#### Mailgun
 If you are using Mailgun as your email service, in the Mailgun dashboard configure it to forward your inbound emails to `https://example.com/rails/action_mailbox/mailgun/inbound_emails/mime` if `example.com` is where you have hosted the application.
 
-If you are choosing Sendgrid to be your email service, configure SendGrid Inbound Parse to forward inbound emails to forward your inbound emails to `/rails/action_mailbox/sendgrid/inbound_emails` with the username `actionmailbox` and the password you previously generated. If the deployed application was hosted at `example.com`, you can configure the following URL as the forward route.
+#### Sendgrid
+
+Ensure to set up the proper MX records for `your-domain.com` pointed towards Sendgrid
+
+Configure SendGrid Inbound Parse to forward inbound emails to forward your inbound emails to `/rails/action_mailbox/sendgrid/inbound_emails` with the username `actionmailbox` and the password you previously generated. If the deployed application was hosted at `example.com`, you can configure the following URL as the forward route.
 
 ```bash
 https://actionmailbox:PASSWORD@example.com/rails/action_mailbox/sendgrid/inbound_emails
 ```
 
+When configuring your SendGrid Inbound Parse webhook, be sure to check the box labeled “Post the raw, full MIME message.” Action Mailbox needs the raw MIME message to work.
+
+#### Mandrill
 If you are configuring Mandrill as your email service, configure Mandrill to route your inbound emails to `https://example.com/rails/action_mailbox/mandrill/inbound_emails` if `example.com` is where you have hosted the application.
 
 If you want to know more about configuring other services visit [Action Mailbox Basics](https://edgeguides.rubyonrails.org/action_mailbox_basics.html#configuration)
@@ -70,7 +74,7 @@ account.save!
 
 ```
 account = Account.find(1)
-account.domain='domain.com'
+account.domain='your-domain.com'
 account.save!
 ```
 
