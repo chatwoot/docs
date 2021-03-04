@@ -1,5 +1,5 @@
 ---
-path: "/docs/email-setup"
+path: "/docs/self-hosted/email-setup"
 title: "Setting up Email Channel"
 ---
 
