@@ -22,4 +22,4 @@ account.save!
 
 #### Sendgrid
 
-You can send out emails only from a verified email address in SendGrid.
+You can send out emails only from a verified email address in SendGrid. For sending emails from wildcard domain, do verification at domain level instead of individual email.   
