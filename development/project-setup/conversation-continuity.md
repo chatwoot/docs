@@ -59,23 +59,13 @@ If you are configuring Mandrill as your email service, configure Mandrill to rou
 
 If you want to know more about configuring other services visit [Action Mailbox Basics](https://edgeguides.rubyonrails.org/action_mailbox_basics.html#configuration)
 
-### Enable continuity in the account.
+### Configure inbound email domain environment variable
 
-1. Enable `inbound_emails` (Login to rails console and execute the following)
+Add the following environment variable with the value `your-domain.com`, where `your-domain.com` is the domain for which you set up MX records in the previous step.
 
-```
-account = Account.find(1)
-account.enabled_features // This would list enabled features.
-account.enable_features('inbound_emails')
-account.save!
+```bash
+MAILER_INBOUND_EMAIL_DOMAIN=
 ```
 
-2. Set an inbound domain. This is the domain with which you have set up above.
 
-```
-account = Account.find(1)
-account.domain='your-domain.com'
-account.save!
-```
-
-After executing these steps, the mail sent from Chatwoot will have a `replyto:` in the following format `reply+<random-hex>@<your-domain.com>` and reply to those would get appended to your conversation.
+After finishing the set up, the mail sent from Chatwoot will have a `replyto:` in the following format `reply+<random-hex>@<your-domain.com>` and reply to those would get appended to your conversation.
