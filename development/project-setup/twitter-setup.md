@@ -39,9 +39,9 @@ Go to your apps, you will able to see your app id. Use this app id as `TWITTER_A
 
 ![apps](./images/twitter/apps.png)
 
-### Create a dev environment
+### Create a dev environment (required)
 
-Inorder for the DMs and Tweets to work in realtime, you need to set up Account Activity API dev environment as follows.
+In order for the DMs and Tweets to work in realtime, you need to set up Account Activity API dev environment as follows. A Twitter development environment is required for **all** installations of Chatwoot.
 
 URL: https://developer.twitter.com/en/account/environments
 
