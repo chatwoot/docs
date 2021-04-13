@@ -32,6 +32,15 @@ FB_APP_ID=
 
 Before you can start using your Facebook app in production, you will have to get it verified by Facebook. Refer the [docs](https://developers.facebook.com/docs/apps/review/) on getting your app verified.
 
+Obtain advanced access to the required permissions mentionded below for your facebook app
+```
+pages_messaging
+Business Asset User Profile Access
+pages_show_list
+pages_manage_metadata
+```
+
+
 ### Developing or Testing Facebook Integration in You Local
 
 Install [ngrok](https://ngrok.com/docs) on your machine. This will be required since Facebook Messenger API's will only communicate via https.
