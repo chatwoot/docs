@@ -43,7 +43,7 @@ For development, you don't need an email provider. Chatwoot uses [letter-opener]
 For production use, use the following variables to set SMTP server.
 
 ```bash
-# could user either `email@yourdomain.com` or `BrandName <email@yourdomain.com>` 
+# could user either `email@yourdomain.com` or `BrandName <email@yourdomain.com>`
 MAILER_SENDER_EMAIL=
 SMTP_ADDRESS=
 SMTP_USERNAME=
@@ -104,7 +104,7 @@ DEFAULT_LOCALE='en'
 
 Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server.
 
-But you can change it to use any of the cloud providers like amazon s3, microsoft azure and google gcs etc. Refer [configuring cloud storage](./configuring-cloud-storage) for additional environment variables required.
+But you can change it to use any of the cloud providers like amazon s3, microsoft azure and google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
 
 ```bash
 ACTIVE_STORAGE_SERVICE='local'
@@ -189,4 +189,4 @@ Or you can generate a VAPID key from https://d3v.one/vapid-key-generator/
 
 ### Using CDN for asset delivery
 
-With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/deployment/cdn/cloudfront) guide.
+With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.

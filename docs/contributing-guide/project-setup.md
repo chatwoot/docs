@@ -13,7 +13,7 @@ Use the following command to install ruby dependencies.
 bundle
 ```
 
-If you face issue with pg gem, please refer to [Common Errors](/docs/common-errors#pg-gem-installation-error)
+If you face issue with pg gem, please refer to [Common Errors](/docs/contributing-guide/common-errors#pg-gem-installation-error)
 
 ### Install JavaScript dependencies
 

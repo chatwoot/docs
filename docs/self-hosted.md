@@ -26,8 +26,8 @@ This guide will help you to install and setup a production ready Chatwoot.
 
 ### Email Channel Setup
 
-- [Enable conversation continuity](/docs/conversation-continuity)
-- [Channel configuration](/docs/self-hosted/email-setup)
+- [Enable conversation continuity](/docs/self-hosted/configuration/features/email-channel/conversation-continuity)
+- [Channel configuration](/docs/self-hosted/configuration/features/email-channel/setup)
 
 ### Integrations
 

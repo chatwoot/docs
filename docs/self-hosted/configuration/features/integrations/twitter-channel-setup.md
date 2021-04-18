@@ -53,4 +53,4 @@ Provide a `Dev Environment Label`, this should be an alphanumeric string. Use th
 
 ![setup_dev_environment](./images/twitter/setup_dev_environment.png)
 
-Once you do this, you will ready to use Twitter Channels. To connect your Twitter Account, follow this [guide](/docs/channels/twitter).
+Once you do this, you will ready to use Twitter Channels. To connect your Twitter Account, follow this [guide](/docs/product/channels/twitter).

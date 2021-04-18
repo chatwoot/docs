@@ -69,6 +69,6 @@ Restart the Chatwoot local server. Your Chatwoot setup will be ready to receive 
 
 ### Test your local Setup
 
-1. After finishing the set up above, [create a Facebook inbox](/docs/channels/facebook) after logging in to your Chatwoot Installation.
+1. After finishing the set up above, [create a Facebook inbox](/docs/product/channels/facebook) after logging in to your Chatwoot Installation.
 2. Send a message to your page from Facebook.
 3. Wait and confirm incoming requests to `/bot` endpoint in your ngrok screen.
