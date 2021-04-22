@@ -23,6 +23,7 @@ module.exports = {
       label: 'Deployment',
       items: [
         'self-hosted/deployment/architecture',
+        'self-hosted/deployment/requirements',
         'self-hosted/deployment/heroku',
         'self-hosted/deployment/caprover',
         'self-hosted/deployment/docker',
