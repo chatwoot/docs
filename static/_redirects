@@ -1,4 +1,23 @@
 # Rewrite the URLs to proxy an internal website
-/ https://www.chatwoot.com 200
+/blog/new-decade-and-the-road-ahead https://www.chatwoot.com/blog/new-decade-and-the-road-ahead 200
+/blog/building-in-the-open https://www.chatwoot.com/blog/building-in-the-open 200
+/blog/woot-journals-one-year-since-open-sourcing-chatwoot https://www.chatwoot.com/blog/woot-journals-one-year-since-open-sourcing-chatwoot 200
+/blog/how-to-decide-pricing-plans-for-your-opensource-product https://www.chatwoot.com/blog/how-to-decide-pricing-plans-for-your-opensource-product 200
+/blog/answering-an-acquistion-offer https://www.chatwoot.com/blog/answering-an-acquistion-offer 200
+/blog/its-a-bot-story https://www.chatwoot.com/blog/its-a-bot-story 200
+/blog/2020-year-in-review https://www.chatwoot.com/blog/2020-year-in-review 200
+/blog https://www.chatwoot.com/blog 200
 /help-center https://www.chatwoot.com/help-center 200
+/mobile-apps https://www.chatwoot.com/mobile-apps 200
 /pricing https://www.chatwoot.com/pricing 200
+/privacy-policy https://www.chatwoot.com/privacy-policy 200
+/team https://www.chatwoot.com/team 200
+/terms-of-service https://www.chatwoot.com/terms-of-service 200
+/developers/api https://www.chatwoot.com/developers/api 200
+/features/channels https://www.chatwoot.com/features/channels 200
+/features/chatbots https://www.chatwoot.com/features/chatbots 200
+/features/live-chat https://www.chatwoot.com/features/live-chat 200
+/features/shared-inbox https://www.chatwoot.com/features/shared-inbox 200
+/developers/api/develop https://www.chatwoot.com/developers/api/develop 200
+/features/integrations https://www.chatwoot.com/features/integrations 200
+/features/integrations/slack https://www.chatwoot.com/features/integrations/slack 200
