@@ -9,13 +9,16 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'chatwoot',
   projectName: 'handbook',
+  noIndex: true,
   themeConfig: {
     sidebarCollapsible: false,
     navbar: {
       title: 'Chatwoot',
       logo: {
         alt: 'Chatwoot',
+        href: 'https://chatwoot.com/',
         src: 'img/logo.png',
+        target: '_self',
       },
       items: [
         {
