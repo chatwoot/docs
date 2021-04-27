@@ -1,0 +1,4 @@
+# Rewrite the URLs to proxy an internal website
+/ https://www.chatwoot.com 200
+/help-center https://www.chatwoot.com/help-center 200
+/pricing https://www.chatwoot.com/pricing 200
