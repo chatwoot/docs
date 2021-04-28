@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Chatwoot',
   tagline: 'Open-source customer engangement suite, an alternative to Intercom & Zendesk',
-  url: 'https://chatwoot.com/',
+  url: 'https://chatwoot.com',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
