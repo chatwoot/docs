@@ -2,8 +2,8 @@
 module.exports = {
   title: 'Chatwoot',
   tagline: 'Open-source customer engangement suite, an alternative to Intercom & Zendesk',
-  url: 'https://chatwoot.com/docs',
-  baseUrl: '/',
+  url: 'https://chatwoot.com/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
@@ -19,25 +19,25 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/self-hosted',
+          to: 'self-hosted',
           activeBasePath: 'docs/self-hosted',
           label: 'Self Hosted',
           position: 'left',
         },
         {
-          to: 'docs/product',
+          to: 'product',
           activeBasePath: 'docs/product',
           label: 'Product',
           position: 'left',
         },
         {
-          to: 'docs/contributing-guide',
+          to: 'contributing-guide',
           activeBasePath: 'docs/contributing-guide',
           label: 'Contributing Guide',
           position: 'left',
         },
         {
-          to: 'docs/handbook/about-chatwoot/history',
+          to: 'handbook/about-chatwoot/history',
           activeBasePath: 'docs/handbook',
           label: 'Handbook',
           position: 'left',
@@ -55,6 +55,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/chatwoot/docs/edit/main/',
