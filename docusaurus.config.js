@@ -12,35 +12,36 @@ module.exports = {
   themeConfig: {
     sidebarCollapsible: false,
     navbar: {
-      title: 'Chatwoot',
       logo: {
+        href: "https://chatwoot.com",
         alt: 'Chatwoot',
         src: 'img/logo.png',
+        target: '_self',
       },
       items: [
         {
           to: 'self-hosted',
           activeBasePath: 'self-hosted',
           label: 'Self Hosted',
-          position: 'left',
+          position: 'right',
         },
         {
           to: 'product',
           activeBasePath: 'product',
           label: 'Product',
-          position: 'left',
+          position: 'right',
         },
         {
           to: 'contributing-guide',
           activeBasePath: 'contributing-guide',
           label: 'Contributing Guide',
-          position: 'left',
+          position: 'right',
         },
         {
           to: 'handbook/about-chatwoot/history',
           activeBasePath: 'handbook',
           label: 'Handbook',
-          position: 'left',
+          position: 'right',
         },
         {
           href: 'https://github.com/chatwoot/chatwoot',
