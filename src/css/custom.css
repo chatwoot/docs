@@ -7,8 +7,6 @@
 
 /* You can override the default Infima variables here. */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
 :root {
   --ifm-color-primary: #1f93ff;
   --ifm-color-primary-dark: #0285ff;
@@ -19,8 +17,8 @@
   --ifm-color-primary-lightest: #75bcff;
   --ifm-footer-background-color: #fff;
   --ifm-code-font-size: 75%;
-  --ifm-heading-family-base: 'Lato', -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --ifm-font-family-base: 'Lato', -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --ifm-heading-family-base: -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --ifm-font-family-base: -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --doc-sidebar-width: 248px !important;
   --ifm-menu-link-padding-horizontal: 0rem;
   --ifm-menu-link-padding-vertical: 0.25rem;
@@ -29,10 +27,15 @@
   --color-body: #23282e;
   --ifm-h1-font-size: calc(1.375rem + 1vw) !important;
   --ifm-navbar-height: 5rem;
+  --ifm-heading-color: #3c4858;
+  --ifm-navbar-link-font-size: 1.0625rem;
+  --ifm-navbar-link-color: #506690;
+  --ifm-h1-font-size: 2.4rem !important;
 }
 
 .markdown {
   font-size: 1.1rem;
+  color: var(--ifm-heading-color);
 }
 
 .docusaurus-highlight-code-line {
@@ -65,6 +68,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ifm-color-primary);
 }
 
+.navbar__title {
+  color: var(--ifm-heading-color);
+  font-size: var(--ifm-navbar-link-font-size);
+}
+
+.navbar__link {
+  color: var(--ifm-navbar-link-color);
+  font-size: var(--ifm-navbar-link-font-size);
+}
 
 .menu__list {
   margin-bottom: 1.5rem;
@@ -82,7 +94,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   text-transform: none;
   font-size: 1rem;
-  letter-spacing: -0.1px;
   font-family: var(--ifm-font-family-base);
   color: rgb(80, 102, 144);
+}
+
+.table-of-contents {
+  font-size: 1rem;
 }
