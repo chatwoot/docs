@@ -20,25 +20,25 @@ module.exports = {
       items: [
         {
           to: 'self-hosted',
-          activeBasePath: 'docs/self-hosted',
+          activeBasePath: 'self-hosted',
           label: 'Self Hosted',
           position: 'left',
         },
         {
           to: 'product',
-          activeBasePath: 'docs/product',
+          activeBasePath: 'product',
           label: 'Product',
           position: 'left',
         },
         {
           to: 'contributing-guide',
-          activeBasePath: 'docs/contributing-guide',
+          activeBasePath: 'contributing-guide',
           label: 'Contributing Guide',
           position: 'left',
         },
         {
           to: 'handbook/about-chatwoot/history',
-          activeBasePath: 'docs/handbook',
+          activeBasePath: 'handbook',
           label: 'Handbook',
           position: 'left',
         },
