@@ -1,5 +1,4 @@
 ---
-path: "/docs/webhooks"
 title: "Webhooks"
 ---
 

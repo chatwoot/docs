@@ -82,7 +82,8 @@ module.exports = {
         'product/channels/facebook',
         'product/channels/twitter',
         'product/channels/twilio-whatsapp-sms',
-        'product/channels/supported-features'
+        'product/channels/supported-features',
+        'product/features/webhooks'
       ]
     }
   ],
