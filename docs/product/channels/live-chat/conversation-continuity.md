@@ -8,7 +8,7 @@ Chatwoot allows customers to continue chat conversations via email threads under
 - If no agents are available and the customer leaves a message in the chat,
 - if the customer leaves the chat before the agent replies.
 
-For this behaviour to happen, the email address of the contact should be populated into chatwoot CRM.
+Along with these cases, the contact should have an email address associated with it in chatwoot CRM.
 
 ## Obtaining email address of contacts
 
@@ -26,7 +26,7 @@ If a mandatory pre-chat form is enabled. the conversation starts with a screen a
 
 ### 3.via Email Collect Prompt
 
-When the pre-chat form is disabled, and the customer email is unknown, chatwoot starts a conversation with an email collect prompt.
+When the pre-chat form is disabled and the customer email is unknown, chatwoot starts a conversation with an email collect prompt.
 
 <img alt="chatwoot-email-collect" src={require('./images/conversation-continuity/chatwoot-email-collect.png').default} class="mw-25" />
 
@@ -34,10 +34,10 @@ When the pre-chat form is disabled, and the customer email is unknown, chatwoot 
 
 _Note_: Enable conversation continuity in self hosted installations via this [guide](/self-hosted/configuration/features/email-channel/conversation-continuity)
 
-If the customer email is updated through any of the options mentioned above. When the agent replies and the customer is not active on the chat widget:
+If the customer email gets updated through any of the options mentioned above. When the agent replies and the customer is not active on the chat widget:
 
-- The customer recieves an email thread with conversation summary over which they can continue the conversation.
-- The agent recieves the customer replies from email, in their chatwoot dashboard, continued over the existing conversation thread.
+- The customer receives an email thread with a conversation summary over which they can continue the conversation.
+- The agent receives the customer replies from email in their chatwoot dashboard, continued over the existing conversation thread.
 
 <img alt="chatwoot-dashboard-email-reply" src={require('./images/conversation-continuity/chatwoot-dashboard-email-reply.png').default} class="mw-50" />
 
