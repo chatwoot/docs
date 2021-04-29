@@ -17,8 +17,8 @@
   --ifm-color-primary-lightest: #75bcff;
   --ifm-footer-background-color: #fff;
   --ifm-code-font-size: 75%;
-  --ifm-heading-family-base: -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --ifm-font-family-base: -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --ifm-heading-family-base: 'Helvetica Neue', Helvetica, -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --ifm-font-family-base: 'Helvetica Neue', Helvetica, -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --doc-sidebar-width: 248px !important;
   --ifm-menu-link-padding-horizontal: 0rem;
   --ifm-menu-link-padding-vertical: 0.25rem;
@@ -104,4 +104,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar__link:hover, .navbar__link--active {
   color: var(--ifm-navbar-link-hover-color) !important;
+}
+
+.mw-50 {
+  max-width: 50%;
 }
