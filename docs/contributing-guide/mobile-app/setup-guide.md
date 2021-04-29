@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Setup Guide"
-title: "Mobile App"
+title: "Setup guide for mobile app"
 ---
 
 - [Running](#running)
