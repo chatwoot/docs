@@ -2,18 +2,19 @@
 module.exports = {
   title: 'Chatwoot',
   tagline: 'Open-source customer engangement suite, an alternative to Intercom & Zendesk',
-  url: 'https://chatwoot.com',
+  url: 'https://www.chatwoot.com',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'chatwoot',
-  projectName: 'handbook',
+  projectName: 'docs',
   themeConfig: {
     sidebarCollapsible: false,
+    image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
-        href: "https://chatwoot.com",
+        href: "https://www.chatwoot.com",
         alt: 'Chatwoot',
         src: 'img/logo.png',
         target: '_self',
