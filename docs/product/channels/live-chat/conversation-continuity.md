@@ -3,16 +3,16 @@ sidebar_label: "Conversation Continuity"
 title: 'Conversation Continuity through Email'
 ---
 
-Chatwoot allows customers to continue chat conversations via email threads under the following cases. 
+Chatwoot allows customers to continue chat conversations via email threads under the following cases.
 
-- If no agents are available and the customer leaves a message in the chat, 
+- If no agents are available and the customer leaves a message in the chat,
 - if the customer leaves the chat before the agent replies.
 
 For this behaviour to happen, the email address of the contact should be populated into chatwoot CRM.
 
 ## Obtaining email address of contacts
 
-You can prompt/update customer emails into chatwoot through the following ways. 
+You can prompt/update customer emails into chatwoot through the following ways.
 
 ### 1.via Chatwoot SDK
 
@@ -20,15 +20,15 @@ If customer email is already known, you can supply it into chatwoot via the `set
 
 ### 2.via PreChat Form
 
-If a mandatory pre-chat form is enabled. the conversation starts with a screen as below 
+If a mandatory pre-chat form is enabled. the conversation starts with a screen as below
 
-<img alt="chatwoot-prechat-form" src="./images/conversation-continuity/chatwoot-prechat-form.png" class="mw-50" />
+<img alt="chatwoot-prechat-form" src={require('./images/conversation-continuity/chatwoot-prechat-form.png').default} class="mw-25" />
 
 ### 3.via Email Collect Prompt
 
 When the pre-chat form is disabled, and the customer email is unknown, chatwoot starts a conversation with an email collect prompt.
 
-<img alt="chatwoot-email-collect" src="./images/conversation-continuity/chatwoot-email-collect.png" class="mw-50" />
+<img alt="chatwoot-email-collect" src={require('./images/conversation-continuity/chatwoot-email-collect.png').default} class="mw-25" />
 
 ## Conversation Continuity
 
@@ -39,6 +39,6 @@ If the customer email is updated through any of the options mentioned above. Whe
 - The customer recieves an email thread with conversation summary over which they can continue the conversation.
 - The agent recieves the customer replies from email, in their chatwoot dashboard, continued over the existing conversation thread.
 
-<img alt="chatwoot-dashboard-email-reply" src="./images/conversation-continuity/chatwoot-dashboard-email-reply.png" class="mw-50" />
+<img alt="chatwoot-dashboard-email-reply" src={require('./images/conversation-continuity/chatwoot-dashboard-email-reply.png').default} class="mw-50" />
 
 The email icon in the chat bubble indicates that the customer reply arrived via email.
