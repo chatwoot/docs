@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Custom Release Guide"
-title: "Mobile App"
+title: "Custom release guide for mobile app"
 ---
 
 ## Deep linking
