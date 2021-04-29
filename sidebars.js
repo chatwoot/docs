@@ -74,6 +74,11 @@ module.exports = {
         "product/channels/api/send-messages",
         "product/channels/api/receive-messages",
       ],
+    },    
+    {
+      "Inboxes": [
+        "product/inbox/routing-conversations-round-robin"
+      ]
     },
     {
       Others: [
