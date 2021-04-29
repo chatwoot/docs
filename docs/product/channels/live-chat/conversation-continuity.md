@@ -3,12 +3,12 @@ sidebar_label: "Conversation Continuity"
 title: 'Conversation Continuity through Email'
 ---
 
-Chatwoot has the ability to switch chat conversations into email threads under the following cases. 
+Chatwoot allows customers to continue chat conversations via email threads under the following cases. 
 
 - If no agents are available and the customer leaves a message in the chat, 
-- if the customer leaves the chat before the agent can replies.
+- if the customer leaves the chat before the agent replies.
 
-For this behaviour to happen the email address of the contact should be populated into chatwoot CRM.
+For this behaviour to happen, the email address of the contact should be populated into chatwoot CRM.
 
 ## Obtaining email address of contacts
 
@@ -39,4 +39,4 @@ If the customer email is updated through any of the options mentioned above. Whe
 
 ![chatwoot-dashboard-email-reply](./images/conversation-continuity/chatwoot-dashboard-email-reply.png)
 
-The email icon in the chat bubble indicates that the customer reply arrived via email. 
+The email icon in the chat bubble indicates that the customer reply arrived via email.
