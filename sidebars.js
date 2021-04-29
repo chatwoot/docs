@@ -105,7 +105,7 @@ module.exports = {
     {
       "Mobile App": [
         "contributing-guide/mobile-app/setup-guide",
-        "contributing-guide/mobile-app/custom_release_guide",
+        "contributing-guide/mobile-app/custom-release-guide",
       ],
     },
     {
