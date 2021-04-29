@@ -50,6 +50,10 @@ module.exports = {
         },
       ],
     },
+    googleAnalytics: {
+      trackingID: 'UA-96794837-1',
+      anonymizeIP: true,
+    },
   },
   presets: [
     [
@@ -72,4 +76,5 @@ module.exports = {
       },
     ],
   ],
+  plugins: ['@docusaurus/plugin-google-analytics'],
 };
