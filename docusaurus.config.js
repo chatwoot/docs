@@ -9,10 +9,9 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'chatwoot',
   projectName: 'docs',
-  image: 'https://www.chatwoot.com/images/preview.png',
-  metaImage: 'https://www.chatwoot.com/images/preview.png',
   themeConfig: {
     sidebarCollapsible: false,
+    image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
         href: "https://www.chatwoot.com",
