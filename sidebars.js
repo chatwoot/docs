@@ -63,6 +63,7 @@ module.exports = {
     {
       "Website Live Chat": [
         "product/channels/live-chat/create-website-channel",
+        "product/channels/live-chat/conversation-continuity",
         "product/channels/live-chat/sdk/setup",
         "product/channels/live-chat/sdk/identity-validation",
         "product/channels/live-chat/webflow-integration",
