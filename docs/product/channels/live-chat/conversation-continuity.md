@@ -19,14 +19,16 @@ You can prompt/update customer emails into chatwoot through the following ways.
 If customer email is already known, you can supply it into chatwoot via the `setUser` method in our [SDK](/product/channels/live-chat/sdk/setup)
 
 ### 2.via PreChat Form
+
 If a mandatory pre-chat form is enabled. the conversation starts with a screen as below 
 
-![chatwoot-prechat-form](./images/conversation-continuity/chatwoot-prechat-form.png)
+<img alt="chatwoot-prechat-form" src="./images/conversation-continuity/chatwoot-prechat-form.png" class="mw-50" />
 
 ### 3.via Email Collect Prompt
+
 When the pre-chat form is disabled, and the customer email is unknown, chatwoot starts a conversation with an email collect prompt.
 
-![chatwoot-email-collect](./images/conversation-continuity/chatwoot-email-collect.png)
+<img alt="chatwoot-email-collect" src="./images/conversation-continuity/chatwoot-email-collect.png" class="mw-50" />
 
 ## Conversation Continuity
 
@@ -37,6 +39,6 @@ If the customer email is updated through any of the options mentioned above. Whe
 - The customer recieves an email thread with conversation summary over which they can continue the conversation.
 - The agent recieves the customer replies from email, in their chatwoot dashboard, continued over the existing conversation thread.
 
-![chatwoot-dashboard-email-reply](./images/conversation-continuity/chatwoot-dashboard-email-reply.png)
+<img alt="chatwoot-dashboard-email-reply" src="./images/conversation-continuity/chatwoot-dashboard-email-reply.png" class="mw-50" />
 
 The email icon in the chat bubble indicates that the customer reply arrived via email.
