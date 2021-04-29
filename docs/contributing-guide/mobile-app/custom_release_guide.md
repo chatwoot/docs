@@ -62,4 +62,4 @@ RELEASE_KEY_PASSWORD=<RELEASE_KEY_PASSWORD>
 
 For releasing the android follow the [guide](https://reactnative.dev/docs/signed-apk-android)
 
-- Important - We are using [Fastlane](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for deploying Chatwoot official application.
+- Important - We are using [Fastlane](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for deploying chatwoot official mobile app.
