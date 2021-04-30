@@ -6,7 +6,9 @@ title: 'Pull Request Guidelines'
 
 ### Ownership 
 
-For all external and internal contributions to chatwoot repositories, The team will triage the pull request and assign a PR owner. We use the assignee field in Github to denote the PR owner. The PR owner will work with the contributor to provide review comments, assist in testing or reassigning the pull request to another owner when required.
+For all external and internal contributions to Chatwoot repositories, the team will triage the pull request and assign a PR owner. 
+
+At any point in time, the assignee field in Github shows the PR owner who is responsible for taking some action. The PR owner will work with the contributor to provide review comments, assist in testing or re-assigning the pull request to another owner when required.
 
 ### Commit message
 
