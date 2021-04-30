@@ -14,7 +14,7 @@ A conversation can be manually assigned to 2 categories of users.
 
 To assign an agent or admin to a conversation, an admin/agent can select the assignee from the dropdown named under "Assigned Agent" from the "Conversation Details" section in the right sidebar, as shown below.
 
-<img src="./images/assigned-agent.png" class="mw-50" alt="agent-assignment" />
+<img alt="agent-assignment" src={require('./images/assigned-agent.png').default} class="mw-50" />
 
 ## Auto assignment
 
@@ -34,6 +34,6 @@ To enable round-robin assignment in your inbox, follow the steps below.
 2. Click on the inbox settings link of the inbox you want to enable round-robin assignment.
 3. Scroll down to see the setting for Round-robin, as shown below.
 
-<img src="./images/round-robin-settings.png" class="mw-50" alt="round-robin-settings" />
+<img alt="round-robin-settings" src={require('./images/round-robin-settings.png').default} class="mw-50" />
 
 4. Change it to "Enabled" and click on "Update".
