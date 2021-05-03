@@ -55,6 +55,11 @@ module.exports = {
       trackingID: 'UA-96794837-1',
       anonymizeIP: true,
     },
+    algolia: {
+      apiKey: 'a818a66f3f73dab1a061d8437c290067',
+      indexName: 'chatwoot',
+      contextualSearch: true,
+    },
   },
   presets: [
     [
