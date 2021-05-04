@@ -58,7 +58,6 @@ module.exports = {
     algolia: {
       apiKey: 'a818a66f3f73dab1a061d8437c290067',
       indexName: 'chatwoot',
-      contextualSearch: true,
     },
   },
   presets: [
