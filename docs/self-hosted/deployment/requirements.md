@@ -56,9 +56,9 @@ CPU requirements are dependent on the usage and expected workload. Your workload
 
 The following is the recommended minimum CPU hardware guidance for a handful of example Chatwoot conversation base sizes.
 
-- **4 cores** is the **recommended** minimum number of cores and supports up to 10000 conversations a day
-- 8 cores supports up to 20000 conversaations
-- More conversations? Consider scaling horizontally by adding more application servers
+- **4 cores** is the **recommended** minimum number of cores and supports up to 10,000 conversations a day.
+- 8 cores supports up to 20,000 conversations a day.
+- More conversations? Consider scaling horizontally by adding more application servers.
 
 ### Memory
 
@@ -66,10 +66,10 @@ Memory requirements are dependent on the usage and expected workload. Your workl
 
 The following is the recommended minimum Memory hardware guidance for a handful of example Chatwoot conversation base sizes.
 
-- **4GB RAM** is the **required** minimum memory size and supports up to 10000 conversations a day
+- **4GB RAM** is the **required** minimum memory size and supports up to 10,000 conversations a day.
   - we are always working to reduce the memory requirement.
-- 8GB RAM supports up to 20000 conversations
-- More conversations? Consider scaling horizontally by adding more application servers
+- 8GB RAM supports up to 20,000 conversations a day.
+- More conversations? Consider scaling horizontally by adding more application servers.
 
 ## Database
 
