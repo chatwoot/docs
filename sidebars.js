@@ -9,6 +9,13 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Design",
+      items: [
+        "handbook/design/guidelines"
+      ],
+    },
+    {
+      type: "category",
       label: "Engineering",
       items: [
         "handbook/engineering/issue-triage",
