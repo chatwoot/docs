@@ -3,7 +3,9 @@ module.exports = {
     {
       type: "category",
       label: "Company",
-      items: ["handbook/about-chatwoot/history"],
+      items: [
+        "handbook/about-chatwoot/history",
+      ],
     },
     {
       type: "category",
@@ -11,6 +13,13 @@ module.exports = {
       items: [
         "handbook/engineering/issue-triage",
         "handbook/engineering/pr-guidelines",
+      ],
+    },
+    {
+      type: "category",
+      label: "Marketing",
+      items: [
+        "handbook/marketing/brand-guidelines",
       ],
     },
   ],
@@ -75,7 +84,7 @@ module.exports = {
         "product/channels/api/send-messages",
         "product/channels/api/receive-messages",
       ],
-    },    
+    },
     {
       "Inboxes": [
         "product/inbox/routing-conversations-round-robin"
