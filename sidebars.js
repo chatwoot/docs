@@ -11,6 +11,7 @@ module.exports = {
       items: [
         "handbook/engineering/issue-triage",
         "handbook/engineering/pr-guidelines",
+        "handbook/engineering/release-process",
       ],
     },
   ],
@@ -75,7 +76,7 @@ module.exports = {
         "product/channels/api/send-messages",
         "product/channels/api/receive-messages",
       ],
-    },    
+    },
     {
       "Inboxes": [
         "product/inbox/routing-conversations-round-robin"
