@@ -44,7 +44,7 @@ git flow release finish '1.12.0' # replace your version number
 
 ### 4. Reverse merge master
 
-Reverse merge master branch to develop branch
+Reverse merge master branch to develop branch.
 
 
 ```bash
@@ -54,7 +54,7 @@ git merge master
 
 ### 5. Push changes to remote
 
-Push master branch, develop branch and the tags
+Push master branch, develop branch and the tags.
 
 ```bash
 # Push develop
@@ -72,9 +72,9 @@ git push --tags --no-verify
 
 ### 6. Prepare release notes
 
-- Compare the current version to the previous version using tag compare feature in Github as shown here. [https://github.com/chatwoot/chatwoot/compare/v1.11.1...v1.12.0](https://github.com/chatwoot/chatwoot/compare/v1.11.1...v1.12.0)
+- Compare the current version to the previous version using the tag compare feature in Github. [https://github.com/chatwoot/chatwoot/compare/v1.11.1...v1.12.0](https://github.com/chatwoot/chatwoot/compare/v1.11.1...v1.12.0)
 - Create a new release on Github from existing tags and update release notes.
-- Ensure that the milestones exist for the next 2 versions.
+- Ensure that the milestones exist for the subsequent 2 versions.
 - Close the current milestone and move issues to the next milestone.
 
 **Release note format**:
@@ -117,5 +117,5 @@ Thanks to @azyzio, @hiaselhans, @vishal-pandey, @troscoe, @timcowlishaw, @mike90
 ## Todos after Github release
 
 - Create release notes in [Headwayapp](https://changelog.chatwoot.com). If you don't have access to it, please contact Pranav / Sojan.
-- Update the latest version in Chatwoot Hub. This is used to show a notifcation to users using self-hosted installation.
+- Update the latest version in Chatwoot Hub. This is used to show a notification to users using self-hosted installation.
 - Create tasks in Product board to deploy the changes to our paid clients.
