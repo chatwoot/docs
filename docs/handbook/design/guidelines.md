@@ -57,6 +57,4 @@ The development team will work with the design team for the final approval of th
 
 At times the development team might find difficulties in implementing the designs proposed by the design team. This might include but not limited to going against development best practices, making compromises in code quality etc. 
 
- In such cases, the development team can discuss the issues with the design team and try to convince them of the caveats. The ownership of this decision making and the visual aspect of the application falls upon the design team. 
-
-If the design team isn’t convinced of the caveats, the development team will have to compromise and develop an implementation plan outside the existing guidelines.
+In such cases, the development team can discuss the issues with the design team and try to convince them of the caveats. The ownership of this decision making and the visual aspect of the application falls upon the design team. If the design team isn’t convinced of the caveats, the development team will have to compromise and develop an implementation plan outside the existing guidelines.
