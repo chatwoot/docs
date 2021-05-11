@@ -53,7 +53,7 @@ There are cases when a complex layout designed based on the grid might not trans
 
 The development team will work with the design team for the final approval of the design. This process is when the completed work is comparable with the original design. The designer can suggest additional changes over the work if it doesn’t confer to the original design. The teams iterate over this process until the final go-ahead is received from the design team.
 
-### **Ownership of Decision Making**
+### **Ownership**
 
 At times the development team might find difficulties in implementing the designs proposed by the design team. This might include but not limited to going against development best practices, making compromises in code quality etc. 
 
