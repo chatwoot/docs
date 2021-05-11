@@ -13,6 +13,7 @@ module.exports = {
       items: [
         "handbook/engineering/issue-triage",
         "handbook/engineering/pr-guidelines",
+        "handbook/engineering/release-process",
       ],
     },
     {
