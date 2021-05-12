@@ -52,6 +52,12 @@ module.exports = {
         "self-hosted/configuration/environment-variables",
         "self-hosted/configuration/email-notifications",
         "self-hosted/configuration/enable-ip-logging",
+
+      ],
+    },
+    {
+      Monitoring: [
+        "self-hosted/monitoring/super-admin-sidekiq",
       ],
     },
     {
@@ -132,8 +138,14 @@ module.exports = {
       ],
     },
     {
+      "Testing": [
+        "contributing-guide/tests/cypress",
+      ],
+    },
+    {
       Other: [
         "contributing-guide/translation-guidelines",
+        "contributing-guide/api-documentation",
         "contributing-guide/code-of-conduct",
         "contributing-guide/contributors",
       ],

@@ -27,7 +27,6 @@
   --color-body: #23282e;
   --ifm-h1-font-size: calc(1.375rem + 1vw) !important;
   --ifm-navbar-height: 5rem;
-  --ifm-heading-color: #3c4858;
   --ifm-navbar-link-font-size: 1.0625rem;
   --ifm-navbar-link-color: #506690;
   --ifm-h1-font-size: 2.4rem !important;
@@ -35,6 +34,13 @@
 
 .markdown {
   font-size: 1.1rem;
+}
+
+html[data-theme="light"] {
+  --ifm-heading-color: #3c4858;
+}
+
+html[data-theme="light"] .markdown {
   color: var(--ifm-heading-color);
 }
 
@@ -86,13 +92,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar__title {
-  color: var(--ifm-heading-color);
   font-size: var(--ifm-navbar-link-font-size);
 }
 
+html[data-theme="light"] .navbar__title {
+  color: var(--ifm-heading-color);
+}
+
 .navbar__link {
-  color: var(--ifm-navbar-link-color);
   font-size: var(--ifm-navbar-link-font-size);
+}
+
+html[data-theme="light"] .navbar__link {
+  color: var(--ifm-navbar-link-color);
 }
 
 .menu__list {
@@ -119,6 +131,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
 }
 
-.navbar__link:hover, .navbar__link--active {
+html[data-theme="light"] .navbar__link:hover,
+html[data-theme="light"] .navbar__link--active {
   color: var(--ifm-navbar-link-hover-color) !important;
 }
