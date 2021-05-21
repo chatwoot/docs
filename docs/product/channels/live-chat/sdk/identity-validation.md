@@ -88,8 +88,8 @@ import hashlib
 import hmac
 import base64
 
-message = bytes('webwidget.hmac_token', 'utf-8')
-secret = bytes('identifier', 'utf-8')
+secret = bytes('webwidget.hmac_token', 'utf-8')
+message = bytes('identifier', 'utf-8')
 
 hash = hmac.new(secret, message, hashlib.sha256)
 hash.hexdigest()
