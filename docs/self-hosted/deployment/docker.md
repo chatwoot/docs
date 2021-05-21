@@ -10,6 +10,7 @@ title: "Docker Chatwoot Production deployment guide"
 ```
 # example in ubuntu
 apt-get update
+apt-get upgrade
 apt install docker-compose
 ```
 
@@ -23,7 +24,12 @@ wget -O docker-compose.yml https://raw.githubusercontent.com/chatwoot/chatwoot/d
 
 3) Tweak the `.env` and `docker-compose.yml` according to your preferences. Refer to the available [environment variables](/docs/self-hosted/configuration/environment-variables). You could also remove the dependant services like `Postgres`, `Redis` etc., in favor of managed services configured via environment variables.
 
-> Update `POSTGRES_PASSWORD` in both `docker-compose.yml` and `.env`
+```
+# update redis and postgres passwords
+nano .env
+# update docker-compose.yml same postgres pass
+nano docker-compose.yml
+```
 
 4) Prepare the database by running the migrations.
 ```
