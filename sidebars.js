@@ -88,9 +88,15 @@ module.exports = {
         "product/channels/live-chat/create-website-channel",
         "product/channels/live-chat/sdk/setup",
         "product/channels/live-chat/sdk/identity-validation",
-        "product/channels/live-chat/webflow-integration",
         "product/channels/live-chat/conversation-continuity",
       ],
+    },
+    {
+      "Live Chat Integrations": [
+        "product/channels/live-chat/webflow-integration",
+        "product/channels/live-chat/integrations/docusaurus",
+        "product/channels/live-chat/integrations/google-tag-manager"
+      ]
     },
     {
       "API Channel": [
