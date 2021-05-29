@@ -31,9 +31,7 @@ const crypto = require('crypto');
 const key = 'webwidget.hmac_token';
 const message = 'identifier';
 
-const hash = crypto.createHmac('sha256', key).update(message);
-
-hash.digest('hex');
+const hash = crypto.createHmac('sha256', key).update(message).digest('hex');
 ```
 
 ### Ruby
