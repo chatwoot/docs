@@ -50,6 +50,17 @@ user name: john@acme.inc
 password: 123456
 ```
 
+### Testing chat widget in your local environment 
+
+When running chatwoot in development environment, the chat widget can be accessed under the following url
+
+http://localhost:3000/widget_tests
+
+You can also test the `setUser` method by using
+
+http://localhost:3000/widget_tests?setUser=true
+
+
 ### Docker for development
 
 The first time you start your development environment run the following two commands:
