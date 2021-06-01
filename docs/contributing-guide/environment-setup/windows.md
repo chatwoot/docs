@@ -9,11 +9,11 @@ You need to install the Linux Subsystem for Windows.
 
 1. The first step is to enable "Developer mode" in Windows. You can do this by opening up Settings and navigating to "Update & Security". In there, choose the tab on the left that reads "For Developers". Turn the "Developer mode" toggle on to enable it.
 
-<img src="./img/developer-mode.jpg" width="500" alt="Enable Developer Mode" />
+<img src={require('./img/developer-mode.jpg').default} width="500" alt="Enable Developer Mode" />
 
 2. Next you have to enable the Windows Subsystem for Linux. Open the "Control Panel" and go to "Programs and Features". Click on the link on the left "Turn Windows features on or off". Look for the "Windows Subsystem for Linux" option and select the checkbox next to it.
 
-<img src="./img/enable-wsl.jpg" width="500" alt="Enable WSL" />
+<img src={require('./img/enable-wsl.jpg').default} width="500" alt="Enable WSL" />
 
 3. Once that's complete, you can open up the Start Menu again and search for "Bash". This time it will have the Ubuntu logo.
 
