@@ -24,6 +24,8 @@ chmod 755 setup.sh
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000`
 
+Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you are logged in as `root` user not as the `ubuntu` user. 
+
 ### Configuring The installation Domain
 
 1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation IP address
