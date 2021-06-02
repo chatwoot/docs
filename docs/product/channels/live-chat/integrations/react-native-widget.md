@@ -1,9 +1,9 @@
 ---
-sidebar_label: "React Native Integration"
-title: "Integrating Chatwoot with React native app"
+sidebar_label: "React Native"
+title: "Integrate Chatwoot with React Native app"
 ---
 
-Add Chatwoot live chat widget to react native app and talk to your visitors in realtime. Chatwoot helps you to chat with your visitors and provide expectional support in realtime. To use Chatwoot in your react native app, follow the steps described below.
+Add Chatwoot live chat widget to react native app and talk to your visitors in real time. Chatwoot helps you to chat with your visitors and provide exceptional support in real time. To use Chatwoot in your react native app, follow the steps described below.
 
 ## 1. Create a website inbox in Chatwoot
 
@@ -33,9 +33,9 @@ cd ios && pod install
 
 ## 3. How to use
 
-Replace `websiteToken` and `baseUrl` with your website inbox `websiteToken` and `baseUrl`
+Replace `websiteToken` and `baseUrl` with approriate values.
 
-```
+```js
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView, TouchableOpacity, Text } from 'react-native';
 import ChatWootWidget from '@chatwoot/react-native-widget';
@@ -107,61 +107,20 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
 ```
 
-You're done!
+Horray! You're done!
 
 The whole example can be found [here](https://github.com/chatwoot/chatwoot-react-native-widget/tree/develop/examples).
 
 ### Props
 
-<table class="table">
-<thead><tr>
-  <th>Name</th><th>Default</th><th>Type</th><th>Description</th>
-</tr></thead>
-<tbody>
-  <tr>
-    <td>baseUrl</td>
-    <td> - </td>
-    <td> String </td>
-    <td>Chatwoot installation URL</td>
-  </tr>
- <tr>
-    <td>websiteToken</td>
-    <td> - </td>
-    <td> String </td>
-    <td>Website channel token</td>
-  </tr>
-  <tr>
-    <td>locale</td>
-    <td> en </td>
-    <td> String </td>
-    <td>Locale</td>
-  </tr>
-  <tr>
-    <td>isModalVisible</td>
-    <td> false </td>
-    <td> Boolean </td>
-    <td>Widget is visible or not</td>
-  </tr>
-    <tr>
-    <td>closeModal</td>
-    <td> - </td>
-    <td> Function </td>
-    <td>Close event</td>
-  </tr>
-  <tr>
-	  <td>user</td>
-    <td> {} </td>
-    <td> Object </td>
-    <td>User information about the user like email, username and avatar_url</td>
-  </tr>
-  <tr>
-   <td>customAttributes</td>
-    <td> {} </td>
-    <td> Object </td>
-    <td>Additional information about the customer</td>
-  </tr>
- </tbody>
-</table>
+| Name | Default | Type | Description |
+| -- | -- | -- | -- |
+| baseUrl | - | String | Chatwoot Installation URL |
+| websiteToken | - | String | Website Channel Token |
+| locale | en | String | Locale to be used in the widget. Chatwoot support 25+ language. See [Langauge Config](https://github.com/chatwoot/chatwoot/blob/develop/config/initializers/languages.rb) to see the supported ISO 639-1 codes |
+| isModalVisible | false | Boolean | Flag used to set the display of the widget modal |
+| closeModal | - | Function | Handler method for the callback when the modal is closed |
+| user | {} | Object | Pass the information about the user like email, name and avatar_url |
+| customAttributes | {} | Object | If you want to set additional information about user, pass the key value pair here |
