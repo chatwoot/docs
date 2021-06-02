@@ -96,7 +96,8 @@ module.exports = {
         "product/channels/live-chat/webflow-integration",
         "product/channels/live-chat/integrations/docusaurus",
         "product/channels/live-chat/integrations/google-tag-manager",
-        "product/channels/live-chat/integrations/react-native-widget"
+        "product/channels/live-chat/integrations/react-native-widget",
+        "product/channels/live-chat/integrations/nextjs"
       ]
     },
     {
