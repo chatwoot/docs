@@ -44,7 +44,7 @@ class ChatwootWidget extends React.Component {
 export default ChatwootWidget
 ```
 
-2. Import the component in your pages / layout component as shown below.
+2. Import the component in your pages or layout component as shown below.
 
 ```js
 import React, { Fragment } from 'react'
@@ -62,4 +62,4 @@ const Page = () => (
 export default Page
 ```
 
-You would be able to see the Widget on the page now.
+You would be able to see the Chatwoot widget on the page now.
