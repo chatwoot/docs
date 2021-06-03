@@ -40,17 +40,22 @@ FB_APP_ID=
 
 For development, you don't need an email provider. Chatwoot uses [letter-opener](https://github.com/ryanb/letter_opener) gem to test emails locally
 
-For production use, use the following variables to set SMTP server.
+For production use, please configure the following variables.
 
 ```bash
 # could user either `email@yourdomain.com` or `BrandName <email@yourdomain.com>`
 MAILER_SENDER_EMAIL=
+```
+
+and based on your SMTP server the following variables
+
+``` bash
 SMTP_ADDRESS=
 SMTP_USERNAME=
 SMTP_PASSWORD=
 ```
 
-If you would like to use Sendgrid to send your emails, use the following environment variables:
+#### SendGrid
 ```bash
 SMTP_ADDRESS=smtp.sendgrid.net
 SMTP_AUTHENTICATION=plain
@@ -61,7 +66,7 @@ SMTP_USERNAME=apikey
 SMTP_PASSWORD=<your Sendgrid API key>
 ```
 
-If you would like to use Mailgun to send your emails, use the following environment variables:
+#### MailGun
 ```bash
 SMTP_ADDRESS=smtp.mailgun.org
 SMTP_AUTHENTICATION=plain
@@ -73,6 +78,7 @@ SMTP_PASSWORD=<Your SMTP password, view under Domains tab>
 ```
 
 
+#### Mandrill
 If you would like to use Mailchimp to send your emails, use the following environment variables:
 Note: Mandrill is the transactional email service for Mailchimp. You need to enable transactional email and login to mandrillapp.com.
 
