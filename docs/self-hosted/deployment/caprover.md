@@ -3,29 +3,31 @@ sidebar_label: "Caprover"
 title: "Caprover Chatwoot Production deployment guide"
 ---
 
-### Caprover Overview
+## Caprover Overview
 
 Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Chatwoot, and the deployment process is straightforward.
 
-### Install Caprover on your VM
+
+## Setup Chatwoot Using Caprover
+### 1. Install Caprover on your VM
 
 Finish your Caprover installation by referring to [Getting started guide](https://caprover.com/docs/get-started.html).
 
-### Installing Chatwoot in Caprover
+### 2. Install Chatwoot 
 
 Chatwoot is available in the one-click apps option in Caprover. Search for Chatwoot in the list of one-click apps. Replace the default `version` with the latest `version` of chatwoot. Use appropriate values for the Postgres and Redis passwords and click install. It should only take a few minutes.
 
-### Finishing the setup
+### 3. Finish the setup
 
 Head over to the `web` service in the Caprover applications and enable `Websocket Support` in the HTTP settings to true. You could also enable `https` for the application.
 
-### Configure the necessary environment variables
+### 4. Configure environment variables
 
 Caprover will take care of Postgres and Redis installation, along with the app and worker servers. We would advise you to replace the Database/Redis services with managed/standalone servers once you start scaling.
 
 Also, ensure to set the appropriate environment variables for email, Object Store service etc. using our [Environment variables guide](/docs/self-hosted/configuration/environment-variables)
 
-### Upgrading Chatwoot installation
+## Upgrading Chatwoot installation
 
 To update your chatwoot installation to the latest version in Caprover, Run the following command in the deployment tab for web and worker in `method 5: deploy captain-definition`
 
@@ -56,6 +58,15 @@ To update your chatwoot installation to the latest version in Caprover, Run the 
 }
 ```
 
-### Further references
+## Accessing Rails Console
+```
+# access the shell inside the container
+docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh
+# start rails console
+RAILS_ENV=production bundle exec rails c
+```
+
+
+## Further references
 
 - https://isotropic.co/how-to-install-chatwoot-to-a-digitalocean-droplet/
