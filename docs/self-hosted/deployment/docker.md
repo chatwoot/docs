@@ -117,7 +117,6 @@ certbot --webroot -w /var/www/ssl-proof/chatwoot/ -d yourdomain.com -i nginx
 
 5. Your Chatwoot installation should be accessible from the `https://yourdomain.com` now.
 
----
 
 ## Steps to build images yourself
 
@@ -147,6 +146,17 @@ The app servers will run available on port `3000`. Ensure the images connect to 
 
 To set up the database for the first time, you must run `rails db:chatwoot_prepare`. You may get errors if you try to run `rails db:migrate` at this point.
 
-### Upgrading
+## Upgrading
 
 Update the images using the latest image from chatwoot. Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
+
+## Running Rails Console
+
+```
+# Find the name of the rails server container
+docker ps
+# access the shell inside the container. replace name if you are using a different name
+docker exec -it $(docker ps --filter name=root_rails_1 -q) /bin/sh
+# start rails console
+RAILS_ENV=production bundle exec rails c
+```
