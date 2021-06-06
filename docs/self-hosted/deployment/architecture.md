@@ -16,6 +16,7 @@ Running Chatwoot in production requires the following set of services.
 * Email service (SMTP servers / sendgrid / mailgun etc)
 * Object Storage ( S3, Azure Storage, GCS, etc)
 
+![architecture](./images/architecture.png)
 
 ### Updating your Chatwoot installation
 
