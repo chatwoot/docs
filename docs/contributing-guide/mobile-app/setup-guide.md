@@ -17,7 +17,7 @@ title: "Setup guide for mobile app"
 - [Node.js](https://nodejs.org/en/download/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
 - [Install Yarn](https://yarnpkg.com/en/docs/install)
-- `$ yarn global add react-native-cli`
+- React Native CLI - Use `$ yarn global add react-native-cli` to install the CLI.
 
 More information on getting started can be found here: https://facebook.github.io/react-native/docs/getting-started.html under the `React Native CLI Quickstart` tab.
 
@@ -41,19 +41,14 @@ And install dependencies
 
 Create a new project in [Sentry](https://sentry.io/for/react-native/)
 
-Add `SENTRY_DSN` value in `.env` file.
+Add `SENTRY_DSN` value in `.env` file. If you want to supports native crashes, link the sentry SDK to your native projects.
 
-If you want to supports native crashes, link the sentry SDK to your native projects.
-Run the command
+Run the following command to generate the Sentry configuration.
 
-```
+```bash
 yarn sentry-wizard -i reactNative -p ios android
+cd ios && pod install
 ```
-
-It will connect the native project with sentry project.
-
-- `cd ios && pod install`
-
 
 ## Running
 
