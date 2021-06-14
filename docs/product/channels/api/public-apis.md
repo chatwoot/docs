@@ -37,7 +37,7 @@ Some of the things you can do via the APIs are
 - Create, List and Update Messages
 
 ### HMAC Authentication
-The public APIs also support [HMAC Authentication](docs/product/channels/live-chat/sdk/identity-validation). 
+The public APIs also support [HMAC Authentication](/docs/product/channels/live-chat/sdk/identity-validation). 
 The HMAC token for the Channel can be obtained via running the following on your rails console. 
 
 ```
