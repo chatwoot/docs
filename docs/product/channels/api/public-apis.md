@@ -3,9 +3,9 @@ sidebar_label: "Public APIs"
 title: 'Create Interfaces using public APIs'
 ---
 
-> note: These APIs are still in alpha and the implementations might change in the future
+> note: These APIs are still in alpha, and the implementations might change in the future
 
-Public APIs available for the API channel will help you build customer facing interfaces for chatwoot.
+Public APIs available for the API channel will help you build customer-facing interfaces for chatwoot.
 These APIs are useful for cases similar to the ones described below.
 
 1. Use a custom chat interface instead of the chatwoot chat widget
@@ -25,7 +25,7 @@ Inbox.find(api_inbox_id).channel.identifier
 ```
 ### Customer Identifier 
 The `customer_identifier` or the `source_id` can be obtained when creating the customer using the [create](#create) API.
-You will need to store this identifier on your client side to make further requests on behalf of the customer. 
+You will need to store this identifier on your client-side to make further requests on behalf of the customer. 
 This can be done in cookies, local storage etc.
 
 ### Available APIs
@@ -45,16 +45,16 @@ The HMAC token for the Channel can be obtained via running the following on your
 Inbox.find(api_inbox_id).channel.hmac_token
 ```
 
-## Connecting to the Chatwoot websockets
+## Connecting to the Chatwoot WebSockets
 
-To recieve the realtime updates from the agent dashboard, You can connect to the chatwoot websockets. 
-Chatwoot websockets connecting can be made at the following URL
+To receive the real-time updates from the agent dashboard, You can connect to the chatwoot WebSockets. 
+Chatwoot WebSockets connecting can be made at the following URL
 ```
 <your installation url>/cable
 ```
 
-### Authenticating your websocket connection 
-You will start recieving the events directed towards your customer object after subscribing using the customer `pubsub_token`.
+### Authenticating your WebSocket connection 
+You will start receiving the events directed towards your customer object after subscribing using the customer `pubsub_token`.
 `pubsub_token` is provided during the customer create API call. 
 
 #### Example
