@@ -1,16 +1,16 @@
 ---
 sidebar_label: "Public APIs"
-title: 'Create Interfaces using public APIs'
+title: "Create Interfaces using public APIs"
 ---
 
 > note: These APIs are still in alpha, and the implementations might change in the future
 
-Public APIs available for the API channel will help you build customer-facing interfaces for chatwoot.
+Public APIs available for the API channel will help you build customer-facing interfaces for Chatwoot.
 These APIs are useful for cases similar to the ones described below.
 
-1. Use a custom chat interface instead of the chatwoot chat widget
+1. Use a custom chat interface instead of the Chatwoot chat widget
 2. Build conversational interfaces into your mobile apps
-3. Add chatwoot to other platforms for which chatwoot doesn't have an official SDK
+3. Add Chatwoot to other platforms for which Chatwoot doesn't have an official SDK
 
 ## Creating customer objects
 
@@ -47,7 +47,7 @@ Inbox.find(api_inbox_id).channel.hmac_token
 
 ## Connecting to the Chatwoot WebSockets
 
-To receive the real-time updates from the agent dashboard, You can connect to the chatwoot WebSockets. 
+To receive the real-time updates from the agent dashboard, You can connect to the Chatwoot WebSockets. 
 Chatwoot WebSockets connecting can be made at the following URL
 ```
 <your installation url>/cable
@@ -59,8 +59,8 @@ You will start receiving the events directed towards your customer object after 
 
 #### Example
 ```js
-var connection = new WebSocket('ws://localhost:3000/cable');
-connection.send(JSON.stringify({command:"subscribe", identifier: "{\"channel\":\"RoomChannel\",\"pubsub_token\":\""+ customer_pubsub_token+"\"}" }));
+const connection = new WebSocket('ws://localhost:3000/cable');
+connection.send(JSON.stringify({ command:"subscribe", identifier: "{\"channel\":\"RoomChannel\",\"pubsub_token\":\""+ customer_pubsub_token+"\"}" }));
 ```
 
 
