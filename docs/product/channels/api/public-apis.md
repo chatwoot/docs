@@ -24,12 +24,12 @@ The `inbox_identifier` for the API channel can be obtained by running the follow
 Inbox.find(api_inbox_id).channel.identifier
 ```
 ### Customer Identifier 
-The `customer_identifier` or the `source_id` can be obtained when creating the customer using the [create](#create) API.
+The `customer_identifier` or the `source_id` can be obtained when creating the customer using the [create](https://www.chatwoot.com/developers/api#operation/create-a-contact) API.
 You will need to store this identifier on your client-side to make further requests on behalf of the customer. 
 This can be done in cookies, local storage etc.
 
 ### Available APIs
-The Available public APIs are documented [here](#docs).
+The Available public APIs are documented [here](https://www.chatwoot.com/developers/api#tag/Contacts-API).
 Some of the things you can do via the APIs are 
 
 - Create, View and Update Contact
