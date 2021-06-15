@@ -3,7 +3,7 @@ sidebar_label: "Public APIs"
 title: "Create Interfaces using public APIs"
 ---
 
-> note: These APIs are still in alpha, and the implementations might change in the future
+> Note: These APIs are still in alpha, and there might be changes in the implementation in future.
 
 Public APIs available for the API channel will help you build customer-facing interfaces for Chatwoot.
 These APIs are useful for cases similar to the ones described below.
