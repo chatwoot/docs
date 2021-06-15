@@ -17,7 +17,7 @@ This guide will help you to use Chatwoot.
 - [Create an API Channel](/docs/product/channels/api/create-channel)
 - [Send messages](/docs/product/channels/api/send-messages)
 - [Receive messages](/docs/product/channels/api/receive-messages)
-- [Public APIs](/docs/product/channels/api/public-apis)
+- [Client APIs](/docs/product/channels/api/client-apis)
 
 ### Other
 

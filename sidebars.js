@@ -105,7 +105,7 @@ module.exports = {
         "product/channels/api/create-channel",
         "product/channels/api/send-messages",
         "product/channels/api/receive-messages",
-        "product/channels/api/public-apis",
+        "product/channels/api/client-apis",
       ],
     },
     {

@@ -1,11 +1,12 @@
 ---
-sidebar_label: "Public APIs"
-title: "Create Interfaces using public APIs"
+sidebar_label: "Client APIs"
+title: 'Create Interfaces using client APIs'
 ---
 
 > Note: These APIs are still in alpha, and there might be changes in the implementation in future.
 
-Public APIs available for the API channel will help you build customer-facing interfaces for Chatwoot.
+Client APIs available for the API channel will help you build customer-facing interfaces for Chatwoot.
+
 These APIs are useful for cases similar to the ones described below.
 
 1. Use a custom chat interface instead of the Chatwoot chat widget
@@ -29,7 +30,8 @@ You will need to store this identifier on your client-side to make further reque
 This can be done in cookies, local storage etc.
 
 ### Available APIs
-The Available public APIs are documented [here](https://www.chatwoot.com/developers/api#tag/Contacts-API).
+
+The Available Client APIs are documented [here](https://www.chatwoot.com/developers/api#tag/Contacts-API).
 Some of the things you can do via the APIs are 
 
 - Create, View and Update Contact
@@ -37,7 +39,7 @@ Some of the things you can do via the APIs are
 - Create, List and Update Messages
 
 ### HMAC Authentication
-The public APIs also support [HMAC Authentication](/docs/product/channels/live-chat/sdk/identity-validation). 
+The Client APIs also support [HMAC Authentication](/docs/product/channels/live-chat/sdk/identity-validation). 
 The HMAC token for the Channel can be obtained via running the following on your rails console. 
 
 ```
@@ -66,4 +68,4 @@ connection.send(JSON.stringify({ command:"subscribe", identifier: "{\"channel\":
 
 ## Implementation
 
-You can find an example chat interface build over the public APIs over [here](https://github.com/chatwoot/api_channel_demo)
+You can find an example chat interface build over the Client APIs over [here](https://github.com/chatwoot/api_channel_demo)
