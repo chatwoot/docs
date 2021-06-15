@@ -68,4 +68,4 @@ connection.send(JSON.stringify({ command:"subscribe", identifier: "{\"channel\":
 
 ## Implementation
 
-You can find an example chat interface build over the Client APIs over [here](https://github.com/chatwoot/api_channel_demo)
+You can find an example chat interface build over the Client APIs over [here](https://github.com/chatwoot/client-api-demo)
