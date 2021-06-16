@@ -22,11 +22,11 @@ RAILS_ENV=test bin/rake db:create
 RAILS_ENV=test bin/rake db:schema:load
 ```
 
-#### Start Chatwoot in test environment
+#### Start Chatwoot in the test environment
 
 ```bash
 RAILS_ENV=test foreman start  -f Procfile.test
-### load the url in browser and wait for the it to start up
+### load the url in the browser and wait for it to start up
 http://localhost:5050/app/login
 ```
 
@@ -39,7 +39,7 @@ Follow the [docker set up guide](/docs/contributing-guide/environment-setup/dock
 Open `docker-compose.yaml` and update all the `RAILS_ENV` values from `development` to `test`
 
 #### Update the Port
-Under rails section in your `docker-compose.yaml` update the port value as given below
+Under rails section in your `docker-compose.yaml` update the port value as given below.
 ```
 ports:
   - 5050:3000
@@ -50,19 +50,19 @@ ports:
 docker-compose run --rm rails bundle exec rails db:reset
 ```
 
-#### Start Chatwoot Docker in test environment
+#### Start Chatwoot Docker in the test environment
 
 ```
 docker-compose up
-### load the url in browser and wait for the it to start up
+### load the url in the browser and wait for it to start up
 http://localhost:5050/app/login
 ```
 
 ## Run Cypress
 
-Load `localhost:5050` on your browser and ensure that Chatwoot server is running.
+Load `localhost:5050` on your browser and ensure that the Chatwoot server is running.
 
-Naviage to your chatwoot local directory and Execute the following command to run the cypress tests.
+Navigate to your chatwoot local directory and Execute the following command to run the cypress tests.
 
 
 ```bash
