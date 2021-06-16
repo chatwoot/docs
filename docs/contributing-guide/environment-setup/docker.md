@@ -23,15 +23,15 @@ As of now[at the time of writing this doc], we recommend
     $ git clone https://github.com/chatwoot/chatwoot.git
     ```
 
-2. Make a copy of the example environment file and modify as required [optional].
+2. Make a copy of the example environment file and modify it as [required](/docs/self-hosted/configuration/environment-variables).
 
     ```bash
     $ cp .env.example .env
-    ```
-
-    If you want to set the password for redis when you run docker-compose, set any string value to the environment variable `REDIS_PASSWORD` in the `.env` file.
-    This will secure the redis running inside docker-compose with the given password.
-    Also this will be automatically picked up by the app server and sidekiq, to authenticate while making connections to redis server.
+    # update redis and postgres passwords
+    nano .env
+    # update docker-compose.yml with the same postgres password
+    nano docker-compose.yml
+   ```
 
 3. Build the images.
 
@@ -39,10 +39,10 @@ As of now[at the time of writing this doc], we recommend
     $ docker-compose build
     ```
 
-4. After building the image or after destroying the stack you would have to reset the database using the following command.
+4. After building the image or destroying the stack, you would have to reset the database using the following command.
 
     ```bash
-    $ docker-compose run --rm rails bundle exec rails db:reset
+    $ docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
     ```
 
 5. To run the app,
@@ -53,13 +53,12 @@ As of now[at the time of writing this doc], we recommend
 
     * Access the rails app frontend by visiting `http://0.0.0.0:3000/`
     * Access Mailhog inbox by visiting `http://0.0.0.0:8025/` (You will receive all emails going out of the application here)
-    * Access Sidekiq Web UI by visiting `http://0.0.0.0:3000/sidekiq` (You need to login with administrator account to access sidekiq)
 
     #### Login with credentials
     ```
         url: http://localhost:3000
         user_name: john@acme.inc
-        password: 123456
+        password: Password1!
     ````
 
 6. To stop the app,
@@ -68,9 +67,9 @@ As of now[at the time of writing this doc], we recommend
     $ docker-compose down
     ```
 
-### Running rspec tests
+### Running RSpec tests
 
-For running the complete rspec tests,
+For running the complete RSpec tests,
 
     ```bash
     $ docker-compose run --rm rails bundle exec rspec
