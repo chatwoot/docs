@@ -27,11 +27,11 @@ As of now[at the time of writing this doc], we recommend
 
     ```bash
     $ cp .env.example .env
-    ```
-
-    If you want to set the password for redis when you run docker-compose, set any string value to the environment variable `REDIS_PASSWORD` in the `.env` file.
-    This will secure the redis running inside docker-compose with the given password.
-    Also this will be automatically picked up by the app server and sidekiq, to authenticate while making connections to redis server.
+    # update redis and postgres passwords
+    nano .env
+    # update docker-compose.yml same postgres pass
+    nano docker-compose.yml
+   ```
 
 3. Build the images.
 
@@ -42,7 +42,7 @@ As of now[at the time of writing this doc], we recommend
 4. After building the image or after destroying the stack you would have to reset the database using the following command.
 
     ```bash
-    $ docker-compose run --rm rails bundle exec rails db:reset
+    $ docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
     ```
 
 5. To run the app,
@@ -59,7 +59,7 @@ As of now[at the time of writing this doc], we recommend
     ```
         url: http://localhost:3000
         user_name: john@acme.inc
-        password: 123456
+        password: Password1!
     ````
 
 6. To stop the app,
