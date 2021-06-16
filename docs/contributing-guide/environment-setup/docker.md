@@ -53,7 +53,6 @@ As of now[at the time of writing this doc], we recommend
 
     * Access the rails app frontend by visiting `http://0.0.0.0:3000/`
     * Access Mailhog inbox by visiting `http://0.0.0.0:8025/` (You will receive all emails going out of the application here)
-    * Access Sidekiq Web UI by visiting `http://0.0.0.0:3000/sidekiq` (You need to login with administrator account to access sidekiq)
 
     #### Login with credentials
     ```
