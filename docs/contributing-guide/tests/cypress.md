@@ -9,11 +9,10 @@ Chatwoot uses [Cypress](https://www.cypress.io/) for end-to-end testing. Use the
 
 ### Using Docker
 
-Navigate to your chatwoot codebase in your local machine and update your `docker-compose.yaml`
-
+Follow the [docker set up guide](/docs/contributing-guide/environment-setup/docker) until the build images step.
 
 ### Using Local Chatwoot Installation
-> Note: You have to install the necessary dependencies as described in setup guide for this method to work.
+> Note: You have to install the necessary dependencies as described in [setup guide](/docs/contributing-guide/project-setup) for this method to work.
 
 Navigate to chatwoot codebase in your local machine and execute the following steps
 
