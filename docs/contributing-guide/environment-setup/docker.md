@@ -23,13 +23,13 @@ As of now[at the time of writing this doc], we recommend
     $ git clone https://github.com/chatwoot/chatwoot.git
     ```
 
-2. Make a copy of the example environment file and modify as required [optional].
+2. Make a copy of the example environment file and modify it as [required](/docs/self-hosted/configuration/environment-variables).
 
     ```bash
     $ cp .env.example .env
     # update redis and postgres passwords
     nano .env
-    # update docker-compose.yml same postgres pass
+    # update docker-compose.yml with the same postgres password
     nano docker-compose.yml
    ```
 
@@ -39,7 +39,7 @@ As of now[at the time of writing this doc], we recommend
     $ docker-compose build
     ```
 
-4. After building the image or after destroying the stack you would have to reset the database using the following command.
+4. After building the image or destroying the stack, you would have to reset the database using the following command.
 
     ```bash
     $ docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
@@ -67,9 +67,9 @@ As of now[at the time of writing this doc], we recommend
     $ docker-compose down
     ```
 
-### Running rspec tests
+### Running RSpec tests
 
-For running the complete rspec tests,
+For running the complete RSpec tests,
 
     ```bash
     $ docker-compose run --rm rails bundle exec rspec
