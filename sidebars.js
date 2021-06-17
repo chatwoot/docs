@@ -93,6 +93,7 @@ module.exports = {
     },
     {
       "Live Chat Integrations": [
+        "product/channels/live-chat/integrations/dialogflow",
         "product/channels/live-chat/webflow-integration",
         "product/channels/live-chat/integrations/docusaurus",
         "product/channels/live-chat/integrations/google-tag-manager",
