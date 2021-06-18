@@ -33,7 +33,7 @@ http://localhost:5050/app/login
 
 ### Using Docker (option 2)
 
-Follow the [docker set up guide](/docs/contributing-guide/environment-setup/docker) until the build images step.
+Follow the [docker set up guide](/docs/contributing-guide/environment-setup/docker) until you the build images.
 
 #### Change the Rails Environment
 Open `docker-compose.yaml` and update all the `RAILS_ENV` values from `development` to `test`
