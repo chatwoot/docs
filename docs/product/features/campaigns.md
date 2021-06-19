@@ -27,7 +27,7 @@ These are the inputs required to create the campaign:
 
 </div>
 
-**Step 3**. Visit the URL specified in the Campaign and wait for the Time configured in the campaign
+**Step 3**. Visit the URL specified in the campaign and wait for the time configured in the campaign
 
 ![add-a-campaign](./images/campaign-message.png)
 
