@@ -17,7 +17,7 @@ This guide will help you to use Chatwoot.
 - [Webflow Integration](/docs/product/channels/live-chat/webflow-integration)
 - [Docusaurus Integration](/docs/product/channels/live-chat/integrations/docusaurus)
 - [Google Tag Manger](/docs/product/channels/live-chat/integrations/google-tag-manager)
-- [React Native Integration](/docs/product/channels/live-chat/react-native-widget)
+- [React Native Integration](/docs/product/channels/live-chat/integrations/react-native-widget)
 
 ### API Channel
 
