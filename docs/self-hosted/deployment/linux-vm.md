@@ -112,3 +112,17 @@ cd chatwoot
 # start rails console
 RAILS_ENV=production bundle exec rails c
 ```
+
+## Viewing Logs
+
+Run the following commands in your ubuntu shell
+
+```
+# logs from the rails server
+journalctl -u chatwoot-web.1.service -f
+
+# logs from sidekiq
+journalctl -u chatwoot-worker.1.service -f
+
+```
+
