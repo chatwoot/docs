@@ -121,6 +121,7 @@ module.exports = {
         "product/channels/twilio-whatsapp-sms",
         "product/channels/supported-features",
         "product/features/webhooks",
+        "product/features/campaigns",
       ],
     },
   ],
