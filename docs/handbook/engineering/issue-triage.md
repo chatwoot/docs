@@ -30,6 +30,7 @@ Please ensure that you have added a severity label for each bug as described in 
 
 10. `documentation` - The documentation issues should be in [docs](https://github.com/chatwoot/docs) repository. If there is a significant reason to have it on the [main repository](https://github.com/chatwoot/chatwoot), mark it with the label `documentation`
 
+11. `devops` - The issues that are related to installation and devops.
 
 ### Severity
 
