@@ -153,10 +153,5 @@ Update the images using the latest image from chatwoot. Run the `rails db:chatwo
 ## Running Rails Console
 
 ```
-# Find the name of the rails server container
-docker ps
-# access the shell inside the container. replace name if you are using a different name
-docker exec -it $(docker ps --filter name=root_rails_1 -q) /bin/sh
-# start rails console
-RAILS_ENV=production bundle exec rails c
+docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails c'
 ```
