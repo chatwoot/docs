@@ -153,6 +153,5 @@ Update the images using the latest image from chatwoot. Run the `rails db:chatwo
 ## Running Rails Console
 
 ```
-# Run this from within the working directory you `docker-compose up -d` in the context of
 docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails c'
 ```
