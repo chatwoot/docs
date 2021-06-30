@@ -22,7 +22,7 @@ Running Chatwoot in production requires the following set of services.
 
 A new version of Chatwoot is released around the first monday of every month. We also release minor versions when there is a need for Hotfixes or security updates.
 
-You can stay tuned to our [Roadmap](https://github.com/chatwoot/chatwoot/milestones) and [releases](https://github.com/chatwoot/chatwoot/releases) on github. We recommend you to stay upto date with our releases to enjoy the lastest features and security updates.
+You can stay tuned to our [Roadmap](https://github.com/chatwoot/chatwoot/milestones) and [releases](https://github.com/chatwoot/chatwoot/releases) on github. We recommend you to stay upto date with our releases to enjoy the latest features and security updates.
 
 The deployment process for a newer version involves updating your app servers and workers with the latest code. Most updates would involve database migrations as well which can be executed through the following rails command.
 
