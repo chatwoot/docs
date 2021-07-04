@@ -20,16 +20,22 @@ module.exports = {
         target: '_self',
       },
       items: [
-        {
+/*{
           to: 'self-hosted',
           activeBasePath: 'self-hosted',
           label: 'Self Hosted',
           position: 'right',
-        },
+        },*/
         {
           to: 'product',
           activeBasePath: 'product',
           label: 'Product',
+          position: 'right',
+        },
+        {
+          to: 'user-guide',
+          activeBasePath: 'user-guide',
+          label: 'User Guide',
           position: 'right',
         },
         {

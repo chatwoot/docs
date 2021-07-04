@@ -125,6 +125,10 @@ module.exports = {
       ],
     },
   ],
+  UserGuide: [
+    {"Introduction": ["user-guide"]},
+    {"Section2": ["user-guide/1Chatwoot User Cocumentation"]}
+  ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },
     {
