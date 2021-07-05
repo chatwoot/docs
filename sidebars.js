@@ -127,7 +127,7 @@ module.exports = {
   ],
   UserGuide: [
     {"Introduction": ["user-guide"]},
-    {"Section2": ["user-guide/user-doc"]}
+    {"user ": ["user-guide/privpol","user-guide/user-doc"]}
   ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },
