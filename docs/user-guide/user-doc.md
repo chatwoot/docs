@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: "Facebook"
+sidebar_label: "Section2"
 title: 'How to create Facebook channel?'
 ---
 
