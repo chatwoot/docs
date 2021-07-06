@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+title: "Setting up Chatwoot Widget"
 ---
 -
 ## Sign In

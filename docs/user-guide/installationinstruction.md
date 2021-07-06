@@ -1,7 +1,7 @@
 ---
-sidebar_position: 4
+title: "Installation Instruction"
 ---
--
+
 ## PC : Compatability and Requirements 
 ## Android : Compatability and Requirements 
 ## iOS : Compatability and Requirements 

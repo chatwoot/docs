@@ -1,6 +1,7 @@
 ---
-sidebar_position: 10
+title: "Backup and Restore"
 ---
+
 ## Backup Instructions
 ## Restore Backup
 

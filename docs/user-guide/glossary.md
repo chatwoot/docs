@@ -1,7 +1,8 @@
 ---
-sidebar_position: 12
+title: "Glossary"
 ---
-## Glossary
+
+
 -will explain technical terminologies
   
 

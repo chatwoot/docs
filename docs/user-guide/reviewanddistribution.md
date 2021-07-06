@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+title: "Review and Distribution"
 ---
 - 
 ## Reviewed by  

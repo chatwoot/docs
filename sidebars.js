@@ -125,10 +125,30 @@ module.exports = {
       ],
     },
   ],
-  UserGuide: [
-    {"Introduction": ["user-guide"]},
-    {"user ": ["user-guide/privpol","user-guide/user-doc"]}
-  ],
+  UserGuide:
+  [
+    {"User Guide Info": 
+    [
+      "user-guide",
+    "user-guide/privacypolicy",
+    "user-guide/reviewanddistribution"
+    ]
+    },
+    {"Product Info": 
+    [
+      "user-guide/aboutchatwoot",
+      "user-guide/installationinstruction",
+      "user-guide/settingupchatwootbackend",
+      "user-guide/settingupchatwootwidget",
+      "user-guide/backendsettings",
+      "user-guide/backendsettingscontinued...",
+      "user-guide/howconversationhappens",
+      "user-guide/backupandrestore",
+      "user-guide/codeandpatchupdates",
+      "user-guide/glossary"
+    ]
+    },
+    ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },
     {

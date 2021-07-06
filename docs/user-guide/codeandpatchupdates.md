@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+title: "Code and Patch Updates"
 ---
 
 ## How to Check for Updates
