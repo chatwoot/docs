@@ -66,6 +66,19 @@ docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh
 RAILS_ENV=production bundle exec rails c
 ```
 
+## Common Errors
+
+### API requests failing with "You need to sign in or sign up before continuing."
+
+nginx by default strip of headers with `_` . head over to the Nginx configuration option in caprover under the chatwoot web and add the following directive.
+
+```
+  # Nginx strips out underscore in headers by default
+  # Chatwoot relies on underscore in headers for API
+  # Make sure that the config is set to on.
+  underscores_in_headers on;
+  ```
+
 
 ## Further references
 
