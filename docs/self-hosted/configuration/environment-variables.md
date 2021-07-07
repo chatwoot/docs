@@ -55,6 +55,17 @@ SMTP_USERNAME=
 SMTP_PASSWORD=
 ```
 
+#### Amazon SES
+```bash
+SMTP_ADDRESS=email-smtp.us-west-2.amazonaws.com
+SMTP_AUTHENTICATION=plain
+SMTP_DOMAIN=<your verified domain>
+SMTP_ENABLE_STARTTLS_AUTO=true
+SMTP_PORT=587
+SMTP_USERNAME=<Your SMTP username>
+SMTP_PASSWORD=<Your SMTP password>
+```
+
 #### SendGrid
 ```bash
 SMTP_ADDRESS=smtp.sendgrid.net
