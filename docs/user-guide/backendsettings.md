@@ -10,7 +10,11 @@ title: "Backend Settings"
 ## Canned REsponses
 ## Integrations
 ## Applications
-
+## Converasations
+## Contacts
+## Reports
+## Inboxes
+## Labels
 
 
   

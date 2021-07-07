@@ -1,7 +1,7 @@
 ---
-title: "About Chatwoot"
+title: "Introduction"
 ---
--
+
 ## Product Use 
 ## Intended User 
 ## Contact info

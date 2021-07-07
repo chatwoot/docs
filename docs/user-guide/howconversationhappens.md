@@ -1,7 +1,7 @@
 ---
 title: "How Conversation Happens"
 ---
-## Assinging Teams/LAbels/Agents
+## Assinging Teams/Labels/Agents
 ## Canned Responses
 ## Sending E-mails
 ## Transfering Agents

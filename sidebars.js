@@ -141,7 +141,6 @@ module.exports = {
       "user-guide/settingupchatwootbackend",
       "user-guide/settingupchatwootwidget",
       "user-guide/backendsettings",
-      "user-guide/backendsettingscontinued...",
       "user-guide/howconversationhappens",
       "user-guide/backupandrestore",
       "user-guide/codeandpatchupdates",
