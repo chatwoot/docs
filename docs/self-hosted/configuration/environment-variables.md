@@ -57,7 +57,7 @@ SMTP_PASSWORD=
 
 #### Amazon SES
 ```bash
-SMTP_ADDRESS=email-smtp.us-west-2.amazonaws.com
+SMTP_ADDRESS=email-smtp.<region>.amazonaws.com
 SMTP_AUTHENTICATION=plain
 SMTP_DOMAIN=<your verified domain>
 SMTP_ENABLE_STARTTLS_AUTO=true
