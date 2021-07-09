@@ -19,7 +19,7 @@ apt install docker-compose
 # Download the env file template
 wget -O .env https://raw.githubusercontent.com/chatwoot/chatwoot/develop/.env.example
 # Download the Docker compose template
-wget -O docker-compose.yml https://raw.githubusercontent.com/chatwoot/chatwoot/develop/docker-compose.production.yaml
+wget -O docker-compose.yaml https://raw.githubusercontent.com/chatwoot/chatwoot/develop/docker-compose.production.yaml
 ```
 
 3) Tweak the `.env` and `docker-compose.yml` according to your preferences. Refer to the available [environment variables](/docs/self-hosted/configuration/environment-variables). You could also remove the dependant services like `Postgres`, `Redis` etc., in favor of managed services configured via environment variables.
@@ -28,7 +28,7 @@ wget -O docker-compose.yml https://raw.githubusercontent.com/chatwoot/chatwoot/d
 # update redis and postgres passwords
 nano .env
 # update docker-compose.yml same postgres pass
-nano docker-compose.yml
+nano docker-compose.yaml
 ```
 
 4) Prepare the database by running the migrations.
