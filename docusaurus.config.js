@@ -1,5 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
+  plugins: ["@chatwoot/docusaurus-plugin"],
   title: 'Chatwoot',
   tagline: 'Open-source customer engangement suite, an alternative to Intercom & Zendesk',
   url: 'https://www.chatwoot.com',
@@ -10,6 +11,11 @@ module.exports = {
   organizationName: 'chatwoot',
   projectName: 'docs',
   themeConfig: {
+    chatwoot: {
+      websiteToken: "DyBKdJb22pLRjj6dzBnTuR2M",
+      baseURL: "https://staging.chatwoot.com",  // optional
+      enableInDevelopment: true,  // optional
+    },
     sidebarCollapsible: false,
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
