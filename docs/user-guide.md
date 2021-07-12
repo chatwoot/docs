@@ -4,7 +4,14 @@ title: "Introduction"
 This User Guide contains all essential information for the user to make full use of the Chatwoot Customer Communication Platform.  
 This document includes description of the features and capabilities,alternate modes of operation, and step-by-step procedures for platform access and use.
 
-![logo](../static/img/logo.png)
+<!-- ![logo](../static/img/logo.png) -->
+
+<!-- <div style={{textAlign: 'center'}}> -->
+<div align="center">
+
+<img src={require('../static/img/logo.png').default} width="200" alt="Enable Developer Mode" />
+
+</div>
 
 ### Document name 
 CHATWOOT/UM/20210712/01
@@ -16,4 +23,3 @@ Version xyz.xx
 | Date        | Version # | Changes       |
 |-------------|-----------|---------------|
 | 12-Jul-2021 | 0.1       | Initial Draft |
-|             |           |               |
