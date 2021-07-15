@@ -80,6 +80,7 @@ module.exports = {
         "self-hosted/deployment/storage/gcs-bucket",
       ],
     },
+    { Others: ["self-hosted/telemetry"] },
   ],
   product: [
     { "Getting Started": ["product"] },

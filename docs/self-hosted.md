@@ -40,3 +40,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Supported providers](/docs/self-hosted/deployment/storage/supported-providers)
 - [Configure S3 bucket](/docs/self-hosted/deployment/storage/s3-bucket)
 - [Configure GCS bucket](/docs/self-hosted/deployment/storage/gcs-bucket)
+
+
+### Others
+- [Telemetry](/docs/self-hosted/telemetry)
