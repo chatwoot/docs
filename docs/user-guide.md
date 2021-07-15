@@ -2,7 +2,8 @@
 title: "Introduction"
 ---
 This User Guide contains all essential information for the user to make full use of the Chatwoot Customer Communication Platform.  
-This document includes description of the features and capabilities,alternate modes of operation, and step-by-step procedures for platform access and use.
+
+This User Guide includes description of the features and capabilities,alternate modes of operation, and step-by-step procedures for Chatwoot platform access and use.
 
 <!-- ![logo](../static/img/logo.png) -->
 

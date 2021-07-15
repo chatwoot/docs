@@ -1,5 +1,5 @@
 ---
-title: "Setting up Chatwoot Backend"
+title: "Setting up Chatwoot Agent Dashboard"
 ---
 
 ## Registration 

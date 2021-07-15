@@ -138,9 +138,9 @@ module.exports = {
     [
       "user-guide/aboutchatwoot",
       "user-guide/installationinstruction",
-      "user-guide/settingupchatwootbackend",
+      "user-guide/settingupagentdashboard",
       "user-guide/settingupchatwootwidget",
-      "user-guide/backendsettings",
+      "user-guide/agentdashboardsettings",
       "user-guide/howconversationhappens",
       "user-guide/backupandrestore",
       "user-guide/codeandpatchupdates",

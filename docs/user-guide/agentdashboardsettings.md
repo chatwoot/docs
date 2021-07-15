@@ -1,5 +1,5 @@
 ---
-title: "Backend Settings"
+title: "Agent Dashboard Settings"
 ---
 
 
