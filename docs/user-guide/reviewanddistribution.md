@@ -8,5 +8,4 @@ title: "Review and Distribution"
 | Pranav Raj S       | Co-Founder and CEO       | 
 
 ## Distributed to 
-
-Is this needed here since this is a web page?
+<!-- TODO Is this needed here since this is a web page? -->

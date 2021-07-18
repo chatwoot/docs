@@ -139,6 +139,8 @@ module.exports = {
       "user-guide/aboutchatwoot",
       "user-guide/installationinstruction",
       "user-guide/settingupagentdashboard",
+      "user-guide/profilesettings",
+      "user-guide/addagentsettings",
       "user-guide/settingupchatwootwidget",
       "user-guide/agentdashboardsettings",
       "user-guide/howconversationhappens",

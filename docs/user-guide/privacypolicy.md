@@ -4,7 +4,7 @@ title: "Privacy Policy"
 
 https://www.chatwoot.com/privacy-policy
 
-<!--Need to check chatwoot privacy policy and give link here to open in new window/tab-->
+<!-- TODO Need to check chatwoot privacy policy and give link here to open in new window/tab -->
 
   Copyright Chatwoot Inc © 2021
 All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including
