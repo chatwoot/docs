@@ -141,6 +141,7 @@ module.exports = {
       "user-guide/settingupagentdashboard",
       "user-guide/profilesettings",
       "user-guide/addagentsettings",
+      "user-guide/addinboxsettings",
       "user-guide/settingupchatwootwidget",
       "user-guide/agentdashboardsettings",
       "user-guide/howconversationhappens",

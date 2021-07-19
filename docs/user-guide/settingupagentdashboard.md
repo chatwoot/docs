@@ -26,7 +26,7 @@ The Below window will Pop open
 | Password         | Enter password for your account | Password must contain 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}\|') |
 | Confirm Password | Re-enter the password           | Password must contain 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}\|') |
 
-User will recieve an e-mail with subject 'Confirmation Instructions' in the registered e-mail address. Click on 'Confirm mu account'.
+User will recieve an e-mail with subject 'Confirmation Instructions' in the registered e-mail address. Click on 'Confirm my account'.
 
 The below window will open up for the Chatwoot Agent Dashboard.  
 <div align="center">
@@ -40,7 +40,7 @@ The below window will open up for the Chatwoot Agent Dashboard.
 ## Initial Settings
 <!-- TODO How to give links to next pages here? -->
 - Profile Settings
-
+- Add Agent Settings
 
 
 
