@@ -44,4 +44,13 @@ Welcome Tag Line you gave and Welcome Message you have given.
  
 </div> 
  
+ Click on the Chatwoot Widget on the screen. Chat Screen opens up like below.  
+ <div align="center">
+ 
+<img src={require('../../static/img/settingupchatwootwidget4.png').default} width="800" alt="Enable Developer Mode" />
+ 
+</div>  
+
+
+
 

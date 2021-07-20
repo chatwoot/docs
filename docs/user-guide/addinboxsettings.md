@@ -23,7 +23,7 @@ OR
 
 <div align="center">
 
-<img src={require('../../static/img/addinboxsettings3.png').default} width="250" alt="Enable Developer Mode" />
+<img src={require('../../static/img/addinboxsettings3.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>  
 
