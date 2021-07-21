@@ -1,5 +1,5 @@
 ---
-title: "Canned Response"
+title: "Canned Responses"
 ---
 Canned Responses are saved reply templates which can be used to quickly send out a reply to a conversation .  
 Canned responses are used with the help of Short Codes. Agents can access canned responses while on a chat by typing '/' followed by the short code.  
