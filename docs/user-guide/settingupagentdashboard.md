@@ -39,8 +39,15 @@ The below window will open up for the Chatwoot Agent Dashboard.
 
 ## Initial Settings
 <!-- TODO How to give links to next pages here? -->
-- Profile Settings
-- Add Agent Settings
+
+- [Profile Settings](profilesettings.md)
+- [Account Setting](accountsettings.md)
+- [Add Agent](addagentsettings.md)
+- [Add Inbox](addinboxsettings.md)
+- [Add Widget](settingupchatwootwidget.md)
+- [Add Teams](addteamssettings.md)
+- [Add Labels](addlabelsettings.md)
+- [Add Canned Responses](cannedresponsesettings.md)
 
 
 

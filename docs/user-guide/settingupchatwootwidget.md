@@ -35,8 +35,7 @@ An example is given below
 
 </div>  
 
-The Inbox is created and the Front end for the Inbox is available on your website as a chat window with the colour you selected,
-Welcome Tag Line you gave and Welcome Message you have given.
+Chatwoot Widget can be seen on your website.
  
 <div align="center">
  
@@ -44,13 +43,20 @@ Welcome Tag Line you gave and Welcome Message you have given.
  
 </div> 
  
- Click on the Chatwoot Widget on the screen. Chat Screen opens up like below.  
+ Click on the Chatwoot Widget on the screen. Chat Screen opens up like below. A chat window with the colour you selected,
+Welcome Tag Line you gave and Welcome Message you have given will open up. Customers will see this Chat window on their screen.
  <div align="center">
  
 <img src={require('../../static/img/settingupchatwootwidget4.png').default} width="800" alt="Enable Developer Mode" />
  
 </div>  
 
+Once the Customer clicks on Start Conversation and sends a message, The conversation tagline will appear on the chat window.
 
+ <div align="center">
+ 
+<img src={require('../../static/img/settingupchatwootwidget5.png').default} width="800" alt="Enable Developer Mode" />
+ 
+</div>  
 
 
