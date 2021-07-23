@@ -59,12 +59,14 @@ Chatwoot WebSockets connecting can be made at the following URL
 You will start receiving the events directed towards your customer object after subscribing using the customer `pubsub_token`.
 `pubsub_token` is provided during the customer create API call. 
 
+
+
 #### Example
 ```js
 const connection = new WebSocket('ws://localhost:3000/cable');
 connection.send(JSON.stringify({ command:"subscribe", identifier: "{\"channel\":\"RoomChannel\",\"pubsub_token\":\""+ customer_pubsub_token+"\"}" }));
 ```
-
+Find the full list of events supported by the websockets [here](/docs/product/others/websocket-events).
 
 ## Implementation
 

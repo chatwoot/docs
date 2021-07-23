@@ -82,7 +82,19 @@ module.exports = {
     },
   ],
   product: [
-    { "Getting Started": ["product"] },
+    { "Getting Started": [
+        "product",
+        "product/channels/supported-features",
+        "product/features/campaigns",
+        "product/features/webhooks",
+      ] 
+    },
+    { "Channels": [
+        "product/channels/facebook",
+        "product/channels/twitter",
+        "product/channels/twilio-whatsapp-sms",
+      ] 
+    },
     {
       "Website Live Chat": [
         "product/channels/live-chat/create-website-channel",
@@ -115,13 +127,10 @@ module.exports = {
       ]
     },
     {
-      Others: [
-        "product/channels/facebook",
-        "product/channels/twitter",
-        "product/channels/twilio-whatsapp-sms",
-        "product/channels/supported-features",
-        "product/features/webhooks",
-        "product/features/campaigns",
+      "Others": [
+        "product/others/interactive-messages",
+        "product/others/webhook-events",
+        "product/others/websocket-events"
       ],
     },
   ],
