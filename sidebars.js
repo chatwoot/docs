@@ -147,7 +147,6 @@ module.exports = {
       "user-guide/addteamssettings",
       "user-guide/addlabelsettings",
       "user-guide/cannedresponsesettings",
-      "user-guide/agentdashboardsettings",
       "user-guide/howconversationhappens",
       "user-guide/backupandrestore",
       "user-guide/codeandpatchupdates",
