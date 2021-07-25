@@ -1,5 +1,5 @@
 ---
-title: "Setting up Chatwoot Widget"
+title: "Setting up Widget"
 ---
 
 Click on Inbox on the home Screen. The Inbox you have created will appear here.

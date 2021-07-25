@@ -1,5 +1,5 @@
 ---
-title: "Installation Instruction"
+title: "Requirements"
 ---
 
 ## Server : Compatability and Requirements 

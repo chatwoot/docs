@@ -1,5 +1,5 @@
 ---
-title: "Setting up Chatwoot Agent Dashboard"
+title: "Setting up Agent Dashboard"
 ---
 
 ## Registration 

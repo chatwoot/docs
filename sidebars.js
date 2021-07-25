@@ -147,12 +147,16 @@ module.exports = {
       "user-guide/addteamssettings",
       "user-guide/addlabelsettings",
       "user-guide/cannedresponsesettings",
+    ]
+    },
+    {'Conversations':[      
       "user-guide/howconversationhappens",
+    ]},
+    {"Other":[    
       "user-guide/backupandrestore",
       "user-guide/codeandpatchupdates",
       "user-guide/glossary"
-    ]
-    },
+    ]}
     ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },

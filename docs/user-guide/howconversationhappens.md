@@ -1,5 +1,5 @@
 ---
-title: "How Conversation Happens"
+title: "Conversation Workflow"
 ---
 Customer initiates a conversation from the website front end - through the widget
 
