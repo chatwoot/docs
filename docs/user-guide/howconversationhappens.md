@@ -76,10 +76,78 @@ You can see in the below screen shot that all actions done by you are seen in th
 
 </div>
 
-## Canned Responses
-## Sending E-mails
-## Transfering Agents
+### Reply for the Conversation
+
+You can reply to the customer's conversation by typing in the Reply area. Shift+enter will enable to start typing in a new line.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens8.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+Click on Send button to send your message to the cusotmer.
+
+Various options are there in the Reply area to enhance the messages.  
+ <img src={require('../../static/img/howconversationhappens9.png').default} width="50" alt="Enable Developer Mode" /> This Button is to select and include Emoji in the message.  
+  <img src={require('../../static/img/howconversationhappens10.png').default} width="50" alt="Enable Developer Mode" /> This Button is to select and include attachments in the message.   
+    <img src={require('../../static/img/howconversationhappens12.png').default} width="50" alt="Enable Developer Mode" /> This Button enables to use the Rich Text Editor. Additional options appear on the Reply screen as shown below.  
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens11.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+Once the message is typed and edited, you need to tick the checkbox to send the message to the customer. Given below is an example on how the message will look like when Rich text editor is used. If you want to go back to normal text, click on the rich text editor button again.
+
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens13.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+###  How to send Canned Responses
+
+If you wish to include already prepared[[canned responses]](cannedresponsesettings.md) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens14.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
 ## Private Chat with Agents
+
+There is an option to discuss the customer's conversation with other fellow agent, if you need some more clarification. This option is available just beside the Reply tab, named as Private Note.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens15.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>
+
+Type '@' in the Private Note Window and all agents who has been added to this team will be listed. Select the agent and type in the message that you want to consult with this agent. 
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens16.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>
+
+Click on Add Note to send the message. You can see a locked sign on the message that you sent. This message will not be visible to the customer.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens17.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+<!-- TODO how and where will the agent be able to see the private chat? -->
+### Sending E-mails
+### Transfering Agents
+
 
 
   
