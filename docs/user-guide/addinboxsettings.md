@@ -60,7 +60,7 @@ Clck on Website Button
 | Welcome Tagline          | Give a Tagline representing your  company                            | eg: Welcome to Hopkins !  We are at your service 24x7             |
 | Enable Channel Greeting  | Select Enabled or Disabled                                           | Enable to Send Greeting message when customer starts conversation |
 | Channel Greeting Message | Give a greeting with which you would  like to start the conversation | eg: Hi.How can we help you?                                       |
-
+<!-- TODO get the version names2 -->
 <!-- TODO what is enable channel greeting? -->
 Click on Create Inbox
 
