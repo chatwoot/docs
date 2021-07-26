@@ -5,6 +5,14 @@ title: "Product documentation"
 
 This guide will help you to use Chatwoot.
 
+### Features
+- [Supported features](/docs/product/channels/supported-features)
+- [Webhooks](/docs/product/features/webhooks)
+- [Campaigns](/docs/product/features/campaigns)
+### Channels
+- [Create a Facebook Channel](/docs/product/channels/facebook)
+- [Create a Twitter Channel](/docs/product/channels/twitter)
+- [Create a Whatsapp/SMS Channel](/docs/product/channels/twilio-whatsapp-sms)
 ### Website live-chat
 
 - [Create a website Channel](/docs/product/channels/live-chat/create-website-channel)
@@ -31,10 +39,6 @@ This guide will help you to use Chatwoot.
 - [Routing](/docs/product/inbox/routing-conversations-round-robin)
 
 ### Others
-
-- [Create a Facebook Channel](/docs/product/channels/facebook)
-- [Create a Twitter Channel](/docs/product/channels/twitter)
-- [Create a Whatsapp/SMS Channel](/docs/product/channels/twilio-whatsapp-sms)
-- [Supported features](/docs/product/channels/supported-features)
-- [Webhooks](/docs/product/features/webhooks)
-- [Campaigns](/docs/product/features/campaigns)
+- [Interactive Messages](/docs/product/others/interactive-messages) 
+- [Webhook Events](/docs/product/others/webhook-events)
+- [Websocket Events](/docs/product/others/websocket-events)

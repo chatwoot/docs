@@ -77,7 +77,7 @@ You will receive a conversation id which can be used to create a message.
 
 #### 3. Create a new message
 
-API documentation: (https://www.chatwoot.com/developers/api/#operation/conversationNewMessage)
+API documentation: (https://www.chatwoot.com/developers/api/develop/#operation/create-a-new-message-in-a-conversation)
 
 There are 2 types of messages.
 
@@ -110,4 +110,4 @@ If everything is sucessful you will see the conversation on the dashboard as fol
 
 ![conversation](./images/conversation.png)
 
-You will be notified when a new message is created on the URL specified while creating the API channel. You can read about the message payload [here](/docs/product/channels/api/receive-messages)
+You will be notified when a new message is created on the URL specified while creating the API channel. You can read about the message payload [here](/docs/product/channels/api/receive-messages).

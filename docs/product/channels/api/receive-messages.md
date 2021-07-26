@@ -3,7 +3,7 @@ sidebar_label: "Receive messages"
 title: 'Receive messages using callback URL'
 ---
 
-When a new message is created in the API channel, you will get a POST request to the Callback URL specified while creating the API channel. The payload would look like this.
+When a new message is created in the API channel, you will get a POST request to the Callback URL specified while creating the API channel. The payload would look like this. Find the full list of events supported by the webhook [here](/docs/product/others/webhook-events).
 
 **Event type**: `message_created`
 
