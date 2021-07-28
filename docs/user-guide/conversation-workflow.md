@@ -3,7 +3,7 @@ title: "Conversation Workflow"
 ---
 Customer initiates a conversation from the website front end - through the widget
 
-For eg : Cusotmer types in 'hi'
+For eg : Customer types in 'hi'
 
 <div align="center">
 
