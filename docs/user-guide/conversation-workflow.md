@@ -1,9 +1,9 @@
 ---
 title: "Conversation Workflow"
 ---
-Customer initiates a conversation from the website front end - through the widget
+The customer initiates a conversation from the website front end - through the widget.
 
-For eg : Customer types in 'hi'
+For e.g.: Customer types in 'hi'
 
 <div align="center">
 
@@ -12,13 +12,13 @@ For eg : Customer types in 'hi'
 </div>
 
 Automated response set in[channel greeting message](addinboxsettings.md) will immediately be displayed on the screen as a reply.
-In addition two more automated messages will be sent by 'bot' to collect customer's information - email id - for further communication and record.
+In addition, two more automated messages will be sent by 'bot' to collect customer's information - email id - for further communication and record.
 
 Now let us look at how this message is captured in the Agent Dashboard.  
 
 ### Conversations  
 
-Go to the homescreen of Chatwoot Agent Dashboard
+Go to the home screen of Chatwoot Agent Dashboard
 
 <div align="center">
 
@@ -26,7 +26,7 @@ Go to the homescreen of Chatwoot Agent Dashboard
 
 </div>
 
-Click on Conversations. Then click on All. The conversation which has been initiated by the customer can be seen here.
+Click on Conversations. Then click on All. The conversation which the customer has initiated can be seen here.
 
 <div align="center">
 
@@ -34,7 +34,7 @@ Click on Conversations. Then click on All. The conversation which has been initi
 
 </div>
 
-The details of the conversation opens up in the right hand side panel. 
+The details of the conversation open up in the right-hand side panel. 
 
 ### Assign Agent
 
@@ -49,7 +49,7 @@ Click on the drop box below Assigned Agent and select the Agent name. You can ch
 
 ### Assign Team
 
-Click on the drop box below Assigned Team and select the team to which this conversation belongs to.
+Click on the drop box below Assigned Team and select the team to which this conversation belongs.
 
 <div align="center">
 
@@ -78,7 +78,7 @@ You can see in the below screen shot that all actions done by you are seen in th
 
 ### Reply for the Conversation
 
-You can reply to the customer's conversation by typing in the Reply area. Shift+enter will enable to start typing in a new line.
+You can reply to the customer's conversation by typing in the Reply area. Shift+enter will enable you to start typing in a new line.
 
 <div align="center">
 
@@ -86,7 +86,7 @@ You can reply to the customer's conversation by typing in the Reply area. Shift+
 
 </div>  
 
-Click on Send button to send your message to the cusotmer.
+Click on the Send button to send your message to the customer.
 
 Various options are there in the Reply area to enhance the messages.  
  <img src={require('../../static/img/howconversationhappens9.png').default} width="50" alt="Enable Developer Mode" /> This Button is to select and include Emoji in the message.  
@@ -99,7 +99,7 @@ Various options are there in the Reply area to enhance the messages.
 
 </div>  
 
-Once the message is typed and edited, you need to tick the checkbox to send the message to the customer. Given below is an example on how the message will look like when Rich text editor is used. If you want to go back to normal text, click on the rich text editor button again.
+Once the message is typed and edited, you need to tick the checkbox to send the message to the customer. Below is an example of how the message will look like when a Rich text editor is used. If you want to go back to normal text, click on the rich text editor button again.
 
 
 <div align="center">
@@ -110,7 +110,7 @@ Once the message is typed and edited, you need to tick the checkbox to send the 
 
 ###  How to send Canned Responses
 
-If you wish to include already prepared[[canned responses]](cannedresponsesettings.md) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
+Suppose you wish to include already prepared[[canned responses]](cannedresponsesettings.md) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
 
 <div align="center">
 
