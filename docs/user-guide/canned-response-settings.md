@@ -1,8 +1,8 @@
 ---
 title: "Canned Responses"
 ---
-Canned Responses are saved reply templates which can be used to quickly send out a reply to a conversation .  
-Canned responses are used with the help of Short Codes. Agents can access canned responses while on a chat by typing '/' followed by the short code.  
+Canned Responses are saved reply templates that can be used to quickly send out a reply to a conversation.  
+Canned responses are used with the help of Short Codes. Agents can access canned responses while on a chat by typing '/' followed by the shortcode.  
 
 Click on Settings on Chatwoot home screen.
 
@@ -27,8 +27,8 @@ Below screen will open up, where you can enter the details of the Canned Respons
 
 | Field Name | Value                                                                            | Remarks                            |
 |------------|----------------------------------------------------------------------------------|------------------------------------|
-| Short Code | Enter a short code - minimum length of 2 character                               | eg: gr                             |
-| Content    | Type in the message you want to send when the short code is entered on the chat  | eg: Greetings! How Can I help you? |
+| Short Code | Enter a short code - minimum length of 2 characters                               | eg: gr                             |
+| Content    | Type in the message you want to send when the shortcode is entered on the chat  | eg: Greetings! How Can I help you? |
 
 Click on Submit.
 Canned Response Added Successfully message will be displayed. 

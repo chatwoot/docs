@@ -1,7 +1,7 @@
 ---
 title: "Add Label"
 ---
-Labels help you to categorize conversations and prioritize them. You can assign label to a conversation from the sidepanel.
+Labels help you to categorize conversations and prioritize them. You can assign label to a conversation from the side panel.
 
 Labels are tied to the account and can be used to create custom workflows in your organization. You can assign custom color to a label, it makes it easier to identify the label. You will be able to display the label on the sidebar to filter the conversations easily.
 
@@ -30,12 +30,12 @@ Screen opens up where you can design your own labels.
 | Field Name             | Value                                                                    | Remarks                                                                                  |
 |------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | Label Name             | Assign a Name for the label to identify the category                     | eg: Premium_Customer          Only Alphabets, Numbers, Hyphen and Underscore are allowed |
-| Description            | Give a short description on what the label represents                    | eg: This Customer issue is to be resolved on priority                                    |
+| Description            | Give a short description of what the label represents                    | eg: This Customer issue is to be resolved on priority                                    |
 | Colour                 | Select a colour for the label for easy  identification                   | After Selection click on the small square again                                          |
 | Show Label on  Sidebar | Select this option if you want the label to  be displayed on the sidebar | This will help in easy identification of the conversations                               |
 
 Click on Create.
-Label added successfully message will be displayed. New Label has been created. You can create as many Labels as you need. Lables can be used across teams.
+Label added successfully message will be displayed. New Label has been created. You can create as many Labels as you need. Labels can be used across teams.
 <div align="center">
 
 <img src={require('../../static/img/addlabelssettings3.png').default} width="800" alt="Enable Developer Mode" />
