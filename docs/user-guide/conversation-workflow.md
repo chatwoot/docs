@@ -1,9 +1,9 @@
 ---
 title: "Conversation Workflow"
 ---
-Customer initiates a conversation from the website front end - through the widget
+The customer initiates a conversation from the website front end - through the widget.
 
-For eg : Cusotmer types in 'hi'
+For example: Customer types in 'hi'
 
 <div align="center">
 
@@ -11,14 +11,14 @@ For eg : Cusotmer types in 'hi'
 
 </div>
 
-Automated response set in[channel greeting message](addinboxsettings.md) will immediately be displayed on the screen as a reply.
-In addition two more automated messages will be sent by 'bot' to collect customer's information - email id - for further communication and record.
+Automated response set in[channel greeting message](add-inbox-settings.md) will immediately be displayed on the screen as a reply.
+In addition, two more automated messages will be sent by 'bot' to collect customer's information - email id - for further communication and record.
 
 Now let us look at how this message is captured in the Agent Dashboard.  
 
 ### Conversations  
 
-Go to the homescreen of Chatwoot Agent Dashboard
+Go to the home screen of Chatwoot Agent Dashboard
 
 <div align="center">
 
@@ -26,7 +26,7 @@ Go to the homescreen of Chatwoot Agent Dashboard
 
 </div>
 
-Click on Conversations. Then click on All. The conversation which has been initiated by the customer can be seen here.
+Click on Conversations. Then click on All. The conversation which the customer has initiated can be seen here.
 
 <div align="center">
 
@@ -34,12 +34,12 @@ Click on Conversations. Then click on All. The conversation which has been initi
 
 </div>
 
-The details of the conversation opens up in the right hand side panel. 
+The details of the conversation open up in the right-hand side panel. 
 
 ### Assign Agent
 
 If the inbox has been created with 'auto assign' not clicked, the conversation will not be automatically assigned to any agent.
-Click on the drop box below Assigned Agent and select the Agent name. You can change the agents assigned here at any time.
+Click on the drop-box below Assigned Agent and select the Agent name. You can change the agents assigned here at any time.
 
 <div align="center">
 
@@ -49,7 +49,7 @@ Click on the drop box below Assigned Agent and select the Agent name. You can ch
 
 ### Assign Team
 
-Click on the drop box below Assigned Team and select the team to which this conversation belongs to.
+Click on the drop-box below Assigned Team and select the team to which this conversation belongs.
 
 <div align="center">
 
@@ -59,7 +59,7 @@ Click on the drop box below Assigned Team and select the team to which this conv
 
 ### Assign Labels
 
-Click on the drop box below Conversation Labels and select the category to which this conversation belongs.  
+Click on the drop-box below Conversation Labels and select the category to which this conversation belongs.  
 
 <div align="center">
 
@@ -68,7 +68,7 @@ Click on the drop box below Conversation Labels and select the category to which
 </div>
 
 
-You can see in the below screen shot that all actions done by you are seen in the chat window in Agent Dashboard.
+You can see in the below screenshot that all actions done by you are seen in the chat window in Agent Dashboard.
 
 <div align="center">
 
@@ -78,7 +78,7 @@ You can see in the below screen shot that all actions done by you are seen in th
 
 ### Reply for the Conversation
 
-You can reply to the customer's conversation by typing in the Reply area. Shift+enter will enable to start typing in a new line.
+You can reply to the customer's conversation by typing in the Reply area. Shift+enter will enable you to start typing in a new line.
 
 <div align="center">
 
@@ -86,7 +86,7 @@ You can reply to the customer's conversation by typing in the Reply area. Shift+
 
 </div>  
 
-Click on Send button to send your message to the cusotmer.
+Click on the Send button to send your message to the customer.
 
 Various options are there in the Reply area to enhance the messages.  
  <img src={require('../../static/img/howconversationhappens9.png').default} width="50" alt="Enable Developer Mode" /> This Button is to select and include Emoji in the message.  
@@ -99,7 +99,7 @@ Various options are there in the Reply area to enhance the messages.
 
 </div>  
 
-Once the message is typed and edited, you need to tick the checkbox to send the message to the customer. Given below is an example on how the message will look like when Rich text editor is used. If you want to go back to normal text, click on the rich text editor button again.
+Once the message is typed and edited, you need to tick the checkbox to send the message to the customer. Below is an example of how the message will look like when a Rich text editor is used. If you want to go back to normal text, click on the rich text editor button again.
 
 
 <div align="center">
@@ -108,9 +108,9 @@ Once the message is typed and edited, you need to tick the checkbox to send the 
 
 </div>  
 
-###  How to send Canned Responses
+###  How to Send Canned Responses
 
-If you wish to include already prepared[[canned responses]](cannedresponsesettings.md) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
+Suppose you wish to include already prepared[[canned responses]](canned-response-settings.md) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
 
 <div align="center">
 
@@ -120,7 +120,7 @@ If you wish to include already prepared[[canned responses]](cannedresponsesettin
 
 ## Private Chat with Agents
 
-There is an option to discuss the customer's conversation with other fellow agent, if you need some more clarification. This option is available just beside the Reply tab, named as Private Note.
+There is an option to discuss the customer's conversation with another fellow agent if you need some more clarification. This option is available just beside the Reply tab, named Private Note.
 
 <div align="center">
 
@@ -128,7 +128,7 @@ There is an option to discuss the customer's conversation with other fellow agen
 
 </div>
 
-Type '@' in the Private Note Window and all agents who has been added to this team will be listed. Select the agent and type in the message that you want to consult with this agent. 
+Type '@' in the Private Note Window and all agents who have been added to this team will be listed. Select the agent and type in the message that you want to consult with this agent. 
 
 <div align="center">
 
@@ -144,7 +144,6 @@ Click on Add Note to send the message. You can see a locked sign on the message 
 
 </div>  
 
-<!-- TODO how and where will the agent be able to see the private chat? -->
 ### Sending E-mails
 ### Transfering Agents
 

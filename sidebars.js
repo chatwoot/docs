@@ -128,34 +128,32 @@ module.exports = {
   UserGuide:
   [
     {"User Guide Info": 
-      [
-        "user-guide",
-        "user-guide/privacypolicy",
-        "user-guide/reviewanddistribution"
-      ]
+    [
+      "user-guide",
+    "user-guide/privacy-policy",
+    ]
     },
     {"Product Info": 
-      [
-        "user-guide/aboutchatwoot",
-        "user-guide/installationinstruction",
-        "user-guide/settingupagentdashboard",
-        "user-guide/profilesettings",
-        "user-guide/accountsettings",
-        "user-guide/addagentsettings",
-        "user-guide/addinboxsettings",
-        "user-guide/settingupchatwootwidget",
-        "user-guide/addteamssettings",
-        "user-guide/addlabelsettings",
-        "user-guide/cannedresponsesettings",
-      ],
-      
+    [
+      "user-guide/about-chatwoot",
+      "user-guide/installation-instruction",
+      "user-guide/setting-up-agent-dashboard",
+      "user-guide/profile-settings",
+      "user-guide/account-settings",
+      "user-guide/add-agent-settings",
+      "user-guide/add-inbox-settings",
+      "user-guide/setting-up-chatwootwidget",
+      "user-guide/add-teams-settings",
+      "user-guide/add-label-settings",
+      "user-guide/canned-response-settings",
+    ]
     },
     {'Conversations':[      
-      "user-guide/howconversationhappens",
+      "user-guide/conversation-workflow",
     ]},
     {"Other":[    
-      "user-guide/backupandrestore",
-      "user-guide/codeandpatchupdates",
+      "user-guide/backup-and-restore",
+      "user-guide/code-and-patch-updates",
       "user-guide/glossary"
     ]}
     ],

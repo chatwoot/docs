@@ -32,8 +32,7 @@ Below screen will open .
 |------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Team Name        | Assign a name for the team                                                    | eg: Sales, Support                                               |
 | Team Description | Give a short description about the team                                       | eg: Team to resolve queries related to sales of Hopkins products |
-| Check box        | Tick this box if you would like to auto assign the conversations in this team |                                                                  |
-<!-- TODO check out what is auto assign -->
+| Check box        | Tick this box if you would like to auto assign the conversations in this team |  If this is not ticked, the conversation will remain as unassigned.                                                                |
 
 Click on Create Team. Below screen opens up where you can add agents to a team. All the added agents will be notified when a conversation is assigned to this team.
 

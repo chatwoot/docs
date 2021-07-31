@@ -2,7 +2,7 @@
 title: "Add Inbox"
 ---
 
-An Inbox shows the connection of a website or a facebook page to Chatwoot. You can have unlimited inboxes in your Chatwoot account.
+An Inbox shows the connection of a website or a Facebook page to Chatwoot. You can have unlimited inboxes in your Chatwoot account.
 
 Inbox can be added to your account in 3 ways as below  
 <div align="center">
@@ -35,15 +35,15 @@ Click on Add Inbox Button on Top Right Hand Corner of the page
 
 </div> 
 
-Below Session opens, where Inbox can be added for various Channels. Eg: Website, Facebook, Twitter, Whatsapp, SMS, Email, API, Telegram and Line  
+Below Session opens, where Inbox can be added for various Channels. Eg: Website, Facebook, Twitter, Whatsapp, SMS, Email, API, Telegram, and Line  
 <div align="center">
 
 <img src={require('../../static/img/addinboxsettings5.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>   
 
-Here is an example of how to add Inbox for a Website.   
-Clck on Website Button
+Here is an example of how to add an Inbox for a Website.   
+Click on Website Button
 
 <div align="center">
 
@@ -59,15 +59,14 @@ Clck on Website Button
 | Welcome Heading          | Give a Greeting with which you  would like to address the customer   | eg: Welcome !                                                     |
 | Welcome Tagline          | Give a Tagline representing your  company                            | eg: Welcome to Hopkins !  We are at your service 24x7             |
 | Enable Channel Greeting  | Select Enabled or Disabled                                           | Enable to Send Greeting message when customer starts conversation |
-| Channel Greeting Message | Give a greeting with which you would  like to start the conversation | eg: Hi.How can we help you?                                       |
-<!-- TODO get the version names2 -->
-<!-- TODO what is enable channel greeting? -->
+| Channel Greeting Message | Give a greeting with which you would  like to start the conversation | eg: Hi. How can we help you?                                       |
+
 Click on Create Inbox
 
-Next session will open up to Assign Agents to the Inbox. Only if an Agent is associated with the Inbox, the conversations will be directed to the agent.
-Select the Agents from the drop down and click on Add agents.
+The Next session will open up to Assign Agents to the Inbox. Only if an Agent is associated with the Inbox, the conversations will be directed to the agent.
+Select the Agents from the drop-down and click on Add agents.
 
-Below screen will open. This screen has the code snippet which can be directly used to install the widget. 
+The below screen will open. This screen has the code snippet which can be directly used to install the widget. 
 
 <div align="center">
 
