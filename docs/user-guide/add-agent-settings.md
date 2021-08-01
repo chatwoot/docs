@@ -32,7 +32,7 @@ A window will Pop Open, where Agent Details can be entered.
 | Field Name           | Value                                    | Remarks                                                                                                                                             |
 |----------------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Agent Name           | Enter Name of the Agent                  | eg: Don Pete                                                                                                                                        |
-| Role                 | Enter the Role - Agent or  Administrator | Agents can only access inbox, reports and  conversations. Administrators have all privilages of agents  and have access to all features of Chatwoot |
+| Role                 | Enter the Role - Agent or  Administrator | Agents can only access inbox, reports, and  conversations. Administrators have all privilages of agents  and have access to all features of Chatwoot |
 | Your e-mail  address | Enter the e-mail id you  registered      |                                                                                                                                                     |  
 
 Click on Add Agent Button. "Agent Added Successfully" message will be displayed and the New Agent will be listed on the page.

@@ -20,7 +20,7 @@ Click on Teams and then on Create new team button on the Right Hand Side.
 
 </div>
 
-Below screen will open .
+Below screen will open.
 
 <div align="center">
 

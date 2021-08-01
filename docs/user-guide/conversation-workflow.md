@@ -144,6 +144,16 @@ Click on Add Note to send the message. You can see a locked sign on the message 
 
 </div>  
 
+The second agent to whom the private chat is addressed, will recieve a notification in his account.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens18.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+Replies sent by second agent will be visible in your private chat window. 
+
 ### Sending E-mails
 ### Transfering Agents
 
