@@ -47,7 +47,7 @@ foreman start -f Procfile.dev
 ```bash
 http://localhost:3000
 user name: john@acme.inc
-password: 123456
+password: Password1!
 ```
 
 ### Testing chat widget in your local environment 
