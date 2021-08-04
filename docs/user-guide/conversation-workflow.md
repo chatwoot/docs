@@ -154,8 +154,39 @@ The second agent to whom the private chat is addressed, will recieve a notificat
 
 Replies sent by second agent will be visible in your private chat window. 
 
-### Sending E-mails
-### Transfering Agents
+## Sending E-mails
+## Transfering Agents
+## Setting Reminders and Status 
+
+The status can be changed to 'Resolved' once the solution is conveyed to the customer.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens19.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+The options are given below  
+
+| Options                 | Actions                                                                                        |
+|-------------------------|------------------------------------------------------------------------------------------------|
+| Mark as Pending         | change the issue to Pending status                                                             |
+| Resolve                 | change the issue to Close status                                                               |
+| Reopen                  | change the issue to Open status                                                                |
+| Open                    | change the pending issue to Open status                                                        |
+| Snooze Until Next Reply | The issue will be set aside for now and status will change to open on next reply from customer |
+| Snooze Until Tomorrow   | The issue will be set aside for now and status will change to open on next day                 |
+| Snooze Until Next Week  | The issue will be set aside for now and status will change to open on next week                |  
+
+The Conversations can be selected and viewed as per their status on the Conversation section as below.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens20.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+
 
 
 
