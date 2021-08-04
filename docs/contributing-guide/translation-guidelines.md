@@ -13,7 +13,7 @@ In the codebase the string are placed in the following locations.
 - `app/javascript/widget/i18n` - The strings related to the web widget
 - `config/locales` - The strings used in backend messages or API response.
 
-Alternatively, you can login to the **Crowdin** ([https://translate.chatwoot.com](https://translate.chatwoot.com)) and create an account to view the strings that needs to be translated.
+You can login to the **Crowdin** ([https://translate.chatwoot.com](https://translate.chatwoot.com)) and create an account to view the strings that needs to be translated.
 
 ## How to contribute?
 
