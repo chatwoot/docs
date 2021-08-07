@@ -71,6 +71,10 @@ cd chatwoot
 # Pull the latest version of the master branch
 git checkout master && git pull
 
+# Ensure the ruby version is upto date
+rvm install "ruby-3.0.2"
+rvm use 3.0.2 --default
+
 # Update dependencies
 bundle
 yarn
@@ -84,6 +88,9 @@ RAILS_ENV=production bundle exec rake db:migrate
 # Copy the updated targets
 cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
+
+# Switch back to root user
+exit
 cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
 
 # Restart the chatwoot server
