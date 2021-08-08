@@ -47,7 +47,7 @@ The below window will open up for the Chatwoot Agent Dashboard.
 - [Add Teams](add-teams-settings.md)
 - [Add Labels](add-label-settings.md)
 - [Add Canned Responses](canned-response-settings.md)
-- Integrations
-- Applications
+- [Integrations](integrations.md)
+- [Applications](applications.md)
 
 

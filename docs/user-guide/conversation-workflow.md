@@ -153,9 +153,58 @@ The second agent to whom the private chat is addressed, will recieve a notificat
 </div>  
 
 Replies sent by second agent will be visible in your private chat window. 
+<!-- TODO need to add screen shot here -->
+## Delete Message
+There is an option to delete the message which you have already sent. Click on the 3 dots(...) beside the sent message.
+Option is available to copy or delete the message.
+Click on Delete. The message will be deleted.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens18a.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
 
 ## Sending E-mails
+
+Once the End user has provided their e-mail id through the conversation, Agent can send the chat conversation in email to the customer.
+The email ID will be listed against the name of the Customer in the details window. The email ID will be automatically added to the Contacts also.
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens18b.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
+
+Click on the 3 dots on the top right hand side of the screen. There is an option to send transcript. Click on it.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens18c.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
+
+A screen pops up with options as given below.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens18d.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
+
+An email can be send to agents in the team by selecting the first option. By selecting second option, and giving the email Id of the end user, the chat transcript can be send to the customer.
+
+<div align="center">
+
+<img src={require('../../static/img/howconversationhappens18e.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
+
+Click on Submit. A message will be displayed "The chat transcript was sent successfully". The End user will recieve the chat transcript in his email inbox.
+
+
 ## Transfering Agents
+<!-- TODO check with Nithin on ways to transfer agent other than assign agent-->
+
 ## Setting Reminders and Status 
 
 The status can be changed to 'Resolved' once the solution is conveyed to the customer.
@@ -170,10 +219,10 @@ The options are given below
 
 | Options                 | Actions                                                                                        |
 |-------------------------|------------------------------------------------------------------------------------------------|
-| Mark as Pending         | change the issue to Pending status                                                             |
-| Resolve                 | change the issue to Close status                                                               |
-| Reopen                  | change the issue to Open status                                                                |
-| Open                    | change the pending issue to Open status                                                        |
+| Mark as Pending         | Change the issue to Pending status                                                             |
+| Resolve                 | Change the issue to Close status                                                               |
+| Reopen                  | Change the issue to Open status                                                                |
+| Open                    | Change the pending issue to Open status                                                        |
 | Snooze Until Next Reply | The issue will be set aside for now and status will change to open on next reply from customer |
 | Snooze Until Tomorrow   | The issue will be set aside for now and status will change to open on next day                 |
 | Snooze Until Next Week  | The issue will be set aside for now and status will change to open on next week                |  
