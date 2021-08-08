@@ -59,7 +59,7 @@ Click on the drop-box below Assigned Team and select the team to which this conv
 
 ### Assign Labels
 
-Click on the drop-box below Conversation Labels and select the category to which this conversation belongs.  
+Click on Add Labels below Conversation Labels and select the category to which this conversation belongs.  
 
 <div align="center">
 

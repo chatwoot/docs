@@ -59,4 +59,5 @@ Once the Customer clicks on Start Conversation and sends a message, The conversa
  
 </div>  
 
+Since the Collect e-mail ID is enabled, the Customer recieves a prompt to enter email-ID.
 

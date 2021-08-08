@@ -17,8 +17,14 @@ OR
 
 <img src={require('../../static/img/addinboxsettings2.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>   
+Click on Inboxes
 
+<div align="center">
+
+<img src={require('../../static/img/addinboxsettings2a.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
 OR
 
 <div align="center">
@@ -84,6 +90,23 @@ Now, if you click on Inbox on the home screen, you can view the new Inbox create
 </div>  
 
 
+Click on Settings. Below Session will open up.
+
+<div align="center">
+
+<img src={require('../../static/img/addinboxsettings8a.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>   
+
+Do a scroll down to reach the below screen.
+
+<div align="center">
+
+<img src={require('../../static/img/addinboxsettings9.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
+
+Here, Enable email collect box is Enabled by default. This means an automatic message to collect the e-mail id will be displayed once the customer starts a conversation. Customer/End user will recieve a prompt to enter e-mail id.
 
 
 
