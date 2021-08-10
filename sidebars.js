@@ -42,6 +42,7 @@ module.exports = {
         "self-hosted/deployment/heroku",
         "self-hosted/deployment/caprover",
         "self-hosted/deployment/docker",
+        "self-hosted/deployment/helm-charts",
         "self-hosted/deployment/linux-vm",
         "self-hosted/deployment/clevercloud",
       ],
@@ -88,13 +89,13 @@ module.exports = {
         "product/channels/supported-features",
         "product/features/campaigns",
         "product/features/webhooks",
-      ] 
+      ]
     },
     { "Channels": [
         "product/channels/facebook",
         "product/channels/twitter",
         "product/channels/twilio-whatsapp-sms",
-      ] 
+      ]
     },
     {
       "Website Live Chat": [
