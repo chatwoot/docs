@@ -1,6 +1,7 @@
 ---
 title: "Conversation Workflow"
 ---
+
 The customer initiates a conversation from the website front end - through the widget.
 
 For example: Customer types in 'hi'
@@ -13,6 +14,28 @@ For example: Customer types in 'hi'
 
 Automated response set in[channel greeting message](add-inbox-settings.md) will immediately be displayed on the screen as a reply.
 In addition, two more automated messages will be sent by 'bot' to collect customer's information - email id - for further communication and record.
+
+### Campaigns
+
+If the customer does not initiate conversation and you have enabled [Campaign message](add-inbox-settings.md), the message will be displayed on the screen just above the widget to attract customer attention.  
+
+<div align="center">
+
+<img src={require('../../static/img/campaign4.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>
+
+
+### Pre Chat Forms
+
+If we have enabled [Pre Chat forms](add-inbox-settings.md) in Inbox, as soon as the customer clicks on chat widget, the message requesting for name and e-mail id will appear on screen as below.
+
+<div align="center">
+
+<img src={require('../../static/img/prechatform.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>
+
 
 Now let us look at how this message is captured in the Agent Dashboard.  
 
@@ -203,7 +226,8 @@ Click on Submit. A message will be displayed "The chat transcript was sent succe
 
 
 ## Transfering Agents
-<!-- TODO check with Nithin on ways to transfer agent other than assign agent-->
+
+You can transfer the ticket/issue to another agent by selecting a different agent from Assign Agent option. The whole conversation will be visible to the newly selected agent.
 
 ## Setting Reminders and Status 
 
@@ -234,6 +258,21 @@ The Conversations can be selected and viewed as per their status on the Conversa
 <img src={require('../../static/img/howconversationhappens20.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>  
+
+## CSAT 
+
+Once the ticket or conversation is marked as 'Resolved', if the [CSAT option ](add-inbox-settings.md) is enabled, the survey will be sent to customer in the widget as below
+
+<div align="center">
+
+<img src={require('../../static/img/csat1.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+The response from the customer can be viewed in CSAT section in Reports.
+
+
+
 
 
 
