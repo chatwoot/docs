@@ -5,6 +5,9 @@ title: "Deploy Chatwoot using Helm Charts"
 
 This guide will help you to deploy a production ready Chatwoot instance with Helm Charts.
 
+To quickly try out the charts, follow the two steps below. For a production deployment, please make sure to 
+pass in the required arguments to helm.  
+
 ```
 helm repo add chatwoot https://chatwoot.github.io/charts
 helm install chatwoot chatwoot/chatwoot
