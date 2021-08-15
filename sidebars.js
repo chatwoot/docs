@@ -128,6 +128,12 @@ module.exports = {
       ]
     },
     {
+      "Mobile App": [
+        "product/mobile-app/android",
+        "product/mobile-app/ios"
+      ],
+    },
+    {
       "Others": [
         "product/others/interactive-messages",
         "product/others/webhook-events",
