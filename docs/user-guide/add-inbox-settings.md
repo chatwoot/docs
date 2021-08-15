@@ -48,6 +48,7 @@ Below Session opens, where Inbox can be added for various Channels. Eg: Website,
 
 </div>   
 
+### Inbox for a Website
 Here is an example of how to add an Inbox for a Website.   
 Click on Website Button
 
