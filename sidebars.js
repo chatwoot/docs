@@ -63,6 +63,7 @@ module.exports = {
     {
       "Email Channel": [
         "self-hosted/configuration/features/email-channel/conversation-continuity",
+        "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
         "self-hosted/configuration/features/email-channel/setup",
       ],
     },
@@ -88,13 +89,13 @@ module.exports = {
         "product/channels/supported-features",
         "product/features/campaigns",
         "product/features/webhooks",
-      ] 
+      ]
     },
     { "Channels": [
         "product/channels/facebook",
         "product/channels/twitter",
         "product/channels/twilio-whatsapp-sms",
-      ] 
+      ]
     },
     {
       "Website Live Chat": [
