@@ -38,6 +38,7 @@ This guide will help you to use Chatwoot.
 
 - [Android](/docs/product/mobile-app/android)
 - [iOS](/docs/product/mobile-app/ios)
+
 ### Inboxes
 
 - [Routing](/docs/product/inbox/routing-conversations-round-robin)
