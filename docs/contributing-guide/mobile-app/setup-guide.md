@@ -3,12 +3,15 @@ sidebar_label: "Setup Guide"
 title: "Setup guide for mobile app"
 ---
 
-- [Running](#running)
+- [Installation and setup](#installation-and-setup)
   - [Prerequisites](#prerequisites)
   - [Environment Variables](#environment-variables)
-  - [Running](#running-1)
+  - [Setup firebase for push notification](#setup-firebase-for-push-notification)
+  - [Setup Sentry for error reporting](#setup-sentry-for-error-reporting) 
+- [Running](#running)
     - [iOS](#ios) - **Mac is required if you wish to develop for iOS.**
     - [Android](#android)
+- [Configure and run tests](#configure-and-run-tests)
 
 ## Installation and setup
 
@@ -16,12 +19,10 @@ title: "Setup guide for mobile app"
 
 - [Node.js](https://nodejs.org/en/download/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
-- [Install Yarn](https://yarnpkg.com/en/docs/install)
+- [Yarn](https://yarnpkg.com/en/docs/install)
 - React Native CLI - Use `$ yarn global add react-native-cli` to install the CLI.
 
-More information on getting started can be found here: https://facebook.github.io/react-native/docs/getting-started.html under the `React Native CLI Quickstart` tab.
-
-#### General
+More information on getting started can be found [here](https://reactnative.dev/docs/environment-setup)
 
 Clone the repository
 
@@ -31,13 +32,26 @@ And install dependencies
 
 `$ yarn`
 
-#### Setup firebase for push notification
+### Environment Variables
+
+Create `.env` file under root folder
+
+
+```
+SENTRY_DSN=
+CHATWOOT_WEBSITE_TOKEN=
+CHATWOOT_BASE_URL=
+POSTHOG_API_KEY=
+POSTHOG_API_HOST=
+MINIMUM_CHATWOOT_VERSION=1.15.0
+```
+### Setup firebase for push notification
 
 - Create a new project in [firebase console](https://console.firebase.google.com/).
 - Generate [android credentials](https://rnfirebase.io/#generating-android-credentials) from firebase console. Then download the `google-services.json` file and place it inside of your project at the following location: `android/app/`.
-- Generating [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from firebase console. Then download the `GoogleService-Info.plist` file . Then add this file to project using `Xcode`. More details can be found [here](https://rnfirebase.io/#3-ios-setup).
+- Generate [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from firebase console. Then download the `GoogleService-Info.plist` file . Then add this file to project using `Xcode`. More details can be found [here](https://rnfirebase.io/#3-ios-setup). 
 
-#### Setup Sentry for error reporting
+### Setup Sentry for error reporting
 
 Create a new project in [Sentry](https://sentry.io/for/react-native/)
 
@@ -50,6 +64,8 @@ yarn sentry-wizard -i reactNative -p ios android
 cd ios && pod install
 ```
 
+
+
 ## Running
 
 ### iOS
@@ -60,7 +76,7 @@ cd ios && pod install
 
 OR
 
-Open `Chatwoot.xcworkspace` file under `ios` folder. Choose your target device and click on playbutton.
+Open `Chatwoot.xcworkspace` file under `ios` folder. Choose your target device and click playbutton.
 
 ### Android
 
