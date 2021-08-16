@@ -34,6 +34,10 @@ This guide will help you to use Chatwoot.
 - [Receive messages](/docs/product/channels/api/receive-messages)
 - [Client APIs](/docs/product/channels/api/client-apis)
 
+### Mobile Apps
+
+- [Android](/docs/product/mobile-app/android)
+- [iOS](/docs/product/mobile-app/ios)
 ### Inboxes
 
 - [Routing](/docs/product/inbox/routing-conversations-round-robin)
