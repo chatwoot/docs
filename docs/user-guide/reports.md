@@ -109,4 +109,21 @@ The report will be downloaded in csv format. Example given below.
 
 ### CSAT
 
+Click on CSAT on the Reports Section.
+Customer Satisfaction survey which has been collected from the customers during the end of the conversation can be seen here.
+
+<div align="center">
+
+<img src={require('../../static/img/reports1.png').default} width="800" alt="Enable Developer Mode" />
+
+</div> 
+
+<div align="center">
+
+<img src={require('../../static/img/csat2.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>  
+
+You can view the reports as per the duration selected from the drop down.
+
 

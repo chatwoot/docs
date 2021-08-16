@@ -12,7 +12,7 @@ For example: Customer types in 'hi'
 
 </div>
 
-Automated response set in[channel greeting message](add-inbox-settings.md) will immediately be displayed on the screen as a reply.
+Automated response set in [channel greeting message](add-inbox-settings.md) will immediately be displayed on the screen as a reply.
 In addition, two more automated messages will be sent by 'bot' to collect customer's information - email id - for further communication and record.
 
 ### Campaigns
