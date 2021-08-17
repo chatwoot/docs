@@ -140,19 +140,28 @@ module.exports = {
     [
       "user-guide/about-chatwoot",
       "user-guide/installation-instruction",
-      "user-guide/setting-up-agent-dashboard",
-      "user-guide/profile-settings",
-      "user-guide/account-settings",
-      "user-guide/add-agent-settings",
-      "user-guide/add-inbox-settings",
-      "user-guide/add-teams-settings",
-      "user-guide/add-label-settings",
-      "user-guide/setting-up-chatwootwidget",
-      "user-guide/canned-response-settings",
-    ]
-    },
+    ]},
+    {'Settings':[      
+        "user-guide/setting-up-agent-dashboard",
+        "user-guide/profile-settings",
+        "user-guide/account-settings",
+        "user-guide/add-agent-settings",
+        "user-guide/add-inbox-settings",
+        "user-guide/setting-up-chatwootwidget",
+        "user-guide/add-teams-settings",
+        "user-guide/add-label-settings",
+        "user-guide/canned-response-settings",
+        "user-guide/integrations",
+        "user-guide/applications",
+     ]},
     {'Conversations':[      
       "user-guide/conversation-workflow",
+    ]},
+    {'Contacts':[      
+      "user-guide/contacts",
+    ]},
+    {'Reports':[      
+      "user-guide/reports",
     ]},
     {"Other":[    
       "user-guide/backup-and-restore",

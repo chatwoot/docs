@@ -2,7 +2,7 @@
 title: "Setting up Widget"
 ---
 
-Click on Inbox on the home Screen. The Inbox you have created will appear here.
+Click on Inbox on the home screen. The Inbox you have created will appear here.
 
 <div align="center">
 
@@ -26,7 +26,7 @@ Click on Configuration. The code snippet to be copied to the website will appear
 </div> 
 
  
-Click on Copy on the right hand side. The code will be copied to the clipboard. Paste it in the Root file of the Website code.  
+Click on Copy on the right-hand side. The code will be copied to the clipboard. Paste it in the Root file of the Website code.  
 An example is given below
 
 <div align="center">
@@ -59,4 +59,5 @@ Once the Customer clicks on Start Conversation and sends a message, The conversa
  
 </div>  
 
+Since the Collect e-mail ID is enabled, the Customer recieves a prompt to enter email-ID.
 
