@@ -133,7 +133,10 @@ module.exports = {
     "user-guide/privacy-policy",
     ]
     },
-    {"Product Info": 
+    {
+    type: 'category',
+    label: 'Product Info',
+    items: 
     [
       "user-guide/about-chatwoot",
       "user-guide/installation-instruction",
@@ -142,9 +145,9 @@ module.exports = {
       "user-guide/account-settings",
       "user-guide/add-agent-settings",
       "user-guide/add-inbox-settings",
-      "user-guide/setting-up-chatwootwidget",
       "user-guide/add-teams-settings",
       "user-guide/add-label-settings",
+      "user-guide/setting-up-chatwootwidget",
       "user-guide/canned-response-settings",
     ]
     },
