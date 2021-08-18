@@ -262,7 +262,7 @@ The Conversations can be selected and viewed as per their status on the Conversa
 
 ## CSAT 
 
-Once the ticket or conversation is marked as 'Resolved', if the [CSAT option ](add-inbox-settings.md) is enabled, the survey will be sent to customer in the widget as below
+Once the ticket or conversation is marked as 'Resolved', if the [CSAT option ](reports.md#csat) is enabled, the survey will be sent to customer in the widget as below
 
 <div align="center">
 
@@ -282,7 +282,7 @@ Once the conversation has been marked as resolved and CSAT has already been obta
 
 </div>  
 
-Click on the name below the Previous Conversation and the details of the past conversation opens up as below. This can be used as referance for the agent.
+Click on the name below the Previous Conversation and the details of the past conversation opens up as below. This can be used as reference for the agent.
 
 <div align="center">
 

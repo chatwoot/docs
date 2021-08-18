@@ -2,7 +2,7 @@
 title: "Integrations"
 ---
 
-Chatwoot is designed such that it can work alongside the project communication application that you are using in the project. For example Slack and Webhooks are already integrated in Chatwoot. 
+Chatwoot is designed such that it can work alongside the project communication application that you are using in the project. For example, Slack and Webhooks are already integrated in Chatwoot. 
 
 Click on Settings on home page and then on Integrations.  
 

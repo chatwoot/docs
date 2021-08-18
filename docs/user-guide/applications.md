@@ -38,6 +38,6 @@ The below screen pops open.
 
 | Field Name                  | Value                                                                                | Remarks                             |
 |-----------------------------|--------------------------------------------------------------------------------------|-------------------------------------|
-| Dialogflow Project ID       | Give a name for your project                                                         | eg: userdocumentid                  |
+| Dialogflow Project ID       | Give a name for your project                                                         |                   |
 | Dialogflow Project Key File | Give the key file name                                                               |                                     |
-| Select Inbox                | Select the inbox from the drop down list to which you want to associate this project | eg: select User Documentation Inbox |
+| Select Inbox                | Select the inbox from the drop down list to which you want to associate this project | eg: select 'User Documentation' Inbox |
