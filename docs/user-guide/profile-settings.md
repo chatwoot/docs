@@ -11,7 +11,7 @@ Click on 3 dots on the Left hand side corner of the screen. Next Click on Profil
 
 </div>  
 
-### Profile  
+### Profile Section  
 A new section will open up where user can enter Account Details
 
 <div align="center">
@@ -29,7 +29,7 @@ A new section will open up where user can enter Account Details
 
 Click on Update Profile. "Your profile has been updated successfully" message will be displayed. The details entered will be reflected on your profile.  
 
-### Password
+### Password Section  
 Next is the Password Section. User can change the current password by entering New password in this section.
 
 <div align="center">
@@ -40,7 +40,7 @@ Next is the Password Section. User can change the current password by entering N
 
 "Password must contain 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}\|"  
 
-### Audio Notifications
+### Audio Notifications Section
 In this section, the user can set Audio Notifications for the Chat conversations
 
 <div align="center">
@@ -52,7 +52,7 @@ In this section, the user can set Audio Notifications for the Chat conversations
 User can select None if you need not need Audio Notification.
 User can select notification only of Conversations assigned to you or for all Conversations happening.
 
-### Email Notifications
+### Email Notifications Section
 In this section, the user can set Email Notifications for the Chat conversations
 
 <div align="center">
@@ -72,7 +72,7 @@ User can do a multiple selections for the various choices provided which will he
 - Send email notifications when a new message is created in an assigned conversation : A conversation has been assigned to you and might have been inactive for a few days. As and when a new message is typed in the conversation window, you will recieve an email notification.
 
 
-### Push Notifications
+### Push Notifications Section
 In this section, the user can set Push Notificaions for the Chat conversations
 
 <div align="center">
@@ -92,7 +92,7 @@ User can do a multiple selections for the various choices provided which will he
 - Send push notifications when a new message is created in an assigned conversation : A conversation has been assigned to you and might have been inactive for a few days. As and when a new message is typed in the conversation window, you will recieve a notification.
 
 
-### Access Token
+### Access Token Section
 
 This section, will autogenerate a Token that can be used in API based Integration.
 
@@ -102,4 +102,4 @@ This section, will autogenerate a Token that can be used in API based Integratio
 
 </div>
 
-User can directly Copy the Token and paste it in the code
+User can directly Copy the Token and paste it in the code.

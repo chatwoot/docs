@@ -5,7 +5,7 @@ title: "Add Agent"
 An Agent is a member of your Customer Support team.  
 Agents will be able to view and reply to messages from your users. 
 
-Click on Settings on the Left Hand Side OR Click here to Invite Team Member to Add Agents
+Click on 'Settings' on the Left Hand Side OR 'Click here to Invite Team Member' to Add Agents
 
 <div align="center">
 
@@ -24,7 +24,7 @@ Click on Add Agent on the Top Right Hand Side.
 A window will Pop Open, where Agent Details can be entered.
 <div align="center">
 
-<img src={require('../../static/img/addagentsettings3.png').default} width="500" alt="Enable Developer Mode" />
+<img src={require('../../static/img/addagentsettings3.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>  
 
@@ -40,12 +40,12 @@ You can Edit the details of the agent or Delete the agent as per your need.
 
 <div align="center">
 
-<img src={require('../../static/img/addagentsettings4.png').default} width="500" alt="Enable Developer Mode" />
+<img src={require('../../static/img/addagentsettings4.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>  
 
 <div align="center">
 
-<img src={require('../../static/img/addagentsettings5.png').default} width="500" alt="Enable Developer Mode" />
+<img src={require('../../static/img/addagentsettings5.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>  

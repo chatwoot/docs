@@ -4,7 +4,7 @@ title: "Add Inbox"
 
 An Inbox shows the connection of a website or a Facebook page to Chatwoot. You can have unlimited inboxes in your Chatwoot account.
 
-Inbox can be added to your account in 3 ways as below  
+Inbox can be added to your account in 3 ways as below.    
 <div align="center">
 
 <img src={require('../../static/img/addinboxsettings1.png').default} width="800" alt="Enable Developer Mode" />
@@ -48,7 +48,7 @@ Below Session opens, where Inbox can be added for various Channels. Eg: Website,
 
 </div>   
 
-### Inbox for a Website
+## Inbox for a Website
 Here is an example of how to add an Inbox for a Website.   
 Click on Website Button
 
@@ -68,7 +68,7 @@ Click on Website Button
 | Enable Channel Greeting  | Select Enabled or Disabled                                           | Enable to Send Greeting message when customer starts conversation |
 | Channel Greeting Message | Give a greeting with which you would  like to start the conversation | eg: Hi. How can we help you?                                       |
 
-Click on Create Inbox
+Once all details are entered, click on Create Inbox Button.
 
 The Next session will open up to Assign Agents to the Inbox. Only if an Agent is associated with the Inbox, the conversations will be directed to the agent.
 Select the Agents from the drop-down and click on Add agents.
@@ -91,6 +91,7 @@ Now, if you click on Inbox on the home screen, you can view the new Inbox create
 </div>  
 
 
+## Additional Inbox Settings
 Click on Settings. Below Session will open up.
 
 <div align="center">
@@ -121,7 +122,7 @@ Click on Campaigns on the Inbox Settings.
 
 ### Collaborators
 
-Click on Collaborators. You can add or delets Agents in the Inbox in this section.
+Click on Collaborators. You can add or deletes Agents in the Inbox in this section.
 
 <div align="center">
 

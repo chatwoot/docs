@@ -21,7 +21,4 @@ CHATWOOT/UM/20210712/01
 Version xxx.xx
 ### App version
 Version xyz.xx
-### Document Revisions
-| Date        | Version # | Changes       |
-|-------------|-----------|---------------|
-| 12-Jul-2021 | 0.1       | Initial Draft |
+

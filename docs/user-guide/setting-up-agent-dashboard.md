@@ -4,14 +4,14 @@ title: "Setting up Agent Dashboard"
 
 ## Registration 
 Open www.chatwoot.com 
-Click on Create an account  
+Click on Create an account.  
 <div align="center">
 
 <img src={require('../../static/img/createanaccount.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
-The Below window will Pop open  
+The Below window will Pop open.  
 <div align="center">
 
 <img src={require('../../static/img/registeranaccount.png').default} width="500" alt="Enable Developer Mode" />
@@ -37,7 +37,9 @@ The below window will open up for the Chatwoot Agent Dashboard.
 
 
 
-## Initial Settings
+## Initial Settings  
+
+Below steps are to followed as listed to complete Initial Setup of Chatwoot Dashboard.
 
 - [Profile Settings](profile-settings.md)
 - [Account Setting](account-settings.md)
