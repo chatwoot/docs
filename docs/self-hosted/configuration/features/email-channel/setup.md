@@ -32,4 +32,4 @@ You can send out emails only from a verified email address in SendGrid. For send
 
 #### Testing On Local
 
-You can visit http://localhost:3000/rails/conductor/action_mailbox/inbound_emails/new to send inbound mails from local to chatwoot inbox.
+You can visit `http://localhost:3000/rails/conductor/action_mailbox/inbound_emails/new` to send inbound mails from local to chatwoot inbox.
