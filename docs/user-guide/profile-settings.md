@@ -38,7 +38,7 @@ Next is the Password Section. User can change the current password by entering N
 
 </div>  
 
-"Password must contain 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}\|"  
+"Password must contain at least 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}|')  
 
 ### Audio Notifications Section
 In this section, the user can set Audio Notifications for the Chat conversations
@@ -102,4 +102,4 @@ This section, will autogenerate a Token that can be used in API based Integratio
 
 </div>
 
-User can directly Copy the Token and paste it in the code.
+User can directly Copy the Token and paste it in the [code](https://www.chatwoot.com/developers/api/).
