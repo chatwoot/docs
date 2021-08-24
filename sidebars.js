@@ -59,6 +59,7 @@ module.exports = {
     {
       Monitoring: [
         "self-hosted/monitoring/super-admin-sidekiq",
+        "self-hosted/monitoring/apm-and-error-monitoring"
       ],
     },
     {
