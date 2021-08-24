@@ -32,9 +32,9 @@ Enable Newrelic by configuring the license key. Refer [newrelic documentation](h
 
 ## [DataDog](https://www.datadoghq.com/)
 
-Datadog requires an agent running on the host machine to which the tracing library can send data to. Chatwoot ruby code contains the tracing library, but you need to configure the agent in your host machine / docker environment for the integration to work.
+Datadog requires an agent running on the host machine to which the tracing library can send data. Chatwoot ruby code contains the tracing library, but you need to configure the agent in your host machine/docker environment for the integration to work.
 
-Enable datadog in chatwoot by configuring the `trace agent url`.
+Enable Datadog in chatwoot by configuring the `trace agent url`.
 
 ```bash
 ## https://github.com/DataDog/dd-trace-rb/blob/master/docs/GettingStarted.md#environment-variables
@@ -44,7 +44,7 @@ Enable datadog in chatwoot by configuring the `trace agent url`.
 ### Running Datadog agent in local via docker
 ```
 # to run in your local machine binding to port 8126
-# replace <dd api key> and dd_site as required
+# replace <dd API key> and dd_site as required
 
 docker run -d --name dd-agent -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc/:/host/proc/:ro -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro -p 8126:8126  -e DD_API_KEY=<dd api key> -e DD_SITE="datadoghq.com" gcr.io/datadoghq/agent:7
 ```
