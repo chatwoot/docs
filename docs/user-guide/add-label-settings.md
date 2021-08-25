@@ -9,23 +9,23 @@ Click on Settings on Chatwoot home screen.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
 Click on Labels and then Add Label button on the Right hand side.
 <div align="center">
 
-<img src={require('../../static/img/addlabelssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addlabelssettings1.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
 Screen opens up where you can design your own labels.
 <div align="center">
 
-<img src={require('../../static/img/addlabelssettings2.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addlabelssettings2.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>
 
 | Field Name             | Value                                                                    | Remarks                                                                                  |
 |------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
@@ -38,9 +38,8 @@ Click on Create.
 Label added successfully message will be displayed. New Label has been created. You can create as many Labels as you need. Labels can be used across teams.
 <div align="center">
 
-<img src={require('../../static/img/addlabelssettings3.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addlabelssettings3.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>
 
 You can edit or delete the Label as per your need.
-

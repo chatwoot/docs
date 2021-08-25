@@ -2,19 +2,19 @@
 title: "Setting up Agent Dashboard"
 ---
 
-## Registration 
-Open www.chatwoot.com 
-Click on Create an account.  
+## Registration
+Open www.chatwoot.com
+Click on Create an account.
 <div align="center">
 
-<img src={require('../../static/img/createanaccount.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/createanaccount.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
-The Below window will Pop open.  
+The Below window will Pop open.
 <div align="center">
 
-<img src={require('../../static/img/registeranaccount.png').default} width="500" alt="Enable Developer Mode" />
+<img src={require('./images/registeranaccount.png').default} width="500" alt="Enable Developer Mode" />
 
 </div>
 
@@ -28,16 +28,16 @@ The Below window will Pop open.
 
 User will recieve an e-mail with subject 'Confirmation Instructions' in the registered e-mail address. Click on 'Confirm my account'.
 
-The below window will open up for the Chatwoot Agent Dashboard.  
+The below window will open up for the Chatwoot Agent Dashboard.
 <div align="center">
 
-<img src={require('../../static/img/afterregisteration.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/afterregisteration.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
 
 
-## Initial Settings  
+## Initial Settings
 
 Below steps are to followed as listed to complete Initial Setup of Chatwoot Dashboard.
 
@@ -51,5 +51,3 @@ Below steps are to followed as listed to complete Initial Setup of Chatwoot Dash
 - [Add Canned Responses](canned-response-settings.md)
 - [Integrations](integrations.md)
 - [Applications](applications.md)
-
-

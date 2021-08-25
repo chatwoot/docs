@@ -6,7 +6,7 @@ Click on Settings on Chatwoot home screen.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
@@ -15,9 +15,9 @@ Click on Account Settings. The below screen will open up. Fill in the details of
 
 <div align="center">
 
-<img src={require('../../static/img/accountsettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/accountsettings1.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>
 
 
 | Field Name                                                                 | Value                                                                                       | Remarks                                                                                                         |
