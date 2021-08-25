@@ -15,7 +15,7 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**
 1. Create a **setup.sh** file and copy the content from the above link or use the following commands.
 
 ```bash
-wget https://raw.githubusercontent.com/chatwoot/chatwoot/develop/deployment/setup_20.04.sh -O setup.sh
+wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
 chmod 755 setup.sh
 ./setup.sh master
 ```
@@ -71,6 +71,10 @@ cd chatwoot
 # Pull the latest version of the master branch
 git checkout master && git pull
 
+# Ensure the ruby version is upto date
+rvm install "ruby-3.0.2"
+rvm use 3.0.2 --default
+
 # Update dependencies
 bundle
 yarn
@@ -84,6 +88,9 @@ RAILS_ENV=production bundle exec rake db:migrate
 # Copy the updated targets
 cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
+
+# Switch back to root user
+exit
 cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
 
 # Restart the chatwoot server

@@ -24,6 +24,7 @@ module.exports = {
         href: "https://www.chatwoot.com",
         alt: 'Chatwoot',
         src: 'img/logo.png',
+        srcDark: 'img/logo-white.png', // Default to `logo.src`.
         target: '_self',
       },
       items: [

@@ -55,6 +55,15 @@ SMTP_USERNAME=
 SMTP_PASSWORD=
 ```
 
+#### Amazon SES
+```bash
+SMTP_ADDRESS=email-smtp.<region>.amazonaws.com
+SMTP_AUTHENTICATION=plain
+SMTP_ENABLE_STARTTLS_AUTO=true
+SMTP_USERNAME=<Your SMTP username>
+SMTP_PASSWORD=<Your SMTP password>
+```
+
 #### SendGrid
 ```bash
 SMTP_ADDRESS=smtp.sendgrid.net

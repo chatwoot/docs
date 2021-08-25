@@ -42,6 +42,7 @@ module.exports = {
         "self-hosted/deployment/heroku",
         "self-hosted/deployment/caprover",
         "self-hosted/deployment/docker",
+        "self-hosted/deployment/helm-charts",
         "self-hosted/deployment/linux-vm",
         "self-hosted/deployment/clevercloud",
       ],
@@ -58,11 +59,13 @@ module.exports = {
     {
       Monitoring: [
         "self-hosted/monitoring/super-admin-sidekiq",
+        "self-hosted/monitoring/apm-and-error-monitoring"
       ],
     },
     {
       "Email Channel": [
         "self-hosted/configuration/features/email-channel/conversation-continuity",
+        "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
         "self-hosted/configuration/features/email-channel/setup",
       ],
     },
@@ -80,9 +83,22 @@ module.exports = {
         "self-hosted/deployment/storage/gcs-bucket",
       ],
     },
+    { Others: ["self-hosted/telemetry"] },
   ],
   product: [
-    { "Getting Started": ["product"] },
+    { "Getting Started": [
+        "product",
+        "product/channels/supported-features",
+        "product/features/campaigns",
+        "product/features/webhooks",
+      ]
+    },
+    { "Channels": [
+        "product/channels/facebook",
+        "product/channels/twitter",
+        "product/channels/twilio-whatsapp-sms",
+      ]
+    },
     {
       "Website Live Chat": [
         "product/channels/live-chat/create-website-channel",
@@ -115,13 +131,16 @@ module.exports = {
       ]
     },
     {
-      Others: [
-        "product/channels/facebook",
-        "product/channels/twitter",
-        "product/channels/twilio-whatsapp-sms",
-        "product/channels/supported-features",
-        "product/features/webhooks",
-        "product/features/campaigns",
+      "Mobile App": [
+        "product/mobile-app/android",
+        "product/mobile-app/ios"
+      ],
+    },
+    {
+      "Others": [
+        "product/others/interactive-messages",
+        "product/others/webhook-events",
+        "product/others/websocket-events"
       ],
     },
   ],
