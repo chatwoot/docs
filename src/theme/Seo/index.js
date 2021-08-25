@@ -17,7 +17,7 @@
    image,
  }){
    const metaTitle = useTitleFormatter(title);
-   const metaImageUrl = `https://ondemand.bannerbear.com/taggedurl/40p1rqg8Wyrdva3NJz/image.jpg?modifications=[title---text~~${title}]`;
+   const metaImageUrl = title ? `https://ondemand.bannerbear.com/taggedurl/40p1rqg8Wyrdva3NJz/image.jpg?modifications=[title---text~~${title}]`: '';
    return (
      <Head>
        {title && <title>{metaTitle}</title>}
@@ -32,9 +32,9 @@
            }
          />
        )}
-       {image && <meta property="og:image" content={metaImageUrl} />}
-       {image && <meta name="twitter:image" content={metaImageUrl} />}
-       {image && <meta name="twitter:card" content="summary_large_image" />}
+       {metaImageUrl && <meta property="og:image" content={metaImageUrl} />}
+       {metaImageUrl && <meta name="twitter:image" content={metaImageUrl} />}
+       {metaImageUrl && <meta name="twitter:card" content="summary_large_image" />}
      </Head>
    );
  }
