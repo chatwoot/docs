@@ -27,7 +27,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 
 ### Monitoring
 
-- [Super Admin Console & Sidekiq](docs/self-hosted/monitoring/super-admin-sidekiq)
+- [Super Admin Console & Sidekiq](/docs/self-hosted/monitoring/super-admin-sidekiq)
 - [APM and Tracing](/docs/self-hosted/monitoring/apm-and-error-monitoring)
 - [Rate Limiting](/docs/self-hosted/monitoring/rate-limiting)
 
