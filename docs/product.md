@@ -22,10 +22,12 @@ This guide will help you to use Chatwoot.
 
 ### Live Chat Integrations
 
+- [Dialogflow](/docs/product/channels/live-chat/integrations/dialogflow)
 - [Webflow Integration](/docs/product/channels/live-chat/webflow-integration)
 - [Docusaurus Integration](/docs/product/channels/live-chat/integrations/docusaurus)
 - [Google Tag Manger](/docs/product/channels/live-chat/integrations/google-tag-manager)
 - [React Native Integration](/docs/product/channels/live-chat/integrations/react-native-widget)
+- [Next.js](/docs/product/channels/live-chat/integrations/nextjs)
 
 ### API Channel
 
@@ -34,16 +36,16 @@ This guide will help you to use Chatwoot.
 - [Receive messages](/docs/product/channels/api/receive-messages)
 - [Client APIs](/docs/product/channels/api/client-apis)
 
-### Mobile Apps
-
-- [Android](/docs/product/mobile-app/android)
-- [iOS](/docs/product/mobile-app/ios)
-
 ### Inboxes
 
 - [Routing](/docs/product/inbox/routing-conversations-round-robin)
 
+### Mobile Apps
+
+- [Android](/docs/product/mobile-app/android)
+- [iOS](/docs/product/mobile-app/ios)
 ### Others
 - [Interactive Messages](/docs/product/others/interactive-messages) 
 - [Webhook Events](/docs/product/others/webhook-events)
 - [Websocket Events](/docs/product/others/websocket-events)
+- [Cookies](/docs/product/others/cookies)
