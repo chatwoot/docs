@@ -25,9 +25,16 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Email templates](/docs/self-hosted/configuration/email-notifications)
 - [Enable IP Logging](/docs/self-hosted/configuration/enable-ip-logging)
 
+### Monitoring
+
+- [Super Admin Console & Sidekiq](/docs/self-hosted/monitoring/super-admin-sidekiq)
+- [APM and Tracing](/docs/self-hosted/monitoring/apm-and-error-monitoring)
+- [Rate Limiting](/docs/self-hosted/monitoring/rate-limiting)
+
 ### Email Channel Setup
 
 - [Enable conversation continuity](/docs/self-hosted/configuration/features/email-channel/conversation-continuity)
+- [Conversation continuity using SendGrid](/docs/self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid)
 - [Channel configuration](/docs/self-hosted/configuration/features/email-channel/setup)
 
 ### Integrations
