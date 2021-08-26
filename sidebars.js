@@ -59,7 +59,8 @@ module.exports = {
     {
       Monitoring: [
         "self-hosted/monitoring/super-admin-sidekiq",
-        "self-hosted/monitoring/apm-and-error-monitoring"
+        "self-hosted/monitoring/apm-and-error-monitoring",
+        "self-hosted/monitoring/rate-limiting",
       ],
     },
     {
