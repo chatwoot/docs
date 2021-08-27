@@ -3,7 +3,7 @@ title: "Setting up Agent Dashboard"
 ---
 
 ## Registration
-Open www.chatwoot.com
+Open www.chatwoot.com and 
 Click on Create an account.
 <div align="center">
 
