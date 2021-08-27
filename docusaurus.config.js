@@ -17,7 +17,6 @@ module.exports = {
       baseURL: "https://staging.chatwoot.com",  // optional
       enableInDevelopment: true,  // optional
     },
-    sidebarCollapsible: false,
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
@@ -80,9 +79,11 @@ module.exports = {
       {
         docs: {
           routeBasePath: '/',
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/chatwoot/docs/edit/main/',
+          editUrl: 'https://github.com/chatwoot/docs/edit/main/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,

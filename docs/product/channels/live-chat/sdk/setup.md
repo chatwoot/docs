@@ -76,10 +76,11 @@ window.$chatwoot.setUser('<unique-identifier-key-of-the-user>', {
   email: '<email-address-of-the-user@your-domain.com>',
   name: '<name-of-the-user>',
   avatar_url: '<avatar-url-of-the-user>',
+  phone_number: '<phone-number-of-the-user>',
 });
 ```
 
-`setUser` accepts an identifier which can be a `user_id` in your database or any unique parameter which represents a user. You can pass email, name, avatar_url as params. Support for additional parameters is in progress.
+`setUser` accepts an identifier which can be a `user_id` in your database or any unique parameter which represents a user. You can pass email, name, avatar_url, phone_number as params. Support for additional parameters is in progress.
 
 Make sure that you reset the session when the user logs out of your app.
 
@@ -92,7 +93,8 @@ window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
   name: '', // Name of the user
   avatar_url: '', // Avatar URL
   email: '', // Email of the user
-  identifier_hash: '' // Identifier Hash generated based on the webwidget hmac_token
+  identifier_hash: '', // Identifier Hash generated based on the webwidget hmac_token
+  phone_number: '', // Phone Number of the user
 })
 ```
 

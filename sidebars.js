@@ -59,7 +59,8 @@ module.exports = {
     {
       Monitoring: [
         "self-hosted/monitoring/super-admin-sidekiq",
-        "self-hosted/monitoring/apm-and-error-monitoring"
+        "self-hosted/monitoring/apm-and-error-monitoring",
+        "self-hosted/monitoring/rate-limiting"
       ],
     },
     {
@@ -140,7 +141,8 @@ module.exports = {
       "Others": [
         "product/others/interactive-messages",
         "product/others/webhook-events",
-        "product/others/websocket-events"
+        "product/others/websocket-events",
+        "product/others/cookies"
       ],
     },
   ],
