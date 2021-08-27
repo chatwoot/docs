@@ -9,7 +9,7 @@ title: "Requirements"
 | Mozilla Firefox | 52 |
 | Google Chrome   | 57 |
 | Chromium        | 57 |
-| Apple Safari    | Latest Version |
+| Apple Safari    | 14.1 |
 | Microsoft Edge  | Latest Version |  
 
 
