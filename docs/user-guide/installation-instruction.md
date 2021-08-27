@@ -6,7 +6,7 @@ title: "Requirements"
 
 | Category        | Supported      |
 |-----------------|----------------|
-| Mozilla Firefox | Latest Version |
+| Mozilla Firefox | 52 |
 | Google Chrome   | Latest Version |
 | Chromium        | Latest Version |
 | Apple Safari    | Latest Version |
