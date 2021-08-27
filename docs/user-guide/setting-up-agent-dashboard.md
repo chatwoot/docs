@@ -11,7 +11,7 @@ Click on Create an account button.
 
 </div>
 
-The Below window will Pop open.
+Once clicked it will navigate you to the signup page.
 <div align="center">
 
 <img src={require('./images/registeranaccount.png').default} width="500" alt="Enable Developer Mode" />
