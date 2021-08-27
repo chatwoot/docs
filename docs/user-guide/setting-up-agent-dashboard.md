@@ -26,7 +26,7 @@ Once clicked it will navigate you to the signup page.
 | Password         | Enter password for your account | Password must contain at least 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}\|') |
 | Confirm Password | Re-enter the password           | Password must contain at least 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(!@#$%^&*()_+-=[]{}\|') |
 
-User will recieve an e-mail with subject 'Confirmation Instructions' in the registered e-mail address. Click on 'Confirm my account'.
+After signing up you will receive an e-mail with subject 'Confirmation Instructions' in the registered e-mail address from Chatwoot. Click on 'Confirm my account'.
 
 The below window will open up for the Chatwoot Agent Dashboard.
 <div align="center">
