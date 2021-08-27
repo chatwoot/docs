@@ -12,7 +12,7 @@ Click on 3 dots on the Left hand side corner of the screen. Next Click on Profil
 </div>
 
 ### Profile Section
-A new section will open up where user can enter Account Details
+Once you are on the profile settings page you can change your avatar, name password and other details. The updated profile picture will be shown on the dashboard and also on the live widget in the available agents section.
 
 <div align="center">
 
