@@ -10,7 +10,7 @@ title: "Requirements"
 | Google Chrome   | 57 |
 | Chromium        | 57 |
 | Apple Safari    | 14.1 |
-| Microsoft Edge  | Latest Version |  
+| Microsoft Edge  | 16 |  
 
 
 ### Mobile: Compatability and Requirements 
