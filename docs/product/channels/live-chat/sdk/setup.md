@@ -76,7 +76,7 @@ window.$chatwoot.setUser('<unique-identifier-key-of-the-user>', {
   email: '<email-address-of-the-user@your-domain.com>',
   name: '<name-of-the-user>',
   avatar_url: '<avatar-url-of-the-user>',
-  phone_number:: '<phone-number-of-the-user>',
+  phone_number: '<phone-number-of-the-user>',
 });
 ```
 
