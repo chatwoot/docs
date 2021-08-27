@@ -7,7 +7,7 @@ title: "Requirements"
 | Category        | Supported      |
 |-----------------|----------------|
 | Mozilla Firefox | 52 |
-| Google Chrome   | Latest Version |
+| Google Chrome   | 57 |
 | Chromium        | Latest Version |
 | Apple Safari    | Latest Version |
 | Microsoft Edge  | Latest Version |  
