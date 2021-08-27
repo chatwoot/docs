@@ -39,7 +39,7 @@ After confirming your email address you will be redirected to Chatwoot Agent Das
 
 ## Initial Settings
 
-Below steps are to followed as listed to complete Initial Setup of Chatwoot Dashboard.
+Below are the steps to be followed as listed to complete the Initial Setup of Chatwoot Dashboard.
 
 - [Profile Settings](profile-settings.md)
 - [Account Setting](account-settings.md)
