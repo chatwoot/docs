@@ -4,7 +4,7 @@ title: "Setting up Agent Dashboard"
 
 ## Registration
 Open www.chatwoot.com and 
-Click on Create an account.
+Click on Create an account button.
 <div align="center">
 
 <img src={require('./images/createanaccount.png').default} width="800" alt="Enable Developer Mode" />
