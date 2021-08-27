@@ -28,7 +28,7 @@ Once clicked it will navigate you to the signup page.
 
 After signing up you will receive an e-mail with subject 'Confirmation Instructions' in the registered e-mail address from Chatwoot. Click on 'Confirm my account'.
 
-The below window will open up for the Chatwoot Agent Dashboard.
+After confirming your email address you will be redirected to Chatwoot Agent Dashboard.
 <div align="center">
 
 <img src={require('./images/afterregisteration.png').default} width="800" alt="Enable Developer Mode" />
