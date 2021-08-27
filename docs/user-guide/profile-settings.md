@@ -2,7 +2,7 @@
 title: "Profile Settings"
 ---
 
-User can set Profile details by following the below steps.
+You can update your profile details from profile settings page. Navigate to profile settings by clicking on 3 dots on the bottom left corner of the screen. On the menu that opens up choose profile settings.
 Click on 3 dots on the Left hand side corner of the screen. Next Click on Profile Settings.
 
 <div align="center">
