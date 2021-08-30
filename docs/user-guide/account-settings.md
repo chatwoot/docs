@@ -2,7 +2,7 @@
 title: "Account Settings"
 ---
 
-Click on Settings on Chatwoot home screen.
+First, we are going to set up the details of the account for your use. Click on Settings on Chatwoot home screen.
 
 <div align="center">
 
