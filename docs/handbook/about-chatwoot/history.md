@@ -27,6 +27,6 @@ There was a lot of feedback, and features requests post HN launch. The team deci
 
 Following the interest and the opportunity to build a business around the project, **Chatwoot Inc** was officially incorporated in Delaware, USA.
 
-### 2021: YCombinator
+### 2021: YCombinator & Seed fundraise
 
-During the end of 2020, the team decided to apply to [YCombinator](https://www.ycombinator.com/) and was accepted. The team went through the all remote W21 batch from January to March 2021.
+During the end of 2020, the team decided to apply to [YCombinator](https://www.ycombinator.com/) and was accepted. The team went through the all remote W21 batch from January to March 2021. After graduating from YC, we raised a $1.6M seed round from [Goat Capital](https://goat.vc), [Uncorrelated Ventures](https://uncorrelated.com/).

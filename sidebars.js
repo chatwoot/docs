@@ -5,6 +5,7 @@ module.exports = {
       label: "Company",
       items: [
         "handbook/about-chatwoot/history",
+        "handbook/about-chatwoot/investors",
       ],
     },
     {
