@@ -16,8 +16,8 @@ You can generate HMAC in different languages as shown below.
 ```php
 <?php
 
-$key = 'webwidget.hmac_token';
-$message = 'identifier';
+$key = '<webwidget-hmac-token>';
+$message = '<identifier>';
 
 $identifier_hash = hash_hmac('sha256', $message, $key);
 ?>
@@ -28,8 +28,8 @@ $identifier_hash = hash_hmac('sha256', $message, $key);
 ```js
 const crypto = require('crypto');
 
-const key = 'webwidget.hmac_token';
-const message = 'identifier';
+const key = '<webwidget-hmac-token>';
+const message = '<identifier>';
 
 const hash = crypto.createHmac('sha256', key).update(message).digest('hex');
 ```
@@ -40,8 +40,8 @@ const hash = crypto.createHmac('sha256', key).update(message).digest('hex');
 require 'openssl'
 require 'base64'
 
-key = 'webwidget.hmac_token'
-message = 'identifier'
+key = '<webwidget-hmac-token>'
+message = '<identifier>'
 
 OpenSSL::HMAC.hexdigest('sha256', key, message)
 ```
@@ -49,8 +49,8 @@ OpenSSL::HMAC.hexdigest('sha256', key, message)
 ### Elixir
 
 ```elixir
-key = 'webwidget.hmac_token'
-message = 'identifier'
+key = '<webwidget-hmac-token>'
+message = '<identifier>'
 
 signature = :crypto.hmac(:sha256, key, message)
 
@@ -70,8 +70,8 @@ import (
 )
 
 func main() {
-  secret := []byte("webwidget.hmac_token")
-  message := []byte("identifier")
+  secret := []byte("<webwidget-hmac-token>")
+  message := []byte("<identifier>")
 
   hash := hmac.New(sha256.New, secret)
   hash.Write(message)
@@ -86,8 +86,8 @@ import hashlib
 import hmac
 import base64
 
-secret = bytes('webwidget.hmac_token', 'utf-8')
-message = bytes('identifier', 'utf-8')
+secret = bytes('<webwidget-hmac-token>', 'utf-8')
+message = bytes('<identifier>', 'utf-8')
 
 hash = hmac.new(secret, message, hashlib.sha256)
 hash.hexdigest()

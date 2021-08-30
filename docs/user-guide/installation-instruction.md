@@ -6,11 +6,11 @@ title: "Requirements"
 
 | Category        | Supported      |
 |-----------------|----------------|
-| Mozilla Firefox | Latest Version |
-| Google Chrome   | Latest Version |
-| Chromium        | Latest Version |
-| Apple Safari    | Latest Version |
-| Microsoft Edge  | Latest Version |  
+| Mozilla Firefox | 52 |
+| Google Chrome   | 57 |
+| Chromium        | 57 |
+| Apple Safari    | 14.1 |
+| Microsoft Edge  | 16 |  
 
 
 ### Mobile: Compatability and Requirements 

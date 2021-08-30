@@ -5,6 +5,17 @@ title: "Project Setup"
 
 This guide will help you to setup and run Chatwoot in development mode. Please make sure you have completed the environment setup.
 
+### Clone the repo
+
+```bash
+# change location to the path you want chatwoot to be installed
+cd ~
+
+# clone the repo and cd to chatwoot dir
+git clone https://github.com/chatwoot/chatwoot.git
+cd chatwoot
+```
+
 ### Install Ruby dependencies
 
 Use the following command to install ruby dependencies.
@@ -47,7 +58,7 @@ foreman start -f Procfile.dev
 ```bash
 http://localhost:3000
 user name: john@acme.inc
-password: 123456
+password: Password1!
 ```
 
 ### Testing chat widget in your local environment 
@@ -65,6 +76,8 @@ http://localhost:3000/widget_tests?setUser=true
 ```
 
 ### Docker for development
+
+> **Note**: Follow this section only if you are trying to setup Chatwoot via docker. Else skip this.
 
 The first time you start your development environment run the following two commands:
 

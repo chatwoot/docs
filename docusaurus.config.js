@@ -17,22 +17,22 @@ module.exports = {
       baseURL: "https://staging.chatwoot.com",  // optional
       enableInDevelopment: true,  // optional
     },
-    sidebarCollapsible: false,
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
         href: "https://www.chatwoot.com",
         alt: 'Chatwoot',
         src: 'img/logo.png',
+        srcDark: 'img/logo-white.png', // Default to `logo.src`.
         target: '_self',
       },
       items: [
-/*{
+        {
           to: 'self-hosted',
           activeBasePath: 'self-hosted',
           label: 'Self Hosted',
           position: 'right',
-        },*/
+        },
         {
           to: 'product',
           activeBasePath: 'product',
@@ -79,9 +79,11 @@ module.exports = {
       {
         docs: {
           routeBasePath: '/',
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/chatwoot/docs/edit/main/',
+          editUrl: 'https://github.com/chatwoot/docs/edit/main/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,

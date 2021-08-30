@@ -8,32 +8,32 @@ In this section, Chatwoot has Dialogflow application already collaborated. This 
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
-
-<div align="center">
-
-<img src={require('../../static/img/applications1.png').default} width="800" alt="Enable Developer Mode" />
-
-</div>   
-
-Click on Configure button against Dialogflow. The below window opens up.  
+</div>
 
 <div align="center">
 
-<img src={require('../../static/img/applications2.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/applications1.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>   
+</div>
 
-Click on add a new hook button on the right hand top side of the screen.  
-The below screen pops open.  
+Click on Configure button against Dialogflow. The below window opens up.
 
 <div align="center">
 
-<img src={require('../../static/img/applications3.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/applications2.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>   
+</div>
+
+Click on add a new hook button on the right hand top side of the screen.
+The below screen pops open.
+
+<div align="center">
+
+<img src={require('./images/applications3.png').default} width="800" alt="Enable Developer Mode" />
+
+</div>
 
 
 | Field Name                  | Value                                                                                | Remarks                             |

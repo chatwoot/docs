@@ -103,6 +103,10 @@ html[data-theme="light"] .navbar__title {
   font-size: var(--ifm-navbar-link-font-size);
 }
 
+.menu__link--sublist::after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+}
+
 html[data-theme="light"] .navbar__link {
   color: var(--ifm-navbar-link-color);
 }

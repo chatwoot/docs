@@ -16,7 +16,7 @@ Webhooks are HTTP callbacks which can be defined for every account. They are tri
 
 ![add-a-webhook](./images/add-a-webhook.png)
 
-Chatwoot currently supports webhooks for message creation only. Once a new message is created in the any of the inboxes of the account, it will send a POST request with the following payload to the configured URLs.
+Chatwoot will send a POST request with the following payload to the configured URLs for various updates happening in your account.
 
 ### A sample webhook payload
 
@@ -61,69 +61,4 @@ Chatwoot currently supports webhooks for message creation only. Once a new messa
 }
 ```
 
-### Content Attributes
-
-#### 1. Options
-
-```json
-{
-  "items": [
-    {
-      "title": "Option 1",
-      "value": "option_1"
-    },
-    {
-      "title": "Option 2",
-      "value": "option_2"
-    }
-  ],
-  "submitted_values": [
-    {
-      "title": "Option 1",
-      "value": "option_1"
-    }
-  ]
-}
-```
-
-#### 2. Form
-
-```json
-{
-  "items": [
-    {
-      "type": "text/text_area/email",
-      "placeholder": "Placeholder",
-      "name": "unique_name_of_the_field",
-      "label": "Label"
-    },
-  ],
-  "submitted_values": [
-    {
-      "name": "unique_name_of_the_field 1",
-      "value": "sample_value"
-    }
-  ]
-}
-```
-
-#### 3. Cards
-
-```json
-{
-  "items": [
-    {
-      "media_url": "", // Url of the image to be displayed
-      "title": "", // Title of the card
-      "description": "", // Description of the card
-      "actions": [
-        {
-          "type": "link",
-          "text": "View More",
-          "uri": "" // Link to the website
-        }
-      ]
-    },
-  ],
-}
-```
+Find the full list of events supported by the webhooks [here](/docs/product/others/webhook-events).

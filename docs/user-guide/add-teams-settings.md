@@ -2,13 +2,13 @@
 title: "Add Teams"
 ---
 Teams let you organize your agents into groups based on their responsibilities.
-A user can be part of multiple teams. You can assign conversations to a team when you are working collaboratively.  
+A user can be part of multiple teams. You can assign conversations to a team when you are working collaboratively.
 
 Click on Settings on Chatwoot home screen.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
@@ -16,7 +16,7 @@ Click on Teams and then on Create new team button on the Right Hand Side.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings2.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings2.png').default} width="800" alt="Enable Developer Mode" />
 
 </div>
 
@@ -24,9 +24,9 @@ Below screen will open.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings3.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings3.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>
 
 | Field Name       | Value                                                                         | Remarks                                                          |
 |------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------|
@@ -38,22 +38,22 @@ Click on Create Team. Below screen opens up where you can add agents to a team. 
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings4.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings4.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>
 Click on Add Agents after selecting the Checkboxes for Agents needed for this team.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings5.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings5.png').default} width="800" alt="Enable Developer Mode" />
 
-</div>  
+</div>
 Click on Finish.
 
 Team has been created. You can always Edit or Delete the Team as per your need.
 
 <div align="center">
 
-<img src={require('../../static/img/addteamssettings6.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings6.png').default} width="800" alt="Enable Developer Mode" />
 
-</div> 
+</div>
