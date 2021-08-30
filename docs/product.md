@@ -45,7 +45,7 @@ This guide will help you to use Chatwoot.
 
 - [Android](/docs/product/mobile-app/android)
 - [iOS](/docs/product/mobile-app/ios)
-- 
+
 ### Others
 - [Interactive Messages](/docs/product/others/interactive-messages) 
 - [Webhook Events](/docs/product/others/webhook-events)
