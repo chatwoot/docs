@@ -116,6 +116,6 @@ Thanks to @azyzio, @hiaselhans, @vishal-pandey, @troscoe, @timcowlishaw, @mike90
 
 ## Todos after Github release
 
-- Create release notes in [Headwayapp](https://changelog.chatwoot.com). If you don't have access to it, please contact Pranav / Sojan.
+- Create release notes in Changelog (https://chatwoot.com/changelog). If you don't have access to the blog, please contact Pranav / Sojan.
 - Update the latest version in Chatwoot Hub. This is used to show a notification to users using self-hosted installation.
 - Create tasks in Product board to deploy the changes to our paid clients.
