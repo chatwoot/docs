@@ -7,7 +7,7 @@ Click on 3 dots on the Left hand side corner of the screen. Next Click on Profil
 
 <div align="center">
 
-<img src={require('./images/profilesettings.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings.png').default} width="800" alt="Chatwoot Dashboard Home " />
 
 </div>
 
@@ -16,7 +16,7 @@ Once you are on the profile settings page you can change your avatar, name passw
 
 <div align="center">
 
-<img src={require('./images/profilesettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings1.png').default} width="800" alt="Chatwoot Profile screen" />
 
 </div>
 
@@ -34,7 +34,7 @@ Next is the Password Section. User can change the current password by entering N
 
 <div align="center">
 
-<img src={require('./images/profilesettings2.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings2.png').default} width="800" alt="Account Password Screen" />
 
 </div>
 
@@ -45,7 +45,7 @@ In this section, the user can set Audio Notifications for the Chat conversations
 
 <div align="center">
 
-<img src={require('./images/profilesettings3.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings3.png').default} width="800" alt="Audio Notification Section" />
 
 </div>
 
@@ -57,7 +57,7 @@ In this section, the user can set Email Notifications for the Chat conversations
 
 <div align="center">
 
-<img src={require('./images/profilesettings4.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings4.png').default} width="800" alt="Email Notification section" />
 
 </div>
 
@@ -77,7 +77,7 @@ In this section, the user can set Push Notificaions for the Chat conversations
 
 <div align="center">
 
-<img src={require('./images/profilesettings5.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings5.png').default} width="800" alt="Push Notification Section" />
 
 </div>
 
@@ -98,7 +98,7 @@ This section, will autogenerate a Token that can be used in API based Integratio
 
 <div align="center">
 
-<img src={require('./images/profilesettings6.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/profilesettings6.png').default} width="800" alt="Access Token Section" />
 
 </div>
 

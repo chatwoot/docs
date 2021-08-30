@@ -7,14 +7,14 @@ Open www.chatwoot.com and
 Click on Create an account button.
 <div align="center">
 
-<img src={require('./images/createanaccount.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/createanaccount.png').default} width="800" alt="Chatwoot Home Page" />
 
 </div>
 
 Once clicked it will navigate you to the signup page.
 <div align="center">
 
-<img src={require('./images/registeranaccount.png').default} width="500" alt="Enable Developer Mode" />
+<img src={require('./images/registeranaccount.png').default} width="500" alt="Account Sign up page" />
 
 </div>
 
@@ -31,7 +31,7 @@ After signing up you will receive an e-mail with subject 'Confirmation Instructi
 After confirming your email address you will be redirected to Chatwoot Agent Dashboard.
 <div align="center">
 
-<img src={require('./images/afterregisteration.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/afterregisteration.png').default} width="800" alt="ChatWoot DashBoard Screen" />
 
 </div>
 
@@ -39,7 +39,7 @@ After confirming your email address you will be redirected to Chatwoot Agent Das
 
 ## Initial Settings
 
-Below are the steps to be followed as listed to complete the Initial Setup of Chatwoot Dashboard.
+To setup the Chatwoot Dashboard completely, follow the below steps one by one.
 
 - [Profile Settings](profile-settings.md)
 - [Account Setting](account-settings.md)

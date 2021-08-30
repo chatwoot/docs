@@ -10,7 +10,7 @@ This User Guide includes description of the features and capabilities,alternate 
 <!-- <div style={{textAlign: 'center'}}> -->
 <div align="center">
 
-<img src="/images/logo.png" width="200" alt="Enable Developer Mode" />
+<img src="./user-guide/images/logo.png" width="200" alt="Chatwoot Logo" />
 
 </div>
 
