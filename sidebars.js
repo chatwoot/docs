@@ -29,6 +29,7 @@ module.exports = {
         "handbook/engineering/issue-triage",
         "handbook/engineering/pr-guidelines",
         "handbook/engineering/release-process",
+        "handbook/engineering/faq",
       ],
     },
     {
