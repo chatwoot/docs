@@ -59,6 +59,9 @@ To update your chatwoot installation to the latest version in Caprover, Run the 
 ```
 
 ## Accessing Rails Console
+
+Login to the server where you have caprover installed and execute the following commands.
+
 ```
 # access the shell inside the container
 docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh
