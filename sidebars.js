@@ -10,6 +10,13 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Culture",
+      items: [
+        "handbook/how-we-work/communication"
+      ],
+    },
+    {
+      type: "category",
       label: "Design",
       items: [
         "handbook/design/guidelines"
