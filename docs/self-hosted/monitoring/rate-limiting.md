@@ -12,3 +12,11 @@ You could customize the configuration to suit your needs by updating, [`config/i
 - SignIn Requests are limited by IP at `5 requests` per `20 seconds`.
 - SignIn Requests are limited by email address at `20 requests` per `5 minutes` for a specific email.
 - Reset Password Requests are limited at `5 requests` per `1 hour` for a specific email.
+
+## Attachment Restrictions 
+
+- `Contact/Inbox Avatar` attachment file types are limited to jped,gif and png
+- `Contact/Inbox Avatar` attachment file size is limited to 15 mb
+- `Website Channel` message attachments are limited to types ['image/png', 'image/jpeg', 'image/gif', 'image/bmp', 'image/tiff', 'application/pdf', 'audio/mpeg', 'video/mp4', 'audio/ogg', 'text/csv']
+- `Website Channel` message attachments are limited to 40Mb size limit.
+
