@@ -15,8 +15,8 @@ You could customize the configuration to suit your needs by updating, [`config/i
 
 ## Attachment Restrictions 
 
-- `Contact/Inbox Avatar` attachment file types are limited to jped,gif and png
-- `Contact/Inbox Avatar` attachment file size is limited to 15 mb
+- `Contact/Inbox Avatar` attachment file types are limited to jpeg, gif and png.
+- `Contact/Inbox Avatar` attachment file size is limited to 15MB.
 - `Website Channel` message attachments are limited to types ['image/png', 'image/jpeg', 'image/gif', 'image/bmp', 'image/tiff', 'application/pdf', 'audio/mpeg', 'video/mp4', 'audio/ogg', 'text/csv']
-- `Website Channel` message attachments are limited to 40Mb size limit.
+- `Website Channel` message attachments are limited to 40MB size limit.
 
