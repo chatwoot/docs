@@ -5,7 +5,7 @@ title: "Caprover Chatwoot Production deployment guide"
 
 ## Caprover Overview
 
-Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Chatwoot, and the deployment process is straightforward.
+Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Caprover, and the deployment process is straightforward.
 
 
 ## Setup Chatwoot Using Caprover
