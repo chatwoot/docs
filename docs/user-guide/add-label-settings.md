@@ -9,21 +9,21 @@ Click on Settings on Chatwoot home screen.
 
 <div align="center">
 
-<img src={require('./images/addteamssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Dashboard home screen" />
 
 </div>
 
 Click on Labels and then Add Label button on the Right hand side.
 <div align="center">
 
-<img src={require('./images/addlabelssettings1.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addlabelssettings1.png').default} width="800" alt="Chatwoot Label Home Screen" />
 
 </div>
 
-Screen opens up where you can design your own labels.
+Screen opens up where you can design your own labels. Make sure you give meaningful names to the labels and different colours so that you can identify in one look, to which category the ticket/issue belongs.
 <div align="center">
 
-<img src={require('./images/addlabelssettings2.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addlabelssettings2.png').default} width="800" alt="Chatwoot Add Label detail screen" />
 
 </div>
 
@@ -38,7 +38,7 @@ Click on Create.
 Label added successfully message will be displayed. New Label has been created. You can create as many Labels as you need. Labels can be used across teams.
 <div align="center">
 
-<img src={require('./images/addlabelssettings3.png').default} width="800" alt="Enable Developer Mode" />
+<img src={require('./images/addlabelssettings3.png').default} width="800" alt="Chatwoot Label setting screen" />
 
 </div>
 
