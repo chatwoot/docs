@@ -208,7 +208,7 @@ With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a
 
 ### Disable new user signup
 
-By default the chatwoot client will allow users to create an account from the login page. If setting up a private server you can disable singup using:
+By default, Chatwoot will allow users to create an account from the login page. However, if you are setting up a private server, you can disable signup using:
 
 ```bash
 ENABLE_ACCOUNT_SIGNUP=false
