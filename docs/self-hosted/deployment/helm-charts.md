@@ -13,6 +13,9 @@ helm repo add chatwoot https://chatwoot.github.io/charts
 helm install chatwoot chatwoot/chatwoot
 ```
 
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/o1jnYfy8CCo"></iframe>
+
+
 ## Prerequisites
 
 - Kubernetes 1.16+
