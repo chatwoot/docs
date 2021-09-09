@@ -5,7 +5,7 @@ title: "Caprover Chatwoot Production deployment guide"
 
 ## Caprover Overview
 
-Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Chatwoot, and the deployment process is straightforward.
+Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Caprover, and the deployment process is straightforward.
 
 
 ## Setup Chatwoot Using Caprover
@@ -59,6 +59,9 @@ To update your chatwoot installation to the latest version in Caprover, Run the 
 ```
 
 ## Accessing Rails Console
+
+Login to the server where you have caprover installed and execute the following commands.
+
 ```
 # access the shell inside the container
 docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh

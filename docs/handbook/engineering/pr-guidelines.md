@@ -23,3 +23,16 @@ Please ensure that the commit message is a proper sentence before merging a pull
 ### Add co-authors if applicable
 
 It is essential to add attribution to people who have contributed to the pull request. Please use `Co-authored-by:` at the end of the description.
+
+### Commits in branches
+
+We use [commit squashing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/squashing-commits#squashing-a-commit) to merge a PR to `develop` or release branches. 
+
+### git pull --rebase
+
+A merge commit is created if the local and remote branches have different commits when you pull without the `--rebase` flag. Therefore, it is good to rebase your local commits.
+
+To avoid typing `--rebase` everytime you can confirgure git to use it as default:
+```
+git config --global pull.rebase true
+```

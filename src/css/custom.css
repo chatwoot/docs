@@ -140,3 +140,7 @@ html[data-theme="light"] .navbar__link:hover,
 html[data-theme="light"] .navbar__link--active {
   color: var(--ifm-navbar-link-hover-color) !important;
 }
+
+.d-block {
+  display: block;
+}

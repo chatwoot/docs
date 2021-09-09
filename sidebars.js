@@ -5,6 +5,14 @@ module.exports = {
       label: "Company",
       items: [
         "handbook/about-chatwoot/history",
+        "handbook/about-chatwoot/investors",
+      ],
+    },
+    {
+      type: "category",
+      label: "Culture",
+      items: [
+        "handbook/how-we-work/communication"
       ],
     },
     {
@@ -21,6 +29,7 @@ module.exports = {
         "handbook/engineering/issue-triage",
         "handbook/engineering/pr-guidelines",
         "handbook/engineering/release-process",
+        "handbook/engineering/faq",
       ],
     },
     {
@@ -115,7 +124,8 @@ module.exports = {
         "product/channels/live-chat/integrations/docusaurus",
         "product/channels/live-chat/integrations/google-tag-manager",
         "product/channels/live-chat/integrations/react-native-widget",
-        "product/channels/live-chat/integrations/nextjs"
+        "product/channels/live-chat/integrations/nextjs",
+        "product/channels/live-chat/integrations/wordpress"
       ]
     },
     {

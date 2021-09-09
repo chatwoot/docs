@@ -1108,6 +1108,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@chatwoot/docusaurus-plugin@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@chatwoot/docusaurus-plugin/-/docusaurus-plugin-1.0.0.tgz#1bb95f612ccdcde68d48c334ff474e0506ea45cd"
+  integrity sha512-3efBScSncatAN+02+1SnDOQDqkmIYs7G8Eh+8bTQ5PCy6v1ft+A35ebMi0YKfTa5jKJZccvYFx5XfIpUeBVLdw==
+
 "@docsearch/css@3.0.0-alpha.40":
   version "3.0.0-alpha.40"
   resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.0.0-alpha.40.tgz#c37bd7b03f4c30a6ea7a19b87fe71880d2e8b22a"
