@@ -10,13 +10,7 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'chatwoot',
   projectName: 'docs',
-  plugins: ["@chatwoot/docusaurus-plugin"],
   themeConfig: {
-    chatwoot: {
-      websiteToken: "DyBKdJb22pLRjj6dzBnTuR2M",
-      baseURL: "https://staging.chatwoot.com",  // optional
-      enableInDevelopment: true,  // optional
-    },
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
