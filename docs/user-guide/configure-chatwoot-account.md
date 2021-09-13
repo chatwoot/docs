@@ -1,21 +1,16 @@
 ---
-title: "Setting up Agent Dashboard"
+title: Configure Chatwoot account
 ---
 
 ## Registration
-Open www.chatwoot.com and 
-Click on Create an account button.
+Open www.chatwoot.com and click on "Create an account" button.
 <div align="center">
-
-<img src={require('./images/createanaccount.png').default} width="800" alt="Chatwoot Home Page" />
-
+  <img src={require('./images/createanaccount.png').default} width="800" alt="Chatwoot Home Page" />
 </div>
 
 Once clicked it will navigate you to the signup page.
 <div align="center">
-
-<img src={require('./images/registeranaccount.png').default} width="500" alt="Account Sign up page" />
-
+  <img src={require('./images/registeranaccount.png').default} width="500" alt="Account Sign up page" />
 </div>
 
 | Field Name       | Value                           | Remarks                                                                                                                                   |

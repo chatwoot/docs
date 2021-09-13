@@ -156,24 +156,25 @@ module.exports = {
       ],
     },
   ],
-  UserGuide:
+  userGuide:
   [
-    {"User Guide Info": 
-    [
-      "user-guide",
-    "user-guide/privacy-policy",
-    ]
-    },
+    // {"User Guide Info":
+    // [
+    //   "user-guide",
+    // "user-guide/privacy-policy",
+    // ]
+    // },
+    // {
+    // type: 'category',
+    // label: 'Product Info',
+    // items:
+    // [
+    //   "user-guide/about-chatwoot",
+    //   "user-guide/installation-instruction",
+    // ]},
     {
-    type: 'category',
-    label: 'Product Info',
-    items: 
-    [
-      "user-guide/about-chatwoot",
-      "user-guide/installation-instruction",
-    ]},
-    {'Settings':[      
-        "user-guide/setting-up-agent-dashboard",
+      "Setup Chatwoot Account":[
+        "user-guide/configure-chatwoot-account",
         "user-guide/profile-settings",
         "user-guide/account-settings",
         "user-guide/add-agent-settings",
@@ -184,22 +185,29 @@ module.exports = {
         "user-guide/canned-response-settings",
         "user-guide/integrations",
         "user-guide/applications",
-     ]},
-    {'Conversations':[      
-      "user-guide/conversation-workflow",
-    ]},
-    {'Contacts':[      
-      "user-guide/contacts",
-    ]},
-    {'Reports':[      
-      "user-guide/reports",
-    ]},
-    {"Other":[    
-      "user-guide/backup-and-restore",
-      "user-guide/code-and-patch-updates",
-      "user-guide/glossary"
-    ]}
-    ],
+      ]
+    },
+    {
+      "Conversations":[
+        "user-guide/conversation-workflow",
+      ]
+    },
+    {
+      "Contacts":[
+        "user-guide/contacts",
+      ]
+    },
+    {
+      "Reports":[
+        "user-guide/reports",
+      ]
+    },
+    // {"Other":[
+    //   "user-guide/backup-and-restore",
+    //   "user-guide/code-and-patch-updates",
+    //   "user-guide/glossary"
+    // ]}
+  ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },
     {

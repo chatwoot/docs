@@ -40,7 +40,7 @@ module.exports = {
           position: 'right',
         },
         {
-          to: 'user-guide',
+          to: 'user-guide/configure-chatwoot-account',
           activeBasePath: 'user-guide',
           label: 'User Guide',
           position: 'right',
