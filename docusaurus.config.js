@@ -1,6 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  plugins: ["@chatwoot/docusaurus-plugin"],
   title: 'Chatwoot',
   tagline: 'Open-source customer engangement suite, an alternative to Intercom & Zendesk',
   url: 'https://www.chatwoot.com',
