@@ -1,5 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
+  plugins: ["@chatwoot/docusaurus-plugin"],
   title: 'Chatwoot',
   tagline: 'Open-source customer engangement suite, an alternative to Intercom & Zendesk',
   url: 'https://www.chatwoot.com',
@@ -9,7 +10,13 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'chatwoot',
   projectName: 'docs',
+  plugins: ["@chatwoot/docusaurus-plugin"],
   themeConfig: {
+    chatwoot: {
+      websiteToken: "DyBKdJb22pLRjj6dzBnTuR2M",
+      baseURL: "https://staging.chatwoot.com",  // optional
+      enableInDevelopment: true,  // optional
+    },
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
@@ -30,6 +37,12 @@ module.exports = {
           to: 'product',
           activeBasePath: 'product',
           label: 'Product',
+          position: 'right',
+        },
+        {
+          to: 'user-guide/configure-chatwoot-account',
+          activeBasePath: 'user-guide',
+          label: 'User Guide',
           position: 'right',
         },
         {
