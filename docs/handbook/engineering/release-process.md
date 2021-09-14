@@ -20,7 +20,15 @@ git pull
 git fetch --tags
 ```
 
-### 2. Commit new version
+
+### 2. Prepare release
+
+```bash
+# find the appropriate version by looking into `config/app.yml`
+git flow release start '1.12.0' # replace your version number
+```
+
+### 3. Bump the version number now
 
 - Bump up the version numbers in the following files.
 
@@ -31,18 +39,18 @@ git fetch --tags
   See this commit for example:
 [Bump version to 1.11.1 · chatwoot/chatwoot@a214372](https://github.com/chatwoot/chatwoot/commit/a214372c7cc7cf305d6cba53663708b34a4752d0)
 
+### 4. Start committing last-minute fixes in preparing your release
 
-### 3. Prepare release
+### 5. Finish release
 
-```bash
-git flow release start '1.12.0' # replace your version number
+```
 git flow release finish '1.12.0' # replace your version number
 
 # Leave default merge messages as it is
 # prepare the tag message as 'v1.12.0' # replace your version number
 ```
 
-### 4. Reverse merge master
+### 6. Reverse merge master
 
 Reverse merge master branch to develop branch.
 
@@ -52,7 +60,7 @@ git checkout develop
 git merge master
 ```
 
-### 5. Push changes to remote
+### 7. Push changes to remote
 
 Push master branch, develop branch and the tags.
 
@@ -70,7 +78,7 @@ git checkout develop
 git push --tags --no-verify
 ```
 
-### 6. Prepare release notes
+### 8. Prepare release notes
 
 - Compare the current version to the previous version using the tag compare feature in Github. [https://github.com/chatwoot/chatwoot/compare/v1.11.1...v1.12.0](https://github.com/chatwoot/chatwoot/compare/v1.11.1...v1.12.0)
 - Create a new release on Github from existing tags and update release notes.
