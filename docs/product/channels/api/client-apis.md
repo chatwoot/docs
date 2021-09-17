@@ -3,7 +3,7 @@ sidebar_label: "Client APIs"
 title: 'Create Interfaces using client APIs'
 ---
 
-> Note: These APIs are still in alpha, and there might be changes in the implementation in future.
+> Note: Currently, Dialogflow only works for website inboxes. Support for other channels added soon
 
 Client APIs available for the API channel will help you build customer-facing interfaces for Chatwoot.
 
