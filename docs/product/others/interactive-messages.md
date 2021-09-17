@@ -32,6 +32,7 @@ Use the following payload samples as the values to create various interactive me
 
 ```json
 {
+    "content": "form",
     "content_type": "form",
     "content_attributes": {
         "items": [
@@ -83,6 +84,7 @@ Use the following payload samples as the values to create various interactive me
 
 ```json
 {
+    "content": "articles",
     "content_type": "article",
     "content_attributes": {
         "items": [
