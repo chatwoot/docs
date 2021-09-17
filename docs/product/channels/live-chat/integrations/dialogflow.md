@@ -3,6 +3,8 @@ title: "Integrate Chatwoot with Dialogflow"
 sidebar_label: "Dialogflow"
 ---
 
+> Note: Currently, Dialogflow only works for website inboxes. Support for other channels added soon.
+
 Chatbots are an essential part of every customer service platform. If you have many conversations happening in your account, scaling human support might not be effective. You could deploy a chatbot that helps answer trivial questions and hand it off to an agent only when necessary. Dialogflow and Rasa.ai are the top-rated NLP platforms that allow you to build a bot based on your use case. In this article, we will see how you can configure a Dialogflow chatbot with Chatwoot.
 
 ## Create a Dialogflow bot and configure handoff
