@@ -24,7 +24,7 @@ chmod 755 setup.sh
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000`
 
-Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you are logged in as `root` user not as the `ubuntu` user. 
+Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you are logged in as `root` user not as the `ubuntu` user.
 
 ## Configuring The installation Domain
 
@@ -85,12 +85,12 @@ rake assets:precompile RAILS_ENV=production
 # Migrate the database schema
 RAILS_ENV=production bundle exec rake db:migrate
 
+# Switch back to root user
+exit
+
 # Copy the updated targets
 cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
-
-# Switch back to root user
-exit
 cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
 
 # Restart the chatwoot server
