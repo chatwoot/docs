@@ -9,9 +9,9 @@ Before proceeding, make sure you have the latest version of `docker` and `docker
 As of now[at the time of writing this doc], we recommend
 
 ```bash
-docker --version
+$ docker --version
 Docker version 19.03.3, build a872fc2f86
-docker-compose --version
+$ docker-compose --version
 docker-compose version 1.25.3, build d4d1b42b
 ```
 
