@@ -67,6 +67,10 @@ window.chatwootSettings = {
 
 ```js
 window.$chatwoot.toggle();
+
+// Toggle widget by passing state
+window.$chatwoot.toggle('open'); // To open widget
+window.$chatwoot.toggle('close'); // To close widget
 ```
 
 ### Set the user in the widget
