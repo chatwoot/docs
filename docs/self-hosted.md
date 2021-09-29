@@ -41,6 +41,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 
 - [Facebook App Setup](/docs/self-hosted/configuration/features/integrations/facebook-channel-setup)
 - [Twitter App Setup](/docs/self-hosted/configuration/features/integrations/twitter-channel-setup)
+- [Telegram App Setup](/docs/self-hosted/configuration/features/integrations/telegram-channel-setup)
 - [Slack App](/docs/self-hosted/configuration/features/integrations/slack-integration-setup)
 
 ### Storage

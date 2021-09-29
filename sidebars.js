@@ -83,6 +83,7 @@ module.exports = {
       Integrations: [
         "self-hosted/configuration/features/integrations/facebook-channel-setup",
         "self-hosted/configuration/features/integrations/twitter-channel-setup",
+        "self-hosted/configuration/features/integrations/telegram-channel-setup",
         "self-hosted/configuration/features/integrations/slack-integration-setup",
       ],
     },
