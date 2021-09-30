@@ -10,7 +10,7 @@ You can get started with [Creating an S3 bucket](https://docs.aws.amazon.com/Ama
 Configure the following env variables.
 
 ```bash
-ACTIVE_STORAGE_SERVICE='amazon'
+ACTIVE_STORAGE_SERVICE=amazon
 S3_BUCKET_NAME=
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
@@ -23,7 +23,7 @@ AWS_REGION=
 Configure the following env variables.
 
 ```bash
-ACTIVE_STORAGE_SERVICE='google'
+ACTIVE_STORAGE_SERVICE=google
 GCS_PROJECT=
 GCS_CREDENTIALS=
 GCS_BUCKET=
@@ -51,7 +51,7 @@ the value of the `GCS_CREDENTIALS` should be a json formatted string containing 
 Configure the following env variables.
 
 ```bash
-ACTIVE_STORAGE_SERVICE='microsoft'
+ACTIVE_STORAGE_SERVICE=microsoft
 AZURE_STORAGE_ACCOUNT_NAME=
 AZURE_STORAGE_ACCESS_KEY=
 AZURE_STORAGE_CONTAINER=
@@ -65,7 +65,7 @@ Use s3 compatible service such as [DigitalOcean Spaces](https://www.digitalocean
 Configure the following env variables.
 
 ```bash
-ACTIVE_STORAGE_SERVICE='s3_compatible'
+ACTIVE_STORAGE_SERVICE=s3_compatible
 STORAGE_BUCKET_NAME=
 STORAGE_ACCESS_KEY_ID=
 STORAGE_SECRET_ACCESS_KEY=
