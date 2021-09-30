@@ -122,7 +122,7 @@ Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage
 But you can change it to use any of the cloud providers like amazon s3, microsoft azure and google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
 
 ```bash
-ACTIVE_STORAGE_SERVICE='local'
+ACTIVE_STORAGE_SERVICE=local
 ```
 
 ### Configure Redis
