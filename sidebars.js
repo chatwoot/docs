@@ -96,14 +96,17 @@ module.exports = {
     { Others: ["self-hosted/telemetry"] },
   ],
   product: [
-    { "Getting Started": [
+    {
+      type: 'category',
+      label: "Getting Started",
+      items: [
         "product",
         "user-guide/getting-started/glossary",
         {
           "Setup your account":[
             "user-guide/setup-your-account/create-an-account",
             "user-guide/setup-your-account/configure-your-profile",
-            "user-guide/setup-your-account/configure-your-account",
+            "user-guide/setup-your-account/configure-account-details",
             "user-guide/add-agent-settings",
             "user-guide/add-inbox-settings",
             "user-guide/setting-up-chatwootwidget",
@@ -114,61 +117,78 @@ module.exports = {
             "user-guide/applications",
           ]
         },
-        "product/channels/supported-features",
-        "product/features/campaigns",
-        "product/features/webhooks",
-      ]
+      ],
+      collapsed: false,
+      collapsible: false,
     },
-    { "Channels": [
+    {
+      collapsed: false,
+      collapsible: false,
+      label: "Channels",
+      type: 'category',
+      items: [
+        {
+          "Website Live Chat": [
+            "product/channels/live-chat/create-website-channel",
+            "product/channels/live-chat/sdk/setup",
+            "product/channels/live-chat/sdk/identity-validation",
+            "product/channels/live-chat/conversation-continuity",
+            {
+              "Integrations": [
+                "product/channels/live-chat/integrations/dialogflow",
+                "product/channels/live-chat/webflow-integration",
+                "product/channels/live-chat/integrations/docusaurus",
+                "product/channels/live-chat/integrations/google-tag-manager",
+                "product/channels/live-chat/integrations/react-native-widget",
+                "product/channels/live-chat/integrations/nextjs",
+                "product/channels/live-chat/integrations/wordpress"
+              ]
+            }
+          ],
+        },
         "product/channels/facebook",
         "product/channels/twitter",
         "product/channels/twilio-whatsapp-sms",
-      ]
-    },
-    {
-      "Website Live Chat": [
-        "product/channels/live-chat/create-website-channel",
-        "product/channels/live-chat/sdk/setup",
-        "product/channels/live-chat/sdk/identity-validation",
-        "product/channels/live-chat/conversation-continuity",
+        {
+          "API Channel": [
+            "product/channels/api/create-channel",
+            "product/channels/api/send-messages",
+            "product/channels/api/receive-messages",
+            "product/channels/api/client-apis",
+          ],
+        },
+        "product/channels/supported-features",
       ],
     },
     {
-      "Live Chat Integrations": [
-        "product/channels/live-chat/integrations/dialogflow",
-        "product/channels/live-chat/webflow-integration",
-        "product/channels/live-chat/integrations/docusaurus",
-        "product/channels/live-chat/integrations/google-tag-manager",
-        "product/channels/live-chat/integrations/react-native-widget",
-        "product/channels/live-chat/integrations/nextjs",
-        "product/channels/live-chat/integrations/wordpress"
-      ]
-    },
-    {
-      "API Channel": [
-        "product/channels/api/create-channel",
-        "product/channels/api/send-messages",
-        "product/channels/api/receive-messages",
-        "product/channels/api/client-apis",
+      collapsed: false,
+      collapsible: false,
+      label: "Features",
+      type: 'category',
+      items: [
+        "user-guide/contacts",
+        "product/features/campaigns",
+        "product/inbox/routing-conversations-round-robin",
+        "product/others/interactive-messages",
+        "user-guide/features/multilingual-support",
+        {
+          type: "category",
+          label: "Webhooks",
+          items: [
+            "product/features/webhooks",
+            "product/others/webhook-events",
+          ]
+        },
+        "user-guide/reports",
+        "user-guide/conversation-workflow",
+        "product/others/websocket-events",
+        "product/others/cookies",
       ],
-    },
-    {
-      "Inboxes": [
-        "product/inbox/routing-conversations-round-robin"
-      ]
     },
     {
       "Mobile App": [
         "product/mobile-app/android",
         "product/mobile-app/ios"
-      ],
-    },
-    {
-      "Others": [
-        "product/others/interactive-messages",
-        "product/others/webhook-events",
-        "product/others/websocket-events",
-        "product/others/cookies"
       ],
     },
   ],

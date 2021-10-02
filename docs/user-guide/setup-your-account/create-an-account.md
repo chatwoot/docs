@@ -22,7 +22,7 @@ The fields required to signup are as shown below.
 | Full Name | Enter Your Full name eg: John Hopkins |
 | Work email | Enter a valid work e-mail address eg: *john.hopkins@companyname.com*  |
 | Account name | Enter the name of your company eg: Wayne Enterprises |
-| Password  | Password must contain at least 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special  Character(! @ # $ % ^ & * ( ) _ + - = [ ] { } | ' " / \ ^ . , ` < > : ; ? ~) |
+| Password  | Password must contain at least one uppercase character (A-Z), at least one number character (0..9), at least one special character (!@#$%^&*()_+-=[]{}\|'"/\^.,`<\>:;?~) |
 | Confirm Password | Confirm password should match with the password given above |
 
 After signing up, you would be automatically logged into the dashboard. To complete the signup, you need to verify your email address. You will receive an email with the subject **Confirmation Instructions** from Chatwoot, as shown below.
@@ -36,7 +36,7 @@ Click on **Confirm my account** button.
 Voila! You have verified your account at Chatwoot. Follow the steps below to set up your account so that you can be productive using Chatwoot.
 
 - [Configure your profile](/docs/user-guide/setup-your-account/configure-your-profile)
-- [Configure your account](/docs/user-guide/setup-your-account/configure-your-account)
+- [Configure account details](/docs/user-guide/setup-your-account/configure-account-details)
 - [Add Agent](add-agent-settings.md)
 - [Add Inbox](add-inbox-settings.md)
 - [Add Widget](setting-up-chatwootwidget.md)

@@ -31,6 +31,6 @@ Note: If you update your email address, then the system will log you out. You ne
 
 As a security measure, you need to provide your existing password to change the password. If you forgot the old password, you can log out of the system and reset the password.
 
-Password must contain at least 1 uppercase character(A..Z), at least 1 Number Character(0..9),at least 1 Special Character(! @ # $ % ^ & * ( ) _ + - = [ ] { }
+Password must contain at least one uppercase character (A-Z), at least one number character (0..9), at least one special character (!@#$%^&*()_+-=[]{}|'"/\^.,`<\>:;?~).
 
 <img src={require('./images/configure-your-profile/update-your-password.png').default} width="600" alt="Password Form" />

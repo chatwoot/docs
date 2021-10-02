@@ -1,5 +1,6 @@
 ---
-title: "Webhooks"
+sidebar_label: "Introduction"
+title: "Getting started with webhooks in Chatwoot"
 ---
 
 Webhooks are HTTP callbacks which can be defined for every account. They are triggered by events like message creation in Chatwoot. You can create more than one webhook for an account. Currently webhooks support only `message_created` event
