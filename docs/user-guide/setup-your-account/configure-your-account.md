@@ -1,23 +1,23 @@
 ---
-title: "Account Settings"
+title: "Configure your account"
 ---
 
 First, we have to set up the details of the account for your use. Click on Settings on Chatwoot home screen.
 
-<div align="center">
+<!-- <div align="center">
 
-<img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Home Screen" />
+<img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Home Screen" /> -->
 
-</div>
+<!-- </div> -->
 
-Click on Account Settings. The below screen will open up. Fill in the details of your account like Account Name and Site Language. 
+Click on Account Settings. The below screen will open up. Fill in the details of your account like Account Name and Site Language.
 
 
-<div align="center">
+<!-- <div align="center">
 
 <img src={require('./images/accountsettings1.png').default} width="800" alt="Chatwoot Account Setting Screen" />
 
-</div>
+</div> -->
 
 
 | Field Name                                                                 | Value                                                                                       | Remarks                                                                                                         |

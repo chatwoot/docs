@@ -1,9 +1,13 @@
 ---
-sidebar_label: "Introduction"
-title: "Product documentation"
+title: "Introduction"
 ---
 
-This guide will help you to use Chatwoot.
+Chatwoot is an open-source customer engagement suite built as an alternative to Intercom, Zendesk & Salesforce Service Cloud. Chatwoot is designed not only for a great customer experience but also to increase your support team's productivity and provide them with actionable data.
+
+Chatwoot integrates with multiple conversation channels like website live-chat, email, Facebook page, Twitter handle, Whatsapp, etc. It displays conversation from different channels, thereby building a single view of the customer and helps in reducing the time required to switch between the tools. Mobile apps for Chatwoot (available for Android and iOS) enable you to browse conversations, reply to messages and collaborate with the team.
+
+This user guide includes a description of the features and capabilities, modes of operation, and step-by-step procedures for the Chatwoot platform access and use.
+
 
 ### Features
 - [Supported features](/docs/product/channels/supported-features)
@@ -47,7 +51,7 @@ This guide will help you to use Chatwoot.
 - [iOS](/docs/product/mobile-app/ios)
 
 ### Others
-- [Interactive Messages](/docs/product/others/interactive-messages) 
+- [Interactive Messages](/docs/product/others/interactive-messages)
 - [Webhook Events](/docs/product/others/webhook-events)
 - [Websocket Events](/docs/product/others/websocket-events)
 - [Cookies](/docs/product/others/cookies)

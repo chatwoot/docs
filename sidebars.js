@@ -98,6 +98,22 @@ module.exports = {
   product: [
     { "Getting Started": [
         "product",
+        "user-guide/getting-started/glossary",
+        {
+          "Setup your account":[
+            "user-guide/setup-your-account/create-an-account",
+            "user-guide/setup-your-account/configure-your-profile",
+            "user-guide/setup-your-account/configure-your-account",
+            "user-guide/add-agent-settings",
+            "user-guide/add-inbox-settings",
+            "user-guide/setting-up-chatwootwidget",
+            "user-guide/add-teams-settings",
+            "user-guide/add-label-settings",
+            "user-guide/canned-response-settings",
+            "user-guide/integrations",
+            "user-guide/applications",
+          ]
+        },
         "product/channels/supported-features",
         "product/features/campaigns",
         "product/features/webhooks",
@@ -155,58 +171,6 @@ module.exports = {
         "product/others/cookies"
       ],
     },
-  ],
-  userGuide:
-  [
-    // {"User Guide Info":
-    // [
-    //   "user-guide",
-    // "user-guide/privacy-policy",
-    // ]
-    // },
-    // {
-    // type: 'category',
-    // label: 'Product Info',
-    // items:
-    // [
-    //   "user-guide/about-chatwoot",
-    //   "user-guide/installation-instruction",
-    // ]},
-    {
-      "Setup Chatwoot Account":[
-        "user-guide/configure-chatwoot-account",
-        "user-guide/profile-settings",
-        "user-guide/account-settings",
-        "user-guide/add-agent-settings",
-        "user-guide/add-inbox-settings",
-        "user-guide/setting-up-chatwootwidget",
-        "user-guide/add-teams-settings",
-        "user-guide/add-label-settings",
-        "user-guide/canned-response-settings",
-        "user-guide/integrations",
-        "user-guide/applications",
-      ]
-    },
-    {
-      "Conversations":[
-        "user-guide/conversation-workflow",
-      ]
-    },
-    {
-      "Contacts":[
-        "user-guide/contacts",
-      ]
-    },
-    {
-      "Reports":[
-        "user-guide/reports",
-      ]
-    },
-    // {"Other":[
-    //   "user-guide/backup-and-restore",
-    //   "user-guide/code-and-patch-updates",
-    //   "user-guide/glossary"
-    // ]}
   ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },

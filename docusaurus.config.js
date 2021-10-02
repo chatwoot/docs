@@ -28,13 +28,7 @@ module.exports = {
         },
         {
           to: 'product',
-          activeBasePath: 'product',
-          label: 'Product',
-          position: 'right',
-        },
-        {
-          to: 'user-guide/configure-chatwoot-account',
-          activeBasePath: 'user-guide',
+          activeBaseRegex: "product|user-guide",
           label: 'User Guide',
           position: 'right',
         },
@@ -72,7 +66,7 @@ module.exports = {
       {
         docs: {
           routeBasePath: '/',
-          sidebarCollapsible: false,
+          sidebarCollapsible: true,
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/chatwoot/docs/edit/main/',
           showLastUpdateAuthor: true,
