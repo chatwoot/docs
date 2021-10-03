@@ -112,7 +112,6 @@ module.exports = {
             "user-guide/setting-up-chatwootwidget",
             "user-guide/add-teams-settings",
             "user-guide/add-label-settings",
-            "user-guide/canned-response-settings",
             "user-guide/integrations",
             "user-guide/applications",
           ]
@@ -123,7 +122,7 @@ module.exports = {
     },
     {
       collapsed: false,
-      collapsible: false,
+      collapsible: true,
       label: "Channels",
       type: 'category',
       items: [
@@ -162,12 +161,13 @@ module.exports = {
     },
     {
       collapsed: false,
-      collapsible: false,
+      collapsible: true,
       label: "Features",
       type: 'category',
       items: [
         "user-guide/contacts",
         "product/features/campaigns",
+        "user-guide/features/canned-responses",
         "product/inbox/routing-conversations-round-robin",
         "product/others/interactive-messages",
         "user-guide/features/multilingual-support",
