@@ -20,7 +20,7 @@
   --ifm-heading-family-base: 'Helvetica Neue', Helvetica, -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --ifm-font-family-base: 'Helvetica Neue', Helvetica, -apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --doc-sidebar-width: 248px !important;
-  --ifm-menu-link-padding-horizontal: 0rem;
+  --ifm-menu-link-padding-horizontal: 0.5rem;
   --ifm-menu-link-padding-vertical: 0.25rem;
   --ifm-menu-color-background-hover: transparent;
   --ifm-menu-color-background-active: transparent;
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (min-width: 997px) {
   .menu {
-    padding: 2.5rem 2rem !important;
+    padding: 2.5rem 0.8rem !important;
     font-size: 0.875rem;
   }
 
@@ -112,7 +112,7 @@ html[data-theme="light"] .navbar__link {
 }
 
 .menu__list {
-  margin-bottom: 1.5rem;
+  margin: 0.25rem 0 1.5rem;
 }
 
 .menu__list .menu__list-item {
@@ -143,4 +143,18 @@ html[data-theme="light"] .navbar__link--active {
 
 .d-block {
   display: block;
+}
+
+.markdown {
+  padding: 1rem 2.4rem;
+}
+
+@media screen and (max-width: 997px) {
+  .markdown {
+    padding: 0.8rem;
+  }
+}
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.4rem;
 }
