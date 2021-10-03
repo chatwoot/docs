@@ -133,7 +133,7 @@ Once the message is typed and edited, you need to tick the checkbox to send the 
 
 ###  How to Send Canned Responses
 
-Suppose you wish to include already prepared[[canned responses]](canned-response-settings.md) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
+Suppose you wish to include already prepared [canned responses](/docs/user-guide/features/canned-responses) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
 
 <div align="center">
 
@@ -206,7 +206,7 @@ Click on the 3 dots on the top right hand side of the screen. There is an option
 
 </div>
 
-A screen opens up with first option as 'Send the transcript to assinged agent' and second option as 'Send the transcript to another email address'.  
+A screen opens up with first option as 'Send the transcript to assinged agent' and second option as 'Send the transcript to another email address'.
 
 <div align="center">
 
@@ -224,9 +224,9 @@ An email can be send to agents in the team by selecting the first option. By sel
 
 Click on Submit. A message will be displayed "The chat transcript was sent successfully". The End user will recieve the chat transcript in his email inbox.
 
-## Sending Emails from Widget  
+## Sending Emails from Widget
 
-Once the conversation has been marked as 'Resolved' by the agent, an option will appear on the Chatwoot Widget as 'Request a conversation transcript'. Customer can click on this and record the conversation in email. 
+Once the conversation has been marked as 'Resolved' by the agent, an option will appear on the Chatwoot Widget as 'Request a conversation transcript'. Customer can click on this and record the conversation in email.
 
 <div align="center">
 
@@ -234,7 +234,7 @@ Once the conversation has been marked as 'Resolved' by the agent, an option will
 
 </div>
 
-If the Customer clicks on this, an email will be sent to Customer and a message will be displayed on top of the Widget as 'The chat transcript was sent successfully' 
+If the Customer clicks on this, an email will be sent to Customer and a message will be displayed on top of the Widget as 'The chat transcript was sent successfully'
 
 <div align="center">
 
