@@ -101,7 +101,7 @@ module.exports = {
       label: "Getting Started",
       items: [
         "product",
-        "user-guide/getting-started/glossary",
+        // "user-guide/getting-started/glossary",
         {
           "Setup your account":[
             "user-guide/setup-your-account/create-an-account",
@@ -165,12 +165,13 @@ module.exports = {
       label: "Features",
       type: 'category',
       items: [
-        "user-guide/contacts",
         "product/features/campaigns",
         "user-guide/features/canned-responses",
+        "user-guide/contacts",
         "product/inbox/routing-conversations-round-robin",
         "product/others/interactive-messages",
         "user-guide/features/multilingual-support",
+        "user-guide/reports",
         {
           type: "category",
           label: "Webhooks",
@@ -179,7 +180,6 @@ module.exports = {
             "product/others/webhook-events",
           ]
         },
-        "user-guide/reports",
         "user-guide/conversation-workflow",
         "product/others/websocket-events",
         "product/others/cookies",

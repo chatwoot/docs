@@ -42,9 +42,12 @@ Creating a large number of contacts one by one is a tedious task. Bulk import al
 
 ### Business hours
 
-
+Business hours refers to your organization's working hours. Outside of the business hours, you can configure an unavailable message.
 
 ### Campaign
+
+Campaigns allows you to send an outbound message to a list of customers. There are two types of campaigns in Chatwoot. One-off (one-time) campaigns and ongoing campaign.
+
 ### Canned Response
 
 A canned response is a saved reply which is reusable and commonly used. For example, if there are frequently asked questions, the agents can save answers as canned responses and easily access them from the text editor. Moreover, canned responses allow agents to send a large text containing lists, URLs, rich content text, etc. in a single click, thereby improving their productivity.

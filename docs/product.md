@@ -9,49 +9,53 @@ Chatwoot integrates with multiple conversation channels like website live-chat, 
 This user guide includes a description of the features and capabilities, modes of operation, and step-by-step procedures for the Chatwoot platform access and use.
 
 
-### Features
-- [Supported features](/docs/product/channels/supported-features)
-- [Webhooks](/docs/product/features/webhooks)
-- [Campaigns](/docs/product/features/campaigns)
+
+### Setup your account
+
+- [Create a Chatwoot account](/docs/user-guide/setup-your-account/create-an-account)
+- [Configure your profile](/docs/user-guide/setup-your-account/configure-your-profile)
+- [Update account details](/docs/user-guide/setup-your-account/configure-account-details)
+- [Invite your team members](/docs/user-guide/add-agent-settings)
 
 ### Channels
-- [Create a Facebook Channel](/docs/product/channels/facebook)
-- [Create a Twitter Channel](/docs/product/channels/twitter)
-- [Create a Whatsapp/SMS Channel](/docs/product/channels/twilio-whatsapp-sms)
-### Website live-chat
 
-- [Create a website Channel](/docs/product/channels/live-chat/create-website-channel)
-- [SDK Setup](/docs/product/channels/live-chat/sdk/setup)
-- [Identity Validation](/docs/product/channels/live-chat/sdk/identity-validation)
-- [Conversation Continuity](/docs/product/channels/live-chat/conversation-continuity)
+- [Website Live-chat](/docs/product/channels/live-chat/create-website-channel)
+- [Facebook](/docs/product/channels/facebook)
+- [Twitter](/docs/product/channels/twitter)
+- [Whatsapp via Twilio](/docs/product/channels/twilio-whatsapp-sms)
+- [API Channel](/docs/product/channels/api/create-channel)
 
-### Live Chat Integrations
+### Features
 
-- [Dialogflow](/docs/product/channels/live-chat/integrations/dialogflow)
-- [Webflow Integration](/docs/product/channels/live-chat/webflow-integration)
-- [Docusaurus Integration](/docs/product/channels/live-chat/integrations/docusaurus)
-- [Google Tag Manger](/docs/product/channels/live-chat/integrations/google-tag-manager)
-- [React Native Integration](/docs/product/channels/live-chat/integrations/react-native-widget)
-- [Next.js](/docs/product/channels/live-chat/integrations/nextjs)
+- [Campaigns](/docs/product/features/campaigns)
+- [Canned responses](/docs/user-guide/features/canned-responses)
+- [Contacts](/docs/user-guide/contacts)
+- [Conversation Routing](/docs/product/inbox/routing-conversations-round-robin)
+- [Interactive Messages](/docs/product/others/interactive-messages)
+- [Multilingual Support](/docs/user-guide/features/multilingual-support)
+- [Reports](/docs/user-guide/reports)
+- [Webhooks](/docs/product/features/webhooks)
 
-### API Channel
-
-- [Create an API Channel](/docs/product/channels/api/create-channel)
-- [Send messages](/docs/product/channels/api/send-messages)
-- [Receive messages](/docs/product/channels/api/receive-messages)
-- [Client APIs](/docs/product/channels/api/client-apis)
-
-### Inboxes
-
-- [Routing](/docs/product/inbox/routing-conversations-round-robin)
-
-### Mobile Apps
+### Mobile app
 
 - [Android](/docs/product/mobile-app/android)
 - [iOS](/docs/product/mobile-app/ios)
 
-### Others
-- [Interactive Messages](/docs/product/others/interactive-messages)
-- [Webhook Events](/docs/product/others/webhook-events)
-- [Websocket Events](/docs/product/others/websocket-events)
-- [Cookies](/docs/product/others/cookies)
+### Compatibility and Requirements
+
+Web dashboard and the live-chat widget works with most of the modern web browsers. To see the support browser versions, see the table below.
+
+| Browser | Minimum version |
+| -- | -- |
+| Mozilla Firefox | 52 |
+| Google Chrome | 57 |
+| Chromium | 57 |
+| Apple Safari | 14.1 |
+| Microsoft Edge | 16 |
+
+To see the supported mobile OS versions for the mobile app, see the table below.
+
+| OS | Minimum version |
+| -- | -- |
+| Android | Android 5.0 |
+| iOS | iOS 11.0 |
