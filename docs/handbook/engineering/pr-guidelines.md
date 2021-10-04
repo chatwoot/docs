@@ -18,6 +18,7 @@ Please ensure that the commit message is a proper sentence before merging a pull
 
 > If applied, this commit will <ins>your subject line here</ins>
 
+- Capitalize the subject line
 ### Update product documentation
 
 Please make sure that product docs are updated before merging the PR. The PR owner should check the requirement of any documentation changes related to the raised PR.
