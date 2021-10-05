@@ -8,25 +8,25 @@ Before proceeding, make sure you have the latest version of `docker` and `docker
 
 As of now[at the time of writing this doc], we recommend
 
-    ```bash
-    $ docker --version
-    Docker version 19.03.3, build a872fc2f86
-    $ docker-compose --version
-    docker-compose version 1.25.3, build d4d1b42b
-    ```
+```bash
+$ docker --version
+Docker version 19.03.3, build a872fc2f86
+$ docker-compose --version
+docker-compose version 1.25.3, build d4d1b42b
+```
 
 ## Development environment
 
 1. Clone the repository.
 
     ```bash
-    $ git clone https://github.com/chatwoot/chatwoot.git
+    git clone https://github.com/chatwoot/chatwoot.git
     ```
 
 2. Make a copy of the example environment file and modify it as [required](/docs/self-hosted/configuration/environment-variables).
 
     ```bash
-    $ cp .env.example .env
+    cp .env.example .env
     # update redis and postgres passwords
     nano .env
     # update docker-compose.yml with the same postgres password
@@ -36,19 +36,19 @@ As of now[at the time of writing this doc], we recommend
 3. Build the images.
 
     ```bash
-    $ docker-compose build
+    docker-compose build
     ```
 
 4. After building the image or destroying the stack, you would have to reset the database using the following command.
 
     ```bash
-    $ docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
+    docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
     ```
 
 5. To run the app,
 
     ```bash
-    $ docker-compose up
+    docker-compose up
     ```
 
     * Access the rails app frontend by visiting `http://0.0.0.0:3000/`
@@ -64,39 +64,39 @@ As of now[at the time of writing this doc], we recommend
 6. To stop the app,
 
     ```bash
-    $ docker-compose down
+    docker-compose down
     ```
 
 ### Running RSpec tests
 
 For running the complete RSpec tests,
 
-    ```bash
-    $ docker-compose run --rm rails bundle exec rspec
-    ```
+```bash
+docker-compose run --rm rails bundle exec rspec
+```
 
 For running specific test,
 
-    ```bash
-    $ docker-compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number>
-    ```
+```bash
+docker-compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number>
+```
 
 ## Production environment
 
 To debug the production build locally, set `SECRET_KEY_BASE` environment variable in your `.env` file and then run the below commands:
 
-    ```bash
-    $ docker-compose -f docker-compose.production.yaml build
-    $ docker-compose -f docker-compose.production.yaml up
-    ```
+```bash
+docker-compose -f docker-compose.production.yaml build
+docker-compose -f docker-compose.production.yaml up
+```
 
 ## Debugging mode
 
 To use debuggers like `byebug` or `binding.pry`, use the following command to bring up the app instead of `docker-compose up`.
 
-    ```bash
-       $ docker-compose run --rm --service-port rails
-    ```
+```bash
+docker-compose run --rm --service-port rails
+```
 
 
 ## Troubleshooting
@@ -108,9 +108,9 @@ If there is an update to any of the following
 
 Make sure to rebuild the containers and run `db:reset`.
 
-    ```bash
-    $ docker-compose down
-    $ docker-compose build
-    $ docker-compose run --rm rails bundle exec rails db:reset
-    $ docker-compose up
-    ```
+```bash
+docker-compose down
+docker-compose build
+docker-compose run --rm rails bundle exec rails db:reset
+docker-compose up
+```
