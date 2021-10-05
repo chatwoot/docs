@@ -62,6 +62,7 @@ module.exports = [
     type: "category",
     items: [
       "self-hosted/configuration/features/integrations/facebook-channel-setup",
+      "self-hosted/configuration/features/integrations/instagram-channel-setup",
       "self-hosted/configuration/features/integrations/twitter-channel-setup",
       "self-hosted/configuration/features/integrations/slack-integration-setup",
     ],
