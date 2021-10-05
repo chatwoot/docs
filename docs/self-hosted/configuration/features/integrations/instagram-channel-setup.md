@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Instagram App"
-title: "Setting Up Instagram Accounnt"
+title: "Setting Up Instagram Account"
 ---
 
 ### Register A Facebook App
