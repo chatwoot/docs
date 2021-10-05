@@ -7,7 +7,7 @@ title: "Setting Up Instagram Accounnt"
 
 To use Instagram Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook channels [here](https://developers.facebook.com/docs/apps/#register)
 
-1. In the select an app type, choose business
+1. In the select an app type, choose `business`
 
 Once you register your Facebook App, you will have to obtain the `App Id` and `App Secret`. These values will be available in the app settings and will be required while setting up Chatwoot environment variables.
 
@@ -33,15 +33,15 @@ FB_APP_ID=
 3. Go to the Webhook settings and configure the callBack URL with `{your_chatwoot_url}/webhook/instagram`
 ![setup_callback](./images/instagram/setup_callback.png)
 4. provide the `IG_VERIFY_TOKEN` value from your environment variables for `verify token`
-5. Make sure your facebook page is connected to the instagram account, for which instagram account holder is admin.
+5. Make sure your Facebook page is connected to the Instagram account, for which the Instagram account holder is admin.
 You can do that setting here:
   > Go to https://www.facebook.com/pages/?category=your_pages
   > Select Your Page
   > Go to Settings
-  > Select Instagram: Make sure you have business account https://developers.facebook.com/docs/messenger-platform/instagram/get-started
-  > Connect your instagram account.
-  So whenver you will receive any message on instagram it will redirect to your facebook page.
-5. Head over to chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account and Instagram account has admin access to.
+  > Select Instagram: Make sure you have a business account https://developers.facebook.com/docs/messenger-platform/instagram/get-started
+  > Connect your Instagram account.
+  So whenever you receive any message on Instagram, it will redirect to your Facebook page.
+5. Head over to chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account and Instagram account have admin access.
 
 
 ### Testing the Facebook channel
@@ -49,9 +49,9 @@ You can do that setting here:
 Until the application is approved for production, Facebook wouldn't send the new messages on your page to chatwoot.
 To test the changes until the app is approved for production. Follow the steps
 
-1. Create Test app for your app, follow all the above step for the test app.
-2. Add extra prodcut for the test app: Instagram Basic Display
-3. Head over to the Instagram Basic Display section in your test app settings page, in Facebook developers.
+1. Create a Test app for your app. Follow all the above steps for the test app.
+2. Add extra product for the test app: Instagram Basic Display
+3. Head over to the Instagram Basic Display section on your test app settings page, in Facebook developers.
 4. Add Instagram Testers in the settings.
 5. Click on Edit subscriptions under Webhook > Instagram and subscribe to the following
 ```
@@ -61,7 +61,7 @@ messaging_seen
 ```
 ![subscribe](./images/instagram/subscribe.png)
 
-4. Send a message to the connected instagram account from Instagram Testers and it should appear in chatwoot now
+4. Send a message to the connected Instagram account from Instagram Testers, and it should appear in chatwoot now
 
 ### Going into production.
 
@@ -79,7 +79,7 @@ pages_messaging
 
 ### Developing or Testing Facebook Integration in your machine
 
-Install [ngrok](https://ngrok.com/docs) on your machine. This will be required since Facebook Messenger API's will only communicate via https.
+Install [ngrok](https://ngrok.com/docs) on your machine. This will be required since Facebook Messenger APIs will only communicate via https.
 
 ```bash
 brew cask install ngrok
@@ -91,8 +91,8 @@ Configure ngrok to route to your Rails server port.
 ngrok http 3000
 ```
 
-Go to the Facebook developers page and navigate into your app settings. In the app settings, add `localhost` as your app domain and add privacy policy URL as your ngrok URL.
-In the Webhook > Instagram settings shown in above image, configure the callback url with the following value.
+Go to the Facebook developers page and navigate into your app settings. Add `localhost` as your app domain and add a privacy policy URL in the app settings.
+In the Webhook > Instagram settings shown in the above image, configure the callback url with the following value.
 
 ```bash
 {your_ngrok_url}/webhook/instagram
@@ -101,16 +101,16 @@ In the Webhook > Instagram settings shown in above image, configure the callback
 Update verify token in your Chatwoot environment variables.
 
 You will also have to add a Facebook page to your `Access Tokens` section in your Messenger settings page.
-Restart the Chatwoot local server. Your Chatwoot setup will be ready to receive Facebook messages.
+Restart the Chatwoot local server. Then, your Chatwoot setup will be ready to receive Facebook messages.
 
 ### Test your local Setup
 
-1. After finishing the set-up above, [create a Messenger inbox](/docs/product/channels/facebook) after logging in to your Chatwoot Installation.
-2. Send a message to your Facebook Page from Instagram account.
+1. After finishing the setup above, [create a Messenger inbox](/docs/product/channels/facebook) after logging in to your Chatwoot Installation.
+2. Send a message to your Facebook Page from your Instagram account.
 3. Wait and confirm incoming requests to `/webhook/instagram` endpoint in your ngrok screen.
-4. You can also verify your callback URL by clicking on Test for the subscribed instagram fields.
-Go to webhook instagram and click on Test with `v11.0`
+4. You can also verify your callback URL by clicking on Test for the subscribed Instagram fields.
+Go to webhook Instagram and click on Test with `v11.0`
 ![subscribe](./images/instagram/subscribe.png)
 
 ### NOTE:
-You can have only one app connected to the chatwoot for instagram and facebook combined. As the Messenger platform is common. But if you want to have separate channels for instagram and facebook then you can have multiple facebook pages inside your app which would be connected to facebook users and instagram users separately and then connected to the different inbox in the chatwoot page.
+You can have only one app connected to the chatwoot for Instagram and Facebook combined as the Messenger platform is common. But suppose you want to have separate channels for Instagram and Facebook. In that case, you can have multiple Facebook pages inside your app that would be connected to Facebook users and Instagram users separately and then connected to the different inbox in the chatwoot page.
