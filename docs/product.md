@@ -21,6 +21,7 @@ This user guide includes a description of the features and capabilities, modes o
 
 - [Website Live-chat](/docs/product/channels/live-chat/create-website-channel)
 - [Facebook](/docs/product/channels/facebook)
+- [Instagram](/docs/product/channels/instagram)
 - [Twitter](/docs/product/channels/twitter)
 - [Whatsapp via Twilio](/docs/product/channels/twilio-whatsapp-sms)
 - [API Channel](/docs/product/channels/api/create-channel)
