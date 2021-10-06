@@ -49,6 +49,7 @@ module.exports = [
         ],
       },
       "product/channels/facebook",
+      "product/channels/instagram",
       "product/channels/twitter",
       "product/channels/twilio-whatsapp-sms",
       {
