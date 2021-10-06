@@ -1,15 +1,17 @@
 ---
 sidebar_label: "Instagram"
-title: 'How to create Instagram channel?'
+title: "How to create an Instagram channel?"
 ---
 
-If you are using a self-hosted Chatwoot installation, please configure the Instagram app as described in the [guide to setup Instagram app](/docs/self-hosted/configuration/features/integrations/instagram-channel-setup)
+If you are using a self-hosted Chatwoot installation, please configure the Instagram app as described in the [guide to set up the Instagram app](/docs/self-hosted/configuration/features/integrations/instagram-channel-setup).
 
 **Pre-requisite**
 
-**Step 1** Make sure you have instagram account. This link would help to setup business account: https://help.instagram.com/502981923235522/
+**Step 1:** Make sure you have an Instagram account. This link below would help to set up a business account.
 
-**Step 2** Make sure your Facebook page is connected to the Instagram account, for which the Instagram account holder is admin.
+https://help.instagram.com/502981923235522.
+
+**Step 2:** Make sure your Facebook page is connected to the Instagram account, for which the Instagram account holder is admin.
 
 You can do that setting here:
 
@@ -26,15 +28,15 @@ You can do that setting here:
 
 ![ig_create](./images/instagram/ig_create.png)
 
-**Step 2**. Click on "Facebook" icon.
+**Step 2**. Click on the "Facebook" icon.
 
 ![list_of_channels](./images/instagram/list_of_channels.png)
 
-**Step 3**. Click on Facebook login button. It will open a new window for you to login.
+**Step 3**. Click on the Facebook login button. It will open a new window for you to log in.
 
 ![login_to_fb](./images/instagram/login_to_fb.png)
 
-**Step 4**. Authenticate with Facebook, select instagram account and select the page you want to connect. Enable all permissions shown in the list, otherwise the app might not work.
+**Step 4**. Authenticate with Facebook, select an Instagram account and select the page you want to connect. Enable all permissions shown in the list. Otherwise, the app might not work.
 
 ![link_account](./images/instagram/link_account.png)
 
@@ -50,7 +52,7 @@ You can do that setting here:
 
 ![select_agents](./images/instagram/select_agents.png)
 
-**Step 6**. Hooray! You have successfully created a Messenger inbox. Whenever a customer sends a message to your Instagram account or Facebook page, you will be able to see it here and manage it.
+**Step 6**. Hooray! You have successfully created a Messenger inbox. Whenever a customer sends a message to your Instagram account or Facebook page, you will see it in the dashboard.
 
 ![inbox](./images/instagram/inbox.png)
 
