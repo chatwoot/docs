@@ -158,3 +158,21 @@ html[data-theme="light"] .navbar__link--active {
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.4rem;
 }
+
+.doc-page--footer {
+  padding: 2.4rem;
+  margin-top: 1rem;
+  background: var(--ifm-color-secondary-lightest);
+  border-radius: 8px;
+}
+
+.doc-page--footer--edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 997px) {
+  .doc-page--footer--edit {
+    flex-direction: column;
+  }
+}
