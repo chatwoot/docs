@@ -1,6 +1,8 @@
 ---
 sidebar_label: "Caprover"
 title: "Caprover Chatwoot Production deployment guide"
+help_discord: "https://discord.gg/jypY57m"
+help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categories/self-hosted"
 ---
 
 ## Caprover Overview
@@ -13,7 +15,7 @@ Caprover is an extremely easy to use application server management tool. It is b
 
 Finish your Caprover installation by referring to [Getting started guide](https://caprover.com/docs/get-started.html).
 
-### 2. Install Chatwoot 
+### 2. Install Chatwoot
 
 Chatwoot is available in the one-click apps option in Caprover. Search for Chatwoot in the list of one-click apps. Replace the default `version` with the latest `version` of chatwoot. Use appropriate values for the Postgres and Redis passwords and click install. It should only take a few minutes.
 
