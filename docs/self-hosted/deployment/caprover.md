@@ -1,6 +1,8 @@
 ---
 sidebar_label: "Caprover"
 title: "Caprover Chatwoot Production deployment guide"
+help_discord: "https://discord.gg/jypY57m"
+help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categories/self-hosted"
 ---
 
 ## Caprover Overview
