@@ -30,7 +30,7 @@ FB_APP_ID=
 ![register_domain](./images/instagram/register_domain.png)
 2. In the products section in your app settings page, Add `Instagram Graph Api`
 ![instagram_graph_api](./images/instagram/instagram_graph_api.png)
-3. Go to the Webhook settings and configure the callBack URL with `{your_chatwoot_url}/webhook/instagram`
+3. Go to the Webhook settings and configure the callBack URL with `{your_chatwoot_url}/webhooks/instagram`
 ![setup_callback](./images/instagram/setup_callback.png)
 4. provide the `IG_VERIFY_TOKEN` value from your environment variables for `verify token`
 5. Make sure your Facebook page is connected to the Instagram account, for which the Instagram account holder is admin.
@@ -95,7 +95,7 @@ Go to the Facebook developers page and navigate into your app settings. Add `loc
 In the Webhook > Instagram settings shown in the above image, configure the callback url with the following value.
 
 ```bash
-{your_ngrok_url}/webhook/instagram
+{your_ngrok_url}/webhooks/instagram
 ```
 
 Update verify token in your Chatwoot environment variables.
@@ -107,7 +107,7 @@ Restart the Chatwoot local server. Then, your Chatwoot setup will be ready to re
 
 1. After finishing the setup above, [create a Messenger inbox](/docs/product/channels/facebook) after logging in to your Chatwoot Installation.
 2. Send a message to your Facebook Page from your Instagram account.
-3. Wait and confirm incoming requests to `/webhook/instagram` endpoint in your ngrok screen.
+3. Wait and confirm incoming requests to `/webhooks/instagram` endpoint in your ngrok screen.
 4. You can also verify your callback URL by clicking on Test for the subscribed Instagram fields.
 Go to webhook Instagram and click on Test with `v11.0`
 ![subscribe](./images/instagram/subscribe.png)
