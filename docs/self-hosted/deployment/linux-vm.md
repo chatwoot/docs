@@ -21,12 +21,16 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**
 ```bash
 wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
 chmod 755 setup.sh
-./setup.sh master
 ```
 
 2. Execute the script, and it will take care of the initial **Chatwoot** setup.
 
-3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000`
+```bash
+./setup.sh master
+```
+
+3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
+for domain setup, it will be at https://chatwoot.mydomain.com.
 
 Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you are logged in as `root` user not as the `ubuntu` user.
 
@@ -136,4 +140,3 @@ journalctl -u chatwoot-web.1.service -f
 journalctl -u chatwoot-worker.1.service -f
 
 ```
-
