@@ -30,6 +30,7 @@ module.exports = [
     items: [
       "handbook/engineering/issue-triage",
       "handbook/engineering/pr-guidelines",
+      "handbook/engineering/frontend-guidelines",
       "handbook/engineering/release-process",
       "handbook/engineering/faq",
     ],
