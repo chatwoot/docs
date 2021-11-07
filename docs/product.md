@@ -30,6 +30,7 @@ This user guide includes a description of the features and capabilities, modes o
 
 - [Campaigns](/docs/product/features/campaigns)
 - [Canned responses](/docs/user-guide/features/canned-responses)
+- [Custom Attributes](/docs/user-guide/features/custom-attributes)
 - [Contacts](/docs/user-guide/contacts)
 - [Conversation Routing](/docs/product/inbox/routing-conversations-round-robin)
 - [Interactive Messages](/docs/product/others/interactive-messages)

@@ -1,12 +1,12 @@
 module.exports = [
   {
-    type: 'category',
+    type: "category",
     label: "Getting Started",
     items: [
       "product",
       // "user-guide/getting-started/glossary",
       {
-        "Setup your account":[
+        "Setup your account": [
           "user-guide/setup-your-account/create-an-account",
           "user-guide/setup-your-account/configure-your-profile",
           "user-guide/setup-your-account/configure-account-details",
@@ -17,7 +17,7 @@ module.exports = [
           "user-guide/add-label-settings",
           "user-guide/integrations",
           "user-guide/applications",
-        ]
+        ],
       },
     ],
     collapsed: false,
@@ -27,7 +27,7 @@ module.exports = [
     collapsed: false,
     collapsible: true,
     label: "Channels",
-    type: 'category',
+    type: "category",
     items: [
       {
         "Website Live Chat": [
@@ -36,16 +36,16 @@ module.exports = [
           "product/channels/live-chat/sdk/identity-validation",
           "product/channels/live-chat/conversation-continuity",
           {
-            "Integrations": [
+            Integrations: [
               "product/channels/live-chat/integrations/dialogflow",
               "product/channels/live-chat/webflow-integration",
               "product/channels/live-chat/integrations/docusaurus",
               "product/channels/live-chat/integrations/google-tag-manager",
               "product/channels/live-chat/integrations/react-native-widget",
               "product/channels/live-chat/integrations/nextjs",
-              "product/channels/live-chat/integrations/wordpress"
-            ]
-          }
+              "product/channels/live-chat/integrations/wordpress",
+            ],
+          },
         ],
       },
       "product/channels/facebook",
@@ -67,10 +67,11 @@ module.exports = [
     collapsed: false,
     collapsible: true,
     label: "Features",
-    type: 'category',
+    type: "category",
     items: [
       "product/features/campaigns",
       "user-guide/features/canned-responses",
+      "user-guide/features/custom-attributes",
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
       "product/others/interactive-messages",
@@ -79,10 +80,7 @@ module.exports = [
       {
         type: "category",
         label: "Webhooks",
-        items: [
-          "product/features/webhooks",
-          "product/others/webhook-events",
-        ]
+        items: ["product/features/webhooks", "product/others/webhook-events"],
       },
       "user-guide/conversation-workflow",
       "product/others/websocket-events",
@@ -90,9 +88,6 @@ module.exports = [
     ],
   },
   {
-    "Mobile App": [
-      "product/mobile-app/android",
-      "product/mobile-app/ios"
-    ],
+    "Mobile App": ["product/mobile-app/android", "product/mobile-app/ios"],
   },
 ];
