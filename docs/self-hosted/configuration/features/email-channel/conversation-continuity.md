@@ -60,6 +60,53 @@ If you are configuring Mandrill as your email service, configure Mandrill to rou
 
 If you want to know more about configuring other services visit [Action Mailbox Basics](https://edgeguides.rubyonrails.org/action_mailbox_basics.html#configuration)
 
+#### IMAP via getmail
+Chatwoot receives inbound emails through the [Action Mailbox](https://edgeguides.rubyonrails.org/action_mailbox_basics.html) feature of Ruby on Rails. Action Mailbox supports various 'ingresses' by default. They are defined in [here](https://github.com/rails/rails/blob/main/actionmailbox/lib/tasks/ingress.rake) and can be executed through `bin/rails`. For example
+```bash
+cat my_incoming_message | ./bin/rails action_mailbox:ingress:postfix \
+  RAILS_ENV=production \
+  URL=http://localhost:3000/rails/action_mailbox/postfix/inbound_emails \
+  INGRESS_PASSWORD=...
+```
+would import the contents of the file `my_incoming_message` into a Chatwoot instance running on `localhost` - assuming `my_incoming_message` contains an [RFC 822](https://datatracker.ietf.org/doc/html/rfc822) compliant message.
+
+The ingress tasks provided by Action Mailbox are a thin layer around an HTTP endpoint exposed by Action Mailbox. An alternative to using those tasks is to talk to the http endpoint directly. The following script achieves the same.
+```bash
+INGRESS_PASSWORD=...
+URL=http://localhost:3000/rails/action_mailbox/relay/inbound_emails
+
+curl -sS -u "actionmailbox:$INGRESS_PASSWORD" \
+ -A "Action Mailbox curl relayer" \
+ -H "Content-Type: message/rfc822" \
+ --data-binary @- \
+ $URL
+```
+
+The popular mail retrieval system [getmail6](https://github.com/getmail6/getmail6) can be used to fetch mails and import them into Chatwoot. If the curl script above is stored in `/home/chatwoot/bin/import_mail_to_chatwoot`, a configuration for doing so from an IMAP inbox is as follows.
+```
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = ...
+username = ...
+password = ...
+
+[destination]
+type = MDA_external
+path = /home/chatwoot/bin/import_mail_to_chatwoot
+
+[options]
+verbose = 0
+read_all = false
+delete = false
+delivered_to = false
+received = false
+message_log = /home/chatwoot/logs/import_imap.log
+message_log_syslog = false
+message_log_verbose = true
+```
+
+For mail to be imported you'll need to execute `getmail` regularly, for example using a cron job. For `IMAP` you can also run it constantly using `getmail --idle INBOX`, though that will need some care to deal with interrupted connections, etc.
+
 ### Configure inbound email domain environment variable
 
 Add the following environment variable with the value `your-domain.com`, where `your-domain.com` is the domain for which you set up MX records in the previous step.
