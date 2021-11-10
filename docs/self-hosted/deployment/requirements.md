@@ -23,7 +23,7 @@ Chatwoot is developed for Linux-based operating systems. Please consider using a
 
 ### Ruby versions
 
-- Ruby 2.7 and later is required.
+- Ruby 3.0 and later is required.
 
 You must use the standard MRI implementation of Ruby. Chatwoot needs several Gems that have native extensions.
 
@@ -48,7 +48,8 @@ from source at the [Node.js website](https://nodejs.org/en/download/).
 
 The necessary hard drive space largely depends on your usage, the size and number of attachments that you recieve through your conversations etc.
 
-Consider using a storage option provided by AWS, Azure, google cloud etc, if you want to stay flexible and accomodate the growing storage requirements.
+Consider using a storage option provided by AWS, Azure, google cloud etc, if you want to stay flexible and accomodate the growing storage requirements. Chatwoot
+also supports other s3 api compatible services viz Minio, DigitalOcean Spaces, Linode Objects etc. 
 
 ### CPU
 
