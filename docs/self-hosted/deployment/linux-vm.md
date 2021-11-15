@@ -12,26 +12,34 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**
 
 ## Steps to install
 
+> **Note**: If you plan to use a domain with chatwoot, please add an A record before proceeding.
+> Refer the `Configuring the installation domain` section below.
+
+
 1. Create a **setup.sh** file and copy the content from the above link or use the following commands.
 
 ```bash
 wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
 chmod 755 setup.sh
-./setup.sh master
 ```
 
 2. Execute the script, and it will take care of the initial **Chatwoot** setup.
 
-3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000`
+```bash
+./setup.sh master
+```
+
+3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
+for domain setup, it will be at https://chatwoot.mydomain.com.
 
 Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you are logged in as `root` user not as the `ubuntu` user.
 
 ## Configuring The installation Domain
 
-1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation IP address
+1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation IP address.
 2. Continue with the installation script by entering `yes` when prompted about domain setup.
-4. Enter your domain, and the script will take care of configuring Nginx and SSL
-4. Your Chatwoot installation should be accessible from the `https://chatwoot.mydomain.com` now.
+4. Enter your domain, and the script will take care of configuring Nginx and SSL via LetsEncrypt.
+4. Your Chatwoot installation should be accessible from `https://chatwoot.mydomain.com` now.
 
 ## Configure the required environment variables
 
@@ -132,4 +140,3 @@ journalctl -u chatwoot-web.1.service -f
 journalctl -u chatwoot-worker.1.service -f
 
 ```
-

@@ -19,6 +19,6 @@ Your Chatwoot account can be accessed on iOS mobile devices via the chatwoot mob
 
 ## Testing
 
-To help with testing app updates before they're released, you can sign up in our beta program. Open this [link](https://testflight.apple.com/join/ji5H8iSJ) from your iOS device.
+To help with testing app updates before they're released, you can sign up in our beta program. Open this [link](https://testflight.apple.com/join/yQ4yoSx4) from your iOS device.
 
 You can leave the Beta testing program at any time opening TestFlight app and click **Stop Testing**.

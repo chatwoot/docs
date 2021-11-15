@@ -39,15 +39,15 @@ Chatwoot APIs are built on Ruby on Rails, you need install ruby 2.7.2
 If you are using `rvm` :
 
 ```bash
-rvm install ruby-2.7.2
-rvm use 2.7.2
+rvm install ruby-3.0.2
+rvm use 3.0.2
 source ~/.rvm/scripts/rvm
 ```
 
 If you are using `rbenv` to manage ruby versions do :
 
 ```bash
-rbenv install 2.7.2
+rbenv install 3.0.2
 ```
 
 `rbenv` identifies the ruby version from `.ruby-version` file on the root of the project and loads it automatically.
