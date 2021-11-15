@@ -24,6 +24,7 @@ module.exports = [
       "contributing-guide/project-setup",
       "contributing-guide/environment-variables",
       "contributing-guide/common-errors",
+      "contributing-guide/telegram-channel-setup",
     ],
   },
   {
