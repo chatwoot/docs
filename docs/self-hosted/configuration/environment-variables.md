@@ -53,6 +53,8 @@ and based on your SMTP server the following variables
 SMTP_ADDRESS=
 SMTP_USERNAME=
 SMTP_PASSWORD=
+SMTP_TLS=
+SMTP_SSL=
 ```
 
 #### Amazon SES
