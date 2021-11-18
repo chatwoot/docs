@@ -15,10 +15,6 @@ Chatwoot supports custom attributes other than standard data attributes (a defau
 
 Custom data attributes are the information you attached to conversation/customers, like how many times they've ordered a product, when they signup, or what plan they're on. So you can set whatever attributes you want to understand your customer/conversation better, and it will all show in Chatwoot.
 
-
-
-![custom-attributes](./images/custom-attributes/custom-attributes.png)
-
 ### Add a new custom attribute
 
 To add a new custom attribute, navigate to the Custom Attributes by clicking on **Settings -> Custom Attributes** from the sidebar.
@@ -38,7 +34,7 @@ These are the inputs required to create the custom attribute:
 | Applies to   | Attribute type (Conversation/Contact)                                      |
 | Display name | Act as a label while rendering custom attribute                            |
 | Description  | Description about the custom attribute                                     |
-| Type         | Type of data it will store. Currently supports Text, Number, Link , and Date |
+| Type         | Type of data it will store. Currently supports Text, Number, Link, and Date |
 | Key          | Unique identifier attach to the custom attribute                           |
 
 </div>
@@ -57,11 +53,11 @@ It will open a attribute dropdown selector, then select the attribute that you w
 
 ![add-conversation-attribute](./images/custom-attributes/select-attribute.png)
 
-Enter a valid value for the attribute and click on tick button will save the attribute.
+Enter a valid value click on the Create button. If the request is successful, a message "Attribute added successfully" will be displayed.
 
 ![add-conversation-attribute](./images/custom-attributes/focus-attribute.png)
 
-Also you could able see the actions like edit/delete/copy by hovering attribute.
+Also you could able see the actions like edit/delete/copy by hovering on the attribute.
 
 ![attribute-actions](./images/custom-attributes/attribute-actions.png)
 
@@ -76,7 +72,7 @@ To set a contact custom attributes call `setCustomAttributes` method as follows,
 ```js
 window.$chatwoot.setCustomAttributes({
   key: value,
-  // Here the key which is already defined in custom attribute
+  // Key is a unique identifier which is already defined while creating a custom attribute
   // Value should be based on type (Currently support Number, Date, String and Number)
   // Double-check that your keys always have a JSON-valid value
   // You need to flatten nested JSON structure while using this function
@@ -92,7 +88,7 @@ window.$chatwoot.setCustomAttributes({
 });
 ```
 
-You can view these information in the sidepanel of a conversation.
+You can view these attributes in the contact/conversation sidepanel
 
 To delete a custom attribute, use `deleteCustomAttribute` as follows
 
@@ -119,11 +115,11 @@ It will open a attribute dropdown selector, then select the attribute that you w
 
 ![add-contact-attribute](./images/custom-attributes/select-contact-attribute.png)
 
-Enter a valid value for the attribute and click on tick button will save the attribute.
+Enter a valid value, click on the Create button. If the request is successful, a message "Attribute added successfully" will be displayed.
 
 ![add-contact-attribute](./images/custom-attributes/focus-contact-attribute.png)
 
-Also you could able see the actions like edit/delete/copy by hovering attribute.
+Also you could able see the actions like edit/delete/copy by hovering on the attribute.
 
 ![contact-attribute-actions](./images/custom-attributes/contact-attribute-actions.png)
 
