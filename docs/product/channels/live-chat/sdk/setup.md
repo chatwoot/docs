@@ -106,7 +106,7 @@ To generate HMAC, read [identity validation](/docs/product/channels/live-chat/sd
 
 ### Set custom attributes
 
-Inorder to set additional information about the customer you can use customer attributes field.
+Inorder to set additional information about the customer you can use customer custom attributes field. Read more about custom attributes [here](/user-guide/features/custom-attributes)
 
 To set a custom attributes call `setCustomAttributes` as follows
 
@@ -115,9 +115,8 @@ window.$chatwoot.setCustomAttributes({
   accountId: 1,
   pricingPlan: 'paid',
 
-  // You can pass any key value pair here.
-  // Value should either be a string or a number.
-  // You need to flatten nested JSON structure while using this function
+  // Here the key which is already defined in custom attribute
+  // Value should be based on type (Currently support Number, Date, String and Number)
 });
 ```
 
@@ -126,7 +125,7 @@ You can view these information in the sidepanel of a conversation.
 To delete a custom attribute, use `deleteCustomAttribute` as follows
 
 ```js
-window.$chatwoot.deleteCustomAttribute('attribute-name');
+window.$chatwoot.deleteCustomAttribute('attribute-key');
 ```
 
 ### Set language manually
