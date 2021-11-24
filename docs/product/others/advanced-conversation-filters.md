@@ -4,7 +4,7 @@ title: "Advanced Conversation Filters"
 
 Chatwoot let's you apply advanced filters for your conversations. You will have the ability to filter conversations with multiple attributes at once and even query them with AND and OR operators.
 
- offers filtering conversations by the below attributes:
+Chatwoot offers filtering conversations by the below attributes:
 
 1. Conversation Status
 2. Agent Assigned
