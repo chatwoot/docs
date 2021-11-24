@@ -45,6 +45,11 @@ module.exports = {
           position: 'right',
         },
         {
+          href: 'https://www.chatwoot.com/developers/api/',
+          label: 'API',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/chatwoot/chatwoot',
           label: 'GitHub',
           position: 'right',
