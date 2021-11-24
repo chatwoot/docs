@@ -24,6 +24,8 @@ FB_APP_SECRET=
 FB_APP_ID=
 ```
 
+> **NOTE**: Right now, Chatwoot is trying to simplify this setup and have this configuration be done from the UI. If you are using a Chatwoot version latest than v1.22.1, set the above FB credentials in Chatwoot super admin panel under InstallationConfig. The url to access super_admin panel is `<your-chatwoot-domain.com>/super_admin`. If you were using an older version of Chatwoot, your existing environment variable setting would be automatically migrated to the InstallationConfig setting.
+
 ### Configure the Facebook App
 
 1. In the app settings, add your `Chatwoot installation domain` as your app domain.
