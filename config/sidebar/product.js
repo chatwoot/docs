@@ -85,6 +85,7 @@ module.exports = [
       "user-guide/conversation-workflow",
       "product/others/websocket-events",
       "product/others/cookies",
+      "product/others/advanced-conversation-filters",
     ],
   },
   {
