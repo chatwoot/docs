@@ -15,7 +15,6 @@ helm install chatwoot chatwoot/chatwoot
 
 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/o1jnYfy8CCo"></iframe>
 
-
 ## Prerequisites
 
 - Kubernetes 1.16+
@@ -28,7 +27,7 @@ helm install chatwoot chatwoot/chatwoot
 To install the chart with the release name `chatwoot`:
 
 ```console
-helm install chatwoot chatwoot/chatwoot
+$ helm install chatwoot chatwoot/chatwoot
 ```
 
 The command deploys Chatwoot on the Kubernetes cluster in the default configuration. The [parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -53,70 +52,75 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ### Chatwoot Image parameters
 
-| Name                | Description                                          | Value                 |
-| ------------------- | ---------------------------------------------------- | --------------------- |
-| `image.repository`  | Chatwoot image repository                           | `chatwoot/chatwoot`    |
-| `image.tag`         | Chatwoot image tag (immutable tags are recommended) | `v18.1.1`              |
-| `image.pullPolicy`  | Chatwoot image pull policy                          | `IfNotPresent`         |
+| Name                | Description                                          | Value                  |
+| ------------------- | ---------------------------------------------------- | ---------------------- | 
+| `image.repository`  | Chatwoot image repository                            | `chatwoot/chatwoot`    |
+| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v1.22.1`              |
+| `image.pullPolicy`  | Chatwoot image pull policy                           | `IfNotPresent`         |
 
-
+ 
 ### Chatwoot Environment Variables
 
-| Name                                | Type                                                                | Default Value                                              |
-| ----------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `env.ACTIVE_STORAGE_SERVICE`        | Storage service. `local` for disk. `amazon` for s3.                 | `"local"`                                                  |
-| `env.ASSET_CDN_HOST`                | Set if CDN is used for asset delivery.                              | `""`                                                       |
-| `env.CHATWOOT_INSTALLATION_ENV`     | Sets chatwoot installation method.                                  | `"helm"`                                                   |
-| `env.ENABLE_ACCOUNT_SIGNUP`         |  `true` : default option, allows sign ups, `false` : disables all the end points related to sign ups, `api_only`: disables the UI for signup but you can create sign ups via the account apis.  | `"false"`                                                  |
-| `env.FORCE_SSL`                     | Force all access to the app over SSL, default is set to false.                  | `"false"`                                                  |
-| `env.FRONTEND_URL`                  | Replace with the URL you are planning to use for your app.                      | `"http://0.0.0.0:3000/"`                                   |
-| `env.IOS_APP_ID`                    | Change this variable only if you are using a custom build for mobile app.       | `"6C953F3RX2.com.chatwoot.app"`                            |
-| `env.ANDROID_BUNDLE_ID`             | Change this variable only if you are using a custom build for mobile app.       | `"com.chatwoot.app"`                                       |
-| `env.MAILER_SENDER_EMAIL`           | The email from which all outgoing emails are sent.                              | `""`                                                       |
-| `env.RAILS_ENV`                     | Sets rails environment.                                                         | `"production"`                                             |
-| `env.RAILS_MAX_THREADS`             | Number of threads each worker will use.                                         | `"5"`                                                      |
-| `env.SECRET_KEY_BASE`               | Used to verify the integrity of signed cookies. Ensure a secure value is set.   | `"wsedrfghjhygtfrdecfvbhnygtfvbtyftctdrxresxcygvujhb"`     |
-| `env.SENTRY_DSN`                    | Sentry data source name.                                                        | `""`                                                       |
-| `env.SMTP_ADDRESS`                  | Set your smtp address.                                                          |`""`                                                        |
-| `env.SMTP_AUTHENTICATION`           | Allowed values: `plain`,`login`,`cram_md5`                                      | `"plain"`                                                  |
-| `env.SMTP_ENABLE_STARTTLS_AUTO`     | Defaults to true.                                                               | `"true"`                                                   |
-| `env.SMTP_OPENSSL_VERIFY_MODE`      | Can be: `none`, `peer`, `client_once`, `fail_if_no_peer_cert`                   | `"none"`                                                   |
-| `env.SMTP_PASSWORD`                 | SMTP password                                                                   | `""`                                                       |
-| `env.SMTP_PORT`                     | SMTP port                                                                       | `"587"`                                                    |
-| `env.SMTP_USERNAME`                 | SMTP username                                                                   | `""`                                                       |
-| `env.USE_INBOX_AVATAR_FOR_BOT`      | Bot customizations                                                              | `"true"`                                                   |
-
+| Name                                 | Type                                                                | Default Value                                              |
+| ------------------------------------ | ------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `env.ACTIVE_STORAGE_SERVICE`         | Storage service. `local` for disk. `amazon` for s3.                 | `"local"`                                                  |
+| `env.ASSET_CDN_HOST`                 | Set if CDN is used for asset delivery.                              | `""`                                                       |
+| `env.INSTALLATION_ENV`               | Sets chatwoot installation method.                                  | `"helm"`                                                   |
+| `env.ENABLE_ACCOUNT_SIGNUP`          | `true` : default option, allows sign ups, `false` : disables all the end points related to sign ups, `api_only`: disables the UI for signup but you can create sign ups via the account apis.  | `"false"`                                                  |
+| `env.FORCE_SSL`                      | Force all access to the app over SSL, default is set to false.                  | `"false"`                                                  |
+| `env.FRONTEND_URL`                   | Replace with the URL you are planning to use for your app.                      | `"http://0.0.0.0:3000/"`                                   |
+| `env.IOS_APP_ID`                     | Change this variable only if you are using a custom build for mobile app.       | `"6C953F3RX2.com.chatwoot.app"`                            |
+| `env.ANDROID_BUNDLE_ID`              | Change this variable only if you are using a custom build for mobile app.       | `"com.chatwoot.app"`                                       |
+| `env.ANDROID_SHA256_CERT_FINGERPRINT`| Change this variable only if you are using a custom build for mobile app.       | `"AC:73:8E:DE:EB:5............"`                           |
+| `env.MAILER_SENDER_EMAIL`            | The email from which all outgoing emails are sent.                              | `""`                                                       |
+| `env.RAILS_ENV`                      | Sets rails environment.                                                         | `"production"`                                             |
+| `env.RAILS_MAX_THREADS`              | Number of threads each worker will use.                                         | `"5"`                                                      |
+| `env.SECRET_KEY_BASE`                | Used to verify the integrity of signed cookies. Ensure a secure value is set.   | `replace_with_your_super_duper_secret_key_base`            |
+| `env.SENTRY_DSN`                     | Sentry data source name.                                                        | `""`                                                       |
+| `env.SMTP_ADDRESS`                   | Set your smtp address.                                                          |`""`                                                        |
+| `env.SMTP_AUTHENTICATION`            | Allowed values: `plain`,`login`,`cram_md5`                                      | `"plain"`                                                  |
+| `env.SMTP_ENABLE_STARTTLS_AUTO`      | Defaults to true.                                                               | `"true"`                                                   |
+| `env.SMTP_OPENSSL_VERIFY_MODE`       | Can be: `none`, `peer`, `client_once`, `fail_if_no_peer_cert`                   | `"none"`                                                   |
+| `env.SMTP_PASSWORD`                  | SMTP password                                                                   | `""`                                                       |
+| `env.SMTP_PORT`                      | SMTP port                                                                       | `"587"`                                                    |
+| `env.SMTP_USERNAME`                  | SMTP username                                                                   | `""`                                                       |
+| `env.USE_INBOX_AVATAR_FOR_BOT`       | Bot customizations                                                              | `"true"`                                                   |
+                                            
 ### Email setup for conversation continuity (Incoming emails)
 
-| Name                                | Type                                                                | Default Value                                              |
-| ----------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `env.MAILER_INBOUND_EMAIL_DOMAIN`   | This is the domain set for the reply emails when conversation continuity is enabled. | `""`                                                       |
-| `env.RAILS_INBOUND_EMAIL_SERVICE`   | Set this to appropriate ingress channel with regards to incoming emails. Possible values are `relay`, `mailgun`, `mandrill`, `postmark` and `sendgrid`. | `""`                                                       |
-| `env.RAILS_INBOUND_EMAIL_PASSWORD`  | Password for the email service.                                     | `""`                                                       |
-| `env.MAILGUN_INGRESS_SIGNING_KEY`   | Set if using mailgun for incoming conversations.                    | `""`                                                       |
-| `env.MANDRILL_INGRESS_API_KEY`      | Set if using mandrill for incoming conversations.                   | `""`                                                       |
+| Name                                | Type                                                                                                                                                    | Default Value |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `env.MAILER_INBOUND_EMAIL_DOMAIN`   | This is the domain set for the reply emails when conversation continuity is enabled.                                                                    | `""`          |
+| `env.RAILS_INBOUND_EMAIL_SERVICE`   | Set this to appropriate ingress channel with regards to incoming emails. Possible values are `relay`, `mailgun`, `mandrill`, `postmark` and `sendgrid`. | `""`          |
+| `env.RAILS_INBOUND_EMAIL_PASSWORD`  | Password for the email service.                                                                                                                         | `""`          |
+| `env.MAILGUN_INGRESS_SIGNING_KEY`   | Set if using mailgun for incoming conversations.                                                                                                        | `""`          |
+| `env.MANDRILL_INGRESS_API_KEY`      | Set if using mandrill for incoming conversations.                                                                                                       | `""`          |
 
 ### Postgres variables
 
-| Name                                | Type                                                                | Default Value                                              |
-| ----------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Name                                | Type                                                                          | Default Value                                    |
+| ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------ |
 | `postgresql.enabled`                | Set to `false` if using external postgres and modify the below variables.     | `true`                                           |
-| `env.POSTGRES_DB`                   | Chatwoot database name                                                        | `"chatwoot_production"`                          |
-| `env.POSTGRES_HOST`                 | Database url. Edit if using external postgres.                                | `"chatwoot-chatwoot-postgresql"`                 |
-| `env.POSTGRES_PASSWORD`             | Database password. Edit if using external postgres.                           | `"postgres"`                                     |
-| `env.POSTGRES_PORT`                 | Database port                                                                 | `5432`                                           |
-| `env.POSTGRES_USERNAME`             | Database username.                                                            | `"postgres"`                                     |
+| `postgresql.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
+| `postgresql.postgresqlHost`         | Postgres host. Edit if using external postgres.                               | `""`                                             |
+| `postgresql.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
+| `postgresql.postgresqlPort`         | Postgres port                                                                 | `5432`                                           |
+| `postgresql.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
 
 ### Redis variables
 
-| Name                                | Type                                                                | Default Value                                              |
-| ----------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `redis.enabled`                     | Set to `false` if using external redis and modify the below variables.   | `true`                                                        |
-| `env.REDIS_HOST`                    | Redis host name                                                            | `"chatwoot-chatwoot-redis-master"`                         |
-| `env.REDIS_PASSWORD`                | Redis password                                                             | `"redis"`                                                  |
-| `env.REDIS_SENTINELS`               | Redis Sentinel can be used by passing list of sentinel host and ports. For example, `sentinel_host1:port1`, `sentinel_host2:port2`    | `""`  |
-| `env.REDIS_SENTINEL_MASTER_NAME`    | Redis sentinel master name is required when using sentinel. | `""`                                                       |
-| `env.REDIS_URL`                     | REDIS url                                                      | `"redis://:redis@chatwoot-chatwoot-redis-master:6379"`     |
+| Name                                | Type                                                                       | Default Value                                       |
+| ----------------------------------- | -------------------------------------------------------------------------  | --------------------------------------------------- |
+| `redis.auth.password`               | Password used for internal redis cluster                                   | `redis`                                             |
+| `redis.enabled`                     | Set to `false` if using external redis and modify the below variables.     | `true`                                              |
+| `redis.host`                        | Redis host name                                                            | `""`                                                |
+| `redis.port`                        | Redis port                                                                 | `""`                                                |
+| `redis.password`                    | Redis password                                                             | `""`                                                |
+| `env.REDIS_TLS`                     | Set to `true` if TLS(`rediss://`) is required                              | `false`                                             |
+| `env.REDIS_SENTINELS`               | Redis Sentinel can be used by passing list of sentinel host and ports.     | `""`                                                |
+| `env.REDIS_SENTINEL_MASTER_NAME`    | Redis sentinel master name is required when using sentinel.                | `""`                                                |
+
+
 ### Logging variables
 
 | Name                                | Type                                                                | Default Value                                              |
@@ -124,16 +128,16 @@ The command removes all the Kubernetes components associated with the chart and 
 | `env.RAILS_LOG_TO_STDOUT`           | string                                                              | `"true"`                                                   |
 | `env.LOG_LEVEL`                     | string                                                              | `"info"`                                                   |
 | `env.LOG_SIZE`                      | string                                                              | `"500"`                                                    |
-### Third party credentials
+
+### Third party credentials 
 
 | Name                                | Type                                                                 | Default Value                                              |
 | ----------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
 | `env.S3_BUCKET_NAME`                | S3 bucket name                                                       | `""`                                                       |
 | `env.AWS_ACCESS_KEY_ID`             | Amazon access key ID                                                 | `""`                                                       |
-| `env.AWS_ENDPOINT_URL`              | https://www.chatwoot.com/docs/configuring-s3-bucket-as-cloud-storage | `""`                                                       |
 | `env.AWS_REGION`                    | Amazon region                                                        | `""`                                                       |
 | `env.AWS_SECRET_ACCESS_KEY`         | Amazon secret key ID                                                 | `""`                                                       |
-| `env.FB_APP_ID`                     | For facebook channel. https://www.chatwoot.com/docs/facebook-setup   | `""`                                                       |
+| `env.FB_APP_ID`                     | For facebook channel https://www.chatwoot.com/docs/facebook-setup    | `""`                                                       |
 | `env.FB_APP_SECRET`                 | For facebook channel                                                 | `""`                                                       |
 | `env.FB_VERIFY_TOKEN`               | For facebook channel                                                 | `""`                                                       |
 | `env.SLACK_CLIENT_ID`               | For slack integration                                                | `""`                                                       |
@@ -171,12 +175,6 @@ The command removes all the Kubernetes components associated with the chart and 
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| postgresql.enabled | bool | `true` |  |
-| postgresql.nameOverride | string | `"chatwoot-postgresql"` |  |
-| postgresql.postgresqlDatabase | string | `"chatwoot_production"` |  |
-| postgresql.postgresqlPassword | string | `"postgres"` |  |
-| postgresql.postgresqlUsername | string | `"postgres"` |  |
-| redis.auth.password | string | `"redis"` |  |
 | redis.master.persistence.enabled | bool | `true` |  |
 | redis.nameOverride | string | `"chatwoot-redis"` |  |
 | resources | object | `{}` |  |
@@ -199,7 +197,7 @@ The command removes all the Kubernetes components associated with the chart and 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```bash
-helm install my-release \
+$ helm install my-release \
   --set env.FRONTEND_URL="chat.yourdomain.com"\
     chatwoot/chatwoot
 ```
@@ -209,7 +207,7 @@ The above command sets the Chatwoot server frontend URL to `chat.yourdoamain.com
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-helm install my-release -f values.yaml chatwoot/chatwoot
+$ helm install my-release -f values.yaml chatwoot/chatwoot
 ```
 
 > **Tip** You can use the default `values.yaml` file.
@@ -220,4 +218,20 @@ PostgreSQL is installed along with the chart if you choose the default setup. To
 
 ## Redis
 
-Redis is installed along with the chart if you choose the default setup. To use an external Redis DB, please set `redis.enabled` to `false` and set the variables under the Redis section above
+Redis is installed along with the chart if you choose the default setup. To use an external Redis DB, please set `redis.enabled` to `false` and set the variables under the Redis section above.
+
+
+## Upgrading
+
+
+## To 0.6.x
+
+Existing labels were causing issues with `helm upgrade`. `0.6.x` introduces breaking changes related to selector 
+labels used for deployements. Please delete your helm release and recreate. Deleting your helm release will 
+not delete your persistent volumes used for redis and postgres and as such your data should be safe. 
+
+```
+helm delete chatwoot
+helm repo update
+helm install chatwoot chatwoot/chatwoot
+```
