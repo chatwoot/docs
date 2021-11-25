@@ -27,7 +27,7 @@ helm install chatwoot chatwoot/chatwoot
 To install the chart with the release name `chatwoot`:
 
 ```console
-$ helm install chatwoot chatwoot/chatwoot
+helm install chatwoot chatwoot/chatwoot
 ```
 
 The command deploys Chatwoot on the Kubernetes cluster in the default configuration. The [parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -197,7 +197,7 @@ The command removes all the Kubernetes components associated with the chart and 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```bash
-$ helm install my-release \
+helm install my-release \
   --set env.FRONTEND_URL="chat.yourdomain.com"\
     chatwoot/chatwoot
 ```
@@ -207,7 +207,7 @@ The above command sets the Chatwoot server frontend URL to `chat.yourdoamain.com
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install my-release -f values.yaml chatwoot/chatwoot
+helm install my-release -f values.yaml chatwoot/chatwoot
 ```
 
 > **Tip** You can use the default `values.yaml` file.
