@@ -8,8 +8,6 @@ Chatwoot integrates with multiple conversation channels like website live-chat, 
 
 This user guide includes a description of the features and capabilities, modes of operation, and step-by-step procedures for the Chatwoot platform access and use.
 
-
-
 ### Setup your account
 
 - [Create a Chatwoot account](/docs/user-guide/setup-your-account/create-an-account)
@@ -25,6 +23,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Twitter](/docs/product/channels/twitter)
 - [Whatsapp via Twilio](/docs/product/channels/twilio-whatsapp-sms)
 - [API Channel](/docs/product/channels/api/create-channel)
+- [Email](/docs/product/channels/email/create-channel)
 
 ### Features
 
@@ -46,17 +45,17 @@ This user guide includes a description of the features and capabilities, modes o
 
 Web dashboard and the live-chat widget works with most of the modern web browsers. To see the support browser versions, see the table below.
 
-| Browser | Minimum version |
-| -- | -- |
-| Mozilla Firefox | 52 |
-| Google Chrome | 57 |
-| Chromium | 57 |
-| Apple Safari | 14.1 |
-| Microsoft Edge | 16 |
+| Browser         | Minimum version |
+| --------------- | --------------- |
+| Mozilla Firefox | 52              |
+| Google Chrome   | 57              |
+| Chromium        | 57              |
+| Apple Safari    | 14.1            |
+| Microsoft Edge  | 16              |
 
 To see the supported mobile OS versions for the mobile app, see the table below.
 
-| OS | Minimum version |
-| -- | -- |
-| Android | Android 5.0 |
-| iOS | iOS 11.0 |
+| OS      | Minimum version |
+| ------- | --------------- |
+| Android | Android 5.0     |
+| iOS     | iOS 11.0        |

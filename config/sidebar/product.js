@@ -60,6 +60,20 @@ module.exports = [
           "product/channels/api/client-apis",
         ],
       },
+      {
+        "Email": [
+          "product/channels/email/create-channel",
+          "product/channels/email/configure-imap",
+          "product/channels/email/configure-smtp",
+          {
+            "Gmail": [
+              "product/channels/email/gmail/enable-imap",
+              "product/channels/email/gmail/less-secure-access",
+              "product/channels/email/gmail/generate-app-password",
+            ]
+          }
+        ],
+      },
       "product/channels/supported-features",
     ],
   },
