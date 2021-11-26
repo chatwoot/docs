@@ -36,8 +36,7 @@ module.exports = [
           "product/channels/live-chat/sdk/identity-validation",
           "product/channels/live-chat/conversation-continuity",
           {
-            Integrations: [
-              "product/channels/live-chat/integrations/dialogflow",
+            "Setup Instructions": [
               "product/channels/live-chat/webflow-integration",
               "product/channels/live-chat/integrations/docusaurus",
               "product/channels/live-chat/integrations/google-tag-manager",
@@ -78,6 +77,11 @@ module.exports = [
       "user-guide/reports",
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
+      {
+        type: "category",
+        label: "Integrations",
+        items: ["product/channels/live-chat/integrations/dialogflow", "product/features/webhooks"]
+      }
     ],
   },
   {
@@ -88,11 +92,7 @@ module.exports = [
     items: [
       "product/others/agent-bots",
       "product/others/interactive-messages",
-      {
-        type: "category",
-        label: "Webhooks",
-        items: ["product/features/webhooks", "product/others/webhook-events"],
-      },
+      "product/others/webhook-events",
       "product/others/websocket-events",
       "product/others/cookies",
     ],

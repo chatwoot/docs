@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Introduction"
+sidebar_label: "Webhooks"
 title: "Getting started with webhooks in Chatwoot"
 ---
 
