@@ -3,7 +3,7 @@ sidebar_label: "Configure IMAP"
 title: "How to configure IMAP for Email channel?"
 ---
 
-_Note:_ To setup IMAP for Gmail, please enable IMAP in inbox settings. [Enable IMAP](/docs/product/channels/email/gmail/enable-imap)
+> **Note:** To setup IMAP for Gmail, please enable IMAP in inbox settings. [Enable IMAP](/docs/product/channels/email/gmail/enable-imap)
 
 **Step 1**. Go to Settings > Inboxes > Email Inbox settings page.
 
