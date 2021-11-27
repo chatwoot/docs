@@ -35,7 +35,7 @@ Hooray! The app is created now. Next step is to enable "Sign in with Twitter" pe
 
 ### Complete profile information
 
-Complete the application profile. See the "App Details" section as shown below. Update the name, logo and description. Use the "APP ID" displayed in the screenshot as `TWITTER_APP_ID` in Chatwot.
+Complete the application profile. See the "App Details" section as shown below. Update the name, logo and description. Use the "APP ID" displayed in the screenshot as `TWITTER_APP_ID` in Chatwoot.
 
 ![app-details](./images/twitter/app-details.png)
 
