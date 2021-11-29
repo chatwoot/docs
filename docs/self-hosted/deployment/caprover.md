@@ -31,7 +31,7 @@ Also, ensure to set the appropriate environment variables for email, Object Stor
 
 ## Upgrading Chatwoot installation
 
-To update your chatwoot installation to the latest version in Caprover, Run the following command in the deployment tab for web and worker in `method 5: deploy captain-definition`
+To update your chatwoot installation to the latest version in Caprover, run the following command in the deployment tab for web and worker in `method 5: deploy captain-definition`. Make sure to replace `[DESIRED VERSION HERE]` with the current latest stable version. Check [here](https://www.chatwoot.com/changelog/) and [here](https://hub.docker.com/r/chatwoot/chatwoot/tags) for possible version numbers first.
 
 ### web
 
@@ -39,7 +39,7 @@ To update your chatwoot installation to the latest version in Caprover, Run the 
 {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM chatwoot/chatwoot:latest",
+    "FROM chatwoot/chatwoot:[DESIRED VERSION HERE]",
     "RUN chmod +x docker/entrypoints/rails.sh",
     "ENTRYPOINT [\"docker/entrypoints/rails.sh\"]",
     "CMD bundle exec rake db:chatwoot_prepare; bundle exec rails s -b 0.0.0.0 -p 3000"
@@ -52,7 +52,7 @@ To update your chatwoot installation to the latest version in Caprover, Run the 
 {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM chatwoot/chatwoot:latest",
+    "FROM chatwoot/chatwoot:[DESIRED VERSION HERE]",
     "RUN chmod +x docker/entrypoints/rails.sh",
     "ENTRYPOINT [\"docker/entrypoints/rails.sh\"]",
     "CMD bundle exec sidekiq -C config/sidekiq.yml"
