@@ -95,7 +95,7 @@ module.exports = [
       {
         type: "category",
         label: "Integrations",
-        items: ["product/channels/live-chat/integrations/dialogflow", "product/features/webhooks"]
+        items: ["product/channels/live-chat/integrations/dialogflow", "product/features/webhooks", "product/features/slack"]
       }
     ],
   },

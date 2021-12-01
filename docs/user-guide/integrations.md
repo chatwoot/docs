@@ -13,7 +13,7 @@ Click on Settings on home page .
 
 <div align="center">
 
-Click on Integrations. You can see the screen which displays the already installed integrations. 
+Click on Integrations. You can see the screen which displays the already installed integrations.
 
 <img src={require('./images/integrations1.png').default} width="800" alt="Integration Home Screen" />
 
@@ -58,7 +58,7 @@ Click on Add New Webhooks button on the right hand top side of the screen.
 
 </div>
 
-A screen opens up where you can enter the details of the New Webhook you want to create. 
+A screen opens up where you can enter the details of the New Webhook you want to create.
 
 
 <div align="center">
