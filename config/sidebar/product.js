@@ -87,6 +87,7 @@ module.exports = [
       "user-guide/features/custom-attributes",
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
+      "user-guide/features/keyboard-shortcuts",
       "user-guide/features/multilingual-support",
       "user-guide/reports",
       "user-guide/conversation-workflow",
