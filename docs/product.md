@@ -32,6 +32,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Custom Attributes](/docs/user-guide/features/custom-attributes)
 - [Contacts](/docs/user-guide/contacts)
 - [Conversation Routing](/docs/product/inbox/routing-conversations-round-robin)
+- [Keyboard Shortcuts](/docs/user-guide/features/keyboard-shortcuts)
 - [Multilingual Support](/docs/user-guide/features/multilingual-support)
 - [Reports](/docs/user-guide/reports)
 
@@ -41,6 +42,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [iOS](/docs/product/mobile-app/ios)
 
 ### Advanced
+
 - [Agent Bots](/docs/product/others/agent-bots)
 - [Interactive Messages](/docs/product/others/interactive-messages)
 - [Webhooks](/docs/product/features/webhooks)
