@@ -5,16 +5,19 @@ title: "Self-hosted installation guide"
 
 This guide will help you to install and setup a production ready Chatwoot.
 
-### Deployment
+### Deployment methods
 
 - [Architecture](/docs/self-hosted/deployment/architecture)
-- [Heroku](/docs/self-hosted/deployment/heroku)
 - [Caprover](/docs/self-hosted/deployment/caprover)
 - [Docker](/docs/self-hosted/deployment/docker)
 - [Helm Charts](/docs/self-hosted/deployment/helm-charts)
 - [Linux VM](/docs/self-hosted/deployment/linux-vm)
-- [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
 
+
+###  Cloud Provider docs
+- [AWS](/docs/self-hosted/aws)
+- [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
+- [Heroku](/docs/self-hosted/deployment/heroku)
 ### Performance
 
 - [Configure Cloudfront CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn)
