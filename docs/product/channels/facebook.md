@@ -38,3 +38,17 @@ If you are using a self-hosted Chatwoot installation, please configure the Faceb
 **Step 7**. If you want to update the agents who have access to the inbox, you can go to Settings > Inboxes.
 
 ![inbox_settings](./images/facebook/inbox_settings.png)
+
+
+### Re-Authorize Facebook
+**Step 1**. Go to inbox settings page of your facebook channel inbox.
+
+![fb_settings](./images/facebook/fb_settings.png)
+
+**Step 2**. You will see continue with facebook button, click on that.
+
+![fb_auth](./images/facebook/fb_auth.png)
+
+**Step 3**. Then authorize app to your facebook page by clicking on continue button.
+
+![continue_with_fb](./images/facebook/continue_with_fb.png)
