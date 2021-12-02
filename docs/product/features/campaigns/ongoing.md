@@ -1,18 +1,18 @@
 ---
-title: "Ongoing"
+title: "Ongoing Campaigns"
 ---
 
-Ongoing Campaigns allow the customer to send outbound messages in website live chat  to their contacts which would trigger more conversations. You can create an ongoing campaign so that if a user visited a page and stayed for x minutes, you could send outbound message. This will help in more conversions.
+Ongoing Campaigns allow the customer to send outbound messages in website live chat to their contacts which would trigger more conversations. You can create an ongoing campaign so that if a user visited a page and stayed for x minutes, you could send outbound message. This will help in more conversions.
 
 
 **Step 1**. Click on the Campaigns tab in the sidebar. You will see the list of campaigns that you have already added to the inbox.
 
-![campaign](../images/ongoing.png)
+![campaign](../images/ongoing-campaigns.png)
 
 
 **Step 2**. Click on the "Create a campaign" button., it will display a modal where you can input the campaign details.
 
-![add-a-campaign](../images/add-campaign.png)
+![add-ongoing-campaign](../images/add-ongoing-campaign.png)
 
 
 These are the inputs required to create the campaign:
