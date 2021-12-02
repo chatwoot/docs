@@ -82,7 +82,6 @@ module.exports = [
     label: "Features",
     type: "category",
     items: [
-      "product/features/campaigns",
       "user-guide/features/canned-responses",
       "user-guide/features/custom-attributes",
       "user-guide/features/csat",
@@ -94,6 +93,14 @@ module.exports = [
       "user-guide/reports",
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
+      {
+        type: "category",
+        label: "Campaigns",
+        items: [
+          "product/features/campaigns/ongoing",
+          "product/features/campaigns/one-off",
+        ],
+      },
       {
         type: "category",
         label: "Integrations",
