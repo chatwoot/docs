@@ -85,6 +85,7 @@ module.exports = [
       "product/features/campaigns",
       "user-guide/features/canned-responses",
       "user-guide/features/custom-attributes",
+      "user-guide/features/csat",
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
       "user-guide/features/keyboard-shortcuts",
