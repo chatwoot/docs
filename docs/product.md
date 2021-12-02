@@ -27,7 +27,6 @@ This user guide includes a description of the features and capabilities, modes o
 
 ### Features
 
-- [Campaigns](/docs/product/features/campaigns)
 - [Canned responses](/docs/user-guide/features/canned-responses)
 - [Custom Attributes](/docs/user-guide/features/custom-attributes)
 - [Contacts](/docs/user-guide/contacts)
