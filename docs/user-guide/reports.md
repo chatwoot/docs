@@ -1,6 +1,7 @@
 ---
 title: "Reports"
 ---
+
 Reports of the conversations which has happened over time, can be viewed in the Reports Section.
 Click on Reports on home page.
 
@@ -35,7 +36,6 @@ Click on Conversations tab in Reports. The graph will show the conversation happ
 <img src={require('./images/reports4.png').default} width="800" alt="Conversations Report Screen" />
 
 </div>
-
 
 ### Incoming Messages
 
@@ -81,19 +81,16 @@ Click on Resolution Time tab in Reports. The graph will show the average number 
 
 Click on Resolution count tab in Reports. The graph will show the number of conversations resolved on the selected days. On pointing the mouse to a particular graph of the day, the details of the number of conversations resolved on that day can be found out. An example is given below. On Aug 11, 1 conversation was resolved.
 
-
 <div align="center">
 
 <img src={require('./images/reports9.png').default} width="800" alt="Resolved Count Report Screen" />
 
 </div>
 
-
 ### Download agent Reports
 
 Details of performance of Agents can be done by clicking the Download agent Reports button given on the right hand top side of the page.
 The report will be downloaded in csv format. Example given below.
-
 
 <div align="center">
 
@@ -103,7 +100,7 @@ The report will be downloaded in csv format. Example given below.
 
 <div align="center">
 
-<img src={require('./images/reports11.png').default} width="800" alt="Downloaded Report  in CSV File format " />
+<img src={require('./images/reports11.png').default} width="800" alt="Downloaded Report in CSV File format " />
 
 </div>
 
@@ -127,4 +124,42 @@ Next, click on 'CSAT'. The screen will show the details of the Customer Surveys.
 
 </div>
 
-You can view the reports as per the duration selected from the drop-down. 
+### Agent reports
+
+You can also filter and download reports by agent. Click on the reports in the sidebar and select "Agents".
+
+<div align="center">
+
+<img src={require('./images/agent-reports.png').default} width="800" alt="Agent Report Screen" />
+
+</div>
+
+### Label reports
+
+You can also filter and download reports by labels. Click on the reports in the sidebar and select "Labels".
+
+<div align="center">
+
+<img src={require('./images/label-reports.png').default} width="800" alt="Labels Report Screen" />
+
+</div>
+
+### Inbox reports
+
+You can also filter and download reports by inboxes. Click on the reports in the sidebar and select "Inbox".
+
+<div align="center">
+
+<img src={require('./images/inbox-reports.png').default} width="800" alt="Inbox Report Screen" />
+
+</div>
+
+### Team reports
+
+You can also filter and download reports by teams. Click on the reports in the sidebar and select "Team".
+
+<div align="center">
+
+<img src={require('./images/team-reports.png').default} width="800" alt="Team Report Screen" />
+
+</div>
