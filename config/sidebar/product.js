@@ -99,6 +99,7 @@ module.exports = [
         items: [
           "product/channels/live-chat/integrations/dialogflow",
           "product/features/webhooks",
+          "product/features/slack",
         ],
       },
     ],
