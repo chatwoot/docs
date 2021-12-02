@@ -84,9 +84,11 @@ module.exports = [
     items: [
       "user-guide/features/canned-responses",
       "user-guide/features/custom-attributes",
+      "user-guide/features/csat",
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
       "user-guide/features/keyboard-shortcuts",
+      "user-guide/features/commandbar",
       "user-guide/features/multilingual-support",
       "user-guide/reports",
       "user-guide/conversation-workflow",
@@ -105,6 +107,7 @@ module.exports = [
         items: [
           "product/channels/live-chat/integrations/dialogflow",
           "product/features/webhooks",
+          "product/features/slack",
         ],
       },
     ],
