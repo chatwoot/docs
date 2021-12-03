@@ -24,6 +24,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Whatsapp via Twilio](/docs/product/channels/twilio-whatsapp-sms)
 - [API Channel](/docs/product/channels/api/create-channel)
 - [Email](/docs/product/channels/email/create-channel)
+- [Telegram](/docs/product/channels/telegram)
 
 ### Features
 

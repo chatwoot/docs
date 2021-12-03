@@ -73,6 +73,7 @@ module.exports = [
           },
         ],
       },
+      "product/channels/telegram",
       "product/channels/supported-features",
     ],
   },
