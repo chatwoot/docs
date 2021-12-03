@@ -25,6 +25,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [API Channel](/docs/product/channels/api/create-channel)
 - [Email](/docs/product/channels/email/create-channel)
 - [Telegram](/docs/product/channels/telegram)
+- [Line](/docs/product/channels/line)
 
 ### Features
 
