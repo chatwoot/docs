@@ -53,7 +53,7 @@ Chatwoot allows you to bulk import contacts from a CSV file. To import contacts
 
 1. Navigate to Contacts page from the sidebar.
 2. Click on the Import button on the top right corner.
-3. Select the CSV file, here's a sample [CSV file](https://staging.chatwoot.com/downloads/import-contacts-sample.csv) for reference.
+3. Select the CSV file you would like to import to chatwoot, here's a sample [CSV file](https://staging.chatwoot.com/downloads/import-contacts-sample.csv) for reference.
 4. Click on the Import button.
 
 Here's a quick demo of how the import works.
