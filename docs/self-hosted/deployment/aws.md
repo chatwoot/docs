@@ -53,8 +53,13 @@ Create two public and private subnets in the vpc we created. Make sure to have t
 
 4. After creating all subnets, enable `auto assign public ipv4 address` for public subnets under `Actions` > `Subnet Settings`.
 
-
 ### Internet Gateway
+
+1. Select  `Create Internet Gateway` , name it as `chatwoot-igw` and click create.
+3. Select it from the internet gateways list, choose actions and then select `Attach to VPC`.
+4. Choose `chatwoot-vpc` and click attach.
+
+![aws-create-igw](./images/aws-04-create-igw.png)
 
 ### NAT Gateway
 
