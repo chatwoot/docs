@@ -3,7 +3,7 @@ sidebar_label: "Google Cloud Platform (GCP)"
 title: "GCP Chatwoot deployment guide"
 ---
 
-This guide will deploy chatwoot on a single VM in GCP.
+This guide will deploy chatwoot on a single VM in GCP.  For a cloud native deployment, use our [helm charts](https://github.com/chatwoot/charts) with Google Kubernetes Engine(GKE).
 
 > **NOTE**: This guide is a work in progress and your mileage may vary.
 

@@ -3,7 +3,7 @@ sidebar_label: "Azure"
 title: "Azure Chatwoot deployment guide"
 ---
 
-This guide will deploy chatwoot on a single VM in Azure.
+This guide will deploy chatwoot on a single VM in Azure. For a cloud native deployment, use our [helm charts](https://github.com/chatwoot/charts) with Azure Kubernetes Service(AKS).
 
 > **NOTE**: This guide is a work in progress and your mileage may vary.
 
