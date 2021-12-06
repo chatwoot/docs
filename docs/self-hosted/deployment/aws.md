@@ -20,7 +20,7 @@ of managed aws services for the same viz Elasticache, RDS and ALB.
 
 This guide will follow a standard 3-tier architecture on aws. 
 
-TODO:// Insert architecture diagram
+![aws-architecture](./images/aws-01-architecture.png)
 
 
 ## Configure Network
