@@ -116,14 +116,82 @@ Also,
     1. For `chatwoot-private-a`, associate `chatwoot-private-1` subnet.
     2. For `chatwoot-private-b`, associate `chatwoot-private-2` subnet.
 
-## ALB
+## Application Load Balancer (ALB)
+
+Create an application load balancer to recieve traffic on port 80 and 443, and distribute it across Chatwoot instances. 
+
+1. Navigate to the EC2 section and choose Load Balancer section.
+2. Click `Create Load Balancer`.
+    1. Choose `Application Load Balancer`.
+    2. For the loadbalancer name, use `chatwoot-loadbalancer`.
+    3. Select the scheme as `internet-facing` and IP address type as `IPv4`.
+    4. For the network mapping section,
+       1. Select the `chatwoot-vpc`.
+       2. Select both the public subnets `chatwoot-public-1` and `chatwoot-public-2` under mapping section.
+   5. For the Security group section,
+       1. Create a new security group, `chatwoot-loadbalancer-sg`.
+       2. Add rules to allow HTTP and HTTPS traffic from anywhere(`0.0.0.0/0`, `::/0`).
+       3. Also add rules to allow SSH traffic.
+   6. For Listeners and routing section, create two listeners for both 80 and 443.
+       1. Also create a target group, `chatwoot-tg` that will forward the requests to port `3000`(Chatwoot listens on this port).
+       2. Add a health check to the endpoint `/api`. This endpoint is not authenticated and should return the application version.
+```
+{
+  "version": "1.22.1",
+  "timestamp": "2021-12-06 16:07:39"
+}
+```
+   7. Add any necessary tags and click create.
+
+Also, add if you have your domain on Route53 and use ACM to generate a certifcate to use with ALB.
+
+//TODO: expand more on the ACM part
 
 ## Postgresql using AWS RDS
 
+Chatwoot uses Postgres as a DB layer and we will make use of Amazon RDS with a multi AZ option for reliablity. 
+
+### RDS security group
+
+1. Navigate to EC2 > Security groups and create a new sg.
+2. Name it, `chatwoot-rds-sg`.
+3. Select the `chatwoot-vpc` and add an inbound rule for postgres port with source `chatwoot-loadbalancer-sg`.
+
+### RDS subnet group
+
+1. Navigate to RDS section and select subnet groups.
+2. Create `chatwoot-rds-group` and choose `chatwoot-vpc`.
+3. Select both az's and the private subnets.
+
+### RDS
+
+1. Select create database.
+2. Use standard create and choose the postgres engine.
+3. Use the production template, create a postgres master username and password.
+4. Enable Multi-AZ deployment.
+5. Select `chatwoot-vpc` and selecte the rds security group we created earlier.
+6. Enable password authentication.
+7. Click create.
+8. After the create is complete, note down the hostname, username and password. We will need this to configure Chatwoot.
 ## Redis using AWS Elasticache
+
+//TODO: expand redis section
+
+1. Follow similar steps like the rds to create a redis security group and subnet group.
+2. Create the redis cluster with multi-AZ option.
 
 
 ## Creating Bastion servers
+
+Create bastion servers in both public subnets. These servers will be used to ssh into chatwoots servers in private subnets.
+
+1. Navigate to EC2 dashboard and click launch instance.
+2. Use an `Ubuntu 20.04 image` with a `t3.micro` type.
+3. Choose `chatwoot-vpc` and subnet `chatwoot-public-1`.
+4. Name it as `chatwoot-bastion-a`.
+5. Add a new sg, `chatwoot-bastion-sg` and enable ssh access from anywhere.
+6. Leave the rest as defaults and click launch.
+7
 
 ## Install Chatwoot
 
