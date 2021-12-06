@@ -1,5 +1,5 @@
 ---
-sidebar_label: "AWS"
+sidebar_label: "Amazon Web Services (AWS)"
 title: "AWS Production deployment guide"
 ---
 
