@@ -25,6 +25,7 @@ module.exports = [
     label: "Cloud provider guides",
     type: "category",
     items: [
+      "self-hosted/deployment/aws",
       "self-hosted/deployment/azure",
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
