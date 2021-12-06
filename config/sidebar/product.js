@@ -64,11 +64,13 @@ module.exports = [
           "product/channels/email/create-channel",
           "product/channels/email/configure-imap",
           "product/channels/email/configure-smtp",
+          "product/channels/email/forward-email",
           {
             Gmail: [
               "product/channels/email/gmail/enable-imap",
               "product/channels/email/gmail/less-secure-access",
               "product/channels/email/gmail/generate-app-password",
+              "product/channels/email/gmail/add-forward-email",
             ],
           },
         ],
