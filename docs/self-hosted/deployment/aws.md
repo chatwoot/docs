@@ -23,10 +23,16 @@ This guide will follow a standard 3-tier architecture on aws.
 ![aws-architecture](./images/aws-01-architecture.png)
 
 
-## Configure Network
+## Network
+
+### Create VPC
+
 1. Sign into AWS console and pick the region you are going to deploy.
 2. Navigate to the VPC console and create a new vpc for chatwoot. At the `name` tag, enter
    `chatwoot-vpc` and use the CIDR block `10.0.0.0/16`.
+3. Leave the rest of the options as default and click on `Create VPC`.
+
+![aws-create-vpc](./images/aws-02-create-vpc.png)
 
 ### Subnets
 1. Create two public and private subnets in the vpc we created. Make sure to have then in different AZ's and
@@ -63,14 +69,9 @@ have non-overlapping CIDR ranges.
 - create asg
 - terminate old instance
 
-## monitoring
+## Monitoring
 
 ## Updating Chatwoot
 ## Conclusion
-
-
-
-
-
 
 ### Known Limitations
