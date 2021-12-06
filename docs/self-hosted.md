@@ -17,6 +17,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [GCP](/docs/self-hosted/deployment/gcp)
 - [DigitalOcean](/docs/self-hosted/deployment/digital-ocean)
 - [Azure](/docs/self-hosted/deployment/azure)
+
 ### Performance
 
 - [Configure Cloudfront CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn)
