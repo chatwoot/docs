@@ -5,9 +5,9 @@ title: "GCP Chatwoot deployment guide"
 
 This guide will deploy chatwoot on a single VM in GCP.
 
-> **TODO**: This guide is a work in progress.
+> **NOTE**: This guide is a work in progress.
 
-### Create Compute Engine (VM)
+## Create Compute Engine (VM)
 
 1. Navigate to VM > Compute Engine window. 
 2. Create an instance with a minimum of 4vCPU and 8GB RAM.(N2 General-Purpose)
@@ -15,16 +15,16 @@ This guide will deploy chatwoot on a single VM in GCP.
 4. Choose `Ubuntu 20.04` as your OS with a 120GB disk.
 5. Click create.
 
-// Insert image
+![gcp-create-compute-engine](./images/gcp.png)
 
-### Install Chatwoot
+## Install Chatwoot
 
 1. SSH into the instance created.
 2. Follow the linux VM instructions at https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm.
 3. Woot! Woot! Your Chatwoot Instance is ready and can be accessed at `http://<your-instance-ip>:3000`.
 
 
-### Configure Chatwoot
+## Configure Chatwoot
 
 1. Follow the Chatwoot docs to configure your domain, email and other parameters you need.
 https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm#configure-the-required-environment-variables
