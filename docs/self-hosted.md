@@ -12,12 +12,9 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Docker](/docs/self-hosted/deployment/docker)
 - [Helm Charts](/docs/self-hosted/deployment/helm-charts)
 - [Linux VM](/docs/self-hosted/deployment/linux-vm)
-
-
-###  Cloud Provider docs
-- [AWS](/docs/self-hosted/aws)
 - [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
 - [Heroku](/docs/self-hosted/deployment/heroku)
+
 ### Performance
 
 - [Configure Cloudfront CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn)
