@@ -63,6 +63,19 @@ Create two public and private subnets in the vpc we created. Make sure to have t
 
 ### NAT Gateway
 
+Chatwoot app servers will be deployed in the private subnet. For them to access internet, we need to add NAT gateways to our public subnet and add a route from the private subnets.
+
+1. Navigate the VPC dashboard and select `NAT gateways`.
+2. Click `Create NAT Gateway`.
+
+    1. Name it as `chatwoot-nat-1`.
+    2. Select the `chatwoot-public-1` subnet.
+    3. Click on `Allocate Elastic IP`.
+    4. Add additional tags as per your need.
+    5. Click `Create NAT gateway`.
+
+![aws-create-nat](./images/aws-05-create-nat.png)
+
 ### Route tables
 - private
 - public
