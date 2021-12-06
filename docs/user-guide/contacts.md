@@ -47,6 +47,36 @@ Third way is when the customer enters the email id in the Channel Greeting messa
 
 Once the contacts are available in your contact list, you can edit the details as and when needed.
 
+
+### Contacts Notes
+
+Chatwoot has a dedicated page for adding notes to each contact in your directory. This allows you to add notes and important information to a specific contact. You can use this to manually log a call, email, or meeting you had with the customer.
+
+#### How to add a note to a contact?
+
+1. Click on Contacts menu item from the Chatwoot Dashboard.
+2. Select a Contact from the list. (Click on the contact name)
+3. Write down your note.
+4. Click on the "Add" button or press `Cmd + Enter`.
+
+<div align="center">
+
+<img src={require('./images/contact-add-note.gif').default} width="800" alt="Adding notes to your contacts" />
+
+</div>
+
+Chatwoot allows you to format and highlight your notes with Bold, italic and all other other basic formatting options. You can even add numbered or unordered lists.
+
+#### How to delete a contact note?
+
+Simply click on the delete icon on the right side of the note.
+
+<div align="center">
+
+<img src={require('./images/contact-note-delete.png').default} width="800" alt="Delete notes from your contact" />
+
+</div>
+
 ### Import Contacts
 
 Chatwoot allows you to bulk import contacts from a CSV file. To import contacts
