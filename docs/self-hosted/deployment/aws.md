@@ -76,6 +76,7 @@ Chatwoot app servers will be deployed in the private subnet. For them to access 
 
 ![aws-create-nat](./images/aws-05-create-nat.png)
 
+3. Follow the same to create a second NAT gateway (`chatwoot-nat-2`) and choose the `chatwoot-public-2` subnet.
 ### Route tables
 - private
 - public
