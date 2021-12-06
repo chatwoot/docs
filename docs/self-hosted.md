@@ -14,6 +14,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Helm Charts](/docs/self-hosted/deployment/helm-charts)
 - [Linux VM](/docs/self-hosted/deployment/linux-vm)
 - [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
+- [GCP](/docs/self-hosted/deployment/gcp)
 
 ### Performance
 
