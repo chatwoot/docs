@@ -24,11 +24,12 @@ This guide will deploy chatwoot on a single VM in Azure.
 
 ## Install Chatwoot
 
-1. SSH into the instance created from you local machine or create a bastion in azure to ssh via the browser. 
+1. SSH into the instance created from your local machine or create a bastion in azure to ssh via the browser. 
 2. Follow the linux VM instructions at https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm.
 3. Woot! Woot! Your Chatwoot Instance is ready and can be accessed at `http://<your-instance-ip>:3000`. Or if you completed the domain setup during the installation, chatwoot should be available at `https://<your-domain>`.
 
-> **NOTE**: Port 3000 will only work once it is enabled under inbound rules.
+> **NOTE**: Browser access via port 3000 will only work once if enabled under inbound rules.
+
 ## Configure Chatwoot
 
 1. Follow the Chatwoot docs to configure your domain, email and other parameters you need.
