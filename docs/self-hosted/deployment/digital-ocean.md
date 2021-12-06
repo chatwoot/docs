@@ -3,7 +3,7 @@ sidebar_label: "Digital Ocean"
 title: "DigitalOcean Chatwoot deployment guide"
 ---
 
-This guide will deploy chatwoot on a single VM in GCP. For a cloud native deployment, go with
+This guide will deploy chatwoot on a single droplet in DigitalOcean. For a cloud native deployment, go with
 our [1-click k8s app on DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/chatwoot).
 
 ## Create a Droplet (VM)
@@ -21,7 +21,7 @@ our [1-click k8s app on DigitalOcean Marketplace](https://marketplace.digitaloce
 
 ## Install Chatwoot
 
-1. SSH into the instance created above.
+1. SSH into the droplet created above.
 2. Follow the linux VM instructions at https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm.
 3. Woot! Woot! Your Chatwoot Instance is ready and can be accessed at `http://<your-droplet-ip>:3000`.
 
