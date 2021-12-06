@@ -1,5 +1,5 @@
 ---
-sidebar_label: "GCP"
+sidebar_label: "Google Cloud Platform (GCP)"
 title: "GCP Chatwoot deployment guide"
 ---
 
