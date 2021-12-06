@@ -16,6 +16,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
 - [GCP](/docs/self-hosted/deployment/gcp)
 - [DigitalOcean](/docs/self-hosted/deployment/digital-ocean)
+- [Azure](/docs/self-hosted/deployment/azure)
 
 ### Performance
 
