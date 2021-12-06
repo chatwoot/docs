@@ -73,6 +73,16 @@ AgentBotInbox.create!(inbox: Inbox.first, agent_bot: bot)
 ```
 
 
+## FAQ
+
+### Human Agent Handoff ?
+
+When an agent bot is connected to an inbox, conversations are created with `pending` status instead of `open`. This lets the intial triaging to happen via 
+the bot before the conversation is passed on to an agent. When the bot decides that its best for the conversation to be handled by a human agent, It can call the conversation update API
+and toggle the conversation status to `open`
+
+Sometimes the agents would want to push back a conversation which was handed off, back again into the bot queue. They can do this by changing the conversation status back to `pending` again so that the bot can start responding to that conversation again. 
+
 
 
 

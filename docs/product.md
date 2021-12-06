@@ -24,12 +24,14 @@ This user guide includes a description of the features and capabilities, modes o
 - [Whatsapp via Twilio](/docs/product/channels/twilio-whatsapp-sms)
 - [API Channel](/docs/product/channels/api/create-channel)
 - [Email](/docs/product/channels/email/create-channel)
+- [Telegram](/docs/product/channels/telegram)
+- [Line](/docs/product/channels/line)
 
 ### Features
 
-- [Campaigns](/docs/product/features/campaigns)
 - [Canned responses](/docs/user-guide/features/canned-responses)
 - [Custom Attributes](/docs/user-guide/features/custom-attributes)
+- [CSAT](/docs/user-guide/features/csat)
 - [Contacts](/docs/user-guide/contacts)
 - [Conversation Routing](/docs/product/inbox/routing-conversations-round-robin)
 - [Keyboard Shortcuts](/docs/user-guide/features/keyboard-shortcuts)

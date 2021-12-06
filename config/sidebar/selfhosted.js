@@ -22,6 +22,16 @@ module.exports = [
   },
   {
     collapsible: false,
+    label: "Cloud provider guides",
+    type: "category",
+    items: [
+      "self-hosted/deployment/azure",
+      "self-hosted/deployment/digital-ocean",
+      "self-hosted/deployment/gcp",
+    ],
+  },
+  {
+    collapsible: false,
     label: "Performance",
     type: "category",
     items: ["self-hosted/deployment/performance/cloudfront-cdn"]

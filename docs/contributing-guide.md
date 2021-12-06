@@ -1,9 +1,21 @@
 ---
 title: "Contributing Guide"
 sidebar_label: "Introduction"
+help_discord: "https://discord.gg/fBMuQ7FcG6"
+help_github_discussion: "https://github.com/chatwoot/chatwoot/discussions/categories/contributors"
 ---
 
 This guide will help you get started with Chatwoot! Thank you for taking an interest in contributing to Chatwoot. Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
+
+### Getting Started
+
+- Before starting your work, ensure an [issue](https://github.com/chatwoot/chatwoot/issues) exist for it. If not feel free to create one. You can also take a look into the issues tagged [Good first issues](https://github.com/chatwoot/chatwoot/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22).
+- Add a comment on the issue and wait for the issue to be assigned before you start working on it.
+  - This helps to avoid multiple people working on similar issues.
+- If the solution is complex, propose the solution on the issue and wait for one of the core contributors to approve before going into the implementation.
+  - This helps in shorter turn around times in merging PRs
+- For new feature requests, Provide a convincing reason to add this feature. Real-life business use-cases will be super helpful.
+- Feel free to join our [discord community](https://discord.gg/cJXdrwS), if you need further discussions with the core team.
 
 ### Pull Request Guidelines
 
@@ -12,17 +24,7 @@ This guide will help you get started with Chatwoot! Thank you for taking an inte
 - Please raise your PRs against `develop` branch
 - It's okay and encouraged to have multiple small commits as you work on the PR - we will squash the commits before merging.
 - For other guidelines, please refer to [PR Guidelines](/docs/handbook/engineering/pr-guidelines)
-
-
-### Getting Started
-
-- Before starting your work, ensure an [issue](https://github.com/chatwoot/chatwoot/issues) exist for it. If not feel free to create one.
-- Add a comment on the issue and wait for the issue to be assigned before you start working on it.
-  - This helps to avoid multiple people working on similar issues.
-- If the solution is complex, propose the solution on the issue and wait for one of the core contributors to approve before going into the implementation.
-  - This helps in shorter turn around times in merging PRs
-- For new feature requests, Provide a convincing reason to add this feature. Real-life business use-cases will be super helpful.
-- Feel free to join our [discord community](https://discord.gg/cJXdrwS), if you need further discussions with the core team.
+- Ensure that all the text copies that you add into the product are i18n translatable. You are only required to add the `English` version of the strings. We pull in the other language translations from our contributors on crowdin. Ref [Translation guidelines](https://www.chatwoot.com/docs/contributing-guide/translation-guidelines) to learn more.
 
 ### Developing a new feature:
 

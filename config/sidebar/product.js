@@ -60,19 +60,21 @@ module.exports = [
         ],
       },
       {
-        "Email": [
+        Email: [
           "product/channels/email/create-channel",
           "product/channels/email/configure-imap",
           "product/channels/email/configure-smtp",
           {
-            "Gmail": [
+            Gmail: [
               "product/channels/email/gmail/enable-imap",
               "product/channels/email/gmail/less-secure-access",
               "product/channels/email/gmail/generate-app-password",
-            ]
-          }
+            ],
+          },
         ],
       },
+      "product/channels/telegram",
+      "product/channels/line",
       "product/channels/supported-features",
     ],
   },
@@ -82,21 +84,34 @@ module.exports = [
     label: "Features",
     type: "category",
     items: [
-      "product/features/campaigns",
       "user-guide/features/canned-responses",
       "user-guide/features/custom-attributes",
+      "user-guide/features/csat",
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
       "user-guide/features/keyboard-shortcuts",
+      "user-guide/features/commandbar",
       "user-guide/features/multilingual-support",
       "user-guide/reports",
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       {
         type: "category",
+        label: "Campaigns",
+        items: [
+          "product/features/campaigns/ongoing",
+          "product/features/campaigns/one-off",
+        ],
+      },
+      {
+        type: "category",
         label: "Integrations",
-        items: ["product/channels/live-chat/integrations/dialogflow", "product/features/webhooks"]
-      }
+        items: [
+          "product/channels/live-chat/integrations/dialogflow",
+          "product/features/webhooks",
+          "product/features/slack",
+        ],
+      },
     ],
   },
   {
@@ -112,7 +127,8 @@ module.exports = [
       "product/others/cookies",
     ],
   },
-  { collapsed: false,
+  {
+    collapsed: false,
     collapsible: true,
     label: "Mobile App",
     type: "category",
