@@ -149,7 +149,9 @@ Also, add if you have your domain on Route53 and use ACM to generate a certifcat
 
 ## Postgresql using AWS RDS
 
-Chatwoot uses Postgres as a DB layer and we will make use of Amazon RDS with a multi AZ option for reliablity. 
+//TODO: expand rds section
+
+Chatwoot uses Postgres as a DB layer and we will make use of Amazon RDS with a multi AZ option for reliablity.
 
 ### RDS security group
 
@@ -191,24 +193,86 @@ Create bastion servers in both public subnets. These servers will be used to ssh
 4. Name it as `chatwoot-bastion-a`.
 5. Add a new sg, `chatwoot-bastion-sg` and enable ssh access from anywhere.
 6. Leave the rest as defaults and click launch.
-7
+7. Once the instance is up, try to SSH into the instance.
+
+Repeat the same and create another bastion, `chatwoot-bastion-b` in the other AZ.
 
 ## Install Chatwoot
 
+1. Navigate to EC2 section, and click on launch instance.
+2. Use an `Ubuntu 20.04 image` with a `c5.xlarge` instance type.
+3. Choose the chatwoot-vpc and select the private subnet `chatwoot-private-1`.
+4. Disable auto assign public IP and increase the storage of root vo lume to 60 GB.
+5. Add necessary tags. Set the `Name` tag to `chatwoot`.
+6. Select the loadbalancer security group and click launch.
+7. SSH into the bastion server and from there, ssh to the chatwoot instance we created.
+8. Switch to `root` user.
+9. Download the chatwoot linux installation script.
+
+```
+wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
+chmod 755 setup.sh
+```
+10.  Modify it remove the postgres, redis, letsencrypt and nginx section.
+
+```
+vi setup.sh
+```
+11. Run the script.
+
+ ```
+ ./setup.sh master
+ ```
+
 ## Configure Chatwoot
+
+// TODO: Expand with S3 for active storage and SES for Email.
+
+12. Once the installation is complete, switch to the chatwoot user and navigate to the chatwoot folder. Edit the .env file and replace the postgres and redis credentials with RDS and elasticache values.
+
+```
+sudo -i -u chatwoot
+cd chatwoot
+vi .env
+
+```
+
+13. Run the db migration.
+```
+RAILS_ENV=production bundle exec rake db:prepare
+```
+
+14. Also modify the other necessary environment variable for your chatwoot setup. Refer to https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm#configure-the-required-environment-variables
+
 ## Verify login
+
+15. Add this instance to the target group attached to the alb.
+16. Navigate to the your chatwoot domain to see if everything is working. 
 
 ## Create custom AMI
 
+1. If you are getting the onboarding page, complete the sign up and verify the installation.
+2. Voila !! Your chatwoot instance is up.
+3. If everything looks good, proceed to create an ami from this instance and name it as `chatwoot-base-ami`.
 
 ## ASG
-- create launch config
-- create asg
-- terminate old instance
 
+1. Create a launch configuration using the above base image.
+2. Proceed to create an auto-scaling group from this launch config.
+3. Set the minimum and desired capcity to 2 and maximum to 4. Modify this as per your requirement.
+4. Create a scaling policy based on the CPU Utlization.
+5. At this point, we are good to terminate the instance we created earlier.
+6. Check the loadbalancer or target-group to verify if two new chatwoot instances have come up.
+7. That's it. 
 ## Monitoring
 
+1. Refer to https://www.chatwoot.com/docs/self-hosted/monitoring/apm-and-error-monitoring
+
 ## Updating Chatwoot
+
+1. Login to one of the application servers and complete the update instructions. Run migrations if needed. Refer to https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm#upgrading-to-a-newer-version-of-chatwoot
+2. Create a new ami and update the launch config.
+
 ## Conclusion
 
-### Known Limitations
+This is a refernce guideline to have an HA  chatwoot architecture on AWS. Modify or build upon this to suit your requirements.
