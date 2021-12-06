@@ -18,6 +18,9 @@ module.exports = [
       "self-hosted/deployment/helm-charts",
       "self-hosted/deployment/linux-vm",
       "self-hosted/deployment/clevercloud",
+      "self-hosted/deployment/azure",
+      "self-hosted/deployment/digital-ocean",
+      "self-hosted/deployment/gcp",
     ],
   },
   {
