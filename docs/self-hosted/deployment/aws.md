@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Amazon Web Services (AWS)"
-title: "AWS Production deployment guide"
+title: "AWS Chatwoot deployment guide"
 ---
 
 The following guide is reference architecture for deploying Chatwoot on AWS.
@@ -11,7 +11,7 @@ We will use the linux installation script to get a chatwoot instance up and runn
 relying on redis, postgres and nginx installed in the same ec2, we will proceed to make use
 of managed aws services for the same viz Elasticache, RDS and ALB.
 
-### Pre requisites
+### Prerequisites
 
 1. AWS account
 2. Domain to use with Chatwoot
@@ -49,7 +49,7 @@ Create two public and private subnets in the vpc we created. Make sure to have t
 | `chatwoot-public-1`  | public  | `ap-south-1a`      | `10.0.0.0/24` |
 | `chatwoot-public-2`  | public  | `ap-south-1b`      | `10.0.1.0/24` |
 | `chatwoot-private-1` | private | `ap-south-1a`      | `10.0.2.0/24` |
-| `chatwoot-private-1` | private | `ap-south-1b`      | `10.0.3.0/24` |
+| `chatwoot-private-2` | private | `ap-south-1b`      | `10.0.3.0/24` |
 
 4. After creating all subnets, enable `auto assign public ipv4 address` for public subnets under `Actions` > `Subnet Settings`.
 
@@ -78,9 +78,43 @@ Chatwoot app servers will be deployed in the private subnet. For them to access 
 
 3. Follow the same to create a second NAT gateway (`chatwoot-nat-2`) and choose the `chatwoot-public-2` subnet.
 ### Route tables
-- private
-- public
 
+Route table controls the inbound and outbound access for a subnet.
+#### Public Route table
+
+We will create route tables so that our public subnets can reach the internet via the Internet gateway.
+
+Navigate to the VPC dashboard and select `Route Tables`.
+1. Click `Create route table`.
+2. Use the name `chatwoot-public-rt` and choose the `chatwoot-vpc` under VPC.
+3. Click `Create`.
+
+![aws-create-rt](./images/aws-06-create-rt.png)
+
+Next, we need to add a route to the internet gateway we created earlier(`chatwoot-igw`).
+
+1. Select the `chatwoot-public-rt` route table from the list and click on `Edit routes` > `Add Route`.
+2. Set the destination as `0.0.0.0/0` and choose the target as `chatwoot-igw`. Click on `Save Changes`.
+
+Also,
+
+1. Select the `chatwoot-public-rt` route table from the list and click on `Subnet Associations` > `Edit subnet associations`.
+2. Select both the public subnets(`chatwoot-public-1`,`chatwoot-public-2`) and click `save`.
+
+#### Private Route table
+
+We will also create private route tables so that our private subnets can reach the internet via the NAT gateways.
+
+1. Follow the above guide and create two private route tables namely, `chatwoot-private-a` and `chatwoot-private-b`.
+2. Select the route tables one by one and add a route to the NAT gateway in their respective availability zone.
+    1. For `chatwoot-private-a`, add a route to `0.0.0.0/0` and target as `chatwoot-nat-1`.
+    2. For `chatwoot-private-b`, add a route to `0.0.0.0/0` and target as `chatwoot-nat-2`.
+
+Also,
+
+1. Associate the private route tables with corresponding private subnets.
+    1. For `chatwoot-private-a`, associate `chatwoot-private-1` subnet.
+    2. For `chatwoot-private-b`, associate `chatwoot-private-2` subnet.
 
 ## ALB
 
