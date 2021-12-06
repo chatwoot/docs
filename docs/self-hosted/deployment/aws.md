@@ -35,8 +35,24 @@ This guide will follow a standard 3-tier architecture on aws.
 ![aws-create-vpc](./images/aws-02-create-vpc.png)
 
 ### Subnets
-1. Create two public and private subnets in the vpc we created. Make sure to have then in different AZ's and
-have non-overlapping CIDR ranges.
+Create two public and private subnets in the vpc we created. Make sure to have then in different AZ's and have non-overlapping CIDR ranges.
+
+1. Navigate to VPC > Subnets.
+2. Click on `Create Subnet`. Select the `chatwoot-vpc` we created before, name it as `chatwoot-public-1`, select an availability zone (for example, ap-south-1a) and the CIDR block as
+`10.0.0.0/24`.
+![aws-create-subnet](./images/aws-03-create-subnet.png)
+
+3. Follow the same to create the remaining subnets.
+
+| Name                | Type     | Availability Zone  | CIDR Block    |
+| ------------------- | -------- | ------------------ | ------------- |
+| `chatwoot-public-1`  | public  | `ap-south-1a`      | `10.0.0.0/24` |
+| `chatwoot-public-2`  | public  | `ap-south-1b`      | `10.0.1.0/24` |
+| `chatwoot-private-1` | private | `ap-south-1a`      | `10.0.2.0/24` |
+| `chatwoot-private-1` | private | `ap-south-1b`      | `10.0.3.0/24` |
+
+4. After creating all subnets, enable `auto assign public ipv4 address` for public subnets under `Actions` > `Subnet Settings`.
+
 
 ### Internet Gateway
 
