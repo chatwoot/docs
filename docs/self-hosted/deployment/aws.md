@@ -3,7 +3,8 @@ sidebar_label: "Amazon Web Services (AWS)"
 title: "AWS Chatwoot deployment guide"
 ---
 
-The following guide is reference HA architecture for deploying Chatwoot on AWS.
+The following is reference HA architecture guide for deploying Chatwoot on AWS. For a cloud native deployment, use our [helm charts](https://github.com/chatwoot/charts) with AWS Elastic Kubernetes Service(EKS).
+
 ## Introduction
 
 We will use the linux installation script to get a chatwoot instance up and running. Also instead of
@@ -254,7 +255,7 @@ RAILS_ENV=production bundle exec rake db:prepare
 2. Voila !! Your chatwoot instance is up.
 3. If everything looks good, proceed to create an ami from this instance and name it as `chatwoot-base-ami`.
 
-## Auto Scaling Gropu (ASG)
+## Auto Scaling Groups (ASG)
 
 1. Create a launch configuration using the above base image.
 2. Proceed to create an auto-scaling group from this launch config.
