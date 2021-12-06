@@ -18,6 +18,13 @@ module.exports = [
       "self-hosted/deployment/helm-charts",
       "self-hosted/deployment/linux-vm",
       "self-hosted/deployment/clevercloud",
+    ],
+  },
+  {
+    collapsible: false,
+    label: "Cloud provider guides",
+    type: "category",
+    items: [
       "self-hosted/deployment/azure",
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",

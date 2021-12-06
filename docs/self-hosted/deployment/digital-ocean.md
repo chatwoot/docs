@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Digital Ocean"
+sidebar_label: "DigitalOcean"
 title: "DigitalOcean Chatwoot deployment guide"
 ---
 
