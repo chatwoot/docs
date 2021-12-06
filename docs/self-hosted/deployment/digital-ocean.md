@@ -23,7 +23,7 @@ our [1-click k8s app on DigitalOcean Marketplace](https://marketplace.digitaloce
 
 1. SSH into the droplet created above.
 2. Follow the linux VM instructions at https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm.
-3. Woot! Woot! Your Chatwoot Instance is ready and can be accessed at `http://<your-droplet-ip>:3000`.
+3. Woot! Woot! Your Chatwoot Instance is ready and can be accessed at `http://<your-droplet-ip>:3000`.  Or if you completed the domain setup during the installation, chatwoot should be available at `https://<your-domain>`
 
 
 ## Configure Chatwoot
