@@ -75,7 +75,11 @@ pages_show_list
 pages_manage_metadata
 pages_messaging
 ```
-
+### NOTE
+If your facebook app's version is more than 7.0 then you will need extra permission according to facebook's updated policy. Make sure you get permission for.
+```
+pages_read_engagement
+```
 
 ### Developing or Testing Facebook Integration in your machine
 
