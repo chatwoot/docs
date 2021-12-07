@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Helm Charts"
+sidebar_label: "Helm Charts (k8s)"
 title: "Deploy Chatwoot using Helm Charts"
 ---
 

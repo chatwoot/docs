@@ -8,11 +8,12 @@ This guide will help you to install and setup a production ready Chatwoot.
 ### Deployment
 
 - [Architecture](/docs/self-hosted/deployment/architecture)
+- [Linux VM](/docs/self-hosted/deployment/linux-vm)
+- [Docker](/docs/self-hosted/deployment/docker)
+- [Helm Charts (k8s)](/docs/self-hosted/deployment/helm-charts)
 - [Heroku](/docs/self-hosted/deployment/heroku)
 - [Caprover](/docs/self-hosted/deployment/caprover)
-- [Docker](/docs/self-hosted/deployment/docker)
-- [Helm Charts](/docs/self-hosted/deployment/helm-charts)
-- [Linux VM](/docs/self-hosted/deployment/linux-vm)
+- [Cloudron](/docs/self-hosted/deployment/cloudron)
 - [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
 
 ### Cloud provider guides
