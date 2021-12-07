@@ -28,7 +28,7 @@ Navigate to your chatwoot domain and complete the onboarding setup.
 
 ### 4. Configure environment variables
 
-Cloudron will take care of Postgres and Redis installation, along with the app and worker servers. We would advise you to replace the Database/Redis services with managed/standalone servers once you start scaling.
+Cloudron will take care of Postgres and Redis installation, along with the app and worker processes. We would advise you to replace the Database/Redis services with managed/standalone servers once you start scaling.
 
 Also, ensure to set the appropriate environment variables for email, Object Store service etc. using our [Environment variables guide](/docs/self-hosted/configuration/environment-variables). 
 
