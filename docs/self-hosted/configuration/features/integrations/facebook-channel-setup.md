@@ -67,6 +67,7 @@ If your facebook app's version is more than 7.0 then you will need extra permiss
 ```
 pages_read_engagement
 ```
+Make sure your facebook app subscription version is 12.0, we have updated the FB subscription with the latest version, so change the permission subscription version uder the facebook app webhooks option.
 
 ### Developing or Testing Facebook Integration in your machine
 
