@@ -1,6 +1,8 @@
 ---
 sidebar_label: "Translation guidelines"
 title: "Translate Chatwoot to your language"
+help_discord: "https://discord.gg/uPtCrFfb9B"
+help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categories/translations"
 ---
 
 Chatwoot uses American English by default. Each and every string available in Chatwoot can be translated to the language of your choice. Chatwoot uses Crowdin to manage the translation process. The updates from Crowdin is also included along with every release.
