@@ -55,7 +55,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                | Description                                          | Value                  |
 | ------------------- | ---------------------------------------------------- | ---------------------- | 
 | `image.repository`  | Chatwoot image repository                            | `chatwoot/chatwoot`    |
-| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v1.22.1`              |
+| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.0.0`               |
 | `image.pullPolicy`  | Chatwoot image pull policy                           | `IfNotPresent`         |
 
  
