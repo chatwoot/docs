@@ -60,8 +60,8 @@ If you are using twilio studio for a custom conversation flow, Updating the webh
 
 For such cases you can follow the given steps. 
 
-1) Identify the step in your flow where you want the `agent handoff` to happen.
-2) Add a `make http request widget` as shown below with the give values
+1. Identify the step in your flow where you want the `agent handoff` to happen.
+2. Add a `make http request widget` as shown below with the give values
 
 ![twilio_studio](./images/twilio/twilio_studio.png)
 
@@ -75,4 +75,4 @@ For such cases you can follow the given steps.
 
 > HTTP request widget will forward the message body to Chatwoot. This will create a conversation in Chatwoot from where the agent can reply. 
 
-3) Make sure that your flow can handle the user reponses to Agent Replies. 
+3. Make sure that your flow can handle the user reponses to Agent Replies. 
