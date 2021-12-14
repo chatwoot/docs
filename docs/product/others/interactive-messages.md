@@ -32,19 +32,49 @@ Use the following payload samples as the values to create various interactive me
 
 ```json
 {
-    "content": "form",
-    "content_type": "form",
-    "content_attributes": {
-        "items": [
-            { "name": "email", "placeholder": "Please enter your email", "type": "email", "label": "Email", "default": "xyc@xyc.com" },
-            { "name": "text_aread", "placeholder": "Please enter text", "type": "text_area", "label": "Large Text", "default": "Sample text" },
-            { "name": "text", "placeholder": "Please enter text", "type": "text", "label": "text", "default": "sample input" }
-            {"name": "select","label": "Select Option", "type": "select", "options": [{ "label": "🌯 Burito", "value": "Burito" },
-          { "label": "🍝 Pasta", "value": "Pasta" }]  }
-
+  "content": "form",
+  "content_type": "form",
+  "content_attributes": {
+    "items": [
+      {
+        "name": "email",
+        "placeholder": "Please enter your email",
+        "type": "email",
+        "label": "Email",
+        "default": "xyc@xyc.com"
+      },
+      {
+        "name": "text_aread",
+        "placeholder": "Please enter text",
+        "type": "text_area",
+        "label": "Large Text",
+        "default": "Sample text"
+      },
+      {
+        "name": "text",
+        "placeholder": "Please enter text",
+        "type": "text",
+        "label": "text",
+        "default": "sample input"
+      },
+      {
+        "name": "select",
+        "label": "Select Option",
+        "type": "select",
+        "options": [
+          {
+            "label": "🌯 Burito",
+            "value": "Burito"
+          },
+          {
+            "label": "🍝 Pasta",
+            "value": "Pasta"
+          }
         ]
-    },
-    "private":false
+      }
+    ]
+  },
+  "private": false
 }
 ```
 
