@@ -4,15 +4,16 @@ title: "Docker Setup"
 ---
 
 ### Pre-requisites
+
 Before proceeding, make sure you have the latest version of `docker` and `docker-compose` installed.
 
-As of now[at the time of writing this doc], we recommend
+As of now[at the time of writing this doc], we recommend a version equal to or higher than the following.
 
 ```bash
 $ docker --version
-Docker version 19.03.3, build a872fc2f86
+Docker version 20.10.10, build b485636
 $ docker-compose --version
-docker-compose version 1.25.3, build d4d1b42b
+docker-compose version 1.29.2, build 5becea4c
 ```
 
 ## Development environment
