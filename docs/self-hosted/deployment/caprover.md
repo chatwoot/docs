@@ -23,11 +23,18 @@ Chatwoot is available in the one-click apps option in Caprover. Search for Chatw
 
 Head over to the `web` service in the Caprover applications and enable `Websocket Support` in the HTTP settings to true. You could also enable `https` for the application.
 
+
+![caprover-enable-websocket](./images/caprover-websocket.png)
+
 ### 4. Configure environment variables
 
 Caprover will take care of Postgres and Redis installation, along with the app and worker servers. We would advise you to replace the Database/Redis services with managed/standalone servers once you start scaling.
 
 Also, ensure to set the appropriate environment variables for email, Object Store service etc. using our [Environment variables guide](/docs/self-hosted/configuration/environment-variables)
+
+
+> **NOTE**: Chatwoot requires websocket support. Do enable it from `chatwoot-web` settings page in Caprover.
+
 
 ## Upgrading Chatwoot installation
 
