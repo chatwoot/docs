@@ -246,9 +246,32 @@ If the Customer clicks on this, an email will be sent to Customer and a message 
 
 You can transfer the ticket/issue to another agent by selecting a different agent from [Assign Agent option](conversation-workflow.md#assign-agent). The whole conversation will be visible to the newly selected agent.
 
-## Setting Reminders and Status
+## Changing Conversation Status or setting Reminders
 
-The status can be changed to 'Resolved' once the solution is conveyed to the customer.
+### Conversation Statuses
+
+Chatwoot conversations can be toggled into the following statuses: 
+
+**Pending** : The pending status is used by bot integrations in chatwoot to keep the conversations in a temporary state before the agent can start taking a look at it. Once the bot finishes triaging the conversation, It toggles the status into open. The agent can toggle back the conversation into this state if they want the conversation to be handled by the bot again. 
+This status is useful when your Chatwoot instance has [an Agent bot](/docs/product/others/agent-bots) or [Dialogflow integration](/docs/product/channels/live-chat/integrations/dialogflow) enabled.
+
+
+**Open** : The default conversation status in chatwoot for a new conversation unless a Bot Integration is enabled. These are conversations from customers waiting on a reply from the agent. 
+
+**Snoozed** : If you don't have the full information to resolve a conversation and is expecting further replies, You can toggle the conversation in `snoozed` statues. This status is also helpful in cases where you need extra time to investigate about the issue and want to move the conversation away from your primary support queue. `Snoozed` status is also a helpful way to set reminders on a conversation that you want to get to later. 
+
+The followed options are supported for `Snoozed`:
+- Snooze Until Next Reply 
+- Snooze Until Tomorrow                 
+- Snooze Until Next Week 
+
+
+**Resolved** : These are conversations which has been addressed and requires no further communication. The `Resolved` status is equivalent to closing the customer support ticket. 
+
+
+### Workflow
+
+The agent can choose appropriate conversation status once the solution is conveyed to the customer.
 
 <div align="center">
 
@@ -256,7 +279,7 @@ The status can be changed to 'Resolved' once the solution is conveyed to the cus
 
 </div>
 
-The options are given below
+The allowed options are given below:
 
 | Options                 | Actions                                                                                        |
 |-------------------------|------------------------------------------------------------------------------------------------|
