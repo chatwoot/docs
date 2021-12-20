@@ -21,6 +21,8 @@ helm install chatwoot chatwoot/chatwoot
 - Helm 3.1.0+
 - PV provisioner support in the underlying infrastructure
 
+The helm installation will create 3 "Persistent Volume Claims" for redis, rails and postgres. Setup up a default "Storage Class" (for automatic PV) or create 3 "Persistent Volumes" with the size of 8GB, before installing chatwoot. If the "Persistent Volume Claims" do not claim the "Persistent Volumes", leave storageClassName blank (inside the PV .yaml files).
+
 
 ## Installing the chart
 
@@ -235,3 +237,10 @@ helm delete chatwoot
 helm repo update
 helm install chatwoot chatwoot/chatwoot
 ```
+
+
+## Error debugging
+
+
+## "pod has unbound immediate PersistentVolumeClaims"
+Make sure the "Persistent Volume Claims" can be satisfied. Refer to: Prerequisites
