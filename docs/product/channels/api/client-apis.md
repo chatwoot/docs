@@ -18,12 +18,9 @@ These APIs are useful for cases similar to the ones described below.
 You can create and retrieve customer data objects using the `inbox_identifier` and `customer_identifier`.
 
 ### Inbox Identifier
-The `inbox_identifier` for the API channel can be obtained by running the following command in your rails console.
+You can obtain the `inbox_identifier` from your API channel -> Settings -> Configuration
 
-```
-# replace api_inbox_id with your inbox id
-Inbox.find(api_inbox_id).channel.identifier
-```
+
 ### Customer Identifier 
 The `customer_identifier` or the `source_id` can be obtained when creating the customer using the [create](https://www.chatwoot.com/developers/api#operation/create-a-contact) API.
 You will need to store this identifier on your client-side to make further requests on behalf of the customer. 
