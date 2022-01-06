@@ -5,7 +5,7 @@ title: "Environment Variables"
 
 ### Configure frontend URL (Domain)
 
-Provide the your chatwoot domain as frontend url.
+Provide your chatwoot domain as frontend url.
 
 ```bash
 FRONTEND_URL='https://your-chatwoot-domain.tld'
