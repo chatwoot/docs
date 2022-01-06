@@ -208,12 +208,12 @@ Or you can generate a VAPID key from https://d3v.one/vapid-key-generator/
 
 With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
 
-### Disable new user signup
+### Enable new account signup
 
-By default, Chatwoot will allow users to create an account from the login page. However, if you are setting up a private server, you can disable signup using:
+By default, Chatwoot will not allow users to create an account[multi-tenancy] from the login page. However, if you are setting up a public server, you can enable signup using:
 
 ```bash
-ENABLE_ACCOUNT_SIGNUP=false
+ENABLE_ACCOUNT_SIGNUP=true
 ```
 
 > **NOTE**: Right now, Chatwoot is trying to simplify this setup and have this configuration be done from the UI. If you are using a Chatwoot version latest than v1.22.1, set the `ENABLE_ACCOUNT_SIGNUP` variable in Chatwoot super admin panel under InstallationConfig. The url to access super_admin panel is `<your-chatwoot-domain.com>/super_admin`. If you were using an older version of Chatwoot, your existing environment variable setting would be automatically migrated to the InstallationConfig setting.
