@@ -3,6 +3,14 @@ path: "/docs/environment-variables"
 title: "Environment Variables"
 ---
 
+### Configure frontend URL (Domain)
+
+Provide your chatwoot domain as frontend url.
+
+```bash
+FRONTEND_URL='https://your-chatwoot-domain.tld'
+```
+
 
 ### Database configuration
 
@@ -101,14 +109,6 @@ SMTP_ENABLE_STARTTLS_AUTO=true
 SMTP_PORT=587
 SMTP_USERNAME=<Your SMTP username displayed under Settings -> SMTP & API info>
 SMTP_PASSWORD=<Any valid API key, create an API key under Settings -> SMTP & API Info>
-```
-
-### Configure frontend URL
-
-Provide the following value as frontend url
-
-```bash
-FRONTEND_URL='http://localhost:3000'
 ```
 
 ### Configure default language
@@ -215,5 +215,3 @@ By default, Chatwoot will not allow users to create an account[multi-tenancy] fr
 ```bash
 ENABLE_ACCOUNT_SIGNUP=true
 ```
-
-> **NOTE**: Right now, Chatwoot is trying to simplify this setup and have this configuration be done from the UI. If you are using a Chatwoot version latest than v1.22.1, set the `ENABLE_ACCOUNT_SIGNUP` variable in Chatwoot super admin panel under InstallationConfig. The url to access super_admin panel is `<your-chatwoot-domain.com>/super_admin`. If you were using an older version of Chatwoot, your existing environment variable setting would be automatically migrated to the InstallationConfig setting.
