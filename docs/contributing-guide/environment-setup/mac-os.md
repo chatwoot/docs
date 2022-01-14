@@ -34,7 +34,7 @@ curl -L https://get.rvm.io | bash -s stable
 
 ### Install Ruby
 
-Chatwoot APIs are built on Ruby on Rails, you need install ruby 2.7.2
+Chatwoot APIs are built on Ruby on Rails, you need install ruby 3.0.2
 
 If you are using `rvm` :
 
