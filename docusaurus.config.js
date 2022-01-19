@@ -61,7 +61,8 @@ module.exports = {
       anonymizeIP: true,
     },
     algolia: {
-      apiKey: 'a818a66f3f73dab1a061d8437c290067',
+      appId: 'J9H34SLMKO',
+      apiKey: '6034d7c5310911e20c3fbb3b88111235',
       indexName: 'chatwoot',
     },
   },
