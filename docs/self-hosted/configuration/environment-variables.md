@@ -5,7 +5,7 @@ title: "Environment Variables"
 
 ## The .env File
 
-The configuration file is located in the ChatWoot root directory. The .env file is used for this, which is called .env.example by default
+We use `dotenv-rails` gem to manage the environment variables. There is a file called `env.example` in the root directory of this project with all the environment variables set to empty value. You can set the correct values as per the following options. Once you set the values, you should rename the file to `.env` before you start the server.
 
 ### Configure frontend URL (Domain)
 
@@ -35,8 +35,6 @@ development:
   password:
   database: chatwoot_dev
 ```
-
-We use `dotenv-rails` gem to manage the environment variables. There is a file called `env.example` in the root directory of this project with all the environment variables set to empty value. You can set the correct values as per the following options. Once you set the values, you should rename the file to `.env` before you start the server.
 
 ### Configure FB Channel
 
