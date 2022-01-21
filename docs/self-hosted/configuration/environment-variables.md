@@ -3,6 +3,10 @@ path: "/docs/environment-variables"
 title: "Environment Variables"
 ---
 
+## The .env File
+
+The configuration file is located in the ChatWoot root directory. The .env file is used for this, which is called .env.example by default
+
 ### Configure frontend URL (Domain)
 
 Provide your chatwoot domain as frontend url.
