@@ -42,6 +42,7 @@ module.exports = [
               "product/channels/live-chat/integrations/google-tag-manager",
               "product/channels/live-chat/integrations/react-native-widget",
               "product/channels/live-chat/integrations/nextjs",
+              "product/channels/live-chat/integrations/vue",
               "product/channels/live-chat/integrations/gatsby",
               "product/channels/live-chat/integrations/wordpress",
             ],
