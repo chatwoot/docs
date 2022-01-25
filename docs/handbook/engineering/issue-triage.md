@@ -87,6 +87,18 @@ High-level features can be added as a project in the Github repository. To track
 
 An issue triage is complete when it has a milestone assigned to it. In most cases, we would have issues that have labels, severity and project assigned to it. Adding milestone is the last step and indicates the prioritization of the issue.
 
+## Use weight to estimate the effort required
+
+Whenever a bug or a feature request is presented before, it is always good to estimate the effort required to solve it. Therefore, we use Fibonacci based weights with additional weight (0.5) for very smaller tasks. You can see the description of the weights below.
+
+| Weight | Description |
+| - | - |
+| 0.5: Tiny | Tasks that don't require a detailed review, which can be merged directly. e.g.: CSS issues, copy changes etc.  |
+| 1: Small, but trivial | Exact solution is known beforehand. You just need to implement it. |
+| 2: Small | Problem/Bug is well defined, a solution is known. It requires some investigation to implement the solution. |
+| 3: Medium | Features that are well understood. It needs engineering investigation to find the correct solution. Bugs that may not have a solution yet |
+| 5: Large | Broad features that require multiple team members to contribute and the bugs that are hard to reproduce. Ideally, this should be split into Small/Medium Tasks |
+| 8: Extra Large | Extremely large features. Must be turned into an epic with several iterative steps becoming issues |
 
 ## Use Github discussion for questions
 
