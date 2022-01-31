@@ -12,6 +12,8 @@ Now you can see the filters popup, which lets you select the filter type, the op
 
 ![apply-filter-button](./images/folders/apply-filter-button.png)
 
+### Save a new folder
+
 After applying the filter it will fetch all conversations based on given values. And now you can see the **save icon** at top of the conversation list panel and click the save button, as in bellow attached image.
 
 ![open-save-folder-modal](./images/folders/open-save-folder-modal.png)
@@ -20,11 +22,15 @@ Now you can see a modal popup, ask **Do you want to save this filter?**. Give a 
 
 ![save-folder-modal](./images/folders/save-folder-modal.png)
 
+### Select a saved folder
+
 And now the folder name that you have given above will **display** in the secondary sidebar as in the bellow image, by clicking the **folder** it will fetch all the conversations that you saved above.
 
 ![saved-folder-list](./images/folders/saved-folder-list.png)
 
 If you want to **delete** the saved folder you can delete it, by clicking the **bin icon** at top of the conversation list panel will open a modal.
+
+### Delete a saved folder
 
 ![open-delete-folder-modal](./images/folders/open-delete-folder-modal.png)
 
