@@ -2,7 +2,7 @@
 title: "Folders"
 ---
 
-Chatwoot lets users to sort and filter conversations based on different categories by using advanced filters. And now we can save them as folders and will be displayed in the secondary sidebar as folders. This feature will help users to custom save different conversations on users views.
+Chatwoot lets users sort and filter conversations based on different categories by using advanced filters. And now we can save them as folders and will be displayed in the secondary sidebar as folders. This feature will help users to custom save different conversations on users views.
 
 You can simply click on the filter icon at top of the conversation list panel.
 
@@ -28,12 +28,12 @@ And now the folder name that you have given above will **display** in the second
 
 ![saved-folder-list](./images/folders/saved-folder-list.png)
 
-If you want to **delete** the saved folder you can delete it, by clicking the **bin icon** at top of the conversation list panel will open a modal.
-
 ### Delete a saved folder
+
+If you want to **delete** the saved folder you can delete it, by clicking the **bin icon** at top of the conversation list panel will open a modal.
 
 ![open-delete-folder-modal](./images/folders/open-delete-folder-modal.png)
 
-Now you see a modal that shows **Confirm Deletion**, if you click **No, Keep it**, will close the modal go back to folder view or if you click **Yes, Delete**, will delete the view. After deleting, If the folder is empty it will go back to all conversations or filtered views or if the folder has length then it will open the next folder near the deleted one.
+Now you see a modal that shows **Confirm Deletion** if you click **No, Keep it**, will close the modal go back to folder view or if you click **Yes, Delete**, will delete the view. After deleting, If the folder is empty it will go back to all conversations or filtered views or if the folder has length then it will open the next folder near the deleted one.
 
 ![delete-folder-button](./images/folders/delete-folder-button.png)
