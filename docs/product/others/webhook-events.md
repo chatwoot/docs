@@ -22,7 +22,7 @@ Chatwoot Publishes Various events to Webhook Endpoints if any of the following a
   "content_attributes": {} // This will an object, different values are defined below
   "source_id": "", // This would the external id if the inbox is a Twitter or Facebook integration.
   "sender": { // This would provide the details of the agent who sent this message
-    "id": "1",
+    "id": 1,
     "name": "Agent",
     "email": "agent@example.com"
   },
