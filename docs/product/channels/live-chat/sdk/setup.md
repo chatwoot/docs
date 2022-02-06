@@ -104,6 +104,8 @@ window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
 
 To generate HMAC, read [identity validation](/docs/product/channels/live-chat/sdk/identity-validation)
 
+Note that implementing HMAC authentication will allow chat history to persist across sessions.
+
 ### Set custom attributes
 
 Inorder to set additional information about the customer you can use customer custom attributes field. Read more about custom attributes [here](/user-guide/features/custom-attributes)
