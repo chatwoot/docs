@@ -99,6 +99,7 @@ module.exports = [
       "user-guide/reports",
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
+      "user-guide/features/automations",
       {
         type: "category",
         label: "Campaigns",
