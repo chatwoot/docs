@@ -121,13 +121,17 @@ DEFAULT_LOCALE='en'
 
 ### Configure storage
 
-Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server.
+Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server. 
 
 But you can change it to use any of the cloud providers like amazon s3, microsoft azure and google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
 
 ```bash
 ACTIVE_STORAGE_SERVICE=local
 ```
+
+When `local` storage is used the files are stored under `public/uploads` directory in the chatwoot root folder.
+
+> It is recommended to use a cloud provider for your chatwoot storage to ensure proper backup of the stored attachments and prevent data loss. 
 
 ### Configure Redis
 
