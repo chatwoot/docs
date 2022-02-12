@@ -56,10 +56,6 @@ module.exports = {
         },
       ],
     },
-    googleAnalytics: {
-      trackingID: 'UA-96794837-1',
-      anonymizeIP: true,
-    },
     algolia: {
       appId: 'J9H34SLMKO',
       apiKey: '6034d7c5310911e20c3fbb3b88111235',
@@ -70,6 +66,10 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        googleAnalytics: {
+          trackingID: 'UA-96794837-1',
+          anonymizeIP: true,
+        },
         docs: {
           routeBasePath: '/',
           sidebarCollapsible: true,
