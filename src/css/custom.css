@@ -176,3 +176,9 @@ html[data-theme="light"] .navbar__link--active {
     flex-direction: column;
   }
 }
+
+div[class^='announcementBar_'] {
+  background-image: linear-gradient(45deg, #60b4f8 25%, #88c6f9 25%, #88c6f9 50%, #60b4f8 50%, #60b4f8 75%, #88c6f9 75%, #88c6f9 100%);
+  background-size: 56.57px 56.57px;
+  font-weight: bold;
+}

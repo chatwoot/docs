@@ -10,6 +10,13 @@ module.exports = {
   organizationName: 'chatwoot',
   projectName: 'docs',
   themeConfig: {
+    announcementBar: {
+      id: 'star_us',
+      content:
+        '⭐️ If you like chatwoot, give it a star on <a href="https://github.com/chatwoot/chatwoot">GitHub</a>!',
+      textColor: '#091E42',
+      isCloseable: true,
+    },
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
