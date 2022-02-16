@@ -47,6 +47,28 @@ Third way is when the customer enters the email id in the Channel Greeting messa
 
 Once the contacts are available in your contact list, you can edit the details as and when needed.
 
+### Outbound conversations
+
+You can send outbound conversations from your contact page to the following conversation channels.
+
+- Website ( only to HMAC identified contacts )
+- Email
+- SMS
+- Whatsapp
+
+#### How to send outbound conversation?
+
+1. Click on the outbound conversation icon on the contact page
+2. Select the conversation Inbox
+3. Fill in the message contents 
+4. Click send
+
+<div align="center">
+
+<img src={require('./images/send-outbound-conversations.gif').default} width="800" alt="Sending outbound conversations" />
+
+</div>
+
 
 ### Contacts Notes
 
