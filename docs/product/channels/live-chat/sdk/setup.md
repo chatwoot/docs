@@ -153,3 +153,15 @@ window.$chatwoot.removeLabel('support-ticket');
 ```js
 window.$chatwoot.reset();
 ```
+
+
+### Widget errors
+
+In order to see any errors in the widget, please make sure that you listen to `chatwoot:event` event as follows:
+
+```js
+window.addEventListener('chatwoot:error', function () {
+  // Use window.$chatwoot here
+  // ...
+});
+```
