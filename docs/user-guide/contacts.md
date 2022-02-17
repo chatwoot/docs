@@ -70,6 +70,8 @@ You can send outbound conversations from your contact page to the following conv
 </div>
 
 
+
+**Note:** When an agent creates the outbound conversation, the conversation will automatically assign to that agent.
 ### Contacts Notes
 
 Chatwoot has a dedicated page for adding notes to each contact in your directory. This allows you to add notes and important information to a specific contact. You can use this to manually log a call, email, or meeting you had with the customer.

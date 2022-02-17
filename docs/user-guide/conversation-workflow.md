@@ -299,7 +299,7 @@ The Conversations can be selected and viewed as per their status on the Conversa
 
 </div>
 
-
+**Note:** When an agent changes the conversation status to open, the conversation will automatically assign to that agent.
 ## CSAT
 
 Once the ticket or conversation is marked as 'Resolved', if the [CSAT option ](reports.md#csat) is enabled, the survey will be sent to customer in the widget as below
