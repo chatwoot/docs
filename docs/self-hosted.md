@@ -18,6 +18,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 
 ### Cloud provider guides
 - [Amazon Web Services (AWS)](/docs/self-hosted/deployment/aws)
+- [AWS Marketplace](/docs/self-hosted/deployment/aws-marketplace)
 - [Azure](/docs/self-hosted/deployment/azure)
 - [DigitalOcean](/docs/self-hosted/deployment/digital-ocean)
 - [Google Cloud Platform (GCP)](/docs/self-hosted/deployment/gcp)
