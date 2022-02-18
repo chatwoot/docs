@@ -71,13 +71,13 @@ module.exports = {
           anonymizeIP: true,
         },
         docs: {
-          breadcrumbs: true,
           routeBasePath: '/',
           sidebarCollapsible: true,
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/chatwoot/docs/edit/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          breadcrumbs: true,
         },
         blog: {
           showReadingTime: true,
