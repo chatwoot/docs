@@ -71,6 +71,7 @@ module.exports = {
           anonymizeIP: true,
         },
         docs: {
+          breadcrumbs: true,
           routeBasePath: '/',
           sidebarCollapsible: true,
           sidebarPath: require.resolve('./sidebars.js'),
