@@ -161,7 +161,8 @@ In order to see any errors in the widget, please make sure that you listen to `c
 
 ```js
 window.addEventListener('chatwoot:error', function () {
-  // Use window.$chatwoot here
   // ...
 });
 ```
+
+Note: This feature is available in v2.3.0 or later.
