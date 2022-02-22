@@ -27,6 +27,7 @@ module.exports = [
     type: "category",
     items: [
       "self-hosted/deployment/aws",
+      "self-hosted/deployment/aws-marketplace",
       "self-hosted/deployment/azure",
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
