@@ -77,6 +77,7 @@ module.exports = {
           editUrl: 'https://github.com/chatwoot/docs/edit/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          breadcrumbs: true,
         },
         blog: {
           showReadingTime: true,
