@@ -149,6 +149,10 @@ html[data-theme="light"] .navbar__link--active {
   padding: 1rem 2.4rem;
 }
 
+.theme-doc-breadcrumbs {
+  padding: 1rem 2.4rem 0;
+}
+
 @media screen and (max-width: 997px) {
   .markdown {
     padding: 0.8rem;
