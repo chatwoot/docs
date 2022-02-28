@@ -40,7 +40,7 @@ Once you connect agent bot to an inbox, all the new conversations created in you
 
 There are two types of agent bots in chatwoot.
 1. **Global Bots** : Global Bots have a permission scope for all the accounts in a chatwoot installation. They can interact with bot accessible endpoints in respect to any account in that installation.
-2. **Account Bots** : Account Bots have a permission scope that is limited to the account for which the bot was cteated. 
+2. **Account Bots** : Account Bots have a permission scope that is limited to the account for which the bot was created. 
 
 You can provision Agent Bots in Chatwoot either through our API or using Rails Console.
 
