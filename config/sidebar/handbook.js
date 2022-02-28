@@ -41,6 +41,7 @@ module.exports = [
     label: "Marketing",
     items: [
       "handbook/marketing/brand-guidelines",
+      "handbook/marketing/blog-post",
     ],
     collapsible: false,
   },
