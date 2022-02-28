@@ -8,6 +8,7 @@ We use [Ghost](https://www.ghost.org) to manage our blog.
 The Ghost Installation details are as follows:
 
 - **Installation URL**: https://www-internal-blog.chatwoot.com
+  - Site Password is shared in 1Password.
 - **Admin dashboard**: https://www-internal-blog.chatwoot.com/ghost
 
 Ghost powers both general blog posts and release notes in Chatwoot marketing website.
