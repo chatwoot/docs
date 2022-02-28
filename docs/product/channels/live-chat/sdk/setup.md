@@ -106,7 +106,6 @@ window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
     twitter:'', // Twitter user name 
     linkedin:'', // LinkedIn user name 
     facebook:'' , // Facebook user name 
-    github: '' // // Github user name 
   }
 
 })
