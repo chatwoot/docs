@@ -23,7 +23,7 @@ docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh
 
 - Execure the following command to create a super admin in your Rails console.
 ```rb
-s = SuperAdmin.create!(email: "admin@xyc.com", password: "yourpassword")
+s = SuperAdmin.where(:email => 'your email').first_or_create(name: 'your name', password: 'yourpassword')
 ```
 - Access `<chatwoot-installation-url>/super_admin`.
 - Authenticate and you can find Sidekiq option on the sidebar.
