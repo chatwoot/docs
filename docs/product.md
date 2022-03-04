@@ -37,6 +37,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Keyboard Shortcuts](/docs/user-guide/features/keyboard-shortcuts)
 - [Multilingual Support](/docs/user-guide/features/multilingual-support)
 - [Reports](/docs/user-guide/reports)
+- [Segments](/docs/user-guide/features/segments)
 
 ### Mobile app
 

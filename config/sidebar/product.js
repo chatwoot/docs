@@ -94,6 +94,7 @@ module.exports = [
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
       "user-guide/features/keyboard-shortcuts",
+      "user-guide/features/segments",
       "user-guide/features/commandbar",
       "user-guide/features/multilingual-support",
       "user-guide/reports",
