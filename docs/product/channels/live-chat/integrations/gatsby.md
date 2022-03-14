@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Gatsby"
-title: "Integrate Chatwoot with Next.js"
+title: "Integrate Chatwoot with Gatsby"
 ---
 
 Chatwoot has an official Gatsby plugin for integrating the widget on your websites
