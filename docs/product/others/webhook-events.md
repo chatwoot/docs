@@ -41,7 +41,9 @@ Chatwoot Publishes Various events to Webhook Endpoints if any of the following a
         "platform_version": "10.15.2"
       },
       "referer": "http://www.chatwoot.com",
-      "initiated_at": "Tue Mar 03 2020 18:37:38 GMT-0700 (Mountain Standard Time)"
+      "initiated_at": {
+        "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
+      }
     }
   },
   "account": { // This would provide the details of the account
