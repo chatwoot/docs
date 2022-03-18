@@ -93,6 +93,7 @@ module.exports = [
       "user-guide/features/csat",
       "user-guide/contacts",
       "product/inbox/routing-conversations-round-robin",
+      "user-guide/features/folders",
       "user-guide/features/keyboard-shortcuts",
       "user-guide/features/segments",
       "user-guide/features/commandbar",
