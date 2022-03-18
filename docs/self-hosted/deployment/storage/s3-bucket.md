@@ -59,19 +59,22 @@ Replace your *bucket name* in the appropriate places.
 
 ![user-arn](./images/user-arn.png)
 
-**Update AWS S3 CORS Configuration**
+**Add CORS Configuration on your S3 buckets**
 
-In order to support direct file upload from the widget and from the chatwoot dashbord we need configure CORS to the respective storage cloud.
-Refer this link for more information: https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration
+You need to configure CORS settings to the respective storage cloud to support Direct file uploads from the widget and the Chatwoot dashboard.
+
+Refer to this link for more information: https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration
 
 To make CORS configuration changes on S3:
+
 1. Go to your S3 bucket
-2. Click on permissions tab.
+2. Click on the permissions tab.
 3. Scroll to Cross-origin resource sharing (CORS) and click on `Edit` and add the respective changes shown below.
 
 ![aws-cors-setup](./images/aws-cors-setup.png)
 
-So for self-hosted version, you have your widget on https://www.example-site.com and your chatwoot dashboard on https://www.app.example-site.com the these both will be in AllowedOrigin array, it will look like below.
+Add your Chatwoot URL to the `AllowedOrigin` as shown below.
+
 ```
 [
   {
@@ -85,7 +88,7 @@ So for self-hosted version, you have your widget on https://www.example-site.com
       "GET"
     ],
     "AllowedOrigins": [
-      "https://www.example-site.com"
+      "<add-your-domain-here eg: https://app.chatwoot.com>"
     ],
     "ExposeHeaders": [
       "Origin",
@@ -106,7 +109,7 @@ So for self-hosted version, you have your widget on https://www.example-site.com
       "GET"
     ],
     "AllowedOrigins": [
-      "https://www.app.example-site.com"
+      "<add-your-domain-here eg: https://app.chatwoot.com>"
     ],
     "ExposeHeaders": [
       "Origin",
