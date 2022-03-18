@@ -58,3 +58,67 @@ Replace your *bucket name* in the appropriate places.
 2. Click on the user, you will be to see a screen as shown below. Copy the User ARN and paste it in the above policy.
 
 ![user-arn](./images/user-arn.png)
+
+**Add CORS Configuration on your S3 buckets**
+
+You need to configure CORS settings to the respective storage cloud to support Direct file uploads from the widget and the Chatwoot dashboard.
+
+Refer to this link for more information: https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration
+
+To make CORS configuration changes on S3:
+
+1. Go to your S3 bucket
+2. Click on the permissions tab.
+3. Scroll to Cross-origin resource sharing (CORS) and click on `Edit` and add the respective changes shown below.
+
+![aws-cors-setup](./images/aws-cors-setup.png)
+
+Add your Chatwoot URL to the `AllowedOrigin` as shown below.
+
+```
+[
+  {
+    "AllowedHeaders": [
+      "*"
+    ],
+    "AllowedMethods": [
+      "PUT",
+      "POST",
+      "DELETE",
+      "GET"
+    ],
+    "AllowedOrigins": [
+      "<add-your-domain-here eg: https://app.chatwoot.com>"
+    ],
+    "ExposeHeaders": [
+      "Origin",
+      "Content-Type",
+      "Content-MD5",
+      "Content-Disposition"
+    ],
+    "MaxAgeSeconds": 3600
+  },
+  {
+    "AllowedHeaders": [
+      "*"
+    ],
+    "AllowedMethods": [
+      "PUT",
+      "POST",
+      "DELETE",
+      "GET"
+    ],
+    "AllowedOrigins": [
+      "<add-your-domain-here eg: https://app.chatwoot.com>"
+    ],
+    "ExposeHeaders": [
+      "Origin",
+      "Content-Type",
+      "Content-MD5",
+      "Content-Disposition"
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]
+```
+
