@@ -100,15 +100,15 @@ window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
   identifier_hash: '', // Identifier Hash generated based on the webwidget hmac_token
   phone_number: '', // Phone Number of the user
   description:'', // description about the user
-  country_code:'' // Two letter country code
-  city: '' // City of the user
+  country_code:'', // Two letter country code
+  city: '', // City of the user
+  company_name: '', // company name
   social_profiles:{
     twitter:'', // Twitter user name 
     linkedin:'', // LinkedIn user name 
     facebook:'' , // Facebook user name
     github:''  // Github user name 
   }
-
 })
 ```
 
