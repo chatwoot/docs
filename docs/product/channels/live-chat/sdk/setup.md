@@ -61,7 +61,28 @@ window.chatwootSettings = {
   // ...Other Config
   showPopoutButton: true,
 }
+
+You can also popout the chat window programatically with the `popoutChatWindow()` method.
 ```
+
+### Programatically open the popout window
+You can open thje popout window programatically with the `popoutChatWindow()` method.
+
+To initiate this, call the method like below. 
+```js
+window.$chatwoot.popoutChatWindow();
+```
+
+
+### Toggle the widget bubble visibility
+If you want to hide/show the Chatwoot widget bubble, you can do so with  `toggleBubbleVisibility(BOOLEAN_STATE)`
+
+Example
+```js
+window.$chatwoot.toggleBubbleVisibility(true); // to display the bubble
+window.$chatwoot.toggleBubbleVisibility(false); // to hide the bubble
+```
+
 
 ### Trigger widget without displaying bubble
 
