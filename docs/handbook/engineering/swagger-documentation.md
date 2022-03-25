@@ -1,5 +1,5 @@
 ---
-title: 'Swagger Documentation
+title: 'Swagger Documentation'
 ---
 
 Chatwoot maintains its [API documentation](https://www.chatwoot.com/developers/api/) using swagger. Therefore, whenever you commit an API change to Chatwoot, The associated `swagger` Documentation needs to be updated. 
