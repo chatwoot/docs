@@ -52,14 +52,17 @@ module.exports = [
       "product/channels/facebook",
       "product/channels/instagram",
       "product/channels/twitter",
-      "product/channels/twilio-whatsapp-sms",
       {
-        "API Channel": [
-          "product/channels/api/create-channel",
-          "product/channels/api/send-messages",
-          "product/channels/api/receive-messages",
-          "product/channels/api/client-apis",
-        ],
+        "Whatsapp Channel": [      
+          "product/channels/whatsapp/twilio",
+          "product/channels/whatsapp/360dialog"
+        ]
+      },
+      {
+        "SMS Channel": [      
+          "product/channels/sms/twilio",
+          "product/channels/sms/bandwidth"
+        ]
       },
       {
         Email: [
@@ -75,6 +78,14 @@ module.exports = [
               "product/channels/email/gmail/add-forward-email",
             ],
           },
+        ],
+      },
+      {
+        "API Channel": [
+          "product/channels/api/create-channel",
+          "product/channels/api/send-messages",
+          "product/channels/api/receive-messages",
+          "product/channels/api/client-apis",
         ],
       },
       "product/channels/telegram",

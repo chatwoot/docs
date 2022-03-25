@@ -9,7 +9,7 @@ If you are using a self-hosted Chatwoot installation, please configure the Faceb
 
 ![fb_create](./images/facebook/inbox_create.png)
 
-**Step 2**. Click on "Facebook" icon.
+**Step 2**. Click on "Messenger" icon.
 
 ![list_of_channels](./images/facebook/list_of_channels.png)
 
