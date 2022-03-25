@@ -30,6 +30,7 @@
   --ifm-navbar-link-font-size: 1.0625rem;
   --ifm-navbar-link-color: #506690;
   --ifm-h1-font-size: 2.4rem !important;
+  --docusaurus-announcement-bar-height: 2.4rem !important;
 }
 
 .markdown {
@@ -178,7 +179,6 @@ html[data-theme="light"] .navbar__link--active {
 }
 
 div[class^='announcementBar_'] {
-  background-image: linear-gradient(45deg, #60b4f8 25%, #88c6f9 25%, #88c6f9 50%, #60b4f8 50%, #60b4f8 75%, #88c6f9 75%, #88c6f9 100%);
-  background-size: 56.57px 56.57px;
-  font-weight: bold;
+  background-color: var(--ifm-color-primary);
+  color: #fff;
 }
