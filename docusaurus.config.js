@@ -13,7 +13,7 @@ module.exports = {
     announcementBar: {
       id: 'star_us',
       content:
-        '⭐️ If you like Chatwoot, give it a star on <a href="https://github.com/chatwoot/chatwoot">GitHub</a>!',
+        '⭐️ If you like Chatwoot, give it a star on <a href="https://github.com/chatwoot/chatwoot">GitHub</a> and follow us on <a href="https://twitter.com/chatwootapp">Twitter</a>!',
       isCloseable: true,
     },
     image: 'https://www.chatwoot.com/images/preview.png',
