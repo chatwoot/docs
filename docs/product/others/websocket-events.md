@@ -248,7 +248,7 @@ This event is sent when a new conversation is created. For contact pubsub token 
 }
 ```
 
-### conversation_read
+### conversation.read
 
 This event is sent to the agents/admins who access to the inbox when a message is read by a contact.
 
