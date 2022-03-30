@@ -19,7 +19,7 @@ Once you register your Slack App, you will have to obtain the `Client Id` and `C
 6. In the user access token section subscribe to: `files:read`, `files:write`, `remote_files:share`
 7. Head over to the `events subscriptions` section under `features` tab.
 8. Enable events and configure the given request url `{Chatwoot installation url}/api/v1/integrations/webhooks`
-9. Subscribe to the following bot events `message.channels` , `message.groups`, `message.im`, `message.mpim`, `files:read`, `files:write`, `remote_files:read`, `remote_files:write`
+9. Subscribe to the following bot events `message.channels` , `message.groups`, `message.im`, `message.mpim`.
 10. Connect Slack integration on Chatwoot app and get productive.
 
 ### Configure the environment variables in Chatwoot
