@@ -1,928 +1,476 @@
 ---
-title: "Websocket Events"
+title: "Use websocket events to get real-time updates"
+sidebar_label: "Websocket Events"
 ---
 
-To subscribe to various events happening in your chatwoot installation in realtime, You can connect to the Chatwoot WebSockets. 
-Chatwoot WebSockets connection can be made at the following URL
+Websockets creates a persistent connection between the client and the server allowing bi-directional communication. Chatwoot supports a websocket connection to get real-time updates about the events happening on the platform. Any client can connect to the websocket URL in Chatwoot and authorize themselves by providing the token and start receiving the updates. This guide will help you set up a websocket connection with Chatwoot and integrate available events.
 
-```
-<your installation url>/cable
-```
+**Note:** This is an experimental feature. Documentation can change on every release, and there is no guarantee of backward compatibility. Please make sure that you are using the updated version of the implementation.
 
-## Authenticating your WebSocket connection 
-You will start receiving the events directed towards your customer after subscribing using the customer `pubsub_token`.
-You will start receiving the events directed towards your agents after subscribing using the user `pubsub_token`.
+## Why should I use a websocket connection?
 
-Also refer [Client APIs](/docs/product/channels/api/client-apis) to build real time customer facing integrations using chatwoot.
+Suppose you are building a client for Chatwoot. For example, in An Android or iOS Client SDK, where you would need to listen to the latest messages to update the UI without a reload or An extension to the dashboard, if you want to improve an agent's productivity, you might need data in real-time.
 
-### Example
+## Setup a websocket connection with Chatwoot
+
+To set up a websocket connection with Chatwoot, you need to initiate a connection with the authentication pubsub token provided by Chatwoot. The URL for the connection is `wss://<your-installation-url>/cable`. E.g.: `wss://app.chatwoot.com/cable`.
+
+There are two types of pubsub tokens available in Chatwoot.
+
+1. **User PubSub Token**: This token has the privileges of an agent/admin and would receive all of the events documented below. You can get the pubsub token by calling the [Profile API](https://www.chatwoot.com/developers/api/#operation/fetchProfile).
+
+2. **Contact PubSub Token**: For every contact, Chatwoot would generate a pubsub token for every session they had. You can connect to the websocket using this token to get the updates of the current session. When you create a [contact using the public APIs](https://www.chatwoot.com/developers/api/#tag/Contacts-API), you will receive the `pubsub_token` in the payload. This token only have access to the current session related events, you would only receive the events `conversation.created`, `conversation.status_changed`, `message.created`, `message.updated`, `conversation_typing_on`, `conversation_typing_off` and `presence.update`.
+
+Please refer [Client APIs](/docs/product/channels/api/client-apis) to build real time customer facing integrations using Chatwoot.
+
+Note: This token may be rotated regularly based on your installation type, make sure that you are using the latest token.
+
+### Connect to Chatwoot Websocket
+
+You need to send a command "subscribe" to connect to Chatwoot. It expects a pubSub token, accountId and userId (if using a user token).
+Here is an example on how you can connect with Chatwoot.
+
 ```js
-const connection = new WebSocket('ws://localhost:3000/cable');
-connection.send(JSON.stringify({ command:"subscribe", identifier: "{\"channel\":\"RoomChannel\",\"pubsub_token\":\""+ customer_pubsub_token+"\"}" }));
+// Add a helper method to convert JSON to a string
+const stringify = (payload = {}) => JSON.stringify(payload);
+
+const pubSubToken = "<contact/user-pub-sub-token>";
+const accountId = "<your-account-id-in-integer>";
+const userId = "<user-id-in-integer-if-using-user-token>";
+const connection = new WebSocket(
+  "wss://<your-Chatwoot-installation-host-url>/cable"
+);
+
+connection.send(
+  stringify({
+    command: "subscribe",
+    identifier: stringify({
+      channel: "RoomChannel",
+      pubsub_token: pubSubToken,
+      account_id: accountId,
+      user_id: userId,
+    }),
+  })
+);
+
+// The expected string in connection.send is of the format:
+// {"command":"subscribe","identifier":"{\"channel\":\"RoomChannel\",\"pubsub_token\":\"your-pubsub-token\",\"account_id\": account_id_integer,\"user_id\":user_id_integer }"}
 ```
 
-## Publishing Presence to the websocket server
+### Publishing Presence to the websocket server
 
-Publish the appropriate payloads back to the websocket server at `30 second` intervals to keep the online presence updated in chatwoot.
+To keep your users online is Chatwoot, you can send a presence update event to Chatwoot every 30 seconds. This action would keep the status of the agent/contact to online.
 
-### Agent presence
-```json
-{
-	"command": "message",
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"data": "{\"action\":\"update_presence\"}"
-}
+#### Update presence of an agent/admin user
+
+The payload that should be sent to the server for updating the presence of an agent/admin is as follows.
+
+```js
+const userPayload = stringify({
+  command: "message",
+  identifier: stringify({
+    channel: "RoomChannel",
+    pubsub_token: "<user-pubsub-token>",
+    account_id: accountId,
+    user_id: userId,
+  }),
+  data: stringify({ action: "update_presence" }),
+});
+
+connection.send(userPayload);
+// The expected string in connection.send is of the format:
+// {"command":"message","identifier":"{\"channel\":\"RoomChannel\",\"pubsub_token\":\"your-pubsub-token\",\"account_id\": account_id_integer,\"user_id\":user_id_integer ","data":"{\"action\":\"update_presence\"}"}
 ```
 
-### Contact Presence
-```json
- {
-	"command": "message",
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\"}",
-	"data": "{\"action\":\"update_presence\"}"
-}
+#### Update presence of a contact
+
+The payload that should be sent to the server for updating the presence of a contact is as follows.
+
+```js
+const agentPayload = stringify({
+  command: "message",
+  identifier: stringify({
+    channel: "RoomChannel",
+    pubsub_token: "<user-pubsub-token>",
+  }),
+  data: stringify({ action: "update_presence" }),
+});
+
+connection.send(agentPayload);
+// The expected string in connection.send is of the format:
+// {"command":"message","identifier":"{\"channel\":\"RoomChannel\",\"pubsub_token\":\"your-pubsub-token\","data":"{\"action\":\"update_presence\"}"}
 ```
 
-## Websocket Event payload samples
+## Websocket Payload
 
-Here are example payloads of various websocket events in chatwoot
+### Objects
 
-### conversation_created
-> Available for: Agents
+An event can contain any of the following objects as a payload. Different type of objects supported in Chatwoot are as follows.
 
-```json
-{
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "conversation.created",
-		"data": {
-			"additional_attributes": {
-				"browser": {
-					"device_name": "Unknown",
-					"browser_name": "Chrome",
-					"platform_name": "macOS",
-					"browser_version": "92.0.4515.107",
-					"platform_version": "10.15.7"
-				},
-				"referer": "http://localhost:3000/widget_tests",
-				"initiated_at": {
-					"timestamp": "Fri Jul 23 2021 22:43:14 GMT+0530 (India Standard Time)"
-				}
-			},
-			"can_reply": true,
-			"channel": "Channel::WebWidget",
-			"id": 7,
-			"inbox_id": 1,
-			"contact_inbox": {
-				"id": 8,
-				"contact_id": 10,
-				"inbox_id": 1,
-				"source_id": "4f5c785e-abba-4527-82a9-bbdb2117c167",
-				"created_at": "2021-07-23T17:08:53.771Z",
-				"updated_at": "2021-07-23T17:08:53.771Z",
-				"hmac_verified": false
-			},
-			"messages": [],
-			"meta": {
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": null,
-					"id": 10,
-					"identifier": null,
-					"name": "white-shadow-394",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "",
-					"type": "contact"
-				},
-				"assignee": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "online"
-				}
-			},
-			"status": "open",
-			"unread_count": 0,
-			"agent_last_seen_at": 0,
-			"contact_last_seen_at": 0,
-			"timestamp": 1627060394,
-			"account_id": 1
-		}
-	}
-}
-```
+#### Conversation
 
-### conversation_read
-> Available for: Agents
+The following payload will be returned for a conversation.
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "conversation.read",
-		"data": {
-			"additional_attributes": {
-				"browser": {
-					"device_name": "Unknown",
-					"browser_name": "Chrome",
-					"platform_name": "macOS",
-					"browser_version": "92.0.4515.107",
-					"platform_version": "10.15.7"
-				},
-				"referer": "http://localhost:3000/widget_tests",
-				"initiated_at": {
-					"timestamp": "Fri Jul 23 2021 22:58:28 GMT+0530 (India Standard Time)"
-				}
-			},
-			"can_reply": true,
-			"channel": "Channel::WebWidget",
-			"id": 9,
-			"inbox_id": 1,
-			"contact_inbox": {
-				"id": 11,
-				"contact_id": 12,
-				"inbox_id": 1,
-				"source_id": "d45c0005-2429-4079-bbc2-6ade8bdb2866",
-				"created_at": "2021-07-23T17:28:24.996Z",
-				"updated_at": "2021-07-23T17:28:40.864Z",
-				"hmac_verified": false
-			},
-			"messages": [{
-				"id": 117,
-				"content": "helllo",
-				"account_id": 1,
-				"inbox_id": 1,
-				"conversation_id": 9,
-				"message_type": 1,
-				"created_at": 1627061456,
-				"updated_at": "2021-07-23T17:30:56.000Z",
-				"private": false,
-				"status": "sent",
-				"source_id": null,
-				"content_type": null,
-				"content_attributes": {},
-				"sender_type": "User",
-				"sender_id": 1,
-				"external_source_ids": {},
-				"sender": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "online"
-				}
-			}],
-			"meta": {
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": "jane@acme.inc",
-					"id": 12,
-					"identifier": null,
-					"name": "jane",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-					"type": "contact"
-				},
-				"assignee": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "online"
-				}
-			},
-			"status": "open",
-			"unread_count": 0,
-			"agent_last_seen_at": 1627061456,
-			"contact_last_seen_at": 1627061467,
-			"timestamp": 1627061456,
-			"account_id": 1
-		}
-	}
+  "additional_attributes": {
+    "browser": {
+      "device_name": "string",
+      "browser_name": "string",
+      "platform_name": "string",
+      "browser_version": "string",
+      "platform_version": "string"
+    },
+    "referer": "string",
+    "initiated_at": {
+      "timestamp": "iso-datetime"
+    }
+  },
+  "can_reply": "boolean",
+  "channel": "string",
+  "id": "integer",
+  "inbox_id": "integer",
+  "contact_inbox": {
+    "id": "integer",
+    "contact_id": "integer",
+    "inbox_id": "integer",
+    "source_id": "string",
+    "created_at": "datetime",
+    "updated_at": "datetime",
+    "hmac_verified": "boolean"
+  },
+  "messages": ["Array of message objects"],
+  "meta": {
+    "sender": {
+      // Contact Object
+    },
+    "assignee": {
+      // User Object
+    }
+  },
+  "status": "string",
+  "unread_count": "integer",
+  "agent_last_seen_at": "unix-timestamp",
+  "contact_last_seen_at": "unix-timestamp",
+  "timestamp": "unix-timestamp",
+  "account_id": "integer"
 }
 ```
 
-### message_created
-> Available for: Agents & Contacts
+#### Contact
+
+The following payload will be returned for a contact.
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "message.created",
-		"data": {
-			"id": 106,
-			"content": "hi",
-			"account_id": 1,
-			"inbox_id": 1,
-			"conversation_id": 7,
-			"message_type": 0,
-			"created_at": 1627060394,
-			"updated_at": "2021-07-23T17:13:14.000Z",
-			"private": false,
-			"status": "sent",
-			"source_id": null,
-			"content_type": "text",
-			"content_attributes": {},
-			"sender_type": "Contact",
-			"sender_id": 10,
-			"external_source_ids": {},
-			"sender": {
-				"additional_attributes": {},
-				"custom_attributes": {},
-				"email": null,
-				"id": 10,
-				"identifier": null,
-				"name": "white-shadow-394",
-				"phone_number": null,
-				"pubsub_token": "token",
-				"thumbnail": "",
-				"type": "contact"
-			}
-		}
-	}
+  "additional_attributes": "object",
+  "custom_attributes": "object",
+  "email": "string",
+  "id": "integer",
+  "identifier": "string or null",
+  "name": "string",
+  "phone_number": "string or null",
+  "thumbnail": "string"
 }
 ```
 
-### message_updated
-> Available for: Agents & Contacts
+#### User
+
+The following payload will be returned for an agent/admin.
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "message.updated",
-		"data": {
-			"id": 111,
-			"content_type": "input_email",
-			"content_attributes": {
-				"submitted_email": "jane@acme.inc"
-			},
-			"account_id": 1,
-			"inbox_id": 1,
-			"conversation_id": 8,
-			"content": "Get notified by email",
-			"message_type": 3,
-			"created_at": 1627060984,
-			"updated_at": "2021-07-23T17:23:14.000Z",
-			"private": false,
-			"status": "sent",
-			"source_id": null,
-			"sender_type": null,
-			"sender_id": null,
-			"external_source_ids": {}
-		}
-	}
+  "id": "integer",
+  "name": "string",
+  "available_name": "string",
+  "avatar_url": "string",
+  "availability_status": "string",
+  "thumbnail": "string"
 }
 ```
 
-
-### conversation_status_changed
-> Available for: Agents & Contacts
+#### Message
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "conversation.status_changed",
-		"data": {
-			"additional_attributes": {
-				"browser": {
-					"device_name": "Unknown",
-					"browser_name": "Chrome",
-					"platform_name": "macOS",
-					"browser_version": "92.0.4515.107",
-					"platform_version": "10.15.7"
-				},
-				"referer": "http://localhost:3000/widget_tests",
-				"initiated_at": {
-					"timestamp": "Fri Jul 23 2021 22:43:14 GMT+0530 (India Standard Time)"
-				}
-			},
-			"can_reply": true,
-			"channel": "Channel::WebWidget",
-			"id": 7,
-			"inbox_id": 1,
-			"contact_inbox": {
-				"id": 8,
-				"contact_id": 10,
-				"inbox_id": 1,
-				"source_id": "4f5c785e-abba-4527-82a9-bbdb2117c167",
-				"created_at": "2021-07-23T17:08:53.771Z",
-				"updated_at": "2021-07-23T17:08:53.771Z",
-				"hmac_verified": false
-			},
-			"messages": [{
-				"id": 107,
-				"content": "sfdfd",
-				"account_id": 1,
-				"inbox_id": 1,
-				"conversation_id": 7,
-				"message_type": 0,
-				"created_at": 1627060756,
-				"updated_at": "2021-07-23T17:19:16.000Z",
-				"private": false,
-				"status": "sent",
-				"source_id": null,
-				"content_type": "text",
-				"content_attributes": {},
-				"sender_type": "Contact",
-				"sender_id": 10,
-				"external_source_ids": {},
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": null,
-					"id": 10,
-					"identifier": null,
-					"name": "white-shadow-394",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "",
-					"type": "contact"
-				}
-			}],
-			"meta": {
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": null,
-					"id": 10,
-					"identifier": null,
-					"name": "white-shadow-394",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "",
-					"type": "contact"
-				},
-				"assignee": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "offline"
-				}
-			},
-			"status": "pending",
-			"unread_count": 0,
-			"agent_last_seen_at": 1627060756,
-			"contact_last_seen_at": 0,
-			"timestamp": 1627060756,
-			"account_id": 1
-		}
-	}
+  "id": "integer",
+  "content": "string",
+  "account_id": "integer",
+  "inbox_id": "integer",
+  "message_type": "integer",
+  "created_at": "unix-timestamp",
+  "updated_at": "datetime",
+  "private": "boolean",
+  "status": "string",
+  "source_id": "string / null",
+  "content_type": "string",
+  "content_attributes": "object",
+  "sender_type": "string",
+  "sender_id": "integer",
+  "external_source_ids": "object",
+  "sender": {
+    "type": "string - contact/user"
+    // User or Contact Object
+  }
 }
 ```
 
-### conversation_typing_on
-> Available for: Agents & Contacts
+### Identifier
+
+Each event will have an `identifier` attribute which would be of the following format.
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "conversation.typing_on",
-		"data": {
-			"conversation": {
-				"additional_attributes": {
-					"browser": {
-						"device_name": "Unknown",
-						"browser_name": "Chrome",
-						"platform_name": "macOS",
-						"browser_version": "92.0.4515.107",
-						"platform_version": "10.15.7"
-					},
-					"referer": "http://localhost:3000/widget_tests",
-					"initiated_at": {
-						"timestamp": "Fri Jul 23 2021 22:43:14 GMT+0530 (India Standard Time)"
-					}
-				},
-				"can_reply": true,
-				"channel": "Channel::WebWidget",
-				"id": 7,
-				"inbox_id": 1,
-				"contact_inbox": {
-					"id": 8,
-					"contact_id": 10,
-					"inbox_id": 1,
-					"source_id": "4f5c785e-abba-4527-82a9-bbdb2117c167",
-					"created_at": "2021-07-23T17:08:53.771Z",
-					"updated_at": "2021-07-23T17:08:53.771Z",
-					"hmac_verified": false
-				},
-				"messages": [{
-					"id": 106,
-					"content": "hi",
-					"account_id": 1,
-					"inbox_id": 1,
-					"conversation_id": 7,
-					"message_type": 0,
-					"created_at": 1627060394,
-					"updated_at": "2021-07-23T17:13:14.000Z",
-					"private": false,
-					"status": "sent",
-					"source_id": null,
-					"content_type": "text",
-					"content_attributes": {},
-					"sender_type": "Contact",
-					"sender_id": 10,
-					"external_source_ids": {},
-					"sender": {
-						"additional_attributes": {},
-						"custom_attributes": {},
-						"email": null,
-						"id": 10,
-						"identifier": null,
-						"name": "white-shadow-394",
-						"phone_number": null,
-						"pubsub_token": "token",
-						"thumbnail": "",
-						"type": "contact"
-					}
-				}],
-				"meta": {
-					"sender": {
-						"additional_attributes": {},
-						"custom_attributes": {},
-						"email": null,
-						"id": 10,
-						"identifier": null,
-						"name": "white-shadow-394",
-						"phone_number": null,
-						"pubsub_token": "token",
-						"thumbnail": "",
-						"type": "contact"
-					},
-					"assignee": {
-						"id": 1,
-						"name": "John",
-						"available_name": "John",
-						"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-						"type": "user",
-						"availability_status": "online"
-					}
-				},
-				"status": "open",
-				"unread_count": 0,
-				"agent_last_seen_at": 1627060549,
-				"contact_last_seen_at": 0,
-				"timestamp": 1627060394
-			},
-			"user": {
-				"additional_attributes": {},
-				"custom_attributes": {},
-				"email": null,
-				"id": 10,
-				"identifier": null,
-				"name": "white-shadow-394",
-				"phone_number": null,
-				"pubsub_token": "token",
-				"thumbnail": "",
-				"type": "contact"
-			},
-			"account_id": 1
-		}
-	}
+  "identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":id,\"user_id\":user_id}"
 }
 ```
 
-### conversation_typing_off
-> Available for: Agents & Contacts
+### Message
+
+Each event will have a `message` attribute which we return the event name as well as the data associated with it. To see the list of events, see the documentation below.
+
+## Events
+
+### conversation.created
+
+This event is sent when a new conversation is created. For contact pubsub token subscription, it sends only the events related to the session which pubsub token is associated to.
+
+**Available to**: agent/admin, contact
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "conversation.typing_off",
-		"data": {
-			"conversation": {
-				"additional_attributes": {
-					"browser": {
-						"device_name": "Unknown",
-						"browser_name": "Chrome",
-						"platform_name": "macOS",
-						"browser_version": "92.0.4515.107",
-						"platform_version": "10.15.7"
-					},
-					"referer": "http://localhost:3000/widget_tests",
-					"initiated_at": {
-						"timestamp": "Fri Jul 23 2021 22:43:14 GMT+0530 (India Standard Time)"
-					}
-				},
-				"can_reply": true,
-				"channel": "Channel::WebWidget",
-				"id": 7,
-				"inbox_id": 1,
-				"contact_inbox": {
-					"id": 8,
-					"contact_id": 10,
-					"inbox_id": 1,
-					"source_id": "4f5c785e-abba-4527-82a9-bbdb2117c167",
-					"created_at": "2021-07-23T17:08:53.771Z",
-					"updated_at": "2021-07-23T17:08:53.771Z",
-					"hmac_verified": false
-				},
-				"messages": [{
-					"id": 106,
-					"content": "hi",
-					"account_id": 1,
-					"inbox_id": 1,
-					"conversation_id": 7,
-					"message_type": 0,
-					"created_at": 1627060394,
-					"updated_at": "2021-07-23T17:13:14.000Z",
-					"private": false,
-					"status": "sent",
-					"source_id": null,
-					"content_type": "text",
-					"content_attributes": {},
-					"sender_type": "Contact",
-					"sender_id": 10,
-					"external_source_ids": {},
-					"sender": {
-						"additional_attributes": {},
-						"custom_attributes": {},
-						"email": null,
-						"id": 10,
-						"identifier": null,
-						"name": "white-shadow-394",
-						"phone_number": null,
-						"pubsub_token": "token",
-						"thumbnail": "",
-						"type": "contact"
-					}
-				}],
-				"meta": {
-					"sender": {
-						"additional_attributes": {},
-						"custom_attributes": {},
-						"email": null,
-						"id": 10,
-						"identifier": null,
-						"name": "white-shadow-394",
-						"phone_number": null,
-						"pubsub_token": "token",
-						"thumbnail": "",
-						"type": "contact"
-					},
-					"assignee": {
-						"id": 1,
-						"name": "John",
-						"available_name": "John",
-						"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-						"type": "user",
-						"availability_status": "online"
-					}
-				},
-				"status": "open",
-				"unread_count": 0,
-				"agent_last_seen_at": 1627060549,
-				"contact_last_seen_at": 0,
-				"timestamp": 1627060394
-			},
-			"user": {
-				"additional_attributes": {},
-				"custom_attributes": {},
-				"email": null,
-				"id": 10,
-				"identifier": null,
-				"name": "white-shadow-394",
-				"phone_number": null,
-				"pubsub_token": "token",
-				"thumbnail": "",
-				"type": "contact"
-			},
-			"account_id": 1
-		}
-	}
+  "message": {
+    "event": "conversation.created",
+    "data": {
+      // Conversation object will be available here
+    }
+  }
 }
 ```
 
-### assignee_changed
-> Available for: Agents
+### conversation.read
+
+This event is sent to the agents/admins who access to the inbox when a message is read by a contact.
+
+**Available to**: agent/admin
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "assignee.changed",
-		"data": {
-			"additional_attributes": {
-				"browser": {
-					"browser_name": "Chrome",
-					"browser_version": "92.0.4515.107",
-					"device_name": "Unknown",
-					"platform_name": "macOS",
-					"platform_version": "10.15.7"
-				},
-				"referer": "http://localhost:3000/widget_tests",
-				"initiated_at": {
-					"timestamp": "Fri Jul 23 2021 22:43:14 GMT+0530 (India Standard Time)"
-				}
-			},
-			"can_reply": true,
-			"channel": "Channel::WebWidget",
-			"id": null,
-			"inbox_id": 1,
-			"contact_inbox": {
-				"id": 8,
-				"contact_id": 10,
-				"inbox_id": 1,
-				"source_id": "4f5c785e-abba-4527-82a9-bbdb2117c167",
-				"created_at": "2021-07-23T17:08:53.771Z",
-				"updated_at": "2021-07-23T17:08:53.771Z",
-				"hmac_verified": false
-			},
-			"messages": [],
-			"meta": {
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": null,
-					"id": 10,
-					"identifier": null,
-					"name": "white-shadow-394",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "",
-					"type": "contact"
-				},
-				"assignee": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "online"
-				}
-			},
-			"status": "open",
-			"unread_count": 0,
-			"agent_last_seen_at": 0,
-			"contact_last_seen_at": 0,
-			"timestamp": 0,
-			"account_id": 1
-		}
-	}
+  "message": {
+    "event": "conversation.read",
+    "data": {
+      // Conversation object will be available here
+    }
+  }
 }
 ```
 
-### team_changed
-> Available for: Agents
+### message.created
+
+This event is sent to the agents,admins/contact when a new message is created in a conversation they have access to.
+
+**Available to**: agent/admin, contact
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "team.changed",
-		"data": {
-			"additional_attributes": {
-				"browser": {
-					"device_name": "Unknown",
-					"browser_name": "Chrome",
-					"platform_name": "macOS",
-					"browser_version": "92.0.4515.107",
-					"platform_version": "10.15.7"
-				},
-				"referer": "http://localhost:3000/widget_tests",
-				"initiated_at": {
-					"timestamp": "Fri Jul 23 2021 22:53:04 GMT+0530 (India Standard Time)"
-				}
-			},
-			"can_reply": true,
-			"channel": "Channel::WebWidget",
-			"id": 8,
-			"inbox_id": 1,
-			"contact_inbox": {
-				"id": 10,
-				"contact_id": 12,
-				"inbox_id": 1,
-				"source_id": "0538243e-1223-49e8-a381-a5a8ce250f60",
-				"created_at": "2021-07-23T17:22:48.744Z",
-				"updated_at": "2021-07-23T17:22:48.744Z",
-				"hmac_verified": false
-			},
-			"messages": [{
-				"id": 111,
-				"content": "Get notified by email",
-				"account_id": 1,
-				"inbox_id": 1,
-				"conversation_id": 8,
-				"message_type": 3,
-				"created_at": 1627060984,
-				"updated_at": "2021-07-23T17:23:14.000Z",
-				"private": false,
-				"status": "sent",
-				"source_id": null,
-				"content_type": "input_email",
-				"content_attributes": {
-					"submitted_email": "jane@acme.inc"
-				},
-				"sender_type": null,
-				"sender_id": null,
-				"external_source_ids": {}
-			}],
-			"meta": {
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": "jane@acme.inc",
-					"id": 12,
-					"identifier": null,
-					"name": "jane",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-					"type": "contact"
-				},
-				"assignee": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "online"
-				}
-			},
-			"status": "open",
-			"unread_count": 0,
-			"agent_last_seen_at": 1627061159,
-			"contact_last_seen_at": 0,
-			"timestamp": 1627060984,
-			"account_id": 1
-		}
-	}
+  "message": {
+    "event": "message.created",
+    "data": {
+      // Message object will be available here
+    }
+  }
 }
 ```
 
-### conversation_contact_changed
-> Available for: Agents
+### message.updated
+
+This event is sent to the agents,admins/contact when a message is updated in a conversation they have access to.
+
+**Available to**: agent/admin, contact
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "conversation.contact_changed",
-		"data": {
-			"additional_attributes": {
-				"browser": {
-					"device_name": "Unknown",
-					"browser_name": "Chrome",
-					"platform_name": "macOS",
-					"browser_version": "92.0.4515.107",
-					"platform_version": "10.15.7"
-				},
-				"referer": "http://localhost:3000/widget_tests",
-				"initiated_at": {
-					"timestamp": "Fri Jul 23 2021 22:58:28 GMT+0530 (India Standard Time)"
-				}
-			},
-			"can_reply": true,
-			"channel": "Channel::WebWidget",
-			"id": 9,
-			"inbox_id": 1,
-			"contact_inbox": {
-				"id": 11,
-				"contact_id": 13,
-				"inbox_id": 1,
-				"source_id": "d45c0005-2429-4079-bbc2-6ade8bdb2866",
-				"created_at": "2021-07-23T17:28:24.996Z",
-				"updated_at": "2021-07-23T17:28:24.996Z",
-				"hmac_verified": false
-			},
-			"messages": [{
-				"id": 115,
-				"content": "Get notified by email",
-				"account_id": 1,
-				"inbox_id": 1,
-				"conversation_id": 9,
-				"message_type": 3,
-				"created_at": 1627061309,
-				"updated_at": "2021-07-23T17:28:40.000Z",
-				"private": false,
-				"status": "sent",
-				"source_id": null,
-				"content_type": "input_email",
-				"content_attributes": {
-					"submitted_email": "jane@acme.inc"
-				},
-				"sender_type": null,
-				"sender_id": null,
-				"external_source_ids": {}
-			}],
-			"meta": {
-				"sender": {
-					"additional_attributes": {},
-					"custom_attributes": {},
-					"email": "jane@acme.inc",
-					"id": 12,
-					"identifier": null,
-					"name": "jane",
-					"phone_number": null,
-					"pubsub_token": "token",
-					"thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-					"type": "contact"
-				},
-				"assignee": {
-					"id": 1,
-					"name": "John",
-					"available_name": "John",
-					"avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-					"type": "user",
-					"availability_status": "online"
-				}
-			},
-			"status": "open",
-			"unread_count": 0,
-			"agent_last_seen_at": 1627061313,
-			"contact_last_seen_at": 0,
-			"timestamp": 1627061309,
-			"account_id": 1
-		}
-	}
+  "message": {
+    "event": "message.updated",
+    "data": {
+      // Message object will be available here
+    }
+  }
 }
 ```
 
-### contact_created
-> Available for: Agents
+### conversation.status_changed
+
+This event is sent to the agents,admins/contact when a conversation status is updated.
+
+**Available to**: agent/admin, contact
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "contact.created",
-		"data": {
-			"additional_attributes": {},
-			"custom_attributes": {},
-			"email": null,
-			"id": 1,
-			"identifier": null,
-			"name": "white-shadow-394",
-			"phone_number": null,
-			"pubsub_token": "token",
-			"thumbnail": "",
-			"type": "contact",
-			"account_id": 1
-		}
-	}
+  "message": {
+    "event": "conversation.status_changed",
+    "data": {
+      // Conversation object will be available here
+    }
+  }
 }
 ```
 
-### contact_updated
-> Available for: Agents
+### conversation.typing_on
+
+This event is sent to the agents,admins/contact when a contact or an agent start typing a response.
+
+**Available to**: agent/admin, contact
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "contact.updated",
-		"data": {
-			"additional_attributes": {},
-			"custom_attributes": {},
-			"email": "jane@acme.inc",
-			"id": 12,
-			"identifier": null,
-			"name": "jane",
-			"phone_number": null,
-			"pubsub_token": "token",
-			"thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-			"type": "contact",
-			"account_id": 1
-		}
-	}
+  "message": {
+    "event": "conversation.typing_on",
+    "data": {
+      "conversation": {
+        // Conversation object will be available here
+      },
+      "user": {
+        // Contact / Agent,Admin User object will be available here.
+      },
+      "is_private": "boolean", // Shows whether the agent is typing a private note or not.
+      "account_id": "integer"
+    }
+  }
 }
 ```
 
-### presence_update
-> Available for: Agents & Contact
+### conversation.typing_off
+
+This event is sent to the agents,admins/contact when a contact or an agent ends typing a response.
+
+**Available to**: agent/admin, contact
 
 ```json
-# presence event delivered to contacts won't have information about other contacts
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "presence.update",
-		"data": {
-			"account_id": 1,
-			"users": {
-				"1": "online"
-			},
-			"contacts": {
-				"1": "online"
-			}
-		}
-	}
+  "message": {
+    "event": "conversation.typing_off",
+    "data": {
+      "conversation": {
+        // Conversation object will be available here
+      },
+      "user": {
+        // Contact / User object will be available here.
+      },
+      "account_id": "integer"
+    }
+  }
 }
 ```
+
+### assignee.changed
+
+This event is sent to the agents/admins who have access to the inbox when the assigned is changed.
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "assignee.changed",
+    "data": {
+      // Conversation object will be available here
+    }
+  }
+}
+```
+
+### team.changed
+
+This event is sent to the agents/admins who have access to the inbox when the team assignment is changed.
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "team.changed",
+    "data": {
+      // Conversation object will be available here
+    }
+  }
+}
+```
+
+### conversation.contact_changed
+
+This event is sent to the agents/admins when a contact is merged. Conversation object will have the new contact reference.
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "conversation.contact_changed",
+    "data": {
+      // Conversation object will be available here
+    }
+  }
+}
+```
+
+### contact.created
+
+This event is sent to the agents/admins when a contact is created.
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "contact.created",
+    "data": {
+      // Contact object will be available here
+    }
+  }
+}
+```
+
+### contact.updated
+
+This event is sent to the agents/admins when a contact is updated.
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "contact.updated",
+    "data": {
+      // Contact object will be available here
+    }
+  }
+}
+```
+
+### presence.update
+
+This event would be available for both agent and the contact, it returns the availability status of the users in the system. The presence event delivered to contacts won't have information about other contacts.
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "presence.update",
+    "data": {
+      "account_id": "integer",
+      "users": {
+        "user-id": "string"
+      },
+      "contacts": {
+        "contact-id": "string"
+      }
+    }
+  }
+}
+```
+
 ### notification_created
 
 > Available for: Agents
