@@ -3,9 +3,9 @@ sidebar_label: "Slack"
 title: "Getting started with slack in Chatwoot"
 ---
 
-If your account/project is using Slack as a medium of communication, you can integrate slack with chatwoot inbox to get all the inbox conversations to your slack workspace.
+If your company/account/project is using Slack as a medium of communication, you can integrate Slack with Chatwoot to get all the inbox conversations to your slack workspace.
 
-To integrate slack with Chatwoot follow the steps mentioned below.
+To integrate slack with Chatwoot follow the steps mentioned below. If you are using a self-hosted Chatwoot instance, please follow this [guide](/docs/self-hosted/configuration/features/integrations/slack-integration-setup).
 
 **Step 1** Go to the Chatwoot app and click on the integration link in the setting sidebar.
 ![slack_integration](./images/slack_integration.png)
