@@ -19,14 +19,17 @@ Once you register your Slack App, you will have to obtain the `Client Id` and `C
 
 ## Configure the Slack app
 
-1. Create a Slack app and add it to your Slack workspace. 
-2. Head over to the `OAuth & permissions` section under the `features` tab.
-3. In the redirect URLs section, add your Chatwoot installation base URL.
-4. In the scopes section configure the given scopes for bot token scopes. `commands, chat:write, channels:read, channels:manage, channels:join,groups:write, im:write, mpim:write, users:read, users:read.email, chat:write.customize, channels:history, groups:history, mpim:history, im:history`.
-5. In the user access token section subscribe to: `files:read`, `files:write`, `remote_files:share`.
-6. Head over to the `events subscriptions` section under `features` tab.
-7. Enable events and configure the given request url `{Chatwoot installation url}/api/v1/integrations/webhooks`.
-8. Subscribe to the following bot events `message.channels` , `message.groups`, `message.im`, `message.mpim`, `files:read`, `files:write`, `remote_files:read`, `remote_files:write`.
+1. Create a Slack app and add it to your development workspace.
+2. Obtain the `Client Id` and `Client Secret` for the app and configure it in your Chatwoot [environment variables](/docs/self-hosted/configuration/environment-variables).
+3. Head over to the `OAuth & permissions` section under `features` tab.
+4. In the redirect URLs, Add your Chatwoot installation base URL.
+5. In the scopes section configure the given scopes for bot token scopes. `commands,chat:write,channels:read,channels:manage,channels:join,groups:write,im:write,mpim:write,users:read,users:read.email,chat:write.customize,channels:history,groups:history,mpim:history,im:history`
+6. In the user access token section subscribe to: `files:read`, `files:write`, `remote_files:share`
+7. Head over to the `events subscriptions` section under `features` tab.
+8. Enable events and configure the given request url `{Chatwoot installation url}/api/v1/integrations/webhooks`
+9. Subscribe to the following bot events `message.channels` , `message.groups`, `message.im`, `message.mpim`.
+10. Connect Slack integration on Chatwoot app and get productive.
+
 
 ## Configure the environment variables in Chatwoot
 
@@ -45,6 +48,7 @@ Restart the Chatwoot server.
 ## Connect Chatwoot with your Slack workspace
 
 Follow this [guide](docs/product/features/slack) to complete the Slack integration.
+
 ## Testing your setup
 
 1. Create a new conversation.
