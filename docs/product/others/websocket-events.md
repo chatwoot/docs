@@ -59,7 +59,7 @@ connection.send(
 
 ### Publishing Presence to the websocket server
 
-To keep your users online is Chatwoot, you can send a presence update event to Chatwoot every 30 seconds. This action would keep the status of the agent/contact to online.
+To keep your users online in Chatwoot, you can send a presence update event to Chatwoot every 30 seconds. This action would keep the status of the agent/contact to online.
 
 #### Update presence of an agent/admin user
 
