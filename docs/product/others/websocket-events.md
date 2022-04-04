@@ -473,7 +473,7 @@ This event would be available for both agent and the contact, it returns the ava
 
 ### notification_created
 
-> Available for: Agents
+**Available to**: agent/admin
 
 ```json
 {
