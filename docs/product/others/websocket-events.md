@@ -215,6 +215,44 @@ The following payload will be returned for an agent/admin.
 }
 ```
 
+#### Notification
+
+The following payload will be returned for a notification.
+
+```json
+{
+    "id": 795302,
+    "notification_type": "conversation_mention",
+    "primary_actor_type": "Message",
+    "primary_actor_id": 2157467,
+    "primary_actor": {
+        "can_reply": true,
+        "channel": "Channel::WebWidget",
+        "id": 23,
+        "inbox_id": 70,
+        "meta": {
+            "assignee": {
+                "id": 67,
+                "name": "GitX Admin",
+                "available_name": "GitX Admin",
+                "avatar_url": "http://0.0.0.0:3000/rails/active_storage/representations/redirect/eyJfcmFpb2408be8a022aca545/gitx.png",
+                "type": "user",
+                "availability_status": null,
+                "thumbnail": "http://0.0.0.0:3000/rails/active_storage/representations/redirect/eyJfcmFpbHMiOns22aca545/gitx.png"
+            },
+            "hmac_verified": false
+        },
+        "agent_last_seen_at": 1649087319,
+        "contact_last_seen_at": 0,
+        "timestamp": 1649087319
+    },
+    "read_at": null,
+    "secondary_actor": null,
+    "created_at": 1649087319,
+    "account_id": 47,
+    "push_message_title": "[#23] @Sony"
+}
+```
 ### Identifier
 
 Each event will have an `identifier` attribute which would be of the following format.
