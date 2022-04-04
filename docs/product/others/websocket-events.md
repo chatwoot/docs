@@ -477,16 +477,15 @@ This event would be available for both agent and the contact, it returns the ava
 
 ```json
 {
-	"identifier": "{\"channel\":\"RoomChannel\",\"pubsub_token\":\"token\",\"account_id\":1,\"user_id\":1}",
-	"message": {
-		"event": "notification.created",
-		"data": {
-			"notification": {
-              // notification object will be available here
-			},
-			"unread_count": "integer",
-			"count": "integer",
-		}
-	}
+  "message": {
+    "event": "notification.created",
+    "data": {
+      "notification":{
+        // Notification object will be available here
+      },
+      "unread_count": "integer",
+      "count": "integer",
+    }
+  }
 }
 ```
