@@ -32,7 +32,7 @@ module.exports = [
       "handbook/engineering/pr-guidelines",
       "handbook/engineering/frontend-guidelines",
       "handbook/engineering/release-process",
-      "handbook/engineering/scheduled-maintenance.md",
+      "handbook/engineering/scheduled-maintenance",
       "handbook/engineering/swagger-documentation",
       "handbook/engineering/faq",
     ],
