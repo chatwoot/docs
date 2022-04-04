@@ -19,14 +19,14 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**
 1. Create a **setup.sh** file and copy the content from the above link or use the following commands.
 
 ```bash
-wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
-chmod 755 setup.sh
+wget https://get.chatwoot.app/linux/install.sh
+chmod +x install.sh
 ```
 
 2. Execute the script, and it will take care of the initial **Chatwoot** setup.
 
 ```bash
-./setup.sh master
+./install.sh master
 ```
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted

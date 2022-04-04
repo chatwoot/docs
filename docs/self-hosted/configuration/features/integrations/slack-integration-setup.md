@@ -47,7 +47,7 @@ Restart the Chatwoot server.
 
 ## Connect Chatwoot with your Slack workspace
 
-Follow this [guide](docs/product/features/slack) to complete the Slack integration.
+Follow this [guide](/docs/product/features/slack) to complete the Slack integration.
 
 ## Testing your setup
 
