@@ -2,7 +2,7 @@
 title: 'Communication'
 ---
 
-As we are working remotely, it is essential to have clarity in communication to work effectively. To support this, we practice **asynchronous communication** among the team. Most of the communication happens via Github Issues or Pull requests and through the internal Mattermost channel & user Discord channel.
+As we are working remotely, it is essential to have clarity in communication to work effectively. To support this, we practice **asynchronous communication** among the team. Most of the communication happens via Github Issues or Pull requests and through the internal Discord channel & user Discord channel.
 
 ### Values
 
@@ -17,9 +17,9 @@ To ensure that the discussions are documented somewhere, we prefer:
 - Asking questions in public channels instead of DMs. If another person is having a similar problem, then we don't need to repeat it.
 - Instead of jumping on a call, write the content down on Github/Notion. (e.g.: All product-related questions/thoughts can be added to the `contributing guide` or `product repository`. All internal process questions can be on the `public/private` handbook.)
 
-#### Etiquette on Mattermost
+#### Etiquette on Discord
 
-Being on Mattermost channels can be distracting. So here are some guidelines on how we can reduce distractions:
+Being on Discord channels can be distracting. So here are some guidelines on how we can reduce distractions:
 
 - **@all** or **@here** mentions should be reserved for urgent or time-sensitive posts that require immediate attention by everyone in the channel. (e.g.: Requesting the team for QA server availability, Changing a meeting invite URL just before a meeting, or soliciting urgent help for a service disruption, where you're not sure who is immediately available)
 
