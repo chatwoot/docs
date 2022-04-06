@@ -30,12 +30,14 @@ If the customer does not initiate conversation and you have enabled [Campaign me
 
 If we have enabled [Pre Chat forms](add-inbox-settings.md#pre-chat-form) in Inbox, as soon as the customer clicks on chat widget, the message requesting for name and e-mail id will appear on screen as below.
 
+
 <div align="center">
 
 <img src={require('./images/prechatform.png').default} width="800" alt="Chatwoot Widget Pre Chat Form " />
 
 </div>
 
+You can find more details about configuring pre-chat form [here](user-guide/features/pre-chat-form.md)
 
 Now let us look at how this message is captured in the Agent Dashboard.
 
