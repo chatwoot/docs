@@ -168,3 +168,7 @@ Update the images using the latest image from chatwoot. Run the `rails db:chatwo
 ```
 docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails c'
 ```
+
+## Chatwoot CE edition docker images
+
+If you want to run Chatwoot CE edition, replace the docker image tag with equivalent foss version tag. Docker tag for current `master` would be `latest-ce`. Version specific tags would follow the pattern `v*-ce`. For example the docker ce edition tag for Chatwoot `v2.3.2` would be `v2.3.2-ce`.
