@@ -215,6 +215,44 @@ The following payload will be returned for an agent/admin.
 }
 ```
 
+#### Notification
+
+The following payload will be returned for a notification.
+
+```json
+{
+  "id": "integer",
+  "notification_type": "string",
+  "primary_actor_type": "string",
+  "primary_actor_id": "integer",
+  "primary_actor": {
+    "can_reply": "boolean",
+    "channel": "string",
+    "id": "integer",
+    "inbox_id": "integer",
+    "meta": {
+      "assignee": {
+        "id": "integer",
+        "name": "string",
+        "available_name": "string",
+        "avatar_url": "string",
+        "type": "user",
+        "availability_status": "string",
+        "thumbnail": "string"
+      },
+      "hmac_verified": "boolean"
+    },
+    "agent_last_seen_at": "unix-timestamp",
+    "contact_last_seen_at": "unix-timestamp",
+    "timestamp": "unix-timestamp",
+  },
+  "read_at": "unix-timestamp",
+  "secondary_actor": "object/null",
+  "created_at":"unix-timestamp",
+  "account_id": "integer",
+  "push_message_title": "string"
+}
+```
 ### Identifier
 
 Each event will have an `identifier` attribute which would be of the following format.
@@ -466,6 +504,25 @@ This event would be available for both agent and the contact, it returns the ava
       "contacts": {
         "contact-id": "string"
       }
+    }
+  }
+}
+```
+
+### notification_created
+
+**Available to**: agent/admin
+
+```json
+{
+  "message": {
+    "event": "string",
+    "data": {
+      "notification":{
+        // Notification object will be available here
+      },
+      "unread_count": "integer",
+      "count": "integer",
     }
   }
 }
