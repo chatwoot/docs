@@ -180,6 +180,10 @@ html[data-theme="light"] .navbar__link--active {
   .doc-page--footer--edit {
     flex-direction: column;
   }
+
+  div[class^='announcementBar_'] {
+    height: 4rem;
+  }
 }
 
 div[class^='announcementBar_'] {
