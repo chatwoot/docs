@@ -516,7 +516,7 @@ This event would be available for both agent and the contact, it returns the ava
 ```json
 {
   "message": {
-    "event": "notification.created",
+    "event": "string",
     "data": {
       "notification":{
         // Notification object will be available here
