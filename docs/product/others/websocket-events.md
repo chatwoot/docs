@@ -221,36 +221,36 @@ The following payload will be returned for a notification.
 
 ```json
 {
-    "id": 795302,
-    "notification_type": "conversation_mention",
-    "primary_actor_type": "Message",
-    "primary_actor_id": 2157467,
+    "id": "integer",
+    "notification_type": "string",
+    "primary_actor_type": "string",
+    "primary_actor_id": "integer",
     "primary_actor": {
-        "can_reply": true,
-        "channel": "Channel::WebWidget",
-        "id": 23,
-        "inbox_id": 70,
+        "can_reply": "boolean",
+        "channel": "string",
+        "id": "integer",
+        "inbox_id": "integer",
         "meta": {
             "assignee": {
-                "id": 67,
-                "name": "GitX Admin",
-                "available_name": "GitX Admin",
-                "avatar_url": "http://0.0.0.0:3000/rails/active_storage/representations/redirect/eyJfcmFpb2408be8a022aca545/gitx.png",
+                "id": "integer",
+                "name": "string",
+                "available_name": "string",
+                "avatar_url": "string",
                 "type": "user",
-                "availability_status": null,
-                "thumbnail": "http://0.0.0.0:3000/rails/active_storage/representations/redirect/eyJfcmFpbHMiOns22aca545/gitx.png"
+                "availability_status": "string",
+                "thumbnail": "string"
             },
-            "hmac_verified": false
+            "hmac_verified": "boolean"
         },
-        "agent_last_seen_at": 1649087319,
-        "contact_last_seen_at": 0,
-        "timestamp": 1649087319
+        "agent_last_seen_at": "unix-timestamp",
+        "contact_last_seen_at": "unix-timestamp",
+        "timestamp": "unix-timestamp",
     },
-    "read_at": null,
-    "secondary_actor": null,
-    "created_at": 1649087319,
-    "account_id": 47,
-    "push_message_title": "[#23] @Sony"
+    "read_at": "unix-timestamp",
+    "secondary_actor": "object/null",
+    "created_at":"unix-timestamp",
+    "account_id": "integer",
+    "push_message_title": "string"
 }
 ```
 ### Identifier
