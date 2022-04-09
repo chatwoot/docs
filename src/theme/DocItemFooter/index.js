@@ -58,12 +58,10 @@ export default function DocItemFooter(props) {
   }
 
   return (
-    <footer className={showHelpLink ? 'doc-page--footer' : ''}>
-      {showHelpLink && (
+    <footer className="doc-page--footer">
         <p>
-          If you need help with any of the steps described in this document, please reach out to us on our <a href={githubDiscussionLink}>GitHub discussions</a>{ discordLink && showHelpLink ? ' or ' : '' }<a href={discordLink}>Discord channel</a>.
+          If you need help with any of the steps described in this document, please reach out to us on our <a href="https://github.com/chatwoot/chatwoot/discussions/">GitHub discussions</a> or <a href="https://discord.gg/jypY57m">Discord channel</a>.
         </p>
-      )}
       {canDisplayTagsRow && <TagsRow tags={tags} />}
       {canDisplayEditMetaRow && (
         <EditMetaRow
