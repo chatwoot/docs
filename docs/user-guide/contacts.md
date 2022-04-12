@@ -31,7 +31,7 @@ Contacts can be added to the list in 3 ways. One is to add the contact yourself 
 
 Second way is to collect the contact information through [Pre chat forms](add-inbox-settings.md#pre-chat-form). 
 
-You can find more details about configuring pre-chat form [here](user-guide/features/pre-chat-form.md)
+You can find more details about configuring pre-chat form via this [guide](user-guide/features/pre-chat-form.md)
 
 <div align="center">
 

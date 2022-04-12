@@ -37,7 +37,7 @@ If we have enabled [Pre Chat forms](add-inbox-settings.md#pre-chat-form) in Inbo
 
 </div>
 
-You can find more details about configuring pre-chat form [here](user-guide/features/pre-chat-form.md)
+You can find more details about configuring pre-chat form  via this [guide](user-guide/features/pre-chat-form.md)
 
 Now let us look at how this message is captured in the Agent Dashboard.
 
