@@ -28,7 +28,10 @@ You can generate `SECRET_KEY_BASE` using `rake secret` command from project root
 
 ## Database configuration
 
-You can set Postgres connection URI as `DATABASE_URL` in the environment to connect to the database.
+Postgres can configured in two ways: via `DATABASE_URL` or setting up independent Postgres variables.
+### Configure Postgres
+
+Set Postgres connection URI as `DATABASE_URL` as an environment variable to connect to the database.
 
 The URI is of the format
 
@@ -36,28 +39,12 @@ The URI is of the format
 postgresql://[user[:password]@][netloc][:port][,...][/dbname][?param1=value1&...]
 ```
 
-Alternatively, use the following values in database.yml which lives inside `config` directory.
-
-```bash
-development:
-  <<: *default
-  username: postgres
-  password:
-  database: chatwoot_dev
-```
-
-### Configure Postgres host
-
-You can set the following environment variable to set the host for postgres.
+Or you can set the following environment variables to configure Postgres. Replace the values here with yours. Skip this
+if you have configured `DATABASE_URL`.
 
 ```bash
 POSTGRES_HOST=localhost
-```
-
-For production and testing you have the following variables for defining the postgres database,
-username and password.
-
-```bash
+POSTGRES_PORT=5432
 POSTGRES_DATABASE=chatwoot_production
 POSTGRES_USERNAME=admin
 POSTGRES_PASSWORD=password
