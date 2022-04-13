@@ -5,11 +5,11 @@ title: "Environment Variables"
 
 ## The .env File
 
-We use `dotenv-rails` gem to manage the environment variables. There is a file called `env.example` in the root directory of this project with all the environment variables set to empty value. You can set the correct values as per the following options. Once you set the values, you should rename the file to `.env` before you start the server.
+We use the `dotenv-rails` gem to manage the environment variables. There is a file called `env.example` in the root directory of this project with all the environment variables set to empty values. You can set the correct values as per the following options. Once you set the values, you should rename the file to `.env` before you start the server.
 
 ## Configure frontend URL (domain)
 
-Provide your chatwoot domain as frontend url.
+Provide your chatwoot domain as frontend URL.
 
 ```bash
 FRONTEND_URL='https://your-chatwoot-domain.tld'
@@ -24,14 +24,15 @@ RAILS_ENV=production
 SECRET_KEY_BASE=replace_with_your_own_secret_string
 ```
 
-You can generate `SECRET_KEY_BASE` using `rake secret` command from project root folder.
+You can generate `SECRET_KEY_BASE` using `rake secret` command from the project root folder.
 
 ## Database configuration
 
-Postgres can configured in two ways: via `DATABASE_URL` or setting up independent Postgres variables.
+Postgres can be configured in two ways: via `DATABASE_URL` or setting up independent Postgres variables.
+
 ### Configure Postgres
 
-Set Postgres connection URI as `DATABASE_URL` as an environment variable to connect to the database.
+Set the `DATABASE_URL` variable with value as Postgres connection URI to connect to the database.
 
 The URI is of the format
 
@@ -52,14 +53,13 @@ POSTGRES_PASSWORD=password
 
 ### Configure Redis
 
-For development, you can use the following url to connect to redis. For production, configure your redis url.
+For development, you can use the following URL to connect to Redis. For production, configure your Redis URL.
 
 ```bash
 REDIS_URL='redis://127.0.0.1:6379'
 ```
 
-To authenticate redis connections made by app server and sidekiq, if it's protected by a password, use the following
-environment variable to set the password.
+To authenticate Redis connections made by the app server and sidekick, if it's protected by a password, use the following environment variable to set the password.
 
 ```bash
 REDIS_PASSWORD=
@@ -68,7 +68,7 @@ REDIS_PASSWORD=
 
 ## Configure emails
 
-For development, you don't need an email provider. Chatwoot uses [letter-opener](https://github.com/ryanb/letter_opener) gem to test emails locally
+For development, you don't need an email provider. Chatwoot uses the [letter-opener](https://github.com/ryanb/letter_opener) gem to test emails locally
 
 For production use, please configure the following variables.
 
@@ -143,7 +143,7 @@ DEFAULT_LOCALE='en'
 
 Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server. 
 
-But you can change it to use any of the cloud providers like amazon s3, microsoft azure and google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
+But you can change it to use any of the cloud providers like amazon s3, microsoft azure, google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
 
 ```bash
 ACTIVE_STORAGE_SERVICE=local
@@ -156,9 +156,9 @@ When `local` storage is used the files are stored under `public/uploads` directo
 
 ## Rails Logging Variables
 
-By default chatwoot will capture `info` level logs in production. Ref [rails docs](https://guides.rubyonrails.org/debugging_rails_applications.html#log-levels) for the additional log level options.
+By default, Chatwoot will capture `info` level logs in production. Ref [rails docs](https://guides.rubyonrails.org/debugging_rails_applications.html#log-levels) for the additional log-level options.
 We will also retain 1 GB of your recent logs and your last shifted log file.
-You can fine tune these settings using the following environment variables
+You can fine-tune these settings using the following environment variables
 
 ```bash
 # possible values: 'debug', 'info', 'warn', 'error', 'fatal' and 'unknown'
@@ -169,7 +169,7 @@ LOG_SIZE= 1024
 
 ## Configure FB Channel
 
-To use FB Channel, you have to create an Facebook app in developer portal. You can find more details about creating FB channels [here](https://developers.facebook.com/docs/apps/#register)
+To use FB Channel, you have to create a Facebook app in the developer portal. You can find more details about creating FB channels [here](https://developers.facebook.com/docs/apps/#register)
 
 ```bash
 FB_VERIFY_TOKEN=
@@ -179,7 +179,7 @@ FB_APP_ID=
 
 ## Using CDN for asset delivery
 
-With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
+With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup a CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
 
 ## Enable new account signup
 
