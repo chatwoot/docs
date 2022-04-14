@@ -28,6 +28,7 @@ module.exports = [
     type: "category",
     label: "Engineering",
     items: [
+      "handbook/engineering/best-practices",
       "handbook/engineering/issue-triage",
       "handbook/engineering/pr-guidelines",
       "handbook/engineering/frontend-guidelines",
