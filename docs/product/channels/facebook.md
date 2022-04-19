@@ -56,7 +56,7 @@ If you are using a self-hosted Chatwoot installation, please configure the Faceb
 
 ### FAQ:
 
-1. I am not able to see messages received in facebook messenger in the connected chatwoot inbox:
+1. I am not able to see messages received in Facebook messenger in the connected Chatwoot inbox:
 
 Ans: Please make sure your Facebook page is connected only to the Chatwoot app, as according to Facebook's new app development, all the apps need to build a handover protocol. https://developers.facebook.com/docs/messenger-platform/handover-protocol
 
