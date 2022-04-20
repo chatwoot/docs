@@ -152,4 +152,11 @@ module.exports = [
     type: "category",
     items: ["product/mobile-app/android", "product/mobile-app/ios"],
   },
+  {
+    collapsed: false,
+    collapsible: false,
+    label: "Others",
+    type: "category",
+    items: ["product/others/faq"],
+  },
 ];

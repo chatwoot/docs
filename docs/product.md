@@ -56,6 +56,9 @@ This user guide includes a description of the features and capabilities, modes o
 - [Websocket Events](/product/others/websocket-events)
 - [Cookies](/product/others/cookies)
 
+### Others
+- [FAQ](/docs/products/others/faq)
+
 ### Compatibility and Requirements
 
 Web dashboard and the live-chat widget works with most of the modern web browsers. To see the support browser versions, see the table below.
