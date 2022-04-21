@@ -57,7 +57,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Cookies](/product/others/cookies)
 
 ### Others
-- [FAQ](/docs/products/others/faq)
+- [FAQ](/docs/product/others/faq)
 
 ### Compatibility and Requirements
 
