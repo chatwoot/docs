@@ -113,6 +113,7 @@ module.exports = [
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",
+      "user-guide/features/pre-chat-form", 
       {
         type: "category",
         label: "Campaigns",
