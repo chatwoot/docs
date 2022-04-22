@@ -11,7 +11,7 @@ Here is a quick glimpse of how dark mode functions on the live chat widget.
 
 ### Enable Dark Mode on your website
 
-To enable dark mode on Chatwoot widget, use the `darkMode` parameter along with the chatwootSettings as defined [here](/docs/product/channels/live-chat/sdk/setup).
+To enable dark mode on Chatwoot widget, use the `darkMode` parameter along with the [chatwootSettings](/docs/product/channels/live-chat/sdk/setup).
 
 `darkMode` parameter supports two values.
 
