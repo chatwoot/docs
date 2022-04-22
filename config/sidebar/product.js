@@ -34,6 +34,7 @@ module.exports = [
           "product/channels/live-chat/create-website-channel",
           "product/channels/live-chat/sdk/setup",
           "product/channels/live-chat/sdk/identity-validation",
+          "product/channels/live-chat/sdk/live-chat-dark-mode",
           "product/channels/live-chat/conversation-continuity",
           {
             "Setup Instructions": [
@@ -53,13 +54,13 @@ module.exports = [
       "product/channels/instagram",
       "product/channels/twitter",
       {
-        "Whatsapp Channel": [      
+        "Whatsapp Channel": [
           "product/channels/whatsapp/twilio",
           "product/channels/whatsapp/360dialog"
         ]
       },
       {
-        "SMS Channel": [      
+        "SMS Channel": [
           "product/channels/sms/twilio",
           "product/channels/sms/bandwidth"
         ]
@@ -113,7 +114,7 @@ module.exports = [
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",
-      "user-guide/features/pre-chat-form", 
+      "user-guide/features/pre-chat-form",
       {
         type: "category",
         label: "Campaigns",
