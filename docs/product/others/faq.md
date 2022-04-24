@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'FAQ'
-title: 'Contributors FAQ'
+title: 'Frequently asked questions'
 ---
 
 This document is a place to search for frequently asked questions in the Chatwoot community about the processes, support and best practices.
