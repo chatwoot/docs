@@ -61,7 +61,7 @@ Here are some basic things to keep in mind:
     
     ***So, which one did you select?***
     
-    I’m pretty sure you would’ve selected the fourth option because it checks all the boxes. Let’s see what those are:
+    We’re pretty sure you would’ve selected the fourth option because it checks all the boxes. Let’s see what those are:
     
     - [ ]  At a single glance, you can tell where the image wants you to focus.
     - [ ]  It gives you an idea about the entire screen you’d be viewing when finding this setting, while not compromising with the core message. As opposed to this, SS #3 wasn’t that helpful.
