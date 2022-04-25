@@ -81,11 +81,13 @@ And these are the boxes the gif checks:
 - [ ]  It clears away all the distractions by zooming in on the most important part of the gif.
 - [ ]  It’s sped up by 150% because nobody likes to look at an unnecessarily slow content piece.
 
-<aside>
-💡 Free tool used to edit this screenshot: [https://pinetools.com/](https://pinetools.com/)
-  Free tool used to edit the gif: [https://ezgif.com/](https://ezgif.com/)
+:::note
 
-</aside>
+💡 Free tool used to edit this screenshot: [PineTools](https://pinetools.com/)
+
+   Free tool used to edit the gif: [Ezgif](https://ezgif.com/)
+
+:::
 
 ## Chatwoot Guidelines
 
