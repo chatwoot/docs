@@ -16,7 +16,6 @@ Are you creating the screenshot/screencast for the help center, a landing page, 
 
 2. **Who is the audience?** 
 If you’re creating this for a Twitter post, the target audience is the following we have there. These are generally startup decision-makers, competitors, folks in the industry, well-wishers, community folks and even our users. If you’re creating the screenshot for the help center, you can be sure of the fact that these are our existing users who are looking for a specific answer. So, take a minute to determine who you’re creating the screenshot for so that you can tailor-make it for them and provide the best value possible.
-The brand color for Chatwoot is **#1f93ff**
 
 3. **What is the broad intent of the screenshot?** 
 If the intent is to introduce a new feature through Twitter, you might wanna keep the screenshot/screencast interesting (read: promotional) as well as functional. This means you can add a MacBook window around the screenshot, or add a frame around with a complimentary piece of text. If the purpose is to help the user in the help center, you can just focus on what the latest product dashboard looks like and show step-by-step instructions on how to solve the associated problem.
