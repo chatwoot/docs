@@ -68,7 +68,7 @@ Here are some basic things to keep in mind:
     - [ ]  All the unnecessary info is blurred, but only so much that you can see/read what the options above and below the “personal message signature” are but they wouldn’t eat up space in the screenshot and confuse you. This’ll help you locate this option more easily. However, notice that the side panel and “Account settings” are not blurred. It’s because these are important pieces of info for this particular screenshot.
     - [ ]  A red rectangle is added around the area I want you to focus on.
     
-    ***Alternatively***, if I had to create a gif, I would make something like this: 
+    ***Alternatively***, a gif should look something like this: 
     
 
 ![ezgif.com-gif-maker.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3efb00b6-dae8-49e0-93b9-c956e43beda8/ezgif.com-gif-maker.gif)
