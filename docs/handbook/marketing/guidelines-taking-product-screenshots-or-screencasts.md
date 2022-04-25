@@ -40,6 +40,8 @@ Here are some basic things to keep in mind:
 - Direct the eye of the reader. Use arrows if necessary.
 - Do not hesitate to include more screenshots if it helps in getting the point across more clearly. Otherwise, record a screencast or GIF.
     
+    
+    
     ### **Let’s see an example**
     
     Let us illustrate “how to add a personal message signature.” Look at the four options below:
