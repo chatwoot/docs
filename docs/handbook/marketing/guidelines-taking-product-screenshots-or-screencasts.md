@@ -39,34 +39,30 @@ Here are some basic things to keep in mind:
 - Do not hesitate to include more screenshots if it helps in getting the point across more clearly. Otherwise, record a screencast or GIF.
 
 
-### **Let’s see an example**
+    **Let’s see an example**
     
-Let us illustrate “how to add a personal message signature.” Look at the four options below:
+  Let us illustrate “how to add a personal message signature.” Look at the four options below:
     
-**I.**
+  **I.**
+  ![1-ss-example.png](./images/ss-guidelines/1-ss-example.png)
     
-![1-ss-example.png](./images/ss-guidelines/1-ss-example.png)
-    
-**II.**
-    
-![2-ss-example.png](./images/ss-guidelines/2-ss-example.png)
+  **II.**  
+  ![2-ss-example.png](./images/ss-guidelines/2-ss-example.png)
 
-**III.**
+  **III.**  
+  ![3-ss-example.png](./images/ss-guidelines/3-ss-example.png)
     
-![3-ss-example.png](./images/ss-guidelines/3-ss-example.png)
+  **IV.**  
+  ![4-ss-example.png](./images/ss-guidelines/4-ss-example.png)
     
-**IV.**
-    
-![4-ss-example.png](./images/ss-guidelines/4-ss-example.png)
-    
-***So, which one did you select?***
+  ***So, which one did you select?***
 
-We’re pretty sure you would’ve selected the fourth option because it checks all the boxes. Let’s see what those are:
-    
-- [ ] At a single glance, you can tell where the image wants you to focus.
-- [ ] It gives you an idea about the entire screen you’d be viewing when finding this setting, while not compromising with the core message. As opposed to this, SS #3 wasn’t that helpful.
-- [ ] All the unnecessary info is blurred, but only so much that you can see/read what the options above and below the “personal message signature” are but they wouldn’t eat up space in the screenshot and confuse you. This’ll help you locate this option more easily. However, notice that the side panel and “Account settings” are not blurred. It’s because these are important pieces of info for this particular screenshot.
-- [ ] A red rectangle is added around the area I want you to focus on.
+  We’re pretty sure you would’ve selected the fourth option because it checks all the boxes. Let’s see what those are:
+      
+  - [ ] At a single glance, you can tell where the image wants you to focus.
+  - [ ] It gives you an idea about the entire screen you’d be viewing when finding this setting, while not compromising with the core message. As opposed to this, SS #3 wasn’t that helpful.
+  - [ ] All the unnecessary info is blurred, but only so much that you can see/read what the options above and below the “personal message signature” are but they wouldn’t eat up space in the screenshot and confuse you. This’ll help you locate this option more easily. However, notice that the side panel and “Account settings” are not blurred. It’s because these are important pieces of info for this particular screenshot.
+  - [ ] A red rectangle is added around the area I want you to focus on.
     
 ***Alternatively***, a gif should look something like this:     
 
