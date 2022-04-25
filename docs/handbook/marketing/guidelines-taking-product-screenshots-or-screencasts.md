@@ -23,11 +23,12 @@ If the intent is to introduce a new feature through Twitter, you might wanna kee
 
 4. **Screenshot or screencast?** 
 Once you know the answers to all the three questions outlined above, you can decide on whether a screenshot would serve your purpose better or a screencast. Here are some more points you can consider to help with this decision: 
-    - Are you trying to outline an entire process or just a step in the way?
-    - Is the process so long that you’ll have to give too many screenshots and the reader will have to scroll too much?
-    - Is understanding every little step or screen in a defined process essential to the user?
-    - Which one do you think would be more attention-grabbing?
-    - Which format complements the context of the solution better?
+
+- Are you trying to outline an entire process or just a step in the way?
+- Is the process so long that you’ll have to give too many screenshots and the reader will have to scroll too much?
+- Is understanding every little step or screen in a defined process essential to the user?
+- Which one do you think would be more attention-grabbing?
+- Which format complements the context of the solution better?
 
 ## General Guidelines
 
