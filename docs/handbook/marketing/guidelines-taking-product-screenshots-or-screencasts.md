@@ -41,7 +41,7 @@ Here are some basic things to keep in mind:
     
     ### **Let’s see an example**
     
-    I want to illustrate “how to add a personal message signature.” I’ll give you four options below:
+    Let us illustrate “how to add a personal message signature.” Look at the four options below:
     
     **I.**
     
