@@ -1,5 +1,6 @@
 ---
 title: "[Guidelines] Taking product screenshots/screencasts"
+sidebar_label: "Product screenshots"
 ---
 
 Hi! 👋
