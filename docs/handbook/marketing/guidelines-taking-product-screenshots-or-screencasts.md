@@ -86,7 +86,7 @@ And these are the boxes the gif checks:
 
 Free tool used to edit this screenshot: [PineTools](https://pinetools.com/)
 
-   Free tool used to edit the gif: [Ezgif](https://ezgif.com/)
+Free tool used to edit the gif: [Ezgif](https://ezgif.com/)
 
 :::
 
