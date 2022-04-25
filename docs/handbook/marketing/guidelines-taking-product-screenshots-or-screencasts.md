@@ -47,19 +47,19 @@ Here are some basic things to keep in mind:
     
     **I.**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c7d22cd-f0e2-47a4-a1d3-57a77d270f59/Untitled.png)
+    ![1-ss-example.png](https://github.com/chatwoot/docs/blob/Hricha-Shandily-patch-1/docs/handbook/marketing/images/ss-guidelines/1-ss-example.png)
     
     **II.**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/98046b6e-5535-408b-88cf-aa0c9acf8398/Untitled.png)
+    ![2-ss-example.png](https://github.com/chatwoot/docs/blob/Hricha-Shandily-patch-1/docs/handbook/marketing/images/ss-guidelines/2-ss-example.png)
     
     III.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a45b07f-994b-4be0-b11c-97116a23e293/Untitled.png)
+    ![3-ss-example.png](https://github.com/chatwoot/docs/blob/Hricha-Shandily-patch-1/docs/handbook/marketing/images/ss-guidelines/3-ss-example.png)
     
     IV.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/540bf6f8-cefa-4216-af46-cd8f251d3694/Untitled.png)
+    ![4-ss-example.png](https://github.com/chatwoot/docs/blob/Hricha-Shandily-patch-1/docs/handbook/marketing/images/ss-guidelines/4-ss-example.png)
     
     ***So, which one did you select?***
     
@@ -73,7 +73,7 @@ Here are some basic things to keep in mind:
     ***Alternatively***, a gif should look something like this: 
     
 
-![ezgif.com-gif-maker.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3efb00b6-dae8-49e0-93b9-c956e43beda8/ezgif.com-gif-maker.gif)
+![product-walkthrough.gif](https://github.com/chatwoot/docs/blob/Hricha-Shandily-patch-1/docs/handbook/marketing/images/ss-guidelines/product-walkthrough.gif)
 
 And these are the boxes the gif checks:
 
@@ -97,7 +97,7 @@ Everything depends on the intent of the content you’re creating, as described 
 - For rectangular-shaped, landscape-oriented screenshots, keep the width at least 1,000 pixels. If you’re taking a portrait-oriented screenshot, try to keep the wide edge of 500 pixels.
 - No need to add anything unnecessary if you’re publishing on the help centre. If you need to add a background for a social media post, use a colour that complements our brand colour or the brand color itself. This is the hex code for the shade of blue that we use: `#46A7F6`. Here’s an example is taken from [this](https://www.chatwoot.com/blog/the-complete-guide-to-building-your-customer-experience-strategy-in-2022/) blog:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3b0b4ddc-e520-4973-be1a-2f710c9116da/Untitled.png)
+![product-ss.png](https://github.com/chatwoot/docs/blob/Hricha-Shandily-patch-1/docs/handbook/marketing/images/ss-guidelines/product-ss.png)
 
 If you want to use a complementary color instead, you can use [https://coolors.co/](https://coolors.co/) to create color palettes. 
 
