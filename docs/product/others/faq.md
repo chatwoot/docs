@@ -35,7 +35,7 @@ The chatwoot team provides support over the following channels. Please choose th
 We encourage the community to build and promote Chatwoot related services. You can use the following Channels for that.
 
 1. [General (Github Discussions)](https://github.com/chatwoot/chatwoot/discussions/categories/general): Use the Channel to advertise Chatwoot related Hiring Posts and Opportunities.
-2. [Show and tell - (GitHub Discussions)](https://github.com/chatwoot/chatwoot/discussions/categories/show-and-tell): User the Channel to showcase a Chatwoot related service / Custom Integrations that you have built. Examples include Chatwoot Hosting services, Services built on top of Chatwoot etc
+2. [Show and tell - (GitHub Discussions)](https://github.com/chatwoot/chatwoot/discussions/categories/show-and-tell): Use the Channel to showcase a Chatwoot related service / Custom Integrations that you have built. Examples include Chatwoot Hosting services, Services built on top of Chatwoot etc
 3. [Discord Channels](https://discord.gg/cJXdrwS) : Use appropriate discord Channels like `#intro` , `#general`.
 
 > Note: spamming channels with repetitive messages, Hijacking threads with unrelated promotional messages isn't allowed and will be handled according to the [Code of Conduct](/contributing-guide/code-of-conduct#3-temporary-ban).
