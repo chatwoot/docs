@@ -34,7 +34,7 @@ module.exports = [
       "handbook/engineering/release-process",
       "handbook/engineering/scheduled-maintenance",
       "handbook/engineering/swagger-documentation",
-      "handbook/engineering/enterprise_edition",
+      "handbook/engineering/enterprise-edition",
       "handbook/engineering/faq",
     ],
     collapsible: false,
