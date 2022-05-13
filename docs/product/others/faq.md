@@ -39,3 +39,12 @@ We encourage the community to build and promote Chatwoot related services. You c
 3. [Discord Channels](https://discord.gg/cJXdrwS) : Use appropriate discord Channels like `#intro` , `#general`.
 
 > Note: spamming channels with repetitive messages, Hijacking threads with unrelated promotional messages isn't allowed and will be handled according to the [Code of Conduct](/contributing-guide/code-of-conduct#3-temporary-ban).
+
+
+## How can I customise the Chatwoot Branding ?
+
+In `Community Edition` of Chatwoot, you can customise the branding by modifying the source code. 
+In `Enterprise Edition` of Chatwoot, Whitelabeling is available as a premium feature as a part of Paid Plans.
+
+
+
