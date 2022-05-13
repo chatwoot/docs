@@ -3,7 +3,7 @@ sidebar_label: 'Enterprise Edition'
 title: 'Enterprise Edition'
 ---
 
-Starting from [Chatwoot `2.0`](https://www.chatwoot.com/blog/2-0-release-ee-edition-et-al/) ships two versions of its software. The Community edition is `MIT` licensed, and an Enterprise edition is available under a [propretry license](https://github.com/chatwoot/chatwoot/blob/develop/LICENSE). Both software versions are built out of a single [github repository](https://github.com/chatwoot/chatwoot).  
+Starting from [version `2.0`](https://www.chatwoot.com/blog/2-0-release-ee-edition-et-al/), Chatwoot ships two versions of its software. The Community edition is `MIT` licensed, and an Enterprise edition is available under a [proprietary license](https://github.com/chatwoot/chatwoot/blob/develop/LICENSE). Both software versions are built out of a single [github repository](https://github.com/chatwoot/chatwoot).  
 
 While the Community edition will always remain free and open-source, the enterprise edition is the effort to sustain both the offerings and Chatwoot 
 as a commercial business. This model has been derived from other commercial open-source companies like Gitlab, Mattermost, Metabase, etc.

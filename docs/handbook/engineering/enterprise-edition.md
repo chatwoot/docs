@@ -5,7 +5,7 @@ title: 'Developing Enterprise Edition Features'
 
 Chatwoot ships two versions of its software, a Community Edition and an [Enterprise Edition](/product/others/enterprise-edition). This guide focuses on the engineering best practices while developing features for the Enterprise edition.
 
-> The guidelines followed in Chatwoot's Enterprise edition development are heavily inspired by the model adopted by [Gitlab](https://docs.gitlab.com/ee/development/ee_features.html), and Hence their guide is an excellent reference to learn more.
+> The guidelines followed in Chatwoot's Enterprise edition development are heavily inspired by the model adopted by [Gitlab](https://docs.gitlab.com/ee/development/ee_features.html), and hence their guide is an excellent reference to learn more.
 
 ## Testing Community Edition
 
@@ -44,7 +44,7 @@ In cases where you want to limit the the access of a specific route to `Enterpri
   else
 ```
 
-### Developing Features as an extension of Community Edition
+### Developing features as an extension of Community Edition
 
 When developing Enterprise features built over the Community Edition software, Implement a base functionality in Community edition code and extend it over in an Enterprise licensed module.
 
@@ -91,9 +91,9 @@ Ensure that the module written to extend the Community Logic has to be put under
 ```
 
 
-### Developing Feature Exclusive for Enterprise Edition
+### Developing features exclusive for Enterprise Edition
 
-If the feature is not present in Community Edition, We must directly put the code into the enterprise directory without the enterprise namespace. This works because we have the enterprise directory in [autoload paths](https://github.com/chatwoot/chatwoot/blob/41b89014324772d8351b15936d25623f852980cb/config/application.rb#L19).
+If the feature is not present in Community Edition, we must directly put the code into the enterprise directory without the enterprise namespace. This works because we have the enterprise directory in [autoload paths](https://github.com/chatwoot/chatwoot/blob/41b89014324772d8351b15936d25623f852980cb/config/application.rb#L19).
 
 ```
 # no need for extra enterprise namespacing since we aren't preppending 
@@ -104,7 +104,7 @@ If the feature is not present in Community Edition, We must directly put the cod
 
 
 ## CI Pipeline for Community Edition
-We run a `Community Edition` pipeline over all the pull requests raised against Chatwoot to ensure that the updates don't break existing features. 
+We run a `Community Edition` pipeline over all the pull requests raised against Chatwoot to ensure that the updates don't break existing features in the CE edition. 
 This pipeline ensures stability by stripping off the `enterprise` folder from the codebase and running the full suite of tests against Chatwoot.
 
 
