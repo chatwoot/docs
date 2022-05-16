@@ -45,6 +45,7 @@ module.exports = [
       "handbook/marketing/brand-guidelines",
       "handbook/marketing/blog-post",
       "handbook/marketing/guidelines-taking-product-screenshots-or-screencasts",
+      "handbook/marketing/playbook",
     ],
     collapsible: false,
   },
