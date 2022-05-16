@@ -42,10 +42,10 @@ module.exports = [
     type: "category",
     label: "Marketing",
     items: [
-      "handbook/marketing/brand-guidelines",
+      "handbook/marketing/playbook",
       "handbook/marketing/blog-post",
       "handbook/marketing/guidelines-taking-product-screenshots-or-screencasts",
-      "handbook/marketing/playbook",
+      "handbook/marketing/brand-guidelines",
     ],
     collapsible: false,
   },
