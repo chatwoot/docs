@@ -73,3 +73,8 @@ A sample credential file is of the following format.
   "client_x509_cert_url": ""
 }
 ```
+
+when pasting it to ENV File, make sure to remove the new lines and paste it in a single line
+```
+GCS_CREDENTIALS={"type": "service_account","project_id": "","private_key_id": "","private_key": "","client_email": "","client_id": "","auth_uri": "","token_uri": "","auth_provider_x509_cert_url": "","client_x509_cert_url": ""}
+```
