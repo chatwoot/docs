@@ -44,7 +44,7 @@ We encourage the community to build and promote Chatwoot related services. You c
 ## How can I customise the Chatwoot Branding ?
 
 In `Community Edition` of Chatwoot, you can customise the branding by modifying the source code. 
-In `Enterprise Edition` of Chatwoot, Whitelabeling is available as a premium feature as a part of Paid Plans.
+In `Enterprise Edition` of Chatwoot, Custom Branding is available as a premium feature as a part of the paid plans.
 
 
 
