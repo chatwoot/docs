@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Webhooks"
+sidebar_label: "Configure Webhooks"
 title: "Getting started with webhooks in Chatwoot"
 ---
 
@@ -7,15 +7,15 @@ Webhooks are HTTP callbacks which can be defined for every account. They are tri
 
 **Step 1**. Click on Integrations link is settings sidebar. Click on "Configure" button.
 
-![integrations](./images/integrations.png)
+![integrations](./images/webhooks/integrations.png)
 
 **Step 2**. You will see the list of webhooks you have already added to the account.
 
-![configure](./images/configure.png)
+![configure](./images/webhooks/configure.png)
 
-**Step 3**. Click on the "Add new webhook", it will display a modal where you can input the URL to which the POST request should be sent.
+**Step 3**. Click on the "Add new webhook", it will display a modal where you can input the URL to which the POST request should be sent. You need to select the events you want to subscribe to. This would allow you to only listen to the relevant events in Chatwoot.
 
-![add-a-webhook](./images/add-a-webhook.png)
+![add-a-webhook](./images/webhooks/add-a-webhook.jpg)
 
 Chatwoot will send a POST request with the following payload to the configured URLs for various updates happening in your account.
 
