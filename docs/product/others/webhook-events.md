@@ -1,5 +1,5 @@
 ---
-title: "Webhook Events"
+title: "Supported webhook events in Chatwoot"
 ---
 
 Chatwoot publishes various events to the configured webhook endpoints. If you want to configure a webhook, refer to the guide [here](/docs/product/features/webhooks).
