@@ -4,15 +4,15 @@ title: "Webhook Events"
 
 Chatwoot publishes various events to the configured webhook endpoints. If you want to configure a webhook, refer to the guide [here](/docs/product/features/webhooks).
 
-Each event has it's own payload structure based on the type of model they are acting on. The following section describe the main objects we use in Chatwoot and their atttributes
+Each event has its payload structure based on the type of model they are acting on. The following section describes the main objects we use in Chatwoot and their attributes.
 
 ## Objects
 
-An event can contain any of the following objects as a payload. Different type of objects supported in Chatwoot are as follows.
+An event can contain any of the following objects as a payload. Different types of objects supported in Chatwoot are as follows.
 
 ### Account
 
-The following payload will be returned for an inbox.
+The following payload will be returned for an account.
 
 ```json
 {
@@ -150,7 +150,7 @@ The following payload will be returned for a conversation.
 
 ## Webhook Events
 
-Chatwoot supports the following webhook events. You can subscribe to them while you configure a webhook in the dashboard or using the API.
+Chatwoot supports the following webhook events. You can subscribe to them while configuring a webhook in the dashboard or using the API.
 
 ### conversation_created
 
@@ -184,7 +184,9 @@ This event will be triggered when there is a change in any of the attributes in 
 
 ### conversation_status_changed
 
-This event will be triggered when the status of the conversation is changed. Not that if you are using agent bot APIs instead of webhooks, this event is not supported yet.
+This event will be triggered when the status of the conversation is changed.
+
+Note: If you are using agent bot APIs instead of webhooks, this event is not supported yet.
 
 ```json
 {
