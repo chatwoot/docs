@@ -56,14 +56,14 @@ module.exports = [
       {
         "Whatsapp Channel": [
           "product/channels/whatsapp/twilio",
-          "product/channels/whatsapp/360dialog"
-        ]
+          "product/channels/whatsapp/360dialog",
+        ],
       },
       {
         "SMS Channel": [
           "product/channels/sms/twilio",
-          "product/channels/sms/bandwidth"
-        ]
+          "product/channels/sms/bandwidth",
+        ],
       },
       {
         Email: [
@@ -128,7 +128,6 @@ module.exports = [
         label: "Integrations",
         items: [
           "product/channels/live-chat/integrations/dialogflow",
-          "product/features/webhooks",
           "product/features/slack",
         ],
       },
@@ -142,7 +141,11 @@ module.exports = [
     items: [
       "product/others/agent-bots",
       "product/others/interactive-messages",
-      "product/others/webhook-events",
+      {
+        type: "category",
+        label: "Webhooks",
+        items: ["product/features/webhooks", "product/others/webhook-events"],
+      },
       "product/others/websocket-events",
       "product/others/cookies",
     ],
