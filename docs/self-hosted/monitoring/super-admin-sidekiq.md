@@ -22,5 +22,5 @@ docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh
 ## Access super admin console
 
 - Access `<chatwoot-installation-url>/super_admin`.
-- Authenticate using the admin credentials created during installation
+- Authenticate using the admin credentials created during the installation.
 - You can access Sidekiq option on the sidebar.
