@@ -65,6 +65,13 @@ Inside the rails console, type the following commands to create an agent bot and
 bot = AgentBot.create!(name: "Your Bot", outgoing_url: "http://localhost:8000")
 bot.access_token.token
 ```
+
+Add an avatar to your bot (optional)
+```
+avatar_file = Down.download("image url")
+bot.avatar.attach(io: avatar_file, filename: avatar_file.original_filename, content_type: avatar_file.content_type)
+```
+
 Connect Agent Bot to your inbox by running the following command
 
 ```
