@@ -40,7 +40,6 @@ This user guide includes a description of the features and capabilities, modes o
 - [Folders](/docs/user-guide/features/folders)
 - [Keyboard Shortcuts](/docs/user-guide/features/keyboard-shortcuts)
 - [Multilingual Support](/docs/user-guide/features/multilingual-support)
-- [Reports](/docs/user-guide/reports)
 - [Segments](/docs/user-guide/features/segments)
 - [Pre Chat Form](/docs/user-guide/features/pre-chat-form)
 
@@ -58,6 +57,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Cookies](/product/others/cookies)
 
 ### Others
+
 - [FAQ](/docs/product/others/faq)
 
 ### Compatibility and Requirements

@@ -8,7 +8,7 @@ Click on 'Reports' icon on Chatwoot Dashboard Home Screen.
 
 <div align="center">
 
-<img src={require('../images/reports/reports1.png').default} width="800" alt="CSAT Report Screen" />
+<img src={require('../images/reports/csat_feedback.png').default} width="800" alt="CSAT Report Screen" />
 
 </div>
 
