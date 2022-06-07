@@ -16,7 +16,7 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**
 > Refer the `Configuring the installation domain` section below.
 
 
-1. Create a **setup.sh** file and copy the content from the above link or use the following commands.
+1. Create an **install.sh** file using the following commands.
 
 ```bash
 wget https://get.chatwoot.app/linux/install.sh
