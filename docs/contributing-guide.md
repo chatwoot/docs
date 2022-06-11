@@ -1,40 +1,34 @@
 ---
-title: "Contributing Guide"
+title: "Contributor Guide"
 sidebar_label: "Introduction"
 help_discord: "https://discord.gg/fBMuQ7FcG6"
 help_github_discussion: "https://github.com/chatwoot/chatwoot/discussions/categories/contributors"
 ---
 
-This guide will help you get started with Chatwoot! Thank you for taking an interest in contributing to Chatwoot. Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
+Thank you for your interest in contributing to Chatwoot. Please take a moment to read through our guidelines before you contribute.
 
-### Getting Started
+### Get started
 
-- Before starting your work, ensure an [issue](https://github.com/chatwoot/chatwoot/issues) exist for it. If not feel free to create one. You can also take a look into the issues tagged [Good first issues](https://github.com/chatwoot/chatwoot/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22).
-- Add a comment on the issue and wait for the issue to be assigned before you start working on it.
-  - This helps to avoid multiple people working on similar issues.
-- If the solution is complex, propose the solution on the issue and wait for one of the core contributors to approve before going into the implementation.
-  - This helps in shorter turn around times in merging PRs
-- For new feature requests, Provide a convincing reason to add this feature. Real-life business use-cases will be super helpful.
-- Feel free to join our [discord community](https://discord.gg/cJXdrwS), if you need further discussions with the core team.
+1. If you've noticed something that needs to be updated, go through our existing [issues](https://github.com/chatwoot/chatwoot/issues) before you create an issue to help avoid duplicate issues.
+Also, look for [good first issues](https://github.com/chatwoot/chatwoot/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22) that can help you get started on easier issues. 
+2. Add a comment to the issue and wait for the issue to be assigned before you can start working on it. This helps avoid multiple people working on similar issues.
+3. For complex solutions, propose the solution on the issue and wait for one of the core contributors to approve it before it can be implemented. This helps in shorter turnaround time in merging pull requests (PRs).
+4. Raise your PRs against the base branch `develop`. We use the [git-flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model.
+Multiple smaller commits are encouraged as you work on a PR as they will be squashed before merging.
 
-### Pull Request Guidelines
+Microcopy added to the product must be i18n-translatable. Only add the `English` version of the strings. We pull in the other language translations from our contributors on Crowdin. To learn more, see [Translation guidelines](https://www.chatwoot.com/docs/contributing-guide/translation-guidelines).
 
-- Please make sure that you have read the [issue triage guidelines](/docs/handbook/engineering/issue-triage) before you make a contribution.
-- We use [git-flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model. The base branch is `develop`
-- Please raise your PRs against `develop` branch
-- It's okay and encouraged to have multiple small commits as you work on the PR - we will squash the commits before merging.
-- For other guidelines, please refer to [PR Guidelines](/docs/handbook/engineering/pr-guidelines)
-- Ensure that all the text copies that you add into the product are i18n translatable. You are only required to add the `English` version of the strings. We pull in the other language translations from our contributors on crowdin. Ref [Translation guidelines](https://www.chatwoot.com/docs/contributing-guide/translation-guidelines) to learn more.
+### Bug fixes or chores
 
-### Developing a new feature:
+If you're resolving an issue, name the PR title as `fix: Fixes xxxx` (#xxxx is the issue) and provide a detailed description of the bug in the PR. If applicable, also add appropriate test coverage.
 
-- Please create the branch in the format `feature/<issue-id>-<issue-name>` (eg: `feature/235-contact-panel`)
-- Add accompanying test cases.
+### New features
 
-### Bug fixes or chores:
-- If you are resolving a particular issue, add `fix: Fixes xxxx` (#xxxx is the issue) in your PR title.
-- Provide a detailed description of the bug in the PR.
-- Add appropriate test coverage if applicable.
+For new feature requests, provide a convincing reason to add them; real-life business use cases will be super helpful. If you need to discuss further with the core team, join our [Discord community](https://discord.gg/cJXdrwS).
+
+Create a branch in this format: `feature/<issue-id>-<issue-name>` (for example, `feature/235-contact-panel`) and add accompanying test cases.
+
+For guidelines, read [Issue triage](/docs/handbook/engineering/issue-triage) and [Pull Request Guidelines](/docs/handbook/engineering/pr-guidelines).
 
 ### Environment Setup for local development
 
