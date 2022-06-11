@@ -41,7 +41,7 @@ module.exports = {
         {
           to: 'contributing-guide',
           activeBasePath: 'contributing-guide',
-          label: 'Contributing Guide',
+          label: 'Contributor Guide',
           position: 'right',
         },
         {

@@ -26,4 +26,4 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Please feel free to suggest any changes. See our [contributing guide](https://www.chatwoot.com/docs/contributing-guide) to get started.
+Please feel free to suggest any changes. See our [Contributor Guide](https://www.chatwoot.com/docs/contributing-guide) to get started.

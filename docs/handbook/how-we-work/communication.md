@@ -15,7 +15,7 @@ Written communication is preferred over a call. Although there might be instance
 
 To ensure that the discussions are documented somewhere, we prefer:
 - Asking questions in public channels instead of DMs. If another person is having a similar problem, then we don't need to repeat it.
-- Instead of jumping on a call, write the content down on Github/Notion. (e.g.: All product-related questions/thoughts can be added to the `contributing guide` or `product repository`. All internal process questions can be on the `public/private` handbook.)
+- Instead of jumping on a call, write the content down on Github/Notion. (e.g.: All product-related questions/thoughts can be added to the `contributor guide` or `product repository`. All internal process questions can be on the `public/private` handbook.)
 
 #### Etiquette on Discord
 
