@@ -1,46 +1,46 @@
 ---
 sidebar_label: "Windows 10"
-title: 'Windows 10 Installation Guide'
+title: 'Windows 10 setup'
 ---
 
 ### Requirements
 
 You need to install the Linux Subsystem for Windows.
 
-1. The first step is to enable "Developer mode" in Windows. You can do this by opening up Settings and navigating to "Update & Security". In there, choose the tab on the left that reads "For Developers". Turn the "Developer mode" toggle on to enable it.
+1. Enable Developer Mode in Windows. Go to **Settings > Update & Security > For Developers** and select **Developer mode**.
 
-<img src={require('./img/developer-mode.jpg').default} width="500" alt="Enable Developer Mode" />
+    <img src={require('./img/developer-mode.jpg').default} width="500" alt="Enable Developer Mode" />
 
-2. Next you have to enable the Windows Subsystem for Linux. Open the "Control Panel" and go to "Programs and Features". Click on the link on the left "Turn Windows features on or off". Look for the "Windows Subsystem for Linux" option and select the checkbox next to it.
+2. Go to **Control Panel > Programs and Features > Turn Windows features on or off** and select **Windows Subsystem for Linux**.
 
-<img src={require('./img/enable-wsl.jpg').default} width="500" alt="Enable WSL" />
+    <img src={require('./img/enable-wsl.jpg').default} width="500" alt="Enable WSL" />
 
-3. Once that's complete, you can open up the Start Menu again and search for "Bash". This time it will have the Ubuntu logo.
+3. In the Start menu, search for **Bash**. This time it will have the Ubuntu logo.
 
-### Installing RVM & Ruby
+### Install RVM and Ruby
 
-You need core linux dependencies installed in order to install ruby.
+1. Install core Linux dependencies.
 
-```bash
-sudo apt-get update
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
-```
+    ```bash
+    sudo apt-get update
+    sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
+    ```
 
-Install RVM & ruby version 3.0.2
+2. Install RVM and Ruby version 3.0.2.
 
-```bash
-sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm install 3.0.2
-rvm use 3.0.2 --default
-ruby -v
-```
+    ```bash
+    sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    curl -sSL https://get.rvm.io | bash -s stable
+    source ~/.rvm/scripts/rvm
+    rvm install 3.0.2
+    rvm use 3.0.2 --default
+    ruby -v
+    ```
 
 ### Install Node.js
 
-Install `Node.js` from NodeSource using the following commands
+Install `Node.js` from NodeSource.
 
 ```bash
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -49,7 +49,7 @@ sudo apt-get install -y nodejs
 
 ### Install yarn
 
-We use `yarn` as the package manager
+We use `yarn` as the package manager.
 
 ```bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -62,19 +62,21 @@ sudo apt-get update && sudo apt-get install yarn
 
 ### Install postgres
 
-The database used in Chatwoot is PostgreSQL. Use the following commands to install postgres:
+Chatwoot uses PostgreSQL database.
+
+Install postgres.
 
 ```bash
 sudo apt install postgresql postgresql-contrib
 ```
 
-The installation procedure created a user account called postgres that is associated with the default Postgres role. In order to use Postgres, you can log into that account.
+The installation creates a user account called postgres that is associated with the default Postgres role. You can log in to the account to use Postgres.
 
 ```bash
 sudo -u postgres psql
 ```
 
-Install `libpg-dev` dependencies for Ubuntu
+Install `libpg-dev` dependencies for Ubuntu.
 
 ```bash
 sudo apt-get install libpq-dev
@@ -83,19 +85,23 @@ sudo service postgresql start
 
 ### Install redis-server
 
-Chatwoot uses Redis server in agent assignments and reporting. To install `redis-server`
+Chatwoot uses Redis server in agent assignments and reporting. 
 
-```bash
-sudo apt-get install redis-server
-```
+1. Install `redis-server`.
 
-Enable Redis to start on system boot.
+    ```bash
+    sudo apt-get install redis-server
+    ```
 
-```bash
-sudo systemctl enable redis-server.service
-```
+2. Enable Redis to start on system boot.
+
+    ```bash
+    sudo systemctl enable redis-server.service
+    ```
 
 ### Install imagemagick
+
+Chatwoot uses `imagemagick` library to resize images for showing previews and smaller size based on context.
 
 ```bash
 sudo apt-get install imagemagick

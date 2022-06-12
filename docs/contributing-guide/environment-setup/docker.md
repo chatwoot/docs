@@ -1,13 +1,11 @@
 ---
 sidebar_label: "Docker"
-title: "Docker Setup"
+title: "Docker setup"
 ---
 
-### Pre-requisites
+## Pre-requisites
 
-Before proceeding, make sure you have the latest version of `docker` and `docker-compose` installed.
-
-As of now[at the time of writing this doc], we recommend a version equal to or higher than the following.
+You must have the latest version of `docker` and `docker-compose` installed. We recommend a version equal to or higher than the following:
 
 ```bash
 $ docker --version
@@ -40,29 +38,29 @@ docker-compose version 1.29.2, build 5becea4c
     docker-compose build
     ```
 
-4. After building the image or destroying the stack, you would have to reset the database using the following command.
+4. After building the image or destroying the stack, reset the database.
 
     ```bash
     docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
     ```
 
-5. To run the app,
+5. Run the app.
 
     ```bash
     docker-compose up
     ```
 
-    * Access the rails app frontend by visiting `http://0.0.0.0:3000/`
-    * Access Mailhog inbox by visiting `http://0.0.0.0:8025/` (You will receive all emails going out of the application here)
+    * Access Rails app frontend by visiting `http://0.0.0.0:3000/`.
+    * Access Mailhog inbox by visiting `http://0.0.0.0:8025/` (You will receive all emails going out of the application here).
 
-    #### Login with credentials
+6. Log in with your credentials.
     ```
         url: http://localhost:3000
         user_name: john@acme.inc
         password: Password1!
     ````
 
-6. To stop the app,
+To stop the app, run the following command:
 
     ```bash
     docker-compose down
@@ -70,21 +68,23 @@ docker-compose version 1.29.2, build 5becea4c
 
 ### Running RSpec tests
 
-For running the complete RSpec tests,
+Run the following commands:
 
-```bash
-docker-compose run --rm rails bundle exec rspec
-```
+- for running the complete RSpec tests
 
-For running specific test,
+    ```bash
+    docker-compose run --rm rails bundle exec rspec
+    ```
 
-```bash
-docker-compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number>
-```
+- for running specific test
+
+    ```bash
+    docker-compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number>
+    ```
 
 ## Production environment
 
-To debug the production build locally, set `SECRET_KEY_BASE` environment variable in your `.env` file and then run the below commands:
+To debug the production build locally, set the `SECRET_KEY_BASE` environment variable in your `.env` file and then run the below commands:
 
 ```bash
 docker-compose -f docker-compose.production.yaml build
@@ -99,15 +99,9 @@ To use debuggers like `byebug` or `binding.pry`, use the following command to br
 docker-compose run --rm --service-port rails
 ```
 
-
 ## Troubleshooting
-If there is an update to any of the following
-- `dockerfile`
-- `gemfile`
-- `package.json`
-- schema change
 
-Make sure to rebuild the containers and run `db:reset`.
+If there is an update to `dockerfile`, `gemfile`, `package.json`, or a schema change, rebuild the containers and run `db:reset`.
 
 ```bash
 docker-compose down

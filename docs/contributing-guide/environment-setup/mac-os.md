@@ -1,13 +1,11 @@
 ---
-sidebar_label: "Mac OS"
-title: "Mac OS installation guide"
+sidebar_label: "macOS"
+title: "macOS setup"
 ---
 
-Open terminal app and run the following commands
+Run the following commands in the terminal.
 
-### Installing the standalone Command Line Tools
-
-Open terminal app and write the code below
+### Install standalone Command Line Tools
 
 ```bash
 xcode-select --install
@@ -34,27 +32,29 @@ curl -L https://get.rvm.io | bash -s stable
 
 ### Install Ruby
 
-Chatwoot APIs are built on Ruby on Rails, you need install ruby 3.0.2
+Chatwoot APIs are built on Ruby on Rails.
 
-If you are using `rvm` :
+Install Ruby verision 3.0.2.
 
-```bash
-rvm install ruby-3.0.2
-rvm use 3.0.2
-source ~/.rvm/scripts/rvm
-```
+- If you're using `rvm`, run:
 
-If you are using `rbenv` to manage ruby versions do :
+    ```bash
+    rvm install ruby-3.0.2
+    rvm use 3.0.2
+    source ~/.rvm/scripts/rvm
+    ```
 
-```bash
-rbenv install 3.0.2
-```
+- If you're using `rbenv` to manage Ruby versions, run:
 
-`rbenv` identifies the ruby version from `.ruby-version` file on the root of the project and loads it automatically.
+    ```bash
+    rbenv install 3.0.2
+    ```
+
+    `rbenv` identifies the Ruby version from the _.ruby-version_ file on the root of the project and loads it automatically.
 
 ### Install Node.js
 
-Install Node.js from NodeSoure using the following commands
+Install Node.js from NodeSoure.
 
 ```bash
 brew install node
@@ -62,7 +62,7 @@ brew install node
 
 ### Install yarn
 
-We use `yarn` as package manager
+We use `yarn` as the package manager.
 
 ```bash
 brew install yarn
@@ -70,19 +70,15 @@ brew install yarn
 
 ### Install postgres
 
-The database used in Chatwoot is PostgreSQL.
+Chatwoot uses PostgreSQL database. The easiest way to get started with PostgreSQL on mac is by installing [PostgresApp](https://postgresapp.com). 
 
-1) Install PostgresApp (https://postgresapp.com). This is easiest way to get started with PostgreSQL on mac.
-
-or
-
-2) Use the following commands to install postgres.
+You can also install postgres by running the following commands:
 
 ```bash
 brew install postgresql
 ```
 
-The installation procedure created a user account called postgres that is associated with the default Postgres role. In order to use Postgres, you can log into that account.
+The installation creates a user account called postgres that is associated with the default Postgres role. You can log in to the account to use Postgres.
 
 ```bash
 sudo -u postgres psql
@@ -90,27 +86,30 @@ sudo -u postgres psql
 
 ### Install redis-server
 
-Chatwoot uses Redis server in agent assignments and reporting. To install `redis-server`
+Chatwoot uses Redis server in agent assignments and reporting.
 
-```bash
-brew install redis
-```
+1. Install `redis-server`.
 
-Start the redis service.
+    ```bash
+    brew install redis
+    ```
 
-```bash
-brew services start redis
-```
+2. Start the redis service.
+
+    ```bash
+    brew services start redis
+    ```
 
 ### Install imagemagick
+
 Chatwoot uses `imagemagick` library to resize images for showing previews and smaller size based on context.
 
 ```bash
 brew install imagemagick
 ```
 
-You can read more on installing imagemagick from source from [here](https://imagemagick.org/script/download.php).
+For information on installing imagemagick from source, see [here](https://imagemagick.org/script/download.php).
 
 ### Install Docker
 
-This is an optional step. Those who are doing development can install docker from [Docker Desktop](https://www.docker.com/products/docker-desktop).
+This is optional. Those who are doing development can install docker from [Docker Desktop](https://www.docker.com/products/docker-desktop).
