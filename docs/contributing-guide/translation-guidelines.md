@@ -1,40 +1,26 @@
 ---
-sidebar_label: "Translation guidelines"
+sidebar_label: "Translation guide"
 title: "Translate Chatwoot to your language"
 help_discord: "https://discord.gg/uPtCrFfb9B"
 help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categories/translations"
 ---
 
-Chatwoot uses American English by default. Each and every string available in Chatwoot can be translated to the language of your choice. Chatwoot uses Crowdin to manage the translation process. The updates from Crowdin is also included along with every release.
+Chatwoot uses American English by default. Every string in Chatwoot can be translated to the language of your choice. We prefer using the formal form of a language wherever possible. For instance, German has two forms of _you_ - _Sie_ (formal) and _Du_ (informal). In this case, _Sie_ is preferred over _Du_ for translation.
 
-## How do I see the strings that needs to be translated?
+The translation process for Chatwoot web and mobile app is managed using Crowdin at [https://translate.chatwoot.com](https://translate.chatwoot.com). You must have an account on Crowdin before you can contribute to a language.
 
-In the codebase the string are placed in the following locations.
+You can find the strings in the following locations of the codebase:
 
-- `app/javascript/dashboard/i18n` - The strings related to the agent dashboard
-- `app/javascript/widget/i18n` - The strings related to the web widget
-- `config/locales` - The strings used in backend messages or API response.
+- `app/javascript/dashboard/i18n` for strings related to the agent dashboard
+- `app/javascript/widget/i18n` for strings related to the web widget
+- `config/locales` for strings used in backend messages or API response
 
-You can login to the **Crowdin** ([https://translate.chatwoot.com](https://translate.chatwoot.com)) and create an account to view the strings that needs to be translated.
+If you don't find your language on Crowdin, please create an [issue](https://github.com/chatwoot/chatwoot/issues) while adhering to the [contributor guidelines](/contributing-guide).
 
-## How to contribute?
+> If you're the only person contributing to a language, inform any of the Chatwoot members to gain access to manage the language.
 
-If you don't find your language on Crowdin, please create an issue on [Github](https://github.com/chatwoot/chatwoot/issues) to add the language.
+## Releasing a new language
 
-### Translate Strings
+All translated strings will be included in the next release. If a language has *60% or more translated strings* in Crowdin, we will enable the language for the Chatwoot app during the next release.
 
-The translation process for Chatwoot web and mobile app is managed at [https://translate.chatwoot.com](https://translate.chatwoot.com) using Crowdin. You will have to create an account at Crowdin before you can select a language and contribute.
-
-### Formal vs informal context
-
-At Chatwoot, we prefer to use formal form of language wherever possible. For instance in German there are two forms of "you" where one is rather used in formal contexts ("Sie") and the other one is used among friends ("Du"). "Sie" is preferred over "Du" in translating Chatwoot.
-
-### Proofreading
-
-Proofreading helps ensure the accuracy and consistency of translations. Right now, the translations are being accepted without a proof reading step. This would be changed in the future as an when there are more contributors on each language.
-
-*Note:* If you are the only person contributing to a language, make sure that you inform any of the Chatwoot members to gain access to manage the language.
-
-### Releasing a new language
-
-All the translated strings would be included in the next release. If a language has *60% or more translated strings* in Crowdin, we would enable the language in Chatwoot app during the next release.
+> Currently, translations are being accepted without a proofreading step. However, this will change as an when there are more contributors to each language.
