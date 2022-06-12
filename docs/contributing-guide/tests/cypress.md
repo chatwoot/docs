@@ -3,68 +3,68 @@ sidebar_label: "Cypress"
 title: "End-to-end testing with Cypress"
 ---
 
-Chatwoot uses [Cypress](https://www.cypress.io/) for end-to-end testing. Use the following steps to run the tests on your local machine.
+Chatwoot uses [Cypress](https://www.cypress.io/) for end-to-end testing. Follow the steps below to run the tests on your local machine.
 
-## Prepare the Test Server
+## Prepare the test server
 
-Choose any of the given methods to run your chatwoot test server.
+You can run the Chatwoot test server using one of the following methods:
 
-### Using Local Chatwoot Installation (option 1)
-> Note: You have to install the necessary dependencies as described in [setup guide](/docs/contributing-guide/project-setup) for this method to work.
+### Using local Chatwoot installation (option 1)
 
-Navigate to chatwoot codebase in your local machine and execute the following steps
+> _For this method to work, you must install the necessary dependencies described in the [setup guide](/docs/contributing-guide/project-setup)._
 
-#### Create a fresh test database
+Go to the Chatwoot codebase in your local machine and do the following:
 
-```bash
-RAILS_ENV=test bin/rake db:drop
-RAILS_ENV=test bin/rake db:create
-RAILS_ENV=test bin/rake db:schema:load
-```
+1. Create a fresh test database.
 
-#### Start Chatwoot in the test environment
+  ```bash
+  RAILS_ENV=test bin/rake db:drop
+  RAILS_ENV=test bin/rake db:create
+  RAILS_ENV=test bin/rake db:schema:load
+  ```
 
-```bash
-RAILS_ENV=test foreman start  -f Procfile.test
-### load the url in the browser and wait for it to start up
-http://localhost:5050/app/login
-```
+2. Start Chatwoot in the test environment.
+
+  ```bash
+  RAILS_ENV=test foreman start  -f Procfile.test
+  ### load the url in the browser and wait for it to start up
+  http://localhost:5050/app/login
+  ```
 
 
 ### Using Docker (option 2)
 
-Follow the [docker set up guide](/docs/contributing-guide/environment-setup/docker) until you the build images.
+1. Ensure that you match the [pre-requisites](/docs/contributing-guide/environment-setup/docker#pre-requisites) before you set up Docker. Follow _steps 1 and 2_ of setting up the [development environment](/docs/contributing-guide/environment-setup/docker#development-environment).
 
-#### Change the Rails Environment
-Open `docker-compose.yaml` and update all the `RAILS_ENV` values from `development` to `test`
+2. Open `docker-compose.yaml` and update all the `RAILS_ENV` values from `development` to `test`.
 
-#### Update the Port
-Under rails section in your `docker-compose.yaml` update the port value as given below.
-```
-ports:
-  - 5050:3000
-```
+3. Update the port value under the rails section in `docker-compose.yaml`.
 
-#### Reset the Database
-```
-docker-compose run --rm rails bundle exec rails db:reset
-```
+  ```
+  ports:
+    - 5050:3000
+  ```
 
-#### Start Chatwoot Docker in the test environment
+4. Reset the database.
 
-```
-docker-compose up
-### load the url in the browser and wait for it to start up
-http://localhost:5050/app/login
-```
+  ```
+  docker-compose run --rm rails bundle exec rails db:reset
+  ```
+
+5. Start Chatwoot Docker in the test environment.
+
+  ```
+  docker-compose up
+  ### load the url in the browser and wait for it to start up
+  http://localhost:5050/app/login
+  ```
 
 ## Run Cypress
 
-Load `localhost:5050` on your browser and ensure that the Chatwoot server is running.
+1. Load `localhost:5050` on your browser while the Chatwoot server is running.
 
-Navigate to your chatwoot local directory and Execute the following command to run the cypress tests.
-
-
-```bash
-yarn cypress open --project ./spec
-```
+2. Go to your chatwoot local directory and run the following command.
+    
+    ```bash
+    yarn cypress open --project ./spec
+    ```
