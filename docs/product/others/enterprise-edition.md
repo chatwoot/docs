@@ -3,14 +3,13 @@ sidebar_label: 'Enterprise Edition'
 title: 'Enterprise Edition'
 ---
 
-Starting from [version `2.0`](https://www.chatwoot.com/blog/2-0-release-ee-edition-et-al/), Chatwoot ships two versions of its software. The Community edition is `MIT` licensed, and an Enterprise edition is available under a [proprietary license](https://github.com/chatwoot/chatwoot/blob/develop/LICENSE). Both software versions are built out of a single [github repository](https://github.com/chatwoot/chatwoot).  
+Starting from the [version `2.0`](https://www.chatwoot.com/blog/2-0-release-ee-edition-et-al/), Chatwoot ships two versions of its software. The community edition is `MIT` licensed, and an enterprise edition is available under a [proprietary license](https://github.com/chatwoot/chatwoot/blob/develop/LICENSE). Both software versions are built from a single [Github repository](https://github.com/chatwoot/chatwoot).  
 
-While the Community edition will always remain free and open-source, the enterprise edition is the effort to sustain both the offerings and Chatwoot 
-as a commercial business. This model has been derived from other commercial open-source companies like Gitlab, Mattermost, Metabase, etc.
+While the community edition will always remain free and open-source, the enterprise edition is the effort to sustain both the offerings and Chatwoot as a commercial business. This model has been derived from other commercial open-source companies like Gitlab, Mattermost, Metabase, etc.
 
 ## Differences between Community and Enterprise editions
 
-The Community edition of Chatwoot has all the relevant customer communication features that a growing business requires. At the same time, the enterprise edition contains proprietary features such as customizable dashboards, SLA Management, Agent scheduling software, IP blocklisting, etc., suited for larger organizations.
+The community edition of Chatwoot has all the relevant customer communication features that a growing business requires. At the same time, the enterprise edition contains proprietary features such as customizable dashboards, SLA Management, agent scheduling software, IP blocklisting, etc., suited for larger organizations.
 
 While the source code for both editions is open to the public in our Github repo, all the `/enterprise`  folder contents are copyrighted.
 
