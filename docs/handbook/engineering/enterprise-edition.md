@@ -96,7 +96,7 @@ Ensure that the module written to extend the Community Logic has to be put under
 If the feature is not present in Community Edition, we must directly put the code into the enterprise directory without the enterprise namespace. This works because we have the enterprise directory in [autoload paths](https://github.com/chatwoot/chatwoot/blob/41b89014324772d8351b15936d25623f852980cb/config/application.rb#L19).
 
 ```
-# no need for extra enterprise namespacing since we aren't preppending 
+# no need for extra enterprise namespacing since we aren't prepending 
 # enterprise/app/controllers/paid_feature_controller.rb
 # enterprise/app/models/paid_feature.rb
 
