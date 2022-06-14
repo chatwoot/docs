@@ -14,7 +14,7 @@ You can test how the community edition will behave by toggling the environment v
 
 ## Organization of Code
 
-The `javascript` part of Chatwoot code is completely MIT, while `enterprise` separation is applied over the `ruby` code concerning the backend Chatwoot APIs and Services.
+The `JavaScript` part of Chatwoot code is completely MIT, while `enterprise` separation is applied over the `ruby` code concerning the backend Chatwoot APIs and Services.
 Always place Enterprise edition proprietary code under the top-level `enterprise` directory. In addition, the modules should follow the structure as close to their Community Edition counterparts (See the specifics in sub Sections).
 
 The enterprise edition specs should reside in the `spec/enterprise` folder. 
@@ -22,11 +22,11 @@ The enterprise edition specs should reside in the `spec/enterprise` folder.
 ## How to develop features
 
 For Community Edition features, you can follow the general best practices for Ruby on Rails and Vue.js Development.
-But when you identify an exclusive feature or Enterprise edition extension, you have to follow the appropriate guidelines mentioned below.
+But when you identify an exclusive feature or Enterprise edition extension, you must follow the appropriate guidelines mentioned below.
 
 ### General Guidelines
-#### Javascript
-The `javascript` part of Chatwoot code is available under MIT. But you might want to limit the visibility of specific components based on the edition of Chatwoot Version. In such cases, you can rely on the helper method `isEnterprise()` available in `app/javascript/shared/mixins/configMixin.js`. Then, include the mixin in your Component and implement a conditional check to render the sub-component appropriately.
+#### JavaScript
+The `JavaScript` part of Chatwoot code is available under MIT. But you might want to limit the visibility of specific components based on the edition of Chatwoot Version. In such cases, you can rely on the helper method `isEnterprise()` available in `app/javascript/shared/mixins/configMixin.js`. Then, include the mixin in your Component and implement a conditional check to render the sub-component appropriately.
 
 #### Helpers in ruby Code
 While working in the ruby code, `ChatwootApp.enterprise?` helper is available for you to determine whether the user is running the Enterprise Edition of the software.
@@ -36,7 +36,7 @@ Users could be migrating between versions. So we always have to ensure that all 
 `ChatwootApp.enterprise?`
 
 ### Routes
-In cases where you want to limit the the access of a specific route to `Enterprise` Edition alone, use the `ChatwootApp.enterprise?` helper.
+If you want to limit the access of a specific route to `Enterprise` Edition alone, use the `ChatwootApp.enterprise?` helper.
 
 ```
   if ChatwootApp.enterprise?
@@ -48,7 +48,7 @@ In cases where you want to limit the the access of a specific route to `Enterpri
 
 When developing Enterprise features built over the Community Edition software, Implement a base functionality in Community edition code and extend it over in an Enterprise licensed module.
 
-As shown in the example, we do this by writing a module in the Enterprise namespace and injecting it into the community edition class.
+As shown in the example, we write a module in the Enterprise namespace and inject it into the community edition class.
 
 ```
 # app/models/inbox.rb
@@ -79,7 +79,8 @@ end
 ```
 You can use the helper methods like `prepend_mod_with`, `extend_mod_with`, or `include_mod_with`, depending on how you want to include the enterprise method into the chain. Refer [InjectEnterpriseEditionModule](https://github.com/chatwoot/chatwoot/blob/develop/config/initializers/01_inject_enterprise_edition_module.rb) to learn more.
 
-Ensure that the module written to extend the Community Logic has to be put under the `Enterprise` namespace.
+Ensure that the module written to extend the Community Logic is put under the `Enterprise` namespace.
+
 ```
 # notice the extra namespacing with in models directory
 # enterprise/app/models/enterprise/inbox.rb
@@ -91,7 +92,7 @@ Ensure that the module written to extend the Community Logic has to be put under
 ```
 
 
-### Developing features exclusive for Enterprise Edition
+### Developing features exclusive in the Enterprise Edition
 
 If the feature is not present in Community Edition, we must directly put the code into the enterprise directory without the enterprise namespace. This works because we have the enterprise directory in [autoload paths](https://github.com/chatwoot/chatwoot/blob/41b89014324772d8351b15936d25623f852980cb/config/application.rb#L19).
 
