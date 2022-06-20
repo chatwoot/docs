@@ -39,7 +39,7 @@ Here are some basic things to keep in mind:
 - Do not hesitate to include more screenshots if it helps in getting the point across more clearly. Otherwise, record a screencast or GIF.
 - Make sure that you are using a real-world example and not using content "Test Content" or names like "Test" in the screenshots.
 - Make sure the screenshots do not expose any PII or production data. Use a staging account for taking screenshots.
-- 
+
 **Let’s see an example**
 
 Let us illustrate “how to add a personal message signature.” Look at the four options below:
