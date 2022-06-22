@@ -26,7 +26,7 @@ chmod +x install.sh
 2. Execute the script, and it will take care of the initial **Chatwoot** setup.
 
 ```bash
-./install.sh master
+./install.sh -i master
 ```
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
@@ -67,7 +67,9 @@ systemctl restart chatwoot.target
 
 Whenever a new version of Chatwoot is released, use the following steps to upgrade your instance.
 
-Run the following steps on your VM. Make changes based o your OS if you are on a non-Ubuntu system.
+> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl --upgrade`.
+
+Run the following steps on your VM. Make changes based on your OS if you are on a non-Ubuntu system.
 
 ```bash
 # Login as Chatwoot user
@@ -101,6 +103,7 @@ cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system
 cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
 
+# Reload systemd files
 systemctl daemon-reload
 
 # Restart the chatwoot server
@@ -119,6 +122,8 @@ This command would clear the existing compiled assets and would recompile all th
 
 ## Running Rails Console
 
+> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -c`.
+
 ```
 # Login as Chatwoot user
 sudo -i -u chatwoot
@@ -131,6 +136,8 @@ RAILS_ENV=production bundle exec rails c
 ```
 
 ## Viewing Logs
+
+> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -l web` or `cwctl -l worker`.
 
 Run the following commands in your ubuntu shell
 
