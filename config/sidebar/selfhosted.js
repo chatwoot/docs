@@ -13,6 +13,7 @@ module.exports = [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
       "self-hosted/deployment/linux-vm",
+      "self-hosted/deployment/chatwoot-ctl",
       "self-hosted/deployment/docker",
       "self-hosted/deployment/helm-charts",
       "self-hosted/deployment/heroku",
