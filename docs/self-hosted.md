@@ -8,6 +8,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 ### Deployment
 
 - [Architecture](/docs/self-hosted/deployment/architecture)
+- [Requirements](/docs/self-hosted/deployment/requirements)
 - [Linux VM](/docs/self-hosted/deployment/linux-vm)
 - [Chatwoot CTL](/docs/self-hosted/deployment/chatwoot-ctl)
 - [Docker](/docs/self-hosted/deployment/docker)
