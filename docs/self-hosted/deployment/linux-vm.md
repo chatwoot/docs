@@ -59,6 +59,8 @@ nano .env
 
 3. Restart the **Chatwoot** server and enjoy using your self hosted Chatwoot.
 
+> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -r`.
+
 ```bash
 sudo systemctl restart chatwoot.target
 ```
@@ -157,7 +159,7 @@ journalctl -u chatwoot-worker.1.service -f
 If you used an older version of install script(<2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CLI,
 
 ```
-wget https://get.chatwoot.app/linux/install.sh -O /usr/bin/local/cwctl && chmod +x /usr/bin/local/cwctl
+wget https://get.chatwoot.app/linux/install.sh -O /usr/local/bin/cwctl && chmod +x /usr/local/bin/cwctl
 cwctl --help
 ```
 
