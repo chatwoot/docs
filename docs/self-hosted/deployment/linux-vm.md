@@ -32,7 +32,7 @@ chmod +x install.sh
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
 for domain setup, it will be at https://chatwoot.mydomain.com.
 
-Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you are logged in as `root` user not as the `ubuntu` user.
+> **Note** This will also install the Chatwoot CLI(`cwctl`) starting with Chatwoot v2.7.0, use `cwctl --help` to learn more.
 
 ## Configuring The installation Domain
 
@@ -45,7 +45,7 @@ Note: If you are running the script on Ubuntu VM on AWS EC2, make sure that you 
 
 For your Chatwoot installation to properly function, you would need to configure the essential environment variables like `FRONTEND_URL`, Mailer and a cloud storage config. Refer **[Environment variables](/docs/self-hosted/configuration/environment-variables)** for the full list.
 
-1. Login as **Chatwoot** and edit the .env file.
+1. Login as **chatwoot** user and edit the .env file.
 
 ```bash
 # Login as chatwoot user
@@ -60,7 +60,7 @@ nano .env
 3. Restart the **Chatwoot** server and enjoy using your self hosted Chatwoot.
 
 ```bash
-systemctl restart chatwoot.target
+sudo systemctl restart chatwoot.target
 ```
 
 ## Upgrading to a newer version of Chatwoot
@@ -68,6 +68,8 @@ systemctl restart chatwoot.target
 Whenever a new version of Chatwoot is released, use the following steps to upgrade your instance.
 
 > **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl --upgrade`.
+
+To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
 
 Run the following steps on your VM. Make changes based on your OS if you are on a non-Ubuntu system.
 
@@ -149,3 +151,14 @@ journalctl -u chatwoot-web.1.service -f
 journalctl -u chatwoot-worker.1.service -f
 
 ```
+
+## Install or Upgrade Chatwoot CLI
+
+If you used an older version of install script(<2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CLI,
+
+```
+wget https://get.chatwoot.app/linux/install.sh -O /usr/bin/local/cwctl && chmod +x /usr/bin/local/cwctl
+cwctl --help
+```
+
+> **Note**: The above command requires root access to install `cwctl` to `/usr/local/bin`.
