@@ -18,7 +18,7 @@ cwctl --version
 
 If `cwctl` is not present, follow the steps below to install Chatwoot CTL.
 
-### Install or Upgrade Chatwoot CLI
+### Install or Upgrade Chatwoot CTL
 
 If you used an older version of install script(<2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CTL,
 
