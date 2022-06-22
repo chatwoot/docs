@@ -19,4 +19,3 @@ For GCP, the timeout for a WebSocket connection depends on the `backend service 
 
 For Azure, the default timeout value is 240 seconds. Increase it to 300 seconds or more. [Refer to this guide.](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-tcp-idle-timeout)
 
-## FAQ
