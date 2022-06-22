@@ -7,7 +7,7 @@ title: "Troubleshooting a Chatwoot installation"
 
 ## Disconnected from Chatwoot
 
-Chatwoot uses WebSocket connections to deliver real-time messages. You will see the `Disconnected from Chatwoot` notification typically when this connection is broken.
+Chatwoot uses WebSocket connections to deliver real-time messages. You will see the `Disconnected from Chatwoot` notification when this connection is broken.
 
 ![disconnected-from-chatwoot](./images/troubleshooting/disconnected-from-chatwoot.png)
 
