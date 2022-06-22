@@ -3,9 +3,9 @@ sidebar_label: "Troubleshooting and FAQs"
 title: "Troubleshooting a Chatwoot installation"
 ---
 
-# Troubleshooting
+## Troubleshooting
 
-## Disconnected from Chatwoot
+### Disconnected from Chatwoot
 
 Chatwoot uses WebSocket connections to deliver real-time messages. You will see the `Disconnected from Chatwoot` notification when this connection is broken.
 
@@ -19,4 +19,4 @@ For GCP, the timeout for a WebSocket connection depends on the `backend service 
 
 For Azure, the default timeout value is 240 seconds. Increase it to 300 seconds or more. [Refer to this guide.](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-tcp-idle-timeout)
 
-# FAQ
+## FAQ
