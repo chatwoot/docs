@@ -9,7 +9,7 @@ Chatwoot uses [Cypress](https://www.cypress.io/) for end-to-end testing. Follow 
 
 You can run the Chatwoot test server using one of the following methods:
 
-### Using local Chatwoot installation (option 1)
+### Method 1—Using local Chatwoot installation
 
 > _For this method to work, you must install the necessary dependencies described in the [setup guide](/docs/contributing-guide/project-setup)._
 
@@ -32,7 +32,7 @@ Go to the Chatwoot codebase in your local machine and do the following:
   ```
 
 
-### Using Docker (option 2)
+### Method 2—Using Docker
 
 1. Ensure that you match the [pre-requisites](/docs/contributing-guide/environment-setup/docker#pre-requisites) before you set up Docker. Follow _steps 1 and 2_ of setting up the [development environment](/docs/contributing-guide/environment-setup/docker#development-environment).
 
