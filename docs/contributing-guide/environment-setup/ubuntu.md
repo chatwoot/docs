@@ -9,13 +9,13 @@ Run the following commands in the terminal.
 sudo apt-get update
 ```
 
-### Install Git
+### Installing Git
 
 ```bash
 sudo apt-get install git
 ```
 
-### Install RVM
+### Installing RVM
 
 1. To add PPA repositories, install `software-properties-common`.
 
@@ -29,25 +29,25 @@ sudo apt-get install git
    sudo apt-get install rvm
    ```
 
-2. Enable `Run command as a login shell` in terminal `Preferences`.
+2. Enable `Run command as a login shell` in terminal **Preferences**.
 
 3. Restart your computer.
 
-### Install Ruby
+### Installing Ruby
 
-Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.0.4:
+Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.0.4.
 
 ```bash
 rvm install ruby-3.0.4
 ```
 
-Use ruby 3.0.4 as default:
+Use Ruby 3.0.4 as default.
 
 ```bash
 rvm use 3.0.4 --default
 ```
 
-### Install Node.js
+### Installing Node.js
 
 Install Node.js from NodeSoure.
 
@@ -56,9 +56,9 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-### Install yarn
+### Installing yarn
 
-We use `yarn` as the package manager:
+Install `yarn` package manager.
 
 ```bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -69,11 +69,11 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install yarn
 ```
 
-### Install postgres
+### Installing postgres
 
 Chatwoot uses PostgreSQL database.
 
-Install postgres.
+Install postgres by running the following command:
 
 ```bash
 sudo apt install postgresql postgresql-contrib
@@ -91,7 +91,7 @@ Install `libpg-dev` dependencies for Ubuntu.
 sudo apt-get install libpq-dev
 ```
 
-### Install redis-server
+### Installing redis-server
 
 Chatwoot uses Redis server in agent assignments and reporting.
 
@@ -107,7 +107,7 @@ Chatwoot uses Redis server in agent assignments and reporting.
    sudo systemctl enable redis-server.service
    ```
 
-### Install imagemagick
+### Installing imagemagick
 
 Chatwoot uses `imagemagick` library to resize images for showing previews and smaller size based on context.
 
