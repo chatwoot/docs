@@ -1,6 +1,5 @@
 ---
-sidebar_label: "Cypress"
-title: "End-to-end testing with Cypress"
+title: "Testing with Cypress"
 ---
 
 Chatwoot uses [Cypress](https://www.cypress.io/) for end-to-end testing. Follow the steps below to run the tests on your local machine.

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Translation guide"
+sidebar_label: "Translation"
 title: "Translate Chatwoot to your language"
 help_discord: "https://discord.gg/uPtCrFfb9B"
 help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categories/translations"
