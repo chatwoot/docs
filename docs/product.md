@@ -58,6 +58,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Cookies](/product/others/cookies)
 
 ### Others
+- [Enterprise Edition](/docs/product/others/enterprise-edition)
 - [FAQ](/docs/product/others/faq)
 
 ### Compatibility and Requirements

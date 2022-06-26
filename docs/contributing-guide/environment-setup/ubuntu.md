@@ -19,15 +19,15 @@ sudo apt-get install git
 
 1. To add PPA repositories, install `software-properties-common`.
 
-    ```bash
-    sudo apt-get install software-properties-common
-    ```
+   ```bash
+   sudo apt-get install software-properties-common
+   ```
 
-    ```bash
-    sudo apt-add-repository -y ppa:rael-gc/rvm
-    sudo apt-get update
-    sudo apt-get install rvm
-    ```
+   ```bash
+   sudo apt-add-repository -y ppa:rael-gc/rvm
+   sudo apt-get update
+   sudo apt-get install rvm
+   ```
 
 2. Enable `Run command as a login shell` in terminal `Preferences`.
 
@@ -35,19 +35,17 @@ sudo apt-get install git
 
 ### Install Ruby
 
-Chatwoot APIs are built on Ruby on Rails.
+Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.0.4:
 
-1. Install Ruby 3.0.2.
+```bash
+rvm install ruby-3.0.4
+```
 
-    ```bash
-    rvm install ruby-3.0.2
-    ```
+Use ruby 3.0.4 as default:
 
-2. Use Ruby 3.0.2 as the default.
-
-    ```bash
-    rvm use 3.0.2 --default
-    ```
+```bash
+rvm use 3.0.4 --default
+```
 
 ### Install Node.js
 
@@ -99,15 +97,15 @@ Chatwoot uses Redis server in agent assignments and reporting.
 
 1. Install `redis-server`.
 
-    ```bash
-    sudo apt-get install redis-server
-    ```
+   ```bash
+   sudo apt-get install redis-server
+   ```
 
 2. Enable Redis to start on system boot.
 
-    ```bash
-    sudo systemctl enable redis-server.service
-    ```
+   ```bash
+   sudo systemctl enable redis-server.service
+   ```
 
 ### Install imagemagick
 

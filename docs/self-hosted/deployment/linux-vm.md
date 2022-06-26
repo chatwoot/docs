@@ -80,8 +80,8 @@ cd chatwoot
 git checkout master && git pull
 
 # Ensure the ruby version is upto date
-rvm install "ruby-3.0.2"
-rvm use 3.0.2 --default
+rvm install "ruby-3.0.4"
+rvm use 3.0.4 --default
 
 # Update dependencies
 bundle
@@ -100,6 +100,8 @@ exit
 cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
+
+systemctl daemon-reload
 
 # Restart the chatwoot server
 systemctl restart chatwoot.target

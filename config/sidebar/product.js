@@ -162,6 +162,6 @@ module.exports = [
     collapsible: false,
     label: "Others",
     type: "category",
-    items: ["product/others/faq"],
+    items: ["product/others/enterprise-edition","product/others/faq"],
   },
 ];

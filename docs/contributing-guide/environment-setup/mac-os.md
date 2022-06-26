@@ -32,25 +32,23 @@ curl -L https://get.rvm.io | bash -s stable
 
 ### Install Ruby
 
-Chatwoot APIs are built on Ruby on Rails.
-
-Install Ruby verision 3.0.2.
+Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.0.4.
 
 - If you're using `rvm`, run:
 
-    ```bash
-    rvm install ruby-3.0.2
-    rvm use 3.0.2
-    source ~/.rvm/scripts/rvm
-    ```
+  ```bash
+  rvm install ruby-3.0.4
+  rvm use 3.0.4
+  source ~/.rvm/scripts/rvm
+  ```
 
 - If you're using `rbenv` to manage Ruby versions, run:
 
-    ```bash
-    rbenv install 3.0.2
-    ```
+  ```bash
+  rbenv install 3.0.4
+  ```
 
-    `rbenv` identifies the Ruby version from the _.ruby-version_ file on the root of the project and loads it automatically.
+  `rbenv` identifies the Ruby version from the _.ruby-version_ file on the root of the project and loads it automatically.
 
 ### Install Node.js
 
@@ -70,7 +68,7 @@ brew install yarn
 
 ### Install postgres
 
-Chatwoot uses PostgreSQL database. The easiest way to get started with PostgreSQL on mac is by installing [PostgresApp](https://postgresapp.com). 
+Chatwoot uses PostgreSQL database. The easiest way to get started with PostgreSQL on mac is by installing [PostgresApp](https://postgresapp.com).
 
 You can also install postgres by running the following commands:
 
@@ -90,15 +88,15 @@ Chatwoot uses Redis server in agent assignments and reporting.
 
 1. Install `redis-server`.
 
-    ```bash
-    brew install redis
-    ```
+   ```bash
+   brew install redis
+   ```
 
 2. Start the redis service.
 
-    ```bash
-    brew services start redis
-    ```
+   ```bash
+   brew services start redis
+   ```
 
 ### Install imagemagick
 
