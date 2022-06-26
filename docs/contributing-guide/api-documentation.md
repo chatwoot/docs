@@ -2,9 +2,9 @@
 title: "API Documentation"
 ---
 
-Chatwoot uses [Swagger 2.0](https://swagger.io/specification/v2/) for documenting the API.
+Chatwoot uses [Swagger 2.0](https://swagger.io/specification/v2/) for documenting its APIs.
 
-### File/Directory structure
+### Directory
 
 ```bash
 - swagger/ ### folder in which all the API documentation is available
@@ -15,9 +15,9 @@ Chatwoot uses [Swagger 2.0](https://swagger.io/specification/v2/) for documentin
   - swagger.json
 ```
 
-### Build Swagger files
+### Building Swagger files
 
-A rake task is available to build `swagger.json` file after you have made changes to the swagger directory.
+After you've made changes to the directory, a rake task builds the `swagger.json` file.
 
 ```bash
 rake swagger:build
@@ -25,4 +25,4 @@ rake swagger:build
 
 ### Testing
 
-In development mode, `http://localhost:3000/swagger` is available to test whether the API changes has been updated.
+Testing can be done via `http://localhost:3000/swagger` in the development mode to check if changes have been updated.
