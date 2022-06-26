@@ -1,5 +1,5 @@
 ---
-title: "API Documentation"
+title: "API documentation"
 ---
 
 Chatwoot uses [Swagger 2.0](https://swagger.io/specification/v2/) for documenting its APIs.
