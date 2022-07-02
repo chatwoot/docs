@@ -1,11 +1,17 @@
 ---
-sidebar_label: "Setup Guide"
-title: "Project Setup"
+sidebar_label: "Setup guide"
+title: "Project setup"
 ---
 
-This guide will help you to setup and run Chatwoot in development mode. Please make sure you have completed the environment setup.
+This guide will help you set up and run Chatwoot in development mode.
 
-### Clone the repo
+:::note
+
+Before you begin, set up the environment based on your operating system.
+
+:::
+
+## Cloning the repo
 
 ```bash
 # change location to the path you want chatwoot to be installed
@@ -16,33 +22,31 @@ git clone https://github.com/chatwoot/chatwoot.git
 cd chatwoot
 ```
 
-### Install Ruby dependencies
-
-Use the following command to install ruby dependencies.
+## Installing Ruby dependencies
 
 ```bash
 bundle
 ```
 
-If you face issue with pg gem, please refer to [Common Errors](/docs/contributing-guide/common-errors#pg-gem-installation-error)
+If you face issues with pg gem, refer to [Common Errors](/docs/contributing-guide/common-errors#pg-gem-installation-error) to troubleshoot.
 
-### Install JavaScript dependencies
+## Installing JavaScript dependencies
+
+This command installs all required dependencies for Chatwoot application.
 
 ```bash
 yarn
 ```
 
-This would install all required dependencies for Chatwoot application.
-
-### Setup environment variables.
+## Setting up environment variables
 
 ```
 cp .env.example .env
 ```
 
-Please refer to [environment-variables](/docs/contributing-guide/environment-variables) to read on setting environment variables.
+For more information on setting environment variables, see [here](/contributing-guide/environment-variables).
 
-### Setup rails server
+## Setting up Rails server
 
 ```bash
 # run db migrations
@@ -53,7 +57,7 @@ bundle exec rake db:reset
 foreman start -f Procfile.dev
 ```
 
-### Login with credentials
+## Logging in with credentials
 
 ```bash
 http://localhost:3000
@@ -61,25 +65,29 @@ user name: john@acme.inc
 password: Password1!
 ```
 
-### Testing chat widget in your local environment 
+## Testing the chat widget
 
-When running Chatwoot in development environment, the chat widget can be accessed under the following URL.
+When running Chatwoot in the development environment, the chat widget can be accessed via:
 
 ```
 http://localhost:3000/widget_tests
 ```
 
-You can also test the `setUser` method by using
+You can also test the `setUser` method by using:
 
 ```
 http://localhost:3000/widget_tests?setUser=true
 ```
 
-### Docker for development
+## Docker for development
 
-> **Note**: Follow this section only if you are trying to setup Chatwoot via docker. Else skip this.
+:::note
 
-The first time you start your development environment run the following two commands:
+Follow this section only if you're trying to set up Chatwoot via Docker.
+
+:::
+
+The first time you start your development environment, run the following commands:
 
 ```bash
 # build and start the services
@@ -87,7 +95,8 @@ docker-compose up --build
 # prepare the database
 docker-compose exec server bundle exec rails db:prepare
 ```
-Then browse http://localhost:3000
+
+Then browse `http://localhost:3000`
 
 ```bash
 # To stop your environment use Control+C (on Mac) CTRL+C (on Win) or
@@ -103,8 +112,8 @@ docker-compose stop
 docker-compose build
 ```
 
-
 The docker-compose environment consists of:
+
 - chatwoot server
 - postgres
 - redis
@@ -118,11 +127,12 @@ docker-compose run -rm server bundle exec rake db:reset
 
 This command essentially runs postgres and redis containers and then run the rake command inside the chatwoot server container.
 
-### Running Cypress Tests
+## Running Cypress Tests
 
-Refer the docs to learn how to write cypress specs
-https://github.com/shakacode/cypress-on-rails
-https://docs.cypress.io/guides/overview/why-cypress.html
+To learn how to write Cypress specs, refer the following:
+
+- https://github.com/shakacode/cypress-on-rails
+- https://docs.cypress.io/guides/overview/why-cypress.html
 
 ```
 # in terminal tab1
@@ -131,8 +141,7 @@ overmind start -f Procfile.test
 yarn cypress open --project ./test
 ```
 
-
-### Debugging Docker for production
+## Debugging Docker for production
 
 You can use our official Docker image from [https://hub.docker.com/r/chatwoot/chatwoot](https://hub.docker.com/r/chatwoot/chatwoot)
 
@@ -140,12 +149,16 @@ You can use our official Docker image from [https://hub.docker.com/r/chatwoot/ch
 docker pull chatwoot/chatwoot
 ```
 
-You can create an image yourselves by running the following command on the root directory.
+To create an image, run the following command on the root directory:
 
 ```bash
 docker-compose -f docker-compose.production.yaml build
 ```
 
-This will build the image which you can depoy in Kubernetes (GCP, Openshift, AWS, Azure or anywhere), Amazon ECS or Docker Swarm. You can tag this image and push this image to docker registry of your choice.
+This builds the image that you can deploy in Kubernetes (GCP, Openshift, AWS, Azure, or anywhere), Amazon ECS, or Docker Swarm. You can tag this image and push it to a Docker registry of your choice.
+
+:::note
 
 Remember to make the required environment variables available during the deployment.
+
+:::

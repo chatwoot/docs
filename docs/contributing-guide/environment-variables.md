@@ -2,13 +2,9 @@
 title: 'Environment variables'
 ---
 
-For a complete set of production environment variables, please refer to [Production Environment Variables Guide](/docs/self-hosted/configuration/environment-variables)
+For a complete set of production environment variables, see [here](/docs/self-hosted/configuration/environment-variables).
 
-In addition to the above variables, you can use the following variables in development mode.
-
-### Use letter opener instead of mailhog/SMTP
-
-Set the following variable to open emails in letter opener instead of SMTP
+In addition to these, in development mode, you can use the Letter Opener instead of Mailhog or SMTP to open emails:
 
 ```
 LETTER_OPENER=true
