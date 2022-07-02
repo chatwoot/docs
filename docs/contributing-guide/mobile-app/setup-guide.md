@@ -1,41 +1,28 @@
 ---
-sidebar_label: "Setup Guide"
-title: "Setup guide for mobile app"
+title: "Setting up an app"
 ---
 
-- [Installation and setup](#installation-and-setup)
-  - [Prerequisites](#prerequisites)
-  - [Environment Variables](#environment-variables)
-  - [Setup firebase for push notification](#setup-firebase-for-push-notification)
-  - [Setup Sentry for error reporting](#setup-sentry-for-error-reporting) 
-- [Running](#running)
-    - [iOS](#ios) - **Mac is required if you wish to develop for iOS.**
-    - [Android](#android)
-- [Configure and run tests](#configure-and-run-tests)
+:::note
 
-## Installation and setup
-
-### Prerequisites
+Before you begin, install the following:
 
 - [Node.js](https://nodejs.org/en/download/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
 - [Yarn](https://yarnpkg.com/en/docs/install)
-- React Native CLI - Use `$ yarn global add react-native-cli` to install the CLI.
+- [React Native CLI](https://reactnative.dev/docs/environment-setup): To install the CLI, use `$ yarn global add react-native-cli`.
 
-More information on getting started can be found [here](https://reactnative.dev/docs/environment-setup)
+:::
 
-Clone the repository
+## Installation and setup
 
-`$ git clone git@github.com:chatwoot/chatwoot-mobile-app.git`
+After installing the above:
 
-And install dependencies
-
-`$ yarn`
+1. Clone the repository using the `$ git clone git@github.com:chatwoot/chatwoot-mobile-app.git` command.
+2. Install dependencies using the `$ yarn` command.
 
 ### Environment Variables
 
-Create `.env` file under root folder
-
+Create a `.env` file under the root folder.
 
 ```
 SENTRY_DSN=
@@ -45,80 +32,80 @@ POSTHOG_API_KEY=
 POSTHOG_API_HOST=
 MINIMUM_CHATWOOT_VERSION=1.15.0
 ```
-### Setup firebase for push notification
 
-- Create a new project in [firebase console](https://console.firebase.google.com/).
-- Generate [android credentials](https://rnfirebase.io/#generating-android-credentials) from firebase console. Then download the `google-services.json` file and place it inside of your project at the following location: `android/app/`.
-- Generate [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from firebase console. Then download the `GoogleService-Info.plist` file . Then add this file to project using `Xcode`. More details can be found [here](https://rnfirebase.io/#3-ios-setup). 
+### Setting up Firebase for push notifications
 
-### Setup Sentry for error reporting
+Create a new project in [Firebase](https://console.firebase.google.com/).
+  - For Android:
+      1. Generate the [Android credentials](https://rnfirebase.io/#generating-android-credentials) from the Firebase console.
+      1. Download the `google-services.json` file and place it inside your project under `android/app/`.
+  - For iOS:    
+    1. Generate the [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from the Firebase console. 
+    1. Download the `GoogleService-Info.plist` file and add it to your project using `Xcode`. For more information, see [here](https://rnfirebase.io/#3-ios-setup).
 
-Create a new project in [Sentry](https://sentry.io/for/react-native/)
+### Setting up Sentry for error reporting
 
-Add `SENTRY_DSN` value in `.env` file. If you want to supports native crashes, link the sentry SDK to your native projects.
+1. Create a new project in [Sentry](https://sentry.io/for/react-native/).
+2. Add `SENTRY_DSN` value in the `.env` file. If you want to support native crashes, link the Sentry SDK to your native projects.
+3. Run this command to generate the Sentry configuration.
 
-Run the following command to generate the Sentry configuration.
-
-```bash
-yarn sentry-wizard -i reactNative -p ios android
-cd ios && pod install
-```
-
-
+  ```bash
+  yarn sentry-wizard -i reactNative -p ios android
+  cd ios && pod install
+  ```
 
 ## Running
 
 ### iOS
 
-- `cd ios && pod install`
+- Run the following commands, or
 
-- `yarn ios`
+  1. `cd ios && pod install`
+  2. `yarn ios`
 
-OR
-
-Open `Chatwoot.xcworkspace` file under `ios` folder. Choose your target device and click playbutton.
+- Open the `Chatwoot.xcworkspace` file under the `ios` folder, choose your target device, and click **Play**.
 
 ### Android
 
-- Create `gradle.properties` file with following contents under `android/app` folder
+1. In the `android/app` folder, create the `gradle.properties` file with the following:
 
-```
-android.useAndroidX=true
-android.enableJetifier=true
-FLIPPER_VERSION=0.54.0
-org.gradle.jvmargs=-Xmx4608m
-```
+  ```
+  android.useAndroidX=true
+  android.enableJetifier=true
+  FLIPPER_VERSION=0.54.0
+  org.gradle.jvmargs=-Xmx4608m
+  ```
 
-- `yarn android`
+2. Run the `yarn android` command.
 
-## Configure and run tests
+## Configuring and running tests
 
-Add a new brew formula
+1. Add a new brew formula.
 
-```
-brew tap wix/brew
-```
+  ```
+  brew tap wix/brew
+  ```
 
-Install simulators
+2. Install simulators.
 
-```
-brew install wix/applesimutils
-```
+  ```
+  brew install wix/applesimutils
+  ```
 
-Build application:
+3. Build the application.
 
-```
-detox build --configuration ios
-```
+  ```
+  detox build --configuration ios
+  ```
 
-Run tests:
+4. Run tests.
 
-```
-detox test --configuration ios --loglevel trace
-```
+  ```
+  detox test --configuration ios --loglevel trace
+  ```
 
-Manage simulators:
+5. Manage simulators.
 
-```
-/usr/bin/xcrun simctl list
-```
+  ```
+  /usr/bin/xcrun simctl list
+  ```

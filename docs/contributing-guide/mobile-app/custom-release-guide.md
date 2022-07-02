@@ -1,53 +1,54 @@
 ---
-sidebar_label: "Custom Release Guide"
-title: "Custom release guide for mobile app"
+title: "Custom release"
 ---
 
 ## Deep linking
 
 ### Android
 
-Open `AndroidManifest.xml` file under `android/app/src/main/` folder.
+1. Open `AndroidManifest.xml` file under `android/app/src/main/` folder.
 
+2. Replace `android:host` with your installation URL. For example:
 
-Replace `android:host` with your installation url
+   ```
+   <data android:scheme="https" android:host="app.chatwoot.com" />
+   ```
 
-Ex:
+3. To test deep linking on your local machine, run the below command in the terminal.
 
-```
-<data android:scheme="https" android:host="app.chatwoot.com" />
-```
+   ```
+   adb shell am start -W -a android.intent.action.VIEW -d "https://{INSTALLATION_URL}/app/accounts/{ACCOUNT_ID}/conversations/{CONVERSATION_URL} {APP_PACKAGE_NAME}
+   ```
 
-In order to test deep linking in local machine run following command in terminal.
+   For example:
 
-```
-adb shell am start -W -a android.intent.action.VIEW -d "https://{INSTALLATION_URL}/app/accounts/{ACCOUNT_ID}/conversations/{CONVERSATION_URL} {APP_PACKAGE_NAME}
-```
-
-Ex:
-
-```
-adb shell am start -W -a android.intent.action.VIEW -d "https://app.chatwoot.com/app/accounts/47/conversations/11” com.chatwoot.app
-
-```
+   ```
+   adb shell am start -W -a android.intent.action.VIEW -d "https://app.chatwoot.com/app/accounts/47/conversations/11” com.chatwoot.app
+   ```
 
 ### iOS
 
-Set `IOS_APP_ID` in chatwoot server
+1. Set `IOS_APP_ID` in the Chatwoot server.
 
-Open `Chatwoot.entitlements` file under `ios/` folder.
+2. Open `Chatwoot.entitlements` file under `ios/` folder.
 
-Replace `*.chatwoot.com` with your installation url
+3. Replace `*.chatwoot.com` with your installation URL.
 
 ## Deployment
 
-Detailed guide for [Publishing a React Native App to the App Store](https://www.reactnativeschool.com/publishing-react-native-app/)
+:::info
+
+The official Chatwoot mobile app is deployed using [Fastlane](https://docs.fastlane.tools/getting-started/cross-platform/react-native/).
+
+:::
+
+For a step-by-step guide on how to publish an app to the Apple App Store and Google Play Store, see [here](https://www.reactnativeschool.com/publishing-react-native-app/).
 
 ### Android
 
-In order to distribute your Android application via Google Play store it needs to be signed with a release key that then needs to be used for all future updates. More details can be found [here](https://reactnative.dev/docs/signed-apk-android)
+To distribute your Android application via the Google Play store, it must be signed with a release key that must then be used for all future updates. For more information, see [here](https://reactnative.dev/docs/signed-apk-android).
 
-Update `gradle.properties` file under `android/app` folder with following contents
+In the `android/app` folder, update the `gradle.properties` file with the following:
 
 ```
 android.useAndroidX=true
@@ -60,6 +61,6 @@ RELEASE_STORE_PASSWORD=<RELEASE_STORE_PASSWORD>
 RELEASE_KEY_PASSWORD=<RELEASE_KEY_PASSWORD>
 ```
 
-For releasing the android follow the [guide](https://reactnative.dev/docs/signed-apk-android)
+### iOS
 
-- Important - We are using [Fastlane](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for deploying chatwoot official mobile app.
+For more information, see [here](https://reactnative.dev/docs/publishing-to-app-store).
