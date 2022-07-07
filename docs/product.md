@@ -21,9 +21,12 @@ This user guide includes a description of the features and capabilities, modes o
 - [Facebook](/docs/product/channels/facebook)
 - [Instagram](/docs/product/channels/instagram)
 - [Twitter](/docs/product/channels/twitter)
-- [Whatsapp via Twilio](/docs/product/channels/twilio-whatsapp-sms)
-- [API Channel](/docs/product/channels/api/create-channel)
+- [Whatsapp via Twilio](/docs/product/channels/whatsapp/twilio)
+- [Whatsapp via 360Dialog](/docs/product/channels/whatsapp/360dialog)
+- [SMS via Twilio](/docs/product/channels/sms/twilio)
+- [SMS via Bandwidth](/docs/product/channels/sms/bandwidth)
 - [Email](/docs/product/channels/email/create-channel)
+- [API Channel](/docs/product/channels/api/create-channel)
 - [Telegram](/docs/product/channels/telegram)
 - [Line](/docs/product/channels/line)
 
@@ -39,6 +42,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Multilingual Support](/docs/user-guide/features/multilingual-support)
 - [Reports](/docs/user-guide/reports)
 - [Segments](/docs/user-guide/features/segments)
+- [Pre Chat Form](/docs/user-guide/features/pre-chat-form)
 
 ### Mobile app
 
@@ -52,6 +56,10 @@ This user guide includes a description of the features and capabilities, modes o
 - [Webhooks](/docs/product/features/webhooks)
 - [Websocket Events](/product/others/websocket-events)
 - [Cookies](/product/others/cookies)
+
+### Others
+- [Enterprise Edition](/docs/product/others/enterprise-edition)
+- [FAQ](/docs/product/others/faq)
 
 ### Compatibility and Requirements
 

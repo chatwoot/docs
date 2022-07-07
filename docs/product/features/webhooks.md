@@ -1,21 +1,21 @@
 ---
-sidebar_label: "Webhooks"
+sidebar_label: "Configure Webhooks"
 title: "Getting started with webhooks in Chatwoot"
 ---
 
-Webhooks are HTTP callbacks which can be defined for every account. They are triggered by events like message creation in Chatwoot. You can create more than one webhook for an account.
+Webhooks are HTTP callbacks that are defined in every account. These events are triggered when an action like message creation happens in Chatwoot. You can create more than one webhook for an account.
 
-**Step 1**. Click on Integrations link is settings sidebar. Click on "Configure" button.
+**Step 1** Click on the Integrations link in the settings sidebar. Next, click on "Configure" button.
 
-![integrations](./images/integrations.png)
+![integrations](./images/webhooks/integrations.png)
 
 **Step 2**. You will see the list of webhooks you have already added to the account.
 
-![configure](./images/configure.png)
+![configure](./images/webhooks/configure.png)
 
-**Step 3**. Click on the "Add new webhook", it will display a modal where you can input the URL to which the POST request should be sent.
+**Step 3**. Click on the "Add new webhook", and it will display a modal where you can input the URL to which the POST request should be sent. Next, you need to select the events you want to subscribe. This option would allow you to only listen to the relevant events in Chatwoot.
 
-![add-a-webhook](./images/add-a-webhook.png)
+![add-a-webhook](./images/webhooks/add-a-webhook.jpg)
 
 Chatwoot will send a POST request with the following payload to the configured URLs for various updates happening in your account.
 
@@ -28,7 +28,7 @@ Chatwoot will send a POST request with the following payload to the configured U
   "id": "1", // Message ID
   "content": "Hi", // Content of the message
   "created_at": "2020-03-03 13:05:57 UTC", // Time at which the message was sent
-  "message_type": "incoming", // This will have a type incoming, outgoing or template. Incoming messages are sent by the user from the widget, Outgoing messages are sent by the agent to the user.
+  "message_type": "incoming", // This will have a type incoming, outgoing or template. The user from the widget sends incoming messages, and the agent sends outgoing messages to the user.
   "content_type": "enum", // This is an enum, it can be input_select, cards, form or text. The message_type will be template if content_type is one og these. Default value is text
   "content_attributes": {} // This will an object, different values are defined below
   "source_id": "", // This would the external id if the inbox is a Twitter or Facebook integration.

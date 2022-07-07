@@ -5,7 +5,7 @@ title: "Production deployment guide for Linux VM"
 
 ## Deploying to Linux VM
 
-This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**. We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to OS if you are on a non-Ubuntu system.
+This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**. We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to OS if you are on a non-Ubuntu system. Make sure you are on instance with the [recommended hardware specifications](/docs/self-hosted/deployment/requirements#hardware-requirements).
 
 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/srolHJskK5Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
 
@@ -16,17 +16,17 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**
 > Refer the `Configuring the installation domain` section below.
 
 
-1. Create a **setup.sh** file and copy the content from the above link or use the following commands.
+1. Create an **install.sh** file using the following commands.
 
 ```bash
-wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
-chmod 755 setup.sh
+wget https://get.chatwoot.app/linux/install.sh
+chmod +x install.sh
 ```
 
 2. Execute the script, and it will take care of the initial **Chatwoot** setup.
 
 ```bash
-./setup.sh master
+./install.sh master
 ```
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
@@ -80,8 +80,8 @@ cd chatwoot
 git checkout master && git pull
 
 # Ensure the ruby version is upto date
-rvm install "ruby-3.0.2"
-rvm use 3.0.2 --default
+rvm install "ruby-3.0.4"
+rvm use 3.0.4 --default
 
 # Update dependencies
 bundle
@@ -100,6 +100,8 @@ exit
 cp /home/chatwoot/chatwoot/deployment/chatwoot-web.1.service /etc/systemd/system/chatwoot-web.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot-worker.1.service /etc/systemd/system/chatwoot-worker.1.service
 cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwoot.target
+
+systemctl daemon-reload
 
 # Restart the chatwoot server
 systemctl restart chatwoot.target

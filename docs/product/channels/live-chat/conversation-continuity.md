@@ -24,6 +24,8 @@ If a mandatory pre-chat form is enabled. the conversation starts with a screen a
 
 <img alt="chatwoot-prechat-form" src={require('./images/conversation-continuity/chatwoot-prechat-form.png').default} class="mw-25" />
 
+You can find more details about configuring pre-chat form via this [guide](user-guide/features/pre-chat-form.md)
+
 ### 3.via Email Collect Prompt
 
 When the pre-chat form is disabled and the customer email is unknown, chatwoot starts a conversation with an email collect prompt.

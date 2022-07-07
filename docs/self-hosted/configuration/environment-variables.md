@@ -5,20 +5,34 @@ title: "Environment Variables"
 
 ## The .env File
 
-We use `dotenv-rails` gem to manage the environment variables. There is a file called `env.example` in the root directory of this project with all the environment variables set to empty value. You can set the correct values as per the following options. Once you set the values, you should rename the file to `.env` before you start the server.
+We use the `dotenv-rails` gem to manage the environment variables. There is a file called `env.example` in the root directory of this project with all the environment variables set to empty values. You can set the correct values as per the following options. Once you set the values, you should rename the file to `.env` before you start the server.
 
-### Configure frontend URL (Domain)
+## Configure frontend URL (domain)
 
-Provide your chatwoot domain as frontend url.
+Provide your chatwoot domain as frontend URL.
 
 ```bash
 FRONTEND_URL='https://your-chatwoot-domain.tld'
 ```
 
+## Rails production variables
 
-### Database configuration
+For production deployment, you have to set the following variables
 
-You can set Postgres connection URI as `DATABASE_URL` in the environment to connect to the database.
+```bash
+RAILS_ENV=production
+SECRET_KEY_BASE=replace_with_your_own_secret_string
+```
+
+You can generate `SECRET_KEY_BASE` using `rake secret` command from the project root folder.
+
+## Database configuration
+
+Postgres can be configured in two ways: via `DATABASE_URL` or setting up independent Postgres variables.
+
+### Configure Postgres
+
+Set the `DATABASE_URL` variable with value as Postgres connection URI to connect to the database.
 
 The URI is of the format
 
@@ -26,29 +40,35 @@ The URI is of the format
 postgresql://[user[:password]@][netloc][:port][,...][/dbname][?param1=value1&...]
 ```
 
-Alternatively, use the following values in database.yml which lives inside `config` directory.
+Or you can set the following environment variables to configure Postgres. Replace the values here with yours. Skip this
+if you have configured `DATABASE_URL`.
 
 ```bash
-development:
-  <<: *default
-  username: postgres
-  password:
-  database: chatwoot_dev
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DATABASE=chatwoot_production
+POSTGRES_USERNAME=admin
+POSTGRES_PASSWORD=password
 ```
 
-### Configure FB Channel
+### Configure Redis
 
-To use FB Channel, you have to create an Facebook app in developer portal. You can find more details about creating FB channels [here](https://developers.facebook.com/docs/apps/#register)
+For development, you can use the following URL to connect to Redis. For production, configure your Redis URL.
 
 ```bash
-FB_VERIFY_TOKEN=
-FB_APP_SECRET=
-FB_APP_ID=
+REDIS_URL='redis://127.0.0.1:6379'
 ```
 
-### Configure emails
+To authenticate Redis connections made by the app server and sidekick, if it's protected by a password, use the following environment variable to set the password.
 
-For development, you don't need an email provider. Chatwoot uses [letter-opener](https://github.com/ryanb/letter_opener) gem to test emails locally
+```bash
+REDIS_PASSWORD=
+```
+
+
+## Configure emails
+
+For development, you don't need an email provider. Chatwoot uses the [letter-opener](https://github.com/ryanb/letter_opener) gem to test emails locally
 
 For production use, please configure the following variables.
 
@@ -113,70 +133,32 @@ SMTP_USERNAME=<Your SMTP username displayed under Settings -> SMTP & API info>
 SMTP_PASSWORD=<Any valid API key, create an API key under Settings -> SMTP & API Info>
 ```
 
-### Configure default language
+## Configure default language
 
 ```bash
 DEFAULT_LOCALE='en'
 ```
 
-### Configure storage
+## Configure storage
 
-Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server.
+Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server. 
 
-But you can change it to use any of the cloud providers like amazon s3, microsoft azure and google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
+But you can change it to use any of the cloud providers like amazon s3, microsoft azure, google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
 
 ```bash
 ACTIVE_STORAGE_SERVICE=local
 ```
 
-### Configure Redis
+When `local` storage is used the files are stored under `public/uploads` directory in the chatwoot root folder.
 
-For development, you can use the following url to connect to redis.
+> It is recommended to use a cloud provider for your chatwoot storage to ensure proper backup of the stored attachments and prevent data loss. 
 
-```bash
-REDIS_URL='redis://127.0.0.1:6379'
-```
 
-To authenticate redis connections made by app server and sidekiq, if it's protected by a password, use the following
-environment variable to set the password.
+## Rails Logging Variables
 
-```bash
-REDIS_PASSWORD=
-```
-
-### Configure Postgres host
-
-You can set the following environment variable to set the host for postgres.
-
-```bash
-POSTGRES_HOST=localhost
-```
-
-For production and testing you have the following variables for defining the postgres database,
-username and password.
-
-```bash
-POSTGRES_DATABASE=chatwoot_production
-POSTGRES_USERNAME=admin
-POSTGRES_PASSWORD=password
-```
-
-### Rails Production Variables
-
-For production deployment, you have to set the following variables
-
-```bash
-RAILS_ENV=production
-SECRET_KEY_BASE=replace_with_your_own_secret_string
-```
-
-You can generate `SECRET_KEY_BASE` using `rake secret` command from project root folder.
-
-### Rails Logging Variables
-
-By default chatwoot will capture `info` level logs in production. Ref [rails docs](https://guides.rubyonrails.org/debugging_rails_applications.html#log-levels) for the additional log level options.
+By default, Chatwoot will capture `info` level logs in production. Ref [rails docs](https://guides.rubyonrails.org/debugging_rails_applications.html#log-levels) for the additional log-level options.
 We will also retain 1 GB of your recent logs and your last shifted log file.
-You can fine tune these settings using the following environment variables
+You can fine-tune these settings using the following environment variables
 
 ```bash
 # possible values: 'debug', 'info', 'warn', 'error', 'fatal' and 'unknown'
@@ -185,32 +167,21 @@ LOG_LEVEL=
 LOG_SIZE= 1024
 ```
 
-### Push Notification
+## Configure FB Channel
 
-Chatwoot uses web push for push notification on the dashboard. Inorder to get the push notifications working you have to setup the following [VAPID](https://tools.ietf.org/html/draft-thomson-webpush-vapid-02) keys.
+To use FB Channel, you have to create a Facebook app in the developer portal. You can find more details about creating FB channels [here](https://developers.facebook.com/docs/apps/#register)
 
 ```bash
-VAPID_PUBLIC_KEY=
-VAPID_PRIVATE_KEY=
+FB_VERIFY_TOKEN=
+FB_APP_SECRET=
+FB_APP_ID=
 ```
 
-If you are comfortable with the Rails console, you could run `rails console` and run the following commands
+## Using CDN for asset delivery
 
-```rb
-vapid_key = Webpush.generate_key
+With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup a CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
 
-# Copy the following to environment variables
-vapid_key.public_key
-vapid_key.private_key
-```
-
-Or you can generate a VAPID key from https://d3v.one/vapid-key-generator/
-
-### Using CDN for asset delivery
-
-With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
-
-### Enable new account signup
+## Enable new account signup
 
 By default, Chatwoot will not allow users to create an account[multi-tenancy] from the login page. However, if you are setting up a public server, you can enable signup using:
 

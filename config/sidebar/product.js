@@ -34,6 +34,7 @@ module.exports = [
           "product/channels/live-chat/create-website-channel",
           "product/channels/live-chat/sdk/setup",
           "product/channels/live-chat/sdk/identity-validation",
+          "product/channels/live-chat/sdk/live-chat-dark-mode",
           "product/channels/live-chat/conversation-continuity",
           {
             "Setup Instructions": [
@@ -52,13 +53,16 @@ module.exports = [
       "product/channels/facebook",
       "product/channels/instagram",
       "product/channels/twitter",
-      "product/channels/twilio-whatsapp-sms",
       {
-        "API Channel": [
-          "product/channels/api/create-channel",
-          "product/channels/api/send-messages",
-          "product/channels/api/receive-messages",
-          "product/channels/api/client-apis",
+        "Whatsapp Channel": [
+          "product/channels/whatsapp/twilio",
+          "product/channels/whatsapp/360dialog",
+        ],
+      },
+      {
+        "SMS Channel": [
+          "product/channels/sms/twilio",
+          "product/channels/sms/bandwidth",
         ],
       },
       {
@@ -75,6 +79,14 @@ module.exports = [
               "product/channels/email/gmail/add-forward-email",
             ],
           },
+        ],
+      },
+      {
+        "API Channel": [
+          "product/channels/api/create-channel",
+          "product/channels/api/send-messages",
+          "product/channels/api/receive-messages",
+          "product/channels/api/client-apis",
         ],
       },
       "product/channels/telegram",
@@ -102,6 +114,7 @@ module.exports = [
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",
+      "user-guide/features/pre-chat-form",
       {
         type: "category",
         label: "Campaigns",
@@ -115,7 +128,6 @@ module.exports = [
         label: "Integrations",
         items: [
           "product/channels/live-chat/integrations/dialogflow",
-          "product/features/webhooks",
           "product/features/slack",
         ],
       },
@@ -129,7 +141,11 @@ module.exports = [
     items: [
       "product/others/agent-bots",
       "product/others/interactive-messages",
-      "product/others/webhook-events",
+      {
+        type: "category",
+        label: "Webhooks",
+        items: ["product/features/webhooks", "product/others/webhook-events"],
+      },
       "product/others/websocket-events",
       "product/others/cookies",
     ],
@@ -140,5 +156,12 @@ module.exports = [
     label: "Mobile App",
     type: "category",
     items: ["product/mobile-app/android", "product/mobile-app/ios"],
+  },
+  {
+    collapsed: false,
+    collapsible: false,
+    label: "Others",
+    type: "category",
+    items: ["product/others/enterprise-edition","product/others/faq"],
   },
 ];

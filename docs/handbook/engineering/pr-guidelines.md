@@ -39,6 +39,21 @@ Please ensure that the commit message is a proper sentence before merging a pull
 
 - Capitalize the subject line
 
+
+#### Commit Message Structure
+
+A commit message should be structured as follows. 
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Type should follow Conventional Commit Specification. You can read more about the type and conventional commit specification here. https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary
+
 ### Update product documentation
 
 Please make sure that product docs are updated before merging the PR. In addition, the PR owner should check the requirement of any documentation changes related to the raised PR.
