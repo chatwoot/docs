@@ -76,7 +76,6 @@ You can open thje popout window programatically with the `popoutChatWindow()` me
 To initiate this, call the method like below. 
 ```js
 window.$chatwoot.popoutChatWindow();
-};
 ```
 
 
