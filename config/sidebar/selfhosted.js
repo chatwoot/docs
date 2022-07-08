@@ -31,6 +31,7 @@ module.exports = [
       "self-hosted/deployment/azure",
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
+      "self-hosted/deployment/troubleshooting",
     ],
   },
   {
