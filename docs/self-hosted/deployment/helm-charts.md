@@ -226,7 +226,7 @@ Redis is installed along with the chart if you choose the default setup. To use 
 ## Upgrading
 
 
-## To 0.6.x
+### To 0.6.x
 
 Existing labels were causing issues with `helm upgrade`. `0.6.x` introduces breaking changes related to selector 
 labels used for deployements. Please delete your helm release and recreate. Deleting your helm release will 
@@ -239,8 +239,8 @@ helm install chatwoot chatwoot/chatwoot
 ```
 
 
-## Error debugging
+## TroubleShooting
 
 
-## "pod has unbound immediate PersistentVolumeClaims"
-Make sure the "Persistent Volume Claims" can be satisfied. Refer to: Prerequisites
+### pod has unbound immediate PersistentVolumeClaims
+Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisites](#prerequisites).
