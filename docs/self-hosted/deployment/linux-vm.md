@@ -5,7 +5,7 @@ title: "Production deployment guide for Linux VM"
 
 ## Deploying to Linux VM
 
-This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS / 20.10**. We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to OS if you are on a non-Ubuntu system.
+This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS**. We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to the operating system if you are on a non-Ubuntu system.
 
 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/srolHJskK5Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
 
@@ -69,7 +69,7 @@ sudo systemctl restart chatwoot.target
 
 Whenever a new version of Chatwoot is released, use the following steps to upgrade your instance.
 
-> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl --upgrade`.
+> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl --upgrade` to upgrade your chatwoot installation.
 
 To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
 
@@ -114,16 +114,6 @@ systemctl daemon-reload
 systemctl restart chatwoot.target
 ```
 
-### If precompile fails
-
-If the asset precompilation step fails with `ActionView::Template::Error (Webpacker can't find application.css in /home/chatwoot/chatwoot/public/packs/manifest.json)` or if you face issues while restarting the server, try the following command and restart the server.
-
-```
-RAILS_ENV=production rake assets:clean assets:clobber assets:precompile
-```
-
-This command would clear the existing compiled assets and would recompile all the assets. Read more about it [here](https://edgeguides.rubyonrails.org/command_line.html#bin-rails-assets)
-
 ## Running Rails Console
 
 > **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -c`.
@@ -164,3 +154,15 @@ cwctl --help
 ```
 
 > **Note**: The above command requires root access to install `cwctl` to `/usr/local/bin`.
+
+
+## Troubleshooting
+### If precompile fails
+
+If the asset precompilation step fails with `ActionView::Template::Error (Webpacker can't find application.css in /home/chatwoot/chatwoot/public/packs/manifest.json)` or if you face issues while restarting the server, try the following command and restart the server.
+
+```
+RAILS_ENV=production rake assets:clean assets:clobber assets:precompile
+```
+
+This command would clear the existing compiled assets and would recompile all the assets. Read more about it [here](https://edgeguides.rubyonrails.org/command_line.html#bin-rails-assets)

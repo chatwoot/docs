@@ -44,11 +44,11 @@ Whenever a new version of Chatwoot is released, use the following steps to upgra
 sudo cwctl --upgrade
 ```
 
-> **Note**: This will upgrde your Chatwoot instance to latest stable release. If you are running a custom branch in production do not use this to upgrade.
+> **Note**: This will upgrade your Chatwoot instance to the latest stable release. If you are running a custom branch in production do not use this to upgrade.
 
 ### Setup Nginx with SSL after installation
 
-To setup Nginx with SSL after inital setup(if you answered `no` to webserver/SSL setup during first install)
+To set up Nginx with SSL after initial setup(if you answered `no` to webserver/SSL setup during the first install)
 
 > **Note**: Please add an A record pointing to your Chatwoot instance IP before proceeding.
 
