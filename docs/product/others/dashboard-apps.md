@@ -14,9 +14,9 @@ When you embed your application using the dashboard in Chatwoot, your applicatio
 2. Click on "Add new dashboard app"
 3. Add your app name and the URL of your app.
 
-###. Receiving data from Chatwoot into your app.
+### Receiving data from Chatwoot into your app.
 
-Chatwoot will send you the context of the conversation and the contact as a window event. You can listen to it in your app like below
+Chatwoot will send you the context of the conversation and the contact as a window event. You can listen to it in your app as described below.
 
 ```js
 window.addEventListener('message', function(event) {
