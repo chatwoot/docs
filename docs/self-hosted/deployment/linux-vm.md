@@ -27,7 +27,7 @@ chmod +x install.sh
 2. Execute the script, and it will take care of the initial **Chatwoot** setup.
 
 ```bash
-./install.sh -i master
+./install.sh --install
 ```
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
