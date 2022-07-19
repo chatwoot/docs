@@ -6,7 +6,7 @@ Dashboard Apps allow organizations to embed an application inside the Chatwoot d
 
 When you embed your application using the dashboard in Chatwoot, your application will get the context of the conversation and contact as a window event. Implement a listener for the message event on your page to receive the context.
 
-![interactive_messages](./images/dashboard-apps.gif)
+![interactive_messages](./images/dapps.gif)
 
 ### How to create a dashboard app
 
