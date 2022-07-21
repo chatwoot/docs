@@ -7,15 +7,12 @@ title: "Production deployment guide for Linux VM"
 
 This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS**. We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to the operating system if you are on a non-Ubuntu system.
 
-
-<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/srolHJskK5Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
-
+<iframe width="100%" height="443" src="https://www.youtube.com/embed/vu_61D1VFAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Steps to install
 
 > **Note**: If you plan to use a domain with chatwoot, please add an A record before proceeding.
-> Refer the `Configuring the installation domain` section below.
-
+> Refer to the `Configuring the installation domain` section below.
 
 1. Create an **install.sh** file using the following commands.
 
@@ -24,27 +21,27 @@ wget https://get.chatwoot.app/linux/install.sh
 chmod +x install.sh
 ```
 
-2. Execute the script, and it will take care of the initial **Chatwoot** setup.
+2. Execute the script. The script will take care of the initial **Chatwoot** setup.
 
 ```bash
 ./install.sh --install
 ```
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
-for domain setup, it will be at https://chatwoot.mydomain.com.
+   for domain setup, it will be at https://chatwoot.mydomain.com.
 
-> **Note** This will also install the Chatwoot CLI(`cwctl`) starting with Chatwoot v2.7.0, use `cwctl --help` to learn more.
+> **Note** This will also install the Chatwoot CLI(`cwctl`) starting with Chatwoot v2.7.0. Use `cwctl --help` to learn more.
 
 ## Configuring The installation Domain
 
 1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation IP address.
 2. Continue with the installation script by entering `yes` when prompted about domain setup.
-4. Enter your domain, and the script will take care of configuring Nginx and SSL via LetsEncrypt.
+3. Enter your domain. The script will take care of configuring Nginx and SSL via LetsEncrypt.
 4. Your Chatwoot installation should be accessible from `https://chatwoot.mydomain.com` now.
 
 ## Configure the required environment variables
 
-For your Chatwoot installation to properly function, you would need to configure the essential environment variables like `FRONTEND_URL`, Mailer and a cloud storage config. Refer **[Environment variables](/docs/self-hosted/configuration/environment-variables)** for the full list.
+For your Chatwoot installation to properly function, you would need to configure the essential environment variables like `FRONTEND_URL`, Mailer, and a cloud storage config. Refer **[Environment variables](/docs/self-hosted/configuration/environment-variables)** for the full list.
 
 1. Login as **chatwoot** user and edit the .env file.
 
@@ -58,9 +55,9 @@ nano .env
 
 2. Refer **[Environment variables](/docs/self-hosted/configuration/environment-variables)** and update the required variables. Save the `.env` file.
 
-3. Restart the **Chatwoot** server and enjoy using your self hosted Chatwoot.
+3. Restart the **Chatwoot** server and enjoy using your self-hosted Chatwoot.
 
-> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -r`.
+> **Note** If you have Chatwoot CLI(`cwctl`) installed, use `cwctl -r`.
 
 ```bash
 sudo systemctl restart chatwoot.target
@@ -70,7 +67,7 @@ sudo systemctl restart chatwoot.target
 
 Whenever a new version of Chatwoot is released, use the following steps to upgrade your instance.
 
-> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl --upgrade` to upgrade your chatwoot installation.
+> **Note** If you have Chatwoot CLI(`cwctl`) installed, use `cwctl --upgrade` to upgrade your Chatwoot installation.
 
 To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
 
@@ -117,7 +114,7 @@ systemctl restart chatwoot.target
 
 ## Running Rails Console
 
-> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -c`.
+> **Note** If you have Chatwoot CLI(`cwctl`) installed, use `cwctl -c`.
 
 ```
 # Login as Chatwoot user
@@ -132,7 +129,7 @@ RAILS_ENV=production bundle exec rails c
 
 ## Viewing Logs
 
-> **Note** If you have Chatwoot CLI(`cwctl`) intalled, use `cwctl -l web` or `cwctl -l worker`.
+> **Note** If you have Chatwoot CLI(`cwctl`) installed, use `cwctl -l web` or `cwctl -l worker`.
 
 Run the following commands in your ubuntu shell
 
@@ -156,8 +153,8 @@ cwctl --help
 
 > **Note**: The above command requires root access to install `cwctl` to `/usr/local/bin`.
 
-
 ## Troubleshooting
+
 ### If precompile fails
 
 If the asset precompilation step fails with `ActionView::Template::Error (Webpacker can't find application.css in /home/chatwoot/chatwoot/public/packs/manifest.json)` or if you face issues while restarting the server, try the following command and restart the server.
