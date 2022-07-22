@@ -21,6 +21,7 @@ This user guide includes a description of the features and capabilities, modes o
 - [Facebook](/docs/product/channels/facebook)
 - [Instagram](/docs/product/channels/instagram)
 - [Twitter](/docs/product/channels/twitter)
+- [Whatsapp via Whatsapp Cloud](/docs/product/channels/whatsapp/whatsapp-cloud)
 - [Whatsapp via Twilio](/docs/product/channels/whatsapp/twilio)
 - [Whatsapp via 360Dialog](/docs/product/channels/whatsapp/360dialog)
 - [SMS via Twilio](/docs/product/channels/sms/twilio)
