@@ -55,8 +55,9 @@ module.exports = [
       "product/channels/twitter",
       {
         "Whatsapp Channel": [
+          "product/channels/whatsapp/whatsapp-cloud",
           "product/channels/whatsapp/twilio",
-          "product/channels/whatsapp/360dialog",
+          "product/channels/whatsapp/360dialog"
         ],
       },
       {
