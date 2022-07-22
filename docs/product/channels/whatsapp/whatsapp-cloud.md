@@ -65,7 +65,7 @@ You should also subscribe to message fields events under Webhooks Fields on your
 
 ## FAQ
 
-### How to configure multiple numbers configured under a single Facebook app?
+### How to configure multiple numbers under a single Facebook app?
 
 Facebook App allows configuring only a single Webhook endpoint. So create Inboxes in Chatwoot for all the numbers as required. You will need to configure the Webhook url provided for only one of these inboxes in the Facebook app for all the other inboxes to work.
 
