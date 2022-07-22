@@ -19,157 +19,160 @@ When you embed your application using the dashboard in Chatwoot, your applicatio
 Chatwoot will send you the context of the conversation and the contact as a window event. You can listen to it in your app as described below.
 
 ```js
-window.addEventListener('message', function(event) {
+window.addEventListener("message", function (event) {
   if (!isJSONValid(event.data)) {
-    return
+    return;
   }
 
   const eventData = JSON.parse(event.data);
-})
+});
 ```
 
-### Event data payload schema
+## Event Payload
 
-The event data payload is a JSON object with the following properties:
+### conversation object
 
+```json
+{
+  "meta": {
+    "sender": {
+      "additional_attributes": {
+        "description": "string",
+        "company_name": "string",
+        "social_profiles": {
+          "github": "string",
+          "twitter": "string",
+          "facebook": "string",
+          "linkedin": "string"
+        }
+      },
+      "availability_status": "string",
+      "email": "string",
+      "id": "integer",
+      "name": "string",
+      "phone_number": "string",
+      "identifier": "string",
+      "thumbnail": "string",
+      "custom_attributes": "object",
+      "last_activity_at": "integer"
+    },
+    "channel": "string",
+    "assignee": {
+      "id": "integer",
+      "account_id": "integer",
+      "availability_status": "string",
+      "auto_offline": "boolean",
+      "confirmed": "boolean",
+      "email": "string",
+      "available_name": "string",
+      "name": "string",
+      "role": "string",
+      "thumbnail": "string"
+    },
+    "hmac_verified": "boolean"
+  },
+  "id": "integer",
+  "messages": [
+    {
+      "id": "integer",
+      "content": "Hello",
+      "inbox_id": "integer",
+      "conversation_id": "integer",
+      "message_type": "integer",
+      "content_type": "string",
+      "content_attributes": {},
+      "created_at": "integer",
+      "private": "boolean",
+      "source_id": "string",
+      "sender": {
+        "additional_attributes": {
+          "description": "string",
+          "company_name": "string",
+          "social_profiles": {
+            "github": "string",
+            "twitter": "string",
+            "facebook": "string",
+            "linkedin": "string"
+          }
+        },
+        "custom_attributes": "object",
+        "email": "string",
+        "id": "integer",
+        "identifier": "string",
+        "name": "string",
+        "phone_number": "string",
+        "thumbnail": "string",
+        "type": "string"
+      }
+    }
+  ],
+  "account_id": "integer",
+  "additional_attributes": {
+    "browser": {
+      "device_name": "string",
+      "browser_name": "string",
+      "platform_name": "string",
+      "browser_version": "string",
+      "platform_version": "string"
+    },
+    "referer": "string",
+    "initiated_at": {
+      "timestamp": "string"
+    }
+  },
+  "agent_last_seen_at": "integer",
+  "assignee_last_seen_at": "integer",
+  "can_reply": "boolean",
+  "contact_last_seen_at": "integer",
+  "custom_attributes": "object",
+  "inbox_id": "integer",
+  "labels": "array",
+  "muted": "boolean",
+  "snoozed_until": null,
+  "status": "string",
+  "timestamp": "integer",
+  "unread_count": "integer",
+  "allMessagesLoaded": "boolean",
+  "dataFetched": "boolean"
+}
+```
+
+### contact object
+
+```json
+{
+  "additional_attributes": {
+    "description": "string",
+    "company_name": "string",
+    "social_profiles": {
+      "github": "string",
+      "twitter": "string",
+      "facebook": "string",
+      "linkedin": "string"
+    }
+  },
+  "availability_status": "string",
+  "email": "string",
+  "id": "integer",
+  "name": "string",
+  "phone_number": "+91 9000000001",
+  "identifier": "string || null",
+  "thumbnail": "+91 9000000001",
+  "custom_attributes": {},
+  "last_activity_at": "integer"
+}
+```
+
+### Final Payload
 ```json
 {
   "event": "appContext",
   "data": {
     "conversation": {
-      "meta": {
-        "sender": {
-          "additional_attributes": {
-            "description": "",
-            "company_name": "",
-            "social_profiles": {
-              "github": "",
-              "twitter": "",
-              "facebook": "",
-              "linkedin": ""
-            }
-          },
-          "availability_status": "offline",
-          "email": "bruce@wayneenterprises.com",
-          "id": 113,
-          "name": "Bruce Wayne",
-          "phone_number": "+91 9000000001",
-          "identifier": null,
-          "thumbnail": "",
-          "custom_attributes": {},
-          "last_activity_at": 1653400547
-        },
-        "channel": "Channel::WebWidget",
-        "assignee": {
-          "id": 1,
-          "account_id": 1,
-          "availability_status": "offline",
-          "auto_offline": true,
-          "confirmed": true,
-          "email": "john@acme.inc",
-          "available_name": "John",
-          "name": "Johhn",
-          "role": "administrator",
-          "thumbnail": "https://example.com/john.png"
-        },
-        "hmac_verified": false
-      },
-      "id": 65,
-      "messages": [
-        {
-          "id": 630,
-          "content": "Hello",
-          "inbox_id": 1,
-          "conversation_id": 65,
-          "message_type": 0,
-          "content_type": "text",
-          "content_attributes": {},
-          "created_at": 1653400547,
-          "private": false,
-          "source_id": null,
-          "sender": {
-            "additional_attributes": {
-              "description": "",
-              "company_name": "",
-              "social_profiles": {
-                "github": "",
-                "twitter": "",
-                "facebook": "",
-                "linkedin": ""
-              }
-            },
-            "custom_attributes": {},
-            "email": null,
-            "id": 113,
-            "identifier": null,
-            "name": "Bruce Wayne",
-            "phone_number": "",
-            "thumbnail": "",
-            "type": "contact"
-          }
-        },
-        {
-          "id": 631,
-          "content": "Give the team a way to reach you.",
-          "inbox_id": 1,
-          "conversation_id": 65,
-          "message_type": 3,
-          "content_type": "text",
-          "content_attributes": {},
-          "created_at": 1653400547,
-          "private": false,
-          "source_id": null
-        }
-      ],
-      "account_id": 1,
-      "additional_attributes": {
-        "browser": {
-          "device_name": "Unknown",
-          "browser_name": "Chrome",
-          "platform_name": "macOS",
-          "browser_version": "101.0.4951.64",
-          "platform_version": "10.15.7"
-        },
-        "referer": "https://example.com/test",
-        "initiated_at": {
-          "timestamp": "Tue May 24 2022 19:25:47 GMT+0530 (India Standard Time)"
-        }
-      },
-      "agent_last_seen_at": 1656931524,
-      "assignee_last_seen_at": 1656931425,
-      "can_reply": true,
-      "contact_last_seen_at": 1653400641,
-      "custom_attributes": {},
-      "inbox_id": 1,
-      "labels": [],
-      "muted": false,
-      "snoozed_until": null,
-      "status": "open",
-      "timestamp": 1654863629,
-      "unread_count": 0,
-      "allMessagesLoaded": true,
-      "dataFetched": true
+      // <...Conversation Attributes>
     },
     "contact": {
-      "additional_attributes": {
-        "description": "",
-        "company_name": "",
-        "social_profiles": {
-          "github": "",
-          "twitter": "",
-          "facebook": "",
-          "linkedin": ""
-        }
-      },
-      "availability_status": "offline",
-      "email": "bruce@wayneenterprises.com",
-      "id": 113,
-      "name": "Bruce Wayne",
-      "phone_number": "+91 9000000001",
-      "identifier": null,
-      "thumbnail": "https://example.com/batman.png",
-      "custom_attributes": {},
-      "last_activity_at": 1653400547
+      // <...Contact Attributes>
     }
   }
 }
