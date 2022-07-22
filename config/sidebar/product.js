@@ -141,6 +141,7 @@ module.exports = [
     items: [
       "product/others/agent-bots",
       "product/others/interactive-messages",
+      "product/others/dashboard-apps",
       {
         type: "category",
         label: "Webhooks",
