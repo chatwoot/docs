@@ -11,7 +11,7 @@ help_discord: "https://discord.gg/jypY57m"
 
 ### Configure your Facebook Developer App
 
-Follow the `Set up Developer Assets and Platform Access` step in [Whatsapp Cloud API Guide](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) to create your Facebook Developer app with `WhatsApp Product` enabled.
+Follow the `Set up Developer Assets and Platform Access` step in [Whatsapp Cloud API Guide](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) to create your Facebook Developer app with `Whatsapp Product` enabled.
 
 Once you finish this step, you can now configure your required phone Numbers in the `Whatsapp` section of your Facebook developer app.
 If you complete the steps successfully, you should be able to obtain the `Phone Number Id` and `Whatsapp Bussiness Account ID` as shown in the below screenshot. Chatwoot will require these values for creating the Whatsapp Inbox.
