@@ -96,4 +96,4 @@ This makes it easier to read and understand the methods. For e.g.: Instead of `p
 
 ### Avoid manipulating DOM directly
 
-In most cases, there is no need to manipulate the DOM directly. Use Vue methods and state to change the DOM elements. Vue is data driven and thus its features are built around this concept. It’s not encourage to manipulate the DOM “the jQuery way”. If you want to access DOM directly, use [this.$refs](https://vuejs.org/guide/essentials/template-refs.html#accessing-the-refs).
+In most cases, there is no need to manipulate the DOM directly. Use Vue methods and state to change the DOM elements. Vue is data driven and thus its features are built around this concept and do not encourage to manipulate the DOM “the jQuery way”. If you want to access DOM directly, use [this.$refs](https://vuejs.org/guide/essentials/template-refs.html#accessing-the-refs).
