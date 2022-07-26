@@ -24,6 +24,8 @@ If you complete the steps successfully, you should be able to obtain the `Phone 
 
 When generating the access token, make sure to provide `whatsapp_business_management,` and `whatsapp_business_messaging` permissions are selected.
 
+Refer [this video](https://www.youtube.com/watch?v=gqiBzFlF44c) for detailed steps.
+
 ## Configuring Whatsapp Inbox in Chatwoot
 
 Finish the following steps to configure Whatsapp Cloud API Channel in Chatwoot.
