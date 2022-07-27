@@ -22,7 +22,24 @@ If you complete the steps successfully, you should be able to obtain the `Phone 
 
 [Create](https://www.facebook.com/business/help/503306463479099?id=2190812977867143) a system user in your business manager with access to the Whatsapp App. Generate an access token for the user, which will be required for setting up an inbox in Chatwoot.
 
-When generating the access token, make sure to provide `whatsapp_business_management,` and `whatsapp_business_messaging` permissions are selected.
+When generating the access token, make sure `whatsapp_business_management,` and `whatsapp_business_messaging` permissions are selected.
+
+1. Step 1 of 3: Create a system user.
+
+Create a system user in the System Users tab of Business Manager.
+
+2. Step 2 of 3: Add the system user.
+
+Under the WhatsApp Accounts tab, select Add People and select the system user to grant access to the WhatsApp Business account.
+
+![Add System user](../images/whatsapp/whatsapp-cloud/fb-generate-business-user.png)
+
+
+3. Step 3 of 3: Generate the access token and request permissions.
+
+
+![Generate Token](../images/whatsapp/whatsapp-cloud/fb-generate-token.png)
+
 
 Refer [this video](https://www.youtube.com/watch?v=gqiBzFlF44c) for detailed steps.
 
