@@ -191,9 +191,9 @@ ENABLE_ACCOUNT_SIGNUP=true
 
 ## Enable direct upload to storage cloud
 
-By default, Chatwoot will upload the files to the application server then it will push to the cloud storage. We have introduced the direct upload functionality so that we can upload the file directly to the cloud storage, this has been built according to rails new direct upload functionality documented [here](https://edgeguides.rubyonrails.org/active_storage_overview.html#direct-uploads) . Set below environamen variable to true to use direct upload
+By default, Chatwoot will upload the files to the application server and then it will push them to the cloud storage. We have introduced the direct upload functionality so that we can upload the file directly to the cloud storage. This has been built according to rails new direct upload functionality documented [here](https://edgeguides.rubyonrails.org/active_storage_overview.html#direct-uploads). Set below environment variable to true to use the direct upload feature.
 
-Make sure to follow [this guide](https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration) on the cloud storage after setting this to true.
+Make sure to follow [this guide](https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration) and set the appropriate CORS configuration on your cloud storage after setting `DIRECT_UPLOADS_ENABLED` to true.
 
 ```bash
 DIRECT_UPLOADS_ENABLED=true
