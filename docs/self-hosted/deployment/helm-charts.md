@@ -225,6 +225,12 @@ Redis is installed along with the chart if you choose the default setup. To use 
 
 ## Upgrading
 
+Do `helm repo update` and check the version of charts that is going to be installed. Helm charts follows semantic versioning and so if the MAJOR version is different from your installed version, there might be breaking changes. Please refer to the changelog before upgrading.
+
+```
+helm repo update
+helm upgrade chatwoot chatwoot/chatwoot -f <your-custom-values>.yaml
+```
 
 ### To 0.6.x
 
