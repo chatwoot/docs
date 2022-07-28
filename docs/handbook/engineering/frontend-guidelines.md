@@ -1,5 +1,6 @@
 ---
-title: "Frontend Guidelines"
+title: Frontend Guidelines
+sidebar_label: Frontend Guidelines
 ---
 
 This guide explains the best practices, patterns used in frontend development.
