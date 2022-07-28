@@ -6,7 +6,7 @@ title: "Deploy Chatwoot using Helm Charts"
 This guide will help you to deploy a production ready Chatwoot instance with Helm Charts.
 
 To quickly try out the charts, follow the two steps below. For a production deployment, please make sure to 
-pass in the required arguments to helm.  
+pass in the required arguments to helm using your custom `values.yaml` file.  
 
 ```
 helm repo add chatwoot https://chatwoot.github.io/charts
@@ -26,10 +26,10 @@ The helm installation will create 3 "Persistent Volume Claims" for redis, rails 
 
 ## Installing the chart
 
-To install the chart with the release name `chatwoot`:
+To install the chart with the release name `chatwoot`, use the following. To deploy it in `chatwoot` namespace, pass `-n chatwoot` to the command.
 
 ```console
-helm install chatwoot chatwoot/chatwoot
+helm install chatwoot chatwoot/chatwoot -f <your-custom-values.yaml> #-n chatwoot
 ```
 
 The command deploys Chatwoot on the Kubernetes cluster in the default configuration. The [parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -228,7 +228,16 @@ Redis is installed along with the chart if you choose the default setup. To use 
 Do `helm repo update` and check the version of charts that is going to be installed. Helm charts follows semantic versioning and so if the MAJOR version is different from your installed version, there might be breaking changes. Please refer to the changelog before upgrading.
 
 ```
+# update helm repositories
 helm repo update
+# list your current installed version
+helm list
+# show the latest version of charts that is going to be installed
+helm search repo chatwoot
+```
+
+```
+#if it is major version update, refer to the changelog before proceeding
 helm upgrade chatwoot chatwoot/chatwoot -f <your-custom-values>.yaml
 ```
 
