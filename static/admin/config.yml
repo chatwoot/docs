@@ -15,19 +15,10 @@ collections:
     extension: md
     widget: "list"
     create: true
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}"
+    nested:
+      depth: 100
     fields:
       - { name: title, label: Title, widget: string }
       - { name: body, label: Body, widget: markdown }
-      - { name: slug, label: Slug, widget: string }
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-      - label: "Authors"
-        name: "authors"
-        widget: "list"
-        fields:
-          - { name: name, label: Name, widget: string }
-          - { name: title, label: Title, widget: string }
-          - { name: url, label: URL, widget: string }
-          - { name: imageUrl, label: ImageURL, widget: string }
+      - { name: sidebar_label, label: Sidebar Label, widget: string }
