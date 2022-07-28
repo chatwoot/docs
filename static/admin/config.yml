@@ -9,8 +9,81 @@ public_folder: "/img/" # The src attribute for uploaded media will begin with /i
 
 collections:
   - name: docs
-    label: "docs"
+    label: Docs
     folder: docs
+    identifier_field: title
+    extension: md
+    widget: "list"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: sidebar_label, label: Sidebar Label, widget: string }
+
+  - name: contributing-guide
+    label: "Contributing Guide"
+    folder: docs/contributing-guide
+    identifier_field: title
+    extension: md
+    widget: "list"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 100
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: sidebar_label, label: Sidebar Label, widget: string }
+
+  - name: handbook
+    label: "Handbook"
+    folder: docs/handbook
+    identifier_field: title
+    extension: md
+    widget: "list"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 100
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: sidebar_label, label: Sidebar Label, widget: string }
+
+  - name: product
+    label: "Product"
+    folder: docs/product
+    identifier_field: title
+    extension: md
+    widget: "list"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 100
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: sidebar_label, label: Sidebar Label, widget: string }
+
+  - name: user-guide
+    label: "User Guide"
+    folder: docs/user-guide
+    identifier_field: title
+    extension: md
+    widget: "list"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 100
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: sidebar_label, label: Sidebar Label, widget: string }
+
+  - name: self-hosted
+    label: "Self Hosted"
+    folder: docs/self-hosted
     identifier_field: title
     extension: md
     widget: "list"
