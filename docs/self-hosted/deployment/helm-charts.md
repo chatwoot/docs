@@ -57,7 +57,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                | Description                                          | Value                  |
 | ------------------- | ---------------------------------------------------- | ---------------------- | 
 | `image.repository`  | Chatwoot image repository                            | `chatwoot/chatwoot`    |
-| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.0.0`               |
+| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.7.0`               |
 | `image.pullPolicy`  | Chatwoot image pull policy                           | `IfNotPresent`         |
 
  
@@ -149,15 +149,26 @@ The command removes all the Kubernetes components associated with the chart and 
 | `env.TWITTER_CONSUMER_SECRET`       | For twitter channel                                                  | `""`                                                       |
 | `env.TWITTER_ENVIRONMENT`           | For twitter channel                                                  | `""`                                                       |
 
+### Autoscaling
+
+| Name                                | Type                                                                 | Default Value                                              |
+| ----------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `web.hpa.enabled`                   | Horizontal Pod Autoscaling for Chatwoot web                          | `false`                                                    |
+| `web.hpa.cputhreshold`              | CPU threshold for Chatwoot web                                       | `80`                                                       |
+| `web.hpa.minpods`                   | Minimum number of pods for Chatwoot web                              | `1`                                                        |
+| `web.hpa.maxpods`                   | Maximum number of pods for Chatwoot web                              | `10`                                                       |
+| `web.replicaCount`                  | No of web pods if hpa is not enabled                                 | `1`                                                        |
+| `worker.hpa.enabled`                | Horizontal Pod Autoscaling for Chatwoot worker                       | `false`                                                    |
+| `worker.hpa.cputhreshold`           | CPU threshold for Chatwoot worker                                    | `80`                                                       |
+| `worker.hpa.minpods`                | Minimum number of pods for Chatwoot worker                           | `2`                                                        |
+| `worker.hpa.maxpods`                | Maximum number of pods for Chatwoot worker                           | `10`                                                       |
+| `worker.replicaCount`               | No of worker pods if hpa is not enabled                              | `1`                                                        |
+
 ### Other Parameters
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | fullnameOverride | string | `""` |  |
 | hooks.affinity | object | `{}` |  |
 | hooks.migrate.env | list | `[]` |  |
@@ -187,14 +198,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | services.annotations | object | `{}` |  |
-| services.internlPort | int | `3000` |  |
+| services.internalPort | int | `3000` |  |
 | services.name | string | `"chatwoot"` |  |
 | services.targetPort | int | `3000` |  |
 | services.type | string | `"LoadBalancer"` |  |
 | tolerations | list | `[]` |  |
-| web.replica | int | `1` |  |
-| worker.replica | int | `1` |  |
 
+## Install with custom parameters
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -222,6 +232,13 @@ PostgreSQL is installed along with the chart if you choose the default setup. To
 
 Redis is installed along with the chart if you choose the default setup. To use an external Redis DB, please set `redis.enabled` to `false` and set the variables under the Redis section above.
 
+## Autoscaling
+
+To enable horizontal pod autoscaling, set `web.hpa.enabled` and `worker.hpa.enabled` to `true`. Also make sure to uncomment the values under, `resources.limits` and `resources.requests`. This assumes your k8s cluster is already having a metrics-server. If not, deploy metrics-server with the following command.
+
+```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
 
 ## Upgrading
 
@@ -240,6 +257,20 @@ helm search repo chatwoot
 #if it is major version update, refer to the changelog before proceeding
 helm upgrade chatwoot chatwoot/chatwoot -f <your-custom-values>.yaml
 ```
+
+### To 0.9.x
+
+This release adds support for horizontal pod autoscaling(hpa) for chatwoot-web and chatwoot-worker deployments.
+Also, this changes the default redis replica count to `1`. The `Values.web.replicas` and `Values.worker. replicas` parameters
+where renamed to `Values.web.replicaCount` and `Values.worker.replicaCount` respectively. Also `services.internlPort` was renamed
+to `services.internalPort`.
+
+Please make the necessary changes in your custom values file if needed.
+
+### To 0.8.x
+
+Move from Kubernetes ConfigMap to Kubernetes Secrets for environment variables. This is not a breaking change.
+
 
 ### To 0.6.x
 
