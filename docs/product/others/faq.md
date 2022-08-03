@@ -3,7 +3,9 @@ title: 'Frequently asked questions'
 sidebar_label: 'FAQ'
 ---
 
-This guide collects all the frequently asked questions about the product and their answers. Please refer to this guide if you have questions about self-hosted installations or customization.
+This guide collects all the frequently asked questions about the product and their answers. 
+
+**Note**: Please refer to [this guide](/docs/self-hosted/faq) if you have questions about self-hosted installations or customization.
 
 #### I'm trying to add agents. It has been in pending status for a long time.
 
