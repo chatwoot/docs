@@ -2,7 +2,7 @@ module.exports = [
   {
     collapsible: false,
     label: "Getting Started",
-    type: 'category',
+    type: "category",
     items: ["self-hosted"],
   },
   {
@@ -39,7 +39,7 @@ module.exports = [
     collapsible: false,
     label: "Performance",
     type: "category",
-    items: ["self-hosted/deployment/performance/cloudfront-cdn"]
+    items: ["self-hosted/deployment/performance/cloudfront-cdn"],
   },
   {
     collapsible: false,
@@ -58,7 +58,7 @@ module.exports = [
     items: [
       "self-hosted/monitoring/super-admin-sidekiq",
       "self-hosted/monitoring/apm-and-error-monitoring",
-      "self-hosted/monitoring/rate-limiting"
+      "self-hosted/monitoring/rate-limiting",
     ],
   },
   {
@@ -95,6 +95,6 @@ module.exports = [
   {
     type: "category",
     label: "Others",
-    items: ["self-hosted/telemetry"]
+    items: ["self-hosted/telemetry", "self-hosted/faq"],
   },
 ];
