@@ -258,6 +258,51 @@ helm search repo chatwoot
 helm upgrade chatwoot chatwoot/chatwoot -f <your-custom-values>.yaml
 ```
 
+### To 1.x.x
+
+This release changes the postgres and redis versions. This is a breaking change and requires manual data migration if you
+are not using external postgres and redis.
+
+Before updating,
+
+1. Set the replica set count to 0.
+2. Log into the postgres pod and take a backup of your database.
+ ```
+ kubectl exec -it chatwoot-chatwoot-postgresql-0 /bin/sh
+ pg_dump -Fc --no-acl --no-owner  -U postgres chatwoot_production > /tmp/cw.dump
+ ```
+ 3. Copy the backup to your local machine.
+ ```
+ kubectl cp pod/chatwoot-chatwoot-postgresql-0:/tmp/cw.dump ./cw.dump
+ ```
+ 4. Delete the deployments.
+ ```
+ helm delete chatwoot
+ kubectl get pvc
+ kubectl delete pvc <postgres->
+ kubectl delete pvc <redis>
+ ```
+5. Update and install new version of charts.
+```
+helm repo update
+helm install chatwoot chatwoot/chatwoot -f <your-values.yaml> #-n chatwoot
+```
+6. Exec into the postgres pod and drop the database.
+```
+ kubectl exec -it chatwoot-chatwoot-postgresql-0 /bin/sh
+ psql -u postgres -d postgres
+ > -- DROP DATABASE chatwoot_production
+```
+7. Copy the backcup into pod.
+```
+kubectl cp cw.dump chatwoot-chatwoot-postgresql-0:/tmp/cw.dump
+```
+8. Restore
+```
+pg_restore --verbose --clean --no-acl --no-owner --create -U postgres -d chatwoot_production /tmp/cw.dump
+```
+9. Verify.
+
 ### To 0.9.x
 
 This release adds support for horizontal pod autoscaling(hpa) for chatwoot-web and chatwoot-worker deployments.
