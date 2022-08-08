@@ -103,11 +103,11 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                | Type                                                                          | Default Value                                    |
 | ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------ |
 | `postgresql.enabled`                | Set to `false` if using external postgres and modify the below variables.     | `true`                                           |
-| `postgresql.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
+| `postgresql.auth.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
 | `postgresql.postgresqlHost`         | Postgres host. Edit if using external postgres.                               | `""`                                             |
-| `postgresql.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
+| `postgresql.auth.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
 | `postgresql.postgresqlPort`         | Postgres port                                                                 | `5432`                                           |
-| `postgresql.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
+| `postgresql.auth.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
 
 ### Redis variables
 
@@ -269,6 +269,12 @@ helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0"  -f <your-custom-value
 
 This release changes the postgres and redis versions. This is a breaking change and requires manual data migration if you are not using external postgres and redis.
 
+> **Note**: This release also changes the postgres and redis auth paramaters values under `.Values.redis` and `.Values.postgres`.
+Make the necessary changes to your custom `values.yaml` file if any.
+`Values.postgresqlDatabase` --> `Values.auth.postgresqlDatabase`
+`Values.postgresqlUsername` --> `Values.auth.postgresqlUsername`
+`Values.postgresqlPassword` --> `Values.auth.postgresqlPassword`
+
 >**Note:** Append the kubectl commands with `-n chatwoot`, if you have deployed it under the chatwoot namespace.
 
 Before updating,
@@ -339,10 +345,6 @@ RAILS_ENV=production bundle exec rails c
 ```
 
 10. Load the Chatwoot web url, log in using the old credentials and verify the contents. Voila! Thats it!! 
-
-This release also changes the postgres and redis auth paramaters values under `.Values.redis` and `.Values.postgres`.
-Make the necessary changes to your custom `values.yaml` file if any.
-
 
 ### To 0.9.x
 
