@@ -260,48 +260,89 @@ helm upgrade chatwoot chatwoot/chatwoot -f <your-custom-values>.yaml
 
 ### To 1.x.x
 
-This release changes the postgres and redis versions. This is a breaking change and requires manual data migration if you
-are not using external postgres and redis.
+Make sure you are on Chatwoot helm charts version `0.9.0` before upgrading to version `1.x.x`. If not, please upgrade to `0.9.0` before proceeding.
+
+```
+helm repo update
+helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0"  -f <your-custom-values>  --debug
+```
+
+This release changes the postgres and redis versions. This is a breaking change and requires manual data migration if you are not using external postgres and redis.
+
+>**Note:** Append the kubectl commands with `-n chatwoot`, if you have deployed it under the chatwoot namespace.
 
 Before updating,
 
-1. Set the replica set count to 0.
+1. Set the replica count to 0 for both Chatwoot web(`.Values.web.replicaCount`) and worker(`.Values.worker.replicaCount`) replica sets. Applying this change
+will bring down the pods count to 0. This is to ensure the database will not be having any activity and is in a state to backup.
+```
+helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0" --namespace ug3 -f values.ci.yaml --create-namespace --debug
+```
+
 2. Log into the postgres pod and take a backup of your database.
  ```
- kubectl exec -it chatwoot-chatwoot-postgresql-0 /bin/sh
+ kubectl exec -it chatwoot-chatwoot-postgresql-0 -- /bin/sh
+ env | grep -i postgres_password #get postgres password to use in next step
  pg_dump -Fc --no-acl --no-owner  -U postgres chatwoot_production > /tmp/cw.dump
+ exit
  ```
+
  3. Copy the backup to your local machine.
  ```
  kubectl cp pod/chatwoot-chatwoot-postgresql-0:/tmp/cw.dump ./cw.dump
  ```
+
  4. Delete the deployments.
  ```
  helm delete chatwoot
  kubectl get pvc
- kubectl delete pvc <postgres->
+ # this will delete the database volumes
+ # make sure you have backed up before proceeding
+ kubectl delete pvc <data-postgres->
  kubectl delete pvc <redis>
  ```
+
 5. Update and install new version of charts.
 ```
 helm repo update
+#reset web.replicaCount and worker.replicaCount to your previous values 
 helm install chatwoot chatwoot/chatwoot -f <your-values.yaml> #-n chatwoot
 ```
-6. Exec into the postgres pod and drop the database.
-```
- kubectl exec -it chatwoot-chatwoot-postgresql-0 /bin/sh
- psql -u postgres -d postgres
- > -- DROP DATABASE chatwoot_production
-```
-7. Copy the backcup into pod.
+
+6. Copy the local db backup into postgres pod.
 ```
 kubectl cp cw.dump chatwoot-chatwoot-postgresql-0:/tmp/cw.dump
 ```
-8. Restore
+
+7. Exec into the postgres pod and drop the database.
 ```
-pg_restore --verbose --clean --no-acl --no-owner --create -U postgres -d chatwoot_production /tmp/cw.dump
+ kubectl exec -it chatwoot-chatwoot-postgresql-0 -- /bin/sh
+ psql -u postgres -d postgres
+ # this is a destructive action
+ # remove -- to take effect
+ -- DROP DATABASE chatwoot_production with (FORCE);
+ exit
 ```
-9. Verify.
+
+8. Restore the database from the backup. If you are seeing no errors, the databse has been restored and you
+are good to go.
+```
+ pg_restore --verbose --clean --no-acl --no-owner --create -U postgres -d postgres /tmp/cw.dump
+```
+
+9. Exec into the web pod and remove the onboarding variable in redis.
+
+```
+kubectl exec -it chatwoot-web-xxxxxxxxxx -- /bin/sh
+RAILS_ENV=production bundle exec rails c
+::Redis::Alfred.delete(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
+```
+
+10. Load the Chatwoot web url, log in using the old credentials and verify the contents. Voila! Thats it!! 
+
+This release also changes the postgres and redis auth paramaters values under `.Values.redis` and `.Values.postgres`.
+Make the necessary changes to your custom `values.yaml` file if any.
+
 
 ### To 0.9.x
 
