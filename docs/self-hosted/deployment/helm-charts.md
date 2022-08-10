@@ -270,8 +270,7 @@ helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0"  -f <your-custom-value
 This release changes the postgres and redis versions. This is a breaking change and requires manual data migration if you are not using external postgres and redis.
 
 > **Note**: This release also changes the postgres and redis auth paramaters values under `.Values.redis` and `.Values.postgres`.
-Make the necessary changes to your custom `values.yaml` file if any. `Values.postgresqlDatabase` is now `Values.auth.postgresqlDatabase`,`Values.postgresqlUsername` is now `Values.auth.postgresqlUsername`
-and `Values.postgresqlPassword` is renamed to `Values.auth.postgresqlPassword`.
+Make the necessary changes to your custom `values.yaml` file if any. `Values.postgresqlDatabase` is now `Values.auth.postgresqlDatabase`, `Values.postgresqlUsername` is now `Values.auth.postgresqlUsername` and `Values.postgresqlPassword` is renamed to `Values.auth.postgresqlPassword`.
 
 >**Note:** Append the kubectl commands with `-n chatwoot`, if you have deployed it under the chatwoot namespace.
 
