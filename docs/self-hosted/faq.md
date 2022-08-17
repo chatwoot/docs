@@ -45,3 +45,26 @@ We encourage the community to build and promote Chatwoot related services. You c
 
 In `Community Edition` of Chatwoot, you can customise the branding by modifying the source code.
 In `Enterprise Edition` of Chatwoot, Custom Branding is available as a premium feature as a part of the paid plans.
+
+## Can I run a SaaS using Chatwoot?
+
+Ref: [Are there any restrictions in using Chatwoot?](#are-there-any-restrictions-on-using-chatwoot)
+
+## Are there any restrictions on using Chatwoot?
+
+When using the `Enterprise` edition of Chatwoot, you must adhere to the [Enterprise License](https://github.com/chatwoot/chatwoot/blob/develop/enterprise/LICENSE). Additionally, distributing or selling the `enterprise` edition of Chatwoot requires a valid Chatwoot Enterprise subscription with the correct number of user seats.
+
+The Community edition of Chatwoot comes under an [MIT License](https://github.com/chatwoot/chatwoot/blob/develop/LICENSE), which lets you use the software without any restrictions. This also allows you to build and resell derivatives of Chatwoot Community edition. For the Community edition, the team trusts the users to use the software fairly and encourages the following use cases:
+
+- Leveraging Chatwoot as a Customer Support/Data Platform in your organization.
+- Building Custom Conversational interfaces over the Chatwoot Platform.
+- Leveraging Chatwoot to add conversational capabilities to your existing software.
+- Enhancing Community Edition software to cater to specific business niches.
+
+Chatwoot team doesn't encourage the following cases:
+
+- Leveraging the software for any usage that isn't permitted by applicable law.
+- Use cases that directly compete with Chatwoot Business offerings. <br/>
+  examples: clones of Chatwoot Cloud (SaaS), Rebranding Services, etc
+
+
