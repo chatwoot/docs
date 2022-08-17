@@ -8,6 +8,7 @@ Chatwoot provides three types of APIs. This distinction is primarily based on th
 2. [Client APIs](#client-apis)
 3. [Platform APIs](#platform-apis)
 
+Ref: [Chatwoot API Docs](https://www.chatwoot.com/developers/api/)
 
 ## Application APIs
 
@@ -17,7 +18,7 @@ bulk import/export of data into a Chatwoot account etc.
 To authenticate to this API, you will require a user `access_token`, which can be obtained from `profile_settings` after logging into your Chatwoot account.
 These APIs are available on both `cloud` and `self-hosted` Chatwoot Accounts.
 
-Postman Collection: https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-a7462388-50fd-4035-9bfc-5750f91c00cd
+Ref: [Postman Collection](https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-a7462388-50fd-4035-9bfc-5750f91c00cd)
 
 ### Example Implementations
 - https://github.com/chatwoot/google-cloud-functions-demo
@@ -30,7 +31,7 @@ Client APIs use a combination of `inbox_identifier` and `contact_identifier` for
 
 These APIs are available on both `cloud` and `self-hosted` Chatwoot Accounts.
 
-Postman Collection: https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-9b283c34-96a9-494f-bb52-c5c6ab864a4a
+Ref: [Postman Collection](https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-9b283c34-96a9-494f-bb52-c5c6ab864a4a)
 
 ### Example Implementations
 - https://github.com/chatwoot/client-api-demo
@@ -44,4 +45,4 @@ To authenticate these APIs, you must have an `access_token` issued on behalf of 
 
 These APIs are available on `self-hosted` Chatwoot installations.
 
-Postman Collection: https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-e5451b69-9f97-489b-b352-4ca7d8d82aff
+Ref: [Postman Collection](https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-e5451b69-9f97-489b-b352-4ca7d8d82aff)
