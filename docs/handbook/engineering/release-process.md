@@ -127,3 +127,14 @@ Thanks to @azyzio, @hiaselhans, @vishal-pandey, @troscoe, @timcowlishaw, @mike90
 - Create release notes in Changelog (https://chatwoot.com/changelog). If you don't have access to the blog, please contact Pranav / Sojan.
 - Update the latest version in Chatwoot Hub. This is used to show a notification to users using self-hosted installation.
 - Create tasks in Product board to deploy the changes to our paid clients.
+
+## Hotfix Releases
+
+Follow the same release process except for the `git flow release` commands. Replace the commands with `git flow hotfix` instead.
+```
+# example
+git flow hotfix start '2.8.1'
+git flow hotfix finish '2.8.1'
+```
+> Note: Make sure that the hotfix release branches are branched off from master instead of develop.
+
