@@ -28,6 +28,14 @@ window.addEventListener("message", function (event) {
 });
 ```
 
+You need to register this event on load of the application. If your application registers this event after the page load, you would need query the dashboard app to get the context. You can query the dashboard app using the following code.
+
+```js
+window.parent.postMessage('chatwoot-dashboard-app:fetch-info', '*')
+
+// You would get a message in the on message listener with the appContext payload.
+```
+
 ## Event Payload
 
 ### conversation object
