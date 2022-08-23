@@ -1,11 +1,10 @@
 ---
-title: "Add Agent"
+title: "Add Agents"
 ---
 
-An Agent is a member of your Customer Support team.
-Agents will be able to view and reply to messages from your users.
+An Agent is a member of your Customer Support team. Agents will be able to view and reply to messages from your users.
 
-Click on 'Settings' on the Left Hand Side OR 'Click here to Invite Team Member' to Add Agents
+To add agents to your Chatwoot account, you can use the 'Click here to Invite Team Member' link.
 
 <div align="center">
 
@@ -13,14 +12,20 @@ Click on 'Settings' on the Left Hand Side OR 'Click here to Invite Team Member' 
 
 </div>
 
-The Below Section will Open. Your Name will be listed by default as Administrator -  Administrator will have access to all Chatwoot features enabled for your account, including settings, along with all of a normal agents' privileges.
+OR, Click on Settings → Agents.
+
+You will be redirected to the Agents management page as shown below.  
+
+Your Name will be listed by default as Administrator. Administrators have access to all Chatwoot features enabled for your account, including Settings.
 <div align="center">
 
 <img src={require('./images/addagentsettings2.png').default} width="800" alt="Chatwoot Agent Screen" />
 
 </div>
 
-Click on Add Agent button on the Top Right Hand Side. A pop up window will open in which you can enter the details of the Agent like name, role and email address. 
+Click on the “Add Agent” button on the Top Right Hand Side. 
+
+A pop up window will open in which you can enter the details of the Agent like name, role and email address. 
 
 <div align="center">
 
@@ -35,9 +40,9 @@ Click on Add Agent button on the Top Right Hand Side. A pop up window will open 
 | Role                 | Enter the Role - Agent or  Administrator | Agents can only access inbox, reports, and  conversations. Administrators have all privilages of agents  and have access to all features of Chatwoot |
 | Your e-mail  address | Enter the e-mail id you  registered      |                                                                                                                                                     |
 
-Click on Add Agent Button. "Agent Added Successfully" message will be displayed and the New Agent will be listed on the page.
+Click on the “Add Agent” Button to confirm. You will see a "Agent Added Successfully" message. This agent will be enlisted on your Agents management page now.
 
-In case, you have entered the details incorrectly, this can be corrected using the Edit option in the Agents Screen.
+You can also use the edit option given along with the Agent’s name to change details.
 
 <div align="center">
 
@@ -45,7 +50,7 @@ In case, you have entered the details incorrectly, this can be corrected using t
 
 </div>  
 
-In case, the particular agent no longer works with you, you can go ahead and use the delete option to delete the agent from the dashboard.
+In case, the particular agent no longer works with you, you can use the “delete” button to delete the agent from the dashboard.
 
 <div align="center">
 
