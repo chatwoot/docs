@@ -2,15 +2,17 @@
 title: "Configure your profile"
 ---
 
-This guide helps you set up your profile with image, display name etc, and change your password.
+This guide helps you set up your personal profile with your image/avatar, display name, personal message signature, and more. 
 
-To navigate to the profile settings page, click on the **kebab menu icon** (<img src={require('./images/configure-your-profile/kebab-menu-icon.png').default} width="10" alt="Kebab Menu Icon" style={{ marginBottom: '-6px' }} />) on the dashboard's bottom left corner, which would open a menu. Then, click on **Profile Settings** from the menu.
+You can also change your password on this page.
+
+You can find the Profile Settings page on the bottom left corner of your dashboard.
 
 <img src={require('./images/configure-your-profile/kebab-menu.png').default} width="500" alt="Kebab Menu Icon" />
 
 ### Update your profile
 
-This section will help you to update your agent profile on Chatwoot. The updated information will be used on the dashboard, live-chat widget, and in all external communication emails.
+This section will help you to update your agent profile on Chatwoot. This updated information will be used on the dashboard, live-chat widget, and in all external communication emails.
 
 <img src={require('./images/configure-your-profile/update-your-profile.png').default} width="600" alt="Profile Form" />
 
@@ -27,10 +29,18 @@ Click on **Update Profile** to save the changes. If the changes are successful, 
 
 Note: If you update your email address, then the system will log you out. You need to log in again with the updated email address and the password.
 
+### Set your personal message signature
+
+You can create your personal message signature. This will get added to all the messages you send from your email inbox configured on Chatwoot.
+
 ### Change your password
 
 As a security measure, you need to provide your existing password to change the password. If you forgot the old password, you can log out of the system and reset the password.
 
-Password must contain at least one uppercase character (A-Z), at least one number character (0..9), at least one special character (!@#$%^&*()_+-=[]{}|'"/\^.,`<\>:;?~).
+Password must contain at least one uppercase character (A-Z), at least one number character (0..9), at least one special character (!@#$%^&*()_+-=[]{}|'"/\^.,`<>:;?~).
 
 <img src={require('./images/configure-your-profile/update-your-password.png').default} width="600" alt="Password Form" />
+
+### Notifications settings
+
+You can go through the Notifications settings and check the boxes according to your preferences.
