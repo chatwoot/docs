@@ -2,9 +2,9 @@
 title: "Applications"
 ---
 
-In this section, Chatwoot has Dialogflow application already collaborated. This helps in creating automated responses in your conversation window. Let the bot handle the queries before handing them off to a customer service agent.  
+Under the Applications tab, we've already set up Dialogflow. This application will allow you to create automated responses in your conversation window. This way, you can let the bot handle the questions before handing them off to a customer service agent.
 
-Click on 'Settings' on Chatwoot Dashboard Home Screen.
+Click on 'Settings' on Chatwoot home screen.
 
 <div align="center">
 
@@ -20,7 +20,7 @@ Next, click on 'Applications' on left side Menu bar.
 
 </div>
 
-The Application screen opens up. Click on Configure button against Dialogflow. The below window opens up.
+The Application screen opens up. Click on Configure button against Dialogflow. The following window opens up.
 
 <div align="center">
 
@@ -28,8 +28,7 @@ The Application screen opens up. Click on Configure button against Dialogflow. T
 
 </div>
 
-Click on add a new hook button on the right hand top side of the screen.
-A new screen opens up where you can enter the Dialog flow ID and Key file that you already have registered.
+Click on the "Add a new hook" button on the right hand top side of the screen. A new screen opens up where you can enter the Dialog flow ID and Key file that you already have registered.
 
 <div align="center">
 
