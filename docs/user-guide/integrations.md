@@ -2,9 +2,10 @@
 title: "Integrations"
 ---
 
-Chatwoot is designed such that it can work alongside the project communication application that you are using in the project. For example, Slack and Webhooks are already integrated in Chatwoot.
+Chatwoot is designed to work alongside the project communication application you use in your project. For example, Slack and Webhooks are already integrated in Chatwoot.
 
-Click on Settings on home page .
+To begin setting up, click on Settings on your homepage.
+
 <div align="center">
 
 <img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Dashboard Home Screen" />
@@ -13,7 +14,7 @@ Click on Settings on home page .
 
 <div align="center">
 
-Click on Integrations. You can see the screen which displays the already installed integrations.
+Next, click on Integrations. You can see the screen which displays the already installed integrations.
 
 <img src={require('./images/integrations1.png').default} width="800" alt="Integration Home Screen" />
 
@@ -21,7 +22,7 @@ Click on Integrations. You can see the screen which displays the already install
 
 ### Slack
 
-If your account/project is using Slack as medium of communication, click on Connect button against Slack in the Integration window.
+If your account/project is using Slack as medium of communication, click on the "Connect" button against Slack in the Integration window.
 
 <div align="center">
 
@@ -29,7 +30,7 @@ If your account/project is using Slack as medium of communication, click on Conn
 
 </div>
 
-A screen opens up where you can directly give the workspace Slack URL to connect to your Slack account.
+A screen opens up where you can directly give the workspace Slack URL to connect to your Slack account. That is all you need to do!
 
 <div align="center">
 
@@ -41,7 +42,7 @@ A screen opens up where you can directly give the workspace Slack URL to connect
 
 ### Webhooks
 
-If your Account/Projecgte is using Webhooks for communication, click on Configure button against Webhooks in the Integration Window.
+If your Account/Project is using Webhooks for communication, click on the "Configure" button against Webhooks in the Integration Window.
 
 
 <div align="center">
@@ -50,7 +51,7 @@ If your Account/Projecgte is using Webhooks for communication, click on Configur
 
 </div>
 
-Click on Add New Webhooks button on the right hand top side of the screen.
+Click on the "Add New Webhook" button on the right hand top side of the screen.
 
 <div align="center">
 
@@ -58,7 +59,7 @@ Click on Add New Webhooks button on the right hand top side of the screen.
 
 </div>
 
-A screen opens up where you can enter the details of the New Webhook you want to create.
+A screen opens up where you can enter the details of the the new Webhook you want to create.
 
 
 <div align="center">
