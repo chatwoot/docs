@@ -5,6 +5,8 @@ title: "Heroku Chatwoot Production deployment guide"
 
 ### Deploying on Heroku
 
+> **NOTE**: Fresh Chatwoot deployments with heroku is facing some issues at the moment. Please try out other deployment options for now. More information about this can be found at https://github.com/chatwoot/chatwoot/issues/5284. 
+
 Deploy chatwoot on Heroku through the following steps
 
 1. Click on the [one click deploy button](https://heroku.com/deploy?template=https://github.com/chatwoot/chatwoot/tree/master) and deploy your app.
