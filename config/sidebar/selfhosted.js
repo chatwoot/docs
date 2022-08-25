@@ -24,6 +24,14 @@ module.exports = [
   },
   {
     collapsible: false,
+    label: "Upgrade",
+    type: "category",
+    items: [
+      "self-hosted/deployment/upgrade",
+    ],
+  },
+  {
+    collapsible: false,
     label: "Cloud provider guides",
     type: "category",
     items: [
