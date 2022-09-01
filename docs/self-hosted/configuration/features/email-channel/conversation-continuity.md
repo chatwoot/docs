@@ -43,6 +43,9 @@ MANDRILL_INGRESS_API_KEY=
 #### Mailgun
 If you are using Mailgun as your email service, in the Mailgun dashboard configure it to forward your inbound emails to `https://example.com/rails/action_mailbox/mailgun/inbound_emails/mime` if `example.com` is where you have hosted the application.
 
+##### Getting Mailgun Ingress Key
+![mailgun-ingress-key](./images/mailgun-ingress-key.gif)
+
 #### Sendgrid
 
 Ensure to set up the proper MX records for `your-domain.com` pointed towards Sendgrid

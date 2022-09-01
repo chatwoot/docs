@@ -82,7 +82,9 @@ RAILS_ENV=production bundle exec rails c
 
 ### API requests failing with "You need to sign in or sign up before continuing."
 
-Nginx by default strip of headers with `_` . head over to the Nginx configuration option in caprover under the chatwoot web and add the following directive.
+Nginx by default strip of headers with `_` . Head over to the Nginx configuration option in caprover under the Chatwoot web and add the following directive. 
+
+Access the Caprover `web dashboard` > `Apps` > `Apps Edit` > `Edit Default Nginx Configurations`. Refer https://caprover.com/docs/nginx-customization.html for more details. 
 
 ```
   # Nginx strips out underscore in headers by default
