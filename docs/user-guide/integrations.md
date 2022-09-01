@@ -41,7 +41,7 @@ A screen opens up where you can directly give the workspace Slack URL to connect
 
 ### Webhooks
 
-If your Account/Projecgte is using Webhooks for communication, click on Configure button against Webhooks in the Integration Window.
+If your Account/Project is using Webhooks for communication, click on Configure button against Webhooks in the Integration Window.
 
 
 <div align="center">
