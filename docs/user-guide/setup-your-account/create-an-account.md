@@ -7,7 +7,7 @@ This guide will help you to create an account at Chatwoot cloud or any self-host
 
 If you are using a self-hosted Chatwoot installation, you may directly open the URL `{your_installation_url}/app/auth/signup.`
 
-If you want to use Chatwoot cloud, you may open www.chatwoot.com and click on the "Create an account" button. This button takes you to the signup page.
+If you want to use Chatwoot cloud, you may open [www.chatwoot.com](https://www.chatwoot.com) and click on the "Create an account" button. This button takes you to the signup page.
 
 ![create-an-account](./images/create-an-account/create-an-account-button.png)
 
