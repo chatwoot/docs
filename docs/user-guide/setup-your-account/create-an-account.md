@@ -13,7 +13,7 @@ P.S. We have a wholly different [guide](https://www.chatwoot.com/docs/self-hoste
 
 ### I am using the cloud version
 
-**Step 1**. If you want to use Chatwoot cloud, you may open www.chatwoot.com and click on the "Create an account" button. This button takes you to the Signup page.
+**Step 1**. If you want to use Chatwoot cloud, you may open www.chatwoot.com and click on the "Create a free account" button. This button takes you to the Signup page.
 
 ![create-an-account](./images/create-an-account/create-an-account-button.png)
 
