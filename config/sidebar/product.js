@@ -12,7 +12,6 @@ module.exports = [
           "user-guide/setup-your-account/configure-account-details",
           "user-guide/add-agent-settings",
           "user-guide/add-inbox-settings",
-          "user-guide/setting-up-chatwootwidget",
           "user-guide/add-teams-settings",
           "user-guide/add-label-settings",
           "user-guide/integrations",
