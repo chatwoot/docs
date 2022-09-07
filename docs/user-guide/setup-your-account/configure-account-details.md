@@ -6,7 +6,7 @@ You can update your organization’s info on this screen. You can update the nam
 
 To update account details, click on Settings -> Account Settings. The available settings are shown below.
 
-![settings-screen](./images/configure-account-details/settings-screen.png)
+![settings-screen](./images/configure-your-profile/settings-screen.png)
 
 | Field Name | Description |
 | -- | -- |
