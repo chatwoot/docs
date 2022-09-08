@@ -16,7 +16,7 @@ Click on 'Click here to create an inbox', as shown in the screenshot below.
 
 <div align="center">
 
-<img src={require('./images/addinboxsettings1.png').default} width="800" alt="Chatwoot Home Screen" />
+<img src={require('./images/click-create-inbox.png').default} width="800" alt="Chatwoot Home Screen" />
 
 </div>
 
@@ -26,7 +26,7 @@ On your Chatwoot dashboard, click on Settings → Inboxes.
 
 <div align="center">
 
-<img src={require('./images/addinboxsettings2.png').default} width="800" alt="Chatwoot Home Screen" />
+<img src={require('./images/add-inbox-through-settings.png').default} width="800" alt="Chatwoot Home Screen" />
 
 </div>
 
@@ -36,7 +36,7 @@ You can find the “+ New inbox” link on your home screen below the list of yo
 
 <div align="center">
 
-<img src={require('./images/addinboxsettings2a.png').default} width="800" alt="Chatwoot Inbox Screen" />
+<img src={require('./images/add-inbox.png').default} width="800" alt="Chatwoot Inbox Screen" />
 
 </div>
 
@@ -44,21 +44,17 @@ You can find the “+ New inbox” link on your home screen below the list of yo
 
 Once you reach the inbox screen, click on the button: “Add Inbox” which you will find at the top right hand corner of the page.
 
+Start selecting channels. You can see the list of supported channels on this screen. Eg: Website, Facebook, Twitter, WhatsApp, SMS, Email, API, Telegram, Line, etc.
+
 <div align="center">
 
-<img src={require('./images/addinboxsettings3.png').default} width="800" alt="Chatwoot Home Screen" />
+<img src={require('./images/inboxes-list.png').default} width="800" alt="Chatwoot Inbox Screen" />
 
 </div>
-
-Start selecting channels. You can see the list of supported channels on this screen. Eg: Website, Facebook, Twitter, WhatsApp, SMS, Email, API, Telegram, Line, etc.
 
 Inboxes would be connected to the front end Widgets placed in Website or other channels. Related: [Setting up Widget](/docs/user-guide/setting-up-chatwootwidget).
 
-<div align="center">
 
-<img src={require('./images/addinboxsettings4.png').default} width="800" alt="Chatwoot Inbox Screen" />
-
-</div>
 
 ### Next steps
 
