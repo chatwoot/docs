@@ -131,41 +131,46 @@ You can customize your web widget with simple settings given on this page. You w
 Find the detailed steps to configure each channel below:
 
 <aside>
-➡️ Facebook messenger channel
+➡️ [Facebook messenger channel]([url](https://www.chatwoot.com/docs/product/channels/facebook))
 
 </aside>
 
 <aside>
-➡️ Twitter channel
+➡️ [Instagram channel]([url](https://www.chatwoot.com/docs/product/channels/instagram))
 
 </aside>
 
 <aside>
-➡️ WhatsApp channel
+➡️ [Twitter channel]([url](https://www.chatwoot.com/docs/product/channels/twitter))
 
 </aside>
 
 <aside>
-➡️ SMS channel
+➡️ [WhatsApp channel]([url](https://www.chatwoot.com/docs/product/channels/whatsapp/whatsapp-cloud))
 
 </aside>
 
 <aside>
-➡️ Email channel
+➡️ [SMS channel]([url](https://www.chatwoot.com/docs/product/channels/sms/twilio))
 
 </aside>
 
 <aside>
-➡️ Connect a channel using API
+➡️ [Email channel]([url](https://www.chatwoot.com/docs/product/channels/email/create-channel))
 
 </aside>
 
 <aside>
-➡️ Telegram channel
+➡️ [Connect a channel using API]([url](https://www.chatwoot.com/docs/product/channels/api/create-channel))
 
 </aside>
 
 <aside>
-➡️ Line channel
+➡️ [Telegram channel]([url](https://www.chatwoot.com/docs/product/channels/telegram))
+
+</aside>
+
+<aside>
+➡️ [Line channel]([url](https://www.chatwoot.com/docs/product/channels/line))
 
 </aside>
