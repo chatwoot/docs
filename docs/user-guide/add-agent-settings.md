@@ -8,7 +8,7 @@ To add agents to your Chatwoot account, you can use the 'Click here to Invite Te
 
 <div align="center">
 
-<img src={require('./images/addagentsettings1.png').default} width="800" alt="Chatwoot Home Screen" />
+<img src={require('./images/click-to-invite-team-member.png').default} width="800" alt="Chatwoot Home Screen" />
 
 </div>
 
