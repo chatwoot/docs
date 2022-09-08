@@ -3,7 +3,7 @@ sidebar_label: "Webflow Integration"
 title: 'Integrating Chatwoot with Webflow website'
 ---
 
-Add Chatwoot live chat widget to talk to your Webflow website visitors in realtime. Chatwoot helps you to chat with your visitors and provide expectional support in realtime. To use Chatwoot as your website live chat, follow the steps described below.
+If your website is created with Webflow and you want to talk to your Webflow website visitors in real time, you can add the Chatwoot live chat widget to your website. To use Chatwoot as your website live chat, follow the steps described below.
 
 ## 1. Create a website inbox in Chatwoot
 
@@ -13,7 +13,7 @@ Refer to [Website Channel](/docs/product/channels/live-chat/create-website-chann
 
 ### Go to website settings
 
-Login to your Webflow account and select your website. Select Settings
+Login to your Webflow account and select your website. Select Settings.
 
 ![select-website](./images/webflow/select-website.jpg)
 
@@ -21,7 +21,9 @@ Login to your Webflow account and select your website. Select Settings
 
 ### Paste the script in Footer Code in Webflow
 
-Go to **Custom Code** -> **Footer Code**. Paste the script in Footer Code section and save the changes.
+Go to **Custom Code** -> **Footer Code**. 
+
+Paste the script in the Footer Code section. Save the changes.
 
 ![custom-html-css](./images/webflow/custom-html-css.jpg)
 
