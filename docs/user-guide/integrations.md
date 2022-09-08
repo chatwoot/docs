@@ -37,7 +37,6 @@ A screen opens up where you can directly give the workspace Slack URL to connect
 
 If your Account/Project is using Webhooks for communication, click on the "Configure" button against Webhooks in the Integration Window.
 
-
 <div align="center">
 
 <img src={require('./images/webhooks-configure-button.png').default} width="800" alt="Integration Home Screen" />
