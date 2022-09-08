@@ -1,23 +1,15 @@
 ---
 title: "Add Labels"
 ---
-Labels help you categorize conversations and prioritize them. You can assign a label to a conversation from the side panel.
+Labels help you categorize conversations and prioritize them. You can assign a label to a conversation from the chat's side panel.
 
 Labels are tied to the account and can be used to create custom workflows in your organization. You can assign custom color to a label, it makes it easier to identify the label. You will be able to display the label on the sidebar to filter the conversations easily.
 
-Click on Settings on Chatwoot home screen.
+To add labels, click on Settings on Chatwoot home screen. Go to Labels → Add Label button.
 
 <div align="center">
 
-<img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Dashboard home screen" />
-
-</div>
-
-Go to Labels → Add Label button.
-
-<div align="center">
-
-<img src={require('./images/addlabelssettings1.png').default} width="800" alt="Chatwoot Label Home Screen" />
+<img src={require('./images/adding-labels.png').default} width="800" alt="Chatwoot Dashboard home screen" />
 
 </div>
 
@@ -27,7 +19,7 @@ As you add more labels, try to give them meaningful names as well as different c
 
 <div align="center">
 
-<img src={require('./images/addlabelssettings2.png').default} width="800" alt="Chatwoot Add Label detail screen" />
+<img src={require('./images/label-settings.png').default} width="800" alt="Chatwoot Add Label detail screen" />
 
 </div>
 
@@ -43,7 +35,7 @@ New Label has been created. You can create as many Labels as you need. Labels ca
 
 <div align="center">
 
-<img src={require('./images/addlabelssettings3.png').default} width="800" alt="Chatwoot Label setting screen" />
+<img src={require('./images/label-list.png').default} width="800" alt="Chatwoot Label setting screen" />
 
 </div>
 
