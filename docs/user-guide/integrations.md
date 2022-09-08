@@ -2,23 +2,16 @@
 title: "Integrations"
 ---
 
-Chatwoot is designed to work alongside the project communication application you use in your project. For example, Slack and Webhooks are already integrated in Chatwoot.
+Chatwoot is designed to work alongside the project communication application you use in your project. Slack and Webhooks are already integrated in Chatwoot. You can also connect your own apps using [Dashboard Apps]([url](https://www.chatwoot.com/blog/dashboard-apps/)).
 
-To begin setting up, click on Settings on your homepage.
-
-<div align="center">
-
-<img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Dashboard Home Screen" />
-
-</div>
+To begin setting up, click on Settings on your homepage. Next, click on Integrations. You can see the screen which displays the already installed integrations.
 
 <div align="center">
 
-Next, click on Integrations. You can see the screen which displays the already installed integrations.
-
-<img src={require('./images/integrations1.png').default} width="800" alt="Integration Home Screen" />
+<img src={require('./images/integrations-on-chatwoot.png').default} width="800" alt="Chatwoot Dashboard Home Screen" />
 
 </div>
+
 
 ### Slack
 
@@ -26,7 +19,7 @@ If your account/project is using Slack as medium of communication, click on the 
 
 <div align="center">
 
-<img src={require('./images/integrations2.png').default} width="800" alt="Integration Home Screen" />
+<img src={require('./images/slack-connect-button.png').default} width="800" alt="Integration Home Screen" />
 
 </div>
 
@@ -47,7 +40,7 @@ If your Account/Project is using Webhooks for communication, click on the "Confi
 
 <div align="center">
 
-<img src={require('./images/webhooks1.png').default} width="800" alt="Integration Home Screen" />
+<img src={require('./images/webhooks-configure-button.png').default} width="800" alt="Integration Home Screen" />
 
 </div>
 
@@ -55,7 +48,7 @@ Click on the "Add New Webhook" button on the right hand top side of the screen.
 
 <div align="center">
 
-<img src={require('./images/webhooks2.png').default} width="800" alt="Webhooks Home Screen" />
+<img src={require('./images/add-new-webhook.png').default} width="800" alt="Webhooks Home Screen" />
 
 </div>
 
@@ -67,3 +60,7 @@ A screen opens up where you can enter the details of the the new Webhook you wan
 <img src={require('./images/webhooks3.png').default} width="800" alt="Webhook URL Screen" />
 
 </div>
+
+### Dashboard Apps
+
+For configuring Dashboard Apps, refer to [this doc]([url](https://www.chatwoot.com/docs/product/others/dashboard-apps/)).
