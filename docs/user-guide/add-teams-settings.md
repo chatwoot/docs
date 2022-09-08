@@ -7,22 +7,16 @@ To start adding teams, go to Settings → Teams → Create new team.
 
 <div align="center">
 
-<img src={require('./images/addteamssettings1.png').default} width="800" alt="Chatwoot Dashboard Home Screen" />
+<img src={require('./images/adding-new-team.png').default} width="800" alt="Chatwoot Dashboard Home Screen" />
 
 </div>
 
-
-<div align="center">
-
-<img src={require('./images/addteamssettings2.png').default} width="800" alt="Chatwoot Teams Home Screen" />
-
-</div>
 
 You will see the screen shown below. Add Teams as per your need. Create Teams and group the issues/tickets to several groups such that assigned agents need to work in relevant teams only.
 
 <div align="center">
 
-<img src={require('./images/addteamssettings3.png').default} width="800" alt="Chatwoot Add Teams Details" />
+<img src={require('./images/team-settings.png').default} width="800" alt="Chatwoot Add Teams Details" />
 
 </div>
 
@@ -44,21 +38,15 @@ Click on ‘Add Agents’. Only these agents will be able to see these teams on 
 
 <div align="center">
 
-<img src={require('./images/addteamssettings4.png').default} width="800" alt="Add Agents to Teams Screen" />
+<img src={require('./images/add-agents-to-team.png').default} width="800" alt="Add Agents to Teams Screen" />
 
 </div>
-Click on Finish.
+Click on 'Finish' on the next screen.
+
+You will be able to see the team added to your list of teams. You can edit or delete this team anytime you would like to.
 
 <div align="center">
 
-<img src={require('./images/addteamssettings5.png').default} width="800" alt="Teams Create Finish Screen" />
-
-</div>
-You just created your first team! You can always Edit or Delete the Team as per your need.
-
-
-<div align="center">
-
-<img src={require('./images/addteamssettings6.png').default} width="800" alt="Teams Settings Screen" />
+<img src={require('./images/teams-list.png').default} width="800" alt="Teams Create Finish Screen" />
 
 </div>
