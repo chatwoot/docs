@@ -19,7 +19,7 @@ P.S. We have a wholly different [guide](https://www.chatwoot.com/docs/self-hoste
 
 **Step 2**. You will be able to see a signup page as shown below.
 
-![register-an-account](./images/create-an-account/register-an-account.png)
+![register-an-account](./images/create-an-account/account-registration-form.png)
 
 The fields required to signup are as shown below. Fill up the fields.
 
@@ -35,9 +35,9 @@ The fields required to signup are as shown below. Fill up the fields.
 
 ![email-template](./images/create-an-account/email-template.png)
 
-**Step 3**. Click on the **Confirm my account** button.
+**Step 4**. Click on the **Confirm my account** button.
 
-![agent-dashboard](./images/create-an-account/agent-dashboard.png)
+![agent-dashboard](./images/create-an-account/Chatwoot-welcome-screen.png)
 
 Voila! You have verified your account at Chatwoot. 
 
