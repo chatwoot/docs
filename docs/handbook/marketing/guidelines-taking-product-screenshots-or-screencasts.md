@@ -37,6 +37,8 @@ Here are some basic things to keep in mind:
 - Use a good contrast if you’re sketching or annotating on the screenshot. Ideally, one should understand the intended message of a screenshot at the first glance.
 - Direct the eye of the reader. Use arrows if necessary.
 - Do not hesitate to include more screenshots if it helps in getting the point across more clearly. Otherwise, record a screencast or GIF.
+- Make sure that you are using a real-world example and not using content "Test Content" or names like "Test" in the screenshots.
+- Make sure the screenshots do not expose any PII or production data. Use a staging account for taking screenshots.
 
 **Let’s see an example**
 
@@ -75,7 +77,7 @@ And these are the boxes the gif checks:
 
 :::note
 
-Free tool used to edit this screenshot: [PineTools](https://pinetools.com/)
+Free tool used to edit this screenshot: [PineTools](https://pinetools.com/censor-photo-blur-pixelate)
 
 Free tool used to edit the gif: [Ezgif](https://ezgif.com/)
 

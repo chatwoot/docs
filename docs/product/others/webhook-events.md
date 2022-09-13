@@ -1,560 +1,257 @@
 ---
-title: "Webhook Events"
+title: "Supported webhook events in Chatwoot"
 ---
 
-Chatwoot Publishes Various events to Webhook Endpoints if any of the following are configured:
+Chatwoot publishes various events to the configured webhook endpoints. If you want to configure a webhook, refer to the guide [here](/docs/product/features/webhooks).
 
-1. [Webhook Integration](/docs/product/features/webhooks)
-2. [API Channel](/docs/product/channels/api/create-channel)
-3. [Agent Bots](https://github.com/chatwoot/chatwoot/wiki/Building-on-Top-of-Chatwoot:-Agent-Bots)
+Each event has its payload structure based on the type of model they are acting on. The following section describes the main objects we use in Chatwoot and their attributes.
+
+## Objects
+
+An event can contain any of the following objects as a payload. Different types of objects supported in Chatwoot are as follows.
+
+### Account
+
+The following payload will be returned for an account.
+
+```json
+{
+  "id": "integer",
+  "name": "string"
+}
+```
+
+### Inbox
+
+The following payload will be returned for an inbox.
+
+```json
+{
+  "id": "integer",
+  "name": "string"
+}
+```
+
+### Contact
+
+The following payload will be returned for a contact.
+
+```json
+{
+  "id": "integer",
+  "name": "string",
+  "avatar": "string",
+  "type": "contact",
+  "account": {
+    // <...Account Object>
+  }
+}
+```
+
+### User
+
+The following payload will be returned for an agent/admin.
+
+```json
+{
+  "id": "integer",
+  "name": "string",
+  "email": "string",
+  "type": "user"
+}
+```
+
+### Conversation
+
+The following payload will be returned for a conversation.
+
+```json
+{
+  "additional_attributes": {
+    "browser": {
+      "device_name": "string",
+      "browser_name": "string",
+      "platform_name": "string",
+      "browser_version": "string",
+      "platform_version": "string"
+    },
+    "referer": "string",
+    "initiated_at": {
+      "timestamp": "iso-datetime"
+    }
+  },
+  "can_reply": "boolean",
+  "channel": "string",
+  "id": "integer",
+  "inbox_id": "integer",
+  "contact_inbox": {
+    "id": "integer",
+    "contact_id": "integer",
+    "inbox_id": "integer",
+    "source_id": "string",
+    "created_at": "datetime",
+    "updated_at": "datetime",
+    "hmac_verified": "boolean"
+  },
+  "messages": ["Array of message objects"],
+  "meta": {
+    "sender": {
+      // Contact Object
+    },
+    "assignee": {
+      // User Object
+    }
+  },
+  "status": "string",
+  "unread_count": "integer",
+  "agent_last_seen_at": "unix-timestamp",
+  "contact_last_seen_at": "unix-timestamp",
+  "timestamp": "unix-timestamp",
+  "account_id": "integer"
+}
+```
+
+### Message
+
+```json
+{
+  "id": "integer",
+  "content": "string",
+  "message_type": "integer",
+  "created_at": "unix-timestamp",
+  "private": "boolean",
+  "source_id": "string / null",
+  "content_type": "string",
+  "content_attributes": "object",
+  "sender": {
+    "type": "string - contact/user"
+    // User or Contact Object
+  },
+  "account": {
+    // Account Object
+  },
+  "conversation": {
+    // Conversation Object
+  },
+  "inbox": {
+    // Inbox Object
+  }
+}
+```
 
 ### A sample webhook payload
 
 ```json
 {
+  "event": "event_name"
+  // Attributes related to the event
+}
+```
 
-  "event": "message_created", // The name of the event
-  "id": "1", // Message ID
-  "content": "Hi", // Content of the message
-  "created_at": "2020-03-03 13:05:57 UTC", // Time at which the message was sent
-  "message_type": "incoming", // This will have a type incoming, outgoing or template. Incoming messages are sent by the user from the widget, Outgoing messages are sent by the agent to the user.
-  "content_type": "enum", // This is an enum, it can be input_select, cards, form or text. The message_type will be template if content_type is one og these. Default value is text
-  "content_attributes": {} // This will an object, different values are defined below
-  "source_id": "", // This would the external id if the inbox is a Twitter or Facebook integration.
-  "sender": { // This would provide the details of the agent who sent this message
-    "id": 1,
-    "name": "Agent",
-    "email": "agent@example.com"
-  },
-  "contact": { // This would provide the details of the user who sent this message
-    "id": "1",
-    "name": "contact-name"
-  },
-  "conversation": { // This would provide the details of the conversation
-    "display_id": "1", // This is the ID of the conversation which you can see in the dashboard.
-    "additional_attributes": {
-      "browser": {
-        "device_name": "Macbook",
-        "browser_name": "Chrome",
-        "platform_name": "Macintosh",
-        "browser_version": "80.0.3987.122",
-        "platform_version": "10.15.2"
-      },
-      "referer": "http://www.chatwoot.com",
-      "initiated_at": {
-        "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
+## Webhook Events
+
+Chatwoot supports the following webhook events. You can subscribe to them while configuring a webhook in the dashboard or using the API.
+
+### conversation_created
+
+This event will be triggered when a new conversation is created in the account. The payload for the event is as follows.
+
+```json
+{
+  "event": "conversation_created"
+  // <...Conversation Attributes>
+}
+```
+
+### conversation_updated
+
+This event will be triggered when there is a change in any of the attributes in the conversation.
+
+```json
+{
+  "event": "conversation_updated",
+  "changed_attributes": [
+    {
+      "<attribute_name>": {
+        "current_value": "",
+        "previous_value": ""
       }
     }
-  },
-  "account": { // This would provide the details of the account
-    "id": "1",
-    "name": "Chatwoot",
-  }
+  ]
+  // <...Conversation Attributes>
 }
 ```
-
-## Webhook Event payload samples
-
-### conversation_resolved
-> To be deprecated in favor of `conversation_status_changed`
-
-```json
-{
-  "additional_attributes": {
-    "browser": {
-      "device_name": "Unknown",
-      "browser_name": "Chrome",
-      "platform_name": "macOS",
-      "browser_version": "92.0.4515.107",
-      "platform_version": "10.15.7"
-    },
-    "referer": "http://localhost:3000/widget_tests",
-    "initiated_at": {
-      "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
-    }
-  },
-  "can_reply": true,
-  "channel": "Channel::WebWidget",
-  "id": 10,
-  "inbox_id": 1,
-  "contact_inbox": {
-    "id": 12,
-    "contact_id": 12,
-    "inbox_id": 1,
-    "source_id": "405f1d30-1af3-4fa0-8ffd-11ea3f86101e",
-    "created_at": "2021-07-23T18:01:48.739Z",
-    "updated_at": "2021-07-23T18:02:59.053Z",
-    "hmac_verified": false
-  },
-  "messages": [
-    {
-      "id": 120,
-      "content": "Get notified by email",
-      "account_id": 1,
-      "inbox_id": 1,
-      "conversation_id": 10,
-      "message_type": 3,
-      "created_at": 1627063369,
-      "updated_at": "2021-07-23T18:02:58.000Z",
-      "private": false,
-      "status": "sent",
-      "source_id": null,
-      "content_type": "input_email",
-      "content_attributes": {
-        "submitted_email": "jane@acme.inc"
-      },
-      "sender_type": null,
-      "sender_id": null,
-      "external_source_ids": {}
-    }
-  ],
-  "meta": {
-    "sender": {
-      "additional_attributes": {},
-      "custom_attributes": {},
-      "email": "jane@acme.inc",
-      "id": 12,
-      "identifier": null,
-      "name": "jane",
-      "phone_number": null,
-      "pubsub_token": "s76CptSuowp4BDcBom2q7aNX",
-      "thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-      "type": "contact"
-    },
-    "assignee": {
-      "id": 1,
-      "name": "John",
-      "available_name": "John",
-      "avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-      "type": "user",
-      "availability_status": "online"
-    }
-  },
-  "status": "open",
-  "unread_count": 0,
-  "agent_last_seen_at": 1627063520,
-  "contact_last_seen_at": 0,
-  "timestamp": 1627063520,
-  "event": "conversation_resolved"
-}
-```
-
-
-### conversation_opened
-> To be deprecated in favor of `conversation_status_changed`
-
-```json
-{
-  "additional_attributes": {
-    "browser": {
-      "device_name": "Unknown",
-      "browser_name": "Chrome",
-      "platform_name": "macOS",
-      "browser_version": "92.0.4515.107",
-      "platform_version": "10.15.7"
-    },
-    "referer": "http://localhost:3000/widget_tests",
-    "initiated_at": {
-      "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
-    }
-  },
-  "can_reply": true,
-  "channel": "Channel::WebWidget",
-  "id": 10,
-  "inbox_id": 1,
-  "contact_inbox": {
-    "id": 12,
-    "contact_id": 12,
-    "inbox_id": 1,
-    "source_id": "405f1d30-1af3-4fa0-8ffd-11ea3f86101e",
-    "created_at": "2021-07-23T18:01:48.739Z",
-    "updated_at": "2021-07-23T18:02:59.053Z",
-    "hmac_verified": false
-  },
-  "messages": [
-    {
-      "id": 120,
-      "content": "Get notified by email",
-      "account_id": 1,
-      "inbox_id": 1,
-      "conversation_id": 10,
-      "message_type": 3,
-      "created_at": 1627063369,
-      "updated_at": "2021-07-23T18:02:58.000Z",
-      "private": false,
-      "status": "sent",
-      "source_id": null,
-      "content_type": "input_email",
-      "content_attributes": {
-        "submitted_email": "jane@acme.inc"
-      },
-      "sender_type": null,
-      "sender_id": null,
-      "external_source_ids": {}
-    }
-  ],
-  "meta": {
-    "sender": {
-      "additional_attributes": {},
-      "custom_attributes": {},
-      "email": "jane@acme.inc",
-      "id": 12,
-      "identifier": null,
-      "name": "jane",
-      "phone_number": null,
-      "pubsub_token": "s76CptSuowp4BDcBom2q7aNX",
-      "thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-      "type": "contact"
-    },
-    "assignee": {
-      "id": 1,
-      "name": "John",
-      "available_name": "John",
-      "avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-      "type": "user",
-      "availability_status": "online"
-    }
-  },
-  "status": "pending",
-  "unread_count": 0,
-  "agent_last_seen_at": 1627063459,
-  "contact_last_seen_at": 0,
-  "timestamp": 1627063459,
-  "event": "conversation_opened"
-}
-```
-
 
 ### conversation_status_changed
-> Not Available for Agent Bots yet
+
+This event will be triggered when the status of the conversation is changed.
+
+Note: If you are using agent bot APIs instead of webhooks, this event is not supported yet.
 
 ```json
 {
-  "additional_attributes": {
-    "browser": {
-      "device_name": "Unknown",
-      "browser_name": "Chrome",
-      "platform_name": "macOS",
-      "browser_version": "92.0.4515.107",
-      "platform_version": "10.15.7"
-    },
-    "referer": "http://localhost:3000/widget_tests",
-    "initiated_at": {
-      "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
-    }
-  },
-  "can_reply": true,
-  "channel": "Channel::WebWidget",
-  "id": 10,
-  "inbox_id": 1,
-  "contact_inbox": {
-    "id": 12,
-    "contact_id": 12,
-    "inbox_id": 1,
-    "source_id": "405f1d30-1af3-4fa0-8ffd-11ea3f86101e",
-    "created_at": "2021-07-23T18:01:48.739Z",
-    "updated_at": "2021-07-23T18:02:59.053Z",
-    "hmac_verified": false
-  },
-  "messages": [
-    {
-      "id": 120,
-      "content": "Get notified by email",
-      "account_id": 1,
-      "inbox_id": 1,
-      "conversation_id": 10,
-      "message_type": 3,
-      "created_at": 1627063369,
-      "updated_at": "2021-07-23T18:02:58.000Z",
-      "private": false,
-      "status": "sent",
-      "source_id": null,
-      "content_type": "input_email",
-      "content_attributes": {
-        "submitted_email": "jane@acme.inc"
-      },
-      "sender_type": null,
-      "sender_id": null,
-      "external_source_ids": {}
-    }
-  ],
-  "meta": {
-    "sender": {
-      "additional_attributes": {},
-      "custom_attributes": {},
-      "email": "jane@acme.inc",
-      "id": 12,
-      "identifier": null,
-      "name": "jane",
-      "phone_number": null,
-      "pubsub_token": "s76CptSuowp4BDcBom2q7aNX",
-      "thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-      "type": "contact"
-    },
-    "assignee": {
-      "id": 1,
-      "name": "John",
-      "available_name": "John",
-      "avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-      "type": "user",
-      "availability_status": "online"
-    }
-  },
-  "status": "open",
-  "unread_count": 0,
-  "agent_last_seen_at": 1627063451,
-  "contact_last_seen_at": 0,
-  "timestamp": 1627063369,
   "event": "conversation_status_changed"
+  // <...Conversation Attributes>
 }
 ```
 
 ### message_created
 
+This event will be triggered when a message is created in a conversation. The payload for the event is as follows.
+
 ```json
 {
-  "id": 118,
-  "content": "hi",
-  "created_at": "2021-07-23T18:02:48.000Z",
-  "message_type": "incoming",
-  "content_type": "text",
-  "private": false,
-  "content_attributes": {},
-  "source_id": null,
-  "sender": {
-    "id": 14,
-    "name": "little-haze-776",
-    "avatar": "",
-    "type": "contact"
-  },
-  "inbox": {
-    "id": 1,
-    "name": "Acme Support"
-  },
-  "conversation": {
-    "additional_attributes": {
-      "browser": {
-        "device_name": "Unknown",
-        "browser_name": "Chrome",
-        "platform_name": "macOS",
-        "browser_version": "92.0.4515.107",
-        "platform_version": "10.15.7"
-      },
-      "referer": "http://localhost:3000/widget_tests",
-      "initiated_at": {
-        "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
-      }
-    },
-    "can_reply": true,
-    "channel": "Channel::WebWidget",
-    "id": 10,
-    "inbox_id": 1,
-    "contact_inbox": {
-      "id": 12,
-      "contact_id": 14,
-      "inbox_id": 1,
-      "source_id": "405f1d30-1af3-4fa0-8ffd-11ea3f86101e",
-      "created_at": "2021-07-23T18:01:48.739Z",
-      "updated_at": "2021-07-23T18:01:48.739Z",
-      "hmac_verified": false
-    },
-    "messages": [
-      {
-        "id": 120,
-        "content": "Get notified by email",
-        "account_id": 1,
-        "inbox_id": 1,
-        "conversation_id": 10,
-        "message_type": 3,
-        "created_at": 1627063369,
-        "updated_at": "2021-07-23T18:02:49.000Z",
-        "private": false,
-        "status": "sent",
-        "source_id": null,
-        "content_type": "input_email",
-        "content_attributes": {},
-        "sender_type": null,
-        "sender_id": null,
-        "external_source_ids": {}
-      }
-    ],
-    "meta": {
-      "sender": {
-        "additional_attributes": {},
-        "custom_attributes": {},
-        "email": null,
-        "id": 14,
-        "identifier": null,
-        "name": "little-haze-776",
-        "phone_number": null,
-        "pubsub_token": "baRUMaAnAB6geeGXUXBsJwDS",
-        "thumbnail": "",
-        "type": "contact"
-      },
-      "assignee": {
-        "id": 1,
-        "name": "John",
-        "available_name": "John",
-        "avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-        "type": "user",
-        "availability_status": "online"
-      }
-    },
-    "status": "open",
-    "unread_count": 1,
-    "agent_last_seen_at": 0,
-    "contact_last_seen_at": 0,
-    "timestamp": 1627063369
-  },
-  "account": {
-    "id": 1,
-    "name": "Acme Inc"
-  },
   "event": "message_created"
+  // <...Message Attributes>
 }
 ```
 
-
 ### message_updated
+
+This event will be triggered when a message is updated in a conversation. The payload for the event is as follows.
 
 ```json
 {
-  "id": 118,
-  "content": "hi",
-  "created_at": "2021-07-23T18:02:48.000Z",
-  "message_type": "incoming",
-  "content_type": "text",
-  "private": false,
-  "content_attributes": {},
-  "source_id": null,
-  "sender": {
-    "id": 12,
-    "name": "jane",
-    "avatar": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-    "type": "contact"
-  },
-  "inbox": {
-    "id": 1,
-    "name": "Acme Support"
-  },
-  "conversation": {
-    "additional_attributes": {
-      "browser": {
-        "device_name": "Unknown",
-        "browser_name": "Chrome",
-        "platform_name": "macOS",
-        "browser_version": "92.0.4515.107",
-        "platform_version": "10.15.7"
-      },
-      "referer": "http://localhost:3000/widget_tests",
-      "initiated_at": {
-        "timestamp": "Fri Jul 23 2021 23:32:48 GMT+0530 (India Standard Time)"
-      }
-    },
-    "can_reply": true,
-    "channel": "Channel::WebWidget",
-    "id": 10,
-    "inbox_id": 1,
-    "contact_inbox": {
-      "id": 12,
-      "contact_id": 12,
-      "inbox_id": 1,
-      "source_id": "405f1d30-1af3-4fa0-8ffd-11ea3f86101e",
-      "created_at": "2021-07-23T18:01:48.739Z",
-      "updated_at": "2021-07-23T18:02:59.053Z",
-      "hmac_verified": false
-    },
-    "messages": [
-      {
-        "id": 120,
-        "content": "Get notified by email",
-        "account_id": 1,
-        "inbox_id": 1,
-        "conversation_id": 10,
-        "message_type": 3,
-        "created_at": 1627063369,
-        "updated_at": "2021-07-23T18:02:58.000Z",
-        "private": false,
-        "status": "sent",
-        "source_id": null,
-        "content_type": "input_email",
-        "content_attributes": {
-          "submitted_email": "jane@acme.inc"
-        },
-        "sender_type": null,
-        "sender_id": null,
-        "external_source_ids": {}
-      }
-    ],
-    "meta": {
-      "sender": {
-        "additional_attributes": {},
-        "custom_attributes": {},
-        "email": "jane@acme.inc",
-        "id": 12,
-        "identifier": null,
-        "name": "jane",
-        "phone_number": null,
-        "pubsub_token": "s76CptSuowp4BDcBom2q7aNX",
-        "thumbnail": "https://www.gravatar.com/avatar/526692031d4bb623b36ae4e340260f13?d=404",
-        "type": "contact"
-      },
-      "assignee": {
-        "id": 1,
-        "name": "John",
-        "available_name": "John",
-        "avatar_url": "https://www.gravatar.com/avatar/0d722ac7bc3b3c92c030d0da9690d981?d=404",
-        "type": "user",
-        "availability_status": "online"
-      }
-    },
-    "status": "open",
-    "unread_count": 1,
-    "agent_last_seen_at": 0,
-    "contact_last_seen_at": 0,
-    "timestamp": 1627063369
-  },
-  "account": {
-    "id": 1,
-    "name": "Acme Inc"
-  },
   "event": "message_updated"
+  // <...Message Attributes>
 }
 ```
 
 ### webwidget_triggered
 
+This event will be triggered when the end-user opens the live-chat widget.
+
 ```json
 {
-  "id": 12,
+  "id": ,
   "contact": {
-    "id": 14,
-    "name": "little-haze-776",
-    "avatar": "",
-    "type": "contact"
+    // <...Contact Object>
   },
   "inbox": {
-    "id": 1,
-    "name": "Acme Support"
+    // <...Inbox Object>
   },
   "account": {
-    "id": 1,
-    "name": "Acme Inc"
+    // <...Account Object>
   },
-  "current_conversation": null,
-  "source_id": "405f1d30-1af3-4fa0-8ffd-11ea3f86101e",
+  "current_conversation": {
+    // <...Conversation Object>
+  },
+  "source_id": "string",
   "event": "webwidget_triggered",
   "event_info": {
-    "widget_language": "en",
-    "browser_language": "en",
+    "initiated_at": {
+      "timestamp": "date-string"
+    },
+    "referer": "string",
+    "widget_language": "string",
+    "browser_language": "string",
     "browser": {
-      "browser_name": "Chrome",
-      "browser_version": "92.0.4515.107",
-      "device_name": "Unknown",
-      "platform_name": "macOS",
-      "platform_version": "10.15.7"
+      "browser_name": "string",
+      "browser_version": "string",
+      "device_name": "string",
+      "platform_name": "string",
+      "platform_version": "string"
     }
   }
 }
 ```
-

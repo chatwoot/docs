@@ -55,15 +55,16 @@ module.exports = [
       "product/channels/twitter",
       {
         "Whatsapp Channel": [
+          "product/channels/whatsapp/whatsapp-cloud",
           "product/channels/whatsapp/twilio",
           "product/channels/whatsapp/360dialog"
-        ]
+        ],
       },
       {
         "SMS Channel": [
           "product/channels/sms/twilio",
-          "product/channels/sms/bandwidth"
-        ]
+          "product/channels/sms/bandwidth",
+        ],
       },
       {
         Email: [
@@ -139,7 +140,6 @@ module.exports = [
         label: "Integrations",
         items: [
           "product/channels/live-chat/integrations/dialogflow",
-          "product/features/webhooks",
           "product/features/slack",
         ],
       },
@@ -153,7 +153,12 @@ module.exports = [
     items: [
       "product/others/agent-bots",
       "product/others/interactive-messages",
-      "product/others/webhook-events",
+      "product/others/dashboard-apps",
+      {
+        type: "category",
+        label: "Webhooks",
+        items: ["product/features/webhooks", "product/others/webhook-events"],
+      },
       "product/others/websocket-events",
       "product/others/cookies",
     ],
@@ -170,6 +175,6 @@ module.exports = [
     collapsible: false,
     label: "Others",
     type: "category",
-    items: ["product/others/faq"],
+    items: ["product/others/enterprise-edition","product/others/faq"],
   },
 ];

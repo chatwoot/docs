@@ -15,7 +15,6 @@ Once you register your Facebook App, you will have to obtain the `App Id` and `A
 
 Configure the following Chatwoot environment variables with the values you have obtained during the Facebook app setup.
 `FB_VERIFY_TOKEN` should be a unique secure string that should be provided when configuring the Facebook app.
-
 Restart the chatwoot server after updating the environment variables
 
 ```bash
@@ -92,6 +91,11 @@ Update verify token in your Chatwoot environment variables.
 
 You will also have to add a Facebook page to your `Access Tokens` section in your Messenger settings page.
 Restart the Chatwoot local server. Your Chatwoot setup will be ready to receive Facebook messages.
+
+### Facebook API version
+
+We support facebook API version v13.0 going forward, which you can update in the facebook app advanced settings.
+![fb_api_version](./images/facebook/fb_api_version.png)
 
 ### Test your local Setup
 

@@ -6,7 +6,7 @@ title: "Deploy Chatwoot using Helm Charts"
 This guide will help you to deploy a production ready Chatwoot instance with Helm Charts.
 
 To quickly try out the charts, follow the two steps below. For a production deployment, please make sure to 
-pass in the required arguments to helm.  
+pass in the required arguments to helm using your custom `values.yaml` file.  
 
 ```
 helm repo add chatwoot https://chatwoot.github.io/charts
@@ -26,10 +26,10 @@ The helm installation will create 3 "Persistent Volume Claims" for redis, rails 
 
 ## Installing the chart
 
-To install the chart with the release name `chatwoot`:
+To install the chart with the release name `chatwoot`, use the following. To deploy it in `chatwoot` namespace, pass `-n chatwoot` to the command.
 
 ```console
-helm install chatwoot chatwoot/chatwoot
+helm install chatwoot chatwoot/chatwoot -f <your-custom-values.yaml> #-n chatwoot
 ```
 
 The command deploys Chatwoot on the Kubernetes cluster in the default configuration. The [parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -57,7 +57,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                | Description                                          | Value                  |
 | ------------------- | ---------------------------------------------------- | ---------------------- | 
 | `image.repository`  | Chatwoot image repository                            | `chatwoot/chatwoot`    |
-| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.0.0`               |
+| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.7.0`               |
 | `image.pullPolicy`  | Chatwoot image pull policy                           | `IfNotPresent`         |
 
  
@@ -103,11 +103,11 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                | Type                                                                          | Default Value                                    |
 | ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------ |
 | `postgresql.enabled`                | Set to `false` if using external postgres and modify the below variables.     | `true`                                           |
-| `postgresql.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
+| `postgresql.auth.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
 | `postgresql.postgresqlHost`         | Postgres host. Edit if using external postgres.                               | `""`                                             |
-| `postgresql.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
+| `postgresql.auth.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
 | `postgresql.postgresqlPort`         | Postgres port                                                                 | `5432`                                           |
-| `postgresql.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
+| `postgresql.auth.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
 
 ### Redis variables
 
@@ -149,15 +149,26 @@ The command removes all the Kubernetes components associated with the chart and 
 | `env.TWITTER_CONSUMER_SECRET`       | For twitter channel                                                  | `""`                                                       |
 | `env.TWITTER_ENVIRONMENT`           | For twitter channel                                                  | `""`                                                       |
 
+### Autoscaling
+
+| Name                                | Type                                                                 | Default Value                                              |
+| ----------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `web.hpa.enabled`                   | Horizontal Pod Autoscaling for Chatwoot web                          | `false`                                                    |
+| `web.hpa.cputhreshold`              | CPU threshold for Chatwoot web                                       | `80`                                                       |
+| `web.hpa.minpods`                   | Minimum number of pods for Chatwoot web                              | `1`                                                        |
+| `web.hpa.maxpods`                   | Maximum number of pods for Chatwoot web                              | `10`                                                       |
+| `web.replicaCount`                  | No of web pods if hpa is not enabled                                 | `1`                                                        |
+| `worker.hpa.enabled`                | Horizontal Pod Autoscaling for Chatwoot worker                       | `false`                                                    |
+| `worker.hpa.cputhreshold`           | CPU threshold for Chatwoot worker                                    | `80`                                                       |
+| `worker.hpa.minpods`                | Minimum number of pods for Chatwoot worker                           | `2`                                                        |
+| `worker.hpa.maxpods`                | Maximum number of pods for Chatwoot worker                           | `10`                                                       |
+| `worker.replicaCount`               | No of worker pods if hpa is not enabled                              | `1`                                                        |
+
 ### Other Parameters
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | fullnameOverride | string | `""` |  |
 | hooks.affinity | object | `{}` |  |
 | hooks.migrate.env | list | `[]` |  |
@@ -187,14 +198,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | services.annotations | object | `{}` |  |
-| services.internlPort | int | `3000` |  |
+| services.internalPort | int | `3000` |  |
 | services.name | string | `"chatwoot"` |  |
 | services.targetPort | int | `3000` |  |
 | services.type | string | `"LoadBalancer"` |  |
 | tolerations | list | `[]` |  |
-| web.replica | int | `1` |  |
-| worker.replica | int | `1` |  |
 
+## Install with custom parameters
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -222,11 +232,132 @@ PostgreSQL is installed along with the chart if you choose the default setup. To
 
 Redis is installed along with the chart if you choose the default setup. To use an external Redis DB, please set `redis.enabled` to `false` and set the variables under the Redis section above.
 
+## Autoscaling
+
+To enable horizontal pod autoscaling, set `web.hpa.enabled` and `worker.hpa.enabled` to `true`. Also make sure to uncomment the values under, `resources.limits` and `resources.requests`. This assumes your k8s cluster is already having a metrics-server. If not, deploy metrics-server with the following command.
+
+```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
 
 ## Upgrading
 
+Do `helm repo update` and check the version of charts that is going to be installed. Helm charts follows semantic versioning and so if the MAJOR version is different from your installed version, there might be breaking changes. Please refer to the changelog before upgrading.
 
-## To 0.6.x
+```
+# update helm repositories
+helm repo update
+# list your current installed version
+helm list
+# show the latest version of charts that is going to be installed
+helm search repo chatwoot
+```
+
+```
+#if it is major version update, refer to the changelog before proceeding
+helm upgrade chatwoot chatwoot/chatwoot -f <your-custom-values>.yaml
+```
+
+### To 1.x.x
+
+Make sure you are on Chatwoot helm charts version `0.9.0` before upgrading to version `1.x.x`. If not, please upgrade to `0.9.0` before proceeding.
+
+```
+helm repo update
+helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0"  -f <your-custom-values>  --debug
+```
+
+This release changes the postgres and redis versions. This is a breaking change and requires manual data migration if you are not using external postgres and redis.
+
+> **Note**: This release also changes the postgres and redis auth paramaters values under `.Values.redis` and `.Values.postgres`.
+Make the necessary changes to your custom `values.yaml` file if any. `Values.postgresqlDatabase` is now `Values.auth.postgresqlDatabase`, `Values.postgresqlUsername` is now `Values.auth.postgresqlUsername` and `Values.postgresqlPassword` is renamed to `Values.auth.postgresqlPassword`.
+
+>**Note:** Append the kubectl commands with `-n chatwoot`, if you have deployed it under the chatwoot namespace.
+
+Before updating,
+
+1. Set the replica count to 0 for both Chatwoot web(`.Values.web.replicaCount`) and worker(`.Values.worker.replicaCount`) replica sets. Applying this change
+will bring down the pods count to 0. This is to ensure the database will not be having any activity and is in a state to backup.
+```
+helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0" --namespace ug3 -f values.ci.yaml --create-namespace --debug
+```
+
+2. Log into the postgres pod and take a backup of your database.
+ ```
+ kubectl exec -it chatwoot-chatwoot-postgresql-0 -- /bin/sh
+ env | grep -i postgres_password #get postgres password to use in next step
+ pg_dump -Fc --no-acl --no-owner  -U postgres chatwoot_production > /tmp/cw.dump
+ exit
+ ```
+
+ 3. Copy the backup to your local machine.
+ ```
+ kubectl cp pod/chatwoot-chatwoot-postgresql-0:/tmp/cw.dump ./cw.dump
+ ```
+
+ 4. Delete the deployments.
+ ```
+ helm delete chatwoot
+ kubectl get pvc
+ # this will delete the database volumes
+ # make sure you have backed up before proceeding
+ kubectl delete pvc <data-postgres->
+ kubectl delete pvc <redis>
+ ```
+
+5. Update and install new version of charts.
+```
+helm repo update
+#reset web.replicaCount and worker.replicaCount to your previous values 
+helm install chatwoot chatwoot/chatwoot -f <your-values.yaml> #-n chatwoot
+```
+
+6. Copy the local db backup into postgres pod.
+```
+kubectl cp cw.dump chatwoot-chatwoot-postgresql-0:/tmp/cw.dump
+```
+
+7. Exec into the postgres pod and drop the database.
+```
+ kubectl exec -it chatwoot-chatwoot-postgresql-0 -- /bin/sh
+ psql -u postgres -d postgres
+ # this is a destructive action
+ # remove -- to take effect
+ -- DROP DATABASE chatwoot_production with (FORCE);
+ exit
+```
+
+8. Restore the database from the backup. If you are seeing no errors, the databse has been restored and you
+are good to go.
+```
+ pg_restore --verbose --clean --no-acl --no-owner --create -U postgres -d postgres /tmp/cw.dump
+```
+
+9. Exec into the web pod and remove the onboarding variable in redis.
+
+```
+kubectl exec -it chatwoot-web-xxxxxxxxxx -- /bin/sh
+RAILS_ENV=production bundle exec rails c
+::Redis::Alfred.delete(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
+```
+
+10. Load the Chatwoot web url, log in using the old credentials and verify the contents. Voila! Thats it!! 
+
+### To 0.9.x
+
+This release adds support for horizontal pod autoscaling(hpa) for chatwoot-web and chatwoot-worker deployments.
+Also, this changes the default redis replica count to `1`. The `Values.web.replicas` and `Values.worker. replicas` parameters
+where renamed to `Values.web.replicaCount` and `Values.worker.replicaCount` respectively. Also `services.internlPort` was renamed
+to `services.internalPort`.
+
+Please make the necessary changes in your custom values file if needed.
+
+### To 0.8.x
+
+Move from Kubernetes ConfigMap to Kubernetes Secrets for environment variables. This is not a breaking change.
+
+
+### To 0.6.x
 
 Existing labels were causing issues with `helm upgrade`. `0.6.x` introduces breaking changes related to selector 
 labels used for deployements. Please delete your helm release and recreate. Deleting your helm release will 
@@ -239,8 +370,8 @@ helm install chatwoot chatwoot/chatwoot
 ```
 
 
-## Error debugging
+## TroubleShooting
 
 
-## "pod has unbound immediate PersistentVolumeClaims"
-Make sure the "Persistent Volume Claims" can be satisfied. Refer to: Prerequisites
+### pod has unbound immediate PersistentVolumeClaims
+Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisites](#prerequisites).

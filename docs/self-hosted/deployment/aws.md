@@ -132,7 +132,7 @@ Create an application load balancer to recieve traffic on port 80 and 443, and d
        1. Create a new security group, `chatwoot-loadbalancer-sg`.
        2. Add rules to allow HTTP and HTTPS traffic from anywhere(`0.0.0.0/0`, `::/0`).
        3. Also add rules to allow SSH traffic.
-   6. For Listeners and routing section, create two listeners for both 80 and 443.
+   6. For Listeners and routing section, create two listeners for both 80 and 443. Set the forwarding rule on listener 80 to redirect `http` to `https`.
        1. Also create a target group, `chatwoot-tg` that will forward the requests to port `3000`(Chatwoot listens on this port).
        2. Add a health check to the endpoint `/api`. This endpoint is not authenticated and should return the application version.
 ```
@@ -210,25 +210,20 @@ Repeat the same and create another bastion, `chatwoot-bastion-b` in the other AZ
 9. Download the chatwoot linux installation script.
 
 ```
-wget https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh -O setup.sh
-chmod 755 setup.sh
+wget https://get.chatwoot.app/linux/install.sh
+chmod 755 install.sh
 ```
-10.  Modify it remove the postgres, redis, letsencrypt and nginx section.
-
-```
-vi setup.sh
-```
-11. Run the script.
+10. Run the script.
 
  ```
- ./setup.sh master
+ ./install.sh --install
  ```
 
 ## Configure Chatwoot
 
 // TODO: Expand with S3 for active storage and SES for Email.
 
-12. Once the installation is complete, switch to the chatwoot user and navigate to the chatwoot folder. Edit the .env file and replace the postgres and redis credentials with RDS and elasticache values.
+11. Once the installation is complete, switch to the chatwoot user and navigate to the chatwoot folder. Edit the .env file and replace the postgres and redis credentials with RDS and elasticache values.
 
 ```
 sudo -i -u chatwoot
@@ -237,12 +232,18 @@ vi .env
 
 ```
 
-13. Run the db migration.
+12. Run the db migration.
 ```
 RAILS_ENV=production bundle exec rake db:prepare
 ```
 
-14. Also modify the other necessary environment variable for your chatwoot setup. Refer to https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm#configure-the-required-environment-variables
+13. Also modify the other necessary environment variable for your chatwoot setup. Refer to https://www.chatwoot.com/docs/self-hosted/deployment/linux-vm#configure-the-required-environment-variables
+
+14. Restart the `chatwoot` service.
+
+```
+sudo cwctl --restart
+```
 
 ## Verify login
 
@@ -263,7 +264,8 @@ RAILS_ENV=production bundle exec rake db:prepare
 4. Create a scaling policy based on the CPU Utlization.
 5. At this point, we are good to terminate the instance we created earlier.
 6. Check the loadbalancer or target-group to verify if two new chatwoot instances have come up.
-7. That's it. 
+7. That's it.
+
 ## Monitoring
 
 1. Refer to https://www.chatwoot.com/docs/self-hosted/monitoring/apm-and-error-monitoring
