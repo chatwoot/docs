@@ -67,7 +67,8 @@ Chatwoot team doesn't encourage the following cases:
 - Use cases that directly compete with Chatwoot Business offerings. <br/>
   examples: clones of Chatwoot Cloud (SaaS), Rebranding Services, etc
 
-# How to debug SMTP Email errors in Chatwoot?
+
+## How to debug SMTP Email errors in Chatwoot?
 
 Suppose you run into issues with the agent mailers ( account confirmation, password reset, etc.) and email Channels in Chatwoot. Then, you can go through the following steps to debug your SMTP configurations.
 
