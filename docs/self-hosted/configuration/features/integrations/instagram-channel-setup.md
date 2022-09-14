@@ -118,3 +118,18 @@ Go to webhook Instagram and click on Test with `v11.0`
 
 ### NOTE:
 You can have only one app connected to the chatwoot for Instagram and Facebook combined as the Messenger platform is common. But suppose you want to have separate channels for Instagram and Facebook. In that case, you can have multiple Facebook pages inside your app that would be connected to Facebook users and Instagram users separately and then connected to the different inbox in the chatwoot page.
+
+### Checklist
+		
+1. Integrate the Facebook test app and Send a message from the Instagram tester to the connected account.
+2. Make sure your Instagram account is a business account.
+3. If the Instagram test account can receive the message and forward it to the webhook URL, then submit it for review.
+4. If the Instagram test account is not able to receive the message and forward it to the webhook URL
+   - Check the logs if you are receiving the message to `{your-app-url}/webhooks/Instagram`
+   - If the logs are present for the above endpoint, if there are any errors, then reach out to us. We will help you out.
+   - If the logs aren't present for the above endpoint, then raise a bug for the Facebook team or follow this bug https://developers.facebook.com/support/bugs/468852858104743/
+5. If you are not facing the above issue and can get the message, but the review isn't passing, then reach out to the reviewer.
+   - When your app gets rejected, open the rejected submission. You can see the messenger icon in the bottom right corner to support you with your rejected review.
+   - You can talk to the support team and ask your questions about the submission and the reason for the rejection.
+6. If your test app passed the review, it's good to go into production.
+7. If you face an issue on production that you cannot receive the messages, then reach out to us with the error logs.
