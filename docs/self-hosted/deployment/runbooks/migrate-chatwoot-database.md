@@ -3,15 +3,13 @@ sidebar_label: "How to migrate Chatwoot database?"
 title: "Chatwoot database migration"
 ---
 
-
-
 ## Chatwoot database migration
 
-Follow along If you started out with a bundled install of postgres, redis and chatwoot in a single instance and now wants to
-migrate to managed database service.
+Follow along If you started out with a bundled install of postgres, redis and chatwoot in a single instance
+and now wants to migrate to managed database service.
 
-In this guide, we assume you want to migrate to AWS RDS. This guide should be equally applicable to any other managed 
-databse service or even migrating data between different Chatwoot installations.
+In this guide, we assume you want to migrate to AWS RDS. This guide should be equally applicable to any other
+managed databse service or even migrating data between different Chatwoot installations.
 
 1. Stop Chatwoot service to stop database activity.
 ```
