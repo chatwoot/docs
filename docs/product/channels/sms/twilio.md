@@ -62,7 +62,7 @@ For such cases you can follow the given steps.
 
 **REQUEST METHOD** : POST
 
-**REQUEST URL**: https://app.chatwoot.com/twilio/callback
+**REQUEST URL**: `https://app.chatwoot.com/twilio/callback`
 
 **CONTENT TYPE**: Application/JSON
 
