@@ -104,7 +104,7 @@ module.exports = [
     type: "category",
     label: "Runbooks",
     collapsible: false,
-    items: ["self-hosted/deployment/runbooks/migrate-chatwoot-database" ],
+    items: ["self-hosted/runbooks/migrate-chatwoot-database" ],
   },
   {
     type: "category",

@@ -60,6 +60,9 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Configure S3 bucket](/docs/self-hosted/deployment/storage/s3-bucket)
 - [Configure GCS bucket](/docs/self-hosted/deployment/storage/gcs-bucket)
 
+### Runbooks
+
+- [How to migrate Chatwoot database?](/docs/self-hosted/runbooks/migrate-chatwoot-database)
 
 ### Others
 - [Telemetry](/docs/self-hosted/telemetry)
