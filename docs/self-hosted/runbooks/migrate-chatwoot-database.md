@@ -25,7 +25,7 @@ pg_dump -Fc --no-acl --no-owner  -U postgres chatwoot_production > /tmp/cw.dump
 
 4. Verify connectivity to the new RDS instance from your Chatwoot installation.
 ```
-psql -h <hostname> -u postgres -d postgres
+psql -h <hostname> -u <username> -d postgres
 ```
 
 5. Restore the database from the backup file.
