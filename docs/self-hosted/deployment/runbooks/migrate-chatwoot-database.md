@@ -9,21 +9,21 @@ Follow along If you started out with a bundled install of postgres, redis and ch
 and now wants to migrate to managed database service.
 
 In this guide, we assume you want to migrate to AWS RDS. This guide should be equally applicable to any other
-managed databse service or even migrating data between different Chatwoot installations.
+managed database service or even migrating data between different Chatwoot installations.
 
 1. Stop Chatwoot service to stop database activity.
 ```
 sudo systemctl stop chatwoot.target
 ```
 
-2. Backup the database using `pg_dump` tool.
+2. Back up the database using `pg_dump` tool.
 ```
 pg_dump -Fc --no-acl --no-owner  -U postgres chatwoot_production > /tmp/cw.dump
 ```
 
-3. Create a RDS Postgres instance in your aws account. Refer https://aws.amazon.com/getting-started/hands-on/create-connect-postgresql-db/.
+3. Create an RDS Postgres instance in your aws account. Refer https://aws.amazon.com/getting-started/hands-on/create-connect-postgresql-db/.
 
-4. Verify connectivity to the new RDS instance from your Chatwoot installatin.
+4. Verify connectivity to the new RDS instance from your Chatwoot installation.
 ```
 psql -h <hostname> -u postgres -d postgres
 ```
