@@ -25,11 +25,9 @@ If the customer does not initiate conversation and you have enabled [Campaign me
 
 </div>
 
-
 ### Pre Chat Forms
 
 If we have enabled [Pre Chat forms](add-inbox-settings.md#pre-chat-form) in Inbox, as soon as the customer clicks on chat widget, the message requesting for name and e-mail id will appear on screen as below.
-
 
 <div align="center">
 
@@ -37,7 +35,7 @@ If we have enabled [Pre Chat forms](add-inbox-settings.md#pre-chat-form) in Inbo
 
 </div>
 
-You can find more details about configuring pre-chat form  via this [guide](user-guide/features/pre-chat-form.md)
+You can find more details about configuring pre-chat form via this [guide](user-guide/features/pre-chat-form.md)
 
 Now let us look at how this message is captured in the Agent Dashboard.
 
@@ -92,7 +90,6 @@ Click on Add Labels below Conversation Labels and select the category to which t
 
 </div>
 
-
 You can see in the below screenshot that all actions done by you are seen in the chat window in Agent Dashboard.
 
 <div align="center">
@@ -114,9 +111,9 @@ You can reply to the customer's conversation by typing in the Reply area. Shift+
 Click on the Send button to send your message to the customer.
 
 Various options are there in the Reply area to enhance the messages.
- <img src={require('./images/howconversationhappens9.png').default} width="50" alt="Emoji Button" /> This Button is to select and include Emoji in the message.
-  <img src={require('./images/howconversationhappens10.png').default} width="50" alt="Attachment Button" /> This Button is to select and include attachments in the message.
-    <img src={require('./images/howconversationhappens12.png').default} width="50" alt="Rich Text Editor Button" /> This Button enables to use the Rich Text Editor. Additional options appear on the Reply screen as shown below.
+<img src={require('./images/howconversationhappens9.png').default} width="50" alt="Emoji Button" /> This Button is to select and include Emoji in the message.
+<img src={require('./images/howconversationhappens10.png').default} width="50" alt="Attachment Button" /> This Button is to select and include attachments in the message.
+<img src={require('./images/howconversationhappens12.png').default} width="50" alt="Rich Text Editor Button" /> This Button enables to use the Rich Text Editor. Additional options appear on the Reply screen as shown below.
 
 <div align="center">
 
@@ -126,14 +123,13 @@ Various options are there in the Reply area to enhance the messages.
 
 Once the message is typed and edited, you need to tick the checkbox to send the message to the customer. Below is an example of how the message will look like when a Rich text editor is used. If you want to go back to normal text, click on the rich text editor button again.
 
-
 <div align="center">
 
 <img src={require('./images/howconversationhappens13.png').default} width="800" alt="Rich Text Edite Message Screen" />
 
 </div>
 
-###  How to Send Canned Responses
+### How to Send Canned Responses
 
 Suppose you wish to include already prepared [canned responses](/docs/user-guide/features/canned-responses) responses as reply, type '/' and give the short name of the message. An example is given below. Once you type '/', available canned responses will be listed and you can select from these.
 
@@ -178,8 +174,11 @@ The second agent to whom the private chat is addressed, will recieve a notificat
 </div>
 
 Replies sent by second agent will be visible in your private chat window.
+
 <!-- TODO need to add screen shot here -->
+
 ## Delete Message
+
 There is an option to delete the message which you have already sent. Click on the 3 dots(...) beside the sent message.
 Option is available to copy or delete the message.
 Click on Delete. The message will be deleted.
@@ -194,6 +193,7 @@ Click on Delete. The message will be deleted.
 
 Once the End user has provided their e-mail id through the conversation, Agent can send the chat conversation in email to the customer.
 The email ID will be listed against the name of the Customer in the details window. The email ID will be automatically added to the Contacts also.
+
 <div align="center">
 
 <img src={require('./images/howconversationhappens18b.png').default} width="800" alt="Customer email ID display screen" />
@@ -252,24 +252,22 @@ You can transfer the ticket/issue to another agent by selecting a different agen
 
 ### Conversation Statuses
 
-Chatwoot conversations can be toggled into the following statuses: 
+Chatwoot conversations can be toggled into the following statuses:
 
-**Pending** : The pending status is used by bot integrations in chatwoot to keep the conversations in a temporary state before the agent can start taking a look at it. Once the bot finishes triaging the conversation, It toggles the status into open. The agent can toggle back the conversation into this state if they want the conversation to be handled by the bot again. 
+**Pending** : The pending status is used by bot integrations in chatwoot to keep the conversations in a temporary state before the agent can start taking a look at it. Once the bot finishes triaging the conversation, It toggles the status into open. The agent can toggle back the conversation into this state if they want the conversation to be handled by the bot again.
 This status is useful when your Chatwoot instance has [an Agent bot](/docs/product/others/agent-bots) or [Dialogflow integration](/docs/product/channels/live-chat/integrations/dialogflow) enabled.
 
+**Open** : The default conversation status in chatwoot for a new conversation unless a Bot Integration is enabled. These are conversations from customers waiting on a reply from the agent.
 
-**Open** : The default conversation status in chatwoot for a new conversation unless a Bot Integration is enabled. These are conversations from customers waiting on a reply from the agent. 
-
-**Snoozed** : If you don't have the full information to resolve a conversation and is expecting further replies, You can toggle the conversation in `snoozed` statues. This status is also helpful in cases where you need extra time to investigate about the issue and want to move the conversation away from your primary support queue. `Snoozed` status is also a helpful way to set reminders on a conversation that you want to get to later. 
+**Snoozed** : If you don't have the full information to resolve a conversation and is expecting further replies, You can toggle the conversation in `snoozed` statues. This status is also helpful in cases where you need extra time to investigate about the issue and want to move the conversation away from your primary support queue. `Snoozed` status is also a helpful way to set reminders on a conversation that you want to get to later.
 
 The followed options are supported for `Snoozed`:
-- Snooze Until Next Reply 
-- Snooze Until Tomorrow                 
-- Snooze Until Next Week 
 
+- Snooze Until Next Reply
+- Snooze Until Tomorrow
+- Snooze Until Next Week
 
-**Resolved** : These are conversations which has been addressed and requires no further communication. The `Resolved` status is equivalent to closing the customer support ticket. 
-
+**Resolved** : These are conversations which has been addressed and requires no further communication. The `Resolved` status is equivalent to closing the customer support ticket.
 
 ### Workflow
 
@@ -284,7 +282,7 @@ The agent can choose appropriate conversation status once the solution is convey
 The allowed options are given below:
 
 | Options                 | Actions                                                                                        |
-|-------------------------|------------------------------------------------------------------------------------------------|
+| ----------------------- | ---------------------------------------------------------------------------------------------- |
 | Mark as Pending         | Change the issue to Pending status                                                             |
 | Resolve                 | Change the issue to Close status                                                               |
 | Reopen                  | Change the issue to Open status                                                                |
@@ -302,9 +300,10 @@ The Conversations can be selected and viewed as per their status on the Conversa
 </div>
 
 **Note:** When an agent changes the conversation status to open, the conversation will automatically assign to that agent.
+
 ## CSAT
 
-Once the ticket or conversation is marked as 'Resolved', if the [CSAT option ](reports.md#csat) is enabled, the survey will be sent to customer in the widget as below
+Once the ticket or conversation is marked as 'Resolved', if the [CSAT option](/user-guide/features/csat#enable-csat) is enabled, the survey will be sent to customer in the widget as below
 
 <div align="center">
 
@@ -312,7 +311,7 @@ Once the ticket or conversation is marked as 'Resolved', if the [CSAT option ](r
 
 </div>
 
-The response from the customer can be viewed in CSAT section in Reports.
+The response from the customer can be viewed in [CSAT section](/user-guide/features/reports/csat) in Reports.
 
 ## Previous Conversations
 
