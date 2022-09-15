@@ -4,7 +4,7 @@ title: "Interactive Messages"
 
 Chatwoot lets you create interactive message types like cards and forms in side your Chatwoot Web Widget using the APIs.
 
-You can create these messages using the [New Message API.](https://www.chatwoot.com/developers/api/#operation/create-a-new-message-in-a-conversation).
+You can create these messages using the [New Message API](https://www.chatwoot.com/developers/api/#operation/create-a-new-message-in-a-conversation).
 
 ![interactive_messages](./images/interactive_messages.png)
 
