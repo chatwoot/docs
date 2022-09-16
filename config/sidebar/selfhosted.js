@@ -102,6 +102,12 @@ module.exports = [
   },
   {
     type: "category",
+    label: "Runbooks",
+    collapsible: false,
+    items: ["self-hosted/runbooks/migrate-chatwoot-database" ],
+  },
+  {
+    type: "category",
     label: "Others",
     items: ["self-hosted/telemetry", "self-hosted/faq"],
   },
