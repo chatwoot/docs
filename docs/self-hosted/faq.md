@@ -68,3 +68,55 @@ Chatwoot team doesn't encourage the following cases:
   examples: clones of Chatwoot Cloud (SaaS), Rebranding Services, etc
 
 
+## How to debug SMTP Email errors in Chatwoot?
+
+Suppose you run into issues with the agent mailers ( account confirmation, password reset, etc.) and email Channels in Chatwoot. Then, you can go through the following steps to debug your SMTP configurations.
+
+### Step 1: Check your SMTP configuration
+Ensure that the intended config matches what is configured in the system. If there are discrepancies, you should double-check your environment variables.
+
+#### Viewing the SMTP config for the Installation
+Run the following command from the [Rails Console](/docs/self-hosted/monitoring/super-admin-sidekiq/).
+```
+ActionMailer::Base.smtp_settings
+```
+
+#### Viewing the SMTP config for an Inbox
+Run the following command from the [Rails Console](/docs/self-hosted/monitoring/super-admin-sidekiq/).
+```
+# replace `inbox_id` with your Inbox Id
+Inbox.find(inbox_id).channel
+```
+
+### Step 2: Validate your SMTP config by sending an Email
+If you find the config is as intended, Try sending an email from the Rails Console using your config.
+
+Run the following script from the [Rails Console](/docs/self-hosted/monitoring/super-admin-sidekiq/).
+```
+
+# Fill values for appropriate settings
+# Remove the keys which aren't relevant to your use case
+smtp_settings = {
+  address: '',
+  port: '',
+  user_name: '',
+  password: '',
+  domain: '',
+  tls: '',
+  enable_starttls_auto: '',
+  openssl_verify_mode: '',
+  authentication: '',
+}
+
+mailer = ActionMailer::Base.new
+# check settings:
+mailer.delivery_method = :smtp
+mailer.smtp_settings = smtp_settings
+
+# replace with your values for the mail
+mailer.mail(from: 'sender@example.com', to: 'recipient@example.com', subject: 'test', body: "Hello, you've got mail!").deliver
+
+```
+If the configuration is correct, You should receive the email in the recipient's Inbox. In other cases, Fix the config as per the returned error and reconfigure the values in Chatwoot Environment variables with the correct values. 
+
+> Note: If you are still facing errors, Please check your Sidekiq worker logs or [Sidekiq UI](/docs/self-hosted/monitoring/super-admin-sidekiq/) for any errors. 

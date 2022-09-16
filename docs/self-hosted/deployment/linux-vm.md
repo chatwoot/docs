@@ -28,7 +28,7 @@ chmod +x install.sh
 ```
 
 3. **Chatwoot** Installation will now be accessible at `http://{your_ip_address}:3000` or if you opted
-   for domain setup, it will be at https://chatwoot.mydomain.com.
+   for domain setup, it will be at `https://chatwoot.mydomain.com`.
 
 > **Note** This will also install the Chatwoot CLI(`cwctl`) starting with Chatwoot v2.7.0. Use `cwctl --help` to learn more.
 

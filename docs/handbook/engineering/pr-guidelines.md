@@ -2,6 +2,25 @@
 title: 'Pull Request Guidelines'
 ---
 
+### Avoid Cosmetic Changes
+
+Chatwoot generally doesn't accept cosmetic changes and does not add anything substantial to the stability, performance, functionality, or testability.
+
+Examples:
+- Cosmetic copy changes or trivial mistakes
+- Trivial code changes like variable renaming or cosmetic fixes
+- Copy/Help text changes
+- Changes suggested by code linters or automated tools
+
+The reasoning behind this decision is due to hidden costs like the following.
+
+- Copy/Help text changes cause significant effort for the community translators as they will have to retranslate the string across all the languages. Learn more about the translation process [here](/docs/contributing-guide/translation-guidelines)
+- It takes away time and energy the team could spend on critical features and bug fixes.
+- It pollutes the git history as `git blame` hits the refactor commits and makes it harder to understand the original decision-making.
+
+
+To Avoid confusion, please [discuss the changes over a GitHub issue before starting the work](/docs/contributing-guide#getting-started). The thought process here is inspired by [Ruby on Rails Contribution guide](https://github.com/rails/rails/pull/13771#issuecomment-32746700).
+
 ### Raising a pull request
 
 Points to note when you are raising a PR.
@@ -70,7 +89,19 @@ It is essential to add attribution to people who have contributed to the pull re
 
 We use [commit squashing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/squashing-commits#squashing-a-commit) to merge a PR to `develop` or release branches.
 
-### Use rebase to avoid merge commits
+### Avoid force-push to remote branches / Pull Requests
+
+Avoid force-pushing your changes when working on a public branch and you face a merge conflict. Rewriting history through `force-push` can have the following side effects.
+
+- Changes made by others could be lost
+- It could mess up previous review comments on Github
+- Other contributors of the branch will have to delete and re-fetch the branch
+
+Hence one should pull the upstream changes, resolve the merge conflict via a merge commit and then push the changes.
+
+### Use rebase to avoid merge commits in local
+
+> note:  The golden rule of git rebase is to never use it on public branches. [ref](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing)
 
 A merge commit is created if the local and remote branches have different commits when you pull without the `--rebase` flag. Therefore, it is good to rebase your local commits.
 
