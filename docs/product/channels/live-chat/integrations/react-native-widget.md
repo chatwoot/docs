@@ -3,13 +3,17 @@ sidebar_label: "React Native"
 title: "Integrate Chatwoot with React Native app"
 ---
 
-Add Chatwoot live chat widget to react native app and talk to your visitors in real time. Chatwoot helps you to chat with your visitors and provide exceptional support in real time. To use Chatwoot in your react native app, follow the steps described below.
+If you have a react native app, you can add Chatwoot live chat widget to it and talk to your visitors in real time. 
 
-## 1. Create a website inbox in Chatwoot
+Chatwoot lets you chat with your visitors and provide exceptional support in real time. To use Chatwoot in your react native app, follow the steps described below.
 
-Refer to [Website Channel](/docs/product/channels/live-chat/create-website-channel) document.
+## 1. Create a Website Inbox in Chatwoot
+
+As a first step, you will need a website channel configured in your Chatwoot account. To learn how to do this step-by-step, refer to the Website Channel [document]([url](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel/)).
 
 ## 2. Add the plugin to your project
+
+Add one of the following plugins to your project:
 
 ```bash
 yarn add @chatwoot/react-native-widget
@@ -31,9 +35,9 @@ If you're using React Native versions > 60.0, it's relatively straightforward.
 cd ios && pod install
 ```
 
-## 3. How to use
+## 3. Use it like this
 
-Replace `websiteToken` and `baseUrl` with approriate values.
+Replace `websiteToken` and `baseUrl` with appropriate values.
 
 ```js
 import React, { useState } from 'react';
@@ -109,9 +113,9 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-Horray! You're done!
+Hooray! You're done.
 
-The whole example can be found [here](https://github.com/chatwoot/chatwoot-react-native-widget/tree/develop/examples).
+Check out the full example [here](https://github.com/chatwoot/chatwoot-react-native-widget/tree/develop/examples).
 
 ### Props
 
