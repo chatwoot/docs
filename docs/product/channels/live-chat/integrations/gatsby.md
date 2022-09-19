@@ -3,21 +3,25 @@ sidebar_label: "Gatsby"
 title: "Integrate Chatwoot with Gatsby"
 ---
 
-Chatwoot has an official Gatsby plugin for integrating the widget on your websites
+If you have a website created on Gatsby, you can add a Chatwoot live chat widget to it and talk to your visitors in real-time. 
 
-1. Add `gatsby-plugin-chatwoot` to your gatsby project.
+This can be done in 3 simple steps using Chatwoot’s Gatsby plugin.
+
+## 1. Add the Gatsby plugin to your project 
+
+Add gatsby-plugin-chatwoot to your Gatsby project.
 
 ```shell
 npm install --save gatsby-plugin-chatwoot
 ```
 
-if you are using yarn, use
+If you are using yarn, use:
 
 ```shell
 yarn add gatsby-plugin-chatwoot
 ```
 
-2. Add the plguin to your gatsby config file
+## 2. Add the plguin to your Gatsby config file
 
 ```js
 // In your gatsby-config.js
@@ -34,6 +38,10 @@ plugins: [
 ];
 ```
 
-You can get your website token and base url from your inbox settings, or you can create a new inbox from the chatwoot dashboard follwoing this [link](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel)
+You can get your Website token and base URL from your Inbox settings in your Chatwoot account. 
 
-3. Start your sever and You would be able to see the Chatwoot widget on the page now.
+If you need to create a new Inbox channel, follow the procedure illustrated [here](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel).
+
+## 3. Start your sever 
+
+You would be able to see the Chatwoot widget on the page now.
