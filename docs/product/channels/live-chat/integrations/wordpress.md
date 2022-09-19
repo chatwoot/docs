@@ -17,31 +17,31 @@ Download the Zip file of the latest Chatwoot WordPress plugin from [GitHub]([url
 
 Log in to your WordPress account. Navigate to the Admin panel and click on “Plugins” from the sidebar. You will be able to see the "Add New" button.
 
-![add-new-plugin](./images/wordpress/add-new-plugin.png)
+![add-new-plugin](./images/wordpress/adding-plugin-in-wordpress.png)
 
 You will see an option to upload the plugin, as shown in the screenshot below. Click on “Upload” and select the Zip file downloaded in step 1.
 
-![upload-plugin-zip-file](./images/wordpress/upload-plugin-zip-file.png)
+![upload-plugin-zip-file](./images/wordpress/wp-chatwoot.png)
 
 Once the plugin is uploaded, you will see a Success screen with the "Activate Plugin" option, as shown below. Click on "Activate Plugin.”
 
-![activate-plugin](./images/wordpress/activate-plugin.png)
+![activate-plugin](./images/wordpress/activate-the-plugin.png)
 
 Congrats! The plugin is now installed. To complete the configuration, you need to share the credentials from the Chatwoot app, as shown in the steps below.
 
-![wordpress-plugin-installed](./images/wordpress/wordpress-plugin-installed.png)
+![wordpress-plugin-installed](./images/wordpress/chatwoot-plugin-installed.png)
 
 ## 3. Configure the plugin
 
 Now, you will be able to see “Chatwoot Settings” under your "Settings" menu. Click on that to update the live-chat configuration.
 
-<img src={require('./images/wordpress/chatwoot-settings.png').default} width="300" alt="Chatwoot Settings" />
+<img src={require('./images/wordpress/chatwoot-settings-on-wp.png').default} width="300" alt="Chatwoot Settings" />
 
 You will be presented with the Settings screen as shown below. Configure your Chatwoot plugin here to make it work. 
 
 You need to create a Website inbox on your Chatwoot installation. Please refer to this [guide](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel) to create a website channel inbox.
 
-<img src={require('./images/wordpress/chatwoot-options.png').default} width="300" alt="Chatwoot options" />
+<img src={require('./images/wordpress/chatwoot-wordpress-settings.png').default} width="300" alt="Chatwoot options" />
 
 Available website settings are as follows:
 
@@ -57,4 +57,4 @@ Available website settings are as follows:
 
 Once you provide the correct values, click on "Save Changes." Then, visit your website and see if the widget appears on the website.
 
-![widget-on-website](./images/wordpress/widget-on-website.png)
+![widget-on-website](./images/wordpress/chatwoot-widget-on-wordpress-website.png)
