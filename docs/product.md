@@ -54,6 +54,7 @@ This user guide includes a description of the features and capabilities, modes o
 
 - [Agent Bots](/docs/product/others/agent-bots)
 - [Interactive Messages](/docs/product/others/interactive-messages)
+- [Help Center](/docs/product/others/help-center)
 - [Webhooks](/docs/product/features/webhooks)
 - [Websocket Events](/product/others/websocket-events)
 - [Cookies](/product/others/cookies)
