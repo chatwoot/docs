@@ -18,7 +18,7 @@ If you complete the steps successfully, you should be able to obtain the `Phone 
 
 ![Whatsapp Section Developer App](../images/whatsapp/whatsapp-cloud/whatsapp-section-developer-app.png)
 
-### Configure a system user for your Facebook Bussiness Manager
+### Configure a system user for your Facebook Business Manager
 
 [Create](https://www.facebook.com/business/help/503306463479099?id=2190812977867143) a system user in your business manager with access to the Whatsapp App. Generate an access token for the user, which will be required as the API key for setting up an inbox in Chatwoot.
 
