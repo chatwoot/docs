@@ -27,6 +27,17 @@ window.addEventListener("message", function (event) {
   const eventData = JSON.parse(event.data);
 });
 ```
+## Explicitly requesting data from Chatwoot.
+If your use case requires you to request the conversation data on demand from Chatwoot, you can easily do so by sending a simple message to the parent window using the javascript[postMessage api](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). 
+
+Chatwoot will be listening to this key `chatwoot-dashboard-app:fetch-info`.
+
+### Example
+
+You need to send the event in this format. Chatwoot will be listening to this key and immidiately send the requester with the updated conversation payload.
+```js
+window.parent.postMessage('chatwoot-dashboard-app:fetch-info', '*');
+```
 
 ## Event Payload
 
