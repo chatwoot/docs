@@ -8,19 +8,12 @@ This guide will help you to install and setup a production ready Chatwoot.
 ### Deployment
 
 - [Architecture](/docs/self-hosted/deployment/architecture)
+- [Requirements](/docs/self-hosted/deployment/requirements)
 - Linux
     - [Manual Install](/docs/self-hosted/deployment/linux-vm)
     - [Docker](/docs/self-hosted/deployment/docker)
 - [Kubernetes](/docs/self-hosted/deployment/helm-charts)
-- [Requirements](/docs/self-hosted/deployment/requirements)
-- [Linux VM](/docs/self-hosted/deployment/linux-vm)
 - [Chatwoot CTL](/docs/self-hosted/deployment/chatwoot-ctl)
-- [Docker](/docs/self-hosted/deployment/docker)
-- [Helm Charts (k8s)](/docs/self-hosted/deployment/helm-charts)
-- [Heroku](/docs/self-hosted/deployment/heroku)
-- [Caprover](/docs/self-hosted/deployment/caprover)
-- [Cloudron](/docs/self-hosted/deployment/cloudron)
-- [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
 
 ### Cloud provider guides
 - [Amazon Web Services (AWS)]
@@ -48,9 +41,7 @@ This guide will help you to install and setup a production ready Chatwoot.
   - [Supported providers](/docs/self-hosted/deployment/storage/supported-providers)
   - [Configure S3 bucket](/docs/self-hosted/deployment/storage/s3-bucket)
   - [Configure GCS bucket](/docs/self-hosted/deployment/storage/gcs-bucket)
-
-#### Email
-
+- Email
 - [Enable conversation continuity](/docs/self-hosted/configuration/features/email-channel/conversation-continuity)
 - [Conversation continuity using SendGrid](/docs/self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid)
 - [Channel configuration](/docs/self-hosted/configuration/features/email-channel/setup)
