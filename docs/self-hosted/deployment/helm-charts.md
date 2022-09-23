@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Helm Charts (k8s)"
-title: "Deploy Chatwoot using Helm Charts"
+sidebar_label: "Kubernetes"
+title: "Deploy Chatwoot on Kubernetes using Helm Charts"
 ---
 
 This guide will help you to deploy a production ready Chatwoot instance with Helm Charts.
