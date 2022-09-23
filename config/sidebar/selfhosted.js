@@ -12,15 +12,15 @@ module.exports = [
     items: [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
+      {
+	"Linux": [
       "self-hosted/deployment/linux-vm",
-      "self-hosted/deployment/chatwoot-ctl",
       "self-hosted/deployment/docker",
+	],
+       },
       "self-hosted/deployment/helm-charts",
-      "self-hosted/deployment/heroku",
-      "self-hosted/deployment/caprover",
-      "self-hosted/deployment/cloudron",
-      "self-hosted/deployment/clevercloud",
-    ],
+`     "self-hosted/deployment/chatwoot-ctl",
+	],
   },
   {
     collapsible: false,
@@ -41,6 +41,10 @@ module.exports = [
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
       "self-hosted/deployment/troubleshooting",
+      "self-hosted/deployment/heroku",
+      "self-hosted/deployment/caprover",
+      "self-hosted/deployment/cloudron",
+      "self-hosted/deployment/clevercloud",
     ],
   },
   {
