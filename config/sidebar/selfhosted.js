@@ -13,13 +13,13 @@ module.exports = [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
       {
-	"Linux": [
-      "self-hosted/deployment/linux-vm",
-      "self-hosted/deployment/docker",
-	],
-       },
+	      "Linux": [
+          "self-hosted/deployment/linux-vm",
+          "self-hosted/deployment/docker",
+	      ],
+      },
       "self-hosted/deployment/helm-charts",
-`     "self-hosted/deployment/chatwoot-ctl",
+      "self-hosted/deployment/chatwoot-ctl",
 	],
   },
   {
