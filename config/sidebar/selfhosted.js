@@ -24,6 +24,14 @@ module.exports = [
   },
   {
     collapsible: false,
+    label: "Upgrade",
+    type: "category",
+    items: [
+      "self-hosted/deployment/upgrade",
+    ],
+  },
+  {
+    collapsible: false,
     label: "Cloud provider guides",
     type: "category",
     items: [
@@ -91,6 +99,12 @@ module.exports = [
       "self-hosted/deployment/storage/s3-bucket",
       "self-hosted/deployment/storage/gcs-bucket",
     ],
+  },
+  {
+    type: "category",
+    label: "Runbooks",
+    collapsible: false,
+    items: ["self-hosted/runbooks/migrate-chatwoot-database" ],
   },
   {
     type: "category",

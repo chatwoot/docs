@@ -111,7 +111,18 @@ module.exports = [
       "user-guide/features/segments",
       "user-guide/features/commandbar",
       "user-guide/features/multilingual-support",
-      "user-guide/reports",
+      {
+        Reports: [
+          "user-guide/features/reports/concepts",
+          "user-guide/features/reports/overview",
+          "user-guide/features/reports/conversation",
+          "user-guide/features/reports/csat",
+          "user-guide/features/reports/agent",
+          "user-guide/features/reports/label",
+          "user-guide/features/reports/inbox",
+          "user-guide/features/reports/team"
+        ],
+      },
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",

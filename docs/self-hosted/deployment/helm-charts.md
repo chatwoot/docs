@@ -103,11 +103,11 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                | Type                                                                          | Default Value                                    |
 | ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------ |
 | `postgresql.enabled`                | Set to `false` if using external postgres and modify the below variables.     | `true`                                           |
-| `postgresql.auth.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
+| `postgresql.auth.database`     | Chatwoot database name                                                        | `chatwoot_production`                            |
 | `postgresql.postgresqlHost`         | Postgres host. Edit if using external postgres.                               | `""`                                             |
-| `postgresql.auth.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
+| `postgresql.auth.postgresPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
 | `postgresql.postgresqlPort`         | Postgres port                                                                 | `5432`                                           |
-| `postgresql.auth.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
+| `postgresql.auth.username`     | Postgres username.                                                            | `postgres`                                       |
 
 ### Redis variables
 

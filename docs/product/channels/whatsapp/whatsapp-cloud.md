@@ -18,9 +18,9 @@ If you complete the steps successfully, you should be able to obtain the `Phone 
 
 ![Whatsapp Section Developer App](../images/whatsapp/whatsapp-cloud/whatsapp-section-developer-app.png)
 
-### Configure a system user for your Facebook Bussiness Manager
+### Configure a system user for your Facebook Business Manager
 
-[Create](https://www.facebook.com/business/help/503306463479099?id=2190812977867143) a system user in your business manager with access to the Whatsapp App. Generate an access token for the user, which will be required for setting up an inbox in Chatwoot.
+[Create](https://www.facebook.com/business/help/503306463479099?id=2190812977867143) a system user in your business manager with access to the Whatsapp App. Generate an access token for the user, which will be required as the API key for setting up an inbox in Chatwoot.
 
 When generating the access token, make sure `whatsapp_business_management,` and `whatsapp_business_messaging` permissions are selected.
 
@@ -65,7 +65,7 @@ Finish the following steps to configure Whatsapp Cloud API Channel in Chatwoot.
 | Phone Number   | Fill in the phone number you have configured in Facebook Developer App              |
 | Phone Number ID      | The phone number ID for the number as obtained in prerequisites              |
 | Bussiness Account ID    | The Business Account ID for the number as obtained in prerequisites             |
-| API Key  | The Business Account User API key for the number as obtained in prerequisites            |
+| API Key  | The Business Account User's access token for the number as obtained in prerequisites            |
 | Webhook Verify Token | This token is required while configuring Webhook in Facebook Developer App. Fill in a secure alphanumeric string that you wish  |
 
 

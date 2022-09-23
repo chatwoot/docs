@@ -62,5 +62,15 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Twitter App Setup](/docs/self-hosted/configuration/features/integrations/twitter-channel-setup)
 - [Slack App](/docs/self-hosted/configuration/features/integrations/slack-integration-setup)
 
+### Storage
+
+- [Supported providers](/docs/self-hosted/deployment/storage/supported-providers)
+- [Configure S3 bucket](/docs/self-hosted/deployment/storage/s3-bucket)
+- [Configure GCS bucket](/docs/self-hosted/deployment/storage/gcs-bucket)
+
+### Runbooks
+
+- [How to migrate Chatwoot database?](/docs/self-hosted/runbooks/migrate-chatwoot-database)
+
 ### Others
 - [Telemetry](/docs/self-hosted/telemetry)
