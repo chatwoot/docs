@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Facebook App"
+sidebar_label: "Facebook"
 title: "Setting Up Facebook"
 ---
 

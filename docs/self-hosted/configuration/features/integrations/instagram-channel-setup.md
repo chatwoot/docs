@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Instagram App"
+sidebar_label: "Instagram"
 title: "Setting Up Instagram Account"
 ---
 
