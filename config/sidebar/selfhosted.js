@@ -6,7 +6,7 @@ module.exports = [
     items: ["self-hosted"],
   },
   {
-    collapsible: false,
+    collapsible: true,
     label: "Deployment",
     type: "category",
     items: [
@@ -23,7 +23,7 @@ module.exports = [
 	],
   },
   {
-    collapsible: false,
+    collapsible: true,
     label: "Upgrade",
     type: "category",
     items: [
@@ -31,7 +31,7 @@ module.exports = [
     ],
   },
   {
-    collapsible: false,
+    collapsible: true,
     label: "Cloud provider guides",
     type: "category",
     items: [
@@ -45,21 +45,27 @@ module.exports = [
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
       "self-hosted/deployment/heroku",
-      "self-hosted/deployment/caprover",
-      "self-hosted/deployment/cloudron",
-      "self-hosted/deployment/clevercloud",
+      {
+        "Others": [
+          "self-hosted/deployment/caprover",
+          "self-hosted/deployment/cloudron",
+          "self-hosted/deployment/clevercloud",
+        ],
+      },
       "self-hosted/deployment/troubleshooting",
     ],
   },
   {
-    collapsible: false,
+    collapsible: true,
     label: "Configuration",
     type: "category",
     items: [
       "self-hosted/configuration/environment-variables",
-      "self-hosted/configuration/email-notifications",
-      "self-hosted/configuration/enable-ip-logging",
-      "self-hosted/deployment/performance/cloudfront-cdn",
+      {
+        "Performance": [
+          "self-hosted/deployment/performance/cloudfront-cdn",
+        ]
+      },
       {
         "Monitoring": [
           "self-hosted/monitoring/super-admin-sidekiq",
@@ -85,7 +91,7 @@ module.exports = [
     ],
   },
   {
-    collapsible: false,
+    collapsible: true,
     label: "Integrations",
     type: "category",
     items: [
@@ -99,7 +105,11 @@ module.exports = [
     type: "category",
     label: "Runbooks",
     collapsible: false,
-    items: ["self-hosted/runbooks/migrate-chatwoot-database" ],
+    items: [
+      "self-hosted/runbooks/migrate-chatwoot-database",
+      "self-hosted/configuration/email-notifications",
+      "self-hosted/configuration/enable-ip-logging",
+    ],
   },
   {
     type: "category",
