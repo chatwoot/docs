@@ -24,14 +24,6 @@ module.exports = [
   },
   {
     collapsible: true,
-    label: "Upgrade",
-    type: "category",
-    items: [
-      "self-hosted/deployment/upgrade",
-    ],
-  },
-  {
-    collapsible: true,
     label: "Cloud provider guides",
     type: "category",
     items: [
@@ -99,6 +91,14 @@ module.exports = [
       "self-hosted/configuration/features/integrations/instagram-channel-setup",
       "self-hosted/configuration/features/integrations/twitter-channel-setup",
       "self-hosted/configuration/features/integrations/slack-integration-setup",
+    ],
+  },
+  {
+    collapsible: true,
+    label: "Upgrade",
+    type: "category",
+    items: [
+      "self-hosted/deployment/upgrade",
     ],
   },
   {
