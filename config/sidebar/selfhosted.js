@@ -104,7 +104,7 @@ module.exports = [
   {
     type: "category",
     label: "Runbooks",
-    collapsible: false,
+    collapsible: true,
     items: [
       "self-hosted/runbooks/migrate-chatwoot-database",
       "self-hosted/configuration/email-notifications",
