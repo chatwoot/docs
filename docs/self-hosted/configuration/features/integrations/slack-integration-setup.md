@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Slack App"
+sidebar_label: "Slack"
 title: "Setting Up Slack Integration"
 ---
 

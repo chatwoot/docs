@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Amazon Web Services (AWS)"
+sidebar_label: "Manual Install"
 title: "AWS Chatwoot deployment guide"
 ---
 

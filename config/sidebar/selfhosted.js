@@ -6,81 +6,84 @@ module.exports = [
     items: ["self-hosted"],
   },
   {
-    collapsible: false,
+    collapsible: true,
     label: "Deployment",
     type: "category",
     items: [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
-      "self-hosted/deployment/linux-vm",
-      "self-hosted/deployment/chatwoot-ctl",
-      "self-hosted/deployment/docker",
+      {
+	      "Linux": [
+          "self-hosted/deployment/linux-vm",
+          "self-hosted/deployment/docker",
+	      ],
+      },
       "self-hosted/deployment/helm-charts",
-      "self-hosted/deployment/heroku",
-      "self-hosted/deployment/caprover",
-      "self-hosted/deployment/cloudron",
-      "self-hosted/deployment/clevercloud",
-    ],
+      "self-hosted/deployment/chatwoot-ctl",
+	],
   },
   {
-    collapsible: false,
-    label: "Upgrade",
-    type: "category",
-    items: [
-      "self-hosted/deployment/upgrade",
-    ],
-  },
-  {
-    collapsible: false,
+    collapsible: true,
     label: "Cloud provider guides",
     type: "category",
     items: [
-      "self-hosted/deployment/aws",
-      "self-hosted/deployment/aws-marketplace",
+      {
+        "AWS": [
+          "self-hosted/deployment/aws",
+          "self-hosted/deployment/aws-marketplace",
+        ],
+      },
       "self-hosted/deployment/azure",
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
+      "self-hosted/deployment/heroku",
+      {
+        "Others": [
+          "self-hosted/deployment/caprover",
+          "self-hosted/deployment/cloudron",
+          "self-hosted/deployment/clevercloud",
+        ],
+      },
       "self-hosted/deployment/troubleshooting",
     ],
   },
   {
-    collapsible: false,
-    label: "Performance",
-    type: "category",
-    items: ["self-hosted/deployment/performance/cloudfront-cdn"],
-  },
-  {
-    collapsible: false,
+    collapsible: true,
     label: "Configuration",
     type: "category",
     items: [
       "self-hosted/configuration/environment-variables",
-      "self-hosted/configuration/email-notifications",
-      "self-hosted/configuration/enable-ip-logging",
+      {
+        "Performance": [
+          "self-hosted/deployment/performance/cloudfront-cdn",
+        ]
+      },
+      {
+        "Monitoring": [
+          "self-hosted/monitoring/super-admin-sidekiq",
+          "self-hosted/monitoring/apm-and-error-monitoring",
+          "self-hosted/monitoring/rate-limiting",
+        ],
+      },
+      {
+        "Storage": [
+          "self-hosted/deployment/storage/supported-providers",
+          "self-hosted/deployment/storage/s3-bucket",
+          "self-hosted/deployment/storage/gcs-bucket",
+        ],
+      },
+      {
+        "Email Channel": [
+          "self-hosted/configuration/features/email-channel/conversation-continuity",
+          "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
+          "self-hosted/configuration/features/email-channel/setup",
+        ],
+      },
+
     ],
   },
   {
-    collapsible: false,
-    label: "Monitoring",
-    type: "category",
-    items: [
-      "self-hosted/monitoring/super-admin-sidekiq",
-      "self-hosted/monitoring/apm-and-error-monitoring",
-      "self-hosted/monitoring/rate-limiting",
-    ],
-  },
-  {
-    collapsible: false,
-    label: "Email Channel",
-    type: "category",
-    items: [
-      "self-hosted/configuration/features/email-channel/conversation-continuity",
-      "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
-      "self-hosted/configuration/features/email-channel/setup",
-    ],
-  },
-  {
-    collapsible: false,
+    collapsible: true,
     label: "Integrations",
     type: "category",
     items: [
@@ -91,20 +94,22 @@ module.exports = [
     ],
   },
   {
-    collapsible: false,
-    label: "Storage",
+    collapsible: true,
+    label: "Upgrade",
     type: "category",
     items: [
-      "self-hosted/deployment/storage/supported-providers",
-      "self-hosted/deployment/storage/s3-bucket",
-      "self-hosted/deployment/storage/gcs-bucket",
+      "self-hosted/deployment/upgrade",
     ],
   },
   {
     type: "category",
     label: "Runbooks",
-    collapsible: false,
-    items: ["self-hosted/runbooks/migrate-chatwoot-database" ],
+    collapsible: true,
+    items: [
+      "self-hosted/runbooks/migrate-chatwoot-database",
+      "self-hosted/configuration/email-notifications",
+      "self-hosted/configuration/enable-ip-logging",
+    ],
   },
   {
     type: "category",

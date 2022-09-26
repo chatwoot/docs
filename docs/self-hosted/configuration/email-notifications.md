@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Email templates"
+sidebar_label: "How to customize email notifications in Chatwoot?"
 title: "Customize email notifications in Chatwoot"
 ---
 
