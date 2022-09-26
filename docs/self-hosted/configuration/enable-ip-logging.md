@@ -1,5 +1,6 @@
 ---
-title: "Enable IP Logging"
+sidebar_label: "How to enable IP identification in Chatwoot?"
+title: "How to enable IP identification in Chatwoot?"
 ---
 
 Chatwoot allows you to identify the location of the user by geocoding the IP address. For IP Address geocoding, we support MaxmindDB services. This lookup provides methods for geocoding IP addresses without making a call to a remote API everytime. To setup your self-hosted instance with the geocoding, follow the steps below.
