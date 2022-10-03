@@ -375,3 +375,8 @@ helm install chatwoot chatwoot/chatwoot
 
 ### pod has unbound immediate PersistentVolumeClaims
 Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisites](#prerequisites).
+
+
+### ActionController::InvalidAuthenticityToken HTTP Origin header (https://mydomain.com) didn't match request.base_url (http://mydomain.com)
+
+If you are recieving this error when trying to access the superadmin panel, configure your ingress controller to forward the protocol of the origin request. For `nginx` ingress, you can do this by setting the `proxy_set_header X-Forwarded-Proto https;` config. Refer this [issue](https://github.com/chatwoot/chatwoot/issues/5506) to learn more.
