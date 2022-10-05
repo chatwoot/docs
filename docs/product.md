@@ -2,11 +2,11 @@
 title: "Introduction"
 ---
 
-Chatwoot is an open-source customer engagement suite built as an alternative to Intercom, Zendesk & Salesforce Service Cloud. Chatwoot is designed not only for a great customer experience but also to increase your support team's productivity and provide them with actionable data.
+Chatwoot is an [open-source](https://opensource.com/resources/what-open-source) customer engagement suite built as an alternative to Intercom, Zendesk & Salesforce Service Cloud. Chatwoot is designed not only for a great customer experience but also to increase your support team's productivity and provide them with actionable data.
 
 Chatwoot integrates with multiple conversation channels like website live-chat, email, Facebook page, Twitter handle, WhatsApp, etc. It displays conversation from different channels, thereby building a single view of the customer and helps in reducing the time required to switch between the tools. Mobile apps for Chatwoot (available for Android and iOS) enable you to browse conversations, reply to messages and collaborate with the team.
 
-This user guide includes a description of the features and capabilities, modes of operation, and step-by-step procedures for the Chatwoot platform access and use.
+This guide includes a description of the features and capabilities, modes of operation, and step-by-step procedures for the Chatwoot platform access and use.
 
 ### Setup your account
 
@@ -45,11 +45,6 @@ This user guide includes a description of the features and capabilities, modes o
 - [Segments](/docs/user-guide/features/segments)
 - [Pre Chat Form](/docs/user-guide/features/pre-chat-form)
 
-### Mobile app
-
-- [Android](/docs/product/mobile-app/android)
-- [iOS](/docs/product/mobile-app/ios)
-
 ### Advanced
 
 - [Agent Bots](/docs/product/others/agent-bots)
@@ -57,6 +52,11 @@ This user guide includes a description of the features and capabilities, modes o
 - [Webhooks](/docs/product/features/webhooks)
 - [Websocket Events](/product/others/websocket-events)
 - [Cookies](/product/others/cookies)
+
+### Mobile app
+
+- [Android](/docs/product/mobile-app/android)
+- [iOS](/docs/product/mobile-app/ios)
 
 ### Others
 
