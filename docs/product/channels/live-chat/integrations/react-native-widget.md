@@ -7,7 +7,7 @@ If you have a react native app, you can add Chatwoot live chat widget to it and 
 
 Chatwoot lets you chat with your visitors and provide exceptional support in real time. To use Chatwoot in your react native app, follow the steps described below.
 
-## 1. Create a Website Inbox in Chatwoot
+## 1. Create a Website Channel in Chatwoot
 
 As a first step, you will need a website channel configured in your Chatwoot account. To learn how to do this step-by-step, refer to the Website Channel [document]([url](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel/)).
 
