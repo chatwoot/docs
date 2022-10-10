@@ -21,7 +21,7 @@ Log in to your WordPress account. Navigate to the Admin panel and click on “Pl
 
 You will see an option to upload the plugin, as shown in the screenshot below. Click on “Upload” and select the Zip file downloaded in step 1.
 
-![upload-plugin-zip-file](./images/wordpress/wp-chatwoot.png)
+![upload-plugin-zip-file](./images/wordpress/wordpress-chatwoot.png)
 
 Once the plugin is uploaded, you will see a Success screen with the "Activate Plugin" option, as shown below. Click on "Activate Plugin.”
 
