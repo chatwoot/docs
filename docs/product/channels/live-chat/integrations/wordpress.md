@@ -57,4 +57,4 @@ Available website settings are as follows:
 
 Once you provide the correct values, click on "Save Changes." Then, visit your website and see if the widget appears on the website.
 
-![widget-on-website](./images/wordpress/chatwoot-widget-on-wordpress-website.png)
+![widget-on-website](./images/wordpress/chatwoot-widget-on-a-wordpress-website.png)
