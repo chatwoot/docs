@@ -61,5 +61,4 @@ Open your Vue project and paste the script in the index.html file, right befor
 
 You will be able to see the Chatwoot widget on the page now. Something like this:
 
-![vuejs integration](../images/chatwoot-widget-on-vue-app.png
-)
+![vuejs integration](../images/chatwoot-widget-on-vue-app.png)
