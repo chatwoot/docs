@@ -40,7 +40,7 @@ plugins: [
 
 You can get your Website token and base URL from your Inbox settings in your Chatwoot account. 
 
-If you need to create a new Inbox channel, follow the procedure illustrated [here](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel).
+If you need to create a new website channel, follow the procedure illustrated [here](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel).
 
 ## 3. Start your sever 
 
