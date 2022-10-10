@@ -3,9 +3,14 @@ sidebar_label: "Next.js"
 title: "Integrate Chatwoot with Next.js"
 ---
 
-To integrate Chatwoot with a Next.js application, you would have to create a component that loads Chatwoot script. The below example shows a React component which loads the Chatwoot script asynchronously.
+To integrate Chatwoot with your Next.js application, you would need a component that loads the Chatwoot script. 
 
-1. Copy the following and create a file in your `components` folder with the name `ChatwootWidget.js`
+You can do this in two quick steps. Let us illustrate this with the help of an example below. This example shows a React component which loads the Chatwoot script asynchronously.
+
+## 1. Copy and Create!
+
+Copy the following code and create a file in your `components` folder with the name `ChatwootWidget.js`.
+
 
 ```js
 import React from 'react';
@@ -44,7 +49,9 @@ class ChatwootWidget extends React.Component {
 export default ChatwootWidget
 ```
 
-2. Import the component in your pages or layout component as shown below.
+## 2. Import
+
+Import the component in your pages or layout component as shown below.
 
 ```js
 import React, { Fragment } from 'react'
