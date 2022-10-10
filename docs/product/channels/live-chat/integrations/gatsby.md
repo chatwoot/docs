@@ -42,6 +42,6 @@ You can get your Website token and base URL from your Inbox settings in your Cha
 
 If you need to create a new website channel, follow the procedure illustrated [here](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel).
 
-## 3. Start your sever 
+## 3. Start your server 
 
 You would be able to see the Chatwoot widget on the page now.
