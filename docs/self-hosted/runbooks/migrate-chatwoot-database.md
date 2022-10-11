@@ -45,3 +45,10 @@ vi .env
 sudo systemctl start chatwoot.target
 ```
 
+> **Note**: If you are getting the Chatwoot onboarding screen again on visiting your self-hosted Chatwoot URL, 
+> login to the rails console and run the following.
+```
+sudo cwctl --console
+::Redis::Alfred.delete(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
+```
+

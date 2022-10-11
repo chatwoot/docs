@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Helm Charts (k8s)"
-title: "Deploy Chatwoot using Helm Charts"
+sidebar_label: "Kubernetes"
+title: "Deploy Chatwoot on Kubernetes using Helm Charts"
 ---
 
 This guide will help you to deploy a production ready Chatwoot instance with Helm Charts.
@@ -169,6 +169,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| existingEnvSecret | string | "" | Allows the use of an existing secret to set env variables |
 | fullnameOverride | string | `""` |  |
 | hooks.affinity | object | `{}` |  |
 | hooks.migrate.env | list | `[]` |  |
@@ -375,3 +376,8 @@ helm install chatwoot chatwoot/chatwoot
 
 ### pod has unbound immediate PersistentVolumeClaims
 Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisites](#prerequisites).
+
+
+### ActionController::InvalidAuthenticityToken HTTP Origin header (https://mydomain.com) didn't match request.base_url (http://mydomain.com)
+
+If you are recieving this error when trying to access the superadmin panel, configure your ingress controller to forward the protocol of the origin request. For `nginx` ingress, you can do this by setting the `proxy_set_header X-Forwarded-Proto https;` config. Refer this [issue](https://github.com/chatwoot/chatwoot/issues/5506) to learn more.

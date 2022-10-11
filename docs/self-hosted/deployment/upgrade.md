@@ -9,6 +9,9 @@ Whenever a new version of Chatwoot is released, use the following steps to upgra
 
 > **Note** To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
 
+> **Note** If you are on an older version of Chatwoot(<2.7), follow the [manual upgrade steps](/docs/self-hosted/deployment/linux-vm#upgrading-to-a-newer-version-of-chatwoot) if you face errors with `cwctl`.
+
+
 ```
 cwctl --upgrade
 ```

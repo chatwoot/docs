@@ -77,7 +77,7 @@ You will receive a conversation id which can be used to create a message.
 
 #### 3. Create a new message
 
-API documentation: (https://www.chatwoot.com/developers/api/develop/#operation/create-a-new-message-in-a-conversation)
+API documentation: (https://www.chatwoot.com/developers/api/#operation/create-a-new-message-in-a-conversation)
 
 There are 2 types of messages.
 

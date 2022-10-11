@@ -10,8 +10,53 @@ You can manage your conversations and collaborate with your team on the go with 
 
 In this user guide, we’ve explained the features, capabilities, modes of operation, and step-by-step procedures for easily using the Chatwoot platform.
 
-In this user guide, we’ve explained the features, capabilities, modes of operation, and step-by-step procedures for easily using the Chatwoot platform.
+### Channels
 
+- [Website Live-chat](/docs/product/channels/live-chat/create-website-channel)
+- [Facebook](/docs/product/channels/facebook)
+- [Instagram](/docs/product/channels/instagram)
+- [Twitter](/docs/product/channels/twitter)
+- [Whatsapp via Whatsapp Cloud](/docs/product/channels/whatsapp/whatsapp-cloud)
+- [Whatsapp via Twilio](/docs/product/channels/whatsapp/twilio)
+- [Whatsapp via 360Dialog](/docs/product/channels/whatsapp/360dialog)
+- [SMS via Twilio](/docs/product/channels/sms/twilio)
+- [SMS via Bandwidth](/docs/product/channels/sms/bandwidth)
+- [Email](/docs/product/channels/email/create-channel)
+- [API Channel](/docs/product/channels/api/create-channel)
+- [Telegram](/docs/product/channels/telegram)
+- [Line](/docs/product/channels/line)
+
+### Features
+
+- [Canned responses](/docs/user-guide/features/canned-responses)
+- [Custom Attributes](/docs/user-guide/features/custom-attributes)
+- [CSAT](/docs/user-guide/features/csat)
+- [Contacts](/docs/user-guide/contacts)
+- [Conversation Routing](/docs/product/inbox/routing-conversations-round-robin)
+- [Folders](/docs/user-guide/features/folders)
+- [Keyboard Shortcuts](/docs/user-guide/features/keyboard-shortcuts)
+- [Multilingual Support](/docs/user-guide/features/multilingual-support)
+- [Reports](/docs/user-guide/features/reports/concepts)
+- [Segments](/docs/user-guide/features/segments)
+- [Pre Chat Form](/docs/user-guide/features/pre-chat-form)
+
+### Advanced
+
+- [Agent Bots](/docs/product/others/agent-bots)
+- [Interactive Messages](/docs/product/others/interactive-messages)
+- [Webhooks](/docs/product/features/webhooks)
+- [Websocket Events](/product/others/websocket-events)
+- [Cookies](/product/others/cookies)
+
+### Mobile app
+
+- [Android](/docs/product/mobile-app/android)
+- [iOS](/docs/product/mobile-app/ios)
+
+### Others
+
+- [Enterprise Edition](/docs/product/others/enterprise-edition)
+- [FAQ](/docs/product/others/faq)
 
 ### Compatibility and Requirements
 
