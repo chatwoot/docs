@@ -33,7 +33,7 @@ Once all details are entered, click on “Create Inbox” Button.
 
 The conversations will be routed to agents only if they are associated with the inbox. Even if you are an Administrator, you need to add yourself as an agent to the Inbox to see the Inbox on your screen. 
 
-Select the Agents from the drop-down (if agents have not been added go to [Add Agent](https://www.chatwoot.com/docs/user-guide/add-agent-settings)) and click on Add agents.
+Select the Agents from the drop-down, if agents have not been added go to [Add Agent](https://www.chatwoot.com/docs/user-guide/add-agent-settings) and click on Add agents.
 
 **Step 5**. Hooray! You have successfully created a website inbox. Now, add the widget to your website.
 
@@ -118,7 +118,7 @@ Click on the “Configuration” tab. You can find the code snippet to be copied
 
 ![inbox_settings](./images/config.png)
 
-You can click on the 'Copy' button to copy the code and [paste into the root code]([url](https://www.chatwoot.com/docs/user-guide/setting-up-chatwootwidget#root-file-of-website)) of your website. 
+You can click on the 'Copy' button to copy the code and [paste into the root code]([url](https://www.chatwoot.com/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website. 
 
 ### Widget Builder tab
 
