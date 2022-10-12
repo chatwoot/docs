@@ -23,7 +23,7 @@ Copy the script that was created in the `code` field of the channel.
 
 ## 3. Paste the script here
 
-Open your Vue project and paste the script in the index.html file, right before the closing </body> tag.
+Open your Vue project and paste the script in the index.html file, right before the closing `</body>` tag.
 
 ```html
 <body>
