@@ -169,6 +169,16 @@ Update the images using the latest image from chatwoot. Run the `rails db:chatwo
 docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails c'
 ```
 
+## Creating a super admin
+
+Once the console is up, create a super admin account:
+
+```
+s = SuperAdmin.create!(email: "<email account>", password: "<password>", name: "<name>")
+```
+
+This will send a verification email to the email account specified. Click the link and then visit your server at ```${FRONTEND_URL}/super_admin/sign_in``` to log in with the email address and password. You can then configure the installation.
+
 ## Chatwoot CE edition docker images
 
 If you want to run Chatwoot CE edition, replace the docker image tag with equivalent foss version tag. Docker tag for current `master` would be `latest-ce`. Version specific tags would follow the pattern `v*-ce`. For example the docker ce edition tag for Chatwoot `v2.3.2` would be `v2.3.2-ce`.
