@@ -62,4 +62,4 @@ A screen opens up where you can enter the details of the the new Webhook you wan
 
 ### Dashboard Apps
 
-For configuring Dashboard Apps, refer to [this doc](https://www.chatwoot.com/docs/product/others/dashboard-apps).
+For configuring Dashboard Apps, refer to [this doc](/docs/product/others/dashboard-apps).
