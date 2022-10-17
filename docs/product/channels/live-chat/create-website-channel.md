@@ -100,7 +100,7 @@ Click on the `Update Business Hour Setting` Button.
 
 Click on the `Pre Chat Form` tab. 
 
-With this, you can [collect information about your customers](/blog/pre-chat-form-automations/) as soon as they enter your live chat window/website widget. You can use this to collect customer info such as name and e-mail address before beginning the chat.
+With this, you can [collect information about your customers](https://www.chatwoot.com/blog/pre-chat-form-automations/) as soon as they enter your live chat window/website widget. You can use this to collect customer info such as name and e-mail address before beginning the chat.
 
 ![inbox_settings](./images/prechatform-setting.png)
 
