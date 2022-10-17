@@ -2,7 +2,7 @@
 title: "Integrations"
 ---
 
-Chatwoot is designed to work alongside the project communication application you use in your project. Slack and Webhooks are already integrated in Chatwoot. You can also connect your own apps using [Dashboard Apps](https://www.chatwoot.com/blog/dashboard-apps).
+Chatwoot is designed to work alongside the project communication application you use in your project. Slack and Webhooks are already integrated with Chatwoot. You can also connect your own apps using [Dashboard Apps](/blog/dashboard-apps).
 
 To begin setting up, click on Settings on your homepage. Next, click on Integrations. You can see the screen which displays the already installed integrations.
 

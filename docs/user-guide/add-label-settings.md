@@ -3,7 +3,7 @@ title: "Add Labels"
 ---
 Labels help you categorize conversations and prioritize them. You can assign a label to a conversation from the chat's side panel.
 
-Labels are tied to the account and can be used to create custom workflows in your organization. You can assign custom color to a label, it makes it easier to identify the label. You will be able to display the label on the sidebar to filter the conversations easily.
+Labels are tied to the account and can be used to create custom workflows in your organization. You can assign custom colors to a label, which makes it easier to identify the label. You will be able to display the label on the sidebar to filter the conversations quickly.
 
 To add labels, click on Settings on Chatwoot home screen. Go to Labels → Add Label button.
 
@@ -30,7 +30,7 @@ As you add more labels, try to give them meaningful names as well as different c
 | Colour                 | Select a colour for the label for easy  identification                   | After Selection click on the small square again                                          |
 | Show Label on  Sidebar | Select this option if you want the label to  be displayed on the sidebar | This will help in easy identification of the conversations                               |
 
-Click on Create. "Label added successfully" message will be displayed. 
+Click on Create. The `Label added successfully` message will be displayed. 
 New Label has been created. You can create as many Labels as you need. Labels can be used across teams.
 
 <div align="center">

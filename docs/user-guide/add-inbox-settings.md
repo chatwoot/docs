@@ -32,7 +32,7 @@ On your Chatwoot dashboard, click on Settings → Inboxes.
 
 **III. Through your home screen**
 
-You can find the “+ New inbox” link on your home screen below the list of your inboxes.
+You can find the `+ New inbox` link on your home screen below the list of your inboxes.
 
 <div align="center">
 
@@ -40,7 +40,7 @@ You can find the “+ New inbox” link on your home screen below the list of yo
 
 </div>
 
-## Start adding inboxes
+### Start adding inboxes
 
 Once you reach the inbox screen, click on the button: “Add Inbox” which you will find at the top right hand corner of the page.
 
