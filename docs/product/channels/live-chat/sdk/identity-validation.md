@@ -7,7 +7,7 @@ Identity validation helps with making sure that the conversations between your c
 
 Identity validation can be enabled by generating an HMAC. 
 
-The key used to generate HMAC for each web widget is different and can be copied from Inboxes -> Settings -> Configuration -> Identity Validation -> Copy the token shown there.x
+The key used to generate HMAC for each web widget is different and can be copied from Inboxes -> Settings -> Configuration -> Identity Validation -> Copy the token shown there.
 
 You can generate HMAC in different languages as shown below.
 

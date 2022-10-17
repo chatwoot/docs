@@ -98,19 +98,19 @@ Click on the “Update Business Hour Setting” Button.
 
 ### Pre Chat Form Tab
 
-Click on the “Pre Chat Form” tab. 
+Click on the `Pre Chat Form` tab. 
 
-With this, you can [collect information about your customers](https://www.chatwoot.com/blog/pre-chat-form-automations/) as soon as they enter your live chat window/website widget. You can use this to collect customer info such as name and e-mail address before beginning the chat.
+With this, you can [collect information about your customers](/blog/pre-chat-form-automations/) as soon as they enter your live chat window/website widget. You can use this to collect customer info such as name and e-mail address before beginning the chat.
 
 ![inbox_settings](./images/prechatform-setting.png)
 
 | Field Name | Value | Remarks |
 | --- | --- | --- |
 | Enable pre chat form | Select Yes or No | Yes if you want to use the prechat form. No if you do not want to |
-| Pre Chat Message | Give a message to start conversation with the customer | Hi ..We need some information to serve you better |
+| Pre Chat Message | Give a message to start a conversation with the customer | Hi, We need some information to serve you better |
 | Visitors should provide their name and email address before starting the chat | Tick on the check box if you need the name and email address mandatorily | This will help us maintain our contact list better |
 
-Click on “Update” button. Pre Chat Form is enabled now.
+Click on the `Update` button. Pre Chat Form is enabled now.
 
 ### Configuration tab
 
@@ -118,7 +118,7 @@ Click on the “Configuration” tab. You can find the code snippet to be copied
 
 ![inbox_settings](./images/config.png)
 
-You can click on the 'Copy' button to copy the code and [paste into the root code]([url](https://www.chatwoot.com/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website. 
+You can click on the `Copy` button to copy the code and [paste it into the root file](https://www.chatwoot.com/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website. 
 
 ### Widget Builder tab
 
@@ -131,46 +131,46 @@ You can customize your web widget with simple settings given on this page. You w
 Find the detailed steps to configure each channel below:
 
 <aside>
-➡️ [Facebook messenger channel]([url](https://www.chatwoot.com/docs/product/channels/facebook))
+➡️ [Facebook messenger channel](/docs/product/channels/facebook)
 
 </aside>
 
 <aside>
-➡️ [Instagram channel]([url](https://www.chatwoot.com/docs/product/channels/instagram))
+➡️ [Instagram channel](/docs/product/channels/instagram)
 
 </aside>
 
 <aside>
-➡️ [Twitter channel]([url](https://www.chatwoot.com/docs/product/channels/twitter))
+➡️ [Twitter channel](/docs/product/channels/twitter)
 
 </aside>
 
 <aside>
-➡️ [WhatsApp channel]([url](https://www.chatwoot.com/docs/product/channels/whatsapp/whatsapp-cloud))
+➡️ [WhatsApp channel](/docs/product/channels/whatsapp/whatsapp-cloud)
 
 </aside>
 
 <aside>
-➡️ [SMS channel]([url](https://www.chatwoot.com/docs/product/channels/sms/twilio))
+➡️ [SMS channel](/docs/product/channels/sms/twilio)
 
 </aside>
 
 <aside>
-➡️ [Email channel]([url](https://www.chatwoot.com/docs/product/channels/email/create-channel))
+➡️ [Email channel](/docs/product/channels/email/create-channel))
 
 </aside>
 
 <aside>
-➡️ [Connect a channel using API]([url](https://www.chatwoot.com/docs/product/channels/api/create-channel))
+➡️ [Connect a channel using API](/docs/product/channels/api/create-channel))
 
 </aside>
 
 <aside>
-➡️ [Telegram channel]([url](https://www.chatwoot.com/docs/product/channels/telegram))
+➡️ [Telegram channel](/docs/product/channels/telegram))
 
 </aside>
 
 <aside>
-➡️ [Line channel]([url](https://www.chatwoot.com/docs/product/channels/line))
+➡️ [Line channel](/docs/product/channels/line))
 
 </aside>

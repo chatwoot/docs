@@ -1,5 +1,5 @@
 ---
-title: "Add your inboxes"
+title: "Add Inboxes"
 ---
 
 An Inbox connects your website, or social media accounts like Facebook, Twitter, or chat platforms like WhatsApp, Line, and more with Chatwoot.
@@ -8,11 +8,11 @@ You can have unlimited inboxes in your Chatwoot account.
 
 You can add an inbox to your account in any of the 3 ways described below.
 
-**I. Through your Welcome/onboarding screen**
+### I. Through your Welcome/onboarding screen
 
 You’ll see the option to connect your inboxes on the onboarding screen.
 
-Click on 'Click here to create an inbox', as shown in the screenshot below.
+Click on `Click here to create an inbox`, as shown in the screenshot below.
 
 <div align="center">
 
@@ -20,7 +20,7 @@ Click on 'Click here to create an inbox', as shown in the screenshot below.
 
 </div>
 
-**II. Through your Settings screen**
+### II. Through your Settings screen
 
 On your Chatwoot dashboard, click on Settings → Inboxes.
 
@@ -30,7 +30,7 @@ On your Chatwoot dashboard, click on Settings → Inboxes.
 
 </div>
 
-**III. Through your home screen**
+### III. Through your home screen
 
 You can find the `+ New inbox` link on your home screen below the list of your inboxes.
 
