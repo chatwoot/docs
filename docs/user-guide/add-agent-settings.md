@@ -23,7 +23,7 @@ Your Name will be listed by default as Administrator. Administrators have access
 
 </div>
 
-Click on the “Add Agent” button on the Top Right Hand Side. 
+Click on the `Add Agent` button on the Top Right Hand Side. 
 
 A pop up window will open in which you can enter the details of the Agent like name, role and email address. 
 
