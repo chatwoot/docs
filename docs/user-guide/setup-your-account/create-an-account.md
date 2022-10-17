@@ -28,7 +28,7 @@ The fields required to signup are as shown below. Fill up the fields.
 | Full Name | Enter Your Full name eg: John Hopkins |
 | Work email | Enter a valid work e-mail address eg: *john.hopkins@companyname.com*  |
 | Account name | Enter the name of your company eg: Wayne Enterprises |
-| Password  | Password must contain at least one uppercase character (A-Z), at least one number character (0..9), at least one special character (!@#$%^&*()_+-=[]{}\|'"/\^.,`<\>:;?~) |
+| Password  | Password must contain at least one uppercase character (A-Z), at least one numeric character (0..9), and at least one special character `(!@#$%^&*()_+-=[]{}\|'"/\^.,`<\>:;?~)` |
 | Confirm Password | Confirm password should match with the password given above |
 
 **Step 3**. After signing up, you would be automatically logged into the dashboard. To complete the signup, you need to verify your email address. You will receive an email with the subject **Confirmation Instructions** from Chatwoot, as shown below.
