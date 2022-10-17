@@ -130,47 +130,20 @@ You can customize your web widget with simple settings given on this page. You w
 
 Find the detailed steps to configure each channel below:
 
-<aside>
 ➡️ [Facebook messenger channel](/docs/product/channels/facebook)
 
-</aside>
-
-<aside>
 ➡️ [Instagram channel](/docs/product/channels/instagram)
 
-</aside>
-
-<aside>
 ➡️ [Twitter channel](/docs/product/channels/twitter)
 
-</aside>
-
-<aside>
 ➡️ [WhatsApp channel](/docs/product/channels/whatsapp/whatsapp-cloud)
 
-</aside>
-
-<aside>
 ➡️ [SMS channel](/docs/product/channels/sms/twilio)
 
-</aside>
-
-<aside>
 ➡️ [Email channel](/docs/product/channels/email/create-channel))
 
-</aside>
-
-<aside>
 ➡️ [Connect a channel using API](/docs/product/channels/api/create-channel))
 
-</aside>
-
-<aside>
 ➡️ [Telegram channel](/docs/product/channels/telegram))
 
-</aside>
-
-<aside>
 ➡️ [Line channel](/docs/product/channels/line))
-
-</aside>
