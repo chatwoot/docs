@@ -37,7 +37,7 @@ You can create your personal message signature. This will get added to all the m
 
 As a security measure, you need to provide your existing password to change the password. If you forgot the old password, you can log out of the system and reset the password.
 
-Password must contain at least one uppercase character (A-Z), at least one number character (0..9), at least one special character (!@#$%^&*()_+-=[]{}|'"/\^.,`<\>:;?~).
+Password must contain at least one uppercase character (A-Z), at least one numeric character (0..9), and at least one special character `(!@#$%^&*()_+-=[]{}|'"/\^.,`<\>:;?~)`.
 
 <img src={require('./images/configure-your-profile/update-your-password.png').default} width="600" alt="Password Form" />
 
