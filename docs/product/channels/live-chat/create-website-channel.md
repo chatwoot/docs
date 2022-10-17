@@ -41,7 +41,7 @@ Copy and paste the code snippet shown on the page to your website and start supp
 
 ![finish_inbox](./images/inbox-is-ready.png)
 
-If you click on the 'More settings' Button, you will be taken to the Additional Settings for Inbox. If you click on the 'Take me there' button you will be taken to the newly created Inbox directly.
+If you click on the `More settings` Button, you will be taken to the Additional Settings for Inbox. If you click on the `Take me there` button, you will be taken to the newly created Inbox directly.
 
 **Step 6**. If you want to update the agents who have access to the inbox, go to Settings → Inboxes. You will be able to see your website inbox listed there. Click on Settings. You will be able to see the code as well as the list of agents who have access to the inbox.
 
