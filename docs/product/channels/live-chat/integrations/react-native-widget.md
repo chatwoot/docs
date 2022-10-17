@@ -9,7 +9,7 @@ Chatwoot lets you chat with your visitors and provide exceptional support in rea
 
 ## 1. Create a Website Channel in Chatwoot
 
-As a first step, you will need a website channel configured in your Chatwoot account. To learn how to do this step-by-step, refer to the Website Channel [document](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel).
+As a first step, you will need a website channel configured in your Chatwoot account. To learn how to do this step-by-step, refer to the `Website Channel` [document](/docs/product/channels/live-chat/create-website-channel).
 
 ## 2. Add the plugin to your project
 

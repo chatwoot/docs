@@ -38,7 +38,7 @@ Chatwoot live-chat widget supports dark mode from v2.4.0. To enable the dark mod
 
 ### Widget designs
 
-Chatwoot supports two designs for for the widget
+Chatwoot supports two designs for the widget.
 
 1. Standard (default)
 
