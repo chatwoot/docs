@@ -11,7 +11,7 @@ title: 'Add and configure your website channel'
 
 ![list_of_channels](./images/list_of_channels.png)
 
-**Step 3**. Enter your website name and URL, and other details as described below. 
+**Step 3**. Enter your website name, URL, and other details as described below. 
 
 ![create_website](./images/add-website-inbox-details.png)
 
