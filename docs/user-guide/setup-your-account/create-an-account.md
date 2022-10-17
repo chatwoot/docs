@@ -9,7 +9,7 @@ This guide will help you create your account on Chatwoot cloud or any of the sel
 
 If you are using a self-hosted Chatwoot installation, you may directly open the URL `{your_installation_url}/app/auth/signup.`
 
-P.S. We have a wholly different [guide](https://www.chatwoot.com/docs/self-hosted) for self-hosted Chatwoot.
+P.S. We have a wholly different [guide](/docs/self-hosted) for self-hosted Chatwoot.
 
 ### I am using the cloud version
 
