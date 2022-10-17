@@ -62,15 +62,15 @@ Scroll down to see more settings, where you can set up the various notifications
 
 Here are a couple of examples for your understanding:
 
-**Enable email collect box** is enabled by default. This means an automatic message to collect the e-mail id will be displayed once the customer starts a conversation. Customer/End user will receive a prompt to enter e-mail id.
+**Enable email collect box** is enabled by default. This means an automatic message to collect the e-mail id will be displayed once the customer starts a conversation. The customer/end user will receive a prompt to enter an e-mail id.
 
 **Enable CSAT**. Once you enable this, your Customer Satisfaction survey will be launched every time a ticket is resolved. The CSAT results can be viewed later in the Reports section. 
 
-Click on the '**Update**' button to save the changes you have made.
+Click on the `**Update**` button to save the changes you have made.
 
 ### Collaborators tab
 
-Click on the “Collaborators” tab. 
+Click on the `Collaborators` tab. 
 
 Here, you can add Agents to the Inbox or delete Agents who have been already added in the Inbox.
 
@@ -78,15 +78,15 @@ You can also enable or disable the automatic assignment of new conversations to 
 
 ![inbox_settings](./images/collaborators.png)
 
-Click on “Update” to save the changes.
+Click on `Update` to save the changes.
 
 ### Business Hours tab
 
-Click on the “Business Hours” tab. In this section, you can set the working hours of your team.
+Click on the `Business Hours` tab. In this section, you can set the working hours of your team.
 
 ![inbox_settings](./images/business-hours-setting.png)
 
-Click on the check box for 'Enable business availability for this inbox' if you have well-defined business hours. 
+Click on the check box for `Enable business availability for this inbox` if you have well-defined business hours. 
 
 Once the check box is ticked, the below section opens up. You can write your message to be displayed to the customer during OFF business hours. 
 
@@ -94,7 +94,7 @@ You can also select the available business hours for each day of the week, along
 
 ![inbox_settings](./images/business-hours-advanced-settings.png)
 
-Click on the “Update Business Hour Setting” Button.
+Click on the `Update Business Hour Setting` Button.
 
 ### Pre Chat Form Tab
 

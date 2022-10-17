@@ -12,7 +12,7 @@ To add agents to your Chatwoot account, you can use the 'Click here to Invite Te
 
 </div>
 
-OR, Click on Settings → Agents.
+Or, Click on Settings → Agents.
 
 You will be redirected to the Agents management page as shown below.  
 
@@ -40,7 +40,7 @@ A pop up window will open in which you can enter the details of the Agent like n
 | Role                 | Enter the Role - Agent or  Administrator | Agents can only access inbox, reports, and  conversations. Administrators have all privilages of agents  and have access to all features of Chatwoot |
 | Your e-mail  address | Enter the e-mail id you  registered      |                                                                                                                                                     |
 
-Click on the “Add Agent” Button to confirm. You will see a "Agent Added Successfully" message. This agent will be enlisted on your Agents management page now.
+Click on the `Add Agent` Button to confirm. You will see an `Agent Added Successfully` message. This agent will be enlisted on your Agents management page now.
 
 You can also use the edit option given along with the Agent’s name to change details.
 
@@ -50,7 +50,7 @@ You can also use the edit option given along with the Agent’s name to change d
 
 </div>  
 
-In case, the particular agent no longer works with you, you can use the “delete” button to delete the agent from the dashboard.
+In case, the particular agent no longer works with you, you can use the `delete` button to delete the agent from the dashboard.
 
 <div align="center">
 
