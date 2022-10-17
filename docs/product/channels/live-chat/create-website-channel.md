@@ -21,7 +21,7 @@ title: 'Add and configure your website channel'
 | Website Domain | Enter the link to your Website | eg: www.example.com |
 | Widget Color | Select the color by clicking the pallet |  |
 | Welcome Heading | Give a Greeting with which you would like to address the customer | eg: Welcome ! |
-| Welcome Tagline | Give a Tagline representing your company | eg: Welcome to Hopkins ! We are at your service 24x7 |
+| Welcome Tagline | Give a Tagline representing your company | eg: Welcome to Example ! We are at your service 24x7 |
 | Enable Channel Greeting | Select Enabled or Disabled | Enable to Send Greeting message when customer starts conversation |
 | Channel Greeting Message | Give a greeting with which you would like to start the conversation | eg: Hi. How can we help you? |
 
