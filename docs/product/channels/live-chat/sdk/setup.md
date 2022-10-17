@@ -1,9 +1,9 @@
 ---
 sidebar_label: "SDK Setup"
-title: "Sending Information into Chatwoot"
+title: "Sending information to Chatwoot"
 ---
 
-Additional information about a contact is always useful. The Chatwoot Website SDK ensures that you can send additional information that you have about the user.
+Additional information about a contact is always useful. The Chatwoot Website SDK ensures that you can send additional information that you have about a user.
 
 If you have installed our code on your website, the SDK would expose `window.$chatwoot` object.
 
@@ -20,7 +20,7 @@ window.addEventListener("chatwoot:ready", function () {
 
 To hide the bubble, you can use the setting mentioned below.
 
-**Note**: If you use this, then you have to trigger the widget by yourself.
+**Note**: If you use this, then you’ll also have to trigger the widget.
 
 ```js
 window.chatwootSettings = {
@@ -38,7 +38,7 @@ Chatwoot live-chat widget supports dark mode from v2.4.0. To enable the dark mod
 
 ### Widget designs
 
-Chatwoot support 2 designs for for the widget
+Chatwoot supports two designs for the widget.
 
 1. Standard (default)
 
@@ -59,7 +59,7 @@ window.chatwootSettings = {
 
 ### Enable popout window
 
-Inorder to enable the popout window, add the following configuration to `chatwootSettings`. This option is disabled by default.
+In order to enable the popout window, add the following configuration to `chatwootSettings`. This option is disabled by default.
 
 ```js
 window.chatwootSettings = {
@@ -144,7 +144,7 @@ Note that implementing HMAC authentication will allow chat history to persist ac
 
 ### Set custom attributes
 
-Inorder to set additional information about the customer you can use customer custom attributes field. Read more about custom attributes [here](/user-guide/features/custom-attributes)
+In order to set additional information about the customer you can use customer custom attributes field. Read more about custom attributes [here](/user-guide/features/custom-attributes)
 
 To set a custom attributes call `setCustomAttributes` as follows
 

@@ -3,7 +3,9 @@ sidebar_label: "Dark Mode"
 title: "Enable dark mode on live-chat widget"
 ---
 
-Modern websites support the dark mode theme along with the light mode theme. Therefore, it is essential to have a live chat that works with both themes. This guide helps you to set up dark mode for the Chatwoot live-chat widget on your website.
+Modern websites enable users to switch between light and dark modes. Therefore, a live chat that works with both themes is important. 
+
+This guide helps you to set up dark mode for the Chatwoot live-chat widget on your website.
 
 Here is a quick glimpse of how dark mode functions on the live chat widget.
 

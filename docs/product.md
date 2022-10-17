@@ -2,18 +2,13 @@
 title: "Introduction"
 ---
 
-Chatwoot is an [open-source](https://opensource.com/resources/what-open-source) customer engagement suite built as an alternative to Intercom, Zendesk & Salesforce Service Cloud. Chatwoot is designed not only for a great customer experience but also to increase your support team's productivity and provide them with actionable data.
+Chatwoot is an [open-source](https://opensource.com/resources/what-open-source) customer engagement suite built as an alternative to Intercom, Zendesk & Salesforce Service Cloud. Chatwoot is designed not only for a great customer experience but also to improve your support team's productivity and provide them with actionable data.
 
-Chatwoot integrates with multiple conversation channels like website live-chat, email, Facebook page, Twitter handle, WhatsApp, etc. It displays conversation from different channels, thereby building a single view of the customer and helps in reducing the time required to switch between the tools. Mobile apps for Chatwoot (available for Android and iOS) enable you to browse conversations, reply to messages and collaborate with the team.
+You can integrate your Chatwoot account with multiple conversation channels like website live-chat, email, Facebook page, Twitter handle, WhatsApp, etc. You can view all of your conversations from different channels on one dashboard. This helps in reducing the time and friction involved with switching between multiple tools.
 
-This guide includes a description of the features and capabilities, modes of operation, and step-by-step procedures for the Chatwoot platform access and use.
+You can manage your conversations and collaborate with your team on the go with Chatwoot mobile apps (available for Android and iOS).
 
-### Setup your account
-
-- [Create a Chatwoot account](/docs/user-guide/setup-your-account/create-an-account)
-- [Configure your profile](/docs/user-guide/setup-your-account/configure-your-profile)
-- [Update account details](/docs/user-guide/setup-your-account/configure-account-details)
-- [Invite your team members](/docs/user-guide/add-agent-settings)
+In this user guide, we’ve explained the features, capabilities, modes of operation, and step-by-step procedures for easily using the Chatwoot platform.
 
 ### Channels
 
@@ -82,3 +77,13 @@ To see the supported mobile OS versions for the mobile app, see the table below.
 | ------- | --------------- |
 | Android | Android 5.0     |
 | iOS     | iOS 11.0        |
+
+
+### Next Steps
+
+We recommend that:
+
+- You use the Search function (ctrl/cmd + k) if you’re looking for specific answers.
+- Browse and navigate through topics using the sidebar. ↩
+
+Let us know if you face trouble in using our docs!

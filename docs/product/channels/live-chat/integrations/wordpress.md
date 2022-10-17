@@ -3,13 +3,13 @@ sidebar_label: "WordPress"
 title: "Install Chatwoot live-chat on WordPress websites"
 ---
 
-[WordPress]([url](https://wordpress.com/)) is a popular Content Management System. If you are hosting your website on WordPress, you can add a Chatwoot live chat widget to it and talk to your visitors in real-time.  
+[WordPress](https://wordpress.com/) is a popular Content Management System. If you are hosting your website on WordPress, you can add a Chatwoot live chat widget to it and talk to your visitors in real-time.
 
 To achieve this, use Chatwoot’s native integration with WordPress. To use Chatwoot live-chat on the WordPress website, follow the steps explained below.
 
 ## 1. Download the plugin
 
-Download the Zip file of the latest Chatwoot WordPress plugin from [GitHub]([url](https://github.com/chatwoot/wp-plugin/tags)) as shown below.
+Download the Zip file of the latest Chatwoot WordPress plugin from [GitHub](https://github.com/chatwoot/wp-plugin/tags) as shown below.
 
 ![download-zip](./images/wordpress/wordPress-plugin-zip.png)
 

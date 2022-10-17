@@ -3,9 +3,11 @@ sidebar_label: "Identity Validation"
 title: 'Identity validation in Chatwoot'
 ---
 
-To make sure the conversations between the customers and the support agents are private and to disallow impersonation, you can setup identity validation Chatwoot.
+Identity validation helps with making sure that the conversations between your customers and support agents are private. It also helps with disallowing impersonation.
 
-Identity validation can be enabled by generating an HMAC. The key used to generate HMAC for each webwidget is different and can be copied from Inboxes -> Settings -> Configuration -> Identity Validation -> Copy the token shown there
+Identity validation can be enabled by generating an HMAC. 
+
+The key used to generate HMAC for each web widget is different and can be copied from Inboxes -> Settings -> Configuration -> Identity Validation -> Copy the token shown there.
 
 You can generate HMAC in different languages as shown below.
 
