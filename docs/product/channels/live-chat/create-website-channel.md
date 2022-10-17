@@ -140,10 +140,10 @@ Find the detailed steps to configure each channel below:
 
 ➡️ [SMS channel](/docs/product/channels/sms/twilio)
 
-➡️ [Email channel](/docs/product/channels/email/create-channel))
+➡️ [Email channel](/docs/product/channels/email/create-channel)
 
-➡️ [Connect a channel using API](/docs/product/channels/api/create-channel))
+➡️ [Connect a channel using API](/docs/product/channels/api/create-channel)
 
-➡️ [Telegram channel](/docs/product/channels/telegram))
+➡️ [Telegram channel](/docs/product/channels/telegram)
 
-➡️ [Line channel](/docs/product/channels/line))
+➡️ [Line channel](/docs/product/channels/line)
