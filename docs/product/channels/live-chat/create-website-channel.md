@@ -17,7 +17,7 @@ title: 'Add and configure your website channel'
 
 | Field Name | Value | Remarks |
 | --- | --- | --- |
-| Website Name | Enter Name of your Website | eg: Hopkins Inc. |
+| Website Name | Enter Name of your Website | eg: Example Inc. |
 | Website Domain | Enter the link to your Website | eg: www.example.com |
 | Widget Color | Select the color by clicking the pallet |  |
 | Welcome Heading | Give a Greeting with which you would like to address the customer | eg: Welcome ! |
