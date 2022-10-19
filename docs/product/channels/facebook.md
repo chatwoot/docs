@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Facebook"
-title: 'Add and configure your Facebook channel'
+title: 'Setup your Facebook channel'
 ---
 
 If you are using a self-hosted Chatwoot installation, please setup your Facebook app as described in the [this guide](https://www.chatwoot.com/docs/self-hosted/configuration/features/integrations/facebook-channel-setup).
