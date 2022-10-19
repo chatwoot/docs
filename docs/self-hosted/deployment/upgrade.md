@@ -24,7 +24,7 @@ Update the images using the latest image from chatwoot.
 
 ```
 docker-compose down
-docker pull
+docker-compose pull
 docker-compose up -d
 ```
 
