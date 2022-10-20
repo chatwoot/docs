@@ -34,12 +34,7 @@ Chatwoot will be listening to this key `chatwoot-dashboard-app:fetch-info`.
 
 ### Example
 
-You need to send the event in this format. Chatwoot will be listening to this key and immidiately send the requester with the updated conversation payload.
-```js
-window.parent.postMessage('chatwoot-dashboard-app:fetch-info', '*');
-```
-
-You need to register this event on load of the application. If your application registers this event after the page load, you would need query the dashboard app to get the context. You can query the dashboard app using the following code.
+You can query the dashboard app using the following code. Chatwoot will be listening to this key and immidiately send the requester with the updated conversation payload.
 
 ```js
 window.parent.postMessage('chatwoot-dashboard-app:fetch-info', '*')
