@@ -3,7 +3,7 @@ sidebar_label: "Instagram"
 title: "Setup your Instagram channel"
 ---
 
-If you are using a self-hosted Chatwoot installation, please setup your Instagram app as described in the [this guide](https://www.chatwoot.com/docs/self-hosted/configuration/features/integrations/instagram-channel-setup).
+If you are using a self-hosted Chatwoot installation, please setup your Instagram app as described in the [this guide](/docs/self-hosted/configuration/features/integrations/instagram-channel-setup).
 
 For the cloud version of Chatwoot, please follow the steps below.
 
