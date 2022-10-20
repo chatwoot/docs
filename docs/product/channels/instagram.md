@@ -9,7 +9,7 @@ For the cloud version of Chatwoot, please follow the steps below.
 
 ## Setting up Instagram
 
-**Step 1:** Make sure you have a Business Instagram account. Follow this [guide from Instagram]([url](https://help.instagram.com/502981923235522)) to help with the same.
+**Step 1:** Make sure you have a Business Instagram account. Follow this [guide from Instagram](https://help.instagram.com/502981923235522) to help with the same.
 
 **Step 2:** Make sure your Facebook page is connected to this Instagram account. To connect Facebook and Instagram, follow these steps:
 
