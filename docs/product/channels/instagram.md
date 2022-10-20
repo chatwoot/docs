@@ -1,61 +1,49 @@
 ---
 sidebar_label: "Instagram"
-title: "How to create an Instagram channel?"
+title: "Setup your Instagram channel"
 ---
 
-If you are using a self-hosted Chatwoot installation, please configure the Instagram app as described in the [guide to set up the Instagram app](/docs/self-hosted/configuration/features/integrations/instagram-channel-setup).
+If you are using a self-hosted Chatwoot installation, please setup your Instagram app as described in the [this guide](/docs/self-hosted/configuration/features/integrations/instagram-channel-setup).
 
-**Pre-requisite**
+For the cloud version of Chatwoot, please follow the steps below.
 
-**Step 1:** Make sure you have an Instagram account. This link below would help to set up a business account.
+## Setting up Instagram
 
-https://help.instagram.com/502981923235522.
+**Step 1:** Make sure you have a Business Instagram account. Follow this [guide from Instagram](https://help.instagram.com/502981923235522) to help with the same.
 
-**Step 2:** Make sure your Facebook page is connected to the Instagram account, for which the Instagram account holder is admin.
+**Step 2:** Make sure your Facebook page is connected to this Instagram account. To connect Facebook and Instagram, follow these steps:
 
-You can do that setting here:
-
-  1. Go to https://www.facebook.com/pages/?category=your_pages
-  2. Select Your Page
-  3. Go to Settings
-  4. Select Instagram and connect your business account like below:
+1. Go to [https://www.facebook.com/pages/?category=your_pages](https://www.facebook.com/pages/?category=your_pages)
+2. Select Your Page
+3. Go to Settings
+4. Select “Instagram” and connect your business account as shown below:
   >
   > ![connect_fb_to_ig](./images/instagram/connect_fb_to_ig.png)
 
-***Now switch back to Chatwoot App.***
+**Now switch back to Chatwoot App.**
 
-**Step 1**. Click on "Add Inbox" button from Settings > Inboxes page.
+## Connecting Instagram to Chatwoot
 
-![ig_create](./images/instagram/ig_create.png)
+**Step 1**. Go to Settings → Inboxes → “Add Inbox”.
 
-**Step 2**. Click on the "Facebook" icon.
+![ig_create](./images/facebook/add-inbox.png)
 
-![list_of_channels](./images/instagram/list_of_channels.png)
+**Step 2**. Click on the "Messenger" icon.
+
+![list_of_channels](./images/facebook/list_of_channels.png)
 
 **Step 3**. Click on the Facebook login button. It will open a new window for you to log in.
 
-![login_to_fb](./images/instagram/login_to_fb.png)
+![login_to_fb](./images/facebook/fb-signin-in-chatwoot.png)
 
-**Step 4**. Authenticate with Facebook, select an Instagram account and select the page you want to connect. Enable all permissions shown in the list. Otherwise, the app might not work.
+**Step 4**. Authenticate with Facebook, select an Instagram account and select the page you want to connect. Enable all permissions shown in the list. This will help Chatwoot to perform all the desired actions smoothly.
 
-![link_account](./images/instagram/link_account.png)
+![link_account](./images/facebook/authenticate-chatwoot.png)
 
-![list_of_ig_accounts](./images/instagram/list_of_ig_accounts.png)
+![list_of_pages](./images/facebook/chatwoot-permissions.png)
 
-![list_of_pages](./images/instagram/list_of_pages.png)
+**Step 5**. "Add agents" to your Instagram inbox.
 
-![list_of_permissions](./images/instagram/list_of_permissions.png)
+![select_agents](./images/facebook/add-agents-to-fb.png)
 
-![select_page](./images/instagram/select_page.png)
-
-**Step 5**. "Add agents" to your Facebook inbox.
-
-![select_agents](./images/instagram/select_agents.png)
-
-**Step 6**. Hooray! You have successfully created a Messenger inbox. Whenever a customer sends a message to your Instagram account or Facebook page, you will see it in the dashboard.
-
-![inbox](./images/instagram/inbox.png)
-
-![final_inbox_with_messages](./images/instagram/final_inbox_with_messages.png)
-
-**Step 7**. If you want to update the agents who have access to the inbox, you can go to Settings > Inboxes.
+Hooray! You have successfully created an Instagram inbox. Whenever a customer sends a message to your Instagram account, you will be able to see and reply to it in Chatwoot.
