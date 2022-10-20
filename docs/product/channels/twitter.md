@@ -3,7 +3,7 @@ sidebar_label: "Twitter"
 title: 'Setup your Twitter channel'
 ---
 
-If you are using a self-hosted Chatwoot installation, please setup your Twitter inbox as described in [this guide](https://www.chatwoot.com/docs/self-hosted/configuration/features/integrations/twitter-channel-setup).
+If you are using a self-hosted Chatwoot installation, please setup your Twitter inbox as described in [this guide](/docs/self-hosted/configuration/features/integrations/twitter-channel-setup).
 
 For the cloud version of Chatwoot, please follow the steps below.
 
