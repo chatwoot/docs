@@ -23,7 +23,7 @@ Chatwoot provides a round-robin auto-assignment system for conversations. The as
 _Note_: Round robin assignment is enabled by default.
 
 1. If there are agents online who have access to the inbox in which a conversation is created, the system would distribute the conversations equally among the online agents.
-2. If all the agents are offline, the system would distribute the conversations equally to all agents.
+2. If all the agents are offline, the system would keep the conversations as unassigned.
 
 
 ### Enable round-robin assignment
