@@ -27,6 +27,24 @@ window.chatwootSettings = {
   hideMessageBubble: false,
   position: "left", // This can be left or right
   locale: "en", // Language to be set
+  useBrowserLanguage: false, // Set widget language from user's browser
+  type: "standard", // [standard, expanded_bubble]
+  darkMode: "auto", // [light, auto]
+};
+```
+
+### Set browser language as chatwoot widget locale
+
+To show widget in user's browser locale, set the `useBrowserLanguage` to `true` in `window.chatwootSettings` mentioned above.
+
+**Note**: If `useBrowserLanguage` is set to `true`, The `locale` mentioned will be ignored. If the browser language is not suported by chatwoot, the locale mentioned under `locale` will be used. If that's also missing, the widget will fallback to `locale` of agent dashboard.
+
+```js
+window.chatwootSettings = {
+  hideMessageBubble: false,
+  position: "left", // This can be left or right
+  locale: "en", // Language to be set
+  useBrowserLanguage: false, // Set widget language from user's browser
   type: "standard", // [standard, expanded_bubble]
   darkMode: "auto", // [light, auto]
 };
@@ -71,23 +89,25 @@ You can also popout the chat window programatically with the `popoutChatWindow()
 ```
 
 ### Programatically open the popout window
+
 You can open thje popout window programatically with the `popoutChatWindow()` method.
 
-To initiate this, call the method like below. 
+To initiate this, call the method like below.
+
 ```js
 window.$chatwoot.popoutChatWindow();
 ```
 
-
 ### Toggle the widget bubble visibility
-If you want to hide/show the Chatwoot widget bubble, you can do so with  `toggleBubbleVisibility('show/hide')`
+
+If you want to hide/show the Chatwoot widget bubble, you can do so with `toggleBubbleVisibility('show/hide')`
 
 Example
-```js
-window.$chatwoot.toggleBubbleVisibility('show'); // to display the bubble
-window.$chatwoot.toggleBubbleVisibility('hide'); // to hide the bubble
-```
 
+```js
+window.$chatwoot.toggleBubbleVisibility("show"); // to display the bubble
+window.$chatwoot.toggleBubbleVisibility("hide"); // to hide the bubble
+```
 
 ### Trigger widget without displaying bubble
 
