@@ -27,10 +27,17 @@ window.chatwootSettings = {
   hideMessageBubble: false,
   position: "left", // This can be left or right
   locale: "en", // Language to be set
+  useBrowserLanguage: false, // Set widget language from user's browser
   type: "standard", // [standard, expanded_bubble]
   darkMode: "auto", // [light, auto]
 };
 ```
+
+### Use browser language in your live chat widget automatically
+
+To show the live chat widget in the user's browser locale, set the `useBrowserLanguage` to `true` in the `window.chatwootSettings` mentioned above.
+
+**Note**: If `useBrowserLanguage` is set to `true`, The `locale` mentioned will be ignored. If the browser language is not supported by chatwoot, the locale mentioned under `locale` will be used. If that's also missing, the widget will fall back to the `locale` of the agent dashboard.
 
 ### Dark Mode
 
@@ -71,23 +78,25 @@ You can also popout the chat window programatically with the `popoutChatWindow()
 ```
 
 ### Programatically open the popout window
+
 You can open thje popout window programatically with the `popoutChatWindow()` method.
 
-To initiate this, call the method like below. 
+To initiate this, call the method like below.
+
 ```js
 window.$chatwoot.popoutChatWindow();
 ```
 
-
 ### Toggle the widget bubble visibility
-If you want to hide/show the Chatwoot widget bubble, you can do so with  `toggleBubbleVisibility('show/hide')`
+
+If you want to hide/show the Chatwoot widget bubble, you can do so with `toggleBubbleVisibility('show/hide')`
 
 Example
-```js
-window.$chatwoot.toggleBubbleVisibility('show'); // to display the bubble
-window.$chatwoot.toggleBubbleVisibility('hide'); // to hide the bubble
-```
 
+```js
+window.$chatwoot.toggleBubbleVisibility("show"); // to display the bubble
+window.$chatwoot.toggleBubbleVisibility("hide"); // to hide the bubble
+```
 
 ### Trigger widget without displaying bubble
 
