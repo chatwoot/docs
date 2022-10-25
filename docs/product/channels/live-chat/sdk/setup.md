@@ -33,7 +33,7 @@ window.chatwootSettings = {
 };
 ```
 
-### Set browser language as chatwoot widget locale
+### Use browser language in your live chat widget automatically
 
 To show widget in user's browser locale, set the `useBrowserLanguage` to `true` in `window.chatwootSettings` mentioned above.
 
