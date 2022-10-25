@@ -35,7 +35,7 @@ window.chatwootSettings = {
 
 ### Use browser language in your live chat widget automatically
 
-To show widget in user's browser locale, set the `useBrowserLanguage` to `true` in `window.chatwootSettings` mentioned above.
+To show the live chat widget in the user's browser locale, set the `useBrowserLanguage` to `true` in the `window.chatwootSettings` mentioned above.
 
 **Note**: If `useBrowserLanguage` is set to `true`, The `locale` mentioned will be ignored. If the browser language is not suported by chatwoot, the locale mentioned under `locale` will be used. If that's also missing, the widget will fallback to `locale` of agent dashboard.
 
