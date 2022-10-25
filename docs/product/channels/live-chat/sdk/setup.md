@@ -39,17 +39,6 @@ To show the live chat widget in the user's browser locale, set the `useBrowserLa
 
 **Note**: If `useBrowserLanguage` is set to `true`, The `locale` mentioned will be ignored. If the browser language is not supported by chatwoot, the locale mentioned under `locale` will be used. If that's also missing, the widget will fall back to the `locale` of the agent dashboard.
 
-```js
-window.chatwootSettings = {
-  hideMessageBubble: false,
-  position: "left", // This can be left or right
-  locale: "en", // Language to be set
-  useBrowserLanguage: false, // Set widget language from user's browser
-  type: "standard", // [standard, expanded_bubble]
-  darkMode: "auto", // [light, auto]
-};
-```
-
 ### Dark Mode
 
 Chatwoot live-chat widget supports dark mode from v2.4.0. To enable the dark mode, follow the steps mentioned [here](/docs/product/channels/live-chat/sdk/live-chat-dark-mode).
