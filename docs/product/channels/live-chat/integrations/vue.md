@@ -46,3 +46,11 @@ To integrate Chatwoot with a Vue.js application, you need to paste the Chatwoot 
 4. You would be able to see the Chatwoot widget on the page now.
 
 ![vuejs integration](../images/vuejs-integration.jpg)
+
+### Vue.js, Nuxtjs module
+A community maintained module for integrating Chatwoot in your Vue 3 and Nuxt 3 projects, you can find a [demo here](http://vue-chatwoot-plugin.vercel.app/). Made by the awesome folks at huntersofbook, 
+
+[Vue 3 module](https://github.com/huntersofbook/huntersofbook/tree/main/packages/chatwoot-vue).
+
+[Nuxt 3 module](https://github.com/huntersofbook/huntersofbook/tree/main/packages/chatwoot-nuxt).
+
