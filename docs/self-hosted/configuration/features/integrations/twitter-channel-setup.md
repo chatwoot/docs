@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Twitter App"
+sidebar_label: "Twitter"
 title: "Twitter App Setup"
 ---
 

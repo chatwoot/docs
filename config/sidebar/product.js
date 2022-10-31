@@ -12,7 +12,6 @@ module.exports = [
           "user-guide/setup-your-account/configure-account-details",
           "user-guide/add-agent-settings",
           "user-guide/add-inbox-settings",
-          "user-guide/setting-up-chatwootwidget",
           "user-guide/add-teams-settings",
           "user-guide/add-label-settings",
           "user-guide/integrations",
@@ -34,6 +33,7 @@ module.exports = [
           "product/channels/live-chat/create-website-channel",
           "product/channels/live-chat/sdk/setup",
           "product/channels/live-chat/sdk/identity-validation",
+          "product/channels/live-chat/sdk/live-chat-dark-mode",
           "product/channels/live-chat/conversation-continuity",
           {
             "Setup Instructions": [
@@ -52,13 +52,17 @@ module.exports = [
       "product/channels/facebook",
       "product/channels/instagram",
       "product/channels/twitter",
-      "product/channels/twilio-whatsapp-sms",
       {
-        "API Channel": [
-          "product/channels/api/create-channel",
-          "product/channels/api/send-messages",
-          "product/channels/api/receive-messages",
-          "product/channels/api/client-apis",
+        "Whatsapp Channel": [
+          "product/channels/whatsapp/whatsapp-cloud",
+          "product/channels/whatsapp/twilio",
+          "product/channels/whatsapp/360dialog"
+        ],
+      },
+      {
+        "SMS Channel": [
+          "product/channels/sms/twilio",
+          "product/channels/sms/bandwidth",
         ],
       },
       {
@@ -75,6 +79,14 @@ module.exports = [
               "product/channels/email/gmail/add-forward-email",
             ],
           },
+        ],
+      },
+      {
+        "API Channel": [
+          "product/channels/api/create-channel",
+          "product/channels/api/send-messages",
+          "product/channels/api/receive-messages",
+          "product/channels/api/client-apis",
         ],
       },
       "product/channels/telegram",
@@ -98,10 +110,22 @@ module.exports = [
       "user-guide/features/segments",
       "user-guide/features/commandbar",
       "user-guide/features/multilingual-support",
-      "user-guide/reports",
+      {
+        Reports: [
+          "user-guide/features/reports/concepts",
+          "user-guide/features/reports/overview",
+          "user-guide/features/reports/conversation",
+          "user-guide/features/reports/csat",
+          "user-guide/features/reports/agent",
+          "user-guide/features/reports/label",
+          "user-guide/features/reports/inbox",
+          "user-guide/features/reports/team"
+        ],
+      },
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",
+      "user-guide/features/pre-chat-form",
       {
         type: "category",
         label: "Campaigns",
@@ -115,7 +139,6 @@ module.exports = [
         label: "Integrations",
         items: [
           "product/channels/live-chat/integrations/dialogflow",
-          "product/features/webhooks",
           "product/features/slack",
         ],
       },
@@ -129,7 +152,13 @@ module.exports = [
     items: [
       "product/others/agent-bots",
       "product/others/interactive-messages",
-      "product/others/webhook-events",
+      "product/others/dashboard-apps",
+      "product/others/help-center",
+      {
+        type: "category",
+        label: "Webhooks",
+        items: ["product/features/webhooks", "product/others/webhook-events"],
+      },
       "product/others/websocket-events",
       "product/others/cookies",
     ],
@@ -140,5 +169,12 @@ module.exports = [
     label: "Mobile App",
     type: "category",
     items: ["product/mobile-app/android", "product/mobile-app/ios"],
+  },
+  {
+    collapsed: false,
+    collapsible: false,
+    label: "Others",
+    type: "category",
+    items: ["product/others/enterprise-edition","product/others/faq"],
   },
 ];

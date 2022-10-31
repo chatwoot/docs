@@ -54,7 +54,7 @@ docker-compose up -d
 
 6) Your Chatwoot installation is complete. Please note that the containers are not exposed to the internet and they only bind to the localhost.  Setup something like Nginx or any other proxy server to proxy the requests to the container.
  
-If you want to verify whether the installation is working, try `curl -I localhost:3000` to see if it returns `200`. Also, you could temporarily drop the `127:0.0.1:3000:3000` for rails to `3000:3000` in the compose file to access your instance at `http://<your-external-ip>:3000`. It's recommended to revert this change back and use Nginx or some proxy server in the front.
+If you want to verify whether the installation is working, try `curl -I localhost:3000/api` to see if it returns `200`. Also, you could temporarily drop the `127:0.0.1:3000:3000` for rails to `3000:3000` in the compose file to access your instance at `http://<your-external-ip>:3000`. It's recommended to revert this change back and use Nginx or some proxy server in the front.
 
 ### Additional Steps
 
@@ -168,3 +168,7 @@ Update the images using the latest image from chatwoot. Run the `rails db:chatwo
 ```
 docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails c'
 ```
+
+## Chatwoot CE edition docker images
+
+If you want to run Chatwoot CE edition, replace the docker image tag with equivalent foss version tag. Docker tag for current `master` would be `latest-ce`. Version specific tags would follow the pattern `v*-ce`. For example the docker ce edition tag for Chatwoot `v2.3.2` would be `v2.3.2-ce`.

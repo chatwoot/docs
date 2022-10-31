@@ -25,7 +25,7 @@ Step 1 : We have to set the inbound email service used as an environment variabl
 # "sendgrid" for Sendgrid
 RAILS_INBOUND_EMAIL_SERVICE=relay
 ```
-If you wish to use the same local relaying server (for example postfix) to send outbound mail as you are using to relay inbound messages and you opt not to use an external authentication mechanism like SASL which may be the case if the server is handling it own emails only. The upstream SMTP platform Action Mailer attempts to use a default authentication method if the configuration options SMTP_AUTHENTICATION, SMTP_USERNAME and SMTP_PASSWORD are present in your .env file. To disable this behaviour either comment out or delete these lines from your configuration. This will allow you to send outbound messages from the same server without a premium service. Please note many ISP's do not allow email servers to be run from their networks. It is your responsibility to ensure adequate access control preventing yourself becoming an open relay and ensuring your server is able to get past your recipients spam filters for example SPF, DKIM & DMARC dns records.
+If you wish to use the same local relaying server (for example postfix) to send outbound mail as you are using to relay inbound messages and you opt not to use an external authentication mechanism like SASL which may be the case if the server is handling it own emails only. The upstream SMTP platform Action Mailer attempts to use a default authentication method if the configuration options `SMTP_AUTHENTICATION`, `SMTP_USERNAME` and `SMTP_PASSWORD` are present in your .env file. To disable this behaviour either comment out or delete these lines from your configuration. This will allow you to send outbound messages from the same server without a premium service. Please note many ISP's do not allow email servers to be run from their networks. It is your responsibility to ensure adequate access control preventing yourself becoming an open relay and ensuring your server is able to get past your recipients spam filters for example SPF, DKIM & DMARC dns records.
 
 This configures the ingress service for the app. Now we have to set the password for the ingress service that we use.
 
@@ -42,6 +42,9 @@ MANDRILL_INGRESS_API_KEY=
 
 #### Mailgun
 If you are using Mailgun as your email service, in the Mailgun dashboard configure it to forward your inbound emails to `https://example.com/rails/action_mailbox/mailgun/inbound_emails/mime` if `example.com` is where you have hosted the application.
+
+##### Getting Mailgun Ingress Key
+![mailgun-ingress-key](./images/mailgun-ingress-key.gif)
 
 #### Sendgrid
 

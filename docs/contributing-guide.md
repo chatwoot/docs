@@ -19,11 +19,11 @@ This guide will help you get started with Chatwoot! Thank you for taking an inte
 
 ### Pull Request Guidelines
 
-- Please make sure that you have read the [issue triage guidelines](/docs/handbook/engineering/issue-triage) before you make a contribution.
+- Please make sure that you have read the [issue triage guidelines](https://www.chatwoot.com/hc/handbook/en/engineering/8) before you make a contribution.
 - We use [git-flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model. The base branch is `develop`
 - Please raise your PRs against `develop` branch
 - It's okay and encouraged to have multiple small commits as you work on the PR - we will squash the commits before merging.
-- For other guidelines, please refer to [PR Guidelines](/docs/handbook/engineering/pr-guidelines)
+- For other guidelines, please refer to [PR Guidelines](https://www.chatwoot.com/hc/handbook/en/engineering/9)
 - Ensure that all the text copies that you add into the product are i18n translatable. You are only required to add the `English` version of the strings. We pull in the other language translations from our contributors on crowdin. Ref [Translation guidelines](https://www.chatwoot.com/docs/contributing-guide/translation-guidelines) to learn more.
 
 ### Developing a new feature:
@@ -57,5 +57,6 @@ Now, that you have completed the environment as mentioned above, use the followi
 ### Others
 
 * [Code of conduct](/docs/contributing-guide/code-of-conduct)
+* [Security Reports](/docs/contributing-guide/security-reports)
 * [Translation guidelines](/docs/contributing-guide/translation-guidelines)
 * [Contributors](/docs/contributing-guide/contributors)

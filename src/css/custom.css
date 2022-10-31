@@ -30,6 +30,7 @@
   --ifm-navbar-link-font-size: 1.0625rem;
   --ifm-navbar-link-color: #506690;
   --ifm-h1-font-size: 2.4rem !important;
+  --docusaurus-announcement-bar-height: 2.4rem !important;
 }
 
 .markdown {
@@ -179,4 +180,13 @@ html[data-theme="light"] .navbar__link--active {
   .doc-page--footer--edit {
     flex-direction: column;
   }
+
+  div[class^='announcementBar_'] {
+    height: 4rem;
+  }
+}
+
+div[class^='announcementBar_'] {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
 }

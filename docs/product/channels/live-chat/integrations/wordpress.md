@@ -3,41 +3,45 @@ sidebar_label: "WordPress"
 title: "Install Chatwoot live-chat on WordPress websites"
 ---
 
-WordPress is a popular content management system. Chatwoot provides native integration with WordPress so that you can use the live-chat support function. To use Chatwoot live-chat on the WordPress website, follow the steps shown below.
+[WordPress](https://wordpress.com/) is a popular Content Management System. If you are hosting your website on WordPress, you can add a Chatwoot live chat widget to it and talk to your visitors in real-time.
 
-### 1. Download the plugin
+To achieve this, use Chatwoot’s native integration with WordPress. To use Chatwoot live-chat on the WordPress website, follow the steps explained below.
 
-Download the Zip file of the latest Chatwoot WordPress plugin from Github (https://github.com/chatwoot/wp-plugin/tags) as shown below.
+## 1. Download the plugin
 
-![download-zip](./images/wordpress/download-zip.png)
+Download the Zip file of the latest Chatwoot WordPress plugin from [GitHub](https://github.com/chatwoot/wp-plugin/tags) as shown below.
 
-### 2. Upload the plugin to your WordPress website
+![download-zip](./images/wordpress/wordPress-plugin-zip.png)
 
-Log in to your WordPress Admin panel, click on Plugins from the Sidebar. You will be able to see the "Add New" button.
+## 2. Upload the plugin to your WordPress website
 
-![add-new-plugin](./images/wordpress/add-new-plugin.png)
+Log in to your WordPress account. Navigate to the Admin panel and click on “Plugins” from the sidebar. You will be able to see the "Add New" button.
 
-You will be to see an option to upload the plugin, as shown below. Click on upload and select the zip file download in step 1.
+![add-new-plugin](./images/wordpress/add-plugin-in-wordpress.png)
 
-![upload-plugin-zip-file](./images/wordpress/upload-plugin-zip-file.png)
+You will see an option to upload the plugin, as shown in the screenshot below. Click on “Upload” and select the Zip file downloaded in step 1.
 
-Once the plugin is uploaded, you will see a success screen with the "Activate Plugin" option, as shown below. Click on "Activate Plugin."
+![upload-plugin-zip-file](./images/wordpress/wordpress-chatwoot.png)
 
-![activate-plugin](./images/wordpress/activate-plugin.png)
+Once the plugin is uploaded, you will see a Success screen with the "Activate Plugin" option, as shown below. Click on "Activate Plugin.”
 
-Hooray! The plugin is now installed. To complete the configuration, you need to share the credentials from the Chatwoot app, as shown in the below steps.
+![activate-plugin](./images/wordpress/activate-the-plugin.png)
 
-![wordpress-plugin-installed](./images/wordpress/wordpress-plugin-installed.png)
+Congrats! The plugin is now installed. To complete the configuration, you need to share the credentials from the Chatwoot app, as shown in the steps below.
 
-### 3. Configure the plugin
+![wordpress-plugin-installed](./images/wordpress/chatwoot-plugin-installed.png)
 
-There will be a new settings for Chatwoot under "Settings" menu. Click on that to update the live-chat configuration.
+## 3. Configure the plugin
 
-<img src={require('./images/wordpress/chatwoot-settings.png').default} width="300" alt="Chatwoot Settings" />
+Now, you will be able to see “Chatwoot Settings” under your "Settings" menu. Click on that to update the live-chat configuration.
 
-Configure your Chatwoot plugin to make it work. You need to create a website inbox on your Chatwoot installation. Please refer to this [guide](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel) to create a website channel inbox.
+<img src={require('./images/wordpress/chatwoot-settings-on-wp.png').default} width="300" alt="Chatwoot Settings" />
 
-<img src={require('./images/wordpress/chatwoot-options.png').default} width="300" alt="Chatwoot options" />
+You will be presented with the Settings screen as shown below. Configure your Chatwoot plugin here to make it work. 
+
+You need to create a Website inbox on your Chatwoot installation. Please refer to this [guide](https://www.chatwoot.com/docs/product/channels/live-chat/create-website-channel) to create a website channel inbox.
+
+<img src={require('./images/wordpress/chatwoot-wordpress-settings.png').default} width="300" alt="Chatwoot options" />
 
 Available website settings are as follows:
 
@@ -49,8 +53,8 @@ Available website settings are as follows:
 | Language | Chatwoot support 30+ languages. The default language is English. |
 | Launcher text | This is an optional field. If you use the expanded bubble design, you can use the launcher text to customize the text displayed on the bubble. |
 
-### 4. Verify the plugin is working correctly
+## 4. Verify that the plugin is working correctly
 
 Once you provide the correct values, click on "Save Changes." Then, visit your website and see if the widget appears on the website.
 
-![widget-on-website](./images/wordpress/widget-on-website.png)
+![widget-on-website](./images/wordpress/chatwoot-widget-on-a-wordpress-website.png)
