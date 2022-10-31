@@ -1,20 +1,21 @@
 ---
-sidebar_label: "Whatsapp Cloud"
-title: "How to create a Whatsapp channel using Whatsapp Cloud API?"
+sidebar_label: "WhatsApp Cloud"
+title: "How to create a WhatsApp channel using WhatsApp Cloud API?"
 help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/5092"
 help_discord: "https://discord.gg/jypY57m"
 ---
 
-# How to configure WhatsApp Cloud in Chatwoot?
+# Setup your WhatsApp channel with WhatsApp Cloud API
+
+Chatwoot supports the official WhatsApp Business API. You can connect the phone number and start managing your WhatsApp customer queries from Chatwoot. Follow the steps given below to enable your WhatsApp inbox with WhatsApp Cloud API.
 
 ## Prerequisites
 
-### Configure your Facebook Developer App
+### 1. **Configure your Facebook Developer App[](https://www.chatwoot.com/docs/product/channels/whatsapp/whatsapp-cloud#configure-your-facebook-developer-app)**
 
-Follow the `Set up Developer Assets and Platform Access` step in [Whatsapp Cloud API Guide](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) to create your Facebook Developer app with `Whatsapp Product` enabled.
+First, you need to  create your Facebook Developer app, with `WhatsApp Product` enabled. Go to the [WhatsApp Cloud API Guide](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) and navigate to section called `Set up Developer Assets and Platform Access` and follow the steps.
 
-Once you finish this step, you can now configure your required phone numbers in the `Whatsapp` section of your Facebook developer app.
-If you complete the steps successfully, you should be able to obtain the `Phone Number Id` and `Whatsapp Bussiness Account ID` as shown in the below screenshot. Chatwoot will require these values for creating the Whatsapp Inbox.
+Once you finish this step, you can now configure your required phone numbers in the `WhatsApp` section of your Facebook developer app. If you complete the steps successfully, you should be able to obtain the `Phone Number Id` and `Whatsapp Bussiness Account ID` as shown in the below screenshot. Chatwoot will require these values for creating the WhatsApp Inbox.
 
 ![Whatsapp Section Developer App](../images/whatsapp/whatsapp-cloud/whatsapp-section-developer-app.png)
 
