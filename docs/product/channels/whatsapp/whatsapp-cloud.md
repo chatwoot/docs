@@ -85,3 +85,9 @@ Once you finish all the steps, the section should look like the following screen
 ### How to configure multiple numbers under a single Facebook app?
 
 Facebook App allows configuring only a single Webhook endpoint. So create Inboxes in Chatwoot for all the numbers as required. You will need to configure the Webhook URL provided for only one of these inboxes in the Facebook app for all the other inboxes to work.
+
+## Additional Inbox settings[](https://www.chatwoot.com/docs/product/channels/twitter#additional-inbox-settings)
+
+Your freshly configured WhatsApp inbox should now appear in your list of inboxes. To see this and to make additional settings in your WhatsApp inbox, go to Settings → Inboxes → click the gear icon on the associated WhatsApp inbox. 
+
+All the Additional Settings available are the same as given in your Twitter inbox. We recommend going through [this link](https://www.chatwoot.com/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
