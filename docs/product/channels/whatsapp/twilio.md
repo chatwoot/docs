@@ -39,7 +39,7 @@ Hooray! You have successfully created a whatsApp inbox.
 
 ![finish_inbox](../images/whatsapp/whatsapp-inbox-is-ready.png)
 
-To connect a **WhatsApp** channel, you have to configure a callback URL in the Twilio inbox. Follow the following steps.
+To connect a **WhatsApp** channel, you have to configure a callback URL in the Twilio inbox. Follow the steps below.
 
 - Login to your Twilio Console.
 - Go to `Programmable SMS -> Whatsapp -> Senders`.
@@ -47,7 +47,7 @@ To connect a **WhatsApp** channel, you have to configure a callback URL in the
 
 ![twilio_console](../images/whatsapp/twilio-setup.png)
 
-- Provide https://app.chatwoot.com/twilio/callback as the value for WHEN A MESSAGE COMES IN input.
+- Provide `https://app.chatwoot.com/twilio/callback` as the value for `WHEN A MESSAGE COMES IN` input.
 
 ## Configuring Chatwoot with Twilio Studio 
 
@@ -76,4 +76,4 @@ For such cases you can follow the steps given below.
 
 Your freshly configured WhatsApp inbox should now appear in your list of inboxes. To see this and to make additional settings in your WhatsApp inbox, go to Settings → Inboxes → click the gear icon on the associated WhatsApp inbox. 
 
-All the Additional Settings available are the same as given in your Twitter inbox. We recommend going through [this link](https://www.chatwoot.com/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
+All the additional settings available are the same as those in your Twitter inbox. We recommend going through [this link](/docs/product/channels/twitter#additional-inbox-settings) to understand the same.

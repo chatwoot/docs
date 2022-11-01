@@ -17,4 +17,4 @@ title: "How to create a Whatsapp channel using 360Dialog API?"
 
 ![list_of_channels](../images/whatsapp/select-360dialog.png)
 
-Rest of the steps are the same as given in [this document](https://www.chatwoot.com/docs/product/channels/whatsapp/twilio).
+The rest of the steps are the same as in [this document](/docs/product/channels/whatsapp/twilio).

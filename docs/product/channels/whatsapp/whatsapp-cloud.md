@@ -11,7 +11,7 @@ Chatwoot supports the official WhatsApp Business API. You can connect the phone 
 
 ## Prerequisites
 
-### 1. **Configure your Facebook Developer App[](https://www.chatwoot.com/docs/product/channels/whatsapp/whatsapp-cloud#configure-your-facebook-developer-app)**
+### 1. **Configure your Facebook Developer App**
 
 First, you need to  create your Facebook Developer app, with `WhatsApp Product` enabled. Go to the [WhatsApp Cloud API Guide](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) and navigate to section called `Set up Developer Assets and Platform Access` and follow the steps.
 
@@ -23,7 +23,7 @@ Once you finish this step, you can now configure your required phone numbers in 
 
 [Create](https://www.facebook.com/business/help/503306463479099?id=2190812977867143) a system user in your Business Manager with access to the WhatsApp App. Generate an access token for the user, which will be required as the API key for setting up an inbox in Chatwoot.
 
-When generating the access token, make sure `whatsapp_business_management,` and `whatsapp_business_messaging` permissions are selected.
+When generating the access token, make sure the `whatsapp_business_management`, and `whatsapp_business_messaging` permissions are selected.
 
 **Step 1.** Create a system user in the System Users tab of Business Manager.
 
@@ -86,8 +86,8 @@ Once you finish all the steps, the section should look like the following screen
 
 Facebook App allows configuring only a single Webhook endpoint. So create Inboxes in Chatwoot for all the numbers as required. You will need to configure the Webhook URL provided for only one of these inboxes in the Facebook app for all the other inboxes to work.
 
-## Additional Inbox settings[](https://www.chatwoot.com/docs/product/channels/twitter#additional-inbox-settings)
+## Additional Inbox settings
 
 Your freshly configured WhatsApp inbox should now appear in your list of inboxes. To see this and to make additional settings in your WhatsApp inbox, go to Settings → Inboxes → click the gear icon on the associated WhatsApp inbox. 
 
-All the Additional Settings available are the same as given in your Twitter inbox. We recommend going through [this link](https://www.chatwoot.com/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
+All the Additional Settings available are the same as those in your Twitter inbox. We recommend going through [this link](/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
