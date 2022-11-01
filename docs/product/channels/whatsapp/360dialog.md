@@ -3,16 +3,18 @@ sidebar_label: "360Dialog"
 title: "How to create a Whatsapp channel using 360Dialog API?"
 ---
 
-**Step 1**. Go to "Settings" page by clicking the settings icon in the left sidebar.
+# Setup your WhatsApp channel with 360Dialog API
 
-![dashboard](../images/line/dashboard.png)
+**Step 1**. Open your Chatwoot dashboard. Go to Settings → Inboxes → Add Inbox.
 
-**Step 2**. Select "Inboxes" from left side panel and Click on "Add Inbox" button.
+![dashboard](../images/whatsapp/adding-inbox-in-chatwoot.png)
 
-![inbox_settings](../images/line/inbox_settings.png)
+**Step 2**. Click on the "WhatsApp" icon.
 
-**Step 3**. Click on "Whatsapp" icon.
+![Select Channel](../images/whatsapp/whatsapp-cloud/channel-select.png)
 
-![list_of_channels](../images/whatsapp/360dialog.gif)
+**Step 3**. Choose "360Dialog" as the API provider. Fill in the appropriate details.
 
-**Step 4**. Fill in the required details and the Whatsapp Channel will be ready to use.
+![list_of_channels](../images/whatsapp/select-360dialog.png)
+
+The rest of the steps are the same as in [this document](/docs/product/channels/whatsapp/twilio).
