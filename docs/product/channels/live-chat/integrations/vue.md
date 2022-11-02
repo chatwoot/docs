@@ -63,10 +63,9 @@ You will be able to see the Chatwoot widget on the page now. Something like this
 
 ![vuejs integration](../images/chatwoot-widget-on-vue-app.png)
 
-### Vue.js, Nuxtjs module
+### Vue.js, Nuxt.js module
 
-A community maintained module for integrating Chatwoot in your Vue 3 and Nuxt 3 projects, you can find a [demo here](http://vue-chatwoot-plugin.vercel.app/). Made by the awesome folks at huntersofbook,
+A community maintained module (Made by the awesome folks at @huntersofbook) for integrating Chatwoot in your Vue 3 and Nuxt 3 projects is available. You can find a [demo here](http://vue-chatwoot-plugin.vercel.app/).
 
-[Vue 3 module](https://github.com/huntersofbook/huntersofbook/tree/main/packages/chatwoot-vue).
-
-[Nuxt 3 module](https://github.com/huntersofbook/huntersofbook/tree/main/packages/chatwoot-nuxt).
+- View [Vue 3 module](https://github.com/huntersofbook/huntersofbook/tree/main/packages/chatwoot-vue).
+- View [Nuxt 3 module](https://github.com/huntersofbook/huntersofbook/tree/main/packages/chatwoot-nuxt).
