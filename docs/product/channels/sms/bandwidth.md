@@ -1,33 +1,28 @@
 ---
 sidebar_label: "Bandwidth"
-title: "How to create a SMS channel using Bandwidth?"
+title: "Setup your SMS channel with Bandwidth"
 ---
 
-**Step 1**. Go to "Settings" page by clicking the settings icon in the left sidebar.
+**Step 1**. Open your Chatwoot dashboard. Go to Settings → Inboxes → Add Inbox.
 
-![dashboard](../images/line/dashboard.png)
+![dashboard](../whatsapp/adding-inbox-in-chatwoot.png)
 
-**Step 2**. Select "Inboxes" from left side panel and Click on "Add Inbox" button.
-
-![inbox_settings](../images/line/inbox_settings.png)
-
-**Step 3**. Click on the SMS Icon.
+**Step 2**. Click on the "SMS" icon.
 
 ![inbox_settings](../images/sms/select_sms.png)
 
-**Step 4**. Select `Bandwidth` as the provider option and Configure the inbox.
+**Step 3**. Choose "Bandwidth" as the API provider and configure the inbox. Fill in the appropriate details. 
 
+![create_bandwidth](../images/sms/sms-inbox-setup-bandwidth-chatwoot.png)
 
 Click `Create Bandwidth Channel` after filling in the information.
 
-![create_bandwidth](../images/sms/bandwidth_add_details.png)
+**Step 4**. "Add agents" to your inbox.
 
-**Step 5**. "Add agents" to your inbox.
+![add_agents](../images/sms/add-agents-to-sms-channel.png)
 
-![add_agents](../images/twilio/add_agents.png)
+Hooray! You have successfully created an SMS inbox.
 
-**Step 6**. Hooray! You have successfully created a sms inbox.
+![finish_inbox](../images/sms/sms-inbox-is-ready-message-in-chatwoot.png)
 
-![finish_inbox](../images/sms/bandwidth_finish_setup.png)
-
-You will start receiving the messages in the dashboard whenever a customer sends you one.
+You will start receiving the messages in your Chatwoot dashboard.
