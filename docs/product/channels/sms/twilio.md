@@ -1,21 +1,19 @@
 ---
 sidebar_label: "Twilio"
-title: 'How to create a SMS channel with Twilio?'
+title: 'Setup your SMS channel with Twilio'
 ---
 
-**Step 1**. Go to "Settings" page by clicking the settings icon in the left sidebar.
+**Step 1**. Open your Chatwoot dashboard. Go to Settings → Inboxes → Add Inbox.
 
-![dashboard](../images/line/dashboard.png)
+![dashboard](../images/whatsapp/adding-inbox-in-chatwoot.png)
 
-**Step 2**. Select "Inboxes" from left side panel and Click on "Add Inbox" button.
-
-![inbox_settings](../images/line/inbox_settings.png)
-
-**Step 3**. Click on the SMS Icon.
+**Step 2**. Click on the "SMS" icon.
 
 ![inbox_settings](../images/sms/select_sms.png)
 
-**Step 4**. Select `Twilio` as the provider option and Configure the inbox.
+**Step 3**. Choose "Twilio" as the API provider and configure the inbox. Fill in the appropriate details. 
+
+![create_twilio](../images/sms/sms-inbox-configuration-screen-chatwoot.png)
 
 These are the inputs required to create this channel:
 
@@ -32,42 +30,19 @@ These are the inputs required to create this channel:
 
 Click `Create Twilio Channel` after filling in the information.
 
-![create_twilio](../images/sms/twilio_add_details.png)
 
-**Step 5**. "Add agents" to your inbox.
+**Step 4**. "Add agents" to your inbox.
 
-![add_agents](../images/twilio/add_agents.png)
+![add_agents](../images/sms/add-agents-to-sms-channel.png)
 
-**Step 6**. Hooray! You have successfully created a whatsapp/sms inbox.
+Hooray! You have successfully created an SMS inbox.
 
-![finish_inbox](../images/twilio/finish_inbox.png)
+![finish_inbox](../images/sms/sms-inbox-is-ready-message-in-chatwoot.png)
 
-You will start receiving the messages in the dashboard whenever a customer sends you one.
-
-**Step 7**. If you want to update the agents who have access to the inbox, you can go to Settings > Inboxes.
-
-![inbox_settings](../images/twilio/inbox_settings.png)
-
+You will start receiving the messages in your Chatwoot dashboard.
 
 ## Configuring Chatwoot with Twilio Studio 
 
-If you are using twilio studio for a custom conversation flow, Updating the webhook url directly will break your exising Integration. 
+If you are using Twilio Studio for a custom conversation flow, updating the webhook URL directly will break your existing integration.
 
-For such cases you can follow the given steps. 
-
-1. Identify the step in your flow where you want the `agent handoff` to happen.
-2. Add a `make http request widget` as shown below with the give values
-
-![twilio_studio](../images/twilio/twilio_studio.png)
-
-**REQUEST METHOD** : POST
-
-**REQUEST URL**: `https://app.chatwoot.com/twilio/callback`
-
-**CONTENT TYPE**: Application/JSON
-
-**REQUEST BODY**: `{{trigger.message | to_json }}` ( make changes as required based on your flow variables)
-
-> HTTP request widget will forward the message body to Chatwoot. This will create a conversation in Chatwoot from where the agent can reply. 
-
-3. Make sure that your flow can handle the user reponses to Agent Replies. 
+For such cases, you can [follow the steps given here](/docs/product/channels/whatsapp/twilio#configuring-chatwoot-with-twilio-studio).
