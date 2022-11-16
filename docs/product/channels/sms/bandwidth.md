@@ -5,7 +5,7 @@ title: "Setup your SMS channel with Bandwidth"
 
 **Step 1**. Open your Chatwoot dashboard. Go to Settings → Inboxes → Add Inbox.
 
-![dashboard](../whatsapp/adding-inbox-in-chatwoot.png)
+![dashboard](../images/whatsapp/adding-inbox-in-chatwoot.png)
 
 **Step 2**. Click on the "SMS" icon.
 
