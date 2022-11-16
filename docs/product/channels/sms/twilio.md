@@ -45,4 +45,4 @@ You will start receiving the messages in your Chatwoot dashboard.
 
 If you are using Twilio Studio for a custom conversation flow, updating the webhook URL directly will break your existing integration.
 
-For such cases, you can (follow the steps given here)[/docs/product/channels/whatsapp/twilio#configuring-chatwoot-with-twilio-studio].
+For such cases, you can [follow the steps given here](/docs/product/channels/whatsapp/twilio#configuring-chatwoot-with-twilio-studio).
