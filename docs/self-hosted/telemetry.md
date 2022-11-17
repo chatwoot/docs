@@ -34,13 +34,11 @@ This data will only be used by Chatwoot team for:
 - Identifying areas with limited usage or where our users get stuck.
 - Prioritizing the next set of features to be developed.
 
-## **How is the data collected and who has access**
+## **How is the data collected and how will it be processed**
 
 The telemetry data is stored securely on Chatwoot systems, with appropriate encryptions and access controls in place.
 
-The self-hosted installation interacts with the URLs (hub.chatwoot.com, hub.2.chatwoot.com) every day. Both the URLs are hosted and owned by Chatwoot.
-
-The data can only be accessed by Chatwoot employees who have the appropriate training and access permissions. The data is not shared with any 3rd parties.
+The self-hosted installation interacts with the URLs (hub.chatwoot.com, hub.2.chatwoot.com) every day. Both the URLs are hosted and owned by Chatwoot. The data collected from the individual installations would follow our [privacy policy](https://www.chatwoot.com/privacy-policy/#how-chatwoot-uses-and-protects-personally-identifying-information). 
 
 ## How to opt-out of data collection
 
