@@ -23,7 +23,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [DigitalOcean](/docs/self-hosted/deployment/digital-ocean)
 - [Google Cloud Platform (GCP)](/docs/self-hosted/deployment/gcp)
 - [Heroku](/docs/self-hosted/deployment/heroku)
-- [Restack](/docs/self-hosted/deployment/restack.md)
+- [Restack](/docs/self-hosted/deployment/restack)
 - [Caprover](/docs/self-hosted/deployment/caprover)
 - [Cloudron](/docs/self-hosted/deployment/cloudron)
 - [Clever Cloud](/docs/self-hosted/deployment/clevercloud)
