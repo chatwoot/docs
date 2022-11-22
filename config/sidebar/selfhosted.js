@@ -37,6 +37,7 @@ module.exports = [
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
       "self-hosted/deployment/heroku",
+      "self-hosted/deployment/restack",
       {
         "Others": [
           "self-hosted/deployment/caprover",

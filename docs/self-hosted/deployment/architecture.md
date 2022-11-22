@@ -37,6 +37,7 @@ The detailed instructions can be found in respective deployment guides.
 If you want to self host Chatwoot, the recommended approach is to use one of the recommended one click installation options from the below list. If you are comfortable with ruby on rails applications, you can also make use of the other deployment options mentioned below.
 
 * [Heroku](/docs/self-hosted/deployment/heroku) (recommended)
+* [Restack](/docs/self-hosted/deployment/restack) (recommended)
 * [Caprover](/docs/self-hosted/deployment/caprover) (recommended)
 * [Docker](/docs/self-hosted/deployment/docker)
 * [Linux](/docs/self-hosted/deployment/linux-vm)
