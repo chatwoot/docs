@@ -7,7 +7,7 @@ If you are using Gmail, [setup IMAP for Gmail in inbox settings](/docs/product/c
 
 **Step 1**. Go to Settings → Inboxes → Email Inbox settings → Configuration tab.
 
-![configure imap in chatwoot](./images/configure-tab.png)
+![configure imap in chatwoot](./images/imap/configure-tab.png)
 
 **Step 2**. Select the checkbox `Enable IMAP configuration for this inbox`. You’ll be able to see the required fields as follows.
 
