@@ -1,37 +1,31 @@
 ---
 sidebar_label: "Create Channel"
-title: "How to create Email channel?"
+title: "Setup your Email channel"
 ---
 
-**Step 1**. Click on "Add Inbox" button from Settings > Inboxes page.
+**Step 1.** Open your Chatwoot dashboard. Go to Settings → Inboxes → Add Inbox.
 
-![inbox_create](./images/inbox_create.png)
+![inbox_create](./images/adding-inbox-in-chatwoot.png)
 
-**Step 2**. Click on "Email" icon.
+**Step 2**. Click on the "Email" icon.
 
 ![list_of_channels](./images/list_of_channels.png)
 
-**Step 3**. Enter channel name, email and click on "Create Email Channel" button.
+**Step 3**. Enter the channel name (how you’d like to address this channel), your support email and click on Create Email Channel button.
 
-![create_email_channel](./images/create_email_channel.png)
+![create_email_channel](./images/create-email-channel-settings-in-chatwoot.png)
 
 **Step 4**. "Add agents" to your email inbox.
 
-![add_agents](./images/add_agents.png)
+![add_agents](./images/add-agents-to-email-inbox.png)
 
-**Step 5**. Hooray! You have successfully created a Email inbox. You will be able to manage emails in the Chatwoot Inbox.
+Hooray! You have successfully created a Email inbox.
 
-![finish_inbox](./images/finish_inbox.png)
+**Step 5**. Configure your email settings. Go to Settings → Inboxes → Email Inbox settings → Configuration tab.
 
-**Step 6**. Go to Settings > Inboxes > Email Inbox settings.
+![configuration](./images/configuration-email-inbox-chatwoot.png)
 
-![inbox_settings](./images/inbox_settings.png)
-
-**Step 7**. Select "Configuration" tab.
-
-![configuration](./images/configuration.png)
-
-**Step 8**. You can configure Chatwoot email inbox in 2 ways.
+You can configure your Chatwoot email inbox in the following two ways.
 
 1. [Forward to Email](/docs/product/channels/email/forward-email)
 2. [Configure IMAP](/docs/product/channels/email/configure-imap)
