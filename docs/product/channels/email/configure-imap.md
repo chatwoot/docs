@@ -3,7 +3,7 @@ sidebar_label: "Configure IMAP"
 title: "How to configure IMAP for Email channel?"
 ---
 
-If you are using Gmail, [setup IMAP for Gmail in inbox settings].(/docs/product/channels/email/gmail/enable-imap)
+If you are using Gmail, [setup IMAP for Gmail in inbox settings](/docs/product/channels/email/gmail/enable-imap).
 
 **Step 1**. Go to Settings → Inboxes → Email Inbox settings → Configuration tab.
 
@@ -18,8 +18,8 @@ If you are using Gmail, [setup IMAP for Gmail in inbox settings].(/docs/product/
 
 For help, refer to:
 
-- 2-step enabled Gmail accounts. Refer : [Generate app password](https://www.chatwoot.com/docs/product/channels/email/gmail/generate-app-password)
-- All other Gmail accounts. Refer: [Allow less secure access](https://www.chatwoot.com/docs/product/channels/email/gmail/less-secure-access)
+- 2-step enabled Gmail accounts. Refer : [Generate app password](/docs/product/channels/email/gmail/generate-app-password)
+- All other Gmail accounts. Refer: [Allow less secure access](docs/product/channels/email/gmail/less-secure-access)
 
 ![imap_details](./images/imap/imap-settings-in-chatwoot.png)
 
