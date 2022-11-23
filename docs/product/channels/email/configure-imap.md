@@ -19,7 +19,7 @@ If you are using Gmail, [setup IMAP for Gmail in inbox settings](/docs/product/c
 For help, refer to:
 
 - 2-step enabled Gmail accounts. Refer : [Generate app password](/docs/product/channels/email/gmail/generate-app-password)
-- All other Gmail accounts. Refer: [Allow less secure access](docs/product/channels/email/gmail/less-secure-access)
+- All other Gmail accounts. Refer: [Allow less secure access](/docs/product/channels/email/gmail/less-secure-access)
 
 ![imap_details](./images/imap/imap-settings-in-chatwoot.png)
 
