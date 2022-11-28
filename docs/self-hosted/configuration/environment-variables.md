@@ -88,7 +88,7 @@ SMTP_SSL=
 ```
 #### Postfix
 
-Follow these steps if you want to use a selfhosted mail server with Chatwoot.
+Follow these steps if you want to use a selfhosted mail server with Chatwoot. This is the default behavior starting from `v2.12.0` and relies on `SMTP_ADDRESS` environment variable not being set.
 
 ```
 sudo apt install -y postfix
@@ -96,11 +96,10 @@ sudo apt install -y postfix
 
 Choose internet-site when prompted and enter the domain name you used with Chatwoot setup for `System mail name`.
 
-Set the `ENABLE_POSTFIX` environment variable to `true`.
-
 > **Note: ** By default, all major cloud provider have blocked port 25 used for sending emails as part of their spam combat effects. Please raise a
 support ticket with your cloud provider to enable outbound access on port 25 for this to work. Refer [AWS](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle),
 [GCP](https://cloud.google.com/compute/docs/tutorials/sending-mail), [Azure](https://learn.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity) for more details.
+[DigitalOcean](https://www.digitalocean.com/blog/smtp-restricted-by-default)
 
 #### Amazon SES
 ```bash
