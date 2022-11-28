@@ -101,6 +101,9 @@ support ticket with your cloud provider to enable outbound access on port 25 for
 [GCP](https://cloud.google.com/compute/docs/tutorials/sending-mail), [Azure](https://learn.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity) for more details.
 [DigitalOcean](https://www.digitalocean.com/blog/smtp-restricted-by-default)
 
+Also please add MX and PTR records for your domain. If your emails are being flagged by `Gmail` and `Outlook`, setup [SPF and DKIM records](https://www.linuxbabe.com/mail-server/setting-up-dkim-and-spf) for your domain as well. This should improve your email reputation.
+
+
 #### Amazon SES
 ```bash
 SMTP_ADDRESS=email-smtp.<region>.amazonaws.com
