@@ -86,8 +86,24 @@ SMTP_PASSWORD=
 SMTP_TLS=
 SMTP_SSL=
 ```
+### Postfix
 
-#### Amazon SES
+Follow these steps if you want to use a selfhosted mail server with Chatwoot. This is the default behavior starting from `v2.12.0` and relies on `SMTP_ADDRESS` environment variable not being set.
+
+```
+sudo apt install -y postfix
+```
+
+Choose internet-site when prompted and enter the domain name you used with Chatwoot setup for `System mail name`.
+
+> **Note: ** By default, all major cloud provider have blocked port 25 used for sending emails as part of their spam combat effects. Please raise a
+support ticket with your cloud provider to enable outbound access on port 25 for this to work. Refer [AWS](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle),
+[GCP](https://cloud.google.com/compute/docs/tutorials/sending-mail), [Azure](https://learn.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity) and [DigitalOcean](https://www.digitalocean.com/blog/smtp-restricted-by-default) for more details.
+
+Also please add MX and PTR records for your domain. If your emails are being flagged by `Gmail` and `Outlook`, setup [SPF and DKIM records](https://www.linuxbabe.com/mail-server/setting-up-dkim-and-spf) for your domain as well. This should improve your email reputation.
+
+
+### Amazon SES
 ```bash
 SMTP_ADDRESS=email-smtp.<region>.amazonaws.com
 SMTP_AUTHENTICATION=plain
@@ -96,7 +112,7 @@ SMTP_USERNAME=<Your SMTP username>
 SMTP_PASSWORD=<Your SMTP password>
 ```
 
-#### SendGrid
+### SendGrid
 ```bash
 SMTP_ADDRESS=smtp.sendgrid.net
 SMTP_AUTHENTICATION=plain
@@ -107,7 +123,7 @@ SMTP_USERNAME=apikey
 SMTP_PASSWORD=<your Sendgrid API key>
 ```
 
-#### MailGun
+### MailGun
 ```bash
 SMTP_ADDRESS=smtp.mailgun.org
 SMTP_AUTHENTICATION=plain
@@ -118,8 +134,7 @@ SMTP_USERNAME=<Your SMTP username, view under Domains tab>
 SMTP_PASSWORD=<Your SMTP password, view under Domains tab>
 ```
 
-
-#### Mandrill
+### Mandrill
 If you would like to use Mailchimp to send your emails, use the following environment variables:
 Note: Mandrill is the transactional email service for Mailchimp. You need to enable transactional email and login to mandrillapp.com.
 
