@@ -5,6 +5,11 @@ title: "Heroku Chatwoot Production deployment guide"
 
 ### Deploying on Heroku
 
+:::Note
+Heroku has discontinued free dynos, postgres and redis. https://blog.heroku.com/new-low-cost-plans<br/>
+Chatwoot will switch to using basic/mini plans for all new heroku deployments going forward.
+:::
+
 Deploy chatwoot on Heroku through the following steps
 
 1. Click on the [one click deploy button](https://heroku.com/deploy?template=https://github.com/chatwoot/chatwoot/tree/master) and deploy your app.
