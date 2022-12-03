@@ -80,6 +80,11 @@ module.exports = [
           "self-hosted/configuration/features/email-channel/setup",
         ],
       },
+      {
+        "Help Center": [
+          "self-hosted/configuration/help-center",
+        ],
+      },
 
     ],
   },
