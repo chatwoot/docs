@@ -29,6 +29,9 @@ These are the inputs required to create the campaign:
 
 </div>
 
+
+The URLs in the campaign supports the wildcard patterns. See [this guide](/docs/product/features/campaigns/wild-card-url-in-campaigns) to learn more about building a wildcard pattern.
+
 **Step 3**. Visit the URL specified in the campaign and wait for the time configured in the campaign.
 
 ![add-a-campaign](../images/campaign-message.png)
