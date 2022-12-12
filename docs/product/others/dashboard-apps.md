@@ -177,6 +177,17 @@ window.parent.postMessage('chatwoot-dashboard-app:fetch-info', '*')
 }
 ```
 
+### currentAgent object
+
+```json
+{
+  "email": "string",
+  "id": "integer",
+  "name": "string"
+}
+```
+
+
 ### Final Payload
 ```json
 {
@@ -187,6 +198,9 @@ window.parent.postMessage('chatwoot-dashboard-app:fetch-info', '*')
     },
     "contact": {
       // <...Contact Attributes>
+    },
+    "currentAgent": {
+      // <...Current agent Attributes>
     }
   }
 }
