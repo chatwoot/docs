@@ -57,7 +57,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                | Description                                          | Value                  |
 | ------------------- | ---------------------------------------------------- | ---------------------- | 
 | `image.repository`  | Chatwoot image repository                            | `chatwoot/chatwoot`    |
-| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.7.0`               |
+| `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.12.0`              |
 | `image.pullPolicy`  | Chatwoot image pull policy                           | `IfNotPresent`         |
 
  
@@ -232,7 +232,7 @@ PostgreSQL is installed along with the chart if you choose the default setup. To
 ## Redis
 
 Redis is installed along with the chart if you choose the default setup. To use an external Redis DB, please set `redis.enabled` to `false` and set the variables under the Redis section above.
-
+ActionController::InvalidAuthenticityToken HTTP Origin header https://mydomain.com didn't match request.base_url http://mydomain.comv
 ## Autoscaling
 
 To enable horizontal pod autoscaling, set `web.hpa.enabled` and `worker.hpa.enabled` to `true`. Also make sure to uncomment the values under, `resources.limits` and `resources.requests`. This assumes your k8s cluster is already having a metrics-server. If not, deploy metrics-server with the following command.
@@ -375,9 +375,14 @@ helm install chatwoot chatwoot/chatwoot
 
 
 ### pod has unbound immediate PersistentVolumeClaims
+
 Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisites](#prerequisites).
 
 
-### ActionController::InvalidAuthenticityToken HTTP Origin header (https://mydomain.com) didn't match request.base_url (http://mydomain.com)
+### ActionController::InvalidAuthenticityToken HTTP Origin header
 
-If you are recieving this error when trying to access the superadmin panel, configure your ingress controller to forward the protocol of the origin request. For `nginx` ingress, you can do this by setting the `proxy_set_header X-Forwarded-Proto https;` config. Refer this [issue](https://github.com/chatwoot/chatwoot/issues/5506) to learn more.
+```
+ActionController::InvalidAuthenticityToken HTTP Origin header (https://mydomain.com) didn't match request.base_url (http://mydomain.com)
+```
+
+If you are recieving the above error when trying to access the superadmin panel, configure your ingress controller to forward the protocol of the origin request. For `nginx` ingress, you can do this by setting the `proxy_set_header X-Forwarded-Proto https;` config. Refer this [issue](https://github.com/chatwoot/chatwoot/issues/5506) to learn more.
