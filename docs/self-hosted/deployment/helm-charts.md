@@ -374,12 +374,12 @@ helm install chatwoot chatwoot/chatwoot
 ## TroubleShooting
 
 
-### 1. pod has unbound immediate PersistentVolumeClaims
+### pod has unbound immediate PersistentVolumeClaims
 
 Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisites](#prerequisites).
 
 
-### 2. ActionController::InvalidAuthenticityToken HTTP Origin header
+### ActionController::InvalidAuthenticityToken HTTP Origin header
 
 ```
 ActionController::InvalidAuthenticityToken HTTP Origin header (https://mydomain.com) didn't match request.base_url (http://mydomain.com)
