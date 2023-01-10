@@ -93,6 +93,11 @@ Access the Caprover `web dashboard` > `Apps` > `Apps Edit` > `Edit Default Nginx
   underscores_in_headers on;
   ```
 
+### Issues related to storage persistance
+
+Please setup a cloud storage like s3 or gcs bucket or any s3 api compatible service as the active storage service. 
+Caprover installation needs this for storage persistance. Refer the [storage guide](/docs/self-hosted/deployment/storage/supported-providers).
+
 
 ## Further references
 
