@@ -23,6 +23,15 @@ FB_APP_SECRET=
 FB_APP_ID=
 ```
 
+### Add Facebook Login
+
+1. While configuring, make sure you add the Facebook Login product via the Facebook app dashboard.
+2. Enable "Web OAuth Login."
+3. Enable "Login with Javascript SDK."
+4. Add your self-hosted domain to the allowed domain input field.
+
+![facebook_sdk_login](./images/facebook/facebook_sdk_login.png)
+
 ### Configure the Facebook App
 
 1. In the app settings, add your `Chatwoot installation domain` as your app domain.
