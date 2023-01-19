@@ -47,6 +47,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Enable conversation continuity](/docs/self-hosted/configuration/features/email-channel/conversation-continuity)
 - [Conversation continuity using SendGrid](/docs/self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid)
 - [Channel configuration](/docs/self-hosted/configuration/features/email-channel/setup)
+- [Microsoft email account setup](/docs/self-hosted/configuration/features/email-channel/azure-app-setup)
 
 ## Integrations
 
