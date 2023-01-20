@@ -11,8 +11,8 @@ To add email channel inbox for outlook email, you have to create azure app in th
 
 1. In the app registration page, click on `New Registration` and select the any account type.
 
-Once you register your Azure App, make sure you add proper account type according to your use and add redirect URL for your domain `https://{your-domain}/micorosoft/callback`
-You can find more details about redirect URL [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/reply-url)
+Once you register your Azure App, make sure you add proper account type according to your use and add redirect URL for your domain `https://{your-domain}/microsoft/callback`.
+You can find more details about redirect URL [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/reply-url).
 
 ![register_app](./images/azure/register-app.png)
 
@@ -25,7 +25,7 @@ You can find more details about redirect URL [here](https://learn.microsoft.com/
 ![client_secret](./images/azure/client-secret.png)
 
 4. Click on `API permissions` and add all the permission shown below to integrate email inbox.
-You can find more details about it [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview)
+You can find more details about it [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview).
 
 ![api_permission](./images/azure/api-permission.png)
 
@@ -71,4 +71,4 @@ Consider `test-imap@outlook.com` is an email for which you are adding a new inbo
 
 ### NOTE
 
-If you don't get your publisher verified you will be able to attach and fetch mails from azure app registration email.
+You need to get your publisher verified to be able to attach and fetch mails from the Azure app with any other outlook email.
