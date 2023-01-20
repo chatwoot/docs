@@ -78,6 +78,9 @@ module.exports = [
               "product/channels/email/gmail/generate-app-password",
               "product/channels/email/gmail/add-forward-email",
             ],
+            Microsoft: [
+              "product/channels/email/microsoft/create-channel",
+            ],
           },
         ],
       },
