@@ -74,7 +74,7 @@ Head back to the `WhatsApp` section in the Facebook Developer App. Navigate to
 - The value for the URL should be the same URL you obtained at the end of your Chatwoot inbox creation and will look like `https://app.chatwoot.com/webhooks/whatsapp/+{phone_number}`.
 - The value for the `verify token` should be the same value you configured for the `Webhook Verify Token` during inbox creation.
 
-You should also subscribe to message fields events under Webhooks Fields on your Facebook Developer app. 
+You should **also subscribe to message fields events** under Webhooks Fields on your Facebook Developer app. 
 
 Once you finish all the steps, the section should look like the following screenshot.
 

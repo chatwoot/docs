@@ -72,6 +72,8 @@ The following is the recommended minimum Memory hardware guidance for a handful 
 - 8GB RAM supports up to 20,000 conversations a day.
 - More conversations? Consider scaling horizontally by adding more application servers.
 
+**Note:** Add at least 1GB of swap memory to the machine to ensure that the machine doesn't run out of resources during an upgrade.
+
 ## Database
 
 PostgreSQL is the only supported database. We don't have plans to support any other alternatives as of now.

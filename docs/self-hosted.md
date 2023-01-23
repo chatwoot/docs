@@ -34,6 +34,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Email templates](/docs/self-hosted/configuration/email-notifications)
 - [Enable IP Logging](/docs/self-hosted/configuration/enable-ip-logging)
 - [Configure Cloudfront CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn)
+- [Help Center](/docs/self-hosted/configuration/help-center)
 ### Monitoring
   - [Super Admin Console & Sidekiq](/docs/self-hosted/monitoring/super-admin-sidekiq)
   - [APM and Tracing](/docs/self-hosted/monitoring/apm-and-error-monitoring)
@@ -46,6 +47,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Enable conversation continuity](/docs/self-hosted/configuration/features/email-channel/conversation-continuity)
 - [Conversation continuity using SendGrid](/docs/self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid)
 - [Channel configuration](/docs/self-hosted/configuration/features/email-channel/setup)
+- [Microsoft email account setup](/docs/self-hosted/configuration/features/email-channel/azure-app-setup)
 
 ## Integrations
 

@@ -78,6 +78,12 @@ module.exports = [
           "self-hosted/configuration/features/email-channel/conversation-continuity",
           "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
           "self-hosted/configuration/features/email-channel/setup",
+          "self-hosted/configuration/features/email-channel/azure-app-setup",
+        ],
+      },
+      {
+        "Help Center": [
+          "self-hosted/configuration/help-center",
         ],
       },
 

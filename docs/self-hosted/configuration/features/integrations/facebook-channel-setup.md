@@ -5,16 +5,18 @@ title: "Setting Up Facebook"
 
 ### Register A Facebook App
 
-To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook channels [here](https://developers.facebook.com/docs/apps/#register)
+To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook channels [here](https://developers.facebook.com/docs/apps/#register).
 
-1. In the select an app type, choose business
+1. In the select an app type, choose business.
 
 Once you register your Facebook App, you will have to obtain the `App Id` and `App Secret`. These values will be available in the app settings and will be required while setting up Chatwoot environment variables.
 
 ### Configuring the Environment Variables in Chatwoot
 
 Configure the following Chatwoot environment variables with the values you have obtained during the Facebook app setup.
-`FB_VERIFY_TOKEN` should be a unique secure string that should be provided when configuring the Facebook app.
+`FB_VERIFY_TOKEN` should be a unique secure string that should be provided when configuring the Facebook app. Generate a
+random string and set this as `FB_VERIFY_TOKEN` for now.
+
 Restart the chatwoot server after updating the environment variables
 
 ```bash
@@ -22,6 +24,15 @@ FB_VERIFY_TOKEN=
 FB_APP_SECRET=
 FB_APP_ID=
 ```
+
+### Add Facebook Login
+
+1. While configuring, make sure you add the Facebook Login product via the Facebook app dashboard.
+2. Enable "Web OAuth Login."
+3. Enable "Login with Javascript SDK."
+4. Add your self-hosted domain to the allowed domain input field.
+
+![facebook_sdk_login](./images/facebook/facebook_sdk_login.png)
 
 ### Configure the Facebook App
 
