@@ -91,11 +91,30 @@ Facebook App allows configuring only a single Webhook endpoint. So create Inboxe
 Your freshly configured WhatsApp inbox should now appear in your list of inboxes. To see this and to make additional settings in your WhatsApp inbox, go to Settings → Inboxes → click the gear icon on the associated WhatsApp inbox. 
 
 All the Additional Settings available are the same as those in your Twitter inbox. We recommend going through [this link](/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
-
 ## Supported media types
 
-|Supported extensions|End user|WhatsApp|
-|-|-|-|
-
-
-
+| Supported extensions                                                      | End user  | Agent Dashoard |
+| ------------------------------------------------------------------------- | --------- | -------------- |
+| **Audio**                                                                   |           |                |
+| audio/aac                                                                 | Supported | Supported      |
+| audio/mp4                                                                 | Supported | Supported      |
+| audio/mpeg                                                                | Supported | Supported      |
+| audio/amr                                                                 | Supported | Supported      |
+| audio/ogg                                                                 | Supported | Supported      |
+| **Document**                                                                |           |                |
+| text/plain                                                                | Supported | Supported      |
+| application/pdf                                                           | Supported | Supported      |
+| application/vnd.ms-powerpoint                                             | Supported | Supported      |
+| application/msword                                                        | Supported | Supported      |
+| application/vnd.ms-excel                                                  | Supported | Supported      |
+| application/vnd.openxmlformats-officedocument.wordprocessingml.document   | Supported | Supported      |
+| application/vnd.openxmlformats-officedocument.presentationml.presentation | Supported | Supported      |
+| application/vnd.openxmlformats-officedocument.spreadsheetml.sheet         | Supported | Supported      |
+| **Image**                                                                 |           |                |
+| image/jpeg                                                                | Supported | Supported      |
+| image/png                                                                 | Supported | Supported      |
+| **Video**                                                                 |           |                |
+| video/mp4                                                                 | Supported | Supported      |
+| video/3gp                                                                 | Supported | Not Supported  |
+| **Sticker**                                                               |           |                |
+| image/webp                                                                | Supported | Not supported  |
