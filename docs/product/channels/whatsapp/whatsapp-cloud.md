@@ -91,3 +91,11 @@ Facebook App allows configuring only a single Webhook endpoint. So create Inboxe
 Your freshly configured WhatsApp inbox should now appear in your list of inboxes. To see this and to make additional settings in your WhatsApp inbox, go to Settings → Inboxes → click the gear icon on the associated WhatsApp inbox. 
 
 All the Additional Settings available are the same as those in your Twitter inbox. We recommend going through [this link](/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
+
+## Supported media types
+
+|Supported extensions|End user|WhatsApp|
+|-|-|-|
+
+
+
