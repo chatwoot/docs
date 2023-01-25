@@ -29,6 +29,10 @@ You can find more details about it [here](https://learn.microsoft.com/en-us/azur
 
 ![api_permission](./images/azure/api-permission.png)
 
+5. Click on `Token Configuration` and add optional claims shown in the image.
+
+![token_configuration](./images/azure/token-configuration.png)
+
 ### Configuring the Environment Variables in Chatwoot
 
 Configure the following Chatwoot environment variables with the values you have obtained during the Azure app setup.
