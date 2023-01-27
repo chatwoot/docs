@@ -31,7 +31,7 @@ docker-compose up -d
 Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
 
 ```
-docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails db:chatwoot_prepare'
+docker exec -it $(basename $(pwd))-rails-1 sh -c 'RAILS_ENV=production bundle exec rails db:chatwoot_prepare'
 ```
 
 ## Helm(Kubernetes)
