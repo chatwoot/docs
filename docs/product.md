@@ -39,6 +39,7 @@ In this user guide, we’ve explained the features, capabilities, modes of opera
 - [Reports](/docs/user-guide/features/reports/concepts)
 - [Segments](/docs/user-guide/features/segments)
 - [Pre Chat Form](/docs/user-guide/features/pre-chat-form)
+- [Template Variables](/docs/user-guide/features/template-variables)
 
 ### Advanced
 

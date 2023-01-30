@@ -112,6 +112,7 @@ module.exports = [
       "user-guide/features/keyboard-shortcuts",
       "user-guide/features/segments",
       "user-guide/features/commandbar",
+      "user-guide/features/template-variables",
       "user-guide/features/multilingual-support",
       {
         Reports: [
