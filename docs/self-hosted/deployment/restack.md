@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Restack"
+sidebar_label: "AWS with Restack"
 title: "Restack Chatwoot production deployment guide"
 ---
 
