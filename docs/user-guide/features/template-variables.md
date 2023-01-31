@@ -2,14 +2,14 @@
 title: "Template variables"
 ---
 
-Variables are placeholder text in messages that are dynamically filled based on the information you've provided.
+Variables are placeholder text in messages that are dynamically replaced based on the information you've provided.
 
 When you create a message with variables, Chatwoot will translate it to the appropriate value.
 
 ![variable list](./images/variables/variable-list.png)
 
 
-If we send a message `Hey {{ contact.name }}, how may I help you?`  , the chatwoot will pick the contact name and send a message like `Hey John, how may I help you?`. So they can feel personalized for the end user.
+If we send a message `Hey {{ contact.name }}, how may I help you?`, then Chatwoot will pick the contact name and send a message like `Hey John, how may I help you?`. This enables you to send personalized messages to the end user.
 
 > Note: Chatwoot supports variables in canned response/macros/automation.
 
@@ -41,7 +41,7 @@ The current list of template variables are:
 
 **What if the variable doesn't exist?**
 
-If you try to send an undefined variable, the chatwoot will show a warning.
+If you try to send an undefined variable, then Chatwoot will show a warning.
 
 
 ![undefined-variable](./images/variables/undefined-variables.png)
@@ -50,6 +50,6 @@ If you try to send an undefined variable, the chatwoot will show a warning.
 **How to add fallback text?**
 
 
-When defining a fallback, make sure you surround it with single quotes.
+When defining a fallback text, make sure you surround it with single quotes.
 
 `{{ contact.first_name || 'there'}}`
