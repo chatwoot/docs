@@ -11,8 +11,8 @@ As of now[at the time of writing this doc], we recommend a version equal to or h
 ```bash
 $ docker --version
 Docker version 20.10.10, build b485636
-$ docker-compose --version
-docker-compose version 1.29.2, build 5becea4c
+$ docker compose version
+Docker Compose version v2.14.1
 ```
 
 ## Steps to deploy Chatwoot using docker-compose
@@ -22,7 +22,9 @@ docker-compose version 1.29.2, build 5becea4c
 # example in ubuntu
 apt-get update
 apt-get upgrade
-apt install docker-compose
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+apt install docker-compose-plugin
 ```
 
 2) Download the required files
@@ -44,12 +46,12 @@ nano docker-compose.yaml
 
 4) Prepare the database by running the migrations.
 ```
-docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare
 ```
 
 5) Get the service up and running.
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 6) Your Chatwoot installation is complete. Please note that the containers are not exposed to the internet and they only bind to the localhost.  Setup something like Nginx or any other proxy server to proxy the requests to the container.
@@ -59,7 +61,7 @@ If you want to verify whether the installation is working, try `curl -I localhos
 ### Additional Steps
 
 1) Have an `Nginx` web server acting as a reverse proxy for Chatwoot installation. So that you can access Chatwoot from `https://chat.yourdomain.com`
-2) Run `docker-compose run --rm rails bundle exec rails db:chatwoot_prepare` whenever you decide to update the Chatwoot images to handle the migrations.
+2) Run `docker compose run --rm rails bundle exec rails db:chatwoot_prepare` whenever you decide to update the Chatwoot images to handle the migrations.
 
 #### Configure Nginx and **Let's Encrypt**
 
@@ -161,12 +163,22 @@ To set up the database for the first time, you must run `rails db:chatwoot_prepa
 
 ## Upgrading
 
-Update the images using the latest image from chatwoot. Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
+If you're not using the `latest` or `latest-ce` tag, you first need to change the desired tag in your docker-compose file
+
+After that you can pull the new image and start using them:
+```
+docker compose pull
+docker compose up -d
+```
+
+Finally you may need to update the database:
+`docker compose run --rm rails bundle exec rails db:chatwoot_prepare`
+
 
 ## Running Rails Console
 
 ```
-docker exec -it $(basename $(pwd))_rails_1 sh -c 'RAILS_ENV=production bundle exec rails c'
+docker exec -it $(basename $(pwd))-rails-1 sh -c 'RAILS_ENV=production bundle exec rails c'
 ```
 
 ## Chatwoot CE edition docker images
