@@ -16,6 +16,14 @@ window.addEventListener("chatwoot:ready", function () {
 });
 ```
 
+If you would like to listen to the messages in the widget you can use the following event. 
+
+```
+window.addEventListener('chatwoot:on-message', function(e) {
+  console.log('chatwoot:on-message', e.detail)
+})
+```
+
 ### SDK settings
 
 To hide the bubble, you can use the setting mentioned below.
