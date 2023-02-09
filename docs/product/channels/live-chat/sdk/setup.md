@@ -18,7 +18,7 @@ window.addEventListener("chatwoot:ready", function () {
 
 If you would like to listen to the messages in the widget you can use the following event. 
 
-```
+```js
 window.addEventListener('chatwoot:on-message', function(e) {
   console.log('chatwoot:on-message', e.detail)
 })
