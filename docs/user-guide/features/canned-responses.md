@@ -45,3 +45,7 @@ To **update a canned response**, open the canned response list from **Settings -
 To **delete a canned response**, click on the delete button as shown below. A confirmation modal will be displayed. Click on **Yes, delete** to continue with the deletion.
 
 <img src={require('./images/canned-responses/delete-a-canned-response.png').default} width="500" alt="add-canned-response-modal" />
+
+
+
+**Note**: The canned response supports the template variables. See [this guide](/docs/user-guide/features/template-variables) to learn more about adding template variables.
