@@ -56,6 +56,7 @@ module.exports = [
       "self-hosted/configuration/environment-variables",
       {
         "Performance": [
+          "self-hosted/deployment/performance/optimizing-configurations",
           "self-hosted/deployment/performance/cloudfront-cdn",
         ]
       },
