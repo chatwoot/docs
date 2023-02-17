@@ -33,6 +33,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Environment Variables](/docs/self-hosted/configuration/environment-variables)
 - [Email templates](/docs/self-hosted/configuration/email-notifications)
 - [Enable IP Logging](/docs/self-hosted/configuration/enable-ip-logging)
+- [Optimizing configuration](self-hosted/deployment/performance/optimizing-configurations)
 - [Configure Cloudfront CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn)
 - [Help Center](/docs/self-hosted/configuration/help-center)
 ### Monitoring
