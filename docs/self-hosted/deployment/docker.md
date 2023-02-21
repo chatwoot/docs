@@ -14,6 +14,9 @@ Docker version 20.10.10, build b485636
 $ docker compose version
 Docker Compose version v2.14.1
 ```
+**Note**
+Container name uses dashes instead of underscores by default with new docker/compose versions. If you are using an older version of docker/compose, replace `-` with `_`. Also, use `docker-compose` instead of `docker compose`.
+
 
 ## Steps to deploy Chatwoot using docker-compose
 
