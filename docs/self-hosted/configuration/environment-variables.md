@@ -65,7 +65,6 @@ To authenticate Redis connections made by the app server and sidekick, if it's p
 REDIS_PASSWORD=
 ```
 
-
 ## Configure emails
 
 For development, you don't need an email provider. Chatwoot uses the [letter-opener](https://github.com/ryanb/letter_opener) gem to test emails locally
@@ -79,13 +78,14 @@ MAILER_SENDER_EMAIL=
 
 and based on your SMTP server the following variables
 
-``` bash
+```bash
 SMTP_ADDRESS=
 SMTP_USERNAME=
 SMTP_PASSWORD=
 SMTP_TLS=
 SMTP_SSL=
 ```
+
 ### Postfix
 
 Follow these steps if you want to use a selfhosted mail server with Chatwoot. This is the default behavior starting from `v2.12.0` and relies on `SMTP_ADDRESS` environment variable not being set.
@@ -97,13 +97,13 @@ sudo apt install -y postfix
 Choose internet-site when prompted and enter the domain name you used with Chatwoot setup for `System mail name`.
 
 > **Note: ** By default, all major cloud provider have blocked port 25 used for sending emails as part of their spam combat effects. Please raise a
-support ticket with your cloud provider to enable outbound access on port 25 for this to work. Refer [AWS](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle),
-[GCP](https://cloud.google.com/compute/docs/tutorials/sending-mail), [Azure](https://learn.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity) and [DigitalOcean](https://www.digitalocean.com/blog/smtp-restricted-by-default) for more details.
+> support ticket with your cloud provider to enable outbound access on port 25 for this to work. Refer [AWS](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle),
+> [GCP](https://cloud.google.com/compute/docs/tutorials/sending-mail), [Azure](https://learn.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity) and [DigitalOcean](https://www.digitalocean.com/blog/smtp-restricted-by-default) for more details.
 
 Also please add MX and PTR records for your domain. If your emails are being flagged by `Gmail` and `Outlook`, setup [SPF and DKIM records](https://www.linuxbabe.com/mail-server/setting-up-dkim-and-spf) for your domain as well. This should improve your email reputation.
 
-
 ### Amazon SES
+
 ```bash
 SMTP_ADDRESS=email-smtp.<region>.amazonaws.com
 SMTP_AUTHENTICATION=plain
@@ -113,6 +113,7 @@ SMTP_PASSWORD=<Your SMTP password>
 ```
 
 ### SendGrid
+
 ```bash
 SMTP_ADDRESS=smtp.sendgrid.net
 SMTP_AUTHENTICATION=plain
@@ -124,6 +125,7 @@ SMTP_PASSWORD=<your Sendgrid API key>
 ```
 
 ### MailGun
+
 ```bash
 SMTP_ADDRESS=smtp.mailgun.org
 SMTP_AUTHENTICATION=plain
@@ -135,6 +137,7 @@ SMTP_PASSWORD=<Your SMTP password, view under Domains tab>
 ```
 
 ### Mandrill
+
 If you would like to use Mailchimp to send your emails, use the following environment variables:
 Note: Mandrill is the transactional email service for Mailchimp. You need to enable transactional email and login to mandrillapp.com.
 
@@ -167,7 +170,6 @@ ACTIVE_STORAGE_SERVICE=local
 When `local` storage is used the files are stored under `public/uploads` directory in the chatwoot root folder.
 
 > It is recommended to use a cloud provider for your chatwoot storage to ensure proper backup of the stored attachments and prevent data loss.
-
 
 ## Rails Logging Variables
 
@@ -213,3 +215,33 @@ Make sure to follow [this guide](https://edgeguides.rubyonrails.org/active_stora
 ```bash
 DIRECT_UPLOADS_ENABLED=true
 ```
+
+## Enable Google OAuth
+
+To enable Google OAuth in Chatwoot, you need to provide the client ID, client secret, and callback URL. You can find the instructions to generate the details [here](https://support.google.com/cloud/answer/6158849).
+
+Set the `GOOGLE_OAUTH_CLIENT_ID` and `GOOGLE_OAUTH_CLIENT_SECRET` environment variables in your Chatwoot installation using the values you copied from the Google API Console. Set the `GOOGLE_OAUTH_CALLBACK_URL` environment variable to the callback URL you used in the Google API Console. Here's an example of the same
+
+```bash
+GOOGLE_OAUTH_CLIENT_ID=369777777777-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com
+GOOGLE_OAUTH_CLIENT_SECRET=ABCDEF-GHijklmnoPqrstuvwX-yz1234567
+GOOGLE_OAUTH_CALLBACK_URL=https://<your-server-domain>/omniauth/google_oauth2/callback
+```
+
+**_The callback url should comply with the format in the example above. This endpoint cannot be changed at the moment._**
+
+After setting these environment variables, restart your Chatwoot server to apply the changes. Now, users will be able to sign in using their Google accounts.
+
+## Enable LogRocket
+
+To enable LogRocket in Chatwoot, you need to provide the project ID. Here are the steps to follow:
+
+Go to the LogRocket [website](https://logrocket.com/) and create an account or sign in to your existing account. After signing in, create a new project in LogRocket by clicking on the "Create new project", enter a name for your project, and get the project ID.
+
+Set the `LOG_ROCKET_PROJECT_ID` environment variable in your Chatwoot installation using the project ID you copied from LogRocket.
+
+```bash
+LOG_ROCKET_PROJECT_ID=abcd12/pineapple-on-pizza
+```
+
+After setting this environment variable, restart your Chatwoot server to apply the changes. Now, LogRocket will start capturing user sessions on your Chatwoot installation.
