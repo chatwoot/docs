@@ -216,7 +216,7 @@ Make sure to follow [this guide](https://edgeguides.rubyonrails.org/active_stora
 DIRECT_UPLOADS_ENABLED=true
 ```
 
-## Enable Google OAuth
+## Google OAuth
 
 To enable Google OAuth in Chatwoot, you need to provide the client ID, client secret, and callback URL. You can find the instructions to generate the details [here](https://support.google.com/cloud/answer/6158849).
 
@@ -232,7 +232,7 @@ GOOGLE_OAUTH_CALLBACK_URL=https://<your-server-domain>/omniauth/google_oauth2/ca
 
 After setting these environment variables, restart your Chatwoot server to apply the changes. Now, users will be able to sign in using their Google accounts.
 
-## Enable LogRocket
+## LogRocket
 
 To enable LogRocket in Chatwoot, you need to provide the project ID. Here are the steps to follow:
 
