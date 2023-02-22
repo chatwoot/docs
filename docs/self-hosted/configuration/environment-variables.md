@@ -228,7 +228,7 @@ GOOGLE_OAUTH_CLIENT_SECRET=ABCDEF-GHijklmnoPqrstuvwX-yz1234567
 GOOGLE_OAUTH_CALLBACK_URL=https://<your-server-domain>/omniauth/google_oauth2/callback
 ```
 
-**_The callback url should comply with the format in the example above. This endpoint cannot be changed at the moment._**
+**_The callback URL should comply with the format in the example above. This endpoint cannot be changed at the moment._**
 
 After setting these environment variables, restart your Chatwoot server to apply the changes. Now, users will be able to sign in using their Google accounts.
 
@@ -236,9 +236,13 @@ After setting these environment variables, restart your Chatwoot server to apply
 
 To enable LogRocket in Chatwoot, you need to provide the project ID from LogRocket. Here are the steps to follow:
 
-Go to the LogRocket [website](https://logrocket.com/) and create an account or sign in to your existing account. After signing in, create a new project in LogRocket by clicking on the "Create new project", enter a name for your project, and get the project ID.
+**Step 1.** Open the LogRocket [website](https://logrocket.com/) and create an account or sign in to your existing account. 
 
-Set the `LOG_ROCKET_PROJECT_ID` environment variable in your Chatwoot installation using the project ID you copied from LogRocket.
+**Step 2.** After signing in, create a new project in LogRocket by clicking on "Create new project". 
+
+**Step 3.** Enter a name for your project, and save the project ID.
+
+**Step 4.** Set the `LOG_ROCKET_PROJECT_ID` environment variable in your Chatwoot installation using the project ID you copied from LogRocket.
 
 ```bash
 LOG_ROCKET_PROJECT_ID=abcd12/pineapple-on-pizza
