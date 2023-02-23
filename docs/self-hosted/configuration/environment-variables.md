@@ -239,7 +239,7 @@ To enable LogRocket in Chatwoot, you need to provide the project ID from LogRock
 1. Open the LogRocket [website](https://logrocket.com/) and create an account or sign in to your existing account. 
 2. After signing in, create a new project in LogRocket by clicking on "Create new project". 
 3. Enter a name for your project, and save the project ID.
-4. Set the `LOG_ROCKET_PROJECT_ID` environment variable in your Chatwoot installation using the project ID you copied from LogRocket.
+4. Set the `LOG_ROCKET_PROJECT_ID` environment variable in your `.env` file with the project ID you copied from LogRocket. 
 
 ```bash
 LOG_ROCKET_PROJECT_ID=abcd12/pineapple-on-pizza
