@@ -27,6 +27,15 @@ module.exports = {
       websiteToken: "Your website inbox token",
       baseURL: "https://app.chatwoot.com",  // optional
       enableInDevelopment: false,  // optional
+      chatwootSettings: {
+        hideMessageBubble: false,
+        position: "left", // This can be left or right
+        locale: "en", // Language to be set
+        useBrowserLanguage: false, // Set widget language from user's browser
+        darkMode: "auto", // [light, auto]
+        type: "expanded_bubble",
+        launcherTitle: "Chat with us",
+      }
     }
   }
 };
