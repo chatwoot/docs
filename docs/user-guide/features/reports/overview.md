@@ -26,7 +26,7 @@ It shows the number of agents in online, busy and offline status.
 
 ### Conversation traffic
 
-The conversation traffic heatmap shows what times of the day are the busiest for the last 7 days. Each cell represents the number of conversations recieved as a color shade, hovering over a cell will show the number of conversations recieved for that hour of the day.
+The conversation traffic heatmap shows what times of the day are the busiest for the last seven days. Each cell represents the number of conversations received as a color shade; hovering over a cell will show the number of conversations received for that hour of the day.
 
 ### Conversations by agents
 
