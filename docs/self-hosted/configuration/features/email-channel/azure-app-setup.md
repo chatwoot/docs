@@ -13,12 +13,12 @@ To add email channel inbox for outlook email, you have to create azure app in th
 
 We recommend you'll usually want to setup up 'Single tenant' access (all support inboxes are within the same domain).
 
-Wanting multi-tenant access? This is to support inboxes at multiple domains. Beyond Registering an 'Azure Portal Application' per this guide (which does not require verification for single tenant use), Microsoft will also require you apply for [publisher verification of your organisation](https://learn.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview?source=recommendations) (This involves providing legal documents to an assessor and can take some time).
+> Wanting multi-tenant access? This is to support inboxes at multiple domains. Beyond Registering an 'Azure Portal Application' per this guide (which does not require verification for single tenant use), Microsoft will also require you apply for [publisher verification of your organisation](https://learn.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview?source=recommendations) (This involves providing legal documents to an assessor and can take some time).
 
 Once you register your Azure App, make sure you add proper account type according to your use and add redirect URL for your domain `https://{your-domain}/microsoft/callback`.
 You can find more details about redirect URL [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/reply-url).
 
-![register-app-single-tenancy](https://user-images.githubusercontent.com/114459/225207984-f78b1d10-cfbb-4403-a356-79c4b78ca9e8.png)
+![register-app-single-tenancy](./images/azure/register-app-single-tenant.png)
 
 
 2. Then click on `Certificates & Secrets` tab and add new secret key for your application.
@@ -81,3 +81,5 @@ Consider `test-imap@outlook.com` is an email for which you are adding a new inbo
 ### NOTE
 
 If you changed access in step 1 (above) from 'single-tenancy' any of the 'multi-tenancy' access levels, you will need to get your publisher verified to be able to attach and fetch mails from the Azure app with any other outlook email. Publisher verification not required if you are setting up 'single tenancy' accesss.
+
+![register_app_multi_tenant](./images/azure/register-app-multi-tenant.png)
