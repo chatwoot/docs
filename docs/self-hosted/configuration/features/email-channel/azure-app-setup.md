@@ -61,6 +61,8 @@ To test the changes until the app is verified for production. You should use the
 
 ### Going into production.
 
+> Skip this if you didn't opt for multi-tenant access
+
 Before you can start using your Azure app in production, you will have to get it verified by Azure. Refer to the [docs](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-configure-publisher-domain) on getting your app verified. And learn more about publisher verification [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview)
 
 1. Go to: `Branding & Properties` and add your domain details, and then click `Verify and Save.`
