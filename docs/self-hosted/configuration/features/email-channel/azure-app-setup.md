@@ -80,4 +80,4 @@ Consider `test-imap@outlook.com` is an email for which you are adding a new inbo
 
 ### NOTE
 
-You need to get your publisher verified to be able to attach and fetch mails from the Azure app with any other outlook email.
+If you changed access in Step 1 from 'Single tenancy' any of the 'multi tenancy' access levels, you will need to get your publisher verified to be able to attach and fetch mails from the Azure app with any other outlook email. Publisher verification not required if you are setting up 'single tenancy' accesss.
