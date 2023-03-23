@@ -80,7 +80,7 @@ Open `Chatwoot.xcworkspace` file under `ios` folder. Choose your target device a
 
 ### Android
 
-- Create `gradle.properties` file with following contents under `android/app` folder
+- Create `gradle.properties` file with following contents under `android/` folder
 
 ```
 android.useAndroidX=true
