@@ -87,7 +87,7 @@ You can also popout the chat window programatically with the `popoutChatWindow()
 
 ### Programatically open the popout window
 
-You can open thje popout window programatically with the `popoutChatWindow()` method.
+You can open the popout window programatically with the `popoutChatWindow()` method.
 
 To initiate this, call the method like below.
 
