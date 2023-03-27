@@ -34,20 +34,20 @@ curl -L https://get.rvm.io | bash -s stable
 
 ### Install Ruby
 
-Chatwoot APIs are built on Ruby on Rails, you need install ruby 3.0.4
+Chatwoot APIs are built on Ruby on Rails, you need install ruby 3.1.3
 
 If you are using `rvm` :
 
 ```bash
-rvm install ruby-3.0.4
-rvm use 3.0.4
+rvm install ruby-3.1.3
+rvm use 3.1.3
 source ~/.rvm/scripts/rvm
 ```
 
 If you are using `rbenv` to manage ruby versions do :
 
 ```bash
-rbenv install 3.0.4
+rbenv install 3.1.3
 ```
 
 `rbenv` identifies the ruby version from `.ruby-version` file on the root of the project and loads it automatically.
