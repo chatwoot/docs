@@ -37,7 +37,8 @@ Select the Agents from the drop-down and click on Add agents. If agents have not
 
 **Step 5**. Hooray! You have successfully created a website inbox. Now, add the widget to your website.
 
-Copy and paste the code snippet shown on the page to your website and start supporting your customers. You can click on the Copy button to copy and then [paste in the root file](/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website.
+Copy and paste the code snippet shown on the page to your website and start supporting your customers. You can 
+Copy button to copy and then [paste in the root file](/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website.
 
 ![finish_inbox](./images/inbox-is-ready.png)
 
@@ -66,7 +67,7 @@ Here are a couple of examples for your understanding:
 
 **Enable CSAT**. Once you enable this, your Customer Satisfaction survey will be launched every time a ticket is resolved. The CSAT results can be viewed later in the Reports section. 
 
-Click on the `**Update**` button to save the changes you have made.
+Click on the **`Update`** button to save the changes you have made.
 
 ### Collaborators tab
 
