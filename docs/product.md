@@ -41,6 +41,13 @@ In this user guide, we’ve explained the features, capabilities, modes of opera
 - [Pre Chat Form](/docs/user-guide/features/pre-chat-form)
 - [Template Variables](/docs/user-guide/features/template-variables)
 
+### Integration
+
+- [DialogFlow](/docs/product/channels/live-chat/integrations/dialogflow)
+- [Dyte](/docs/product/features/dyte)
+- [Google Translate](/docs/product/features/google-translate)
+- [Slack](/docs/product/features/slack)
+
 ### Advanced
 
 - [Agent Bots](/docs/product/others/agent-bots)
@@ -78,7 +85,6 @@ To see the supported mobile OS versions for the mobile app, see the table below.
 | ------- | --------------- |
 | Android | Android 5.0     |
 | iOS     | iOS 11.0        |
-
 
 ### Next Steps
 

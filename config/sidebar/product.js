@@ -56,7 +56,7 @@ module.exports = [
         "Whatsapp Channel": [
           "product/channels/whatsapp/whatsapp-cloud",
           "product/channels/whatsapp/twilio",
-          "product/channels/whatsapp/360dialog"
+          "product/channels/whatsapp/360dialog",
         ],
       },
       {
@@ -78,9 +78,7 @@ module.exports = [
               "product/channels/email/gmail/generate-app-password",
               "product/channels/email/gmail/add-forward-email",
             ],
-            Microsoft: [
-              "product/channels/email/microsoft/create-channel",
-            ],
+            Microsoft: ["product/channels/email/microsoft/create-channel"],
           },
         ],
       },
@@ -123,12 +121,13 @@ module.exports = [
           "user-guide/features/reports/agent",
           "user-guide/features/reports/label",
           "user-guide/features/reports/inbox",
-          "user-guide/features/reports/team"
+          "user-guide/features/reports/team",
         ],
       },
       "user-guide/conversation-workflow",
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",
+      "product/features/macros",
       "user-guide/features/pre-chat-form",
       {
         type: "category",
@@ -143,6 +142,8 @@ module.exports = [
         label: "Integrations",
         items: [
           "product/channels/live-chat/integrations/dialogflow",
+          "product/features/dyte",
+          "product/features/google-translate",
           "product/features/slack",
         ],
       },
@@ -179,6 +180,6 @@ module.exports = [
     collapsible: false,
     label: "Others",
     type: "category",
-    items: ["product/others/enterprise-edition","product/others/faq"],
+    items: ["product/others/enterprise-edition", "product/others/faq"],
   },
 ];
