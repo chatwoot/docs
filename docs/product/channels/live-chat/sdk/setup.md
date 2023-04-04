@@ -16,12 +16,12 @@ window.addEventListener("chatwoot:ready", function () {
 });
 ```
 
-If you would like to listen to the messages in the widget you can use the following event. 
+If you would like to listen to the messages in the widget you can use the following event.
 
 ```js
-window.addEventListener('chatwoot:on-message', function(e) {
-  console.log('chatwoot:on-message', e.detail)
-})
+window.addEventListener("chatwoot:on-message", function (e) {
+  console.log("chatwoot:on-message", e.detail);
+});
 ```
 
 ### SDK settings
@@ -161,6 +161,8 @@ Note that implementing HMAC authentication will allow chat history to persist ac
 
 ### Set custom attributes
 
+#### For a contact
+
 In order to set additional information about the customer you can use customer custom attributes field. Read more about custom attributes [here](/user-guide/features/custom-attributes)
 
 To set a custom attributes call `setCustomAttributes` as follows
@@ -181,6 +183,25 @@ To delete a custom attribute, use `deleteCustomAttribute` as follows
 
 ```js
 window.$chatwoot.deleteCustomAttribute("attribute-key");
+```
+
+#### For a conversation
+
+You can also set custom attributes for the active conversation from the SDK. To set the custom attributes call `setConversationCustomAttributes` as follows
+
+```js
+window.$chatwoot.setConversationCustomAttributes({
+  productName: "iPhone",
+  productCategory: "Smartphone",
+});
+```
+
+You can view these information in the sidepanel of a conversation.
+
+To delete a custom attribute, use `deleteConversationCustomAttribute` as follows
+
+```js
+window.$chatwoot.deleteConversationCustomAttribute("productName");
 ```
 
 ### Set language manually
