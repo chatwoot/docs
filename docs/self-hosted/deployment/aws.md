@@ -146,11 +146,11 @@ Create an application load balancer to receive traffic on port 80 and 443 and di
 
 Also, add if you have your domain on Route53 and use ACM to generate a certificate to use with ALB.
 
-//TODO: expand more on the ACM part
+<!-- TODO: expand more on the ACM part -->
 
 ## Postgresql using AWS RDS
 
-//TODO: expand the rds section
+<!-- TODO: expand the rds section -->
 
 Chatwoot uses Postgres as a DB layer, and we will use Amazon RDS with a multi-AZ option for reliability.
 
@@ -178,7 +178,7 @@ Chatwoot uses Postgres as a DB layer, and we will use Amazon RDS with a multi-AZ
 8. After completing the creation, note down the hostname, username, and password. We will need this to configure Chatwoot.
 ## Redis using AWS Elasticache
 
-//TODO: expand the Redis section
+<!-- TODO: expand the Redis section -->
 
 1. Follow similar steps like the rds to create Redis security and subnet groups.
 2. Create the Redis cluster with a multi-AZ option.
@@ -222,7 +222,7 @@ chmod 755 install.sh
 
 ## Configure Chatwoot
 
-// TODO: Expand with S3 for active storage and SES for Email.
+<!-- TODO: Expand with S3 for active storage and SES for Email. -->
 
 11. Once the installation is complete, switch to the chatwoot user and navigate to the chatwoot folder. Edit the .env file and replace the Postgres and Redis credentials with RDS and elasticache values.
 
