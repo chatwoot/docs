@@ -29,13 +29,13 @@ These are the inputs required to create the custom attribute:
 
 <div class="table table-striped">
 
-| Input        | Description                                                                |
-| ------------ | -------------------------------------------------------------------------- |
-| Applies to   | Attribute type (Conversation/Contact)                                      |
-| Display name | Act as a label while rendering custom attribute                            |
-| Description  | Description about the custom attribute                                     |
+| Input        | Description                                                                 |
+| ------------ | --------------------------------------------------------------------------- |
+| Applies to   | Attribute type (Conversation/Contact)                                       |
+| Display name | Act as a label while rendering custom attribute                             |
+| Description  | Description about the custom attribute                                      |
 | Type         | Type of data it will store. Currently supports Text, Number, Link, and Date |
-| Key          | Unique identifier attach to the custom attribute                           |
+| Key          | Unique identifier attach to the custom attribute                            |
 
 </div>
 
@@ -44,6 +44,12 @@ These are the inputs required to create the custom attribute:
 Once you enter the details, click on the **Create** button. If the request is successful, a message "Custom attribute added successfully" will be displayed.
 
 ### Conversation custom attributes
+
+#### 1. Set attributes via SDK method
+
+You can set custom attributes for each conversation using the SDK using the `setConversationCustomAttributes` method and also delete the attribute using the `deleteConversationCustomAttribute` method. You can read more about setting conversation attributes [here](/product/channels/live-chat/sdk/setup/#for-a-conversation).
+
+#### 2. Set attributes via contact side panel
 
 After creating conversation custom attribute, you will be able to add these attribute to the conversation via conversation sidebar.
 
@@ -88,7 +94,7 @@ window.$chatwoot.setCustomAttributes({
 });
 ```
 
-You can view these attributes in the contact/conversation sidepanel
+You can view these attributes in the contact side panel
 
 To delete a custom attribute, use `deleteCustomAttribute` as follows
 
@@ -103,7 +109,6 @@ window.$chatwoot.deleteCustomAttribute("signUpDate");
 ```
 
 > Prior to version v1.22 , all the attributes rendered as text. Please create new definition to display the value properly
-
 
 #### 2. Set attributes via contact side panel
 
@@ -122,4 +127,3 @@ Enter a valid value, click on the Create button. If the request is successful, a
 Also you could able see the actions like edit/delete/copy by hovering on the attribute.
 
 ![contact-attribute-actions](./images/custom-attributes/contact-attribute-actions.png)
-
