@@ -47,7 +47,7 @@ Once you enter the details, click on the **Create** button. If the request is su
 
 #### 1. Set attributes via SDK method
 
-You can set custom attributes for each conversation using the SDK using the `setConversationCustomAttributes` method, and also delete the attribute using the `deleteConversationCustomAttribute` method, you can read more about setting conversation attributes [here](/product/channels/live-chat/sdk/setup/#for-a-conversation)
+You can set custom attributes for each conversation using the SDK using the `setConversationCustomAttributes` method and also delete the attribute using the `deleteConversationCustomAttribute` method. You can read more about setting conversation attributes [here](/product/channels/live-chat/sdk/setup/#for-a-conversation).
 
 #### 2. Set attributes via contact side panel
 

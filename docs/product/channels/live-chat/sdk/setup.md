@@ -187,7 +187,7 @@ window.$chatwoot.deleteCustomAttribute("attribute-key");
 
 #### For a conversation
 
-You can also set custom attributes for the active conversation from the SDK. To set the custom attributes call `setConversationCustomAttributes` as follows
+You can also set custom attributes for the active conversation from the SDK. To set the custom attributes, call `setConversationCustomAttributes` as follows.
 
 ```js
 window.$chatwoot.setConversationCustomAttributes({
@@ -196,9 +196,9 @@ window.$chatwoot.setConversationCustomAttributes({
 });
 ```
 
-You can view these information in the sidepanel of a conversation.
+You can view this information in the side panel of a conversation.
 
-To delete a custom attribute, use `deleteConversationCustomAttribute` as follows
+To delete a custom attribute, use `deleteConversationCustomAttribute` as follows.
 
 ```js
 window.$chatwoot.deleteConversationCustomAttribute("productName");
