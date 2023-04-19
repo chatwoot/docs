@@ -34,4 +34,4 @@ Whenever a new version is out for chatwoot, you update your Heroku deployment th
 
 2. Heroku has an "ephemeral" hard disk. The files uploaded to Chatwoot would not persist after the application is restarted. By default, Chatwoot uses local disk as the upload destination. To overcome this problem, you will have to [configure a cloud storage](/docs/self-hosted/deployment/storage/supported-providers).
 
-3. If the build version is shown as `unknown` in the settings page, enable runtime dyno metadata feature. To enable, use `heroku labs:enable runtime-dyno-metadata -a <app-name>`. 
+3. If the build version is shown as unknown on the settings page, enable the runtime dyno metadata feature. To enable, use heroku labs:enable runtime-dyno-metadata -a <app-name>.
