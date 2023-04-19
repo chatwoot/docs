@@ -33,3 +33,5 @@ Whenever a new version is out for chatwoot, you update your Heroku deployment th
 1. If you are on a free tier and you don’t access the application for a while Heroku will put your dynos to sleep. You can fix this by upgrading the dynos to paid tier.
 
 2. Heroku has an "ephemeral" hard disk. The files uploaded to Chatwoot would not persist after the application is restarted. By default, Chatwoot uses local disk as the upload destination. To overcome this problem, you will have to [configure a cloud storage](/docs/self-hosted/deployment/storage/supported-providers).
+
+3. If the build version is shown as unknown on the settings page, enable the runtime dyno metadata feature. To enable, use `heroku labs:enable runtime-dyno-metadata -a <app-name>`.
