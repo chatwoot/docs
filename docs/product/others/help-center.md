@@ -1,98 +1,82 @@
 ---
 title: "Help Center"
+sidebar_label: "Introduction"
 ---
 
-Help center allows you to create a portal and add articles from the chatwoot app dashboard. You can point to these help center portal articles from your main site and display them as your public-facing help center.
-We provide SSL certificate for your help docs through our chatwoot domain.
+With the Help Center feature, you can easily create a self-service portal for your customers to access articles and information. In this guide, we take you through the steps to set up a Help Center, including creating a portal and adding articles.
 
-## How to get SSL certificate for your custom domain
+Please note that this is a beta feature that will constantly get updated with every release. You can set up your Help Center in three parts, as explained below.
 
-### Create a Portal in Chatwoot's dashboard
+## I. Creating a portal
 
-Let's create a product documentation portal for `yourdomain.com`, we will use this for the custom-domain `docs.yourdomain.com`
+**Step 1.** Click the Help Center icon from your sidebar, and click the "New Portal" button.
 
-1. Navigate to Help Center
-2. Click on "New Portal."
-3. Add basic information about your portal.
-  - Add a custom domain at which you want to serve your portal: e.g. yourdomain.com is your main site, and you want your portal at `docs.yourdomain.com`, then this will be your custom domain.
-  - Add portal name; this will be the heading of your portal
-  - slug is auto-generated `do not change it`.
-4. Add customization information about the portal for theme color, page title, header text and homepage. This can match the theme and style on `yourdomain.com`.
-5. Your portal is ready with no articles. To add articles, click on the portal settings button and add new categories and add articles in the respective category.
+![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMGF0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--75c692c975b2beba0b089cb77c41d93c913524a4/help%20center%20in%20chatwoot.png)
 
-![interactive_messages](./images/help-center/portal.gif)
+**Step 2.** You will see a basic settings page. Start filling in the fields.
 
-Once these steps are completed, you will have a portal with articles ready.
+![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMHV0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3769e42313f6f19c7080f9ac6632a3d4fd42203e/create%20a%20portal%20in%20help%20center.png)
 
-### Point your custom domain to chatwoot.help
+These fields are explained below:
 
-1. Go to your nameserver, go to its DNS settings and add a new CNAME record.
-   - For the above example, add docs as a CNAME record and point it to the chatwoot.help
-   - For the Cloudflare nameserver, please below the attached image for reference. It's under DNS tab.
+1. **Logo**
 
-   ![cloudfare](./images/help-center/cname-cloudfare-1.png)
+   Upload your organization's logo.
 
-   - For the AWS nameserver, please see below-attached image for reference. It's under Route53 service.
+2. **Name**
 
-   ![aws](./images/help-center/cname-aws.png)
+   Name your portal to refer to it internally.
 
-   - If you have a different name server, these settings will be similar. Just go to the DNS settings and add a CNAME record. Or search for `How to add CNAME record with your nameserver?`.
-2. This will ensure that your CNAME record points to our server. For your custom domain, we have your portal information and the SSL certificate. In this case, `docs.example.com`
+3. **Slug**
 
+   This will be auto-generated.
 
-### Providing SSL
+4. **Custom Domain (optional)**
 
-1. This process is handled by chatwoot for all the cloud customers.
-2. You need to reach out to us through Chatwoot support with your portal custom domain record.
-3. Or please email us with the subject "Issue SSL certification for {Portal Slug}"
+   You can add the domain you want to serve your portal on a custom domain. For example, if your website is `yourdomain.com` and you want your portal accessible at `docs.yourdomain.com`, type that in this field.
 
-#### NOTE: This step will take 1/2 working day/s from the chatwoot team for the setup.
+Click "Create portal basic settings".
 
-Voila!
+Your portal is ready. You can start adding categories and articles within these categories.
 
-`docs.yourdomain.com` is live with a secure connection, and your portal data is visible.
+## II. Creating categories
 
+Categories exist to structure your portal and organize your articles. Follow these steps:
 
-### How does this work?
+**Step 1.** Click the `+` sign alongside the Category section on the secondary sidebar to create a new category.
 
-These are the engineering details to understand `How does docs.yourdomain.com` gets the portal data with SSL certificate.
+**Step 2.** A modal will open up. Fill up the fields.
 
-1. When the customer point docs.yourdomain.com to chatwoot.help through CNAME, DNS points it to our site, but it's not valid yet.
-2. Then Customer from the browser requests us to serve `docs.yourdomain.com` endpoint with the portal's data.
-4. To validate the routing from `docs.yourdomain.com` to `chatwoot.help`, we add a record in our heroku.
-  - This is to validate Heroku DNS routing and validate the custom domain.
-  - Go to Heroku `dashboard -> Chatwoot -> Settings`
-  - Go to Domains section and add a new domain to serve, in this case, `docs.yourdomain.com`
+![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMmF0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4a1192c8db7ce6541b8adf0c872a0a6d022e610a/creating%20a%20category%20in%20help%20center.png)
 
-  ![heroku_dns](./images/help-center/add-dns.png)
+These fields are described below.
 
-  - After we add the domain successfully and ACM status will be waiting to verify the cert issue and will show an error later as SSL is not yet provided for the custom domain.
+1. **Name**
 
-  ![heroku](./images/help-center/heroku-dns.png)
+   Name your category. This name will be used on the public portal.
 
-5. Heroku won't allow serving `docs.yourdomain.com` until we provide the SSL certificate.
-6. For this, we go to our Cloudflare dashboard and certify the record for `docs.yourdomain.com`
-   - Go to Cloudflare dashboard -> chatwoot.help
-   - Go to SSL/TLS -> custom hostname
-    ![dns](./images/help-center/ssl-dns.png)
+2. **Slug**
 
-   - Add a record for docs.yourdomain.com, with certification validation method `HTTP Validation` and certificate type `Provided by Cloudflare
-7. Wait till the custom hostname reflects with SSL certificate active.
-8. Go back to Heroku and check the ACM status for the `docs.yourdomain.com` shows `Ok` now.
+   This will be auto-generated.
 
-Cloudfare's custom hostname functionality provides the certificate to the custom domain that we add.
+3. **Description (optional)**
 
-1. `docs.yourdomain.com` resolves by customers nameserver and redirects to chatwoot.help.
-2. `chatwoot.help` nameserver certifies the `docs.yourdomain.com`
-3. Chatwoot's heroku domain's settings validate the certificate and routes to chatwoot.help root dashboard.
-4. `chatwoot.help` check for the portal record with custom-domain `docs.yourdomain.com`
-5. Redirects to the portal records for the domain `docs.yourdomain.com`
- - ![yourdomain](./images/help-center/portal-your-domain.png)
+   Describe your category.
 
-Yaay!!
+Click the "Create category" button.
 
-Now you can have your own help-center, product-documentation related portal saved at Chatwoot dashboard and served at your domain with SSL certificate.
+## III. Creating articles
 
+Finally, start writing your articles. Follow the steps below.
 
+**Step 1.** You can find the "New Article" button on almost every page. Click it.
 
+![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNEd0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--5923b0b92b58bdfae24709c292f2e6e49fba5190/new%20article.png)
 
+**Step 2.** Use the text editor to write your article. Use the sidebar to select your article's category and author and update the meta content. Here is an example:
+
+![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNDZ0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1fff825cd2ff75ba253d76ff8ea4ce302ff8dbbc/writing%20an%20article%20in%20help%20center.png)
+
+You can use the "Preview" button to see how your article turns out. Once ready, click "Publish". Your live article will look like this:
+
+![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNW10VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--5a1f9ebd7b1a45390359c8b97d29b0bae632b0a8/published%20article.png)

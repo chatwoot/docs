@@ -139,6 +139,14 @@ module.exports = [
       },
       {
         type: "category",
+        label: "Help Center",
+        items: [
+          "product/others/help-center", ,
+          "product/others/help-center/configure-ssl-for-help-center",
+        ],
+      },
+      {
+        type: "category",
         label: "Integrations",
         items: [
           "product/channels/live-chat/integrations/dialogflow",
@@ -158,7 +166,6 @@ module.exports = [
       "product/others/agent-bots",
       "product/others/interactive-messages",
       "product/others/dashboard-apps",
-      "product/others/help-center",
       {
         type: "category",
         label: "Webhooks",
