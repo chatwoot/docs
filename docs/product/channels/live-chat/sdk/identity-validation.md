@@ -47,8 +47,8 @@ _If this option is enabled any incoming message from a unverified user will be r
 <?php
 
 // Define your key and message
-$key = 'your_web_widget_hmac_token';
-$message = 'some_identifier';
+$key = 'your-secret-token-for-hmac';
+$message = 'some-unique-identifier';
 
 // Generate the HMAC
 $identifier_hash = hash_hmac('sha256', $message, $key);
@@ -62,8 +62,8 @@ $identifier_hash = hash_hmac('sha256', $message, $key);
 const crypto = require("crypto");
 
 // Define your key and message
-const key = "your_web_widget_hmac_token";
-const message = "some_identifier";
+const key = "your-secret-token-for-hmac";
+const message = "some-unique-identifier";
 
 // Generate the HMAC
 const identifierHash = crypto
@@ -78,8 +78,8 @@ const identifierHash = crypto
 require 'openssl'
 
 # Define your key and message
-key = 'your_web_widget_hmac_token'
-message = 'some_identifier'
+key = 'your-secret-token-for-hmac'
+message = 'some-unique-identifier'
 
 # Generate the HMAC
 identifier_hash = OpenSSL::HMAC.hexdigest('sha256', key, message)
@@ -89,8 +89,8 @@ identifier_hash = OpenSSL::HMAC.hexdigest('sha256', key, message)
 
 ```elixir
 # Define your key and message
-key = 'your_web_widget_hmac_token'
-message = 'some_identifier'
+key = 'your-secret-token-for-hmac'
+message = 'some-unique-identifier'
 
 # Generate the HMAC
 signature = :crypto.hmac(:sha256, key, message)
@@ -112,8 +112,8 @@ import (
 
 func main() {
 	// Define your key and message
-	key := []byte("your_web_widget_hmac_token")
-	message := []byte("some_identifier")
+	key := []byte("your-secret-token-for-hmac")
+	message := []byte("some-unique-identifier")
 
 	// Generate the HMAC
 	hash := hmac.New(sha256.New, key)
@@ -133,8 +133,8 @@ import hashlib
 import hmac
 
 # Define your key and message
-secret = bytes('your_web_widget_hmac_token', 'utf-8')
-message = bytes('some_identifier', 'utf-8')
+secret = bytes('your-secret-token-for-hmac', 'utf-8')
+message = bytes('some-unique-identifier', 'utf-8')
 
 # Generate the HMAC
 hash = hmac.new(secret, message, hashlib.sha256)
