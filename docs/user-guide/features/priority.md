@@ -1,4 +1,9 @@
-Prioritising conversations is essential for managing your workload effectively, ensuring that you address urgent issues promptly while still handling less critical matters efficiently. Chatwoot's priority feature allows you to assign a priority level to each conversation, making it easy to identify which conversations require immediate attention and which ones can wait.
+---
+sidebar_label: "Priority"
+title: "Assigning a priority"
+---
+
+Prioritizing conversations is essential for managing your workload effectively, ensuring that you address urgent issues promptly while still handling less critical matters efficiently. Chatwoot's priority feature allows you to assign a priority level to each conversation, making it easy to identify which conversations require immediate attention and which ones can wait.
 
 There are four options available to you:
 

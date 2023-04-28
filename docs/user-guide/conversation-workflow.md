@@ -80,12 +80,7 @@ Click on Add Labels below Conversation Labels and select the category to which t
 
 ### Assign Priority
 
-Click on the drop-box below Conversation Priority and select the priority of this conversation. Here you can remove the priority from your, or assign on of the following priorities:
-
-- Urgent
-- High
-- Medium
-- Low
+Click on the drop-box below Conversation Priority and select the priority of this conversation. You can read more about priority [here](/docs/user-guide/features/priority)
 
 <div align="center">
 

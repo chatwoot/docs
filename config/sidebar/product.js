@@ -129,6 +129,7 @@ module.exports = [
       "user-guide/features/automations",
       "product/features/macros",
       "user-guide/features/pre-chat-form",
+      "user-guide/features/priority",
       {
         type: "category",
         label: "Campaigns",
@@ -141,7 +142,8 @@ module.exports = [
         type: "category",
         label: "Help Center",
         items: [
-          "product/others/help-center", ,
+          "product/others/help-center",
+          ,
           "product/others/help-center/configure-ssl-for-help-center",
         ],
       },
