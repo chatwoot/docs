@@ -43,21 +43,9 @@ Now let us look at how this message is captured in the Agent Dashboard.
 
 Go to the home screen of Chatwoot Agent Dashboard
 
-<div align="center">
+<img src={require('./images/conversation-workflow/main-app.webp').default} alt="Chatwoot Dashboard Home Screen" />
 
-<img src={require('./images/howconversationhappens2.png').default} width="800" alt="Chatwoot Dashboard Home Screen" />
-
-</div>
-
-Click on Conversations. Then click on All. The conversation which the customer has initiated can be seen here.
-
-<div align="center">
-
-<img src={require('./images/howconversationhappens3.png').default} width="800" alt="Conversations Screen" />
-
-</div>
-
-The details of the conversation open up in the right-hand side panel.
+Click on Conversations. Then click on All. The conversation which the customer has initiated can be seen here. The details of the conversation open up in the right-hand side panel.
 
 ### Assign Agent
 
@@ -66,7 +54,7 @@ Click on the drop-box below Assigned Agent and select the Agent name. You can ch
 
 <div align="center">
 
-<img src={require('./images/howconversationhappens5.png').default} width="800" alt="Assign Agent to Conversation Drop Down" />
+<img src={require('./images/conversation-workflow/assign-agent.webp').default} alt="Assign Agent to Conversation Drop Down" />
 
 </div>
 
@@ -76,7 +64,7 @@ Click on the drop-box below Assigned Team and select the team to which this conv
 
 <div align="center">
 
-<img src={require('./images/howconversationhappens6.png').default} width="800" alt="Assign Team to Conversation Drop Down " />
+<img src={require('./images/conversation-workflow/assign-team.webp').default} alt="Assign Team to Conversation Drop Down " />
 
 </div>
 
@@ -86,17 +74,21 @@ Click on Add Labels below Conversation Labels and select the category to which t
 
 <div align="center">
 
-<img src={require('./images/howconversationhappens7.png').default} width="800" alt="Assign Lable to Converesation Drop Down" />
+<img src={require('./images/conversation-workflow/add-remove-labels.webp').default} alt="Assign Lable to Converesation Drop Down" />
 
 </div>
 
-You can see in the below screenshot that all actions done by you are seen in the chat window in Agent Dashboard.
+### Assign Priority
+
+Click on the drop-box below Conversation Priority and select the priority of this conversation. You can read more about priority [here](/docs/user-guide/features/priority)
 
 <div align="center">
 
-<img src={require('./images/howconversationhappens4.png').default} width="800" alt="Actions done are recorded Chat screen" />
+<img src={require('./images/conversation-workflow/set-priority.webp').default} alt="Actions done are recorded Chat screen" />
 
 </div>
+
+You can see in the screenshot that all actions done by you are seen in the chat window in Agent Dashboard.
 
 ### Reply for the Conversation
 
