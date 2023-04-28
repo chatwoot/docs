@@ -32,12 +32,13 @@ You can also set the priority from the command palette. Open the command palette
 
 <img src={require('./images/priority/cmd-k-priority.png').default} alt="A screenshot show how priority can be assigned using the command palette" />
 
-## Tips to make the most out of the feature
+:::tip
+### How to make the most out of the feature?
 
 1. Use the "Urgent" priority judiciously. It should be assigned to the most pressing issues where it is supposed to be handled over everything else.
 
-1. Use automation rules to assign priority based on conditions. For example, you can automatically mark any conversation as urgent if an email subject contains the word security
-
+2. Use automation rules to assign priority based on conditions. For example, you can automatically mark any conversation as urgent if an email subject contains the word security
+:::tip
 ## FAQs
 
 #### Do you support custom priorities?
