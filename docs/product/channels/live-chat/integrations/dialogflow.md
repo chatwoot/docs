@@ -22,7 +22,7 @@ Test out the website inbox to see if the initial query is handled by the bot or 
 
 ## Creating a Dialogflow bot
 
-The following section guides you through creating a Dialoflow bot for Chatwoot.
+The following section guides you through creating a Dialogflow bot for Chatwoot.
 
 ### Create a new agent
 Go to [Dialogflow Console](https://dialogflow.cloud.google.com). We will be using Dialogflow Essentials for this article. Click on "Create new agent". It would show options as shown below.
@@ -125,9 +125,9 @@ Create an intent with required training phrases and a "Custom Payload" response 
 
 ## FAQ
 
-### How can an agent transfer the conversation back to dialoflow bot?
+### How can an agent transfer the conversation back to Dialogflow bot?
 
-When the dialoflow bot is connected to an inbox, conversations are created with `pending` status instead of `open`. This lets the intial triaging to happen via 
+When the Dialogflow bot is connected to an inbox, conversations are created with `pending` status instead of `open`. This lets the intial triaging to happen via 
 the bot before the conversation is passed on to an agent. When [`handoff`](#creating-a-handoff-intent) happens, the conversation status is changed into `open` and the bot stops 
 responding to it. 
 
