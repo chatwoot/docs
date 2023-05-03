@@ -31,7 +31,7 @@ Once you connect agent bot to an inbox, all the new conversations created in you
 ### Implementation Examples
 1. https://github.com/chatwoot/dialogflow-agent-bot-demo : example hotel booking implementation using dialogflow
 2. https://github.com/chatwoot/rasa-agent-bot-demo : example implementation using rasa.
-
+3. https://github.com/douglara/chatwoot-botpress-bridge : example implementation using botpress.
 
 > Look into interesting ways to leverage [bot-message types](/docs/product/others/interactive-messages) on chatwoot.
 
