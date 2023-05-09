@@ -37,8 +37,8 @@ Select the Agents from the drop-down and click on Add agents. If agents have not
 
 **Step 5**. Hooray! You have successfully created a website inbox. Now, add the widget to your website.
 
-Copy and paste the code snippet shown on the page to your website and start supporting your customers. You can 
-Copy button to copy and then [paste in the root file](/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website.
+Copy and paste the code snippet shown on the page to your website and start supporting your customers.
+You can click Copy button to copy and then [paste in the root file](/docs/user-guide/setting-up-chatwootwidget#root-file-of-website) of your website.
 
 ![finish_inbox](./images/inbox-is-ready.png)
 
