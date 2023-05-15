@@ -50,7 +50,7 @@ rvm use 3.1.3 --default
 Install Node.js from NodeSource using the following commands:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
