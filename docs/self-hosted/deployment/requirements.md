@@ -90,7 +90,7 @@ We highly recommend using the latest stable PostgreSQL versions as these were us
 Redis stores the background task queue and various chatwoot configurations cached.
 The storage requirements for Redis are minimal, You can start with 100MB and scale up as required.
 
-Redis version 6.0 or higher is recommended
+Redis version 7.0 or higher is recommended
 
 ## Sidekiq
 
