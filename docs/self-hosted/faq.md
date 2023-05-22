@@ -20,7 +20,7 @@ The chatwoot team provides support over the following channels. Please choose th
 |  Channel Type   |  Response Expectations | Query Types
 |----------|-------------|------|
 | Chat Wiget |   Real-time responses based on online agent availability. <br />  Email follow-ups in 2 Business Days  |  Business Enquiries |
-| [Email](mail:hello@chatwoot.com)   | Responses in 2 Business Days |  Business Enquiries |
+| [Email](mailto:hello@chatwoot.com)   | Responses in 2 Business Days |  Business Enquiries |
 | [Github](https://github.com/chatwoot/chatwoot) |  Responses in 2 Business Days |  Developer Support, Product Support |
 | [Discord](https://discord.gg/cJXdrwS) |  Community Support Based on availability. Contributors support based on availability  | Developer Support, Product Support |
 
