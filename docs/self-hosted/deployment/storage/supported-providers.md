@@ -20,6 +20,8 @@ AWS_REGION=
 
 ### Using Google GCS
 
+**Note**: Starting with version 2.17+, wrap the GCS_CREDENTIALS environment variable in single quotes.
+
 Configure the following env variables.
 
 ```bash
@@ -29,7 +31,7 @@ GCS_CREDENTIALS=
 GCS_BUCKET=
 ```
 
-the value of the `GCS_CREDENTIALS` should be a json formatted string containing the following keys
+The value of the `GCS_CREDENTIALS` should be a json formatted string containing the following keys. When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line
 
 ```bash
 {
