@@ -74,7 +74,9 @@ A sample credential file is of the following format.
 }
 ```
 
-When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line
+When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line. 
 ```
 GCS_CREDENTIALS={"type": "service_account","project_id": "","private_key_id": "","private_key": "","client_email": "","client_id": "","auth_uri": "","token_uri": "","auth_provider_x509_cert_url": "","client_x509_cert_url": ""}
 ```
+
+**Note**: If you are running Chatwoot v2.17+, make sure to wrap `GCS_CREDENTIALS` in single quotes.
