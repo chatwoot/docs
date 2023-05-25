@@ -20,7 +20,7 @@ AWS_REGION=
 
 ### Using Google GCS
 
-**Note**: Starting with version 2.17+, wrap the GCS_CREDENTIALS environment variable in single quotes.
+**Note**: Starting with version 2.17+, wrap the `GCS_CREDENTIALS` environment variable in single quotes.
 
 Configure the following env variables.
 
