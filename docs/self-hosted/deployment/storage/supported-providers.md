@@ -31,7 +31,7 @@ GCS_CREDENTIALS=
 GCS_BUCKET=
 ```
 
-The value of the `GCS_CREDENTIALS` should be a json formatted string containing the following keys. When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line
+The value of the `GCS_CREDENTIALS` should be a json formatted string containing the following keys. When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line.
 
 ```bash
 {
