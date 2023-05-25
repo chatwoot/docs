@@ -31,7 +31,7 @@ GCS_CREDENTIALS=
 GCS_BUCKET=
 ```
 
-The value of the `GCS_CREDENTIALS` should be a json formatted string containing the following keys. When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line.
+The value of the `GCS_CREDENTIALS` should be a json formatted string containing the following keys.
 
 ```bash
 {
@@ -46,6 +46,11 @@ The value of the `GCS_CREDENTIALS` should be a json formatted string containing 
   "auth_provider_x509_cert_url" : "",
   "client_x509_cert_url" : ""
 }
+```
+When pasting the credentials to the ENV file, make sure to remove the new lines and paste it into a single line.
+
+```
+GCS_CREDENTIALS=`{"type": "service_account","project_id": "","private_key_id": "","private_key": "","client_email": "","client_id": "","auth_uri": "","token_uri": "","auth_provider_x509_cert_url": "","client_x509_cert_url": ""}`
 ```
 
 ### Using Microsoft Azure
