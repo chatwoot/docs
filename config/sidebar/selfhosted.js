@@ -24,7 +24,7 @@ module.exports = [
   },
   {
     collapsible: true,
-    label: "Cloud provider guides",
+    label: "Cloud",
     type: "category",
     items: [
       {

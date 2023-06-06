@@ -5,6 +5,8 @@ title: "Deploy Chatwoot to Clever Cloud"
 
 Clever Cloud is a PaaS platform where you can deploy your applications with ease. To setup Chatwoot on Clever Cloud, you can follow the steps described below.
 
+**Note:** This is a community contributed installation setup. This will only have community support for any issues in future.
+
 
 ### 1. Create CleverCloud application
 

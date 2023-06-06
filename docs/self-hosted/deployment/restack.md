@@ -14,6 +14,8 @@ To deploy Chatwoot with Restack:
   - [Start using Chatwoot](#start-using-chatwoot).
   - [Deploy multiple instances of Chatwoot](#deploy-multiple-instances-of-chatwoot).
 
+**Note:** This is a community contributed installation setup. This will only have community support for any issues in future.
+
 ## Sign up for a Restack account
 
 To Sign up for a Restack account, visit [www.restack.io/signup](https://www.restack.io/signup). You can sign up with your corporate email address or your GitHub profile. You do not need a credit card to sign up.

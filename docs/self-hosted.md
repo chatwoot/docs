@@ -15,9 +15,9 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Kubernetes](/docs/self-hosted/deployment/helm-charts)
 - [Chatwoot CTL](/docs/self-hosted/deployment/chatwoot-ctl)
 
-## Cloud provider guides
+## Cloud
 
-### Official supported Cloud providers
+### Official, supported cloud providers
 
 - Amazon Web Services (AWS)
     - [Manual Install](/docs/self-hosted/deployment/aws)
@@ -27,7 +27,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Google Cloud Platform (GCP)](/docs/self-hosted/deployment/gcp)
 - [Heroku](/docs/self-hosted/deployment/heroku)
 
-### Unofficial, Unsupported community contributed providers
+### Unofficial, unsupported community contributed providers
 
 - [Caprover](/docs/self-hosted/deployment/caprover)
 - [Clever Cloud](/docs/self-hosted/deployment/clevercloud)

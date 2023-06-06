@@ -9,6 +9,8 @@ help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categ
 
 [Cloudron](https://cloudron.io) is a platform that makes it easy to install, manage and secure web apps on your server. Chatwoot is now available as a 1-click app in the Cloudron app store and the installation is blazing fast.
 
+**Note:** This is a community contributed installation setup. This will only have community support for any issues in future.
+
 
 ## Setup Chatwoot using Cloudron
 
