@@ -38,7 +38,7 @@ module.exports = [
       "self-hosted/deployment/gcp",
       "self-hosted/deployment/heroku",
       {
-        "Others": [
+        "Community contributed": [
           "self-hosted/deployment/caprover",
           "self-hosted/deployment/clevercloud",
           "self-hosted/deployment/cloudron",
