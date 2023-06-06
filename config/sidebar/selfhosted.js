@@ -37,12 +37,12 @@ module.exports = [
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
       "self-hosted/deployment/heroku",
-      "self-hosted/deployment/restack",
       {
         "Others": [
           "self-hosted/deployment/caprover",
-          "self-hosted/deployment/cloudron",
           "self-hosted/deployment/clevercloud",
+          "self-hosted/deployment/cloudron",
+          "self-hosted/deployment/restack",
         ],
       },
       "self-hosted/deployment/troubleshooting",
