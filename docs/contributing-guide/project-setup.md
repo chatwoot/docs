@@ -16,7 +16,7 @@ git clone https://github.com/chatwoot/chatwoot.git
 cd chatwoot
 ```
 
-### Install Ruby & Java dependencies
+### Install Ruby & Javascript dependencies
 
 Use the following command to run `bundle && yarn` to install ruby and Javascript dependencies.
 
