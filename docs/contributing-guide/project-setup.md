@@ -16,23 +16,18 @@ git clone https://github.com/chatwoot/chatwoot.git
 cd chatwoot
 ```
 
-### Install Ruby dependencies
+### Install Ruby & Javascript dependencies
 
-Use the following command to install ruby dependencies.
-
-```bash
-bundle
-```
-
-If you face issue with pg gem, please refer to [Common Errors](/docs/contributing-guide/common-errors#pg-gem-installation-error)
-
-### Install JavaScript dependencies
+Use the following command to run `bundle && yarn` to install ruby and Javascript dependencies.
 
 ```bash
-yarn
+make burn
 ```
+
 
 This would install all required dependencies for Chatwoot application.
+
+If you face issue with pg gem, please refer to [Common Errors](/docs/contributing-guide/common-errors#pg-gem-installation-error)
 
 ### Setup environment variables.
 
@@ -46,12 +41,11 @@ Please refer to [environment-variables](/docs/contributing-guide/environment-var
 
 ```bash
 # run db migrations
-bundle exec rake db:create
-bundle exec rake db:reset
-
+make db
 # fireup the server
 foreman start -f Procfile.dev
 ```
+Note: If you have overmind installed, use `make run` to run the server.
 
 ### Login with credentials
 
