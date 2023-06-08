@@ -24,7 +24,7 @@ module.exports = [
   },
   {
     collapsible: true,
-    label: "Cloud provider guides",
+    label: "Cloud",
     type: "category",
     items: [
       {
@@ -37,12 +37,12 @@ module.exports = [
       "self-hosted/deployment/digital-ocean",
       "self-hosted/deployment/gcp",
       "self-hosted/deployment/heroku",
-      "self-hosted/deployment/restack",
       {
-        "Others": [
+        "Community contributed": [
           "self-hosted/deployment/caprover",
-          "self-hosted/deployment/cloudron",
           "self-hosted/deployment/clevercloud",
+          "self-hosted/deployment/cloudron",
+          "self-hosted/deployment/restack",
         ],
       },
       "self-hosted/deployment/troubleshooting",

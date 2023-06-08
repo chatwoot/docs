@@ -9,6 +9,7 @@ help_github_discussions: "https://github.com/chatwoot/chatwoot/discussions/categ
 
 Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Caprover, and the deployment process is straightforward.
 
+**Note:** This is a community contributed installation setup. This will only have community support for any issues in future.
 
 ## Setup Chatwoot Using Caprover
 ### 1. Install Caprover on your VM
