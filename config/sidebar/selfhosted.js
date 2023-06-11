@@ -16,6 +16,7 @@ module.exports = [
 	      "Linux": [
           "self-hosted/deployment/linux-vm",
           "self-hosted/deployment/docker",
+          "self-hosted/deployment/easypanel",
 	      ],
       },
       "self-hosted/deployment/helm-charts",

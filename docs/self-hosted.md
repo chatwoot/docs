@@ -12,6 +12,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - Linux
   - [Manual Install](/docs/self-hosted/deployment/linux-vm)
   - [Docker](/docs/self-hosted/deployment/docker)
+  - [Easypanel](/docs/self-hosted/deployment/easypanel)
 - [Kubernetes](/docs/self-hosted/deployment/helm-charts)
 - [Chatwoot CTL](/docs/self-hosted/deployment/chatwoot-ctl)
 
