@@ -3,12 +3,19 @@ sidebar_label: "Custom Release Guide"
 title: "Custom release guide for mobile app"
 ---
 
-## Deep linking
+### Setup firebase for push notification
 
-### Android
+- Create a new project in [firebase console](https://console.firebase.google.com/).
+- Generate [android credentials](https://rnfirebase.io/#generating-android-credentials) from firebase console. Then download the `google-services.json` file and place it inside of your project at the following location: `android/app/`.
+- Generate [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from firebase console. Then download the `GoogleService-Info.plist` file . Then add this file to project using `Xcode`. More details can be found [here](https://rnfirebase.io/#3-ios-setup).
+
+- Add the `FCM_SERVER_KEY` in the chatwoot environment variables. You can find your FCM_SERVER_KEY in your firebase settings (Project Settings > Cloud Messaging > Project Credentials > Server Key).
+
+### Deep linking
+
+#### Android
 
 Open `AndroidManifest.xml` file under `android/app/src/main/` folder.
-
 
 Replace `android:host` with your installation url
 
@@ -31,7 +38,7 @@ adb shell am start -W -a android.intent.action.VIEW -d "https://app.chatwoot.com
 
 ```
 
-### iOS
+#### iOS
 
 Set `IOS_APP_ID` in chatwoot server
 
@@ -39,27 +46,6 @@ Open `Chatwoot.entitlements` file under `ios/` folder.
 
 Replace `*.chatwoot.com` with your installation url
 
-## Deployment
+### Deployment
 
-Detailed guide for [Publishing a React Native App to the App Store](https://www.reactnativeschool.com/publishing-react-native-app/)
-
-### Android
-
-In order to distribute your Android application via Google Play store it needs to be signed with a release key that then needs to be used for all future updates. More details can be found [here](https://reactnative.dev/docs/signed-apk-android)
-
-Update `gradle.properties` file under `android/app` folder with following contents
-
-```
-android.useAndroidX=true
-android.enableJetifier=true
-FLIPPER_VERSION=0.33.1
-org.gradle.jvmargs=-Xmx4608m
-RELEASE_STORE_FILE=<RELEASE_STORE_FILE>
-RELEASE_KEY_ALIAS=<RELEASE_KEY_ALIAS>
-RELEASE_STORE_PASSWORD=<RELEASE_STORE_PASSWORD>
-RELEASE_KEY_PASSWORD=<RELEASE_KEY_PASSWORD>
-```
-
-For releasing the android follow the [guide](https://reactnative.dev/docs/signed-apk-android)
-
-- Important - We are using [Fastlane](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for deploying chatwoot official mobile app.
+In order to successfully upload your app to the [Playstore](https://reactnative.dev/docs/signed-apk-android) and [Appstore](https://reactnative.dev/docs/publishing-to-app-store), it is important to follow the official guide closely. You must ensure that you have completed all the necessary steps, including creating a signed APK for Android and publishing to the App Store for iOS. It is also important to make sure that your app meets all the requirements and guidelines set forth by the app stores, such as having appropriate content and adhering to their policies and regulations.
