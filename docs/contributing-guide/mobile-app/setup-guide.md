@@ -44,6 +44,7 @@ MINIMUM_CHATWOOT_VERSION=2.16.0
 ```
 
 - CHATWOOT_WEBSITE_TOKEN: Web widget token. Add this token only if you want to add in app support.
+- CHATWOOT_BASE_URL: Replace with your self-hosted installation url.
 - SENTRY_DSN: Sentry DSN URL.
 - JUNE_SDK_KEY: June SDK key. We use June for analytics.
 - MINIMUM_CHATWOOT_VERSION: Minimum supported Chatwoot version.
