@@ -3,7 +3,7 @@ sidebar_label: "Custom Release Guide"
 title: "Custom release guide for mobile app"
 ---
 
-### Setup firebase for push notification
+### Setup Firebase for push notification
 
 - Create a new project in [firebase console](https://console.firebase.google.com/).
 - Generate [android credentials](https://rnfirebase.io/#generating-android-credentials) from firebase console. Then download the `google-services.json` file and place it inside of your project at the following location: `android/app/`.
