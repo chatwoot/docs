@@ -7,10 +7,10 @@ title: "Setup guide for mobile app"
   - [Prerequisites](#prerequisites)
   - [Environment Variables](#environment-variables)
   - [Setup firebase for push notification](#setup-firebase-for-push-notification)
-  - [Setup Sentry for error reporting](#setup-sentry-for-error-reporting) 
+  - [Setup Sentry for error reporting](#setup-sentry-for-error-reporting)
 - [Running](#running)
-    - [iOS](#ios) - **Mac is required if you wish to develop for iOS.**
-    - [Android](#android)
+  - [iOS](#ios) - **Mac is required if you wish to develop for iOS.**
+  - [Android](#android)
 - [Configure and run tests](#configure-and-run-tests)
 
 ## Installation and setup
@@ -20,15 +20,14 @@ title: "Setup guide for mobile app"
 - [Node.js](https://nodejs.org/en/download/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
 - [Yarn](https://yarnpkg.com/en/docs/install)
-- React Native CLI - Use `$ yarn global add react-native-cli` to install the CLI.
 
-More information on getting started can be found [here](https://reactnative.dev/docs/environment-setup)
+To learn more about the most up-to-date instructions, please refer to the guide available [here](https://reactnative.dev/docs/environment-setup?guide=native).
 
-Clone the repository
+#### Clone the repository
 
 `$ git clone git@github.com:chatwoot/chatwoot-mobile-app.git`
 
-And install dependencies
+#### Install dependencies
 
 `$ yarn`
 
@@ -36,20 +35,23 @@ And install dependencies
 
 Create `.env` file under root folder
 
-
 ```
 SENTRY_DSN=
 CHATWOOT_WEBSITE_TOKEN=
-CHATWOOT_BASE_URL=
-POSTHOG_API_KEY=
-POSTHOG_API_HOST=
-MINIMUM_CHATWOOT_VERSION=1.15.0
+CHATWOOT_BASE_URL=https://app.chatwoot.com
+JUNE_SDK_KEY=
+MINIMUM_CHATWOOT_VERSION=2.16.0
 ```
-### Setup firebase for push notification
 
-- Create a new project in [firebase console](https://console.firebase.google.com/).
-- Generate [android credentials](https://rnfirebase.io/#generating-android-credentials) from firebase console. Then download the `google-services.json` file and place it inside of your project at the following location: `android/app/`.
-- Generate [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from firebase console. Then download the `GoogleService-Info.plist` file . Then add this file to project using `Xcode`. More details can be found [here](https://rnfirebase.io/#3-ios-setup). 
+- CHATWOOT_WEBSITE_TOKEN: Web widget token. Add this token only if you want to add in app support.
+- CHATWOOT_BASE_URL: Replace with your self-hosted installation url.
+- SENTRY_DSN: Sentry DSN URL.
+- JUNE_SDK_KEY: June SDK key. We use June for analytics.
+- MINIMUM_CHATWOOT_VERSION: Minimum supported Chatwoot version.
+
+### Push notification
+
+If you are using the community edition of Chatwoot, you would now be able use the [Official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration.
 
 ### Setup Sentry for error reporting
 
@@ -63,8 +65,6 @@ Run the following command to generate the Sentry configuration.
 yarn sentry-wizard -i reactNative -p ios android
 cd ios && pod install
 ```
-
-
 
 ## Running
 
@@ -80,45 +80,7 @@ Open `Chatwoot.xcworkspace` file under `ios` folder. Choose your target device a
 
 ### Android
 
-- Create `gradle.properties` file with following contents under `android/` folder
-
-```
-android.useAndroidX=true
-android.enableJetifier=true
-FLIPPER_VERSION=0.54.0
-org.gradle.jvmargs=-Xmx4608m
-```
-
 - `yarn android`
 
-## Configure and run tests
 
-Add a new brew formula
-
-```
-brew tap wix/brew
-```
-
-Install simulators
-
-```
-brew install wix/applesimutils
-```
-
-Build application:
-
-```
-detox build --configuration ios
-```
-
-Run tests:
-
-```
-detox test --configuration ios --loglevel trace
-```
-
-Manage simulators:
-
-```
-/usr/bin/xcrun simctl list
-```
+If you face any issues while setting up, please post on our [GitHub](https://github.com/chatwoot/chatwoot) or on our developer forum at [Discord](https://discord.gg/cJXdrwS). Someone from the team will definitely help you.
