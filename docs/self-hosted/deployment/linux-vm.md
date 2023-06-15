@@ -86,8 +86,8 @@ cd chatwoot
 git checkout master && git pull
 
 # Ensure the ruby version is upto date
-rvm install "ruby-3.1.3"
-rvm use 3.1.3 --default
+rvm install "ruby-3.2.2"
+rvm use 3.2.2 --default
 
 # Update dependencies
 bundle
