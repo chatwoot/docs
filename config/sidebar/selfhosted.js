@@ -16,7 +16,6 @@ module.exports = [
 	      "Linux": [
           "self-hosted/deployment/linux-vm",
           "self-hosted/deployment/docker",
-          "self-hosted/deployment/easypanel",
 	      ],
       },
       "self-hosted/deployment/helm-charts",
@@ -44,6 +43,7 @@ module.exports = [
           "self-hosted/deployment/clevercloud",
           "self-hosted/deployment/cloudron",
           "self-hosted/deployment/restack",
+          "self-hosted/deployment/easypanel",
         ],
       },
       "self-hosted/deployment/troubleshooting",
