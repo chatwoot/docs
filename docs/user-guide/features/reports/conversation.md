@@ -145,8 +145,9 @@ Business hours is supported for [Conversation](http://localhost:3001/docs/user-g
 
 ### Trend
 
-The trend shows the percentage of increase in the metric data. It is displayed on the right side of each metric in the report.
-Calculation of trend in given below.
+The trend shows the percentage of increase or decrease in the metric data. It compares the current time period with the previous time period to provide valuable insights. For example, when analyzing the number of conversations for a specific week, the Trend metric would compare this week's numbers with the numbers from the previous week.
+
+It is displayed on the right side of each metric in the report. The formula used for calculating the trend is given below.
 
 `trend = ((current - previous)/previous)*100`
 
