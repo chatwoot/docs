@@ -1,0 +1,25 @@
+on:
+  schedule:
+    - cron: 0 10 1 * *
+  repository_dispatch:
+    types: [check-link]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+name: Broken Link Check
+jobs:
+  check:
+    name: Broken Link Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Broken Link Check
+        uses: technote-space/broken-link-checker-action@gh-actions
+        with:
+          TARGET: "https://www.chatwoot.com"
+          GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
+          
+
+
