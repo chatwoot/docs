@@ -14,6 +14,7 @@ module.exports = [
       "contributing-guide/environment-setup/ubuntu",
       "contributing-guide/environment-setup/windows",
       "contributing-guide/environment-setup/docker",
+      "contributing-guide/environment-setup/make",
     ],
   },
   {

@@ -44,6 +44,7 @@ These guides will help you to setup the environment required for Chatwoot. Follo
 * [Ubuntu](/docs/contributing-guide/environment-setup/ubuntu)
 * [Windows](/docs/contributing-guide/environment-setup/windows)
 * [Docker](/docs/contributing-guide/environment-setup/docker)
+* [Speed up your local development workflow with make](/docs/contributing-guide/environment-setup/make)
 
 ### Project Setup
 
