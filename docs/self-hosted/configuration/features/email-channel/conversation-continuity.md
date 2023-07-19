@@ -35,7 +35,7 @@ This configures the ingress service for the app. Now we have to set the password
 # Set this if you are using Sendgrid, Exim, Postfix, Qmail or Postmark
 RAILS_INBOUND_EMAIL_PASSWORD=
 # Set this if you are Mailgun
-MAILGUN_INGRESS_API_KEY=
+MAILGUN_INGRESS_SIGNING_KEY=
 # Set this if you are Mandrill
 MANDRILL_INGRESS_API_KEY=
 ```
