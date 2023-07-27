@@ -167,7 +167,7 @@ But you can change it to use any of the cloud providers like amazon s3, microsof
 ACTIVE_STORAGE_SERVICE=local
 ```
 
-When `local` storage is used the files are stored under `public/uploads` directory in the chatwoot root folder.
+When `local` storage is used the files are stored under `/storage` directory in the chatwoot root folder.
 
 > It is recommended to use a cloud provider for your chatwoot storage to ensure proper backup of the stored attachments and prevent data loss.
 
