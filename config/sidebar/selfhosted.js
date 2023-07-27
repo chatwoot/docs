@@ -104,10 +104,11 @@ module.exports = [
   },
   {
     collapsible: true,
-    label: "Upgrade",
+    label: "Maintenance",
     type: "category",
     items: [
       "self-hosted/deployment/upgrade",
+      "self-hosted/deployment/backup",
     ],
   },
   {
