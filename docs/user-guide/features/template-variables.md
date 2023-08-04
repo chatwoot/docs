@@ -15,7 +15,7 @@ If we send a message `Hey {{ contact.name }}, how may I help you?`, then Chatwoo
 
 ![variable demo](./images/variables/variable-demo.gif)
 
-To use a variable, type two double curly brackets **{{** when composing a new message or creating a canned response. The variables will appear, and you can select the one you'd like to use.
+To use a variable, type two double curly brackets **`{{`** when composing a new message or creating a canned response. The variables will appear, and you can select the one you'd like to use.
 
 
 
