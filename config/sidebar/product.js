@@ -128,6 +128,7 @@ module.exports = [
       "product/others/advanced-conversation-filters",
       "user-guide/features/automations",
       "product/features/macros",
+      "user-guide/features/ai-assist",
       "user-guide/features/pre-chat-form",
       "user-guide/features/priority",
       {
