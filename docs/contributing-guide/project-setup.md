@@ -4,24 +4,35 @@ title: "Project Setup"
 ---
 
 This guide will help you to setup and run Chatwoot in development mode. Please make sure you have completed the environment setup.
+Change PORT to the port, that should used
 
 ### Clone the repo
 
 ```bash
-# change location to the path you want chatwoot to be installed
-cd ~
+# Creating a directory for your Chatwoot instance and change into it
+mkdir /home/Chatwoot
+cd /home/Chatwoot
 
-# clone the repo and cd to chatwoot dir
-git clone https://github.com/chatwoot/chatwoot.git
-cd chatwoot
+# Init a git repository and pull Chatwoot
+git init
+git remote add origin https://github.com/chatwoot/chatwoot.git
+git pull origin develop
+git branch -m develop
+
+# Remove irrelevant files
+rm -r .* *.md LICENSE
+
+# Create the env file
+wget https://github.com/chatwoot/chatwoot/raw/develop/.env.example -O .env
 ```
 
 ### Install Ruby & Javascript dependencies
 
-Use the following command to run `bundle && yarn` to install ruby and Javascript dependencies.
+Use the following commands to install ruby and Javascript dependencies.
 
 ```bash
-make burn
+bundle
+yarn
 ```
 
 
@@ -30,9 +41,25 @@ This would install all required dependencies for Chatwoot application.
 If you face issue with pg gem, please refer to [Common Errors](/docs/contributing-guide/common-errors#pg-gem-installation-error)
 
 ### Setup environment variables.
+Go into the file .env and adjust the following variables:
 
-```
-cp .env.example .env
+```markdown
+- FRONTEND_URL
+
+- POSTGRES_HOST
+- POSTGRES_USERNAME
+- POSTGRES_PASSWORD
+- RAILS_ENV
+
+# If your redis instance use a password
+- REDIS_PASSWORD
+
+# If you use a mailserver for sending emails
+- SMTP_ADDRESS
+- SMTP_PORT
+- SMTP_USERNAME
+- SMTP_PASSWORD
+- SMTP_AUTHENTICATION
 ```
 
 Please refer to [environment-variables](/docs/contributing-guide/environment-variables) to read on setting environment variables.
@@ -40,33 +67,41 @@ Please refer to [environment-variables](/docs/contributing-guide/environment-var
 ### Setup rails server
 
 ```bash
-# run db migrations
-make db
-# fireup the server
-foreman start -f Procfile.dev
+# Create the databases
+RAILS_ENV=development rake db:setup
+
+# Migrate the databases
+RAILS_ENV=development rake db:migrate
+RAILS_ENV=development rake db:seed
+
+# Compile the assets (this will take a while, ca 5-10 minutes)
+RAILS_ENV=development rails assets:precompile
+
+# Run the server
+rails server -e development -b 0.0.0.0 -p PORT
+
+# To run the server as deamon (in background)
+rails server -e development -d -b 0.0.0.0 -p PORT
 ```
-Note: If you have overmind installed, use `make run` to run the server.
 
 ### Login with credentials
 
-```bash
-http://localhost:3000
-user name: john@acme.inc
-password: Password1!
-```
+Adress   = http://localhost:PORT
+Username = john@acme.inc
+Password = Password1!
 
 ### Testing chat widget in your local environment 
 
 When running Chatwoot in development environment, the chat widget can be accessed under the following URL.
 
 ```
-http://localhost:3000/widget_tests
+http://localhost:PORT/widget_tests
 ```
 
 You can also test the `setUser` method by using
 
 ```
-http://localhost:3000/widget_tests?setUser=true
+http://localhost:PORT/widget_tests?setUser=true
 ```
 
 ### Docker for development

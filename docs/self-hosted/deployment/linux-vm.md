@@ -14,6 +14,7 @@ This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS**. We hav
 > **Note**: If you plan to use a domain with chatwoot, please add an A record before proceeding.
 > Refer to the `Configuring the installation domain` section below.
 
+### Quick/Simplify install
 1. Create an **install.sh** file using the following commands.
 
 ```bash
@@ -32,6 +33,11 @@ chmod +x install.sh
 
 > **Note** This will also install the Chatwoot CLI(`cwctl`) starting with Chatwoot v2.7.0. Use `cwctl --help` to learn more.
 
+### Advanced install
+For a detailed (but much more complex) installation, follow the [debian](../../contributing-guide/environment-setup/debian.md) or [ubuntu](../../contributing-guide/environment-setup/ubuntu.md), then the [project](../../contributing-guide/project-setup.md) setup instruction...
+
+> **Note** Replace `RAILS_ENV=development` with `RAILS_ENV=production` and `development` with `production` when starting the server.
+
 ## Configuring The installation Domain
 
 1. Create an `A` record for `chatwoot.mydomain.com` on your domain management system and point it towards the installation IP address.
@@ -46,8 +52,12 @@ For your Chatwoot installation to properly function, you would need to configure
 1. Login as **chatwoot** user and edit the .env file.
 
 ```bash
-# Login as chatwoot user
+# After the advanced install
+## The user must still be created here.
 
+useradd -M -s /usr/sbin/nologin chatwoot
+
+# Login as chatwoot user
 sudo -i -u chatwoot
 cd chatwoot
 nano .env
@@ -71,7 +81,7 @@ Whenever a new version of Chatwoot is released, use the following steps to upgra
 
 To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
 
-> **Note** If you are on an older version of Chatwoot(<2.7), follow the manual upgrade steps below if you face errors with `cwctl`.
+> **Note** If you are on an older version of Chatwoot({'<'}2.7), follow the manual upgrade steps below if you face errors with `cwctl`.
 
 Run the following steps on your VM. Make changes based on your OS if you are on a non-Ubuntu system.
 
@@ -94,7 +104,7 @@ bundle
 yarn
 
 # Recompile the assets
-rake assets:precompile RAILS_ENV=production
+RAILS_ENV=production rake assets:precompile
 
 # Migrate the database schema
 RAILS_ENV=production bundle exec rake db:migrate
@@ -146,7 +156,7 @@ journalctl -u chatwoot-worker.1.service -f
 
 ## Install or Upgrade Chatwoot CLI
 
-If you used an older version of install script(<2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CLI,
+If you used an older version of install script({'<'}2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CLI,
 
 ```
 wget https://get.chatwoot.app/linux/install.sh -O /usr/local/bin/cwctl && chmod +x /usr/local/bin/cwctl

@@ -11,6 +11,7 @@ module.exports = [
     label: "Environment Setup",
     items: [
       "contributing-guide/environment-setup/mac-os",
+      "contributing-guide/environment-setup/debian",
       "contributing-guide/environment-setup/ubuntu",
       "contributing-guide/environment-setup/windows",
       "contributing-guide/environment-setup/docker",

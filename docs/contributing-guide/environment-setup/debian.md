@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Ubuntu"
-title: "Ubuntu installation guide"
+sidebar_label: "Debian"
+title: "Debian installation guide"
 ---
 
 Open a terminal and run the following commands:
@@ -17,11 +17,7 @@ apt install git -y
 
 ### Install RVM
 
-You need software-properties-common installed in order to add PPA repositories.
-
 ```bash
-apt install software-properties-common -y
-
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable --rails
 

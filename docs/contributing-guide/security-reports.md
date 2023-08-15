@@ -22,7 +22,7 @@ Please try your best to describe a clear and realistic impact for your report, a
 | Version | Supported        |
 | ------- | --------------   |
 | latest   | ️✅               |
-| <latest   | ❌               |
+| {'<'}latest   | ❌               |
 
 
 ## Vulnerabilities we care about 🫣
