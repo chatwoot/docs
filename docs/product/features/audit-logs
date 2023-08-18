@@ -19,7 +19,7 @@ Or, **who** did **what**, **when** and from **where**?
 
 **Step 1.** If the feature is available to you, you can find it by going to 'Settings' -> 'Audit Logs'.
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMmRHYWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1bbc5331fac7ea7c3b925ad63517adbe141369eb/finding%20audit%20log%20in%20chatwoot.png)
+![Finding Audit Logs in Chatwoot UI](./images/finding-audit-logs.png)
 
 **Step 2.** Browse through your logs. Scroll down to find your desired entries or use the navigation to switch pages.
 
@@ -27,7 +27,7 @@ Pro tip: Use `cmd/ctrl + F` to quickly search for a desired entry.
 
 You will find the entries under three headers: Activity, Time and IP Address.
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMEJLYWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--182b1286ce9f00449ebbe50906530fa6662aa377/audit%20logs%20example%20chatwoot.png)
+![Audit Logs example](./images/audit-logs.png)
 
 ## Activities tracked through Audit Logs
 
