@@ -23,7 +23,7 @@ Chatwoot is developed for Linux-based operating systems. Please consider using a
 
 ### Ruby versions
 
-- Ruby 3.0 and later is required.
+- Ruby 3.2 and later is required.
 
 You must use the standard MRI implementation of Ruby. Chatwoot needs several Gems that have native extensions.
 
@@ -31,7 +31,7 @@ You must use the standard MRI implementation of Ruby. Chatwoot needs several Gem
 
 We only support Node.js 10.13.0 or higher.
 
-We recommend Node 14.x, as it's faster.
+We recommend Node 16.x, as it's faster.
 
 Chatwoot uses [webpack](https://webpack.js.org/) to compile frontend assets, which requires a minimum
 version of Node.js 10.13.0.

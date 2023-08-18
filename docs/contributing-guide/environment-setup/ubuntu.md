@@ -47,10 +47,10 @@ rvm use 3.2.2 --default
 
 ### Install Node.js
 
-Install Node.js from NodeSource using the following commands:
+Chatwoot requires `node` version `16`. Install Node.js from NodeSource using the following commands:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 

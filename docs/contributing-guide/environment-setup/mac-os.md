@@ -54,10 +54,10 @@ rbenv install 3.2.2
 
 ### Install Node.js
 
-Install Node.js from NodeSoure using the following commands
+Chatwoot requires `node` version `16`. Install Node.js from NodeSoure using the following commands
 
 ```bash
-brew install node
+brew install node@16
 ```
 
 ### Install yarn
