@@ -5,13 +5,13 @@ title: "Audit Logs"
 
 Audit Logs is an Enterprise feature. This keeps a record of the activities occurring in your account, which you can track to audit your account, team, or services. Essentially, audit logs answer the four W's for you:
 
-* Who
+- Who
 
-* What
+- What
 
-* When
+- When
 
-* Where
+- Where
 
 Or, **who** did **what**, **when** and from **where**?
 
@@ -19,7 +19,7 @@ Or, **who** did **what**, **when** and from **where**?
 
 **Step 1.** If the feature is available to you, you can find it by going to 'Settings' -> 'Audit Logs'.
 
-![Finding Audit Logs in Chatwoot UI](./images/finding-audit-logs.png)
+![Finding Audit Logs in Chatwoot UI](./images/audit-logs/finding-audit-logs.png)
 
 **Step 2.** Browse through your logs. Scroll down to find your desired entries or use the navigation to switch pages.
 
@@ -27,7 +27,7 @@ Pro tip: Use `cmd/ctrl + F` to quickly search for a desired entry.
 
 You will find the entries under three headers: Activity, Time and IP Address.
 
-![Audit Logs example](./images/audit-logs.png)
+![Audit Logs example](./images/audit-logs/audit-logs.png)
 
 ## Activities tracked through Audit Logs
 
@@ -35,66 +35,66 @@ Whenever any of the following activities occurs within your account, an entry is
 
 ### User activity logs
 
-* <*Name | Email*> Changing self status to online, offline, busy
+- <_Name | Email_> Changing self status to online, offline, busy
 
-* <*Name | Email*> signed in
+- <_Name | Email_> signed in
 
-* <*Name | Email*> signed out
+- <_Name | Email_> signed out
 
-* <*Name | Email*> changed the availability status of <Name | Email> to <online | offline | busy>
+- <_Name | Email_> changed the availability status of <_Name | Email_> to <_online | offline | busy_>
 
-* <*Name | Email*> invited the user <email> as an <agent | admin>
+- <_Name | Email_> invited the user <_email_> as an <_agent | admin_>
 
-* <*Name | Email*> changed the role of the user <Email> to <agent | admin>
+- <_Name | Email_> changed the role of the user <_email_> to <_agent | admin_>
 
 ### Account activity logs
 
-* <*Name | Email*> updated the account configuration.
+- <_Name | Email_> updated the account configuration.
 
 ### Automation rule logs
 
-* <*Name | Email*> created a new automation rule (*#rule-id*)
+- <_Name | Email_> created a new automation rule (_#rule-id_)
 
-* <*Name | Email*> updated an automation rule (#rule-id)
+- <_Name | Email_> updated an automation rule (#rule-id)
 
-* <*Name | Email*> deleted an automation rule (#*rule-id*)
+- <_Name | Email_> deleted an automation rule (#_rule-id_)
 
 ### Macro logs
 
-* <*Name | Email*> created a new macro (#*macro-id*)
+- <_Name | Email_> created a new macro (#_macro-id_)
 
-* <*Name | Email*> updated a macro (#*macro-id*)
+- <_Name | Email_> updated a macro (#_macro-id_)
 
-* <*Name | Email*> deleted a macro (#*macro-id*)
+- <_Name | Email_> deleted a macro (#_macro-id_)
 
 ### Inbox logs
 
-* <*Name | Email*> created a new inbox (#*inbox-id*)
+- <_Name | Email_> created a new inbox (#_inbox-id_)
 
-* <*Name | Email*> updated an inbox (#*inbox-id*)
+- <_Name | Email_> updated an inbox (#_inbox-id_)
 
-* <*Name | Email*> deleted an inbox (#*inbox-id*)
+- <_Name | Email_> deleted an inbox (#_inbox-id_)
 
-* <*Name | Email*> added <Name1 | Email1>, <Name2 | Email 2> to the inbox (#*inbox-id*)
+- <_Name | Email_> added <Name1 | Email1>, <Name2 | Email 2> to the inbox (#_inbox-id_)
 
-* <*Name | Email*> removed <Name1 | Email1>, <Name2 | Email 2> from the inbox (#*inbox-id*)
+- <_Name | Email_> removed <Name1 | Email1>, <Name2 | Email 2> from the inbox (#_inbox-id_)
 
 ### Webhooks logs
 
-* <*Name | Email*> created a new webhook (#*webook-id*)
+- <_Name | Email_> created a new webhook (#_webook-id_)
 
-* <*Name | Email*> updated a webhook (#*webhook-id*)
+- <_Name | Email_> updated a webhook (#_webhook-id_)
 
-* <*Name | Email*> deleted a webhook (#*webhook-id*)
+- <_Name | Email_> deleted a webhook (#_webhook-id_)
 
 ### Team logs
 
-* <*Name | Email*> created a new team (#*team-id*)
+- <_Name | Email_> created a new team (#_team-id_)
 
-* <*Name | Email*> updated a team (#*team-id*)
+- <_Name | Email_> updated a team (#_team-id_)
 
-* <*Name | Email*> deleted a team (#*team-id*)
+- <_Name | Email_> deleted a team (#_team-id_)
 
-* <*Name | Email*> added <Name1 | Email1>, <Name2 | Email 2> to the team (#*team-id*)
+- <_Name | Email_> added <Name1 | Email1>, <Name2 | Email 2> to the team (#_team-id_)
 
-* <*Name | Email*> remove <Name1 | Email1>, <Name2 | Email 2> from the team (#*team-id*)
+- <_Name | Email_> remove <Name1 | Email1>, <Name2 | Email 2> from the team (#_team-id_)
