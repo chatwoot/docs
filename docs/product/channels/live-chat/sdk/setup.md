@@ -36,6 +36,7 @@ window.chatwootSettings = {
   position: "left", // This can be left or right
   locale: "en", // Language to be set
   useBrowserLanguage: false, // Set widget language from user's browser
+  baseDomain: '.mydomain.com'
   type: "standard", // [standard, expanded_bubble]
   darkMode: "auto", // [light, auto]
 };
