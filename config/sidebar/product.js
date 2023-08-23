@@ -131,6 +131,7 @@ module.exports = [
       "user-guide/features/ai-assist",
       "user-guide/features/pre-chat-form",
       "user-guide/features/priority",
+      "user-guide/features/audit-logs",
       {
         type: "category",
         label: "Campaigns",
