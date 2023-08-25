@@ -11,11 +11,11 @@ Please note that this is a beta feature that will constantly get updated with ev
 
 **Step 1.** Click the Help Center icon from your sidebar, and click the "New Portal" button.
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMGF0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--75c692c975b2beba0b089cb77c41d93c913524a4/help%20center%20in%20chatwoot.png)
+![New portal](./help-center/images/help-center/hc1.png)
 
 **Step 2.** You will see a basic settings page. Start filling in the fields.
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMHV0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3769e42313f6f19c7080f9ac6632a3d4fd42203e/create%20a%20portal%20in%20help%20center.png)
+![Basic settings](./help-center/images/help-center/hc2.png)
 
 These fields are explained below:
 
@@ -47,7 +47,7 @@ Categories exist to structure your portal and organize your articles. Follow the
 
 **Step 2.** A modal will open up. Fill up the fields.
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMmF0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4a1192c8db7ce6541b8adf0c872a0a6d022e610a/creating%20a%20category%20in%20help%20center.png)
+![Create category modal](./help-center/images/help-center/hc3.png)
 
 These fields are described below.
 
@@ -71,12 +71,12 @@ Finally, start writing your articles. Follow the steps below.
 
 **Step 1.** You can find the "New Article" button on almost every page. Click it.
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNEd0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--5923b0b92b58bdfae24709c292f2e6e49fba5190/new%20article.png)
+![New Article Button](./help-center/images/help-center/hc4.png)
 
 **Step 2.** Use the text editor to write your article. Use the sidebar to select your article's category and author and update the meta content. Here is an example:
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNDZ0VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1fff825cd2ff75ba253d76ff8ea4ce302ff8dbbc/writing%20an%20article%20in%20help%20center.png)
+![Editing the article](./help-center/images/help-center/hc5.png)
 
 You can use the "Preview" button to see how your article turns out. Once ready, click "Publish". Your live article will look like this:
 
-![](https://app.chatwoot.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNW10VHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--5a1f9ebd7b1a45390359c8b97d29b0bae632b0a8/published%20article.png)
+![Preview](./help-center/images/help-center/hc6.png)
