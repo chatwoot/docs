@@ -36,9 +36,38 @@ window.chatwootSettings = {
   position: "left", // This can be left or right
   locale: "en", // Language to be set
   useBrowserLanguage: false, // Set widget language from user's browser
+  baseDomain: '.mydomain.com'
   type: "standard", // [standard, expanded_bubble]
   darkMode: "auto", // [light, auto]
 };
+```
+
+### Persist chat session across sub domains `baseDomain` Configuration,
+
+The `baseDomain` config retains user chat sessions across sub-domains, ensuring a seamless chat experience as users navigate through your domain's pages.
+
+#### Setting Up
+
+Add the `baseDomain` configuration to `window.chatwootSettings`
+
+```
+window.chatwootSettings = {
+  //other settings
+  baseDomain: ".yourdomain.com",
+};
+```
+
+Replace `yourdomain.com` with your domain, keeping the preceding dot.
+
+**Notes**
+
+- Ensure SSL is set for all sub-domains.
+- Configuration applies to sub-domains, not different domains.
+
+**Example:**
+
+```
+baseDomain: '.chatwoot.com'
 ```
 
 ### Use browser language in your live chat widget automatically
