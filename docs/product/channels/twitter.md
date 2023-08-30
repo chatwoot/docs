@@ -5,6 +5,8 @@ title: 'Setup your Twitter channel'
 
 If you are using a self-hosted Chatwoot installation, please setup your Twitter inbox as described in [this guide](/docs/self-hosted/configuration/features/integrations/twitter-channel-setup).
 
+> _**NOTE: Twitter integration has been temporarily discontinued as a result of modifications made by Twitter to its APIs. This includes limitations on the number of requests raised per minute, plus substantial pricing changes.**_
+
 For the cloud version of Chatwoot, please follow the steps below.
 
 **Step 1**. Go to Settings → Inboxes → “Add Inbox”.
