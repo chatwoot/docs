@@ -49,6 +49,6 @@ When you reply to a conversation from Slack, the customer receives the reply fro
 
 ### Create private notes from Slack
 
-You can create a [private note]([url](https://www.chatwoot.com/features/private-notes)) in Chatwoot from Slack. If you prefix a message with "note:", it converts into a private note and notifies any tagged agents. Here is an example:
+You can create a [private note](https://www.chatwoot.com/features/private-notes) in Chatwoot from Slack. If you prefix a message with "note:", it converts into a private note and notifies any tagged agents. Here is an example:
 
 ![private-notes-from-slack](./images/private-notes-from-slack.png)
