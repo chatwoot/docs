@@ -114,14 +114,9 @@ module.exports = [
       "user-guide/features/multilingual-support",
       {
         Reports: [
-          "user-guide/features/reports/concepts",
           "user-guide/features/reports/overview",
-          "user-guide/features/reports/conversation",
           "user-guide/features/reports/csat",
-          "user-guide/features/reports/agent",
-          "user-guide/features/reports/label",
-          "user-guide/features/reports/inbox",
-          "user-guide/features/reports/team",
+          "user-guide/features/reports/others",
         ],
       },
       "user-guide/conversation-workflow",
