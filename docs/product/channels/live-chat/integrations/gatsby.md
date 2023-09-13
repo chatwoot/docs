@@ -21,7 +21,7 @@ If you are using yarn, use:
 yarn add gatsby-plugin-chatwoot
 ```
 
-## 2. Add the plguin to your Gatsby config file
+## 2. Add the plugin to your Gatsby config file
 
 ```js
 // In your gatsby-config.js
