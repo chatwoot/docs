@@ -31,10 +31,6 @@ If you have connected Slack before September 2023, you would not have had the op
 
 ### FAQ
 
-Q: We have integrated slack correctly, but we are not able to see the channel.
-
-A: Press the` cmd+k`/`ctrl+k` key and search for **customer-conversations** channel and verify if it got created. Your conversations from Chatwoot will come under this channel.
-
 Q. I am replying to a message but it's not showing up in the chatwoot inbox.
 
 A: When you reply to the message make sure you reply under the same thread. Each thread represents a separate conversation, so to show your reply to the same message you should reply under the thread. We use thread id to verify the separate conversation.
