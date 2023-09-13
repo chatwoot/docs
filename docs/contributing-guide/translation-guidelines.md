@@ -13,7 +13,8 @@ In the codebase the string are placed in the following locations.
 
 - `app/javascript/dashboard/i18n` - The strings related to the agent dashboard
 - `app/javascript/widget/i18n` - The strings related to the web widget
-- `config/locales` - The strings used in backend messages or API response.
+- `app/javascript/survey/i18n` - The strings related to CSAT surveys
+- `config/locales` - The strings used in backend messages or API responses
 
 You can login to the **Crowdin** ([https://translate.chatwoot.com](https://translate.chatwoot.com)) and create an account to view the strings that needs to be translated.
 
@@ -38,3 +39,11 @@ Proofreading helps ensure the accuracy and consistency of translations. Right no
 ### Releasing a new language
 
 All the translated strings would be included in the next release. If a language has *60% or more translated strings* in Crowdin, we would enable the language in Chatwoot app during the next release.
+
+#### Steps to raise a pull request for new langauge
+
+Please use this [pull request](https://github.com/chatwoot/chatwoot/pull/7905) as a reference for enabling a new language into Chatwoot. 
+
+- Ensure language is added and enabled in `config/initializers/languages.rb`
+- Include the language in `i18n/index.js` for the all the packs -> `dashboard, widget, survey` 
+- Select the language from Chatwoot settings UI and confirm the PR to be working
