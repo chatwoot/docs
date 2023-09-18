@@ -31,10 +31,9 @@ You must use the standard MRI implementation of Ruby. Chatwoot needs several Gem
 
 We only support Node.js 10.13.0 or higher.
 
-We recommend Node 16.x, as it's faster.
+We recommend Node 20.x, as it's faster and the latest.
 
-Chatwoot uses [webpack](https://webpack.js.org/) to compile frontend assets, which requires a minimum
-version of Node.js 10.13.0.
+Chatwoot uses [webpack](https://webpack.js.org/) to compile frontend assets, which requires a minimum version of Node.js 20.x.0.
 
 You can check which version you're running with `node -v`. If you're running
 a version older than `v10.13.0`, you need to update it to a newer version. You
