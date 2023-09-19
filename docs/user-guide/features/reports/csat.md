@@ -1,31 +1,81 @@
 ---
-title: "CSAT"
+title: "CSAT Reports"
 ---
 
-All the Customer Satisfaction surveys which have been collected from the customers during the end of the conversation can be seen here.
+If you have enabled CSAT surveys in your inboxes, you can analyze the results using the CSAT report.
 
-Click on 'Reports' icon on Chatwoot Dashboard Home Screen.
+**To view the CSAT Report, go to Reports → CSAT.** This is what it looks like:
 
-<div align="center">
+<div>
 
-<img src={require('../images/reports/csat_feedback.png').default} width="800" alt="CSAT Report Screen" />
-
-</div>
-
-Next, click on 'CSAT'. The screen will show the details of the Customer Surveys from the last 7 days.
-
-Default date range is last 7 days.
-
-<div align="center">
-
-<img src={require('../images/reports/csat2.png').default} width="800" alt="CSAT Report Screen" />
+<img src={require('../images/reports/csat_reports.png').default} width="800" alt="CSAT Report Screen" />
 
 </div>
 
-CSAT can be filtered using agent name. Multiple agents can be selected from the dropdown.
+## Customizing CSAT Reports
 
-<div align="center">
+CSAT reports can be filtered by the following metrics.
 
-<img src={require('../images/reports/csat_agent_filter.png').default} width="800" alt="CSAT Report Screen" />
+### Duration
 
+You can select the duration you want to see the report for. By default, this is set for the last 7 days.
+
+<div>
+<img src={require('../images/reports/csat_duration.png').default} width="800" alt="Chatwoot Home Screen" />
 </div>
+
+### Agents
+
+You can analyze the CSAT reports for particular agents only. Select one or more agent names from the dropdown.
+
+<div>
+<img src={require('../images/reports/csat_agents.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
+
+## Metrics in the CSAT Report
+
+### Quick Overview
+
+The upper half of your report will show metrics like this screenshot.
+
+<div>
+<img src={require('../images/reports/csat_metrics.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
+
+The following list explains what each metric means.
+
+#### Total responses
+
+This is the total number of responses received on your CSAT surveys, during the selected period and for the selected agent or agents.
+
+#### Satisfaction score
+
+This is the mean satisfaction score the survey takers gave, calculated using the following formula.
+
+**`(Total number of positive ratings/Total number of responses) * 100`**
+
+#### Response rate
+
+This indicates the proportion of customers that responded to the CSAT surveys sent. It is calculated using the following formula.
+
+**`(Total number of responses/Total number of CSAT survey requests sent) * 100`**
+
+#### Emoji scale
+
+Whenever a CSAT survey is requested from a customer, they are asked to rate their experience on an emoji scale like this:
+
+<div>
+<img src={require('../images/reports/csat_emoji_scale.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
+
+The emoji scale metrics that you see on your CSAT report show how many people (in percentage) used which emoji to rate their experience.
+
+### Details of responses
+
+The lower half of your report will list all the responses received. For eg., The screenshot below lists the CSAT survey responses received for agent Pranav Raj.
+
+<div>
+<img src={require('../images/reports/csat_response_details.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
+
+Tip: You can click on a conversation ID to jump to the associated conversation.

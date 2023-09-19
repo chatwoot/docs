@@ -1,33 +1,57 @@
 ---
-title: "Overview"
+title: "Overview Reports"
 ---
 
-Overview page is a live view. It shows below live metrics.
+The Overview page is a real-time update of what is happening in your account––how many conversations are open, which agents are available, etc.
 
-- Open conversations
-- Agent status
-- Conversations by agents
+**To view the Overview Report, go to Reports → Overview.** This is what it looks like:
 
-<div align="center">
-<img src={require('../images/reports/live_agent_load.png').default} width="800" alt="Chatwoot Home Screen" />
+<div>
+<img src={require('../images/reports/overview-reports.png').default} width="800" alt="Chatwoot Home Screen" />
 </div>
+
+## Metrics in the Overview Report
 
 ### Open conversations
 
-Open conversations shows 3 types of metric in account level.
+This shows the number of conversations on your account that are currently:
 
-- **Open** - Total number of open conversations in the account.
-- **Unattended** - Total number of [unattended conversations](concepts#unattended-conversations) in the account.
-- **Unassigned** - Total number of [unassigned conversations](concepts#unassigned-conversations) in the account.
+- **Open** - Ongoing customer interactions.
+
+- **Unattended** - Unattended customer conversations.
+
+- **Unassigned** - Conversations waiting to be assigned an agent.
+
+<div>
+<img src={require('../images/reports/realtime_metrics.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
 
 ### Agent status
 
-It shows the number of agents in online, busy and offline status.
+This shows the availability status of agents, categorized by:
+
+- Online
+
+- Busy
+
+- Offline
+
+<div>
+<img src={require('../images/reports/agent_status.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
 
 ### Conversation traffic
 
-The conversation traffic heatmap shows what times of the day are the busiest for the last seven days. Each cell represents the number of conversations received as a color shade; hovering over a cell will show the number of conversations received for that hour of the day.
+This heatmap shows what times of the day are the busiest for the last 7 days. Each cell represents the number of conversations received as a color shade; hovering over a cell will show the number of conversations received for that hour of the day.
+
+<div>
+<img src={require('../images/reports/conversation_traffic.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
 
 ### Conversations by agents
 
-This is an agent level conversation metric. This metric shows the number of open and unattended conversations for each agents in the account.
+This shows the number of conversations currently being handled by each agent. It can also be used to monitor their performance and workload.
+
+<div>
+<img src={require('../images/reports/conversation_by_agents.png').default} width="800" alt="Chatwoot Home Screen" />
+</div>
