@@ -13,10 +13,11 @@ Here is a quick glimpse of how dark mode functions on the live chat widget.
 
 To enable dark mode on Chatwoot widget, use the `darkMode` parameter along with the [chatwootSettings](/docs/product/channels/live-chat/sdk/setup).
 
-`darkMode` parameter supports two values.
+`darkMode` parameter supports 3 values.
 
 1. `light` - Enable only light mode. This is the default value.
 2. `auto` - Enable dark mode based on the operating system preference.
+3. `dark`- Enable dark mode only style irrespective of the OS system preferences.
 
 ```js
 window.chatwootSettings = {
@@ -24,5 +25,3 @@ window.chatwootSettings = {
   darkMode: "auto",
 };
 ```
-
-Note: `dark` only is not supported now. We will add the support in future releases.
