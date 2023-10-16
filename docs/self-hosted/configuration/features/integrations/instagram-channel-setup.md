@@ -14,16 +14,16 @@ title: "Setting Up Instagram Account"
 To use Instagram Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook developer app [here](./facebook-channel-setup.md).
 
 
-1. Click on the `Create App` button
+1. Click on the "Create App" button
 
 ![facebook_create_app](./images/facebook/facebook-create-app.png)
 
-2. Select the option `Other`.
+2. Select the option "Other".
 
 
 ![facebook_other_app](./images/facebook/facebook_other_app.png)
 
-3. For the app type, choose `Business`.
+3. For the app type, choose "Business"
 
 ![facebook_business](./images/facebook/facebook_business.png)
 
@@ -53,38 +53,38 @@ FB_APP_ID=
 
 ### Configure the Facebook App
 
-1. In the app settings, add your `Chatwoot installation domain` as your app domain.
+1. In the app settings, add your "Chatwoot installation domain" as your app domain.
 ![facebook_app_domain](./images/facebook/facebook_app_domain.png)
-2. Add the `Instagram Graph API` product via the Facebook app dashboard.
+2. Add the "Instagram Graph API" product via the Facebook app dashboard.
 ![instagram_product](./images/instagram/instagram_product.png)
 3. Go to the app settings and select "Webhooks". From there, choose Instagram and click on the "Subscribe to this object" button.
 ![instagram_webhooks](./images/instagram/instagram_webhooks.png)
 4. Provide the Callback URL as `{your_chatwoot_installation_url}/webhooks/instagram` and the Verify token as `IG_VERIFY_TOKEN` from your environment variable.
 ![instagram_webhook_url](./images/instagram/instagram_webhook_url.png)
 
-### Connect your facebook page with instagram account
+### Connect the facebook page with instagram account
 
-1. Go to https://www.facebook.com/pages/?category=your_pages and select your page and open the settings
+1. Go to [Facebook pages](https://www.facebook.com/pages/?category=your_pages) and select your page and open the settings
 
 ![facebook_page_settings](./images/instagram/facebook_page_settings.png)
 
 2. Go to "Linked accounts" and connect your instagram professional account.
 
-
 ![facebook_connect_instagram](./images/instagram/facebook_connect_instagram.png)
 
-
+3. Select the option "Business"
 ![instagram_connect_facebook](./images/instagram/instagram_connect_facebook.png)
 
+4. Select the instgram account category
 
 ![select_category_instagram](./images/instagram/select_category_instagram.png)
 
-
+5. If everything is okay, you will see the message "Instagram connected.”
 
 ![instagram_connect_success](./images/instagram/instagram_connect_success.png)
 
 
-Head over to chatwoot and create a Messenger inbox. Please refer to this [guide](../../../../product/channels/instagram)  for more details on creating a Messenger inbox in Chatwoot. 
+6. Head over to chatwoot and create a Messenger inbox. Please refer to this [guide](../../../../product/channels/instagram)  for more details on creating a Messenger inbox in Chatwoot. 
 
 So whenever you receive any message on Instagram, it will redirect to your Facebook page.
 
@@ -158,8 +158,8 @@ pages_show_list
 pages_manage_metadata
 pages_messaging
 ```
-### NOTE
-If your facebook app's version is more than 7.0 then you will need extra permission according to facebook's updated policy. Make sure you get permission for.
+
+> **Note**: If your facebook app's version is more than 7.0 then you will need extra permission according to facebook's updated policy. Make sure you get permission for.
 ```
 pages_read_engagement
 ```
@@ -199,8 +199,8 @@ Restart the Chatwoot local server. Then, your Chatwoot setup will be ready to re
 Go to webhook Instagram and click on Test with `v11.0`
 ![subscribe](./images/instagram/subscribe.png)
 
-### NOTE:
-You can have only one app connected to the chatwoot for Instagram and Facebook combined as the Messenger platform is common. But suppose you want to have separate channels for Instagram and Facebook. In that case, you can have multiple Facebook pages inside your app that would be connected to Facebook users and Instagram users separately and then connected to the different inbox in the chatwoot page.
+
+> **Note**: You can have only one app connected to the chatwoot for Instagram and Facebook combined as the Messenger platform is common. But suppose you want to have separate channels for Instagram and Facebook. In that case, you can have multiple Facebook pages inside your app that would be connected to Facebook users and Instagram users separately and then connected to the different inbox in the chatwoot page.
 
 ### Checklist
 		

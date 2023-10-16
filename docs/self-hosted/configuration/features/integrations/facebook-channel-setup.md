@@ -3,7 +3,7 @@ sidebar_label: "Facebook"
 title: "Setting Up Facebook"
 ---
 
-To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook channels [here](https://developers.facebook.com/docs/apps/#register).
+To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](https://developers.facebook.com/docs/apps/#register).
 
 
 ### Prerequisites
@@ -14,16 +14,16 @@ To use Facebook Channel, you have to create a Facebook app in the developer port
 
 ### Register A Facebook App
 
-1. Click on the `Create App` button
+1. Go to [Facebook developer portal](https://developers.facebook.com/apps/) and click on the "Create App" button
 
 ![facebook_create_app](./images/facebook/facebook-create-app.png)
 
-2. Select the option `Other`.
+2. Select the option "Other".
 
 
 ![facebook_other_app](./images/facebook/facebook_other_app.png)
 
-3. For the app type, choose `Business`.
+3. For the app type, choose "Business".
 
 ![facebook_business](./images/facebook/facebook_business.png)
 
@@ -37,13 +37,11 @@ Once you register your Facebook App, you will have to obtain the `App Id` and `A
 ![facebook_app_id](./images/facebook/facebook_app_id.png)
 
 
-
-
 ### Configuring the Environment Variables in Chatwoot
 
 Configure the following Chatwoot environment variables with the values you have obtained during the Facebook app setup.
 `FB_VERIFY_TOKEN` should be a unique secure string that should be provided when configuring the Facebook app. Generate a
-random string and set this as `FB_VERIFY_TOKEN` for now.
+random string and set this as `FB_VERIFY_TOKEN`. The facebook will include this string in all verification requests.
 
 Restart the chatwoot server after updating the environment variables
 
@@ -71,11 +69,11 @@ FB_APP_ID=
 
 ![facebook_app_domain](./images/facebook/facebook_app_domain.png)
 
-2. In the products section in your app settings page, Add Messenger
+2. In the products section in your app settings page, Add "Messenger"
 
 ![facebook_messenger_product](./images/facebook/facebook_messenger_product.png)
 
-3. Go to the Messenger settings and configure the callBack URL 
+3. Go to the Messenger settings and configure the call back URL 
 
 ![Alt text](./images/facebook/facebook_messenger_section.png)
 
@@ -84,7 +82,7 @@ FB_APP_ID=
 
 ![facebook_callback_url](./images/facebook/facebook_callback_url.png)
 
-5. Head over to chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook)  for more details on creating a Facebook inbox in Chatwoot.
+5. Head over to chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook)  for more details on creating a Messenger inbox in Chatwoot.
 
 
 <!-- [guide](user-guide/features/pre-chat-form.md). -->
@@ -99,7 +97,7 @@ To test the changes until the app is approved for production. Follow the steps
 ![facebook_messenger_settings](./images/facebook/facebook_messenger_settings.png)
 
 
-2. Click `Add or remove pages` and connect the page which you choose while creating the chatwoot Facebook inbox.
+2. Click `Add or remove pages` and connect the page which you choose while creating the chatwoot Messenger inbox.
 
 ![facebook_callback_pages](./images/facebook/facebook_callback_pages.png)
 
@@ -133,12 +131,16 @@ Business Asset User Profile Access
 pages_show_list
 pages_manage_metadata
 ```
-### NOTE
-If your facebook app's version is more than 7.0 then you will need extra permission according to facebook's updated policy. Make sure you get permission for.
+
+
+> **Note**: If your facebook app's version is more than 7.0 then you will need extra permission according to facebook's updated policy. Make sure you get permission for.
 ```
 pages_read_engagement
 ```
 Make sure your facebook app subscription version is 12.0, we have updated the FB subscription with the latest version, so change the permission subscription version uder the facebook app webhooks option.
+
+
+
 
 ### Developing or Testing Facebook Integration in your machine
 
