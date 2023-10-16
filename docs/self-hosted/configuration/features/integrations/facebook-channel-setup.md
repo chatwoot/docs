@@ -8,28 +8,26 @@ To use Facebook Channel, you have to create a Facebook app in the developer port
 
 ### Prerequisites
 
-1. Valid facebook account.
-2. Valid facebook page.
+1. A valid facebook account.
+2. A valid facebook page.
 
 
 ### Register A Facebook App
 
-1. Click on `Create App` button
+1. Click on the `Create App` button
 
 ![facebook_create_app](./images/facebook/facebook-create-app.png)
 
-2. Choose the option `others`.
+2. Select the option `Other`.
 
 
 ![facebook_other_app](./images/facebook/facebook_other_app.png)
 
-3. In the select an app type, choose `business`.
+3. For the app type, choose `Business`.
 
 ![facebook_business](./images/facebook/facebook_business.png)
 
-
-3. Fill the basic details like App name, email. 
-
+3. Enter basic details like the app name and email.
 
 ![facebook_business_details](./images/facebook/facebook_business_details.png)
 
@@ -60,7 +58,7 @@ FB_APP_ID=
 
 1. Add the Facebook Login product via the Facebook app dashboard.
 
-![facebook_app_login](images/facebook/facebook_app_login.png)
+![facebook_app_login](./images/facebook/facebook_app_login.png)
 
 
 2. Enable `Web OAuth Login`, `Login with Javascript SDK` and add your self-hosted domain to the `Allowed Domains for the JavaScript SDK` input.
@@ -71,23 +69,25 @@ FB_APP_ID=
 
 1. In the app settings, add your `Chatwoot installation domain` as your app domain.
 
-![facebook_app_domain](images/facebook/facebook_app_domain.png)
+![facebook_app_domain](./images/facebook/facebook_app_domain.png)
 
 2. In the products section in your app settings page, Add Messenger
 
-![facebook_messenger_product](images/facebook/facebook_messenger_product.png)
+![facebook_messenger_product](./images/facebook/facebook_messenger_product.png)
 
 3. Go to the Messenger settings and configure the callBack URL 
 
-![Alt text](images/facebook/facebook_messenger_section.png)
+![Alt text](./images/facebook/facebook_messenger_section.png)
 
 4. Provide the Callback URL as `{your_chatwoot_installation_url}/bot` and the Verify token as `FB_VERIFY_TOKEN` from your environment variable.
 
 
-![facebook_callback_url](images/facebook/facebook_callback_url.png)
+![facebook_callback_url](./images/facebook/facebook_callback_url.png)
 
-5. Head over to chatwoot and create a Facebook inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](https://www.chatwoot.com/docs/product/channels/facebook) for more details on creating a Facebook inbox in Chatwoot.
+5. Head over to chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook)  for more details on creating a Facebook inbox in Chatwoot.
 
+
+<!-- [guide](user-guide/features/pre-chat-form.md). -->
 ### Testing the Facebook channel
 
 Until the application is approved for production, Facebook wouldn't send the new messages on your page to chatwoot.
@@ -96,17 +96,17 @@ To test the changes until the app is approved for production. Follow the steps
 
 1. Head over to the messenger section in your app settings page, in Facebook developers.
 
-![facebook_messenger_settings](images/facebook/facebook_messenger_settings.png)
+![facebook_messenger_settings](./images/facebook/facebook_messenger_settings.png)
 
 
 2. Click `Add or remove pages` and connect the page which you choose while creating the chatwoot Facebook inbox.
 
-![facebook_callback_pages](images/facebook/facebook_callback_pages.png)
+![facebook_callback_pages](./images/facebook/facebook_callback_pages.png)
 
 
 3. After connecting the pages, Click on `Add subscriptions` from the connected page.
 
-![facebook_page_config](images/facebook/facebook_page_config.png)
+![facebook_page_config](./images/facebook/facebook_page_config.png)
 
 4. Subscribe to the following fields and save the subscription.
 ```
@@ -118,7 +118,7 @@ message_echoes
 ```
 
 
-![facebook_page_subscription](images/facebook/facebook_page_subscription.png)
+![facebook_page_subscription](./images/facebook/facebook_page_subscription.png)
 
 4. Send a message to the connected page from your Facebook account and it should appear in chatwoot now.
 
