@@ -26,6 +26,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [DigitalOcean](/docs/self-hosted/deployment/digital-ocean)
 - [Google Cloud Platform (GCP)](/docs/self-hosted/deployment/gcp)
 - [Heroku](/docs/self-hosted/deployment/heroku)
+- [Elestio](/docs/self-hosted/deployment/elestio)
 
 ### Community contributed providers
 
