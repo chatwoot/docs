@@ -60,4 +60,5 @@ Now, that you have completed the environment as mentioned above, use the followi
 * [Code of conduct](/docs/contributing-guide/code-of-conduct)
 * [Security Reports](/docs/contributing-guide/security-reports)
 * [Translation guidelines](/docs/contributing-guide/translation-guidelines)
+* [Community guidelines](/docs/contributing-guide/community-guidelines)
 * [Contributors](/docs/contributing-guide/contributors)

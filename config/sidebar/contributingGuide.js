@@ -55,6 +55,7 @@ module.exports = [
       "contributing-guide/api-documentation",
       "contributing-guide/security-reports",
       "contributing-guide/translation-guidelines",
+      "contributing-guide/community-guidelines",
       "contributing-guide/code-of-conduct",
       "contributing-guide/contributors",
     ],
