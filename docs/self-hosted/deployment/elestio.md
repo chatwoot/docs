@@ -30,7 +30,7 @@ title: "Elestio Chatwoot fully managed deployment guide"
  ![Elestio Dashboard](./images/elestio-dash.png)
 
  ## Update Chatwoot
- - Go to Overview section in your Ackee service
+ - Go to Overview section in your Chatwoot service
  - Click "Change version" inside Software section
  - Choose the latest version or the version of your choice.
  - Additionally update the configs or restart the instance with single clink under same section
