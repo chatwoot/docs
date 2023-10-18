@@ -8,6 +8,26 @@ You can create these messages using the [New Message API](https://www.chatwoot.c
 
 ![interactive_messages](./images/interactive_messages.png)
 
+### Supported Channels
+The compatibility of message types across different channels can vary. For a comprehensive understanding of the support provided for each message type within specific channels, please consult the table below.
+
+
+| Channel                  | Options | Forms | Cards | Articles |     |
+|--------------------------|---------|-------|-------|----------|-----|
+| Website Live-chat        | ✅     | ✅   | ✅   | ✅      |  |
+| Email                    | ❌    | ❌  | ❌  | ❌     |  |
+| Facebook                 | ❌    | ❌  | ❌  | ❌     |  |
+| Instagram                | ❌     | ❌   | ❌   | ❌      |  |
+| SMS via Twilio           | ❌     | ❌   | ❌   | ❌      |  |
+| SMS via Bandwidth        | ❌     | ❌   | ❌   | ❌      |  |
+| Whatsapp via Twilio      | ❌     | ❌   | ❌   | ❌      |  |
+| Whatsapp via Whatsapp Cloud | ✅  | ❌  | ❌  | ❌     |  |
+| Whatsapp via 360Dialog   | ✅     | ❌   | ❌   | ❌      |  |
+| API Channel              | ✅     | ✅   | ✅   | ✅      | Interactions should be handled by the client  |
+| Telegram                 | ✅     | ❌    | ❌    | ❌       |  |
+| Line                     | ❌     | ❌   | ❌   | ❌      |  |
+
+
 ### Payload Samples
 
 Use the following payload samples as the values to create various interactive messages.
@@ -125,3 +145,4 @@ Use the following payload samples as the values to create various interactive me
     "private":false
 }
 ```
+
