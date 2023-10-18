@@ -44,7 +44,7 @@ module.exports = [
           "self-hosted/deployment/cloudron",
           "self-hosted/deployment/restack",
           "self-hosted/deployment/easypanel",
-          "self-hosted/deployment/elestio"
+          "self-hosted/deployment/elestio",
         ],
       },
       "self-hosted/deployment/troubleshooting",
