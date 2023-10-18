@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Elesstio"
+sidebar_label: "Elestio"
 title: "Elestio Chatwoot fully managed deployment guide"
 ---
 ## Deploy to Elestio with one-click
