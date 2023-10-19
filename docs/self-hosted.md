@@ -34,6 +34,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Cloudron](/docs/self-hosted/deployment/cloudron)
 - [Restack](/docs/self-hosted/deployment/restack)
 - [Easypanel](/docs/self-hosted/deployment/easypanel)
+- [Elestio](/docs/self-hosted/deployment/elestio)
 
 ## Configuration
 
