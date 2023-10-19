@@ -39,11 +39,9 @@ Once you register your Facebook App, you will have to obtain the `App Id` and `A
 
 ### Configuring the Environment Variables in Chatwoot
 
-Configure the following Chatwoot environment variables with the values you have obtained during the Facebook app setup.
-`FB_VERIFY_TOKEN` should be a unique secure string that should be provided when configuring the Facebook app. Generate a
-random string and set this as `FB_VERIFY_TOKEN`. The facebook will include this string in all verification requests.
+Configure the following Chatwoot environment variables with the values you obtained during the Facebook app setup. The `FB_VERIFY_TOKEN` should be a unique and secure string that you provide when configuring the Facebook app. Generate a random string and set it as the `FB_VERIFY_TOKEN`. Facebook will include this string in all verification requests.
 
-Restart the chatwoot server after updating the environment variables
+Restart the Chatwoot server after updating the environment variables
 
 ```bash
 FB_VERIFY_TOKEN=
@@ -82,13 +80,13 @@ FB_APP_ID=
 
 ![facebook_callback_url](./images/facebook/facebook_callback_url.png)
 
-5. Head over to chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook)  for more details on creating a Messenger inbox in Chatwoot.
+5. Head over to Chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook) for more details on creating a Messenger inbox in Chatwoot.
 
 
 <!-- [guide](user-guide/features/pre-chat-form.md). -->
 ### Testing the Facebook channel
 
-Until the application is approved for production, Facebook wouldn't send the new messages on your page to chatwoot.
+Until the application is approved for production, Facebook wouldn't send the new messages on your page to Chatwoot.
 
 To test the changes until the app is approved for production. Follow the steps
 
@@ -97,7 +95,7 @@ To test the changes until the app is approved for production. Follow the steps
 ![facebook_messenger_settings](./images/facebook/facebook_messenger_settings.png)
 
 
-2. Click `Add or remove pages` and connect the page which you choose while creating the chatwoot Messenger inbox.
+2. Click `Add or remove pages` and connect the page which you choose while creating the Chatwoot Messenger inbox.
 
 ![facebook_callback_pages](./images/facebook/facebook_callback_pages.png)
 
@@ -118,7 +116,7 @@ message_echoes
 
 ![facebook_page_subscription](./images/facebook/facebook_page_subscription.png)
 
-4. Send a message to the connected page from your Facebook account and it should appear in chatwoot now.
+4. Send a message to the connected page from your Facebook account and it should appear in Chatwoot now.
 
 ### Going into production.
 
@@ -137,7 +135,7 @@ pages_manage_metadata
 ```
 pages_read_engagement
 ```
-Make sure your facebook app subscription version is 12.0, we have updated the FB subscription with the latest version, so change the permission subscription version uder the facebook app webhooks option.
+Make sure your facebook app subscription version is 12.0, we have updated the FB subscription with the latest version, so change the permission subscription version under the facebook app webhooks option.
 
 
 

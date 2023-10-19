@@ -40,10 +40,9 @@ Once you register your Facebook App, you will have to obtain the `App Id` and `A
 
 ### Configuring the Environment Variables in Chatwoot
 
-Configure the following Chatwoot environment variables with the values you have obtained during the Facebook app setup.
-`IG_VERIFY_TOKEN` should be a unique secure string that should be provided when configuring the Instagram app.
+Configure the following Chatwoot environment variables with the values you obtained during the Facebook app setup. The `IG_VERIFY_TOKEN` should be a unique and secure string that you provide when configuring the Instagram app.
 
-Restart the chatwoot server after updating the environment variables
+Restart the Chatwoot server after updating the environment variables
 
 ```bash
 IG_VERIFY_TOKEN=
@@ -59,7 +58,7 @@ FB_APP_ID=
 ![instagram_product](./images/instagram/instagram_product.png)
 3. Go to the app settings and select "Webhooks". From there, choose Instagram and click on the "Subscribe to this object" button.
 ![instagram_webhooks](./images/instagram/instagram_webhooks.png)
-4. Provide the Callback URL as `{your_chatwoot_installation_url}/webhooks/instagram` and the Verify token as `IG_VERIFY_TOKEN` from your environment variable.
+4. Provide the Callback URL as `{your_Chatwoot_installation_url}/webhooks/instagram` and the Verify token as `IG_VERIFY_TOKEN` from your environment variable.
 ![instagram_webhook_url](./images/instagram/instagram_webhook_url.png)
 
 ### Connect the facebook page with instagram account
@@ -84,13 +83,13 @@ FB_APP_ID=
 ![instagram_connect_success](./images/instagram/instagram_connect_success.png)
 
 
-6. Head over to chatwoot and create a Messenger inbox. Please refer to this [guide](../../../../product/channels/instagram)  for more details on creating a Messenger inbox in Chatwoot. 
+6. Head over to Chatwoot and create a Messenger inbox. Please refer to this [guide](../../../../product/channels/instagram)  for more details on creating a Messenger inbox in Chatwoot. 
 
 So whenever you receive any message on Instagram, it will redirect to your Facebook page.
 
 ### Testing the Instagram channel
 
-Until the application is approved for production, Facebook wouldn't send the new messages on your instagram to chatwoot.
+Until the application is approved for production, Facebook wouldn't send the new messages on your instagram to Chatwoot.
 To test the changes until the app is approved for production. Follow the steps
 
 1. Create a Test app for your app.
@@ -143,8 +142,8 @@ messaging_seen
 
 Note: You should do this step for both normal and test apps.
 
-11. Head over to chatwoot and create a Messenger inbox. Please refer to this [guide](../../../../product/channels/instagram)  for more details on creating a Messenger inbox in Chatwoot. 
-. Send a message to the connected Instagram account from Instagram Testers, and it should appear in chatwoot now
+11. Head over to Chatwoot and create a Messenger inbox. Please refer to this [guide](../../../../product/channels/instagram)  for more details on creating a Messenger inbox in Chatwoot. 
+. Send a message to the connected Instagram account from Instagram Testers, and it should appear in Chatwoot now
 
 ### Going into production.
 
@@ -200,7 +199,7 @@ Go to webhook Instagram and click on Test with `v11.0`
 ![subscribe](./images/instagram/subscribe.png)
 
 
-> **Note**: You can have only one app connected to the chatwoot for Instagram and Facebook combined as the Messenger platform is common. But suppose you want to have separate channels for Instagram and Facebook. In that case, you can have multiple Facebook pages inside your app that would be connected to Facebook users and Instagram users separately and then connected to the different inbox in the chatwoot page.
+> **Note**: You can have only one app connected to the Chatwoot for Instagram and Facebook combined as the Messenger platform is common. But suppose you want to have separate channels for Instagram and Facebook. In that case, you can have multiple Facebook pages inside your app that would be connected to Facebook users and Instagram users separately and then connected to the different inbox in the Chatwoot page.
 
 ### Checklist
 		
