@@ -80,11 +80,6 @@ Once you finish all the steps, the section should look like the following screen
 
 ![Webhook Section](../images/whatsapp/whatsapp-cloud/enabling-webhook.png)
 
-## FAQ
-
-### How to configure multiple numbers under a single Facebook app?
-
-Facebook App allows configuring only a single Webhook endpoint. So create Inboxes in Chatwoot for all the numbers as required. You will need to configure the Webhook URL provided for only one of these inboxes in the Facebook app for all the other inboxes to work.
 
 ## Additional Inbox settings
 
@@ -118,3 +113,21 @@ All the Additional Settings available are the same as those in your Twitter inbo
 | video/3gp                                                                 | Supported | Not Supported  |
 | **Sticker**                                                               |           |                |
 | image/webp                                                                | Supported | Not supported  |
+
+
+## FAQ
+
+### How to configure multiple numbers under a single Facebook app?
+
+Facebook App allows configuring only a single Webhook endpoint. So create Inboxes in Chatwoot for all the numbers as required. You will need to configure the Webhook URL provided for only one of these inboxes in the Facebook app for all the other inboxes to work.
+
+
+### Validating Whatsapp API Key
+
+Chatwoot internally validates a WhatsApp key with the following GET API call:
+
+```bash
+GET https://graph.facebook.com/v14.0/business_account_id/message_templates?access_token=api_key
+```
+
+To test the key, make the above API call and check for any errors.
