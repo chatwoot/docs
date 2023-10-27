@@ -26,10 +26,16 @@ brew update
 brew install git
 ```
 
-### Install RVM
+### Install RVM or rbenv
 
 ```bash
 curl -L https://get.rvm.io | bash -s stable
+```
+
+Alternatively you can use `rbenv`
+
+```bash
+brew install rbenv
 ```
 
 ### Install Ruby
