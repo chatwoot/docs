@@ -86,12 +86,16 @@ or
 
 ```bash
 brew install postgresql
+# Ensure Postgres is started
+brew services start postgresql
+# create user postgres 
+createuser postgres
 ```
 
 The installation procedure created a user account called postgres that is associated with the default Postgres role. In order to use Postgres, you can log into that account.
 
 ```bash
-sudo -u postgres psql
+sudo psql -U postgres
 ```
 
 ### Install redis-server
