@@ -160,6 +160,12 @@ window.$chatwoot.setUser("<unique-identifier-key-of-the-user>", {
 
 Make sure that you reset the session when the user logs out of your app.
 
+### Reset the session (use this while you logout the user from your app)
+
+```js
+window.$chatwoot.reset();
+```
+
 ### Identity validation using HMAC
 
 To disallow impersonation and to keep the conversation with your customers private, we recommend setting up the identity validation in Chatwoot. Identity validation is enabled by generating an HMAC(hash based message authentication code) based on the `identifier` attribute, using SHA256. Along with the `identifier` you can pass `identifier_hash` also as shown below to make sure that the user is correct one.
@@ -249,12 +255,6 @@ Please note that the labels will be set on a conversation if the user has not st
 window.$chatwoot.setLabel("support-ticket");
 
 window.$chatwoot.removeLabel("support-ticket");
-```
-
-### Refresh the session (use this while you logout the user from your app)
-
-```js
-window.$chatwoot.reset();
 ```
 
 ### Widget errors
