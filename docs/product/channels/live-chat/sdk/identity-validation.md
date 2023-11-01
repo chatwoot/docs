@@ -25,7 +25,7 @@ Once you've generated an HMAC for an identifier using the key above, you can use
 window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
   name: "", // Name of the user
   email: "", // Email of the user
-  identifier_hash: "<identifier-hash>" // Identifier Hash generated in the previous step
+  identifier_hash: "<identifier-hash>" // HMAC value which generated using key and unique identifier of the user.
 }
 ```
 
@@ -40,7 +40,7 @@ You can integrate the identity verification in React Native as well. You can fin
 ```jsx
 const App = () => {
   const user = {
-    identifier: "john@gmail.com",
+    identifier: "<unique-identifier-key-of-the-user>",
     name: "John Samuel",
     email: "john@gmail.com",
     identifier_hash: "<identifier-hash>",
@@ -74,10 +74,10 @@ _If this option is enabled any incoming message from a unverified user will be r
 
 // Define your key and message
 $key = 'your-secret-token-for-hmac';
-$message = 'some-unique-identifier';
+$identifier = 'unique-identifier-of-the-user';
 
 // Generate the HMAC
-$identifier_hash = hash_hmac('sha256', $message, $key);
+$identifier_hash = hash_hmac('sha256', $identifier, $key);
 ?>
 
 ```
@@ -87,14 +87,14 @@ $identifier_hash = hash_hmac('sha256', $message, $key);
 ```js
 const crypto = require("crypto");
 
-// Define your key and message
+// Define your key and identifier
 const key = "your-secret-token-for-hmac";
-const message = "some-unique-identifier";
+const identifier = "unique-identifier-key-of-the-user";
 
 // Generate the HMAC
 const identifierHash = crypto
   .createHmac("sha256", key)
-  .update(message)
+  .update(identifier)
   .digest("hex");
 ```
 
@@ -103,23 +103,23 @@ const identifierHash = crypto
 ```ruby
 require 'openssl'
 
-# Define your key and message
+# Define your key and identifier
 key = 'your-secret-token-for-hmac'
-message = 'some-unique-identifier'
+identifier = 'unique-identifier-of-the-user'
 
 # Generate the HMAC
-identifier_hash = OpenSSL::HMAC.hexdigest('sha256', key, message)
+identifier_hash = OpenSSL::HMAC.hexdigest('sha256', key, identifier)
 ```
 
 ### Elixir
 
 ```elixir
-# Define your key and message
+# Define your key and identifier
 key = 'your-secret-token-for-hmac'
-message = 'some-unique-identifier'
+identifier = 'unique-identifier-of-the-user'
 
 # Generate the HMAC
-signature = :crypto.hmac(:sha256, key, message)
+signature = :crypto.hmac(:sha256, key, identifier)
 
 identifier_hash = Base.encode16(signature, case: :lower)
 ```
@@ -137,13 +137,13 @@ import (
 )
 
 func main() {
-	// Define your key and message
+	// Define your key and identifier
 	key := []byte("your-secret-token-for-hmac")
-	message := []byte("some-unique-identifier")
+	identifier := []byte("unique-identifier-of-the-user")
 
 	// Generate the HMAC
 	hash := hmac.New(sha256.New, key)
-	hash.Write(message)
+	hash.Write(identifier)
 	identifierHash := hex.EncodeToString(hash.Sum(nil))
 
 	// Print the HMAC
@@ -158,11 +158,11 @@ func main() {
 import hashlib
 import hmac
 
-# Define your key and message
+# Define your key and identifier
 secret = bytes('your-secret-token-for-hmac', 'utf-8')
-message = bytes('some-unique-identifier', 'utf-8')
+identifier = bytes('unique-identifier-of-the-user', 'utf-8')
 
 # Generate the HMAC
-hash = hmac.new(secret, message, hashlib.sha256)
+hash = hmac.new(secret, identifier, hashlib.sha256)
 identifier_hash = hash.hexdigest()
 ```
