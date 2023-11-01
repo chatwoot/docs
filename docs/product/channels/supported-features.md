@@ -8,14 +8,16 @@ title: "Supported features on channels"
 
 <div class="table table-striped">
 
-| Channel | Incoming/Outgoing message | Activity message | Template message |
-| -- | -- | -- | -- |
-| Website | Yes | Yes | Yes |
-| Facebook | Yes | Yes | No |
-| Twitter DM | Yes | Yes | No |
-| Tweets | Yes | Yes | No |
-| SMS | Yes | Yes | No |
-| Whatsapp | Yes | Yes | No |
+| Channel | Incoming/Outgoing message | Activity message | 
+| -- | -- | -- | 
+| Website | Yes | Yes | 
+| Facebook/Instagram (Messenger) | Yes | Yes | 
+| SMS | Yes | Yes | 
+| Whatsapp | Yes | Yes | 
+| Email | Yes | Yes |
+| Telegram | Yes | Yes |
+| Line | Yes | Yes |
+| API | Yes | Yes |
 
 </div>
 
@@ -26,13 +28,33 @@ title: "Supported features on channels"
 | Channel | Maximum message size |
 | -- | -- |
 | Website | 10,000 |
-| Facebook | 640 |
-| Twitter DM | 10,000 |
-| Tweets | 280 |
+| Facebook/Instagram (Messenger) | 640 |
 | SMS | 160 |
 | Whatsapp | 10,000 |
+| Email | 10,000 |
+| Telegram | 4096 |
+| Line | 2000 |
+| API | 10,000 |
 
 </div>
+
+### Outbound conversation restriction
+
+<div class="table table-striped">
+
+| Channel | Restriction |
+| -- | -- |
+| Website | You can create outbound conversations to verified contacts |
+| Facebook/Instagram (Messenger) | Cannot create outbound conversations. First message should be from the contact  |
+| SMS | No restriction |
+| Whatsapp | Cannot send any message other than Whatsapp approved template messages 24 hours after the last incoming message |
+| Email | No restriction |
+| Telegram | Cannot create outbound conversations. First message should be from the contact  | 
+| Line | Cannot create outbound conversations. First message should be from the contact  |
+| API | No restriction |
+
+</div>
+
 
 ### Outgoing message restriction
 
@@ -41,11 +63,14 @@ title: "Supported features on channels"
 | Channel | Restriction |
 | -- | -- |
 | Website | No restriction |
-| Facebook | Cannot send promotional messages 24 hours after the last incoming message  |
-| Twitter DM | No restriction |
-| Tweets | No restriction |
+| Facebook/Instagram (Messenger) | Cannot send promotional messages 24 hours after the last incoming message  |
 | SMS | No restriction |
 | Whatsapp | Cannot send any message other than Whatsapp approved template messages 24 hours after the last incoming message |
+| Email | No restriction |
+| Telegram |  No restriction  | 
+| Line | No restriction  |
+| API | No restriction |
+
 
 </div>
 
@@ -56,10 +81,12 @@ title: "Supported features on channels"
 | Channel | Channel greeting | Attachments | Agent Auto assignment | Slack |
 | -- | -- | -- | -- | -- |
 | Website | Yes | Yes | Yes | Yes |
-| Facebook | Yes | Yes | Yes | No |
-| Twitter DM | Yes | No | Yes | No |
-| Tweets | Yes | No | Yes | No |
-| SMS | Yes | No | Yes | No |
-| Whatsapp | Yes | Yes | Yes | No |
+| Facebook/Instagram (Messenger) | Yes | Yes | Yes | Yes |
+| SMS | Yes | No | Yes | Yes |
+| Whatsapp | Yes | Yes | Yes | Yes |
+| Email | Yes | Yes | Yes | Yes |
+| Telegram | Yes | Yes | Yes | Yes |
+| Line | Yes | No | Yes | Yes |
+| API | Yes | Yes | Yes | Yes |
 
 </div>
