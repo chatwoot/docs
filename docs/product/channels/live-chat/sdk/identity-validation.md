@@ -25,7 +25,7 @@ Once you've generated an HMAC for an identifier using the key above, you can use
 window.$chatwoot.setUser(`<unique-identifier-key-of-the-user>`, {
   name: "", // Name of the user
   email: "", // Email of the user
-  identifier_hash: "<identifier-hash>" // HMAC value which generated using key and unique identifier of the user.
+  identifier_hash: "<identifier-hash>" // HMAC value which generated using key and unique identifier key of the user.
 }
 ```
 
