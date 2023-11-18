@@ -166,3 +166,16 @@ identifier = bytes('unique-identifier-of-the-user', 'utf-8')
 hash = hmac.new(secret, identifier, hashlib.sha256)
 identifier_hash = hash.hexdigest()
 ```
+
+
+
+### Dotnet C#
+
+```cs
+var key = "your-secret-key-for-hmac"u8.ToArray();
+var idBytes = System.Text.Encoding.ASCII.GetBytes(unique-identifier-of-the-user);
+
+var hmac = new HMACSHA256(key);
+var hashBytes = hmac.ComputeHash(idBytes);
+var ChatwootHmac = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+```
