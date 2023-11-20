@@ -89,7 +89,7 @@ title: "Supported features on channels"
 | Bandwidth SMS | Yes | Yes | Not supported | Yes |
 | Facebook | Yes | Yes | Yes | Yes |
 | Instagram | Yes | Not supported | Yes | Yes |
-| Line | Yes | No | Not supported | Yes |
+| Line | Yes | Not supported | Not supported | Yes |
 | Telegram | Yes | Not supported | Not supported | Yes |
 | Email | Yes | Not supported | Not supported | Not supported |
 
