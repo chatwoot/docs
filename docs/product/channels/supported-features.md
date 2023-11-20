@@ -74,6 +74,28 @@ title: "Supported features on channels"
 
 </div>
 
+### Outgoing message delivery status
+
+<div class="table table-striped">
+
+| Channel | Sent status | Read status | Delivered status | Failed status |
+| -- | -- | -- | -- | -- |
+| Website | Yes | Yes | Yes | Yes |
+| API | Yes | Yes | Yes | Yes |
+| Official WhatsApp | Yes | Yes | Yes | Yes |
+| Twilio WhatsApp | Yes | Yes | Yes | Yes |
+| 360Dialog WhatsApp | Yes | Yes | Yes | Yes |
+| Twilio SMS | Yes | Yes | Not supported  | Yes |
+| Bandwidth SMS | Yes | Yes | Not supported | Yes |
+| Facebook | Yes | Yes | Yes | Yes |
+| Instagram | Yes | Not supported | Yes | Yes |
+| Line | Yes | Not supported | Not supported | Yes |
+| Telegram | Yes | Not supported | Not supported | Yes |
+| Email | Yes | Not supported | Not supported | Not supported |
+
+
+</div>
+
 ### Available features
 
 <div class="table table-striped">
