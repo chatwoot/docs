@@ -127,6 +127,7 @@ module.exports = [
       "user-guide/features/pre-chat-form",
       "user-guide/features/priority",
       "user-guide/features/audit-logs",
+      "user-guide/features/insert-articles",
       {
         type: "category",
         label: "Campaigns",
