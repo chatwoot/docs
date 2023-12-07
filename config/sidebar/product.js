@@ -127,7 +127,6 @@ module.exports = [
       "user-guide/features/pre-chat-form",
       "user-guide/features/priority",
       "user-guide/features/audit-logs",
-      "user-guide/features/insert-articles",
       {
         type: "category",
         label: "Campaigns",
@@ -141,7 +140,7 @@ module.exports = [
         label: "Help Center",
         items: [
           "product/others/help-center",
-          ,
+          "user-guide/features/insert-articles",
           "product/others/help-center/configure-ssl-for-help-center",
         ],
       },
