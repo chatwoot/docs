@@ -200,7 +200,7 @@ Click on the 3 dots on the top right hand side of the screen. There is an option
 
 </div>
 
-A screen opens up with first option as 'Send the transcript to assinged agent' and second option as 'Send the transcript to another email address'.
+A screen opens up with first option as 'Send the transcript to assigned agent' and second option as 'Send the transcript to another email address'.
 
 <div align="center">
 
