@@ -79,7 +79,7 @@ The first time you start your development environment run the following two comm
 # build and start the services
 docker-compose up --build
 # prepare the database
-docker-compose exec server bundle exec rails db:prepare
+docker-compose exec rails bundle exec rails db:chatwoot_prepare
 ```
 Then browse http://localhost:3000
 
