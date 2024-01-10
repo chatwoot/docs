@@ -29,7 +29,7 @@ make db
 
 ## Run database seed
 
-Apply necessary database seed to your development environment by running the following command:
+Load some seed data to your development environment for testing by running the following command:
 ```
 make db_seed
 ```
