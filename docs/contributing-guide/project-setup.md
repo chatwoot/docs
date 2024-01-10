@@ -107,7 +107,7 @@ The docker-compose environment consists of:
 If in case you encounter a seeding issue or you want reset the database you can do it using the following command :
 
 ```bash
-docker-compose run -rm server bundle exec rake db:reset
+docker-compose run -rm rails bundle exec rake db:reset
 ```
 
 This command essentially runs postgres and redis containers and then run the rake command inside the chatwoot server container.
