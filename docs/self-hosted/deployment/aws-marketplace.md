@@ -11,7 +11,7 @@ The following is the guide for deploying Chatwoot on AWS using the marketplace l
 
 ## Install Chatwoot via AWS marketplace AMI
 
-1. Go to Chatwoot AWS marketplace listing and click on subscribe.
+1. Go to [Chatwoot AWS marketplace listing](https://aws.amazon.com/marketplace/pp/prodview-tolblk4kmdqd4) and click on subscribe.
 ![aws-marketplace-subscribe](./images/aws-ami/awsmp-01-subscribe.png)
 
 2. Sign in with your AWS account.
