@@ -58,12 +58,12 @@ Refer [this video](https://www.youtube.com/watch?v=gqiBzFlF44c) for detailed ste
 | Name | Choose a name for your Inbox. Ex: Your Business Name             |
 | Phone Number   | Fill in the phone number you have configured in Facebook Developer App              |
 | Phone Number ID      | The phone number ID for the number as obtained in prerequisites              |
-| Bussiness Account ID    | The Business Account ID for the number as obtained in prerequisites             |
+| Business Account ID    | The Business Account ID for the number as obtained in prerequisites             |
 | API Key  | The Business Account User's access token for the number as obtained in prerequisites            |
-| Webhook Verify Token | This token is required while configuring Webhook in Facebook Developer App. Fill in a secure alphanumeric string that you wish  |
 
 
-Finish the steps to obtain your Whatsapp `Webhook Callback URL`.
+
+Finish the steps to obtain your Whatsapp `Webhook Callback URL` and `Webhook Verify Token`
 
 ## Enable the webhook
 
@@ -72,7 +72,7 @@ Configure the webhook in Facebook Developer App.
 Head back to the `WhatsApp` section in the Facebook Developer App. Navigate to the `Configuration` subsection and set up the `Callback URL`.
 
 - The value for the URL should be the same URL you obtained at the end of your Chatwoot inbox creation and will look like `https://app.chatwoot.com/webhooks/whatsapp/+{phone_number}`.
-- The value for the `verify token` should be the same value you configured for the `Webhook Verify Token` during inbox creation.
+- The value for the `verify token` should be the `Webhook Verify Token` which you received during inbox creation.
 
 You should **also subscribe to message fields events** under Webhooks Fields on your Facebook Developer app. 
 
