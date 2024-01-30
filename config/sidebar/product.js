@@ -140,7 +140,7 @@ module.exports = [
         label: "Help Center",
         items: [
           "product/others/help-center",
-          ,
+          "user-guide/features/insert-articles",
           "product/others/help-center/configure-ssl-for-help-center",
         ],
       },
