@@ -25,3 +25,6 @@ src/css/fonts
 
 # Local Netlify folder
 .netlify
+
+## local vscode settings
+.vscode
