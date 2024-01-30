@@ -27,6 +27,13 @@ Apply necessary database schema changes to your development environment by runni
 make db
 ```
 
+## Run database seed
+
+Load some seed data to your development environment for testing by running the following command:
+```
+make db_seed
+```
+
 ## Run dev server using Overmind
 
 Start the development server using Overmind, a process manager that can run multiple processes concurrently:
