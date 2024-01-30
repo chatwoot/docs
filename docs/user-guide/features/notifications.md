@@ -4,7 +4,7 @@ title: "Notifications"
 
 
 ### Audio Notifications
-In this section, the user can set Audio Notifications for the Chat conversations
+In this section, the user can set Audio Notifications for the conversations.
 
 <!-- <div align="center">
 
@@ -13,11 +13,11 @@ In this section, the user can set Audio Notifications for the Chat conversations
 </div> -->
 
 Select "None" to disable audio notifications.
-Select "Assigned conversations" to be notified for chats assigned to me.
-Select "All conversations" to be notified for all chats.
+Select "Assigned conversations" to be notified of conversations assigned to you.
+Select "All conversations" to be notified of all conversations.
 
 ### Email Notifications Section
-In this section, the user can set Email Notifications for the chats
+In this section, the user can set Email Notifications for the conversations.
 <!--
 <div align="center">
 
@@ -25,7 +25,7 @@ In this section, the user can set Email Notifications for the chats
 
 </div> -->
 
-User can do multiple selections for the various choices provided which will help the user follow the assigned conversations closely.
+Users can make multiple selections for the various choices provided, which will help them follow the assigned conversations closely.
 
 - Send email notifications when a new conversation is created: when a new conversation is created, you will receive an email notification.
 
@@ -37,7 +37,7 @@ User can do multiple selections for the various choices provided which will help
 
 
 ### Push Notifications Section
-In this section, the user can set Push Notificaions for the chats
+In this section, the user can set Push Notifications for the conversations
 
 <!-- <div align="center">
 
@@ -45,7 +45,7 @@ In this section, the user can set Push Notificaions for the chats
 
 </div> -->
 
-User can do a multiple selections for the various choices provided which will help the user follow the assigned conversations closely.
+Users can make multiple selections for the various choices provided, which will help them follow the assigned conversations closely.
 
 - Send push notifications when a new conversation is created: when a new conversation is created, you will receive a notification.
 
@@ -58,7 +58,7 @@ User can do a multiple selections for the various choices provided which will he
 
 ### Access Token Section
 
-This section, will autogenerate a Token that can be used in API based Integration.
+This section will autogenerate a Token that can be used in API-based Integration.
 
 <!-- <div align="center">
 
@@ -66,4 +66,4 @@ This section, will autogenerate a Token that can be used in API based Integratio
 
 </div> -->
 
-User can directly Copy the Token and paste it in the [code](https://www.chatwoot.com/developers/api/).
+Users can directly Copy the Token and paste it into the [code](https://www.chatwoot.com/developers/api/).
