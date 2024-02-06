@@ -1,87 +1,88 @@
 ---
-sidebar_label: "Azure App"
-title: "Microsoft email account setup"
+sidebar_label: "Outlook & Microsoft 365 Email"
+title: "Configure an OAuth app for Outlook & Microsoft 365 emails"
 ---
 
-Since [Microsoft deprecating the Basic Auth flow](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online). We will not be able to send/receive outlook emails in our email channel inbox with basic authentication, now we will need to implement the Oauth2.0 flow and get the access tokens from the Azure app. To implement this in your self-hosted version follow the below steps.
+Microsoft no longer permits the use of username and password to retrieve emails from Outlook & Microsoft 365 accounts. They have deprecated the basic auth option. To enable the Outlook/Microsoft 365 email channel in your self-hosted instance, you must configure an OAuth app.
 
-### Register An Azure App
+This guide helps you set up an Entra ID App (formerly Azure Active Directory) and use the credentials in Chatwoot. By doing so, you can authenticate your Outlook/Microsoft 365 account as an email channel.
 
-To add email channel inbox for outlook email, you have to create azure app in the Microsoft Azure portal. You can find more details about creating Azure App [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
+## Register the app
 
-1. In the app registration page, click on `New Registration` and select the any account type.
+Note: For a more detailed guide on how to set up the Microsoft Identity platform, please refer to the [here](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app).
 
-We recommend you'll usually want to setup up 'Single tenant' access (all support inboxes are within the same domain).
+To access the Microsoft Entra Admin Center, go to [entra.microsoft.com](https://entra.microsoft.com/) and log in with your Microsoft account. Once logged in, navigate to the Identity section on the left-hand sidebar. In the Identity section, locate the "Applications" menu and click on "App Registrations" from the submenu. On the "App Registrations" page, click on the "New Registration" option. You will be able to see a page as shown below.
 
-> Wanting multi-tenant access? This is to support inboxes at multiple domains. Beyond Registering an 'Azure Portal Application' per this guide (which does not require verification for single tenant use), Microsoft will also require you apply for [publisher verification of your organisation](https://learn.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview?source=recommendations) (This involves providing legal documents to an assessor and can take some time).
+![register-an-app](./images/entra/register-an-app.png)
 
-Once you register your Azure App, make sure you add proper account type according to your use and add redirect URL for your domain `https://{your-domain}/microsoft/callback`.
-You can find more details about redirect URL [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/reply-url).
+There are three options for supported account types. Ideally, you only need to select "Accounts in any organizational directory" as Chatwoot is generally used for business emails only. However, if you are connecting a personal account, select the second option. If you are using the applications outside your organization, you would need to register your account as a verified publisher.
 
-![register-app-single-tenancy](./images/azure/register-app-single-tenant.png)
+To configure a redirect URI with the Web platform, use the following URL: `https://<your-instance-url>/microsoft/callback`. Click on register, and your app will be created. You will see a screen as shown below.
 
+![registration-complete](./images/entra/registration-complete.png)
 
-2. Then click on `Certificates & Secrets` tab and add new secret key for your application.
+Save the Application (Client) ID. We will configure this as `AZURE_APP_ID` in Chatwoot later.
 
-![add_secret_key](./images/azure/add-secret-key.png)
+## Configure the application
 
-3. Then copy the client secret value immidiately after adding the key and store it somewhere, this is your `client_secret`.
+To ensure proper functionality of Chatwoot, we need to configure the permissions and update the token configuration as follows.
 
-![client_secret](./images/azure/client-secret.png)
+### API permissions
 
-4. Click on `API permissions` and add all the permission shown below to integrate email inbox.
-You can find more details about it [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview).
+Click on the "API Permissions" menu under the "Manage" section. By default, this will have [User.Read](http://user.read/) permission.
 
-![api_permission](./images/azure/api-permission.png)
+Click on the "Add permissions" button and add the following permissions from the Delegated permissions menu on Microsoft Graph APIs.
 
-5. Click on `Token Configuration` and add optional claims shown in the image.
+- **email**: To view the user’s email address.
+- **profile**: To view the name and picture etc.
+- **offline_access**: To retrieve the emails even when you are not using the application.
+- **SMTP.Send, Mail.Send:** Send emails using the SMTP AUTH when you reply to customers from the Chatwoot dashboard.
+- **IMAP.AccessAsUser.All, Mail.ReadWrite:** Read and write access to mailboxes via IMAP.
+- **openid:** Sign users in
 
-![token_configuration](./images/azure/token-configuration.png)
+![permissions](./images/entra/permissions.png)
 
-### Configuring the Environment Variables in Chatwoot
+### Token Configuration
 
-Configure the following Chatwoot environment variables with the values you have obtained during the Azure app setup.
-`AZURE_APP_ID` should be a unique application id or client id you get while configuring the Azure app.
+Now, let's proceed to the Token Configuration to set up "optional claims". Optional claims are a feature in Entra ID that enables you to specify additional pieces of information (claims) to include in the security tokens issued to the application.
 
-![azure_app_id](./images/azure/azure-app-id.png)
+In Chatwoot, we use optional claims to minimize duplicate calls and retrieve some information in advance. Click on “Add optional claim” and add the following claims to the application.
 
-`AZURE_APP_SECRET` is nothing but the `client_secret` you got in the third step.
+![optional-claims.png](./images/entra/optional-claims.png)
 
-Restart the chatwoot server after updating the environment variables
+### Configure Client Secret
 
-```bash
-AZURE_APP_SECRET=
-AZURE_APP_ID=
-```
+Go to the Certificates & Secrets section to create a Client Secret. Click on the "New Client Secret" button and provide a description. You can also select an expiry time.
 
-### Testing the Azure app with outlook email channel
+*Remember that you will need to regenerate the secret and update it in the Chatwoot environment variables once it expires.*
 
-Until the application is verified for production, You will see unverified during the authorization from the authorization prompt.
-To test the changes until the app is verified for production. You should use the azure app registration email address in chatwoot channel and you would be able to test the flow on your local or any other instance.
+![add-client-secret](./images/entra/add-client-secret.png)
 
-### Going into production.
+After clicking on the Add button, a client secret will be generated as shown below.
 
-> Skip this if you didn't opt for multi-tenant access
+![client-secret-value](./images/entra/client-secret-value.png)
 
-Before you can start using your Azure app in production, you will have to get it verified by Azure. Refer to the [docs](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-configure-publisher-domain) on getting your app verified. And learn more about publisher verification [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview)
+Save the value somewhere save as you cannot see it after refreshing the page. This would be used `AZURE_APP_SECRET` in Chatwoot.
 
-1. Go to: `Branding & Properties` and add your domain details, and then click `Verify and Save.`
+## Configure environment variables in Chatwoot
 
-![verify_publisher](./images/azure/verify-publisher.png)
+After creating the Entra application, you need to configure the application credentials in Chatwoot. There are 2 variables that you need to configure, as shown in the steps above.
 
-We are handling the mentioned steps about the hosting  `microsoft-identity-association.json`.
-Once you set `AZURE_APP_ID` in your environment variable, consider this step is completed.
+- **AZURE_APP_ID:** As seen in the register the app step, use the Application (Client) ID here.
+- **AZURE_APP_SECRET:** Use the value obtained in the step configuring the client secret.
 
-### Next steps
+After updating the environment variables, restart the Chatwoot service for the changes to take effect. Now, verify if the channel is enabled in the Inbox creation flow. If everything is configured properly, you will see "Microsoft" listed as an email provider in the flow.
 
-You're done! Next, you should [enable the outlook email channel](https://www.chatwoot.com/docs/product/channels/email/microsoft/create-channel) in chatwoot inbox.
+![microsoft-channel](./images/entra/microsoft-channel.png)
 
-Consider `test-imap@outlook.com` is an email for which you are adding a new inbox.
+Voila! That’s it you can now receive the emails in your Chatwoot instance.
 
-![configuration](../../../../product/channels/email/microsoft/images/ms-oauth-email-config.gif)
+## Thoughts on multi-tenancy and going for production
 
-### NOTE
+Note that the setup will not work for other emails under a different tenant until you have completed the Microsoft publisher verification process. During the authorization prompt, you will see "unverified" until the application is verified for production.
 
-If you changed access in step 1 (above) from 'single-tenancy' any of the 'multi-tenancy' access levels, you will need to get your publisher verified to be able to attach and fetch mails from the Azure app with any other outlook email. Publisher verification not required if you are setting up 'single tenancy' accesss.
+To test the changes before the app is verified for production, use the Entra ID app registration email address in the Chatwoot channel.
 
-![register_app_multi_tenant](./images/azure/register-app-multi-tenant.png)
+Publisher verification provides app users and organization admins with information about the authenticity of the developer's organization that publishes an app integrating with the Microsoft identity platform. If an app has a verified publisher, it means that Microsoft has verified the authenticity of the organization that publishes the app.
+
+Read the publishing guidelines [here](https://learn.microsoft.com/en-us/entra/identity-platform/howto-convert-app-to-be-multi-tenant).
