@@ -97,27 +97,6 @@ Add your Chatwoot URL to the `AllowedOrigin` as shown below.
       "Content-Disposition"
     ],
     "MaxAgeSeconds": 3600
-  },
-  {
-    "AllowedHeaders": [
-      "*"
-    ],
-    "AllowedMethods": [
-      "PUT",
-      "POST",
-      "DELETE",
-      "GET"
-    ],
-    "AllowedOrigins": [
-      "<add-your-domain-here eg: https://app.chatwoot.com>"
-    ],
-    "ExposeHeaders": [
-      "Origin",
-      "Content-Type",
-      "Content-MD5",
-      "Content-Disposition"
-    ],
-    "MaxAgeSeconds": 3600
   }
 ]
 ```
