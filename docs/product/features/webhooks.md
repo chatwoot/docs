@@ -63,3 +63,11 @@ Chatwoot will send a POST request with the following payload to the configured U
 ```
 
 Find the full list of events supported by the webhooks [here](/docs/product/others/webhook-events).
+
+### Best practices for using webhook
+
+#### Return a success(2xx) response quickly
+Webhook events in Chatwoot have a timeout of 5 seconds. If you are using the event with another integration, we suggest performing it in the background instead of directly within the request. This allows you to send the acknowledgement response back to Chatwoot and process it in the background without impacting any services.
+
+#### Listen to the required events only
+Configure your webhook endpoints to receive only the necessary events for your integration. Listening for additional events or all events can overload your server and it is not recommended.
