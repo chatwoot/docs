@@ -46,7 +46,7 @@ Once these steps are completed, you will have a portal with articles ready.
 
 1. This process is handled by chatwoot for all the cloud customers.
 2. You need to reach out to us through Chatwoot support with your portal custom domain record.
-3. Or please email us with the subject "Issue SSL certification for {Portal Slug}"
+3. Or please email us with the subject "Issue SSL certification for < Portal Slug >"
 
 #### NOTE: This step will take 1/2 working day/s from the chatwoot team for the setup.
 
