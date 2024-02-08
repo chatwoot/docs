@@ -71,7 +71,7 @@ Whenever a new version of Chatwoot is released, use the following steps to upgra
 
 To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
 
-> **Note** If you are on an older version of Chatwoot(<2.7), follow the manual upgrade steps below if you face errors with `cwctl`.
+> **Note** If you are on an older version of Chatwoot(< 2.7), follow the manual upgrade steps below if you face errors with `cwctl`.
 
 Run the following steps on your VM. Make changes based on your OS if you are on a non-Ubuntu system.
 
@@ -146,7 +146,7 @@ journalctl -u chatwoot-worker.1.service -f
 
 ## Install or Upgrade Chatwoot CLI
 
-If you used an older version of install script(<2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CLI,
+If you used an older version of install script(< 2.0), you will not have `cwctl` in your PATH. To install/upgrade Chatwoot CLI,
 
 ```
 wget https://get.chatwoot.app/linux/install.sh -O /usr/local/bin/cwctl && chmod +x /usr/local/bin/cwctl

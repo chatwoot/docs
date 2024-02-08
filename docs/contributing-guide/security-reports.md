@@ -7,11 +7,11 @@ Chatwoot is looking forward to working with security researchers worldwide to ke
 
 ## Reporting a Vulnerability
 
-We use [huntr.dev](https://huntr.dev/) for security issues that affect our project. If you believe you have found a vulnerability, please disclose it via this [form](https://huntr.dev/bounties/disclose). 
+We use [huntr.dev](https://huntr.dev) for security issues that affect our project. If you believe you have found a vulnerability, please disclose it via this [form](https://huntr.dev/bounties/disclose).
 
 This will enable us to review the vulnerability, fix it promptly, and reward you for your efforts.
 
-If you have any questions about the process, contact security@chatwoot.com. 
+If you have any questions about the process, contact security@chatwoot.com.
 
 Please try your best to describe a clear and realistic impact for your report, and please don't open any public issues on GitHub or social media; we're doing our best to respond through Huntr as quickly as possible.
 
@@ -19,10 +19,10 @@ Please try your best to describe a clear and realistic impact for your report, a
 
 ## Supported versions
 
-| Version | Supported        |
-| ------- | --------------   |
-| latest   | ️✅               |
-| <latest   | ❌               |
+| Version  | Supported |
+| -------- | --------- |
+| latest   | ️✅        |
+| < latest | ❌         |
 
 
 ## Vulnerabilities we care about 🫣
@@ -61,17 +61,17 @@ If you are unsure about the scope, please create a [report](https://huntr.dev/re
 
 Chatwoot team triages the issues in Huntr weekly. We're doing our best to respond through Huntr as quickly as we can, So please don't open any public issues on GitHub or social media and avoid duplicate reports over Emails.
 
-- Based on reviewing the report, the team will assign a priority to the issue and move it into the internal backlog to prioritize a fix. 
-- In cases where the team needs more information or disagreements of severity, the team will communicate the same over Huntr before completing the triaging. 
+- Based on reviewing the report, the team will assign a priority to the issue and move it into the internal backlog to prioritize a fix.
+- In cases where the team needs more information or disagreements of severity, the team will communicate the same over Huntr before completing the triaging.
 
 After triage, the team will start working on the issue based on the following Severity and Timelines.
 
-| Severity | Timeline        |
-| ------- | --------------   |
-| Critical (P0)   | ️  7 Days      |
-| High  |    30 Days   |
-| Medium  |  60 Days |
-| Low  | 90 Days|
+| Severity      | Timeline  |
+| ------------- | --------- |
+| Critical (P0) | ️  7 Days |
+| High          | 30 Days   |
+| Medium        | 60 Days   |
+| Low           | 90 Days   |
 
 
 ## Thanks

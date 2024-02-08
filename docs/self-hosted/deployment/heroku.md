@@ -5,7 +5,7 @@ title: "Heroku Chatwoot Production deployment guide"
 
 ### Deploying on Heroku
 
-:::Note
+:::note
 Heroku has discontinued free dynos, postgres and redis. https://blog.heroku.com/new-low-cost-plans<br/>
 Chatwoot will switch to using basic/mini plans for all new heroku deployments going forward.
 :::

@@ -18,12 +18,12 @@ This section will help you to update your agent profile on Chatwoot. This update
 
 The fields in the form are described below.
 
-| Field Name | Description |
-| -- | -- |
-| Profile image | A square image that suits your profile. If no image is provided, then the system would take Gravatar Image if available |
-| Your full name | Provide your full name. e.g.: John Hopkins  |
-| Display Name | Provide a name that you want to be displayed on the chat/emails e.g.: `John H` |
-| Your email address | This email address will be used to send notifications, you will be using this email address to login to Chatwoot |
+| Field Name         | Description                                                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Profile image      | A square image that suits your profile. If no image is provided, then the system would take Gravatar Image if available |
+| Your full name     | Provide your full name. e.g.: John Hopkins                                                                              |
+| Display Name       | Provide a name that you want to be displayed on the chat/emails e.g.: `John H`                                          |
+| Your email address | This email address will be used to send notifications, you will be using this email address to login to Chatwoot        |
 
 Click on **Update Profile** to save the changes. If the changes are successful, you will see a message "Your profile has been updated successfully."
 
@@ -37,7 +37,7 @@ You can create your personal message signature. This will get added to all the m
 
 As a security measure, you need to provide your existing password to change the password. If you forgot the old password, you can log out of the system and reset the password.
 
-Password must contain at least one uppercase character (A-Z), at least one numeric character (0..9), and at least one special character `(!@#$%^&*()_+-=[]{}|'"/\^.,`<\>:;?~)`.
+Password must contain at least one uppercase character (A-Z), at least one numeric character (0..9), and at least one special character `(!@#$%^&*()_+-=[]{}|'"/\^.,`\<\>:;?~)`.
 
 <img src={require('./images/configure-your-profile/update-your-password.png').default} width="600" alt="Password Form" />
 
