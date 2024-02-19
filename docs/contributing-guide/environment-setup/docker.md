@@ -27,6 +27,8 @@ docker-compose version 1.29.2, build 5becea4c
 2. Make a copy of the example environment file and modify it as [required](/docs/self-hosted/configuration/environment-variables).
 
     ```bash
+    # navigate to Chatwoot
+    cd chatwoot
     cp .env.example .env
     # update redis and postgres passwords
     nano .env
@@ -37,6 +39,10 @@ docker-compose version 1.29.2, build 5becea4c
 3. Build the images.
 
     ```bash
+    # build base image first
+    docker-compose build base
+
+    # build the server and worker
     docker-compose build
     ```
 
