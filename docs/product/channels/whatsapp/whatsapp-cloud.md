@@ -88,7 +88,7 @@ Your freshly configured WhatsApp inbox should now appear in your list of inboxes
 All the Additional Settings available are the same as those in your Twitter inbox. We recommend going through [this link](/docs/product/channels/twitter#additional-inbox-settings) to understand the same.
 ## Supported media types
 
-| Supported extensions                                                      | End user  | Agent Dashoard |
+| Supported extensions                                                      | End user  | Agent Dashboard |
 | ------------------------------------------------------------------------- | --------- | -------------- |
 | **Audio**                                                                   |           |                |
 | audio/aac                                                                 | Supported | Supported      |
