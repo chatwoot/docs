@@ -128,6 +128,7 @@ pages_messaging
 Business Asset User Profile Access
 pages_show_list
 pages_manage_metadata
+business_management
 ```
 
 
