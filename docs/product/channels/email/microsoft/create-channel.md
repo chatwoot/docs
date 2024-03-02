@@ -11,7 +11,7 @@ title: "Setup your Microsoft Email channel"
 
 ![list_of_channels](../images/list_of_channels.png)
 
-**Step 3**. Click on the "Microsoft" icon.
+**Step 3**. Click on the "Microsoft" icon. Is the "Microsoft" option not there? (Set up a Microsoft Entra ID App.)[https://www.chatwoot.com/docs/self-hosted/configuration/features/email-channel/azure-app-setup]
 
 ![microsoft_channel](./images/microsoft-channel.png)
 
