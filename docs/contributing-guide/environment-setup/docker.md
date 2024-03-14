@@ -11,9 +11,9 @@ As of now[at the time of writing this doc], we recommend a version equal to or h
 
 ```bash
 $ docker --version
-Docker version 20.10.10, build b485636
+Docker version 25.0.4, build 1a576c5
 $ docker-compose --version
-docker-compose version 1.29.2, build 5becea4c
+docker-compose version 2.24.7
 ```
 
 ## Development environment
@@ -40,10 +40,10 @@ docker-compose version 1.29.2, build 5becea4c
 
     ```bash
     # build base image first
-    docker-compose build base
+    docker compose build base
 
     # build the server and worker
-    docker-compose build
+    docker compose build
     ```
 
 4. After building the image or destroying the stack, you would have to reset the database using the following command.
