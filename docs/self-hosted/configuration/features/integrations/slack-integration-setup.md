@@ -23,18 +23,37 @@ Once you register your Slack App, you will have to obtain the `Client Id` and `C
 2. Obtain the `Client Id` and `Client Secret` for the app and configure it in your Chatwoot [environment variables](/docs/self-hosted/configuration/environment-variables).
 3. Head over to the `OAuth & permissions` section under `features` tab.
 4. In the redirect URLs, Add your Chatwoot installation base URL.
-5. In the scopes section configure the given scopes for bot token scopes. `commands,chat:write,channels:read,channels:manage,channels:join,groups:write,im:write,mpim:write,users:read,users:read.email,chat:write.customize,channels:history,groups:history,mpim:history,im:history,links:read,links:write,files:read,files:write`
-6. In the user access token section subscribe to: `files:read`, `files:write`, `remote_files:share`
-7. Head over to the `events subscriptions` section under `features` tab.
-8. Enable events and configure the given request url `{Chatwoot installation url}/api/v1/integrations/webhooks`
-9. Subscribe to the following bot events `message.channels` , `message.groups`, `message.im`, `message.mpim`, `link_shared`.
-10. Add the installation URL as `domain` under the `App unfurl domains section` to display meta information about the conversation when the conversation URL is shared.
-11. Connect Slack integration on Chatwoot app and get productive.
+5. In the scopes section configure the given scopes for bot token scopes:
+  - `channels:history`
+  - `channels:join`
+  - `channels:manage`
+  - `channels:read`
+  - `chat:write`
+  - `chat:write.customize`
+  - `commands`
+  - `files:read`
+  - `files:write`
+  - `groups:history`
+  - `groups:write`
+  - `im:history`
+  - `im:write`
+  - `links:read`
+  - `links:write`
+  - `mpim:history`
+  - `mpim:write`
+  - `users:read`
+  - `users:read.email`
+7. In the user access token section subscribe to: `files:read`, `files:write`, `remote_files:share`
+8. Head over to the `Events Subscriptions` section in the `Features` tab.
+9. Enable events and configure the given request url `{Chatwoot installation url}/api/v1/integrations/webhooks`
+10. Subscribe to the following bot events: `link_shared`, `message.channels`, `message.groups`, `message.im`, `message.mpim`.
+11. Add the installation URL as `domain` under the `App unfurl domains section` to display meta information about the conversation when the conversation URL is shared.
+12. Connect Slack integration on Chatwoot app and get productive.
 
 
 ## Configure the environment variables in Chatwoot
 
-Obtain the `Client Id` and `Client Secret` for the app and configure it in your Chatwoot [environment variables](/docs/self-hosted/configuration/environment-variables).These values will be available under `Settings` > `Basic Information`.
+Obtain the `Client ID` and `Client Secret` for the app and configure it in your Chatwoot [environment variables](/docs/self-hosted/configuration/environment-variables).These values will be available under `Settings` > `Basic Information`.
 
 ```bash
 SLACK_CLIENT_ID=
