@@ -125,21 +125,13 @@ Before you can start using your Facebook app in production, you will have to get
 Obtain advanced access to the required permissions mentioned below for your Facebook app
 ```
 pages_messaging
-Business Asset User Profile Access
 pages_show_list
 pages_manage_metadata
 business_management
-```
-
-
-> **Note**: If your facebook app's version is more than 7.0 then you will need extra permission according to facebook's updated policy. Make sure you get permission for.
-```
 pages_read_engagement
 ```
-Make sure your facebook app subscription version is 12.0, we have updated the FB subscription with the latest version, so change the permission subscription version under the facebook app webhooks option.
 
-
-
+Make sure your facebook app subscription version is 17.0, we have updated the FB subscription with the latest version, so change the permission subscription version under the facebook app webhooks option.
 
 ### Developing or Testing Facebook Integration in your machine
 
