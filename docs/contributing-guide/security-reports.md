@@ -3,6 +3,8 @@ sidebar_label: "Security Reports"
 title: "Reporting Security issues"
 ---
 
+> Note: We are transitioning from huntr.dev to a new platform. Meanwhile please report any issues via the `Report a vulenerability` button on https://github.com/chatwoot/chatwoot/security
+
 Chatwoot is looking forward to working with security researchers worldwide to keep Chatwoot and our users safe. If you have found an issue in our systems/applications, please reach out to us.
 
 ## Reporting a Vulnerability
