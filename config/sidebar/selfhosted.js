@@ -13,14 +13,14 @@ module.exports = [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
       {
-	      "Linux": [
+        "Linux": [
           "self-hosted/deployment/linux-vm",
           "self-hosted/deployment/docker",
-	      ],
+        ],
       },
       "self-hosted/deployment/helm-charts",
       "self-hosted/deployment/chatwoot-ctl",
-	],
+    ],
   },
   {
     collapsible: true,
@@ -99,7 +99,6 @@ module.exports = [
     items: [
       "self-hosted/configuration/features/integrations/facebook-channel-setup",
       "self-hosted/configuration/features/integrations/instagram-channel-setup",
-      "self-hosted/configuration/features/integrations/twitter-channel-setup",
       "self-hosted/configuration/features/integrations/slack-integration-setup",
     ],
   },
