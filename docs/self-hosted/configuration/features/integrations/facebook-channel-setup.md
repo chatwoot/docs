@@ -71,7 +71,7 @@ FB_APP_ID=
 
 ![facebook_messenger_product](./images/facebook/facebook_messenger_product.png)
 
-3. Go to the Messenger settings and configure the call back URL 
+3. Go to the Messenger settings and configure the call back URL
 
 ![Alt text](./images/facebook/facebook_messenger_section.png)
 
@@ -83,7 +83,6 @@ FB_APP_ID=
 5. Head over to Chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook) for more details on creating a Messenger inbox in Chatwoot.
 
 
-<!-- [guide](user-guide/features/pre-chat-form.md). -->
 ### Testing the Facebook channel
 
 Until the application is approved for production, Facebook wouldn't send the new messages on your page to Chatwoot.
