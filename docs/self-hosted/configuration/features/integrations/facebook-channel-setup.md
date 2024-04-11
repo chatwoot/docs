@@ -71,7 +71,7 @@ FB_APP_ID=
 
 ![facebook_messenger_product](./images/facebook/facebook_messenger_product.png)
 
-3. Go to the Messenger settings and configure the call back URL 
+3. Go to the Messenger settings and configure the call back URL
 
 ![Alt text](./images/facebook/facebook_messenger_section.png)
 
@@ -80,10 +80,9 @@ FB_APP_ID=
 
 ![facebook_callback_url](./images/facebook/facebook_callback_url.png)
 
-5. Head over to Chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](../../../../product/channels/facebook) for more details on creating a Messenger inbox in Chatwoot.
+5. Head over to Chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](https://www.chatwoot.com/hc/user-guide/articles/1677778588-how-to-setup-a-facebook-channel) for more details on creating a Messenger inbox in Chatwoot.
 
 
-<!-- [guide](user-guide/features/pre-chat-form.md). -->
 ### Testing the Facebook channel
 
 Until the application is approved for production, Facebook wouldn't send the new messages on your page to Chatwoot.
@@ -166,6 +165,6 @@ We support facebook API version v13.0 going forward, which you can update in the
 
 ### Test your local Setup
 
-1. After finishing the set-up above, [create a Facebook inbox](/docs/product/channels/facebook) after logging in to your Chatwoot Installation.
+1. After finishing the set-up above, [create a Facebook inbox](https://www.chatwoot.com/hc/user-guide/articles/1677778588-how-to-setup-a-facebook-channel) after logging in to your Chatwoot Installation.
 2. Send a message to your page from Facebook.
 3. Wait and confirm incoming requests to `/bot` endpoint in your ngrok screen.

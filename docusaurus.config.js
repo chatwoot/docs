@@ -34,8 +34,7 @@ module.exports = {
           position: "right",
         },
         {
-          to: "product",
-          activeBaseRegex: "product|user-guide",
+          to: "https://www.chatwoot.com/hc/user-guide/en",
           label: "User Guide",
           position: "right",
         },

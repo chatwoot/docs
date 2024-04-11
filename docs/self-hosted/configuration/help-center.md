@@ -8,7 +8,7 @@ Help center allows you to create a portal and add articles from the chatwoot app
 
 ### Create a Portal in Chatwoot's dashboard
 
-Follow these step to create your Portal. Refer to [this guide.](/docs/product/others/help-center#create-a-portal-in-chatwoots-dashboard)
+Follow these step to create your Portal. Refer to [this guide.](https://www.chatwoot.com/hc/user-guide/articles/1677861202-how-to-setup-a-help-center)
 
 ### Point your custom domain to your Chatwoot domain
 
