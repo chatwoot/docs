@@ -82,3 +82,5 @@ This guide will help you to install and setup a production ready Chatwoot.
 ## Others
 
 - [Telemetry](/docs/self-hosted/telemetry)
+- [Restricted Instances](/docs/self-hosted/restricted-instances)
+- [FAQ](/docs/self-hosted/faq)

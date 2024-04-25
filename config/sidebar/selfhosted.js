@@ -124,6 +124,6 @@ module.exports = [
   {
     type: "category",
     label: "Others",
-    items: ["self-hosted/telemetry", "self-hosted/faq"],
+    items: ["self-hosted/telemetry", "self-hosted/restricted-instances", "self-hosted/faq"],
   },
 ];
