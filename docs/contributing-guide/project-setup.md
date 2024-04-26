@@ -76,25 +76,31 @@ http://localhost:3000/widget_tests?setUser=true
 The first time you start your development environment run the following two commands:
 
 ```bash
-# build and start the services
-docker-compose up --build
+# build base image first
+docker compose build base
+
+# build the server and worker
+docker compose build
+
 # prepare the database
-docker-compose exec rails bundle exec rails db:chatwoot_prepare
+docker compose exec rails bundle exec rails db:chatwoot_prepare
+
+# docker compose up
 ```
 Then browse http://localhost:3000
 
 ```bash
 # To stop your environment use Control+C (on Mac) CTRL+C (on Win) or
-docker-compose down
+docker compose down
 # start the services
-docker-compose up
+docker compose up
 ```
 
 When you change the service’s Dockerfile or the contents of the build directory, run stop then build. (For example after modifying package.json or Gemfile)
 
 ```bash
-docker-compose stop
-docker-compose build
+docker compose stop
+docker compose build
 ```
 
 
@@ -107,7 +113,7 @@ The docker-compose environment consists of:
 If in case you encounter a seeding issue or you want reset the database you can do it using the following command :
 
 ```bash
-docker-compose run -rm rails bundle exec rake db:reset
+docker compose run -rm rails bundle exec rake db:reset
 ```
 
 This command essentially runs postgres and redis containers and then run the rake command inside the chatwoot server container.
@@ -137,7 +143,7 @@ docker pull chatwoot/chatwoot
 You can create an image yourselves by running the following command on the root directory.
 
 ```bash
-docker-compose -f docker-compose.production.yaml build
+docker compose -f docker-compose.production.yaml build
 ```
 
 This will build the image which you can depoy in Kubernetes (GCP, Openshift, AWS, Azure or anywhere), Amazon ECS or Docker Swarm. You can tag this image and push this image to docker registry of your choice.
