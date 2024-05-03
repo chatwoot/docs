@@ -20,3 +20,17 @@ You could customize the configuration to suit your needs by updating, [`config/i
 - `Website Channel` message attachments are limited to types ['image/png', 'image/jpeg', 'image/gif', 'image/bmp', 'image/tiff', 'application/pdf', 'audio/mpeg', 'video/mp4', 'audio/ogg', 'text/csv']
 - `Website Channel` message attachments are limited to 40MB size limit.
 
+## Disabling Rack attack on your instance 
+
+You can control the behaviour of rack attack in your instance via the following environment variables.
+
+```
+## Rack Attack configuration
+## To prevent and throttle abusive requests.
+# Disable if you are getting too many request errors for custom use cases
+# ENABLE_RACK_ATTACK=true
+# Control the allowed number of requests
+# RACK_ATTACK_LIMIT=300
+# Control whether you want to enable rack attack for widget APIs
+# ENABLE_RACK_ATTACK_WIDGET_API=true
+```
