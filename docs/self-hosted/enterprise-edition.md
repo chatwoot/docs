@@ -3,7 +3,7 @@ sidebar_label: 'Enterprise Edition'
 title: 'Managing Enterprise Edition Features'
 ---
 
-Chatwoot Enterprise Edition is a proprietary version of Chatwoot software, designed for larger organizations that require advanced features such as Whitelabeling, SLA Management, agent scheduling, and IP blocklisting. It is developed from the same GitHub repository as the Community Edition but includes additional, proprietary features aimed at supporting commercial business needs.
+Chatwoot Enterprise Edition is a proprietary version of Chatwoot software designed for larger organizations that require advanced features such as Whitelabeling, SLA Management, Audit Logs, Agent Capacity Managment, etc. It is developed from the same GitHub repository as the Community Edition but includes additional, proprietary features aimed at supporting commercial business needs.
 
 The Enterprise Edition offers direct support options and an easy upgrade path to paid features, ensuring that businesses can scale their operations efficiently without needing to reinstall the software. For more detailed information, you can visit the [Chatwoot Enterprise Edition User Guide](https://www.chatwoot.com/hc/user-guide/articles/1677776492-enterprise-edition).
 
