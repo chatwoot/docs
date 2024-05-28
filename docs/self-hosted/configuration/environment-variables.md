@@ -24,7 +24,9 @@ RAILS_ENV=production
 SECRET_KEY_BASE=replace_with_your_own_secret_string
 ```
 
-You can generate `SECRET_KEY_BASE` using `rake secret` command from the project root folder.
+You can generate `SECRET_KEY_BASE` using `rake secret` command from the project root folder. If you dont have rails installed, use `head /dev/urandom | tr -dc A-Za-z0-9 | head -c 63 ; echo ''`.
+
+Note: SECRET_KEY_BASE should be alphanumeric. Avoid special characters or symbols. 
 
 ## Database configuration
 
