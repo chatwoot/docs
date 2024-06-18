@@ -82,6 +82,7 @@ module.exports = [
           "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
           "self-hosted/configuration/features/email-channel/setup",
           "self-hosted/configuration/features/email-channel/azure-app-setup",
+          "self-hosted/configuration/features/email-channel/google-workspace-setup",
         ],
       },
       {
