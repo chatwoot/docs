@@ -1,17 +1,17 @@
 ---
 sidebar_label: "Google Workspace"
-title: "Configure an OAuth app for GMail"
+title: "Configure an OAuth app for Gmail"
 ---
 
-At present, Gmail integration operates through [less-secure](https://support.google.com/accounts/answer/6010255?hl=en) apps. However, as of June 15 2024, Google Workspace will [cease to support](https://workspaceupdates.googleblog.com/2023/09/winding-down-google-sync-and-less-secure-apps-support.html) these less-secure apps. This will affect the Gmail integration in Chatwoot. To ensure that your Gmail integration continues to work, you will need to set up an OAuth app in Google Workspace.
+At present, Gmail integration operates through [less-secure](https://support.google.com/accounts/answer/6010255?hl=en) apps. However, as of June 15, 2024, Google Workspace will [cease to support](https://workspaceupdates.googleblog.com/2023/09/winding-down-google-sync-and-less-secure-apps-support.html) these less-secure apps. This will affect the Gmail integration in Chatwoot. To ensure that your Gmail integration continues to work, you will need to set up an OAuth app in Google Workspace.
 
-> Note: Existing setups will continue to work until Setpember 30, 2024. However, we recommend setting up an OAuth app as soon as possible to avoid any disruptions.
+> Note: Existing setups will continue to work until September 30, 2024. However, we recommend setting up an OAuth app as soon as possible to avoid any disruptions.
 
-This Guide will walk you through the process of setting up an OAuth app in Google Workspace.
+This guide will walk you through the process of setting up an OAuth app in Google Workspace.
 
 ## Register the app
 
-To enable Google OAuth in Chatwoot, you need to provide the client ID, client secret, and callback URL. You can find the instructions to generate the details [here](https://support.google.com/cloud/answer/6158849). Once you have followed these steps you will be able to get a Client ID and Secret.
+To enable Google OAuth in Chatwoot, you need to provide the client ID, client secret, and callback URL. You can find the instructions to generate these details [here](https://support.google.com/cloud/answer/6158849). Once you have followed these steps, you will be able to get a Client ID and Secret.
 
 ![register-an-app](./images/google/oauth-app-setup.png)
 
@@ -28,11 +28,11 @@ GOOGLE_OAUTH_CLIENT_SECRET=ABCDEF-GHijklmnoPqrstuvwX-yz1234567
 
 After setting these environment variables, restart your Chatwoot server to apply the changes. Now, users will be able to sign in using their Google accounts.
 
-You will notice that the app you are using is in testing mode, we will cover that later in the guide. For now, you can ignore it.
+You will notice that the app you are using is in testing mode; we will cover that later in the guide. For now, you can ignore it.
 
 ## Configure the application
 
-To fetch the emails from the client inbox you need to configure the correct scopes, the following scopes are required:
+To fetch the emails from the client inbox, you need to configure the correct scopes. The following scopes are required:
 
 - `https://mail.google.com/`: To read, send, delete, and manage your email.
 - `email`: To view the user’s email address.
@@ -52,8 +52,8 @@ Here's a demo showing how to add the `https://mail.google.com/` scope:
 
 ## Publishing the app
 
-In case you're using Chatwoot within an organization with less than 100 users, you can continue to use the app in testing mode. However, if you're using Chatwoot in an organization with more than 100 users, or in case you're using the app to serve multiple clients, you will need to publish the app to make it available to all users.
+If you're using Chatwoot within an organization with fewer than 100 users, you can continue to use the app in testing mode. However, if you're using Chatwoot in an organization with more than 100 users or using the app to serve multiple clients, you will need to publish the app to make it available to all users.
 
-To publish the app, you need to go through the verification process since we make use of a restricted scope. You can find the instructions to verify the app [here](https://support.google.com/cloud/answer/9110914).
+To publish the app, you need to go through the verification process since we use a restricted scope. You can find the instructions to verify the app [here](https://support.google.com/cloud/answer/9110914).
 
-It's is important to note that the verification process can take a few days to complete. Once the app is verified, you can publish it and make it available to all users.
+It's important to note that the verification process can take a few days to complete. Once the app is verified, you can publish it and make it available to all users.
