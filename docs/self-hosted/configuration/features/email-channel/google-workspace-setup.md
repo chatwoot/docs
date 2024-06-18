@@ -24,7 +24,7 @@ GOOGLE_OAUTH_CLIENT_ID=369777777777-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.google
 GOOGLE_OAUTH_CLIENT_SECRET=ABCDEF-GHijklmnoPqrstuvwX-yz1234567
 ```
 
-> Note: If you have already setup [Google OAuth login flow](https://www.chatwoot.com/docs/self-hosted/configuration/environment-variables#google-oauth) You can use the same app, by simply adding the new callback URL
+> Note: If you have already setup [Google OAuth login flow](https://www.chatwoot.com/docs/self-hosted/configuration/environment-variables#google-oauth) You can use the same app, by simply adding the new callback URL. **Do not remove the previous callback URL.**
 
 After setting these environment variables, restart your Chatwoot server to apply the changes. Now, users will be able to sign in using their Google accounts.
 
