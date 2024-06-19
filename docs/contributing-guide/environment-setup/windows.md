@@ -93,7 +93,7 @@ Run the following command in terminal
 
 ```sql
 CREATE USER chatwoot WITH PASSWORD 'chatwoot';
-ALTER USER chatwoot WITH chatwoot;
+ALTER USER chatwoot WITH SUPERUSER;
 ```
 
 ### Install redis-server
