@@ -81,6 +81,21 @@ sudo apt-get install libpq-dev
 sudo service postgresql start
 ```
 
+Occasionally, when running the Chatwoot application in the Setup Guide tab, you may experience errors when trying to connect to the database
+
+Make sure this doesn't happen by creating a SUPERUSER in Postgresql and then defining it in Chatwoot's environment variables
+
+```bash
+sudo -u postgres psql
+```
+
+Run the following command in terminal
+
+```sql
+CREATE USER chatwoot WITH PASSWORD 'chatwoot';
+ALTER USER chatwoot WITH chatwoot;
+```
+
 ### Install redis-server
 
 Chatwoot uses Redis server in agent assignments and reporting. To install `redis-server`
