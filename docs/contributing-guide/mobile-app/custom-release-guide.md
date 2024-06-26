@@ -3,14 +3,15 @@ sidebar_label: "Custom Release Guide"
 title: "Custom release guide for mobile app"
 ---
 
-### Setup Firebase for push notification
+### Set up Firebase for Push Notifications
 
-- Create a new project in [firebase console](https://console.firebase.google.com/).
-- Generate [android credentials](https://rnfirebase.io/#generating-android-credentials) from firebase console. Then download the `google-services.json` file and place it inside of your project at the following location: `android/app/`.
-- Generate [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from firebase console. Then download the `GoogleService-Info.plist` file . Then add this file to project using `Xcode`. More details can be found [here](https://rnfirebase.io/#3-ios-setup).
+Note: If you're using the official mobile app, you can skip this step. Push notifications should work correctly as long as the `ENABLE_PUSH_RELAY_SERVER` environment variable is set to true in the Chatwoot environment variables.
 
-- Add the `FCM_SERVER_KEY` in the chatwoot environment variables. You can find your FCM_SERVER_KEY in your firebase settings (Project Settings > Cloud Messaging > Project Credentials > Server Key).
-
+- Start by creating a new project in the [Firebase console](https://console.firebase.google.com/).
+- Next, generate [Android credentials](https://rnfirebase.io/#generating-android-credentials) from the Firebase console. Download the `google-services.json` file and place it within your project at the following location: `android/app/`.
+- Generate [iOS credentials](https://rnfirebase.io/#generating-ios-credentials) from the Firebase console. Download the `GoogleService-Info.plist` file and add it to your project using `Xcode`. More details are available [here](https://rnfirebase.io/#3-ios-setup).
+- Follow the [guide](https://firebase.google.com/docs/cloud-messaging/migrate-v1) to generate GOOGLE_APPLICATION_CREDENTIALS.
+- Visit `<your-installation_url>/super_admin/app_config`. Add the `Firebase Project ID` and GOOGLE_APPLICATION_CREDENTIALS as `Firebase Credentials`.
 ### Deep linking
 
 #### Android
