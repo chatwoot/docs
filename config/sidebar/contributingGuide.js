@@ -53,6 +53,7 @@ module.exports = [
     items: [
       "contributing-guide/chatwoot-apis",
       "contributing-guide/api-documentation",
+      "contributing-guide/chatwoot-platform-apis",
       "contributing-guide/security-reports",
       "contributing-guide/translation-guidelines",
       "contributing-guide/community-guidelines",
