@@ -4,7 +4,7 @@ title: "Chatwoot Platform APIs"
 
 # Chatwoot Platform APIs
 
-These APIs are particularly helpful if you plan to build a conversation management interface into your existing software stack. The installation admin can use these APIs to manage users, accounts, and roles. These APIs could also be used to sync auth information from external systems into Chatwoot.
+These APIs are used if you plan to build a conversation management interface into your existing software stack. The installation admin can use these APIs to manage users, accounts, and roles. These APIs could also be used to sync auth information from external systems into Chatwoot.
 
 > **Note:** These APIs are available on `self-hosted` Chatwoot installations.
 
