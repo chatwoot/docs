@@ -4,9 +4,9 @@ title: "Chatwoot Platform APIs"
 
 # Chatwoot Platform APIs
 
-These APIs are used if you plan to build a conversation management interface into your existing software stack. The installation admin can use these APIs to manage users, accounts, and roles. These APIs could also be used to sync auth information from external systems into Chatwoot.
+The Chatwoot Platform APIs allow you to integrate a conversation management interface into your existing software stack. Installation admins can use these APIs to manage users, accounts, and roles. Additionally, these APIs can be used to sync authentication information from external systems into Chatwoot.
 
-> **Note:** These APIs are available on `self-hosted` Chatwoot installations.
+> **Note:** These APIs are available only on `self-hosted` Chatwoot installations.
 
 ## Creating a Platform App
 
@@ -30,7 +30,7 @@ To create a platform app, follow these steps:
 
 ## Using the Access Token
 
-We use the `access_token` to authenticate all these APIs. Please make use of the Postman collection to test these APIs.
+The `access_token` is required to authenticate all API requests. Please use the Postman collection to test these APIs.
 
 ### Testing the APIs
 
@@ -43,7 +43,7 @@ Here's an example of creating a user using the API:
 
 ![Create User API](./images/platform-app/create-user.png)
 
-Similarly, you can create `Account` and `Role` using the APIs.
+Similarly, you can create `Account` and `Role` entities using the APIs.
 
 ## Reference
 
