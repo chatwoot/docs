@@ -1,5 +1,5 @@
 ---
-title: "Contribution Guide"
+title: "Contributing Guide"
 sidebar_label: "Introduction"
 help_discord: "https://discord.gg/fBMuQ7FcG6"
 help_github_discussion: "https://github.com/chatwoot/chatwoot/discussions/categories/contributors"
