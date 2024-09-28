@@ -47,17 +47,22 @@ nano .env
 nano docker-compose.yaml
 ```
 
-4) Prepare the database by running the migrations.
+4) Create the database.
+```
+docker compose run --rm rails bundle exec rails db:create
+```
+
+5) Prepare the database by running the migrations.
 ```
 docker compose run --rm rails bundle exec rails db:chatwoot_prepare
 ```
 
-5) Get the service up and running.
+6) Get the service up and running.
 ```
 docker compose up -d
 ```
 
-6) Your Chatwoot installation is complete. Please note that the containers are not exposed to the internet and they only bind to the localhost.  Setup something like Nginx or any other proxy server to proxy the requests to the container.
+7) Your Chatwoot installation is complete. Please note that the containers are not exposed to the internet and they only bind to the localhost.  Setup something like Nginx or any other proxy server to proxy the requests to the container.
  
 If you want to verify whether the installation is working, try `curl -I localhost:3000/api` to see if it returns `200`. Also, you could temporarily drop the `127.0.0.1:3000:3000` for rails to `3000:3000` in the compose file to access your instance at `http://<your-external-ip>:3000`. It's recommended to revert this change back and use Nginx or some proxy server in the front.
 
