@@ -35,6 +35,7 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Restack](/docs/self-hosted/deployment/restack)
 - [Easypanel](/docs/self-hosted/deployment/easypanel)
 - [Elestio](/docs/self-hosted/deployment/elestio)
+- [Ptah.sh](/docs/self-hosted/deployment/ptah.sh)
 
 ## Configuration
 
