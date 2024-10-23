@@ -34,6 +34,7 @@ This document helps you to configure Cloudfront as the asset host for Chatwoot. 
   - **Access-Control-Request-Headers**
   - **Access-Control-Request-Method**
   - **Origin**
+- Set the **Response headers policy** to **CORS-With-Preflight**
 
 **Step 5**: Click on **Create Distribution**. You will be able to see the distribution as shown below. Use the **Domain name** listed in the details as the **ASSET_CDN_HOST** in Chatwoot.
 
