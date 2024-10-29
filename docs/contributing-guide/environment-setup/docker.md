@@ -12,7 +12,7 @@ As of now[at the time of writing this doc], we recommend a version equal to or h
 ```bash
 $ docker --version
 Docker version 25.0.4, build 1a576c5
-$ docker-compose --version
+$ docker compose --version
 docker-compose version 2.24.7
 ```
 
@@ -49,13 +49,13 @@ docker-compose version 2.24.7
 4. After building the image or destroying the stack, you would have to reset the database using the following command.
 
     ```bash
-    docker-compose run --rm rails bundle exec rails db:chatwoot_prepare
+    docker compose run --rm rails bundle exec rails db:chatwoot_prepare
     ```
 
 5. To run the app,
 
     ```bash
-    docker-compose up
+    docker compose up
     ```
 
     * Access the rails app frontend by visiting `http://0.0.0.0:3000/`
@@ -71,7 +71,7 @@ docker-compose version 2.24.7
 6. To stop the app,
 
     ```bash
-    docker-compose down
+    docker compose down
     ```
 
 ### Running RSpec tests
@@ -79,13 +79,13 @@ docker-compose version 2.24.7
 For running the complete RSpec tests,
 
 ```bash
-docker-compose run --rm rails bundle exec rspec
+docker compose run --rm rails bundle exec rspec
 ```
 
 For running specific test,
 
 ```bash
-docker-compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number>
+docker compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number>
 ```
 
 ## Production environment
@@ -93,8 +93,8 @@ docker-compose run --rm rails bundle exec rspec spec/<path-to-file>:<line-number
 To debug the production build locally, set `SECRET_KEY_BASE` environment variable in your `.env` file and then run the below commands:
 
 ```bash
-docker-compose -f docker-compose.production.yaml build
-docker-compose -f docker-compose.production.yaml up
+docker compose -f docker-compose.production.yaml build
+docker compose -f docker-compose.production.yaml up
 ```
 
 ## Debugging mode
@@ -102,7 +102,7 @@ docker-compose -f docker-compose.production.yaml up
 To use debuggers like `byebug` or `binding.pry`, use the following command to bring up the app instead of `docker-compose up`.
 
 ```bash
-docker-compose run --rm --service-port rails
+docker compose run --rm --service-port rails
 ```
 
 
