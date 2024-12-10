@@ -121,4 +121,21 @@ mailer.mail(from: 'sender@example.com', to: 'recipient@example.com', subject: 't
 ```
 If the configuration is correct, You should receive the email in the recipient's Inbox. In other cases, Fix the config as per the returned error and reconfigure the values in Chatwoot Environment variables with the correct values. 
 
-> Note: If you are still facing errors, Please check your Sidekiq worker logs or [Sidekiq UI](/docs/self-hosted/monitoring/super-admin-sidekiq/) for any errors. 
+> Note: If you are still facing errors, Please check your Sidekiq worker logs or [Sidekiq UI](/docs/self-hosted/monitoring/super-admin-sidekiq/) for any errors.
+
+
+## How to Fix the Onboarding Screen Issue in Chatwoot?
+
+If you have deployed Chatwoot and the login page is shown instead of the onboarding screen, follow these steps to resolve the issue:
+
+1. Open a Rails shell and run the following command:
+   ```ruby
+   Redis::Alfred.set(Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING, true)
+   ```
+
+2. Restart Chatwoot.
+
+This should resolve the issue, and the onboarding screen should be displayed as expected.
+ 
+
+
