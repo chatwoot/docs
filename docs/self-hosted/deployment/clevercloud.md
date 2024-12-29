@@ -41,7 +41,7 @@ To install the dependencies, you have to setup builds hooks. Set the following i
 
 ```
 CC_POST_BUILD_HOOK="RAILS_ENV=production rails assets:precompile"
-CC_PRE_BUILD_HOOK="yarn install"
+CC_PRE_BUILD_HOOK="pnpm install"
 CC_PRE_RUN_HOOK="rake db:chatwoot_prepare"
 ```
 
@@ -61,7 +61,7 @@ Make sure you have the following environment variables configured in the applica
 
 ```
 CC_POST_BUILD_HOOK="RAILS_ENV=production rails assets:precompile"
-CC_PRE_BUILD_HOOK="yarn install"
+CC_PRE_BUILD_HOOK="pnpm install"
 CC_PRE_RUN_HOOK="rake db:chatwoot_prepare"
 DATABASE_URL="<postgres-addon-url>"
 FRONTEND_URL="<clever-cloud-app-url>"

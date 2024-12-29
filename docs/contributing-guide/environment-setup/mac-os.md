@@ -66,7 +66,7 @@ Chatwoot requires `node` version `20`. Install Node.js from NodeSource using the
 brew install node@20
 ```
 
-### Install yarn
+### Install pnpm
 
 We use `pnpm` as package manager
 
