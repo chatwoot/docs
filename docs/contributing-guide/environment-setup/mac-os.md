@@ -68,10 +68,10 @@ brew install node@20
 
 ### Install yarn
 
-We use `yarn` as package manager
+We use `pnpm` as package manager
 
 ```bash
-brew install yarn
+brew install pnpm
 ```
 
 ### Install postgres
