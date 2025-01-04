@@ -1,86 +1,120 @@
 ---
-sidebar_label: "Setup Guide"
+sidebar_label: "Mobile App"
 title: "Setup guide for mobile app"
 ---
 
-- [Installation and setup](#installation-and-setup)
-  - [Prerequisites](#prerequisites)
-  - [Environment Variables](#environment-variables)
-  - [Setup firebase for push notification](#setup-firebase-for-push-notification)
-  - [Setup Sentry for error reporting](#setup-sentry-for-error-reporting)
-- [Running](#running)
-  - [iOS](#ios) - **Mac is required if you wish to develop for iOS.**
-  - [Android](#android)
-- [Configure and run tests](#configure-and-run-tests)
 
-## Installation and setup
+### Installation and setup
 
-### Prerequisites
+#### Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/)
-- [Watchman](https://facebook.github.io/watchman/docs/install.html)
-- [Yarn](https://yarnpkg.com/en/docs/install)
+- [React Native CLI](https://reactnative.dev/docs/environment-setup)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- [Expo Account](https://expo.dev/signup)
 
 To learn more about the most up-to-date instructions, please refer to the guide available [here](https://reactnative.dev/docs/environment-setup?guide=native).
 
 #### Clone the repository
 
-`$ git clone git@github.com:chatwoot/chatwoot-mobile-app.git`
+```bash
+git clone git@github.com:chatwoot/chatwoot-mobile-app.git
+```
 
 #### Install dependencies
 
-`$ yarn`
+```bash
+pnpm install
+```
+
+#### Install Expo CLI
+
+```bash
+pnpm install -g expo-cli
+```
 
 ### Environment Variables
 
-Create `.env` file under root folder
-
-```
-SENTRY_DSN=
-CHATWOOT_WEBSITE_TOKEN=
-CHATWOOT_BASE_URL=https://app.chatwoot.com
-JUNE_SDK_KEY=
-MINIMUM_CHATWOOT_VERSION=2.16.0
+```bash
+cp .env.example .env
 ```
 
-- CHATWOOT_WEBSITE_TOKEN: Web widget token. Add this token only if you want to add in app support.
-- CHATWOOT_BASE_URL: Replace with your self-hosted installation url.
-- SENTRY_DSN: Sentry DSN URL.
-- JUNE_SDK_KEY: June SDK key. We use June for analytics.
-- MINIMUM_CHATWOOT_VERSION: Minimum supported Chatwoot version.
+| Name                                     | Description                                 | Default Value            | Required |
+| ---------------------------------------- | ------------------------------------------- | ------------------------ | -------- |
+| EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN       | Web widget token for in-app support         | -                        | No       |
+| EXPO_PUBLIC_CHATWOOT_BASE_URL            | Self-hosted installation URL                | https://app.chatwoot.com | Yes      |
+| EXPO_PUBLIC_JUNE_SDK_KEY                 | June analytics SDK key                      | -                        | No       |
+| EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION     | Minimum supported Chatwoot version          | -                        | Yes      |
+| EXPO_PUBLIC_SENTRY_DSN                   | Sentry DSN URL for error reporting          | -                        | No       |
+| EXPO_PUBLIC_PROJECT_ID                   | Expo project identifier                     | -                        | Yes      |
+| EXPO_PUBLIC_APP_SLUG                     | Application slug for Expo                   | -                        | Yes      |
+| EXPO_PUBLIC_SENTRY_PROJECT_NAME          | Project name in Sentry                      | -                        | No       |
+| EXPO_PUBLIC_SENTRY_ORG_NAME              | Organization name in Sentry                 | -                        | No       |
+| EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE     | Path to iOS Google Services config file     | -                        | No       |
+| EXPO_PUBLIC_ANDROID_GOOGLE_SERVICES_FILE | Path to Android Google Services config file | -                        | No       |
+| EXPO_APPLE_ID                            | Apple Developer account ID                  | -                        | No       |
+| EXPO_APPLE_TEAM_ID                       | Apple Developer team ID                     | -                        | No       |
+| EXPO_STORYBOOK_ENABLED                   | Enable/disable Storybook                    | false                    | No       |
+
+### Generate the native code
+
+```bash
+pnpm generate
+```
+
+Generates native Android and iOS directories using [Prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
+
+Note: You need to run pre-build if you add a new native dependency to your project or change the project configuration in Expo app config (app.config.ts).
+
+### How to run the app
+
+Connect your iPhone/Android device and run the following command to install the app on your device.
+
+```bash
+## iOS
+pnpm run:ios
+
+## Android
+pnpm run:android
+```
+
+### How to install the packages
+
+Please always to install the packages using the command `npx expo install package-name` instead of `pnpm install package-name`.
+
+This is crucial for native dependencies because the expo will automatically install the correct compatible version while pnpm/yarn/npm will install the latest version which may or may not be compatible.
 
 ### Push notification
 
 If you are using the community edition of Chatwoot, you would now be able use the [Official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration.
 
-### Setup Sentry for error reporting
 
-Create a new project in [Sentry](https://sentry.io/for/react-native/)
+### Build & Submit using EAS
 
-Add `SENTRY_DSN` value in `.env` file. If you want to supports native crashes, link the sentry SDK to your native projects.
+We use Expo Application Services (EAS) for building, deploying, and submitting the app to app stores. EAS Build and Submit is available to anyone with an Expo account, regardless of whether you pay for EAS or use our Free plan. You can sign up at [Expo EAS](https://expo.dev/eas).
 
-Run the following command to generate the Sentry configuration.
+#### Build the app
 
 ```bash
-yarn sentry-wizard -i reactNative -p ios android
-cd ios && pod install
+## iOS
+pnpm run build:ios:local
+
+## Android
+pnpm run build:android:local
 ```
 
-## Running
 
-### iOS
+#### Submit the app
 
-- `cd ios && pod install`
+```bash
+## iOS
+pnpm submit:ios
 
-- `yarn ios`
-
-OR
-
-Open `Chatwoot.xcworkspace` file under `ios` folder. Choose your target device and click playbutton.
-
-### Android
-
-- `yarn android`
+## Android
+pnpm submit:android
+```
 
 
-If you face any issues while setting up, please post on our [GitHub](https://github.com/chatwoot/chatwoot) or on our developer forum at [Discord](https://discord.gg/cJXdrwS). Someone from the team will definitely help you.
+When you run the above command, you will be prompted to provide a path to a local app binary file. Please select the file that you built in the previous step. It is `.ipa` for iOS and `.aab` for Android.
+
+It may take a while to complete the submission process. You will see the status of the submission on your terminal.
