@@ -18,7 +18,7 @@ cd chatwoot
 
 ### Install Ruby & Javascript dependencies
 
-Use the following command to run `bundle && yarn` to install ruby and Javascript dependencies.
+Use the following command to run `bundle && pnpm install` to install ruby and Javascript dependencies.
 
 ```bash
 make burn
@@ -128,7 +128,7 @@ https://docs.cypress.io/guides/overview/why-cypress.html
 # in terminal tab1
 overmind start -f Procfile.test
 # in terminal tab2
-yarn cypress open --project ./test
+pnpm cypress open --project ./test
 ```
 
 

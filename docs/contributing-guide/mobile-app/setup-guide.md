@@ -19,7 +19,7 @@ title: "Setup guide for mobile app"
 
 - [Node.js](https://nodejs.org/en/download/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
-- [Yarn](https://yarnpkg.com/en/docs/install)
+- [pnpm](https://pnpm.io/installation)
 
 To learn more about the most up-to-date instructions, please refer to the guide available [here](https://reactnative.dev/docs/environment-setup?guide=native).
 

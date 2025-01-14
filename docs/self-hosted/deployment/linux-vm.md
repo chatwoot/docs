@@ -91,7 +91,7 @@ rvm use 3.2.2 --default
 
 # Update dependencies
 bundle
-yarn
+pnpm install
 
 # Recompile the assets
 rake assets:precompile RAILS_ENV=production

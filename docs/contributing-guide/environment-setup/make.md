@@ -15,7 +15,7 @@ cd chatwoot
 
 ## Install Ruby & JavaScript dependencies
 
-Install Ruby and JavaScript dependencies using the following command. This command runs Bundler and Yarn:
+Install Ruby and JavaScript dependencies using the following command. This command runs Bundler and pnpm:
 ```
 make burn
 ```

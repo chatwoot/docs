@@ -66,5 +66,5 @@ Navigate to your chatwoot local directory and Execute the following command to r
 
 
 ```bash
-yarn cypress open --project ./spec
+pnpm cypress open --project ./spec
 ```
