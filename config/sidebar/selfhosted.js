@@ -118,6 +118,7 @@ module.exports = [
     collapsible: true,
     items: [
       "self-hosted/runbooks/migrate-chatwoot-database",
+      "self-hosted/runbooks/upgrade-to-chatwoot-v4",
       "self-hosted/configuration/email-notifications",
       "self-hosted/configuration/enable-ip-logging",
     ],
