@@ -2,10 +2,6 @@
 sidebar_label: "How to upgrade to Chatwoot v4?"
 title: "Chatwoot v4 migration"
 ---
----
-sidebar_label: "How to upgrade to Chatwoot v4?"
-title: "Chatwoot v4 Migration"
----
 
 Chatwoot v4 requires PostgreSQL with `pgvector` support. You need to ensure that the version of PostgreSQL you are running supports `pgvector` before upgrading.
 
@@ -71,13 +67,13 @@ The PostgreSQL section is divided into parts based on how you are running Postgr
   # If its version 16, use the following command
   # Replace "16" with your PostgreSQL version
   sudo apt install postgresql-16-pgvector
-```
+  ```
 
 ### Docker Container
 
 - **Existing Installation**  
   1. Replace the PostgreSQL image with the pgvector image. The pgvector image is a drop-in replacement and works with your existing data:
-  ```
+  ```bash
     docker compose down
 
     # Edit and replace the PostgreSQL image in docker-compose.yaml
