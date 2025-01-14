@@ -91,6 +91,7 @@ The PostgreSQL section is divided into parts based on how you are running Postgr
     # Verify the updated setup
     docker compose up -d
 ```
+
  2. After verifying that the existing installation works with the pgvector image, proceed with the regular upgrade steps.
  [Learn more](https://www.chatwoot.com/docs/self-hosted/deployment/upgrade#docker)
 
