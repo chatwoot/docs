@@ -29,6 +29,7 @@ GOOGLE_OAUTH_CLIENT_SECRET=ABCDEF-GHijklmnoPqrstuvwX-yz1234567
 After setting these environment variables, restart your Chatwoot server to apply the changes. Now, users will be able to sign in using their Google accounts.
 
 You will notice that the app you are using is in testing mode; we will cover that later in the guide. For now, you can ignore it.
+**Important:** When new users are created and the mail server is still not set up, those users won't be able to receive confirmation emails. If these users try to log in to Chatwoot with OAuth, they will encounter this error: `"TypeError: Cannot read properties of undefined (reading 'id')"`. To avoid this issue, ensure the mail server is configured before enabling OAuth, or manually confirm users in the database.
 
 ## Configure the application
 
