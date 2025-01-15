@@ -27,15 +27,7 @@ module.exports = [
       "contributing-guide/common-errors",
       "contributing-guide/telegram-channel-setup",
       "contributing-guide/line-channel-setup",
-    ],
-  },
-  {
-    collapsible: false,
-    type: "category",
-    label: "Mobile App",
-    items: [
       "contributing-guide/mobile-app/setup-guide",
-      "contributing-guide/mobile-app/custom-release-guide",
     ],
   },
   {
