@@ -13,7 +13,7 @@ title: "Setup guide for mobile app"
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
 - [Expo Account](https://expo.dev/signup)
 
-To learn more about the most up-to-date instructions, please refer to the guide available [here](https://reactnative.dev/docs/environment-setup?guide=native).
+To learn more about the most up-to-date instructions, please refer to the guide available [here](https://docs.expo.dev/get-started/set-up-your-environment/).
 
 #### Clone the repository
 
@@ -86,7 +86,7 @@ This is crucial for native dependencies because the expo will automatically inst
 
 ### Push notification
 
-If you are using the community edition of Chatwoot, you would now be able use the [Official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration.
+If you are using the community edition of Chatwoot, you would now be able use the [Official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration. Please refer to the [documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification) for more details.
 
 
 ### Build & Submit using EAS
