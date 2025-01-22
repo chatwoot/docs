@@ -96,4 +96,22 @@ The PostgreSQL section is divided into parts based on how you are running Postgr
 
 ### Kubernetes (Helm Chart)
 
-   If you are using the built-in PostgreSQL via the official Helm chart, there is no upgrade path to Chatwoot v4.0 yet. The Bitnami-packaged PostgreSQL used in the Helm chart does not support the pgvector extension. This is being worked on.
+   If you use the built-in PostgreSQL via the official Helm chart, follow the steps below. The Bitnami-packaged PostgreSQL used in the Helm chart does not support the pgvector extension. To address this,
+   we have built a custom Postgres image with `pgvector` support.
+
+   NOTE: This is only applicable if you are using the built-in Postgres with helm charts. Refer, to the managed docs section if you are using AWS RDS or something similar.
+
+   1. Create a `values.v4-upgrade.yaml` file with the following contents
+```
+image:
+  repository: chatwoot/chatwoot
+  tag: v4.0.1
+  pullPolicy: IfNotPresent
+
+postgresql:
+  image:
+    registry: ghcr.io
+    repository: chatwoot/pgvector
+```
+2. Run `helm upgrade` with this custom values.yaml file.
+
