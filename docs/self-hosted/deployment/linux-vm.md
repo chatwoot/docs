@@ -91,7 +91,7 @@ rvm use 3.3.3 --default
 
 # Update dependencies
 bundle
-pnpm
+pnpm i
 
 # Recompile the assets
 rake assets:precompile RAILS_ENV=production
