@@ -86,12 +86,12 @@ cd chatwoot
 git checkout master && git pull
 
 # Ensure the ruby version is upto date
-rvm install "ruby-3.2.2"
-rvm use 3.2.2 --default
+rvm install "ruby-3.3.3"
+rvm use 3.3.3 --default
 
 # Update dependencies
 bundle
-yarn
+pnpm i
 
 # Recompile the assets
 rake assets:precompile RAILS_ENV=production
