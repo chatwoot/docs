@@ -106,7 +106,6 @@ server {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
     proxy_http_version 1.1;
-    proxy_set_header Connection “”;
     proxy_buffering off;
 
     client_max_body_size 0;

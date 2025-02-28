@@ -5,7 +5,7 @@ title: "Production deployment guide for Linux VM"
 
 ## Deploying to Linux VM
 
-This guide will help you to install **Chatwoot** on **Ubuntu 20.04 LTS, 22.04 or 24.04** or . We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to the operating system if you are on a non-Ubuntu system.
+This guide will help you install **Chatwoot** on **Ubuntu 24.04 LTS. We have prepared a deployment script for you to run. Refer to the script and feel free to make changes accordingly to the operating system if you are on a non-Ubuntu system.
 
 <iframe width="100%" height="443" src="https://www.youtube.com/embed/vu_61D1VFAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -86,12 +86,12 @@ cd chatwoot
 git checkout master && git pull
 
 # Ensure the ruby version is upto date
-rvm install "ruby-3.2.2"
-rvm use 3.2.2 --default
+rvm install "ruby-3.3.3"
+rvm use 3.3.3 --default
 
 # Update dependencies
 bundle
-yarn
+pnpm i
 
 # Recompile the assets
 rake assets:precompile RAILS_ENV=production

@@ -3,21 +3,20 @@ sidebar_label: "Security Reports"
 title: "Reporting Security issues"
 ---
 
-> Note: We are transitioning from huntr.dev to a new platform. Meanwhile please report any issues via the `Report a vulenerability` button on https://github.com/chatwoot/chatwoot/security
 
 Chatwoot is looking forward to working with security researchers worldwide to keep Chatwoot and our users safe. If you have found an issue in our systems/applications, please reach out to us.
 
 ## Reporting a Vulnerability
 
-We use [huntr.dev](https://huntr.dev) for security issues that affect our project. If you believe you have found a vulnerability, please disclose it via this [form](https://huntr.dev/bounties/disclose).
+We use Github for security issues that affect our project. If you believe you have found a vulnerability, please disclose it via this [form](https://github.com/chatwoot/chatwoot/security/advisories/new).
 
 This will enable us to review the vulnerability, fix it promptly, and reward you for your efforts.
 
 If you have any questions about the process, contact security@chatwoot.com.
 
-Please try your best to describe a clear and realistic impact for your report, and please don't open any public issues on GitHub or social media; we're doing our best to respond through Huntr as quickly as possible.
+Please try your best to describe a clear and realistic impact for your report, and please don't open any public issues on GitHub or social media; we're doing our best to respond through Github as quickly as possible.
 
-> Note: Please use the email for questions related to the process. Disclosures should be done via [huntr.dev](https://huntr.dev/)
+> Note: Please use the email for questions related to the process. Disclosures should be done via [Github](https://github.com/chatwoot/chatwoot/security/advisories/new).
 
 ## Supported versions
 
@@ -57,14 +56,14 @@ We consider the following out of scope, though there may be exceptions.
 - Brute force attacks
 - DNSSEC
 
-If you are unsure about the scope, please create a [report](https://huntr.dev/repos/chatwoot/chatwoot/).
+If you are unsure about the scope, please create a [report](https://github.com/chatwoot/chatwoot/security/advisories/new).
 
 ## Triaging Process
 
-Chatwoot team triages the issues in Huntr weekly. We're doing our best to respond through Huntr as quickly as we can, So please don't open any public issues on GitHub or social media and avoid duplicate reports over Emails.
+Chatwoot team triages the issues in Github weekly. We're doing our best to respond through Github as quickly as we can, So please don't open any public issues on GitHub or social media and avoid duplicate reports over Emails.
 
 - Based on reviewing the report, the team will assign a priority to the issue and move it into the internal backlog to prioritize a fix.
-- In cases where the team needs more information or disagreements of severity, the team will communicate the same over Huntr before completing the triaging.
+- In cases where the team needs more information or disagreements of severity, the team will communicate the same over Github before completing the triaging.
 
 After triage, the team will start working on the issue based on the following Severity and Timelines.
 
