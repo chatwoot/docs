@@ -86,7 +86,7 @@ This is crucial for native dependencies because Expo will automatically install 
 
 ### Push notification
 
-If you are using the community edition of Chatwoot, you would now be able use the [Official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration. Please refer to the [documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification) for more details.
+If you are using the community edition of Chatwoot, you can now use the [official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration. Please refer to the [documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification) for more details.
 
 
 ### Build & Submit using EAS
