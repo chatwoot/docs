@@ -17,7 +17,7 @@ To use Linear Integration, you have to create a Linear app in the developer port
 
 
 1. Create a Linear app.
-2. Obtain the `Client Id` and `Client Secret` for the app and configure it in your Chatwoot [environment variables](/docs/self-hosted/configuration/environment-variables).
+2. Obtain the `Client Id` and `Client Secret` for the app and configure it in your `{Chatwoot installation url}/super_admin/app_config?config=linear`
 3. The callback URL should be `{Chatwoot installation url}/linear/callback`.
 4. Toggle the `Public` switch to make the app public.
 
@@ -27,7 +27,7 @@ To use Linear Integration, you have to create a Linear app in the developer port
 
 ## Configure the environment variables in Chatwoot
 
-Obtain the `Client ID` and `Client Secret` for the app and configure it in your Chatwoot [environment variables](/docs/self-hosted/configuration/environment-variables).These values will be available when you create the app in the developer portal.
+Obtain the `Client ID` and `Client Secret` for the app and configure it in your Installation config it in the `{Chatwoot installation url}/super_admin/app_config?config=linear`. These values will be available when you create the app in the developer portal.
 
 ```bash
 LINEAR_CLIENT_ID=
