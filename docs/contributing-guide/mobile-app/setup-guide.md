@@ -82,11 +82,11 @@ pnpm run:android
 
 Please always to install the packages using the command `npx expo install package-name` instead of `pnpm install package-name`.
 
-This is crucial for native dependencies because the expo will automatically install the correct compatible version while pnpm/yarn/npm will install the latest version which may or may not be compatible.
+This is crucial for native dependencies because Expo will automatically install the correct compatible version, while pnpm/yarn/npm may install the latest version, which may not be compatible.
 
 ### Push notification
 
-If you are using the community edition of Chatwoot, you would now be able use the [Official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration. Please refer to the [documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification) for more details.
+If you are using the community edition of Chatwoot, you can now use the [official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration. Please refer to the [documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification) for more details.
 
 
 ### Build & Submit using EAS
