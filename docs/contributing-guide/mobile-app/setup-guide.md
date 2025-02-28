@@ -82,7 +82,7 @@ pnpm run:android
 
 Please always to install the packages using the command `npx expo install package-name` instead of `pnpm install package-name`.
 
-This is crucial for native dependencies because the expo will automatically install the correct compatible version while pnpm/yarn/npm will install the latest version which may or may not be compatible.
+This is crucial for native dependencies because Expo will automatically install the correct compatible version, while pnpm/yarn/npm may install the latest version, which may not be compatible.
 
 ### Push notification
 
