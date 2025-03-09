@@ -119,7 +119,7 @@ SMTP_PASSWORD=<Your SMTP password>
 ℹ️ For clarification, the `SMTP_USERNAME` should be set to the literal text apikey—this is not the actual API key. SendGrid uses 'apikey' as the standard username for its services.
 
 ```bash
-SMTP_ADDRESS=smtp.sendgrid.com
+SMTP_ADDRESS=smtp.sendgrid.net
 SMTP_AUTHENTICATION=plain
 SMTP_DOMAIN=<your verified domain>
 SMTP_ENABLE_STARTTLS_AUTO=true
