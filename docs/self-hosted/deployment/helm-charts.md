@@ -5,15 +5,15 @@ title: "Deploy Chatwoot on Kubernetes using Helm Charts"
 
 This guide will help you to deploy a production ready Chatwoot instance with Helm Charts.
 
-To quickly try out the charts, follow the two steps below. For a production deployment, please make sure to 
-pass in the required arguments to helm using your custom `values.yaml` file.  
+To quickly try out the charts, follow the two steps below. For a production deployment, please make sure to
+pass in the required arguments to helm using your custom `values.yaml` file.
 
 ```
 helm repo add chatwoot https://chatwoot.github.io/charts
 helm install chatwoot chatwoot/chatwoot
 ```
 
-<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/o1jnYfy8CCo"></iframe>
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube-nocookie.com/embed/o1jnYfy8CCo"></iframe>
 
 ## Prerequisites
 
@@ -55,12 +55,12 @@ The command removes all the Kubernetes components associated with the chart and 
 ### Chatwoot Image parameters
 
 | Name                | Description                                          | Value                  |
-| ------------------- | ---------------------------------------------------- | ---------------------- | 
+| ------------------- | ---------------------------------------------------- | ---------------------- |
 | `image.repository`  | Chatwoot image repository                            | `chatwoot/chatwoot`    |
 | `image.tag`         | Chatwoot image tag (immutable tags are recommended)  | `v2.16.0`              |
 | `image.pullPolicy`  | Chatwoot image pull policy                           | `IfNotPresent`         |
 
- 
+
 ### Chatwoot Environment Variables
 
 | Name                                 | Type                                                                | Default Value                                              |
@@ -87,7 +87,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `env.SMTP_PORT`                      | SMTP port                                                                       | `"587"`                                                    |
 | `env.SMTP_USERNAME`                  | SMTP username                                                                   | `""`                                                       |
 | `env.USE_INBOX_AVATAR_FOR_BOT`       | Bot customizations                                                              | `"true"`                                                   |
-                                            
+
 ### Email setup for conversation continuity (Incoming emails)
 
 | Name                                | Type                                                                                                                                                    | Default Value |
@@ -131,7 +131,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `env.LOG_LEVEL`                     | string                                                              | `"info"`                                                   |
 | `env.LOG_SIZE`                      | string                                                              | `"500"`                                                    |
 
-### Third party credentials 
+### Third party credentials
 
 | Name                                | Type                                                                 | Default Value                                              |
 | ----------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
@@ -309,7 +309,7 @@ helm upgrade chatwoot chatwoot/chatwoot --version="0.9.0" --namespace ug3 -f val
 5. Update and install new version of charts.
 ```
 helm repo update
-#reset web.replicaCount and worker.replicaCount to your previous values 
+#reset web.replicaCount and worker.replicaCount to your previous values
 helm install chatwoot chatwoot/chatwoot -f <your-values.yaml> #-n chatwoot
 ```
 
@@ -342,7 +342,7 @@ RAILS_ENV=production bundle exec rails c
 ::Redis::Alfred.delete(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING)
 ```
 
-10. Load the Chatwoot web url, log in using the old credentials and verify the contents. Voila! Thats it!! 
+10. Load the Chatwoot web url, log in using the old credentials and verify the contents. Voila! Thats it!!
 
 ### To 0.9.x
 
@@ -360,9 +360,9 @@ Move from Kubernetes ConfigMap to Kubernetes Secrets for environment variables. 
 
 ### To 0.6.x
 
-Existing labels were causing issues with `helm upgrade`. `0.6.x` introduces breaking changes related to selector 
-labels used for deployements. Please delete your helm release and recreate. Deleting your helm release will 
-not delete your persistent volumes used for redis and postgres and as such your data should be safe. 
+Existing labels were causing issues with `helm upgrade`. `0.6.x` introduces breaking changes related to selector
+labels used for deployements. Please delete your helm release and recreate. Deleting your helm release will
+not delete your persistent volumes used for redis and postgres and as such your data should be safe.
 
 ```
 helm delete chatwoot
