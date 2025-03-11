@@ -69,6 +69,12 @@ You can also test the `setUser` method by using
 http://localhost:3000/widget_tests?setUser=true
 ```
 
+To use those URLs, you first need to compile the assets. Run:
+
+```bash
+bundle exec rails assets:precompile 
+```
+
 ### Docker for development
 
 > **Note**: Follow this section only if you are trying to setup Chatwoot via docker. Else skip this.
@@ -117,6 +123,16 @@ docker compose run -rm rails bundle exec rake db:reset
 ```
 
 This command essentially runs postgres and redis containers and then run the rake command inside the chatwoot server container.
+
+#### Testing chat widget in your local environment with Docker
+
+First,compile the assets. Run:
+
+```bash
+docker compose exec rails bundle exec rails assets:precompile 
+```
+
+Then use the URLs from [#testing-chat-widget-in-your-local-environment](/docs/contributing-guide/project-setup#testing-chat-widget-in-your-local-environment)
 
 ### Running Cypress Tests
 
