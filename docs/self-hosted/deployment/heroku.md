@@ -18,7 +18,7 @@ Deploy chatwoot on Heroku through the following steps
 4. Configure the environment variables for [mailer](/docs/self-hosted/configuration/environment-variables#configure-emails) and [storage](/docs/self-hosted/deployment/storage/supported-providers) as per the [documentation](/docs/self-hosted/configuration/environment-variables).
 5. Head over to `yourapp.herokuapp.com` and enjoy using Chatwoot.
 
-<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube.com/embed/iN2Dl0QkvEg?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="443" type="text/html" src="https://www.youtube-nocookie.com/embed/iN2Dl0QkvEg?autoplay=0&fs=0&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
 
 ### Updating the deployment on Heroku
 
