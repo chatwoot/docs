@@ -102,6 +102,7 @@ module.exports = [
       "self-hosted/configuration/features/integrations/instagram-channel-setup",
       "self-hosted/configuration/features/integrations/slack-integration-setup",
       "self-hosted/configuration/features/integrations/linear-integration-setup",
+      "self-hosted/configuration/features/integrations/shopify-integration-setup",
     ],
   },
   {
