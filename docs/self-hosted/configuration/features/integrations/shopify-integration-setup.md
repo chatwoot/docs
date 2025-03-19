@@ -33,4 +33,4 @@ To use Shopify Integration, you need to create a Shopify app in the [shopify par
 
 ## Connect Chatwoot with your Shopify account
 
-Follow this [guide](https://chatwoot.help/hc/user-guide/articles/1739949089-how-to-track-issues-and-features-with-linear-integration) to complete the Shopify integration.
+Follow this [guide](https://chatwoot.help/hc/user-guide/articles/1742395545-how-to-track-orders-with-shopify-integration) to complete the Shopify integration.
