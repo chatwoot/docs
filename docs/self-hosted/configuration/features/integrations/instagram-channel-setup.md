@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Instagram"
-title: "Setting Up Instagram Account"
+sidebar_label: "Instagram via Facebook Login"
+title: "Instagram via Facebook Login"
 ---
 
 

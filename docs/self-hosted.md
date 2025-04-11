@@ -71,6 +71,8 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Slack](/docs/self-hosted/configuration/features/integrations/slack-integration-setup)
 - [Linear](/docs/self-hosted/configuration/features/integrations/linear-integration-setup)
 - [Shopify](/docs/self-hosted/configuration/features/integrations/shopify-integration-setup)
+- [Instagram via Facebook Login](/docs/self-hosted/configuration/features/integrations/instagram-channel-setup)
+- [Instagram via Instagram Business Login](/docs/self-hosted/configuration/features/integrations/instagram-via-instagram-business-login)
 
 ## Maintenance
 
