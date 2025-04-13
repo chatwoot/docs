@@ -32,8 +32,8 @@ docker-compose version 2.24.7
     cp .env.example .env
     # update redis and postgres passwords
     nano .env
-    # update docker-compose.yml with the same postgres password
-    nano docker-compose.yml
+    # update docker-compose.yaml with the same postgres password
+    nano docker-compose.yaml
    ```
 
 3. Build the images.
