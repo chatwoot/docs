@@ -4,8 +4,7 @@ title: "Instagram via Instagram Business Login"
 ---
 
 
-> **Note**: Meta recommends using Instagram Business Login as the preferred authentication method due to its easier configuration and improved developer experience.
-
+> **Note**: Please ensure you have installed version v4.0.5 or above. If not, please refer to this [guide](./instagram-channel-setup.md)
 
 
 1. A valid facebook account.
@@ -14,7 +13,7 @@ title: "Instagram via Instagram Business Login"
 
 ### Register A Facebook App
 
-To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](./facebook-channel-setup.md).
+To use Instagram Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](./facebook-channel-setup.md).
 
 
 1. Click on the "Create App" button

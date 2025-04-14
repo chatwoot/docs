@@ -3,7 +3,6 @@ sidebar_label: "Facebook"
 title: "Setting Up Facebook"
 ---
 
-> **Note**: Meta recommends using Instagram Business Login as the preferred authentication method due to its easier configuration and improved developer experience.
 
 To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](https://developers.facebook.com/docs/apps/#register).
 
