@@ -111,3 +111,10 @@ Before you can start using your Facebook app in production, you will have to get
 **3/ Invalid request: Request parameters are invalid: Invalid redirect_uri**
 
 - Please configure the Frontend URL. The Frontend URL does not match the authorization URL.
+
+**4/ Instagram Channel creation Error: Failed to exchange token:**
+
+- Please make sure that tester account has been added to the facebook app settings.
+
+
+
