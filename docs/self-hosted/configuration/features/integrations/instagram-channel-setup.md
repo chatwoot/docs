@@ -5,7 +5,7 @@ title: "Instagram via Facebook Login"
 
 
 
-> **Note**: We recommend Instagram Business Login as the preferred authentication method, as it provides simpler configuration and a better developer experience. Please refer to this [guide](./instagram-via-instagram-business-login.md) for more details. We will be stopping support for Instagram via Facebook Login in the future from v4.0.5 onwards.
+> **Note**: We recommend Instagram Business Login as the preferred authentication method, as it provides simpler configuration and a better developer experience. Please refer to this [guide](./instagram-via-instagram-business-login.md) for more details. We will be stopping the support for Instagram via Facebook Login in the future from v4.0.5 onwards.
 
 
 

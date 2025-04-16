@@ -99,22 +99,25 @@ Before you can start using your Facebook app in production, you will have to get
 
 ### Troubleshooting & Common Errors
 
-**1/ Insufficient Developer Role Error**
+#### Insufficient Developer Role Error
 
-- Ensure the Instagram user is added as a developer:
-    - **Meta Dashboard → App Roles → Roles → Add People → Enter Instagram ID**
+Ensure the Instagram user is added as a developer: `Meta Dashboard → App Roles → Roles → Add People → Enter Instagram ID`
 
-**2/ API Access Deactivated**
+#### API Access Deactivated
 
-- Ensure the **Privacy Policy URL** is valid and correctly set.
+Ensure the **Privacy Policy URL** is valid and correctly set.
 
-**3/ Invalid request: Request parameters are invalid: Invalid redirect_uri**
+#### Invalid request: Request parameters are invalid: Invalid redirect_uri
 
-- Please configure the Frontend URL. The Frontend URL does not match the authorization URL.
+Please configure the Frontend URL. The Frontend URL does not match the authorization URL.
 
-**4/ Instagram Channel creation Error: Failed to exchange token:**
+#### Instagram Channel creation Error: Failed to exchange token
 
-- Please make sure that tester account has been added to the facebook app settings.
+Please make sure that tester account has been added to the facebook app settings.
+
+#### 400: Session Invalid when connecting the instagram channel
+
+This might be issue from facebook side. Please try again after some time.
 
 
 
