@@ -77,7 +77,7 @@ Set Redirect URL as `{your_chatwoot_url}/instagram/callback`
 ### Create Instagram Inbox
 
 
-Head over to Chatwoot and create a Instagram inbox. Please refer to this [guide](https://www.chatwoot.com/hc/user-guide/articles/1677829420-how-to-setup-an-instagram-channel) for more details on creating a Instagram inbox in Chatwoot.
+Head over to Chatwoot and create a Instagram inbox. Please refer to this [guide](https://chatwoot.help/hc/user-guide/articles/1744361165-how-to-setup-an-instagram-channel-via-instagram-login) for more details on creating a Instagram inbox in Chatwoot.
 
 
 
