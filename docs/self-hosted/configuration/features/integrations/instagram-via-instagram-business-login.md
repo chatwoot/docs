@@ -4,7 +4,7 @@ title: "Instagram via Instagram Business Login"
 ---
 
 
-> **Note**: Please ensure you have installed version v4.0.5 or above. If not, please refer to this [guide](./instagram-channel-setup.md)
+> **Note**: Please ensure you have installed version v4.1 or above. If not, please refer to this [guide](./instagram-channel-setup.md)
 
 
 1. A valid facebook account.
