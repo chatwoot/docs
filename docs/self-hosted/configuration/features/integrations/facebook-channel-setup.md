@@ -3,14 +3,13 @@ sidebar_label: "Facebook"
 title: "Setting Up Facebook"
 ---
 
-To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](https://developers.facebook.com/docs/apps/#register).
 
+To use Facebook Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](https://developers.facebook.com/docs/apps/#register).
 
 ### Prerequisites
 
 1. A valid facebook account.
 2. A valid facebook page.
-
 
 ### Register A Facebook App
 
@@ -19,7 +18,6 @@ To use Facebook Channel, you have to create a Facebook app in the developer port
 ![facebook_create_app](./images/facebook/facebook-create-app.png)
 
 2. Select the option "Other".
-
 
 ![facebook_other_app](./images/facebook/facebook_other_app.png)
 
@@ -33,9 +31,7 @@ To use Facebook Channel, you have to create a Facebook app in the developer port
 
 Once you register your Facebook App, you will have to obtain the `App Id` and `App Secret`. These values will be available in the app settings and will be required while setting up Chatwoot environment variables.
 
-
 ![facebook_app_id](./images/facebook/facebook_app_id.png)
-
 
 ### Configuring the Environment Variables in Chatwoot
 
@@ -51,11 +47,9 @@ FB_APP_ID=
 
 ### Configure Facebook Login
 
-
 1. Add the Facebook Login product via the Facebook app dashboard.
 
 ![facebook_app_login](./images/facebook/facebook_app_login.png)
-
 
 2. Enable `Web OAuth Login`, `Login with Javascript SDK` and add your self-hosted domain to the `Allowed Domains for the JavaScript SDK` input.
 
@@ -77,11 +71,9 @@ FB_APP_ID=
 
 4. Provide the Callback URL as `{your_chatwoot_installation_url}/bot` and the Verify token as `FB_VERIFY_TOKEN` from your environment variable.
 
-
 ![facebook_callback_url](./images/facebook/facebook_callback_url.png)
 
 5. Head over to Chatwoot and create a Messenger inbox. Choose a page for which your Facebook developer account has admin access to. Please refer to this [guide](https://www.chatwoot.com/hc/user-guide/articles/1677778588-how-to-setup-a-facebook-channel) for more details on creating a Messenger inbox in Chatwoot.
-
 
 ### Testing the Facebook channel
 
@@ -93,17 +85,16 @@ To test the changes until the app is approved for production. Follow the steps
 
 ![facebook_messenger_settings](./images/facebook/facebook_messenger_settings.png)
 
-
 2. Click `Add or remove pages` and connect the page which you choose while creating the Chatwoot Messenger inbox.
 
 ![facebook_callback_pages](./images/facebook/facebook_callback_pages.png)
-
 
 3. After connecting the pages, Click on `Add subscriptions` from the connected page.
 
 ![facebook_page_config](./images/facebook/facebook_page_config.png)
 
 4. Subscribe to the following fields and save the subscription.
+
 ```
 messages
 messaging_postbacks
@@ -111,7 +102,6 @@ message_deliveries
 message_reads
 message_echoes
 ```
-
 
 ![facebook_page_subscription](./images/facebook/facebook_page_subscription.png)
 
@@ -122,6 +112,7 @@ message_echoes
 Before you can start using your Facebook app in production, you will have to get it verified by Facebook. Refer to the [docs](https://developers.facebook.com/docs/apps/review/) on getting your app verified.
 
 Obtain advanced access to the required permissions mentioned below for your Facebook app
+
 ```
 pages_messaging
 pages_show_list
