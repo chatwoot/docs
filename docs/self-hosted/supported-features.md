@@ -120,21 +120,30 @@ title: "Supported features on channels"
 
 ### Outgoing attachments supported file types
 
+> Note: The default maximum file size limit is 40MB.
+
 <div class="table table-striped">
 
-| Channel             | Audio                          | Image | Video | Document |
-| ------------------- | ------------------------------ | ----- | ----- | -------- |
-| Website            | All | All  | All | All |
-| Facebook            | All | All  | All | All |
-| Instagram           | aac, m4a, wav, mp4 (25mb)       | png, jpeg, gif (8mb) | mp4, ogg, avi, mov, web (25mb) | Not supported |
-| WhatsApp Cloud          | All | All  | All | All |
-| WhatsApp Twilio          | mpeg, opus, ogg, amr(5mb)  | png, jpeg (5mb) | mp4 (5mb) | pdf (5mb) |
-| Email             | All | All  | All | All |
-| Telegram          | All | All  | All | All |
-| Line             | Not supported      | png, jpeg | mp4 | Not supported |
-| API            | All | All  | All | All |
+| Channel         | Audio                     | Image                | Video                          | Document      |
+| --------------- | ------------------------- | -------------------- | ------------------------------ | ------------- |
+| Website         | All                       | All                  | All                            | All           |
+| Instagram       | aac, m4a, wav, mp4 (25mb) | png, jpeg, gif (8mb) | mp4, ogg, avi, mov, web (25mb) | Not supported |
+| Facebook        | All                       | All                  | All                            | All           |
+| WhatsApp Cloud  | All                       | All                  | All                            | All           |
+| WhatsApp Twilio | mpeg, opus, ogg, amr(5mb) | png, jpeg (5mb)      | mp4 (5mb)                      | pdf (5mb)     |
+| Email           | All                       | All                  | All                            | All           |
+| Telegram        | All                       | All                  | All                            | All           |
+| Line            | Not supported             | png, jpeg            | mp4                            | Not supported |
+| API             | All                       | All                  | All                            | All           |
 
-> Note: The default maximum file size limit is 40MB.
+> "All" means the channel supports all standard file types listed below:
+
+**Standard File Types**
+
+- **Video:** `ogg`, `mp4`, `mov`, `webm`, `quicktime`, `avi`
+- **Audio:** `mpeg`, `opus`, `ogg`, `amr`, `aac`, `m4a`, `wav`
+- **Image:** `png`, `jpeg`, `gif`, `bmp`, `webp`
+- **Document:** `pdf`, `doc`, `docx`, `xls`, `xlsx`, `ppt`, `pptx`, `zip`, `7z`, `rar`, `tar`, `xml`, `csv`, `json`, `rtf`, `txt`, `plain`, `.3gpp`, `x-7z-compressed`, `vnd.rar`, `x-tar`, `msword`
 
 </div>
 
