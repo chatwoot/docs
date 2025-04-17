@@ -13,7 +13,7 @@ module.exports = [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
       {
-        "Linux": [
+        Linux: [
           "self-hosted/deployment/linux-vm",
           "self-hosted/deployment/docker",
         ],
@@ -28,7 +28,7 @@ module.exports = [
     type: "category",
     items: [
       {
-        "AWS": [
+        AWS: [
           "self-hosted/deployment/aws",
           "self-hosted/deployment/aws-marketplace",
         ],
@@ -57,20 +57,20 @@ module.exports = [
     items: [
       "self-hosted/configuration/environment-variables",
       {
-        "Performance": [
+        Performance: [
           "self-hosted/deployment/performance/optimizing-configurations",
           "self-hosted/deployment/performance/cloudfront-cdn",
-        ]
+        ],
       },
       {
-        "Monitoring": [
+        Monitoring: [
           "self-hosted/monitoring/super-admin-sidekiq",
           "self-hosted/monitoring/apm-and-error-monitoring",
           "self-hosted/monitoring/rate-limiting",
         ],
       },
       {
-        "Storage": [
+        Storage: [
           "self-hosted/deployment/storage/supported-providers",
           "self-hosted/deployment/storage/s3-bucket",
           "self-hosted/deployment/storage/gcs-bucket",
@@ -86,11 +86,8 @@ module.exports = [
         ],
       },
       {
-        "Help Center": [
-          "self-hosted/configuration/help-center",
-        ],
+        "Help Center": ["self-hosted/configuration/help-center"],
       },
-
     ],
   },
   {
@@ -103,18 +100,14 @@ module.exports = [
       "self-hosted/configuration/features/integrations/instagram-via-instagram-business-login",
       "self-hosted/configuration/features/integrations/slack-integration-setup",
       "self-hosted/configuration/features/integrations/linear-integration-setup",
-      "self-hosted/configuration/features/integrations/shopify-integration-setup"
-      
+      "self-hosted/configuration/features/integrations/shopify-integration-setup",
     ],
   },
   {
     collapsible: true,
     label: "Maintenance",
     type: "category",
-    items: [
-      "self-hosted/deployment/upgrade",
-      "self-hosted/deployment/backup",
-    ],
+    items: ["self-hosted/deployment/upgrade", "self-hosted/deployment/backup"],
   },
   {
     type: "category",
@@ -130,6 +123,12 @@ module.exports = [
   {
     type: "category",
     label: "Others",
-    items: ["self-hosted/telemetry", "self-hosted/enterprise-edition", "self-hosted/restricted-instances", "self-hosted/faq"],
+    items: [
+      "self-hosted/telemetry",
+      "self-hosted/enterprise-edition",
+      "self-hosted/supported-features",
+      "self-hosted/restricted-instances",
+      "self-hosted/faq",
+    ],
   },
 ];
