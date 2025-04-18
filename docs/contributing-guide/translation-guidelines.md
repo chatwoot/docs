@@ -9,7 +9,7 @@ Chatwoot uses American English by default. Each and every string available in Ch
 
 ## How do I see the strings that needs to be translated?
 
-In the codebase the string are placed in the following locations.
+In the codebase, the string are placed in the following locations:
 
 - `app/javascript/dashboard/i18n` - The strings related to the agent dashboard
 - `app/javascript/widget/i18n` - The strings related to the web widget
