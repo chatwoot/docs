@@ -2,7 +2,7 @@
 title: 'Environment variables'
 ---
 
-For a complete set of production environment variables, please refer to [Production Environment Variables Guide](/docs/self-hosted/configuration/environment-variables)
+For a complete set of production environment variables, Refer to [Production Environment Variables Guide](/docs/self-hosted/configuration/environment-variables)
 
 In addition to the above variables, you can use the following variables in development mode.
 

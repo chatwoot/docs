@@ -9,8 +9,7 @@ Chatwoot uses American English by default. Each and every string available in Ch
 
 ## How do I see the strings that needs to be translated?
 
-In the codebase the string are placed in the following locations.
-
+In the codebase, the string are placed in the following locations:
 - `app/javascript/dashboard/i18n` - The strings related to the agent dashboard
 - `app/javascript/widget/i18n` - The strings related to the web widget
 - `app/javascript/survey/i18n` - The strings related to CSAT surveys
@@ -34,7 +33,7 @@ At Chatwoot, we prefer to use formal form of language wherever possible. For ins
 
 Proofreading helps ensure the accuracy and consistency of translations. Right now, the translations are being accepted without a proof reading step. This would be changed in the future as an when there are more contributors on each language.
 
-*Note:* If you are the only person contributing to a language, make sure that you inform any of the Chatwoot members to gain access to manage the language.
+*Note:* If you are the only person contributing to a language, ensure that you inform any of the Chatwoot members to gain access to manage the language.
 
 ### Releasing a new language
 

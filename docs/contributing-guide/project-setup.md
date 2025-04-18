@@ -3,7 +3,7 @@ sidebar_label: "Setup Guide"
 title: "Project Setup"
 ---
 
-This guide will help you to setup and run Chatwoot in development mode. Please make sure you have completed the environment setup.
+This guide will help you to setup and run Chatwoot in development mode. Ensure you have completed the environment setup.
 
 ### Clone the repo
 

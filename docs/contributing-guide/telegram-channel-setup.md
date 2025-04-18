@@ -3,7 +3,7 @@ sidebar_label: "Telegram App"
 title: "Setup Telegram app integration on your local machine"
 ---
 
-Please follow the steps if you are trying to work with the Telegram integration on your local machine.
+To work with the Telegram integration on your local machine, do the following:
 
 - Start a Ngrok server listening at port `3000` or the port you will be running the Chatwoot installation.
 - Update the .env variable FRONTEND_URL in Chatwoot with the `https` version of the Ngrok URL.

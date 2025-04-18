@@ -16,11 +16,11 @@ To create a platform app, follow these steps:
 
    ![Super Admin Portal](./images/platform-app/super_admin.png)
 
-2. Click on the "New platform app" button.
+2. Click the "New platform app" button.
 
    ![Platform Apps Home](./images/platform-app/platform-home.png)
 
-3. Fill in the platform app name and click the "Create" button.
+3. Enter the platform app name and click **Create Platform app**.
 
    ![Create Platform App](./images/platform-app/platform-create.png)
 
@@ -30,7 +30,7 @@ To create a platform app, follow these steps:
 
 ## Using the Access Token
 
-The `access_token` is required to authenticate all API requests. Please use the Postman collection to test these APIs.
+The `access_token` is required to authenticate all API requests. Use the Postman collection to test these APIs.
 
 ### Testing the APIs
 

@@ -16,7 +16,7 @@ If you have any questions about the process, contact security@chatwoot.com.
 
 Please try your best to describe a clear and realistic impact for your report, and please don't open any public issues on GitHub or social media; we're doing our best to respond through Github as quickly as possible.
 
-> Note: Please use the email for questions related to the process. Disclosures should be done via [Github](https://github.com/chatwoot/chatwoot/security/advisories/new).
+> Note:  Use the email for questions related to the process. Disclosures should be done via [Github](https://github.com/chatwoot/chatwoot/security/advisories/new).
 
 ## Supported versions
 
