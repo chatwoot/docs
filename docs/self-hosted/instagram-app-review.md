@@ -1,6 +1,6 @@
 ---
-sidebar_label: 'Instagram App Review'
-title: 'Instagram App Review'
+sidebar_label: "Instagram App Review"
+title: "Instagram App Review"
 ---
 
 # Instagram App Review Submission Template
@@ -13,9 +13,7 @@ This document provides a customizable template for brands requesting advanced In
 - `instagram_business_manage_messages` – Receive and respond to direct messages
 - `human_agent` – Enable human responses beyond the standard 24-hour window
 
-
 Please replace all placeholder values such as `[BRAND_NAME]`, `[DASHBOARD_URL]`, `[EMAIL]`, and `[PASSWORD]` before submitting.
-
 
 ## `instagram_business_basic` permission
 
@@ -30,9 +28,9 @@ This permission is used to:
 
 This metadata is essential for correct routing of messages to the appropriate agent, identification of the agent handling the conversation, and accurate profile display in the chat UI, ensuring a seamless customer experience.
 
-- **App URL:** [DASHBOARD_URL]  
-- **Test Account:**  
-  - Email: [EMAIL]  
+- **App URL:** [DASHBOARD_URL]
+- **Test Account:**
+  - Email: [EMAIL]
   - Password: [PASSWORD]
 
 ---
@@ -57,6 +55,8 @@ This metadata is essential for correct routing of messages to the appropriate ag
 
 ### Why You Are Requesting This Permission
 
+[BRAND_NAME] is a customer support platform that allows businesses to manage conversations across multiple messaging platforms — including Instagram, WhatsApp, Facebook, and more — through a unified inbox.
+
 This permission allows the platform to manage and respond to Instagram messages on behalf of the connected Instagram Business account.
 
 It is used to:
@@ -70,9 +70,9 @@ The webhook setup works by configuring a URL endpoint on the platform to receive
 
 Without this permission, users would not be able to communicate with their Instagram audience via the support platform.
 
-- **App URL:** [DASHBOARD_URL]  
-- **Test Account:**  
-  - Email: [EMAIL]  
+- **App URL:** [DASHBOARD_URL]
+- **Test Account:**
+  - Email: [EMAIL]
   - Password: [PASSWORD]
 
 ---
@@ -95,15 +95,24 @@ Without this permission, users would not be able to communicate with their Insta
 
 ### Why You Are Requesting This Permission
 
-This permission allows human agents to respond to customer messages **within 7 days** of the last message, instead of the standard 24-hour window.
+[BRAND_NAME] is a customer support platform that allows businesses to manage conversations across multiple messaging platforms — including Instagram, WhatsApp, Facebook, and more — through a unified inbox.
 
-Meta’s policy dictates that businesses can only respond to messages within a 24-hour window unless the `human_agent` tag is applied. This tag is triggered programmatically when the last message from the customer is older than 24 hours but less than 7 days. This flexibility aligns with real-world customer support scenarios — such as weekends, holidays, or escalated issues requiring additional time.
+We are requesting the Human Agent permission to allow support agents to follow up on customer conversations beyond the 24-hour window, especially when customers reach out after business hours or over the weekend.
 
-With the `human_agent` tag, businesses can maintain responsiveness while complying with Meta’s messaging policies.
+Example use case:
 
-- **App URL:** [DASHBOARD_URL]  
-- **Test Account:**  
-  - Email: [EMAIL]  
+- A customer sends a message Friday night.
+- The business is closed on weekends.
+- On Monday morning, the agent cannot reply because the 24h window has expired.
+- With the Human Agent tag, the agent can now follow up on Monday morning and resolve the query.
+
+This enhances customer experience and ensures critical messages are not left unresolved due to timing limitations.
+
+This permission is essential to allow human agents to continue conversations in a natural, respectful, and supportive way without forcing customers to message again just to reopen the window.
+
+- **App URL:** [DASHBOARD_URL]
+- **Test Account:**
+  - Email: [EMAIL]
   - Password: [PASSWORD]
 
 ---
@@ -118,23 +127,13 @@ With the `human_agent` tag, businesses can maintain responsiveness while complyi
 4. Explain why a response is still needed — for example, the support agent was unavailable during a weekend or the issue required escalation.
 5. Describe how the `human_agent` tag will be used to allow the response within the extended 7-day window.
 
----
-
-## Access Token Scopes Required
-
-Ensure your Instagram Login flow requests the following scopes:
-
-- `instagram_business_basic`
-- `instagram_business_manage_messages`
-
----
-
 ## Notes
 
-- ❌ Do not include Instagram account credentials.
-- ✅ Only share test dashboard credentials (non-super admin access recommended).
-- 🎥 Ensure your screencast clearly shows the platform UI and relevant workflows.
-- 📋 Keep your permission usage aligned with Meta’s policy for message tags and user privacy.
-- 🧠 Speak aloud or add captions in your video for reviewer clarity.
+- Do not include Instagram account credentials.
+- Only share test dashboard credentials (non-super admin access recommended).
+- Ensure your screencast clearly shows the platform UI and relevant workflows.
+- Keep your permission usage aligned with Meta’s policy for message tags and user privacy.
+- Speak aloud or add captions in your video for reviewer clarity.
+- Video should be as much as detailed as possible.
 
 > 💡 **Tip:** Use a screen recorder that captures mouse interactions, popups, and browser activity to clearly demonstrate authentication flows and inbox interactions.
