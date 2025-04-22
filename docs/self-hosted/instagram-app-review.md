@@ -15,6 +15,68 @@ This document provides a customizable template for brands requesting advanced In
 
 Please replace all placeholder values such as `[BRAND_NAME]`, `[DASHBOARD_URL]`, `[EMAIL]`, and `[PASSWORD]` before submitting.
 
+### Start the review process
+
+Add Platform
+
+![i.g-add-platform](./img/instagram-review/i.g-add-platform.png)
+
+Go to Instagram product and click on "Go to app review"
+
+![i.g-review-1](./img/instagram-review/i.g-review-1.png)
+
+Click on "Continue"
+
+![i.g-review-2](./img/instagram-review/i.g-review-2.png)
+
+Select the permissions `instagram_business_basic`, `instagram_business_manage_messages` and `human_agent` and click on "Continue to app review"
+
+![i.g-review-3](./img/instagram-review/i-g-review-3.png)
+
+Go to app review requests page
+
+![i.g-review-4](./img/instagram-review/i.g-review-requests.png)
+
+Click on "Edit"
+
+![i.g-review-5](./img/instagram-review/i.g-review-edit.png)
+
+You need to have business account to be able to request these permissions. Please make sure you have a business account before requesting the permissions.
+
+![i.g-review-6](./img/instagram-review/i.g-business-review.png)
+
+Please add all the details in the "Data handling" section.
+
+![i.g-review-7](./img/instagram-review/i.g-data-handling-questions.png)
+
+Add all the pre-processing steps you do on the data.
+
+![i.g-review-8](./img/instagram-review/i.g-data-handling.png)
+
+Complete app settings
+
+![i.g-app-settings](./img/instagram-review/i.g-app-settings.png)
+
+Provide the review instructions
+
+![i.g-review-instructions](./img/instagram-review/i.g-review-instructions.png)
+
+1. Go to [DASHBOARD_URL](DASHBOARD_URL)
+2. Login with the following credentials, please ensure you paste these exact credentials without any extra spaces.
+   email: [EMAIL]
+   password: [PASSWORD]
+3. Once you log-in you will be greeted with the dashboard with an empty chat screen. On the left most sidebar, you will find the settings (gear like) icon
+4. Click on Settings > Inboxes > Add inbox. You can also find the settings page on this URL: [DASHBOARD_URL]/app/accounts/[ACCOUNT_ID]/settings/inboxes/new
+5. On the first step "Choose a channel" you can select Instagram, this will take you to the second step, where you will find the "Continue with Instagram" button.
+6. Once the setup is done, you can send a message to the Connected Instagram account
+7. The message should show up on the dashboard. [DASHBOARD_URL]/app/accounts/[ACCOUNT_ID]/dashboard
+
+![i.g-review-instructions-1](./img/instagram-review/i.g-review-instructions-2.png)
+
+It is time to request the permissions. Please click on each permission and fill the details. Once you are done, please click on "Submit for review"
+
+![i.g-permission-requests](./img/instagram-review/i.g-permission-requests.png)
+
 ## `instagram_business_basic` permission
 
 ### Why You Are Requesting This Permission
