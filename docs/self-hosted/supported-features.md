@@ -141,7 +141,7 @@ title: "Supported features on channels"
 **Standard File Types**
 
 - **Video:** `ogg`, `mp4`, `mov`, `webm`, `quicktime`, `avi`
-- **Audio:** `mpeg`, `opus`, `ogg`, `amr`, `aac`, `m4a`, `wav`
+- **Audio:** `mp3`, `mpeg`, `opus`, `ogg`, `amr`, `aac`, `m4a`, `wav`
 - **Image:** `png`, `jpeg`, `gif`, `bmp`, `webp`
 - **Document:** `pdf`, `doc`, `docx`, `xls`, `xlsx`, `ppt`, `pptx`, `zip`, `7z`, `rar`, `tar`, `xml`, `csv`, `json`, `rtf`, `txt`, `plain`, `.3gpp`, `x-7z-compressed`, `vnd.rar`, `x-tar`, `msword`
 

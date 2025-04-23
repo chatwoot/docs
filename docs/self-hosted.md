@@ -89,4 +89,5 @@ This guide will help you to install and setup a production ready Chatwoot.
 - [Enterprise Edition](/docs/self-hosted/enterprise-edition)
 - [Supported features](/docs/self-hosted/supported-features)
 - [Restricted Instances](/docs/self-hosted/restricted-instances)
+- [Instagram App Review](/docs/self-hosted/instagram-app-review)
 - [FAQ](/docs/self-hosted/faq)

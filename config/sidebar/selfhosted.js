@@ -128,6 +128,7 @@ module.exports = [
       "self-hosted/enterprise-edition",
       "self-hosted/supported-features",
       "self-hosted/restricted-instances",
+      "self-hosted/instagram-app-review",
       "self-hosted/faq",
     ],
   },
