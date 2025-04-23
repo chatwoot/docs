@@ -3,7 +3,7 @@ sidebar_label: "Instagram App Review"
 title: "Instagram App Review"
 ---
 
-# Instagram App Review Submission Template
+# Instagram App review submission template
 
 This document provides a customizable template for brands requesting advanced Instagram permissions. Use this template to submit an Instagram App Review request and demonstrate how your app uses advanced messaging permissions to provide real-time customer support through Instagram.
 
