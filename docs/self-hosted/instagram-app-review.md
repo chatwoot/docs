@@ -96,7 +96,7 @@ You can use the following template to provide the review instructions:
 
 ## Permissions
 
-It is time to request the permissions. Please click on each permission and fill the details. Once you are done, please click on "Submit for review"
+It is time to request the permissions. Please click on each permission and fill the details. Once you are done, please click on "Submit for review". We have provided sample permission requests below which you can use as a reference.
 
 ![i.g-permission-requests](./img/instagram-review/i.g-permission-requests.png)
 
