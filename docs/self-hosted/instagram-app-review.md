@@ -15,23 +15,31 @@ This document provides a customizable template for brands requesting advanced In
 
 Please replace all placeholder values such as `[BRAND_NAME]`, `[DASHBOARD_URL]`, `[EMAIL]`, and `[PASSWORD]` before submitting.
 
-### Start the review process
+## Start the review process
 
-Add Platform
+### Add Platform
 
 ![i.g-add-platform](./img/instagram-review/i.g-add-platform.png)
+
+### Go to the app review section
 
 Go to Instagram product and click on "Go to app review"
 
 ![i.g-review-1](./img/instagram-review/i.g-review-1.png)
 
+### Confirm the documentation
+
 Click on "Continue"
 
 ![i.g-review-2](./img/instagram-review/i.g-review-2.png)
 
+### Select the permissions
+
 Select the permissions `instagram_business_basic`, `instagram_business_manage_messages` and `human_agent` and click on "Continue to app review"
 
 ![i.g-review-3](./img/instagram-review/i-g-review-3.png)
+
+### Configure app review requests
 
 Go to app review requests page
 
@@ -41,11 +49,13 @@ Click on "Edit"
 
 ![i.g-review-5](./img/instagram-review/i.g-review-edit.png)
 
-You need to have business account to be able to request these permissions. Please make sure you have a business account before requesting the permissions.
+### Business account
+
+You **must** have a business account to be able to request these permissions. Please make sure you have a business account before requesting the permissions.
 
 ![i.g-review-6](./img/instagram-review/i.g-business-review.png)
 
-Please add all the details in the "Data handling" section.
+### Data handling
 
 ![i.g-review-7](./img/instagram-review/i.g-data-handling-questions.png)
 
@@ -53,13 +63,17 @@ Add all the pre-processing steps you do on the data.
 
 ![i.g-review-8](./img/instagram-review/i.g-data-handling.png)
 
-Complete app settings
+### Complete app settings
 
 ![i.g-app-settings](./img/instagram-review/i.g-app-settings.png)
 
-Provide the review instructions
+### Review instructions
+
+Provide the review instructions to the reviewer for the app review.
 
 ![i.g-review-instructions](./img/instagram-review/i.g-review-instructions.png)
+
+You can use the following template to provide the review instructions:
 
 1. Go to [DASHBOARD_URL](DASHBOARD_URL)
 2. Login with the following credentials, please ensure you paste these exact credentials without any extra spaces.
@@ -73,13 +87,16 @@ Provide the review instructions
 
 ![i.g-review-instructions-1](./img/instagram-review/i.g-review-instructions-2.png)
 
+
+## Permissions
+
 It is time to request the permissions. Please click on each permission and fill the details. Once you are done, please click on "Submit for review"
 
 ![i.g-permission-requests](./img/instagram-review/i.g-permission-requests.png)
 
-## `instagram_business_basic` permission
+## `instagram_business_basic`
 
-### Why You Are Requesting This Permission
+### Why you are requesting this permission
 
 [BRAND_NAME] is a customer support platform that allows businesses to manage conversations across multiple messaging platforms — including Instagram, WhatsApp, Facebook, and more — through a unified inbox.
 
@@ -113,9 +130,9 @@ This metadata is essential for correct routing of messages to the appropriate ag
 
 ---
 
-## `instagram_business_manage_messages` permission
+## `instagram_business_manage_messages`
 
-### Why You Are Requesting This Permission
+### Why you are requesting this permission
 
 [BRAND_NAME] is a customer support platform that allows businesses to manage conversations across multiple messaging platforms — including Instagram, WhatsApp, Facebook, and more — through a unified inbox.
 
@@ -153,9 +170,9 @@ Without this permission, users would not be able to communicate with their Insta
 
 ---
 
-## `human_agent` permission
+## `human_agent`
 
-### Why You Are Requesting This Permission
+### Why you are requesting this permission
 
 [BRAND_NAME] is a customer support platform that allows businesses to manage conversations across multiple messaging platforms — including Instagram, WhatsApp, Facebook, and more — through a unified inbox.
 
