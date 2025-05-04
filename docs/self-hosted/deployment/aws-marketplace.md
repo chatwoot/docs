@@ -45,8 +45,13 @@ The following is the guide for deploying Chatwoot on AWS using the marketplace l
 11. Select the instance and copy the public IP.
 ![aws-marketplace-public-ip](./images/aws-ami/awsmp-11-public-ip.png)
 
-11. Visit `http://<your-public-ip>:3000`. This should bring up the Chatwoot UI. Congratulations. Woot ! Woot !!
+12. To ensure a static IP, create an Elastic IP and associate it with the instance.
+
+13. Visit `http://<your-public-ip>:3000`. This should bring up the Chatwoot UI. Congratulations. Woot ! Woot !!
 ![aws-marketplace-chatwoot](./images/aws-ami/awsmp-12-chatwoot.png)
+
+14.Configure the IP to your domain/subdomain as needed.
+
 
 ## Configuring Chatwoot
 
@@ -65,7 +70,9 @@ cd chatwoot
 vi .env
 ```
 
-6. Also, it is recommended to configure a proxy server like Nginx and set up SSL. Make sure to modify the security group created in `step 6` accordingly.
+4. To add SSL, use the command:  ```sudo cwctl -w``` Provide your domain/subdomain and email address for SSL certificate generation.
+
+5. For additional options, use ```sudo ctctl -help``` 
 
 ### Updating the instance
 Please follow the Chatwoot update process in the standard Linux VM setup.
