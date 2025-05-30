@@ -114,11 +114,12 @@ Before you can start using your Facebook app in production, you will have to get
 Obtain advanced access to the required permissions mentioned below for your Facebook app
 
 ```
-pages_messaging
-pages_show_list
-pages_manage_metadata
+pages_messaging (To message on behalf of the page)
+pages_show_list (To list the pages to be connected in chatwoot)
+pages_manage_metadata (Subscribe webhooks on behalf of the page)
 business_management
-pages_read_engagement
+pages_read_engagement (  Read followers data (including name, PSID), and profile )
+Business Asset User Profile Access  (For accessing user profile picture and name of people who contacts the page)
 ```
 
 Make sure your facebook app subscription version is 17.0, we have updated the FB subscription with the latest version, so change the permission subscription version under the facebook app webhooks option.
