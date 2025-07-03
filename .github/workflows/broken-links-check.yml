@@ -16,4 +16,4 @@ jobs:
       - name: Install Mint
         run: npm i -g mint
       - name: Broken Link Check
-        run: npx mint broken-links
+        run: mint broken-links
