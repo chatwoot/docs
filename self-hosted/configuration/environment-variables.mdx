@@ -173,7 +173,7 @@ DEFAULT_LOCALE='en'
 
 Chatwoot uses [active storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) for storing attachments. The default storage option is the local storage on your server.
 
-But you can change it to use any of the cloud providers like amazon s3, microsoft azure, google gcs etc. Refer [configuring cloud storage](/docs/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
+But you can change it to use any of the cloud providers like amazon s3, microsoft azure, google gcs etc. Refer [configuring cloud storage](/self-hosted/deployment/storage/supported-providers) for additional environment variables required.
 
 ```bash
 ACTIVE_STORAGE_SERVICE=local
@@ -210,7 +210,7 @@ FB_APP_ID=
 
 ## Using CDN for asset delivery
 
-With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup a CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
+With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup a CDN for your asset delivery. Read setting up [CloudFront as your CDN](/self-hosted/deployment/performance/cloudfront-cdn) guide.
 
 ## Enable new account signup
 
@@ -252,13 +252,13 @@ After setting these environment variables, restart your Chatwoot server to apply
 
 To enable LogRocket in Chatwoot, you need to provide the project ID from LogRocket. Here are the steps to follow:
 
-1. Open the LogRocket [website](https://logrocket.com/) and create an account or sign in to your existing account. 
-2. After signing in, create a new project in LogRocket by clicking on "Create new project". 
+1. Open the LogRocket [website](https://logrocket.com/) and create an account or sign in to your existing account.
+2. After signing in, create a new project in LogRocket by clicking on "Create new project".
 3. Enter a name for your project, and save the project ID.
-4. Set the `LOG_ROCKET_PROJECT_ID` environment variable in your `.env` file with the project ID you copied from LogRocket. 
+4. Set the `LOG_ROCKET_PROJECT_ID` environment variable in your `.env` file with the project ID you copied from LogRocket.
 
 ```bash
 LOG_ROCKET_PROJECT_ID=abcd12/pineapple-on-pizza
 ```
 
-After setting this environment variable, restart your Chatwoot server to apply the changes. Now, LogRocket will start capturing user sessions on your Chatwoot installation. 
+After setting this environment variable, restart your Chatwoot server to apply the changes. Now, LogRocket will start capturing user sessions on your Chatwoot installation.

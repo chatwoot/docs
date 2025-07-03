@@ -266,14 +266,14 @@ source ~/.zshrc
 </Accordion>
 
 <Accordion title="Homebrew installation permission errors">
-**Solution**: 
+**Solution**:
 ```bash
 sudo chown -R $(whoami) /opt/homebrew
 ```
 </Accordion>
 
 <Accordion title="Ruby installation fails with RVM">
-**Solution**: 
+**Solution**:
 ```bash
 # Install missing dependencies
 brew install openssl readline libyaml
@@ -282,7 +282,7 @@ rvm reinstall 3.2.2 --with-openssl-dir=$(brew --prefix openssl)
 </Accordion>
 
 <Accordion title="PostgreSQL connection refused">
-**Solution**: 
+**Solution**:
 ```bash
 # Restart PostgreSQL
 brew services restart postgresql@14
@@ -293,7 +293,7 @@ brew services list | grep postgresql
 </Accordion>
 
 <Accordion title="ImageMagick installation issues">
-**Solution**: 
+**Solution**:
 ```bash
 # If you encounter issues, try:
 brew uninstall imagemagick
@@ -305,10 +305,10 @@ brew install imagemagick
 
 If you encounter issues:
 
-- **Common Errors**: Check [Common Errors](/contributing/project-setup/common-errors)
+- **Common Errors**: Check [Common Errors](/contributing-guide/common-errors)
 - **Discord Community**: Join our [Discord](https://discord.com/invite/cJXdrwS)
 - **GitHub Issues**: [Create an issue](https://github.com/chatwoot/chatwoot/issues)
 
 ---
 
-Your macOS development environment is now ready for Chatwoot development! 🚀 
+Your macOS development environment is now ready for Chatwoot development! 🚀

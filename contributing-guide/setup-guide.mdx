@@ -30,7 +30,7 @@ make burn
 This would install all required dependencies for Chatwoot application.
 
 <Warning>
-If you face issue with pg gem, please refer to [Common Errors](/contributing/project-setup/common-errors#pg-gem-installation-error)
+If you face issue with pg gem, please refer to [Common Errors](/contributing-guide/common-errors#pg-gem-installation-error)
 </Warning>
 
 ## Setup environment variables
@@ -39,7 +39,7 @@ If you face issue with pg gem, please refer to [Common Errors](/contributing/pro
 cp .env.example .env
 ```
 
-Please refer to [environment-variables](/contributing/project-setup/environment-variables) to read on setting environment variables.
+Please refer to [environment-variables](/contributing-guide/environment-variables) to read on setting environment variables.
 
 ## Setup rails server
 
@@ -79,7 +79,7 @@ http://localhost:3000/widget_tests?setUser=true
 To use those URLs, you first need to compile the assets. Run:
 
 ```bash
-bundle exec rails assets:precompile 
+bundle exec rails assets:precompile
 ```
 
 ## Docker for development
@@ -138,17 +138,17 @@ This command essentially runs postgres and redis containers and then run the rak
 First,compile the assets. Run:
 
 ```bash
-docker compose exec rails bundle exec rails assets:precompile 
+docker compose exec rails bundle exec rails assets:precompile
 ```
 
-Then use the URLs from [#testing-chat-widget-in-your-local-environment](/docs/contributing-guide/project-setup#testing-chat-widget-in-your-local-environment)
+Then use the URLs from [#testing-chat-widget-in-your-local-environment](/contributing-guide/project-setup#testing-chat-widget-in-your-local-environment)
 
 ### Running Cypress Tests
 
 First,compile the assets. Run:
 
 ```bash
-docker compose exec rails bundle exec rails assets:precompile 
+docker compose exec rails bundle exec rails assets:precompile
 ```
 
 
@@ -190,17 +190,17 @@ After completing this setup:
 1. **Verify Installation**: Access http://localhost:3000 and log in with the provided credentials
 2. **Explore the Code**: Start making changes and see them reflected in your development environment
 3. **Run Tests**: Execute the test suite to ensure everything works correctly
-4. **Check Troubleshooting**: If you encounter issues, refer to [Common Errors](/contributing/project-setup/common-errors)
+4. **Check Troubleshooting**: If you encounter issues, refer to [Common Errors](/contributing-guide/common-errors)
 
 ## Getting Help
 
 If you encounter issues during setup:
 
-- **Common Errors**: Check [Common Errors](/contributing/project-setup/common-errors)
-- **Environment Variables**: See [Environment Variables](/contributing/project-setup/environment-variables)
+- **Common Errors**: Check [Common Errors](/contributing-guide/common-errors)
+- **Environment Variables**: See [Environment Variables](/contributing-guide/environment-variables)
 - **Discord Community**: Join our [Discord](https://discord.com/invite/cJXdrwS)
 - **GitHub Issues**: [Create an issue](https://github.com/chatwoot/chatwoot/issues)
 
 ---
 
-Your Chatwoot development environment is now ready for contribution! 🚀 
+Your Chatwoot development environment is now ready for contribution! 🚀

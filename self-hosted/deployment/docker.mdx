@@ -45,7 +45,7 @@ wget -O docker-compose.yaml https://raw.githubusercontent.com/chatwoot/chatwoot/
 
 ### 3. Configure environment variables
 
-Tweak the `.env` and `docker-compose.yaml` according to your preferences. Refer to the available [environment variables](/docs/self-hosted/configuration/environment-variables). You could also remove the dependant services like `Postgres`, `Redis` etc., in favor of managed services configured via environment variables.
+Tweak the `.env` and `docker-compose.yaml` according to your preferences. Refer to the available [environment variables](/self-hosted/configuration/environment-variables). You could also remove the dependant services like `Postgres`, `Redis` etc., in favor of managed services configured via environment variables.
 
 ```bash
 # update redis and postgres passwords
@@ -171,7 +171,7 @@ ENTRYPOINT ["docker/entrypoints/rails.sh"]
 CMD bundle exec sidekiq -C config/sidekiq.yml
 ```
 
-The app servers will run available on port `3000`. Ensure the images connect to the same database and Redis servers. Provide the configuration for these services via [environment variables](/docs/self-hosted/configuration/environment-variables).
+The app servers will run available on port `3000`. Ensure the images connect to the same database and Redis servers. Provide the configuration for these services via [environment variables](/self-hosted/configuration/environment-variables).
 
 ### Initial database setup
 
@@ -202,4 +202,4 @@ docker exec -it $(basename $(pwd))-rails-1 sh -c 'RAILS_ENV=production bundle ex
 
 ## Chatwoot CE edition docker images
 
-If you want to run Chatwoot CE edition, replace the docker image tag with equivalent foss version tag. Docker tag for current `master` would be `latest-ce`. Version specific tags would follow the pattern `v*-ce`. For example the docker ce edition tag for Chatwoot `v2.3.2` would be `v2.3.2-ce`. 
+If you want to run Chatwoot CE edition, replace the docker image tag with equivalent foss version tag. Docker tag for current `master` would be `latest-ce`. Version specific tags would follow the pattern `v*-ce`. For example the docker ce edition tag for Chatwoot `v2.3.2` would be `v2.3.2-ce`.

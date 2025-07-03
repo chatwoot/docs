@@ -48,7 +48,7 @@ This will also install the Chatwoot CLI(`cwctl`) starting with Chatwoot v2.7.0. 
 
 ## Configure the required environment variables
 
-For your Chatwoot installation to properly function, you would need to configure the essential environment variables like `FRONTEND_URL`, Mailer, and a cloud storage config. Refer **[Environment variables](/docs/self-hosted/configuration/environment-variables)** for the full list.
+For your Chatwoot installation to properly function, you would need to configure the essential environment variables like `FRONTEND_URL`, Mailer, and a cloud storage config. Refer **[Environment variables](/self-hosted/configuration/environment-variables)** for the full list.
 
 ### 1. Login as chatwoot user and edit the .env file
 
@@ -61,7 +61,7 @@ nano .env
 
 ### 2. Update environment variables
 
-Refer **[Environment variables](/docs/self-hosted/configuration/environment-variables)** and update the required variables. Save the `.env` file.
+Refer **[Environment variables](/self-hosted/configuration/environment-variables)** and update the required variables. Save the `.env` file.
 
 ### 3. Restart the Chatwoot server
 
@@ -184,4 +184,4 @@ If the asset precompilation step fails with `ActionView::Template::Error (Webpac
 RAILS_ENV=production rake assets:clean assets:clobber assets:precompile
 ```
 
-This command would clear the existing compiled assets and would recompile all the assets. Read more about it [here](https://edgeguides.rubyonrails.org/command_line.html#bin-rails-assets) 
+This command would clear the existing compiled assets and would recompile all the assets. Read more about it [here](https://edgeguides.rubyonrails.org/command_line.html#bin-rails-assets)

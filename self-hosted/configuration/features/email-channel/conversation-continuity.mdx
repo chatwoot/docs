@@ -11,7 +11,7 @@ sidebarTitle: Conversation Continuity
 ## Configuring inbound reply emails
 
 <Note>
-Conversation Continuity requires your chatwoot installation to have a [cloud storage configured](/docs/self-hosted/deployment/storage/supported-providers)
+Conversation Continuity requires your chatwoot installation to have a [cloud storage configured](/self-hosted/deployment/storage/supported-providers)
 </Note>
 
 There are a couple of email infrastructure service providers to handle the incoming emails that we support at the moment. They are
@@ -121,4 +121,4 @@ Add the following environment variable with the value `your-domain.com`, where `
 MAILER_INBOUND_EMAIL_DOMAIN=
 ```
 
-After finishing the set up, the mail sent from Chatwoot will have a `replyto:` in the following format `reply+<random-hex>@<your-domain.com>` and reply to those would get appended to your conversation. 
+After finishing the set up, the mail sent from Chatwoot will have a `replyto:` in the following format `reply+<random-hex>@<your-domain.com>` and reply to those would get appended to your conversation.

@@ -40,7 +40,7 @@ We encourage the community to build and promote Chatwoot related services. You c
 3. [Discord Channels](https://discord.gg/cJXdrwS) : Use appropriate discord Channels like `#intro` , `#general`.
 
 <Note>
-Spamming channels with repetitive messages, Hijacking threads with unrelated promotional messages isn't allowed and will be handled according to the [Code of Conduct](/contributing/code-of-conduct#3-temporary-ban).
+Spamming channels with repetitive messages, Hijacking threads with unrelated promotional messages isn't allowed and will be handled according to the [Code of Conduct](/contributing-guide/code-of-conduct#3-temporary-ban).
 </Note>
 
 ## How can I customise the Chatwoot Branding ?
@@ -79,7 +79,7 @@ Ensure that the intended config matches what is configured in the system. If the
 
 #### Viewing the SMTP config for the Installation
 
-Run the following command from the [Rails Console](/self-hosted/configuration/monitoring/super-admin-console/).
+Run the following command from the [Rails Console](/self-hosted/monitoring/super-admin-sidekiq).
 
 ```ruby
 ActionMailer::Base.smtp_settings
@@ -87,7 +87,7 @@ ActionMailer::Base.smtp_settings
 
 #### Viewing the SMTP config for an Inbox
 
-Run the following command from the [Rails Console](/self-hosted/configuration/monitoring/super-admin-console/).
+Run the following command from the [Rails Console](/self-hosted/monitoring/super-admin-sidekiq).
 
 ```ruby
 # replace `inbox_id` with your Inbox Id
@@ -98,7 +98,7 @@ Inbox.find(inbox_id).channel
 
 If you find the config is as intended, Try sending an email from the Rails Console using your config.
 
-Run the following script from the [Rails Console](/self-hosted/configuration/monitoring/super-admin-console/).
+Run the following script from the [Rails Console](/self-hosted/monitoring/super-admin-sidekiq).
 
 ```ruby
 # Fill values for appropriate settings
@@ -124,10 +124,10 @@ mailer.smtp_settings = smtp_settings
 mailer.mail(from: 'sender@example.com', to: 'recipient@example.com', subject: 'test', body: "Hello, you've got mail!").deliver
 ```
 
-If the configuration is correct, You should receive the email in the recipient's Inbox. In other cases, Fix the config as per the returned error and reconfigure the values in Chatwoot Environment variables with the correct values. 
+If the configuration is correct, You should receive the email in the recipient's Inbox. In other cases, Fix the config as per the returned error and reconfigure the values in Chatwoot Environment variables with the correct values.
 
 <Note>
-If you are still facing errors, Please check your Sidekiq worker logs or [Sidekiq UI](/self-hosted/configuration/monitoring/super-admin-console/) for any errors.
+If you are still facing errors, Please check your Sidekiq worker logs or [Sidekiq UI](/self-hosted/monitoring/super-admin-sidekiq) for any errors.
 </Note>
 
 ## How to Fix the Onboarding Screen Issue in Chatwoot?
@@ -141,4 +141,4 @@ If you have deployed Chatwoot and the login page is shown instead of the onboard
 
 2. Restart Chatwoot.
 
-This should resolve the issue, and the onboarding screen should be displayed as expected. 
+This should resolve the issue, and the onboarding screen should be displayed as expected.

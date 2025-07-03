@@ -32,7 +32,7 @@ Head over to the `web` service in the Caprover applications and enable `Websocke
 
 Caprover will take care of Postgres and Redis installation, along with the app and worker servers. We would advise you to replace the Database/Redis services with managed/standalone servers once you start scaling.
 
-Also, ensure to set the appropriate environment variables for email, Object Store service etc. using our [Environment variables guide](/docs/self-hosted/configuration/environment-variables)
+Also, ensure to set the appropriate environment variables for email, Object Store service etc. using our [Environment variables guide](/self-hosted/configuration/environment-variables)
 
 <Note>
 Chatwoot requires websocket support. Do enable it from `chatwoot-web` settings page in Caprover.
@@ -99,8 +99,8 @@ underscores_in_headers on;
 ### Issues related to storage persistance
 
 Please setup a cloud storage like s3 or gcs bucket or any s3 api compatible service as the active storage service.
-Caprover installation needs this for storage persistance. Refer the [storage guide](/docs/self-hosted/deployment/storage/supported-providers).
+Caprover installation needs this for storage persistance. Refer the [storage guide](/self-hosted/deployment/storage/supported-providers).
 
 ## Further references
 
-- https://isotropic.co/how-to-install-chatwoot-to-a-digitalocean-droplet/ 
+- https://isotropic.co/how-to-install-chatwoot-to-a-digitalocean-droplet/

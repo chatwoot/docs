@@ -35,7 +35,7 @@ If you are using a managed provider like AWS, Google Cloud, or Azure, enable bac
 
 ### Storage
 
-Based on your [storage configuration](/docs/self-hosted/configuration/environment-variables#configure-storage), you should take the appropriate steps. 
+Based on your [storage configuration](/self-hosted/configuration/environment-variables#configure-storage), you should take the appropriate steps.
 
 If you are using a managed provider like `S3`, `GCS`, etc., ensure backups using the options available with the provider.
 If you are using the `local` storage provider, ensure to take a disk backup of the `storage` folder in the root of your Chatwoot Installation.
@@ -66,4 +66,4 @@ To restore a backup into a new Chatwoot installation, please follow these steps:
 - Purge the database of this installation and replace it with the data from your [postgres](#postgres-database) backup.
 - Restore [Storage](#storage) with your backup data.
 - Restore any [Code Customisations](#code-customisations).
-- Restart Chatwoot services and you are good to go. 
+- Restart Chatwoot services and you are good to go.
