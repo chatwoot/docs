@@ -1,24 +1,15 @@
 on:
-  schedule:
-    - cron: 0 10 1 * *
-  repository_dispatch:
-    types: [check-link]
-  workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  pull_request:
+    branches:
+      - main
 
 name: Broken Link Check
 jobs:
   check:
     name: Broken Link Check
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
       - name: Install Mintlify CLI
         run: npm install -g mintlify
       - name: Broken Link Check
         run: mint broken-links
-          
-
-
