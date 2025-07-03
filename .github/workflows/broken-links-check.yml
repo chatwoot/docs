@@ -16,4 +16,10 @@ jobs:
       - name: Install Mint
         run: npm i -g mint
       - name: Broken Link Check
-        run: mint broken-links
+        run: |
+          set -o pipefail
+          mint broken-links | tee output.log
+          if ! grep -q "success" output.log; then
+            echo "No success found in log. Exiting."
+            exit 1
+          fi
