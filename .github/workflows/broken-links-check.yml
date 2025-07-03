@@ -1,13 +1,19 @@
 on:
   pull_request:
 
+concurrency:
+  group: pr-${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
 name: Broken Link Check
 jobs:
   check:
     name: Broken Link Check
     runs-on: ubuntu-latest
     steps:
-      - name: Install Mintlify CLI
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Mint
         run: npm i -g mint
       - name: Broken Link Check
-        run: mint broken-links
+        run: npx mint broken-links
