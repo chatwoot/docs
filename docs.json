@@ -51,13 +51,8 @@
             "pages": [
               "self-hosted/deployment/architecture",
               "self-hosted/deployment/requirements",
-              {
-                "group": "Linux",
-                "pages": [
-                  "self-hosted/deployment/linux-vm",
-                  "self-hosted/deployment/docker"
-                ]
-              },
+              "self-hosted/deployment/linux-vm",
+              "self-hosted/deployment/docker",
               "self-hosted/deployment/helm-chart",
               "self-hosted/deployment/chatwoot-ctl"
             ]
