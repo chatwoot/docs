@@ -36,43 +36,43 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     ```bash
     # Install Homebrew if not already installed
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
+
     # Install dependencies
     brew install postgresql@15 redis imagemagick git
-    
+
     # Install rbenv for Ruby version management
     brew install rbenv ruby-build
-    
+
     # Install Node.js and pnpm
     brew install node
     npm install -g pnpm
-    
+
     # Start services
     brew services start postgresql@15
     brew services start redis
     ```
   </Tab>
-  
+
   <Tab title="Ubuntu/Debian">
     ```bash
     # Update package list
     sudo apt update
-    
+
     # Install dependencies
     sudo apt install -y curl git build-essential libssl-dev libreadline-dev \
       zlib1g-dev libpq-dev imagemagick libmagickwand-dev libffi-dev \
       postgresql postgresql-contrib redis-server
-    
+
     # Install rbenv
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-    
+
     # Install Node.js (using NodeSource)
     curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
     sudo apt install -y nodejs
-    
+
     # Install pnpm
     npm install -g pnpm
-    
+
     # Start services
     sudo systemctl start postgresql
     sudo systemctl start redis-server
@@ -80,31 +80,31 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     sudo systemctl enable redis-server
     ```
   </Tab>
-  
+
   <Tab title="CentOS/RHEL">
     ```bash
     # Install EPEL repository
     sudo yum install -y epel-release
-    
+
     # Install dependencies
     sudo yum groupinstall -y "Development Tools"
     sudo yum install -y curl git openssl-devel readline-devel zlib-devel \
       postgresql-devel ImageMagick-devel libffi-devel postgresql-server \
       postgresql-contrib redis
-    
+
     # Initialize PostgreSQL
     sudo postgresql-setup initdb
-    
+
     # Install rbenv
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-    
+
     # Install Node.js
     curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
     sudo yum install -y nodejs
-    
+
     # Install pnpm
     npm install -g pnpm
-    
+
     # Start services
     sudo systemctl start postgresql
     sudo systemctl start redis
@@ -569,7 +569,7 @@ bundle exec rails server
 
 Once you have your development environment set up:
 
-1. **Read the Contributing Guidelines**: Check out the [contributing guide](../introduction) for code standards and workflow
+1. **Read the Contributing Guidelines**: Check out the [contributing guide](/contributing-guide) for code standards and workflow
 2. **Explore the Codebase**: Familiarize yourself with the project structure
 3. **Pick an Issue**: Look for "good first issue" labels on GitHub
 4. **Join the Community**: Connect with other contributors on Discord or GitHub Discussions
@@ -585,4 +585,4 @@ If you encounter issues during setup:
 
 ---
 
-You're now ready to start contributing to Chatwoot! The development environment should be fully functional and ready for coding. 
+You're now ready to start contributing to Chatwoot! The development environment should be fully functional and ready for coding.
