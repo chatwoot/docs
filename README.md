@@ -1,29 +1,23 @@
-## Chatwoot Handbook
+## Chatwoot Developer Documentation
 
-This repository contains the documentation for self-hosted installations, features in the product and a complete guide on how we run the organization.
+This is the official repository for the Chatwoot developer documentation. This guide contains everything you need to know about Chatwoot APIs and build custom flows on top of Chatwoot APIs.
 
-----
+### 👩‍💻 Development
 
-## Installation
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview the documentation changes locally. To install, use the following command
 
-```console
-pnpm install
+```
+npm i -g mint
 ```
 
-## Local Development
+Run the following command at the root of your documentation (where mint.json is)
 
-```console
-pnpm start
+```
+mint dev
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+### 😎 Publishing Changes
 
-## Build
+Changes will be deployed to production automatically after pushing to the default branch.
 
-```console
-pnpm build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-Please feel free to suggest any changes. See our [contributing guide](https://www.chatwoot.com/docs/contributing-guide) to get started.
+You can also preview changes using PRs, which generates a preview link of the docs.

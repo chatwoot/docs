@@ -1,25 +1,25 @@
 on:
-  schedule:
-    - cron: 0 10 1 * *
-  repository_dispatch:
-    types: [check-link]
-  workflow_dispatch:
+  pull_request:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: pr-${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 name: Broken Link Check
 jobs:
   check:
     name: Broken Link Check
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Mint
+        run: npm i -g mint
       - name: Broken Link Check
-        uses: technote-space/broken-link-checker-action@gh-actions
-        with:
-          TARGET: "https://www.chatwoot.com"
-          GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
-          
-
-
+        run: |
+          set -o pipefail
+          mint broken-links | tee output.log
+          if ! grep -q "success" output.log; then
+            echo "No success found in log. Exiting."
+            exit 1
+          fi

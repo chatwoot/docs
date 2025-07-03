@@ -1,0 +1,237 @@
+---
+title: Ubuntu Development Setup
+description: Complete guide to setting up your Ubuntu development environment for Chatwoot contribution.
+sidebarTitle: Ubuntu Setup
+---
+
+# Ubuntu Development Setup
+
+This guide will help you set up your Ubuntu development environment for contributing to Chatwoot. These instructions work for Ubuntu 20.04, 22.04, and newer versions.
+
+## Update System Packages
+
+Open a terminal and run the following commands to update your system packages:
+
+```bash
+sudo apt-get update
+```
+
+## Install Git
+
+Install Git for version control:
+
+```bash
+sudo apt-get install git
+```
+
+Configure Git with your information:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+Verify Git installation:
+
+```bash
+git --version
+```
+
+## Install RVM
+
+You need software-properties-common installed in order to add PPA repositories:
+
+```bash
+sudo apt-get install software-properties-common
+```
+
+Install RVM (Ruby Version Manager):
+
+```bash
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt-get update
+sudo apt-get install rvm
+sudo usermod -a -G rvm $USER
+```
+
+**Important**: Enable `Run command as a login shell` in terminal `Preferences`. Restart your computer after installation.
+
+## Install Ruby
+
+Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.3.3:
+
+```bash
+rvm install ruby-3.3.3
+```
+
+Use Ruby 3.3.3 as default:
+
+```bash
+rvm use 3.3.3 --default
+```
+
+Verify Ruby installation:
+
+```bash
+ruby --version
+# Should output: ruby 3.3.3
+```
+
+## Install Node.js
+
+Chatwoot requires Node.js version `20`. Install Node.js from NodeSource using the following commands:
+
+```bash
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+Verify Node.js installation:
+
+```bash
+node --version
+# Should output: v20.x.x
+
+npm --version
+```
+
+## Install pnpm
+
+We use `pnpm` as the package manager:
+
+```bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+Verify pnpm installation:
+
+```bash
+pnpm --version
+```
+
+## Install PostgreSQL
+
+The database used in Chatwoot is PostgreSQL. Use the following commands to install PostgreSQL:
+
+```bash
+sudo apt install postgresql postgresql-contrib
+```
+
+The installation procedure creates a user account called postgres that is associated with the default Postgres role. In order to use Postgres, you can log into that account:
+
+```bash
+sudo -u postgres psql
+```
+
+Install `libpq-dev` dependencies for Ubuntu:
+
+```bash
+sudo apt-get install libpq-dev
+```
+
+Verify PostgreSQL installation:
+
+```bash
+psql --version
+```
+
+## Install Redis Server
+
+Chatwoot uses Redis server in agent assignments and reporting. You need to install `redis-server`:
+
+```bash
+sudo apt-get install redis-server
+```
+
+Next, enable Redis to start on system boot:
+
+```bash
+sudo systemctl enable redis-server.service
+```
+
+Verify Redis installation:
+
+```bash
+redis-cli ping
+# Should output: PONG
+```
+
+## Install ImageMagick
+
+Install ImageMagick for image processing:
+
+```bash
+sudo apt-get install imagemagick
+```
+
+Verify ImageMagick installation:
+
+```bash
+convert --version
+```
+
+## Troubleshooting Common Issues
+
+<Accordion title="RVM installation fails">
+**Solution**: Ensure you have restarted your computer and enabled "Run command as a login shell":
+```bash
+# Check if RVM is loaded
+rvm --version
+
+# If not found, try loading manually
+source ~/.rvm/scripts/rvm
+```
+</Accordion>
+
+<Accordion title="Ruby installation fails">
+**Solution**: Install missing dependencies:
+```bash
+sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+rvm reinstall ruby-3.3.3
+```
+</Accordion>
+
+<Accordion title="PostgreSQL connection issues">
+**Solution**: Configure PostgreSQL user and database:
+```bash
+# Switch to postgres user and create a superuser
+sudo -u postgres createuser --superuser $USER
+
+# Set password for your user
+sudo -u postgres psql -c "ALTER USER $USER PASSWORD 'password';"
+
+# Create a database for your user
+sudo -u postgres createdb $USER
+```
+</Accordion>
+
+<Accordion title="Node.js installation issues">
+**Solution**: Clear cache and reinstall:
+```bash
+sudo apt-get remove nodejs npm
+sudo apt-get autoremove
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+</Accordion>
+
+<Accordion title="Permission denied errors">
+**Solution**: Fix ownership of common directories:
+```bash
+sudo chown -R $USER:$USER ~/.npm
+sudo chown -R $USER:$USER ~/.pnpm-store
+```
+</Accordion>
+
+## Getting Help
+
+If you encounter issues:
+
+- **Common Errors**: Check [Common Errors](/contributing-guide/common-errors)
+- **Discord Community**: Join our [Discord](https://discord.com/invite/cJXdrwS)
+- **GitHub Issues**: [Create an issue](https://github.com/chatwoot/chatwoot/issues)
+- **Ubuntu Community**: [Ubuntu Forums](https://ubuntuforums.org/)
+
+---
+
+Your Ubuntu development environment is now ready for Chatwoot development! 🐧
