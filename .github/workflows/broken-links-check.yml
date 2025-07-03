@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Mintlify CLI
-        run: npm install -g mintlify
+        run: npm i -g mint
       - name: Broken Link Check
         run: mint broken-links

@@ -4,16 +4,16 @@ This is the official repository for the Chatwoot developer documentation. This g
 
 ### 👩‍💻 Development
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview the documentation changes locally. To install, use the following command
 
 ```
-npm i -g mintlify
+npm i -g mint
 ```
 
 Run the following command at the root of your documentation (where mint.json is)
 
 ```
-mintlify dev
+mint dev
 ```
 
 ### 😎 Publishing Changes
