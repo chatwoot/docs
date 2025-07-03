@@ -297,9 +297,11 @@
       }
     ]
   },
-  "footerSocials": {
-    "twitter": "https://twitter.com/chatwootapp",
-    "github": "https://github.com/chatwoot",
-    "linkedin": "https://www.linkedin.com/company/chatwoot"
+  "footer": {
+    "socials": {
+      "twitter": "https://twitter.com/chatwootapp",
+      "github": "https://github.com/chatwoot",
+      "linkedin": "https://www.linkedin.com/company/chatwoot"
+    }
   }
 }
