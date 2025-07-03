@@ -15,11 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Install Mintlify CLI
+        run: npm install -g mintlify
       - name: Broken Link Check
-        uses: technote-space/broken-link-checker-action@gh-actions
-        with:
-          TARGET: "https://www.chatwoot.com"
-          GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        run: mint broken-links
           
 
 
