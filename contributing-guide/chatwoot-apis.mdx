@@ -41,8 +41,20 @@ Ref: [Postman Collection](https://www.postman.com/chatwoot/workspace/chatwoot-ap
 
 The installation admin can use these APIs to manage users, accounts, and roles. These APIs could also be used to sync auth information from external systems into chatwoot. These APIs are particularly helpful if you plan to build a conversation management interface into your existing software stack.
 
+> **Note:** Platform APIs cannot access accounts or users created via the Chatwoot UI, or by other API keys. They can only access accounts, users, and other objects created by the specific platform API key used for authentication, or objects explicitly permitted to that API key.
+
 To authenticate these APIs, you must have an `access_token` issued on behalf of a `Platform app`. You can create a Platform App from [Super Admin Console](/self-hosted/monitoring/super-admin-sidekiq/). The access_token can also be obtained from the `Access Tokens` tab in [Super Admin Console](/self-hosted/monitoring/super-admin-sidekiq/).
 
 These APIs are available on `self-hosted` Chatwoot installations.
 
 Ref: [Postman Collection](https://www.postman.com/chatwoot/workspace/chatwoot-apis/collection/162770-e5451b69-9f97-489b-b352-4ca7d8d82aff)
+
+### FAQ
+
+#### Why do I get a 401 'Non permissible resource' error when using Platform API tokens?
+
+Platform APIs cannot access accounts or users created via the Chatwoot UI, or by other API keys. They can only access accounts, users, and other objects created by the same API key, or objects explicitly permitted to that API key. If you need to grant a Platform App access to an object (such as an Account) that it did not create, you can manually add the permission using the following command in a Rails console (replace the numbers with the correct IDs):
+
+```ruby
+PlatformAppPermissible.create!(platform_app: PlatformApp.find(1), permissible: Account.find(1))
+```
