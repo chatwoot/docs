@@ -1,0 +1,116 @@
+---
+title: WhatsApp Embedded Signup
+description: Set up WhatsApp integration using Meta's streamlined embedded signup flow
+sidebarTitle: WhatsApp Embedded Signup
+---
+
+WhatsApp Embedded Signup enables users to connect their WhatsApp Business accounts through Meta's streamlined OAuth flow without manual webhook configuration. This significantly improves the user experience by automating the entire setup process.
+
+## Prerequisites
+
+1. A valid Facebook account
+2. A WhatsApp Business account (or ability to create one)
+3. Admin access to your Chatwoot installation
+
+## Super Admin Configuration
+
+Before users can use WhatsApp Embedded Signup, administrators must configure the following environment variables via the Super Admin panel at `/super_admin/app_config?config=whatsapp_embedded`:
+
+- **WHATSAPP_APP_ID**: The Facebook App ID for WhatsApp Business API integration
+- **WHATSAPP_CONFIGURATION_ID**: The Configuration ID for WhatsApp Embedded Signup flow (obtained from Meta Developer Portal)
+- **WHATSAPP_APP_SECRET**: The App Secret for WhatsApp Embedded Signup flow (required for token exchange)
+
+<Note>
+These settings must be configured by a Super Admin before the WhatsApp Embedded Signup option becomes available to users.
+</Note>
+
+## Creating a WhatsApp Channel
+
+### Step 1: Navigate to Channel Selection
+
+1. Go to Settings → Inboxes in your Chatwoot dashboard
+2. Click on "Add Inbox"
+3. Select WhatsApp from the channel options
+
+![whatsapp_channel_selection](/self-hosted/images/whatsapp/whatsapp_channel_selection.png)
+
+### Step 2: Choose WhatsApp Cloud
+
+Select "WhatsApp Cloud" for the quick setup through Meta (embedded signup).
+
+![whatsapp_provider_selection](/self-hosted/images/whatsapp/whatsapp_provider_selection.png)
+
+### Step 3: Start Embedded Signup
+
+Click on "Connect with WhatsApp Business" to begin the embedded signup flow.
+
+![whatsapp_embedded_signup_start](/self-hosted/images/whatsapp/whatsapp_embedded_signup_start.png)
+
+### Step 4: Facebook Authentication
+
+You'll be redirected to Facebook to authenticate. You need to log in with an existing Facebook account.
+
+![whatsapp_facebook_authentication](/self-hosted/images/whatsapp/whatsapp_facebook_authentication.png)
+
+### Step 5: Fill Business Information
+
+Select an existing business portfolio or create a new one to add your phone number. Fill in the required business information:
+
+- Business portfolio
+- Business name  
+- Business website or profile page
+- Country
+- Address (optional)
+
+![whatsapp_business_information](/self-hosted/images/whatsapp/whatsapp_business_information.png)
+
+### Step 6: Select WhatsApp Business Account
+
+Choose an existing WhatsApp Business account or create a new one. You can also select or create a WhatsApp Business Profile.
+
+![whatsapp_account_selection](/self-hosted/images/whatsapp/whatsapp_account_selection.png)
+
+### Step 7: Complete Setup
+
+Once you've completed all steps, you'll see the success screen. Your WhatsApp Business account is now connected and ready to receive messages.
+
+![whatsapp_setup_complete](/self-hosted/images/whatsapp/whatsapp_setup_complete.png)
+
+![whatsapp_app_config](/self-hosted/images/whatsapp/whatsapp_app_config.png)
+
+## Key Features
+
+- **No manual configuration required**: The entire webhook and phone number setup is automated
+- **Secure OAuth based authentication**: Uses Meta's official OAuth 2.0 flow
+- **Automatic webhook and phone number configuration**: Webhooks are registered automatically
+- **Real-time progress tracking**: Visual feedback during the signup process
+- **Comprehensive error handling**: Clear error messages and guidance
+
+## Commerce Policy Compliance
+
+Meta will review your business to ensure it complies with WhatsApp's Commerce Policy and will reach out within 24 hours if there's an issue.
+
+## Troubleshooting
+
+### Common Issues
+
+1. **"WhatsApp Embedded Signup not available"**
+   - Ensure your Super Admin has configured the required environment variables
+   - Check that all three values (App ID, Configuration ID, and App Secret) are properly set
+
+2. **Authentication Errors**
+   - Make sure you're using an existing Facebook account
+   - Verify you have the necessary permissions for the business
+
+3. **Business Verification Issues**
+   - Ensure your business information is accurate and complete
+   - Check that your business complies with WhatsApp's Commerce Policy
+
+### Getting Help
+
+If you encounter issues during setup:
+
+1. Check the Chatwoot logs for any error messages
+2. Verify all environment variables are correctly configured
+3. Ensure your Facebook/WhatsApp accounts meet the prerequisites
+4. Contact Chatwoot support with specific error messages if the issue persists
