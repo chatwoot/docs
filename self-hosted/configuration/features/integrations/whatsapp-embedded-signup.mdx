@@ -24,6 +24,59 @@ Before users can use WhatsApp Embedded Signup, administrators must configure the
 These settings must be configured by a Super Admin before the WhatsApp Embedded Signup option becomes available to users.
 </Note>
 
+### Retrieving Configuration Values from Meta Developer Portal
+
+To obtain the required configuration values:
+
+#### 1. Create or Access Your Facebook App
+
+1. Go to [Meta for Developers](https://developers.facebook.com/)
+2. Click on "My Apps" in the top navigation
+3. Either select an existing app or click "Create App"
+4. If creating a new app:
+   - Choose "Business" as the app type
+   - Select "Business" for "I want to connect my app to"
+   - Provide app details (name, email, business portfolio)
+
+#### 2. Configure WhatsApp Product
+
+1. In your app dashboard, click "Add Product" 
+2. Find "WhatsApp" and click "Set Up"
+3. Accept the WhatsApp Business Terms
+
+#### 3. Retrieve App ID and App Secret
+
+- **App ID**: Found at the top of your app dashboard or in Settings → Basic
+- **App Secret**: Located in Settings → Basic (click "Show" and authenticate to reveal)
+
+![meta_app_credentials](/self-hosted/images/whatsapp/meta_app_credentials.png)
+
+#### 4. Obtain Configuration ID
+
+1. Navigate to WhatsApp → Configuration in the left sidebar
+2. Under "Embedded signup", click "Configure"
+3. Set up the configuration:
+   - **Callback URL**: `https://your-domain.com/webhooks/whatsapp/{phone_number_id}`
+   - **Success URL**: `https://your-domain.com/app/accounts/{account_id}/settings/inboxes/new/whatsapp_cloud`
+   - **Cancel URL**: `https://your-domain.com/app/accounts/{account_id}/settings/inboxes/list`
+4. Save the configuration
+5. Copy the generated **Configuration ID**
+
+![whatsapp_configuration_setup](/self-hosted/images/whatsapp/whatsapp_configuration_setup.png)
+
+#### 5. Required Permissions
+
+Ensure your app has the following permissions enabled:
+
+- `whatsapp_business_management` - Manage WhatsApp business assets
+- `whatsapp_business_messaging` - Send and receive WhatsApp messages
+- `business_management` - Manage business assets
+
+
+<Note>
+For production use, your app may need to go through App Review to get advanced access to certain features. The embedded signup flow works with Standard Access for most use cases.
+</Note>
+
 ## Creating a WhatsApp Channel
 
 ### Step 1: Navigate to Channel Selection
