@@ -58,3 +58,9 @@ Platform APIs cannot access accounts or users created via the Chatwoot UI, or by
 ```ruby
 PlatformAppPermissible.create!(platform_app: PlatformApp.find(1), permissible: Account.find(1))
 ```
+
+#### What should I do if the API documentation appears outdated?
+
+If you encounter discrepancies between the API documentation and actual API behavior, we recommend inspecting the actual requests made by the Chatwoot UI through your browser's developer console Network tab to see the exact request format and payload structure that works with the current API, then replicate the same request structure in your integration.
+
+You can contribute back by submitting a [pull request](/contributing-guide/api-documentation) with documentation corrections or by [raising an issue](https://github.com/chatwoot/chatwoot/issues) in our GitHub repository to help keep our API documentation current for everyone.
