@@ -1,0 +1,187 @@
+---
+sidebar_label: "Multi-Factor Authentication"
+title: "MFA Setup Guide"
+---
+
+## Overview
+
+Multi-Factor Authentication (MFA) adds an extra layer of security to your Chatwoot installation by requiring users to provide a time-based one-time password (TOTP) in addition to their regular password. This guide will help you enable MFA for your self-hosted Chatwoot instance.
+
+## Prerequisites
+
+- Chatwoot version 4.6 or higher
+- Access to your server's environment variables
+- Ability to restart your Chatwoot application
+
+## Configuration Steps
+
+### Step 1: Generate Encryption Keys
+
+MFA requires Active Record Encryption keys to securely store user secrets. Use Rails' built-in encryption initialization command:
+
+```bash
+# SSH into your Chatwoot server
+cd /path/to/chatwoot
+
+# Generate all required encryption keys at once
+rails db:encryption:init
+```
+
+This command will output all three required keys:
+
+```yaml
+# Example output:
+active_record_encryption:
+  primary_key: EGY8WhulUOXixybod7ZWwMIL68R9o5kC
+  deterministic_key: aPA5XyALhf75NNnMzaspW7akTfZp0lPY
+  key_derivation_salt: xEY0dt6TZcAMg52K7O84wYzkjvbA62Hz
+```
+
+**Important**:
+- Store these keys securely. You'll need them for the next step and for any future server migrations
+- Use different keys for each environment (development, staging, production)
+- Never share or commit these keys to version control
+
+### Step 2: Configure Environment Variables
+
+Add the following variables to your `.env` file using the keys generated in Step 1:
+
+```bash
+# Active Record Encryption keys (required for MFA/2FA functionality)
+# Replace with the actual keys from rails db:encryption:init output
+ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=EGY8WhulUOXixybod7ZWwMIL68R9o5kC
+ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=aPA5XyALhf75NNnMzaspW7akTfZp0lPY
+ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=xEY0dt6TZcAMg52K7O84wYzkjvbA62Hz
+```
+
+## User Setup Guide
+
+Once MFA is configured on your server, users can enable it for their accounts:
+
+### For Users: Enabling MFA
+
+1. **Log in** to your Chatwoot account
+2. Navigate to **Profile Settings** → **Security**
+3. Click **Enable Two-Factor Authentication**
+4. **Scan the QR code** with an authenticator app:
+   - Google Authenticator
+   - Microsoft Authenticator
+   - Authy
+   - 1Password
+   - Or any TOTP-compatible app
+5. **Enter the 6-digit code** from your authenticator app
+6. **Save your backup codes** in a secure location (10 alphanumeric 8-character codes)
+7. Click **Verify and Enable**
+
+### For Users: Logging in with MFA
+
+1. Enter your email and password as usual
+2. When prompted, enter the 6-digit code from your authenticator app
+3. Alternatively, use a backup code if you don't have access to your authenticator
+
+### For Users: Disabling MFA
+
+1. Go to **Profile Settings** → **Security**
+2. Click **Disable Two-Factor Authentication**
+3. Enter your current 6-digit code and password
+4. Confirm the action
+
+## Troubleshooting
+
+### MFA Not Available
+
+If users don't see MFA options:
+
+1. **Check encryption keys are set**:
+```bash
+echo $ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY
+```
+Should display your key, not blank.
+
+2. **Verify all three keys are configured**:
+```bash
+rails runner "
+  puts 'Primary Key: ' + (ENV['ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'].present? ? '✓' : '✗')
+  puts 'Deterministic Key: ' + (ENV['ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY'].present? ? '✓' : '✗')
+  puts 'Derivation Salt: ' + (ENV['ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT'].present? ? '✓' : '✗')
+"
+```
+
+3. **Ensure application was restarted** after configuration
+
+### Lost Authenticator Access
+
+If a user loses access to their authenticator:
+
+1. **Using backup codes**:
+   - Users can log in with one of their saved backup codes (8-character alphanumeric)
+   - Each code can only be used once
+   - Example format: `A1B2C3D4`
+
+2. **Admin intervention** (if backup codes are also lost):
+```bash
+# Disable MFA for a specific user
+rails runner "
+  user = User.find_by(email: 'user@example.com')
+  user.update!(
+    otp_required_for_login: false,
+    otp_secret: nil,
+    otp_backup_codes: nil
+  )
+  puts 'MFA disabled for ' + user.email
+"
+```
+
+## Security Best Practices
+
+### Key Management
+
+- **Never commit encryption keys** to version control
+- **Generate separate keys** for each environment using `rails db:encryption:init`
+- **Use different keys** for development, staging, and production environments
+- **Rotate keys periodically** (requires re-enrollment of all users)
+- **Backup keys securely** - losing them means users can't authenticate
+
+### Server Security
+
+- **Use HTTPS only** - MFA codes can be intercepted over HTTP
+- **Enable rate limiting** - Chatwoot includes built-in rate limiting for login attempts
+- **Regular updates** - Keep Chatwoot and dependencies updated
+- **Monitor failed attempts** - Review logs for suspicious activity
+
+## Migration and Disaster Recovery
+
+### Migrating to a New Server
+
+1. **Export environment variables** from old server (including encryption keys)
+2. **Backup database** with MFA data
+3. **Set up new server** with the same encryption keys (do NOT generate new ones)
+4. **Restore database**
+5. **Test MFA login** with a test account
+
+**Note**: You must use the exact same encryption keys on the new server. If you generate new keys with `rails db:encryption:init`, existing MFA secrets will become unreadable.
+
+### Disaster Recovery
+
+If encryption keys are lost:
+1. All users will need to re-enable MFA
+2. Communicate the issue to users promptly
+3. Consider temporary alternative authentication methods
+
+### Rolling Back MFA
+
+To completely disable MFA for all users:
+
+```bash
+# Disable MFA for all users
+rails runner "
+  User.update_all(
+    otp_required_for_login: false,
+    otp_secret: nil,
+    otp_backup_codes: nil
+  )
+  puts 'MFA disabled for all users'
+"
+```
+
+*This guide applies to Chatwoot version 4.6 and above*

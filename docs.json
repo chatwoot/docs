@@ -88,6 +88,7 @@
             "group": "Configuration",
             "pages": [
               "self-hosted/configuration/environment-variables",
+              "self-hosted/configuration/multi-factor-authentication",
               {
                 "group": "Performance",
                 "pages": [
