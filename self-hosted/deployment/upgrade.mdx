@@ -27,9 +27,9 @@ This upgrade method is applicable for all manual linux installations including i
 Update the images using the latest image from chatwoot.
 
 ```bash
-docker-compose down
-docker-compose pull
-docker-compose up -d
+docker compose down
+docker compose pull
+docker compose up -d
 ```
 
 Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
