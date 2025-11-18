@@ -71,7 +71,7 @@ Chatwoot receives inbound emails through the [Action Mailbox](https://edgeguides
 ```bash
 cat my_incoming_message | ./bin/rails action_mailbox:ingress:postfix \
   RAILS_ENV=production \
-  URL=http://localhost:3000/rails/action_mailbox/postfix/inbound_emails \
+  URL=http://localhost:3000/rails/action_mailbox/relay/inbound_emails \
   INGRESS_PASSWORD=...
 ```
 would import the contents of the file `my_incoming_message` into a Chatwoot instance running on `localhost` - assuming `my_incoming_message` contains an [RFC 822](https://datatracker.ietf.org/doc/html/rfc822) compliant message.
