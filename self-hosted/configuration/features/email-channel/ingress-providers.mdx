@@ -1,0 +1,240 @@
+---
+title: Configuring inbound mails in Chatwoot
+description: Guide to set up inbound emails in Chatwoot
+sidebarTitle: Ingress Providers
+---
+
+Chatwoot uses [Rails Action Mailbox](https://edgeguides.rubyonrails.org/action_mailbox_basics.html) to receive inbound emails. Action Mailbox supports multiple "ingress" providers out of the box, and Chatwoot builds on top of that.
+
+This guide walks you through:
+
+* Choosing and configuring an inbound email (ingress) provider
+* Setting the required environment variables
+* Using Mailgun, SendGrid, Mandrill, and local relay servers (Exim, Postfix, Qmail, Postmark)
+
+Supported ingress providers today:
+
+* Amazon SES
+* SendGrid
+* Mandrill
+* Mailgun
+* Exim
+* Postfix
+* Qmail
+* Postmark
+
+
+
+## 1. Configure the ingress service
+
+First, tell Chatwoot which inbound email service (ingress) you are using. This is done via the `RAILS_INBOUND_EMAIL_SERVICE` environment variable.
+
+```bash
+# Set this to the appropriate ingress service. Options:
+# "relay"    for Exim, Postfix, Qmail, Postmark
+# "mailgun"  for Mailgun
+# "mandrill" for Mandrill
+# "sendgrid" for SendGrid
+# "ses" for Amazon SES
+RAILS_INBOUND_EMAIL_SERVICE=relay
+```
+
+This value configures how Action Mailbox will authenticate and route inbound messages into Chatwoot.
+
+### Using a local relay (Postfix / Exim / Qmail / Postmark)
+
+If you are using a local MTA (for example Postfix) for both inbound relaying and outbound email, and you **do not** want to use SMTP authentication (SASL) — which is common when the server only handles its own mail — you need to adjust your outbound SMTP configuration.
+
+By default, Action Mailer will try to use SMTP authentication if the following environment variables are present:
+
+* `SMTP_AUTHENTICATION`
+* `SMTP_USERNAME`
+* `SMTP_PASSWORD`
+
+If you are sending mail through a local relay that does not require authentication:
+
+1. Remove or comment out these variables from your `.env` file.
+2. Ensure that your local MTA is correctly configured to send outbound mail.
+
+> ⚠️ **Important:** Running your own mail server comes with deliverability and security responsibilities:
+>
+> * Many ISPs block or restrict email servers on their networks.
+> * Configure proper DNS records (SPF, DKIM, DMARC) so that your emails are accepted by recipients and do not land in spam.
+
+
+## 2. Configure ingress authentication
+
+Next, set the corresponding credentials for the ingress provider you’re using.
+
+```bash
+# Use one of the following based on the email ingress service
+
+# For SendGrid, Exim, Postfix, Qmail, or Postmark
+RAILS_INBOUND_EMAIL_PASSWORD=
+
+# For Mailgun
+MAILGUN_INGRESS_SIGNING_KEY=
+
+# For Mandrill
+MANDRILL_INGRESS_API_KEY=
+```
+
+Only the relevant variable for your chosen provider needs to be configured.
+
+
+## 3. Provider-specific configuration
+
+### Amazon SES
+
+If you are using Amazon SES as your email provider, you have configure the ingress provider as `ses` and set the `ACTION_MAILBOX_SES_SNS_TOPIC` to the SNS topic ARN of your SES account.
+
+See more details [here](./amazon-ses-ingress).
+
+### Mailgun
+
+If you are using Mailgun as your email provider:
+
+1. In your DNS, configure the **MX records** for your domain to point to Mailgun.
+2. In the Mailgun dashboard, configure routing so that inbound emails are forwarded to:
+
+```text
+https://example.com/rails/action_mailbox/mailgun/inbound_emails/mime
+```
+
+Replace `example.com` with the domain where your Chatwoot installation is hosted.
+
+#### Getting the Mailgun ingress signing key
+
+You can find the signing key in your Mailgun dashboard and set it as `MAILGUN_INGRESS_SIGNING_KEY`.
+
+![mailgun-ingress-key](/self-hosted/images/mailgun-ingress-key.gif)
+
+
+
+### SendGrid
+
+If you are using SendGrid:
+
+1. Configure **MX records** for your domain (`your-domain.com`) to point to SendGrid.
+2. In the SendGrid dashboard, set up **Inbound Parse** to forward inbound emails to the Action Mailbox endpoint.
+
+Use the following pattern as the Inbound Parse URL:
+
+```bash
+https://actionmailbox:PASSWORD@example.com/rails/action_mailbox/sendgrid/inbound_emails
+```
+
+* Replace `PASSWORD` with the value of `RAILS_INBOUND_EMAIL_PASSWORD`.
+* Replace `example.com` with your Chatwoot host.
+
+> ✅ **Required:** When configuring the SendGrid Inbound Parse webhook, **enable** the option:
+>
+> **"Post the raw, full MIME message"**.
+>
+> Action Mailbox must receive the raw MIME message to correctly parse and process the email.
+
+See a detailed guide on [how to configure SendGrid Inbound Parse](./conversation-continuity-using-sendgrid).
+
+
+
+### Mandrill
+
+If you are using Mandrill as your email service:
+
+1. Configure your domain’s MX records to point to Mandrill.
+2. In the Mandrill dashboard, configure an inbound route that forwards emails to:
+
+```text
+https://example.com/rails/action_mailbox/mandrill/inbound_emails
+```
+
+Replace `example.com` with the domain where your Chatwoot installation is hosted.
+
+Set `MANDRILL_INGRESS_API_KEY` with the appropriate API key from Mandrill.
+
+
+
+## 4. IMAP via getmail
+
+If you already have an IMAP mailbox (for example on your own mail server or with a provider that doesn’t directly support Action Mailbox), you can still feed emails into Chatwoot using [getmail6](https://github.com/getmail6/getmail6) and the Action Mailbox HTTP ingress.
+
+### How Action Mailbox ingress works
+
+Action Mailbox exposes HTTP endpoints for each ingress type. They are defined in the Rails source and can also be used directly.
+
+Example using the Rails rake task:
+
+```bash
+cat my_incoming_message | ./bin/rails action_mailbox:ingress:postfix \
+  RAILS_ENV=production \
+  URL=http://localhost:3000/rails/action_mailbox/relay/inbound_emails \
+  INGRESS_PASSWORD=...
+```
+
+This imports the contents of `my_incoming_message` (an [RFC 822](https://datatracker.ietf.org/doc/html/rfc822) compliant message) into a Chatwoot instance running on `localhost`.
+
+### Calling the HTTP endpoint directly
+
+Instead of using the Rake task, you can call the ingress HTTP endpoint directly via `curl`.
+
+```bash
+INGRESS_PASSWORD=...
+URL=http://localhost:3000/rails/action_mailbox/relay/inbound_emails
+
+curl -sS -u "actionmailbox:$INGRESS_PASSWORD" \
+ -A "Action Mailbox curl relayer" \
+ -H "Content-Type: message/rfc822" \
+ --data-binary @- \
+ $URL
+```
+
+This sends the raw message from stdin to the Action Mailbox relay endpoint.
+
+### Using getmail6 with IMAP
+
+[getmail6](https://github.com/getmail6/getmail6) can retrieve emails from an IMAP mailbox and pipe them into the `curl` script above.
+
+If the script is stored at `/home/chatwoot/bin/import_mail_to_chatwoot`, a minimal `getmail` configuration might look like this:
+
+```ini
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = ...
+username = ...
+password = ...
+
+[destination]
+type = MDA_external
+path = /home/chatwoot/bin/import_mail_to_chatwoot
+
+[options]
+verbose = 0
+read_all = false
+delete = false
+delivered_to = false
+received = false
+message_log = /home/chatwoot/logs/import_imap.log
+message_log_syslog = false
+message_log_verbose = true
+```
+
+### Scheduling mail retrieval
+
+To continuously import mail into Chatwoot, you need to run `getmail` regularly. Common options:
+
+* Use `cron` to run `getmail` at a fixed interval (for example every minute).
+* For IMAP, you can use:
+
+```bash
+getmail --idle INBOX
+```
+
+This keeps a long-lived connection open and reacts to new mail immediately. You’ll need some supervision (systemd, runit, etc.) to handle restarts if the connection is interrupted.
+
+
+
+## 5. Further reading
+
+For more details on configuring and customizing ingresses, refer to the official Rails documentation:
+
+* [Action Mailbox Basics – Configuration](https://edgeguides.rubyonrails.org/action_mailbox_basics.html#configuration)

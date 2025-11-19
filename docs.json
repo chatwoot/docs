@@ -115,12 +115,14 @@
               {
                 "group": "Email Channel",
                 "pages": [
+                  "self-hosted/configuration/features/email-channel/introduction",
+                  "self-hosted/configuration/features/email-channel/google-workspace-setup",
+                  "self-hosted/configuration/features/email-channel/azure-app-setup",
+                  "self-hosted/configuration/features/email-channel/forwarding-emails-to-chatwoot",
+                  "self-hosted/configuration/features/email-channel/ingress-providers",
                   "self-hosted/configuration/features/email-channel/conversation-continuity",
                   "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
-                  "self-hosted/configuration/features/email-channel/amazon-ses-ingress",
-                  "self-hosted/configuration/features/email-channel/setup",
-                  "self-hosted/configuration/features/email-channel/azure-app-setup",
-                  "self-hosted/configuration/features/email-channel/google-workspace-setup"
+                  "self-hosted/configuration/features/email-channel/amazon-ses-ingress"
                 ]
               },
               {

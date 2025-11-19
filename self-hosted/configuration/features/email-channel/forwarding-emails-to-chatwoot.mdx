@@ -1,0 +1,109 @@
+---
+title: Forwarding Emails to Chatwoot
+description: Guide to set up email forwarding to Chatwoot
+sidebarTitle: Forwarding
+---
+
+This guide explains how to set up email forwarding to Chatwoot when you prefer not to configure IMAP. Forwarding allows your email provider to push inbound messages directly to Chatwoot, which then processes them as incoming conversations in your inbox.
+
+
+<Note>
+Forwarding emails to Chatwoot requires a [cloud storage configured](/self-hosted/deployment/storage/supported-providers)
+</Note>
+
+## When to Use Forwarding
+
+Forwarding is a good option if:
+
+* You don’t want to use IMAP or your provider does not allow IMAP access.
+* You want a simple, push‑based way to deliver inbound emails to Chatwoot.
+* Your provider supports routing or forwarding rules (Gmail, Google Workspace, Outlook, Fastmail, Zoho, custom servers, etc.).
+* You already use SMTP for outbound mail and just need a lightweight inbound setup.
+
+## How Forwarding Works in Chatwoot
+
+Each email inbox in Chatwoot is assigned an ingress address—a unique, system‑generated email address. When your provider forwards an email to that address, Chatwoot. Note: For installations using an ingress provider (SES, SendGrid, Mailgun, etc.), you must configure an MX record pointing to the ingress provider so that inbound email is accepted and routed correctly.
+
+
+1. Ingress provider receives the email and forwards it to the configured Chatwoot URL.
+2. Chatwoot parses the content, attachments, headers, and thread references.
+3. Creates or updates the conversation in the appropriate inbox.
+4. Handles message threading properly via `Message-ID`, `References`, and `In-Reply-To`.
+
+Outbound email continues to use your configured SMTP provider.
+
+
+## Requirements
+
+To use forwarding successfully, ensure:
+
+* **Email ingress is enabled on your Chatwoot installation.** Some self-hosted setups disable ingress by default for security.
+* **Your installation supports inbound processing** via the configured mailer/ingress pipeline.
+* **The forwarding rule is set to forward *all* relevant mail**, including replies.
+* **SPF, DKIM, and DMARC** are correctly configured on your domain for good deliverability.
+
+If ingress is disabled, Chatwoot will show a warning in the UI. Your administrator must enable it before forwarding works.
+
+The receiving domain should be configured in the environment variable `MAILER_INBOUND_EMAIL_DOMAIN`.
+
+```
+MAILER_INBOUND_EMAIL_DOMAIN=
+```
+
+
+## Finding the Forwarding Address
+
+In Chatwoot:
+
+1. Go to your inbox settings.
+2. Select your email channel settings -> Configuration
+3. Copy the provided **Chatwoot ingress email address**.
+
+This address is unique per inbox.
+
+
+
+## Configuring Forwarding on Your Email Provider
+
+The setup varies slightly across providers, but the steps are generally:
+
+1. Open your email provider's forwarding or routing settings.
+2. Add the Chatwoot ingress email as a forwarding destination.
+3. Verify the address if the provider requires confirmation.
+4. Set a rule to forward all incoming email (or only relevant messages) to the ingress address.
+5. Save the configuration.
+
+## Configuring Ingress Provider
+
+For Chatwoot installations, a dedicated ingress provider (Amazon SES, SendGrid, Mailgun, etc.) is required. The provider acts as the first receiver of your domain’s email and then forwards it to the Chatwoot ingress URL.
+
+See more details [here](./self-hosted/configuration/features/email-channel/ingress-providers).
+
+## Outbound Email Behavior
+
+Forwarding affects **only inbound** messages.
+Outbound messages will still be sent using:
+
+* The SMTP provider you configured for the inbox (recommended), or
+* The default SMTP provider configured in the Chatwoot installation.
+
+
+## Troubleshooting
+
+Common issues:
+
+### 1. Forwarding Not Enabled in Chatwoot
+
+If you see: *“Support for forwarding emails is not configured. Contact your administrator.”*
+Your Chatwoot installation must enable email ingress. MAILER_INBOUND_EMAIL_DOMAIN configuration is missing.
+
+### 2. Emails Not Appearing in the Inbox
+
+Check:
+* Forwarding rule is enabled and active.
+* Provider is not suppressing or classifying forwarded mail.
+* No DMARC quarantine/reject issues.
+* The ingress address is correct.
+
+### 3. Threading Issues
+Chatwoot relies on message headers for threading. Ensure your provider forwards headers intact.
