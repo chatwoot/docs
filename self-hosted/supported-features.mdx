@@ -137,3 +137,23 @@ The default maximum file size limit is 40MB.
 | Telegram  | Yes              | Yes         | Yes                   | Yes   |
 | Line      | Yes              | No          | Yes                   | Yes   |
 | API       | Yes              | Yes         | Yes                   | Yes   | 
+
+
+## Editor formatting support
+
+The editor supports rich text formatting across channels. Features are dynamically enabled or disabled based on each channel's capabilities. Unsupported formats are treated as plain text.
+
+| Channel    | Bold | Italics | Strike | Code | Link | Bullet List | Ordered List | Code Block | Blockquote |
+| ---------- | ---- | ------- | ------ | ---- | ---- | ----------- | ------------ | ---------- | ---------- |
+| Website    | Yes  | Yes     | Yes    | Yes  | Yes  | Yes         | Yes          | Yes        | Yes        |
+| Email      | Yes  | Yes     | No     | Yes  | Yes  | Yes         | Yes          | Yes        | Yes        |
+| Facebook   | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | Yes        | No         |
+| Instagram  | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | No         | No         |
+| Whatsapp   | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | Yes        | No         |
+| Telegram   | Yes  | Yes     | No     | Yes  | Yes  | No          | No           | No         | No         |
+| Line       | Yes  | Yes     | Yes    | Yes  | No   | No          | No           | Yes        | No         |
+| Twitter    | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| SMS        | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| Twilio SMS | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| API        | Yes  | Yes     | No     | No   | No   | No          | No           | No         | No         |
+| Voice      | No   | No      | No     | No   | No   | No          | No           | No         | No
