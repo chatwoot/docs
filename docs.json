@@ -142,7 +142,8 @@
               "self-hosted/configuration/features/integrations/whatsapp-embedded-signup",
               "self-hosted/configuration/features/integrations/slack-integration-setup",
               "self-hosted/configuration/features/integrations/linear-integration-setup",
-              "self-hosted/configuration/features/integrations/shopify-integration-setup"
+              "self-hosted/configuration/features/integrations/shopify-integration-setup",
+              "self-hosted/configuration/features/integrations/tiktok"
             ]
           },
           {
