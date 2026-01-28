@@ -138,34 +138,9 @@ Tiktok::AuthClient.webhook_callback
 The webhook must be configured **after** setting the TikTok App ID and App Secret in Super Admin. If you change your Chatwoot domain, you will need to run this command again.
 </Warning>
 
-## Step 7: Connect a TikTok Business Account
+## Step 7: Connect Chatwoot with Your TikTok Account
 
-1. Log in to your Chatwoot dashboard as an Administrator
-2. Go to **Settings** → **Inboxes** → **Add Inbox**
-3. Select **TikTok** from the channel list
-4. Click **Connect with TikTok**
-5. You will be redirected to TikTok to authorize your Business Account
-6. Grant the requested permissions and confirm
-7. You will be redirected back to Chatwoot with the inbox created
-
-
-## Messaging Limitations
-
-TikTok Business Messaging has the following restrictions:
-
-| Restriction | Details |
-|---|---|
-| **Reply Window** | 48 hours from the customer's last message |
-| **First Message** | Customers must initiate -businesses cannot message first |
-| **Messages per Window** | Up to 10 messages before customer replies; unlimited after customer replies |
-| **Inactive Window** | 3 additional messages allowed after the 48h window expires |
-| **Supported Send Types** | Text and images (.JPEG, .WebP, max 20 MB) |
-| **Unsupported Send Types** | Video, voice messages, stickers |
-| **Attachment Limit** | One attachment per message (text + attachment combined is not supported) |
-
-<Note>
-Messages received in unsupported formats (e.g., audio, stickers) will appear in Chatwoot as "This message is unsupported. You can view this message on the TikTok app."
-</Note>
+Follow the [TikTok channel user guide](/channels/tiktok) to complete the TikTok integration.
 
 ## Troubleshooting
 
@@ -207,10 +182,3 @@ This happens when both the access token (around 24 hours) and refresh token (aro
 
 - Ensure `TIKTOK_APP_SECRET` matches the secret in your TikTok Developer Portal
 - Check server clock synchronization -TikTok's signature verification requires timestamps within 5 seconds
-
-## Reference Documentation
-
-- [TikTok Business API Portal](https://business-api.tiktok.com/portal)
-- [TikTok for Developers](https://developers.tiktok.com)
-- [Business Messaging API Docs](https://business-api.tiktok.com/portal/docs?id=1832183871604753)
-- [Messaging Window Limits](https://business-api.tiktok.com/portal/docs?id=1854823717597185)
