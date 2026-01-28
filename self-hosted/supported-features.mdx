@@ -15,6 +15,7 @@ description: "Comprehensive reference for supported features, message types, and
 | Email     | Yes                       | Yes              |
 | Telegram  | Yes                       | Yes              |
 | Line      | Yes                       | Yes              |
+| TikTok    | Yes                       | Yes              |
 | API       | Yes                       | Yes              |
 
 ## Maximum message size (number of characters)
@@ -32,6 +33,7 @@ description: "Comprehensive reference for supported features, message types, and
 | Email              | 25,000               |
 | Telegram           | 4096                 |
 | Line               | 2000                 |
+| TikTok             | 950                  |
 | API                | 10,000               |
 
 ## Outbound conversation restriction
@@ -46,6 +48,7 @@ description: "Comprehensive reference for supported features, message types, and
 | Email     | No restriction                                                                                                  |
 | Telegram  | Cannot create outbound conversations. First message should be from the contact                                  |
 | Line      | Cannot create outbound conversations. First message should be from the contact                                  |
+| TikTok    | Cannot create outbound conversations. First message should be from the contact                                  |
 | API       | No restriction                                                                                                  |
 
 ## Outgoing message restriction
@@ -60,6 +63,7 @@ description: "Comprehensive reference for supported features, message types, and
 | Email     | No restriction                                                                                                  |
 | Telegram  | No restriction                                                                                                  |
 | Line      | No restriction                                                                                                  |
+| TikTok    | Cannot send messages 48 hours after the last incoming message                                                    |
 | API       | Custom time depends on Agent reply time window                                                                  |
 
 ## Outgoing message delivery status
@@ -77,6 +81,7 @@ description: "Comprehensive reference for supported features, message types, and
 | Instagram          | Yes         | Not supported | Yes              | Yes           |
 | Line               | Yes         | Not supported | Not supported    | Yes           |
 | Telegram           | Yes         | Not supported | Not supported    | Yes           |
+| TikTok             | Yes         | Yes           | Yes              | Yes           |
 | Email              | Yes         | Not supported | Not supported    | Not supported |
 
 ## Reply to message
@@ -92,6 +97,7 @@ description: "Comprehensive reference for supported features, message types, and
 | Email           | No                        | No                        |
 | Telegram        | Yes                       | Yes                       |
 | Line            | No                        | No                        |
+| TikTok          | Yes                       | Yes                       |
 | API             | Yes                       | Yes                       |
 
 ## Outgoing attachments supported file types
@@ -111,6 +117,7 @@ The default maximum file size limit is 40MB.
 | Email           | All                       | All                  | All                            | All           |
 | Telegram        | All                       | All                  | All                            | All           |
 | Line            | Not supported             | png, jpeg (10mg)     | mp4 (40mb)                     | Not supported |
+| TikTok          | Not supported             | Not supported        | Not supported                  | Not supported |
 | API             | All                       | All                  | All                            | All           |
 
 <Note>
@@ -136,6 +143,7 @@ The default maximum file size limit is 40MB.
 | Email     | Yes              | Yes         | Yes                   | Yes   |
 | Telegram  | Yes              | Yes         | Yes                   | Yes   |
 | Line      | Yes              | No          | Yes                   | Yes   |
+| TikTok    | Yes              | Yes         | Yes                   | Yes   |
 | API       | Yes              | Yes         | Yes                   | Yes   | 
 
 
@@ -152,6 +160,7 @@ The editor supports rich text formatting across channels. Features are dynamical
 | Whatsapp   | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | Yes        | No         |
 | Telegram   | Yes  | Yes     | No     | Yes  | Yes  | No          | No           | No         | No         |
 | Line       | Yes  | Yes     | Yes    | Yes  | No   | No          | No           | Yes        | No         |
+| TikTok     | No   | No      | No     | No   | No   | No          | No           | No         | No         |
 | Twitter    | No   | No      | No     | No   | No   | No          | No           | No         | No         |
 | SMS        | No   | No      | No     | No   | No   | No          | No           | No         | No         |
 | Twilio SMS | No   | No      | No     | No   | No   | No          | No           | No         | No         |
