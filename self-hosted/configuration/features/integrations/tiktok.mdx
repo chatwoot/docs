@@ -1,0 +1,220 @@
+---
+title: Setting Up TikTok Channel
+description: Configure TikTok Business Messaging integration to manage TikTok conversations from Chatwoot
+sidebarTitle: TikTok
+---
+
+The TikTok channel integration enables you to manage TikTok Business Messaging conversations directly from Chatwoot. Agents can receive and reply to messages from TikTok users, view shared posts, and handle image attachments -all within the Chatwoot dashboard.
+
+Setting up the TikTok channel involves 7 steps.
+
+1. Create a TikTok Developer Account.
+2. Register an app in the TikTok Developer Portal.
+3. Apply for Business Messaging API access.
+4. Configure app permissions and redirect URLs.
+5. Configure Chatwoot with the `App ID` and `App Secret` obtained from TikTok.
+6. Set up the webhook for incoming messages.
+7. Connect a TikTok Business Account from the Chatwoot dashboard.
+
+## Prerequisites
+
+1. A self-hosted Chatwoot instance accessible via a public HTTPS URL
+2. A **TikTok Business Account** registered in an eligible region
+3. A **TikTok Developer Account** at [developers.tiktok.com](https://developers.tiktok.com)
+4. Access to the **TikTok Business Messaging API** (requires approval)
+5. Super Admin access to your Chatwoot instance
+
+<Warning>
+The TikTok Business Messaging API is **region-restricted**. It is currently unavailable for accounts registered in the **European Economic Area (EEA), Switzerland, or the United Kingdom**. Personal TikTok accounts are not supported -only TikTok Business Accounts can use this integration.
+</Warning>
+
+## Step 1: Create a TikTok Developer Account
+
+1. Go to [developers.tiktok.com](https://developers.tiktok.com) and sign up
+2. Verify your email address
+3. Accept the Terms of Service
+
+## Step 2: Register Your App
+
+1. Navigate to **Manage Apps** → **Create App**
+2. Fill in the required fields:
+   - **App Name**: e.g., "Your Company - Chatwoot"
+   - **App Description**: Brief description of your messaging use case
+   - **App Icon**: Upload your company logo
+   - **Terms of Service URL**: Your company's ToS URL
+   - **Privacy Policy URL**: Your company's privacy policy URL
+3. Once created, note down your `App ID` (client key) and `App Secret` (client secret)
+
+
+## Step 3: Apply for Business Messaging API Access
+
+1. Go to [business-api.tiktok.com/portal](https://business-api.tiktok.com/portal)
+2. Navigate to the **Business Messaging API** product
+3. Submit an application with:
+   - Your use case (e.g., customer support via Chatwoot)
+   - How you will handle user data
+   - Your organization details
+4. Wait for TikTok's review and approval
+
+<Note>
+Approval typically takes a few days but can take longer for specialized access. You cannot proceed with the integration until your application is approved.
+</Note>
+
+## Step 4: Configure App Permissions and URLs
+
+Once approved, configure the following in the TikTok Developer Portal.
+
+### Required Scopes
+
+Ensure your app has the following scopes enabled:
+
+- `user.info.basic`
+- `user.info.username`
+- `user.info.stats`
+- `user.info.profile`
+- `user.account.type`
+- `user.insights`
+- `message.list.read`
+- `message.list.send`
+- `message.list.manage`
+
+### Authorization Redirect URL
+
+Set the authorization redirect URL to:
+
+`{Chatwoot installation url}/tiktok/callback`
+
+
+## Step 5: Configure Chatwoot
+
+### Super Admin Configuration
+
+1. Log in to your Chatwoot instance as a Super Admin
+2. Navigate to `{Chatwoot installation url}/super_admin/app_config?config=tiktok`
+3. Enter your `TikTok App ID` and `TikTok App Secret`
+4. Click **Submit**
+
+
+Alternatively, you can set these as environment variables:
+
+```bash
+TIKTOK_APP_ID=your_tiktok_app_id
+TIKTOK_APP_SECRET=your_tiktok_app_secret
+```
+
+Restart the Chatwoot server after making changes.
+
+### Enable TikTok Feature
+
+1. In Super Admin, navigate to **Accounts**
+2. Select the account where you want to enable TikTok
+3. Under **Features**, enable the **TikTok** channel
+4. Save the changes
+
+
+<Note>
+TikTok will only show up in the inbox channel options once you have configured the App ID and App Secret and enabled the feature for the account.
+</Note>
+
+## Step 6: Configure Webhook
+
+Set up the TikTok webhook to receive incoming messages. Open a Rails console on your Chatwoot server:
+
+```bash
+bundle exec rails console
+```
+
+Run the following command to register the webhook callback URL:
+
+```ruby
+Tiktok::AuthClient.update_webhook_callback
+```
+
+This sets the webhook URL to `{Chatwoot installation url}/webhooks/tiktok`.
+
+You can verify the webhook configuration by running:
+
+```ruby
+Tiktok::AuthClient.webhook_callback
+```
+
+<Warning>
+The webhook must be configured **after** setting the TikTok App ID and App Secret in Super Admin. If you change your Chatwoot domain, you will need to run this command again.
+</Warning>
+
+## Step 7: Connect a TikTok Business Account
+
+1. Log in to your Chatwoot dashboard as an Administrator
+2. Go to **Settings** → **Inboxes** → **Add Inbox**
+3. Select **TikTok** from the channel list
+4. Click **Connect with TikTok**
+5. You will be redirected to TikTok to authorize your Business Account
+6. Grant the requested permissions and confirm
+7. You will be redirected back to Chatwoot with the inbox created
+
+
+## Messaging Limitations
+
+TikTok Business Messaging has the following restrictions:
+
+| Restriction | Details |
+|---|---|
+| **Reply Window** | 48 hours from the customer's last message |
+| **First Message** | Customers must initiate -businesses cannot message first |
+| **Messages per Window** | Up to 10 messages before customer replies; unlimited after customer replies |
+| **Inactive Window** | 3 additional messages allowed after the 48h window expires |
+| **Supported Send Types** | Text and images (.JPEG, .WebP, max 20 MB) |
+| **Unsupported Send Types** | Video, voice messages, stickers |
+| **Attachment Limit** | One attachment per message (text + attachment combined is not supported) |
+
+<Note>
+Messages received in unsupported formats (e.g., audio, stickers) will appear in Chatwoot as "This message is unsupported. You can view this message on the TikTok app."
+</Note>
+
+## Troubleshooting
+
+### TikTok channel not appearing in inbox options
+
+- Verify the TikTok feature is enabled for the account in Super Admin
+- Confirm `TIKTOK_APP_ID` and `TIKTOK_APP_SECRET` are set correctly
+- Restart the Chatwoot server after configuration changes
+
+### OAuth authorization fails
+
+- Ensure the redirect URL in the TikTok Developer Portal exactly matches `{Chatwoot installation url}/tiktok/callback`
+- Verify your TikTok app has all required scopes enabled
+- Check that your TikTok app is approved for the Business Messaging API
+
+### Not receiving incoming messages
+
+- Verify the webhook is configured by running `Tiktok::AuthClient.webhook_callback` in Rails console
+- Ensure the webhook URL is publicly accessible over HTTPS
+- Check that your TikTok Business Account is in an eligible region
+- Review Sidekiq logs for `Webhooks::TiktokEventsJob` errors
+
+### Messages failing to send
+
+- Check if the 48-hour reply window has expired
+- Verify the access token is valid -Chatwoot automatically refreshes tokens, but if the refresh token expires (30 days), the channel will need reauthorization
+- Ensure you are sending a supported message type (text only, or a single image)
+- Check Sidekiq logs for `SendReplyJob` errors
+
+### Channel shows "Reauthorization Required"
+
+This happens when both the access token (around 24 hours) and refresh token (around 30 days) have expired, typically due to inactivity.
+
+1. Go to **Settings** → **Inboxes** → select the TikTok inbox
+2. Click **Reauthorize**
+3. Complete the TikTok OAuth flow again
+
+### Webhook signature verification fails
+
+- Ensure `TIKTOK_APP_SECRET` matches the secret in your TikTok Developer Portal
+- Check server clock synchronization -TikTok's signature verification requires timestamps within 5 seconds
+
+## Reference Documentation
+
+- [TikTok Business API Portal](https://business-api.tiktok.com/portal)
+- [TikTok for Developers](https://developers.tiktok.com)
+- [Business Messaging API Docs](https://business-api.tiktok.com/portal/docs?id=1832183871604753)
+- [Messaging Window Limits](https://business-api.tiktok.com/portal/docs?id=1854823717597185)
