@@ -38,7 +38,8 @@ The TikTok Business Messaging API is **region-restricted**. It is currently unav
 
 ![create_tiktok](/self-hosted/images/tiktok/create-app.png)
 
-1. Navigate to **Manage Apps** → **Create App**
+
+1. Go to [business-api.tiktok.com/portal/apps](https://business-api.tiktok.com/portal/apps) and create a new app
 2. Fill in the required fields:
    - **App Name**: e.g., "Your Company - Chatwoot"
    - **App Description**: Brief description of your messaging use case
@@ -47,12 +48,11 @@ The TikTok Business Messaging API is **region-restricted**. It is currently unav
    - **Privacy Policy URL**: Your company's privacy policy URL
 3. Once created, note down your `App ID` (client key) and `App Secret` (client secret)
 
-
-
-
 ## Step 3: Apply for Business Messaging API Access
 
-1. Go to [business-api.tiktok.com/portal](https://business-api.tiktok.com/portal)
+You need to grant your app access to the Business Messaging API. For detailed instructions, refer to the [TikTok Business Messaging API access guide](https://business-api.tiktok.com/portal/docs?id=1832184145137922).
+
+1. Open your app in the TikTok Developer Portal
 2. Navigate to the **Business Messaging API** product
 3. Submit an application with:
    - Your use case (e.g., customer support via Chatwoot)
@@ -68,19 +68,11 @@ Approval typically takes a few days but can take longer for specialized access. 
 
 Once approved, configure the following in the TikTok Developer Portal.
 
-### Required Scopes
+### Required Permissions
 
-Ensure your app has the following scopes enabled:
+After your app is approved, ensure the **TikTok Accounts** permission is enabled under **Scope of permission** in your app settings.
 
-- `user.info.basic`
-- `user.info.username`
-- `user.info.stats`
-- `user.info.profile`
-- `user.account.type`
-- `user.insights`
-- `message.list.read`
-- `message.list.send`
-- `message.list.manage`
+![tiktok-accounts-permission](/self-hosted/images/tiktok/tiktok-accounts-permission.png)
 
 ### Authorization Redirect URL
 
