@@ -201,6 +201,113 @@ Once both values are set, the server will send push notifications directly to FC
 Push notifications do not work on iOS simulators. You must use a physical device to test.
 </Note>
 
+## Deep linking
+
+Deep linking allows users to tap a Chatwoot conversation URL (or a push notification) and be taken directly to that conversation in the mobile app. The app supports two mechanisms:
+
+- **Custom URL scheme**: `chatwootapp://` — used for SSO callbacks and internal routing.
+- **Universal Links (iOS) / App Links (Android)**: `https://<your-domain>/app/accounts/*/conversations/*` — used for opening web URLs directly in the app.
+
+### How it works
+
+When the app receives a deep link, React Navigation matches it against the configured path pattern and navigates to the conversation screen:
+
+```
+https://<your-domain>/app/accounts/{accountId}/conversations/{conversationId}
+```
+
+This works across all app states — whether the app is in the foreground, backgrounded, or was terminated. Push notification taps also use this same flow to navigate to the relevant conversation.
+
+### Configuring deep links for custom builds
+
+If you are building a custom-branded app with your own domain, you need to configure both the mobile app and the Chatwoot server so that deep links resolve correctly.
+
+#### Mobile app configuration
+
+The app uses Expo's built-in deep linking support. In `app.config.ts`, update the following to match your domain and bundle identifiers:
+
+<Tabs>
+<Tab title="iOS">
+
+Update the [associated domain](https://docs.expo.dev/linking/ios-universal-links/) to your Chatwoot installation URL:
+
+```typescript
+ios: {
+  associatedDomains: ['applinks:your-domain.com'],
+}
+```
+
+Expo prebuild writes this into the `.entitlements` file automatically.
+
+</Tab>
+<Tab title="Android">
+
+Update the [intent filter](https://docs.expo.dev/linking/android-app-links/) host to your Chatwoot installation URL:
+
+```typescript
+android: {
+  intentFilters: [
+    {
+      action: 'VIEW',
+      autoVerify: true,
+      data: [
+        {
+          scheme: 'https',
+          host: 'your-domain.com',
+          pathPrefix: '/app/accounts/',
+        },
+      ],
+      category: ['BROWSABLE', 'DEFAULT'],
+    },
+  ],
+}
+```
+
+Expo prebuild writes this into the `AndroidManifest.xml` automatically.
+
+</Tab>
+</Tabs>
+
+After making changes, regenerate the native code:
+
+```bash
+pnpm generate
+```
+
+#### Server configuration
+
+The Chatwoot server dynamically serves the verification files that Android and iOS require to confirm your app owns the domain. Configure the following environment variables on your Chatwoot installation:
+
+<Tabs>
+<Tab title="iOS">
+
+The server serves an `apple-app-site-association` file at `https://<your-domain>/.well-known/apple-app-site-association`. No additional configuration is needed beyond ensuring your Chatwoot installation is accessible at the domain specified in `associatedDomains`.
+
+</Tab>
+<Tab title="Android">
+
+Set the following environment variables with your app's package name and signing certificate fingerprint:
+
+```bash
+ANDROID_BUNDLE_ID=com.yourcompany.app
+ANDROID_SHA256_CERT_FINGERPRINT=YOUR:SHA256:CERT:FINGERPRINT
+```
+
+This is served at `https://<your-domain>/.well-known/assetlinks.json` and tells Android to open matching URLs in your app.
+
+To obtain your SHA-256 certificate fingerprint, run:
+
+```bash
+keytool -list -v -keystore your-keystore.jks -alias your-alias
+```
+
+</Tab>
+</Tabs>
+
+<Note>
+If you are using the official Chatwoot mobile app with `app.chatwoot.com`, deep linking works out of the box with no additional configuration.
+</Note>
+
 ## Build & Submit using EAS
 
 We use Expo Application Services (EAS) for building, deploying, and submitting the app to app stores. EAS Build and Submit is available to anyone with an Expo account, regardless of whether you pay for EAS or use our Free plan. 
