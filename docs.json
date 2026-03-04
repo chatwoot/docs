@@ -32,9 +32,7 @@
       {
         "anchor": "Introduction",
         "icon": "house",
-        "pages": [
-          "introduction"
-        ]
+        "pages": ["introduction"]
       },
       {
         "anchor": "Installation & Setup",
@@ -42,9 +40,7 @@
         "pages": [
           {
             "group": "Getting Started",
-            "pages": [
-              "self-hosted"
-            ]
+            "pages": ["self-hosted"]
           },
           {
             "group": "Deployment Methods",
@@ -127,9 +123,7 @@
               },
               {
                 "group": "Help Center",
-                "pages": [
-                  "self-hosted/configuration/help-center"
-                ]
+                "pages": ["self-hosted/configuration/help-center"]
               }
             ]
           },
@@ -170,7 +164,8 @@
               "self-hosted/supported-features",
               "self-hosted/restricted-instances",
               "self-hosted/instagram-app-review",
-              "self-hosted/faq"
+              "self-hosted/faq",
+              "self-hosted/custom-mobile-app"
             ]
           }
         ]
@@ -181,9 +176,7 @@
         "pages": [
           {
             "group": "Getting Started",
-            "pages": [
-              "contributing-guide"
-            ]
+            "pages": ["contributing-guide"]
           },
           {
             "group": "Environment Setup",
@@ -208,9 +201,7 @@
           },
           {
             "group": "Testing",
-            "pages": [
-              "contributing-guide/tests/cypress"
-            ]
+            "pages": ["contributing-guide/tests/cypress"]
           },
           {
             "group": "Others",
@@ -235,9 +226,7 @@
           {
             "group": "Getting Started",
             "description": "Learn about Chatwoot APIs and how to use them",
-            "pages": [
-              "api-reference/introduction"
-            ]
+            "pages": ["api-reference/introduction"]
           },
           {
             "group": "Application APIs",
@@ -268,12 +257,7 @@
           {
             "group": "Platform APIs",
             "description": "APIs for managing platform aspects of Chatwoot",
-            "includeTags": [
-              "Accounts",
-              "Account Users",
-              "AgentBots",
-              "Users"
-            ],
+            "includeTags": ["Accounts", "Account Users", "AgentBots", "Users"],
             "openapi": "https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/platform_swagger.json"
           },
           {
@@ -289,9 +273,7 @@
           {
             "group": "Other APIs",
             "description": "Additional Chatwoot APIs",
-            "includeTags": [
-              "CSAT Survey Page"
-            ],
+            "includeTags": ["CSAT Survey Page"],
             "openapi": "https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/other_swagger.json"
           }
         ]
