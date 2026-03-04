@@ -1,0 +1,235 @@
+---
+title: Custom Mobile App Build
+description: Guide to building a custom-branded Chatwoot mobile app with push notifications and deep linking
+sidebarTitle: Custom Mobile App Build
+---
+
+# Custom mobile app build
+
+Guide to building a custom-branded Chatwoot mobile app with push notifications, deep linking, and app store submission.
+
+## Push notifications
+
+Chatwoot supports mobile push notifications through Firebase Cloud Messaging (FCM). There are two delivery paths depending on your setup:
+
+- **Relay server (default)**: Self-hosted instances without Firebase credentials route notifications through the Chatwoot relay server, which forwards them to the **official Chatwoot mobile app**.
+- **Direct FCM**: Instances with Firebase configured send notifications directly to your **custom-built mobile app**.
+
+<Note>
+You must use either the official apps for both platforms or custom builds for both — mixing is not supported. For more details, refer to the [push notification documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification).
+</Note>
+
+### Setting up Firebase
+
+To send push notifications to your custom-branded app, you need to configure Firebase on both the mobile app and the Chatwoot server.
+
+#### Step 1: Create a Firebase project
+
+1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project (or use an existing one).
+2. Register your Android app with your package name (e.g., `com.yourcompany.app`).
+3. Register your iOS app with your bundle identifier (e.g., `com.yourcompany.app`).
+
+#### Step 2: Download Firebase config files
+
+Download the platform-specific configuration files from your Firebase project settings:
+
+<Tabs>
+<Tab title="Android">
+1. In **Project Settings > General**, find your Android app and click **Download google-services.json**.
+2. Place the file in the root of the mobile app repository.
+</Tab>
+<Tab title="iOS">
+1. In **Project Settings > General**, find your iOS app and click **Download GoogleService-Info.plist**.
+2. Place the file in the root of the mobile app repository.
+</Tab>
+</Tabs>
+
+#### Step 3: Configure mobile app environment variables
+
+Update your `.env` file to point to the Firebase config files:
+
+```bash
+EXPO_PUBLIC_ANDROID_GOOGLE_SERVICES_FILE=./google-services.json
+EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE=./GoogleService-Info.plist
+```
+
+Then regenerate the native code so the new config is picked up:
+
+```bash
+pnpm generate
+```
+
+#### Step 4: Generate a Firebase service account
+
+The Chatwoot server needs a service account to send push notifications via the FCM v1 API.
+
+1. In the Firebase Console, go to **Project Settings > Service accounts**.
+2. Click **Generate new private key** to download a JSON credentials file.
+
+<Warning>
+Keep this file secure. It grants access to send push notifications on behalf of your Firebase project.
+</Warning>
+
+#### Step 5: Configure the Chatwoot server
+
+In your Chatwoot installation, navigate to **Super Admin > App Config** and set the following:
+
+| Config key              | Value                                                     |
+| ----------------------- | --------------------------------------------------------- |
+| `FIREBASE_PROJECT_ID`   | Your Firebase project ID (e.g., `my-project-12345`)       |
+| `FIREBASE_CREDENTIALS`  | The full contents of the service account JSON file         |
+
+Once both values are set, the server will send push notifications directly to FCM instead of using the relay server.
+
+#### Verifying the setup
+
+1. Build and install the custom app on a device (`pnpm run:ios` or `pnpm run:android`).
+2. Log in to your Chatwoot instance from the mobile app.
+3. From another browser session, send a message to a conversation assigned to the logged-in agent.
+4. The device should receive a push notification.
+
+<Note>
+Push notifications do not work on iOS simulators. You must use a physical device to test.
+</Note>
+
+## Deep linking
+
+Deep linking allows users to tap a Chatwoot conversation URL (or a push notification) and be taken directly to that conversation in the mobile app. The app supports two mechanisms:
+
+- **Custom URL scheme**: `chatwootapp://` — used for SSO callbacks and internal routing.
+- **Universal Links (iOS) / App Links (Android)**: `https://<your-domain>/app/accounts/*/conversations/*` — used for opening web URLs directly in the app.
+
+### How it works
+
+When the app receives a deep link, React Navigation matches it against the configured path pattern and navigates to the conversation screen:
+
+```
+https://<your-domain>/app/accounts/{accountId}/conversations/{conversationId}
+```
+
+This works across all app states — whether the app is in the foreground, backgrounded, or was terminated. Push notification taps also use this same flow to navigate to the relevant conversation.
+
+### Mobile app configuration
+
+The app uses Expo's built-in deep linking support. In `app.config.ts`, update the following to match your domain:
+
+<Tabs>
+<Tab title="iOS">
+
+Update the [associated domain](https://docs.expo.dev/linking/ios-universal-links/) to your Chatwoot installation URL:
+
+```typescript
+ios: {
+  associatedDomains: ['applinks:your-domain.com'],
+}
+```
+
+Expo prebuild writes this into the `.entitlements` file automatically.
+
+</Tab>
+<Tab title="Android">
+
+Update the [intent filter](https://docs.expo.dev/linking/android-app-links/) host to your Chatwoot installation URL:
+
+```typescript
+android: {
+  intentFilters: [
+    {
+      action: 'VIEW',
+      autoVerify: true,
+      data: [
+        {
+          scheme: 'https',
+          host: 'your-domain.com',
+          pathPrefix: '/app/accounts/',
+        },
+      ],
+      category: ['BROWSABLE', 'DEFAULT'],
+    },
+  ],
+}
+```
+
+Expo prebuild writes this into the `AndroidManifest.xml` automatically.
+
+</Tab>
+</Tabs>
+
+After making changes, regenerate the native code:
+
+```bash
+pnpm generate
+```
+
+### Server configuration
+
+The Chatwoot server dynamically serves the verification files that Android and iOS require to confirm your app owns the domain. Configure the following environment variables on your Chatwoot installation:
+
+<Tabs>
+<Tab title="iOS">
+
+The server serves an `apple-app-site-association` file at `https://<your-domain>/.well-known/apple-app-site-association`. No additional configuration is needed beyond ensuring your Chatwoot installation is accessible at the domain specified in `associatedDomains`.
+
+</Tab>
+<Tab title="Android">
+
+Set the following environment variables with your app's package name and signing certificate fingerprint:
+
+```bash
+ANDROID_BUNDLE_ID=com.yourcompany.app
+ANDROID_SHA256_CERT_FINGERPRINT=YOUR:SHA256:CERT:FINGERPRINT
+```
+
+This is served at `https://<your-domain>/.well-known/assetlinks.json` and tells Android to open matching URLs in your app.
+
+To obtain your SHA-256 certificate fingerprint, run:
+
+```bash
+keytool -list -v -keystore your-keystore.jks -alias your-alias
+```
+
+</Tab>
+</Tabs>
+
+## Build & Submit using EAS
+
+We use Expo Application Services (EAS) for building, deploying, and submitting the app to app stores. EAS Build and Submit is available to anyone with an Expo account, regardless of whether you pay for EAS or use our Free plan.
+
+You can sign up at [Expo EAS](https://expo.dev/eas).
+
+### Build the app
+
+#### iOS Build
+
+```bash
+pnpm run build:ios:local
+```
+
+#### Android Build
+
+```bash
+pnpm run build:android:local
+```
+
+### Submit the app
+
+#### iOS Submission
+
+```bash
+pnpm submit:ios
+```
+
+#### Android Submission
+
+```bash
+pnpm submit:android
+```
+
+When you run the above command, you will be prompted to provide a path to a local app binary file. Please select the file that you built in the previous step:
+
+- **iOS**: `.ipa` file
+- **Android**: `.aab` file
+
+<Note>
+It may take a while to complete the submission process. You will see the status of the submission on your terminal.
+</Note>
