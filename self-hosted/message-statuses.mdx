@@ -1,0 +1,109 @@
+---
+title: "Message Statuses"
+description: "Understand what each message status means in Chatwoot and which channels support delivery and read indicators."
+sidebarTitle: Message Statuses
+---
+
+When you send a message through Chatwoot, the message goes through a series of statuses that reflect its current state in the delivery pipeline. These statuses are visible in the conversation view and help agents understand whether a message has been successfully delivered or read by the contact.
+
+## Status Overview
+
+Chatwoot tracks four outgoing message statuses:
+
+<CardGroup cols={2}>
+  <Card title="Sent" icon="paper-plane">
+    The message has been accepted and sent to the channel provider (e.g. WhatsApp, Facebook). Chatwoot has handed the message off successfully.
+  </Card>
+  <Card title="Delivered" icon="circle-check">
+    The message has been delivered to the contact's device. The channel provider has confirmed receipt on the recipient's end.
+  </Card>
+  <Card title="Read" icon="eye">
+    The contact has opened and read the message. This requires the contact's client to send a read receipt back to the channel provider.
+  </Card>
+  <Card title="Failed" icon="circle-xmark">
+    The message could not be delivered. This can happen due to an invalid number, a blocked contact, channel restrictions, or a provider-side error.
+  </Card>
+</CardGroup>
+
+## Status Details
+
+### Sent
+
+A message moves to **Sent** as soon as Chatwoot has successfully submitted it to the upstream channel provider. This does not mean the message has reached the contact's device — it only confirms that Chatwoot's outbound request to the provider was accepted.
+
+If you see a message stuck in a state before **Sent**, it typically indicates a connectivity or authentication issue between Chatwoot and the channel provider.
+
+### Delivered
+
+A message is marked **Delivered** when the channel provider confirms that the message has reached the contact's device or inbox. The contact does not need to open the message for this status to be set.
+
+Not all channels report delivery status back to Chatwoot. For channels where this is not supported, messages will remain at **Sent** after submission.
+
+### Read
+
+A message is marked **Read** when the contact's messaging client sends a read receipt to the channel provider, which then relays that information to Chatwoot. Read receipts depend on the contact's device settings — some users disable read receipts, in which case this status will never be reported even if the message was read.
+
+Not all channels support read receipts. See the [channel support table](#channel-support) below for details.
+
+### Failed
+
+A message is marked **Failed** when the channel provider reports that delivery was unsuccessful. Common reasons include:
+
+- The contact's phone number is invalid or not registered on the channel
+- The contact has blocked the sender
+- The message violates channel policies (e.g. sending a non-template WhatsApp message outside the 24-hour window)
+- A provider-side outage or rate limit was encountered
+
+When a message fails, review the conversation for any error details surfaced by the provider. You may need to contact the customer through an alternative channel or wait before retrying.
+
+## Channel Support
+
+Not every channel supports all four statuses. The table below shows which statuses each channel reports back to Chatwoot.
+
+| Channel            | Sent | Delivered    | Read          | Failed |
+| ------------------ | ---- | ------------ | ------------- | ------ |
+| Website (Widget)   | Yes  | Yes          | Yes           | Yes    |
+| API Channel        | Yes  | Yes          | Yes           | Yes    |
+| Official WhatsApp  | Yes  | Yes          | Yes           | Yes    |
+| Twilio WhatsApp    | Yes  | Yes          | Yes           | Yes    |
+| 360Dialog WhatsApp | Yes  | Yes          | Yes           | Yes    |
+| Facebook           | Yes  | Yes          | Yes           | Yes    |
+| TikTok             | Yes  | Yes          | Yes           | Yes    |
+| Twilio SMS         | Yes  | Not supported | Yes          | Yes    |
+| Bandwidth SMS      | Yes  | Not supported | Yes          | Yes    |
+| Instagram          | Yes  | Yes          | Not supported | Yes    |
+| Telegram           | Yes  | Not supported | Not supported | Yes    |
+| Line               | Yes  | Not supported | Not supported | Yes    |
+| Email              | Yes  | Not supported | Not supported | Not supported |
+
+<Note>
+Read receipt support depends not only on the channel but also on the contact's device settings. Contacts can disable read receipts on WhatsApp and other platforms, meaning a message can be read without Chatwoot receiving a **Read** status update.
+</Note>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Why does a message show no status indicator at all?">
+    If a message has no status indicator, it has not yet been submitted to the channel provider. This is most common immediately after sending, before Chatwoot's background worker has processed the message. If this state persists, check that Chatwoot's Sidekiq workers are running correctly.
+  </Accordion>
+
+  <Accordion title="A WhatsApp message shows Sent but never moves to Delivered — what's wrong?">
+    This typically means the message was accepted by the WhatsApp API but hasn't reached the contact's device. Possible causes include: the contact's phone is off or offline, the number is no longer active on WhatsApp, or the contact has blocked the sender. The message will be delivered once the device comes back online, or it will eventually expire if the device stays offline for too long.
+  </Accordion>
+
+  <Accordion title="Why do some messages show Delivered but never Read?">
+    Read receipts are optional. WhatsApp and some other platforms allow users to turn off read receipts. If a contact has disabled them, messages will stop at **Delivered** even after being opened. This is expected behaviour and not an error.
+  </Accordion>
+
+  <Accordion title="A message shows Failed — can I resend it?">
+    Currently, Chatwoot does not have a one-click resend for failed messages. You will need to type a new message. Before retrying, review any error information in the conversation to understand why the message failed, so you can resolve the underlying issue first.
+  </Accordion>
+
+  <Accordion title="Email messages never show a Failed status — is that correct?">
+    Yes. Email delivery reporting works differently from real-time messaging channels. Chatwoot marks the message as **Sent** once it is handed off to the configured SMTP provider, but bounce notifications and delivery failures from email servers are not currently fed back into the message status system.
+  </Accordion>
+</AccordionGroup>
+
+## Related Pages
+
+- [Supported Features on Channels](/self-hosted/supported-features) — A full feature comparison table across all Chatwoot channels, including the delivery status support matrix.
