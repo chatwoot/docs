@@ -60,21 +60,25 @@ When a message fails, review the conversation for any error details surfaced by 
 
 Not every channel supports all four statuses. The table below shows which statuses each channel reports back to Chatwoot.
 
-| Channel            | Sent | Delivered    | Read          | Failed |
-| ------------------ | ---- | ------------ | ------------- | ------ |
-| Website (Widget)   | Yes  | Yes          | Yes           | Yes    |
-| API Channel        | Yes  | Yes          | Yes           | Yes    |
-| Official WhatsApp  | Yes  | Yes          | Yes           | Yes    |
-| Twilio WhatsApp    | Yes  | Yes          | Yes           | Yes    |
-| 360Dialog WhatsApp | Yes  | Yes          | Yes           | Yes    |
-| Facebook           | Yes  | Yes          | Yes           | Yes    |
-| TikTok             | Yes  | Yes          | Yes           | Yes    |
-| Twilio SMS         | Yes  | Not supported | Yes          | Yes    |
-| Bandwidth SMS      | Yes  | Not supported | Yes          | Yes    |
-| Instagram          | Yes  | Yes          | Not supported | Yes    |
+| Channel            | Sent | Delivered     | Read          | Failed |
+| ------------------ | ---- | ------------- | ------------- | ------ |
+| Website (Widget)   | Yes  | Yes           | Yes           | Yes    |
+| API Channel        | Yes  | Yes           | Yes           | Yes    |
+| Official WhatsApp  | Yes  | Yes           | Yes           | Yes    |
+| Twilio WhatsApp    | Yes  | Yes           | Yes           | Yes    |
+| 360Dialog WhatsApp | Yes  | Yes           | Yes           | Yes    |
+| Facebook           | Yes  | Yes           | Yes           | Yes    |
+| TikTok             | Yes  | Not supported | Yes           | Yes    |
+| Twilio SMS         | Yes  | Yes           | Not supported | Yes    |
+| Bandwidth SMS      | Yes  | Yes           | Not supported | Yes    |
+| Instagram          | Yes  | Not supported | Yes           | Yes    |
 | Telegram           | Yes  | Not supported | Not supported | Yes    |
-| Line               | Yes  | Not supported | Not supported | Yes    |
-| Email              | Yes  | Not supported | Not supported | Not supported |
+| Line               | Yes  | Yes¹          | Not supported | Yes    |
+| Email              | Yes  | Not supported | Not supported | Yes²   |
+
+¹ LINE does not emit a separate delivery confirmation event. Messages are marked **Delivered** optimistically once the LINE API accepts the outbound request.
+
+² Email messages are marked **Failed** when an exception is raised at send time (for example, an SMTP authentication error or a rejected recipient during the SMTP handshake). Bounce notifications and asynchronous delivery failures returned by downstream mail servers are not currently fed back into the message status system.
 
 <Note>
 Read receipt support depends not only on the channel but also on the contact's device settings. Contacts can disable read receipts on WhatsApp and other platforms, meaning a message can be read without Chatwoot receiving a **Read** status update.
@@ -99,8 +103,8 @@ Read receipt support depends not only on the channel but also on the contact's d
     Currently, Chatwoot does not have a one-click resend for failed messages. You will need to type a new message. Before retrying, review any error information in the conversation to understand why the message failed, so you can resolve the underlying issue first.
   </Accordion>
 
-  <Accordion title="Email messages never show a Failed status — is that correct?">
-    Yes. Email delivery reporting works differently from real-time messaging channels. Chatwoot marks the message as **Sent** once it is handed off to the configured SMTP provider, but bounce notifications and delivery failures from email servers are not currently fed back into the message status system.
+  <Accordion title="Why don't email bounces show up as Failed?">
+    Email messages are marked **Failed** only when sending raises an exception (for example, an SMTP authentication error or a rejected recipient during the SMTP handshake). Bounce notifications and asynchronous delivery failures returned by downstream mail servers are not currently fed back into the message status system, so a message that bounces after a successful SMTP handoff will remain at **Sent**.
   </Accordion>
 </AccordionGroup>
 
