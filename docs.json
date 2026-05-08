@@ -40,7 +40,7 @@
         "pages": [
           {
             "group": "Getting Started",
-            "pages": ["cli", "cli/commands", "cli/scripting"]
+            "pages": ["cli", "cli/commands", "cli/scripting", "cli/agent-skill"]
           }
         ]
       },
