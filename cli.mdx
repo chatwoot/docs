@@ -1,0 +1,78 @@
+---
+title: Chatwoot CLI
+description: Install and configure the Chatwoot CLI to manage your inbox from the terminal.
+sidebarTitle: Overview
+---
+
+A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. It's also handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, or automate repetitive triage, without needing a custom integration.
+
+- **[Commands](commands.md)** — the full command reference: conversations, contacts, inboxes, agents.
+- **[Scripting & output](scripting.md)** — JSON / CSV / quiet mode, shell completions, automation recipes.
+
+## Install
+
+```bash
+# macOS / Linux
+curl -fsSL https://chwt.app/install-cli | sh
+```
+
+Installs to `~/.local/bin/chatwoot`. Override with `CHATWOOT_VERSION` or `CHATWOOT_INSTALL_DIR`:
+
+```bash
+CHATWOOT_VERSION=v0.2.0 CHATWOOT_INSTALL_DIR=/usr/local/bin curl -fsSL https://chwt.app/install-cli | sh
+```
+
+**Windows:** download `chatwoot_<version>_Windows_x86_64.zip` from the [releases page](https://github.com/chatwoot/cli/releases/latest) and extract `chatwoot.exe`.
+
+**From source** (Go 1.25+):
+
+```bash
+go install github.com/chatwoot/cli/cmd/chatwoot@latest
+```
+
+## Log in
+
+```bash
+chatwoot auth login
+```
+
+You'll be asked for:
+
+- **Base URL** — your Chatwoot instance, e.g. `https://app.chatwoot.com`
+- **API Key** — from your agent profile → API access token
+- **Account ID** — the number in your dashboard URL
+
+Credentials are validated before saving. The API key is stored in your OS keyring; non-secret config lives at `~/.chatwoot/config.yaml`. For CI or headless use, set `CHATWOOT_API_KEY` to override the saved token.
+
+```bash
+chatwoot auth status     # who am I, which instance
+chatwoot auth logout     # remove saved credentials
+chatwoot config view     # show config and credential source
+```
+
+## Shell completions
+
+The install script offers to set this up interactively. To do it manually:
+
+```bash
+# bash
+chatwoot completion bash -c > ~/.local/share/bash-completion/completions/chatwoot
+
+# fish
+chatwoot completion fish -c > ~/.config/fish/completions/chatwoot.fish
+
+# zsh — append a source line to your .zshrc
+echo 'source <(chatwoot completion zsh -c)' >> ~/.zshrc
+```
+
+Restart your shell (or `source` your rc file). Tab-completion works for commands, subcommands, and flags. Run `chatwoot completion --help` for details.
+
+## Help
+
+```bash
+chatwoot --help
+chatwoot conv --help
+chatwoot convs --help
+```
+
+Issues and feedback: [github.com/chatwoot/cli](https://github.com/chatwoot/cli).
