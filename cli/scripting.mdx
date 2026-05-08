@@ -1,0 +1,76 @@
+---
+title: CLI Scripting
+description: Use Chatwoot CLI output formats and shell recipes to automate support workflows.
+sidebarTitle: Scripting
+---
+
+Everything for automating chatwoot-cli: output formats and headless/CI use. Need a command? See **[Commands](/cli/commands)**. For shell completion setup, see **[Getting started](/cli#shell-completions)**.
+
+## Output formats
+
+Every command takes `-o` / `--output`:
+
+| Format | Flag | Use it for |
+|---|---|---|
+| Text table | *(default)* | reading at a glance |
+| JSON | `-o json` | piping to `jq`, full API response |
+| CSV | `-o csv` | spreadsheets, data exports |
+| IDs only | `-q` / `--quiet` | shell pipelines |
+
+### Text (default)
+
+Human-readable tables:
+
+```
+ID   Status  Contact       Assignee       Inbox
+194  open    Jane Doe      Shivam Mishra  WebWidget
+197  open    Vinay K       Shivam Mishra  Whatsapp
+```
+
+### JSON
+
+Full API response, ready for `jq`:
+
+```bash
+chatwoot convs -o json | jq '.data.payload[].id'
+chatwoot conv 123 -o json | jq '.assignee.name'
+```
+
+### CSV
+
+```bash
+chatwoot agents -o csv > agents.csv
+chatwoot convs --assignee all -o csv > "convs-$(date +%F).csv"
+```
+
+### Quiet — IDs only
+
+`-q` prints just the IDs, one per line — perfect for `xargs`:
+
+```bash
+chatwoot convs -q | xargs -I{} chatwoot conv {} resolve
+```
+
+## Headless / CI use
+
+The OS keyring isn't available in most CI environments. Set `CHATWOOT_API_KEY` to override the saved token:
+
+```bash
+export CHATWOOT_API_KEY=your_token_here
+chatwoot convs --assignee all -o json
+```
+
+Combine with `--account` to target a specific account:
+
+```bash
+chatwoot --account 42 convs -o csv > convs.csv
+```
+
+Add `-v` / `--verbose` to print every HTTP request and response to stderr — handy when something looks wrong.
+
+## Tips
+
+- `-q` is your friend — every list command supports it, every `xargs` pipeline starts with it.
+- Pipe to `jq` early and aggressively; `-o json` returns the full Chatwoot response, not a slimmed-down view.
+- Use `--no-color` when redirecting text output to a file or another program that doesn't strip ANSI codes.
+- `chatwoot --help` and `chatwoot <command> --help` are exhaustive — the CLI's help is generated from the same definitions that drive the binary.

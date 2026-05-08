@@ -1,0 +1,59 @@
+---
+title: Agent skill
+description: Install the Chatwoot CLI agent skill so coding tools like Claude Code, Cursor, and Codex can use chatwoot effectively.
+sidebarTitle: Agent skill
+---
+
+The Chatwoot CLI ships with an [agent skill](https://skills.sh) — a small instruction file that teaches AI coding tools (Claude Code, Cursor, Codex, Gemini CLI, and 50+ others) how to use `chatwoot` correctly. With the skill installed, a prompt like _"find conversations tagged refund and assign the unassigned ones to me"_ runs the right commands, parses JSON properly, and pauses for confirmation before sending customer-visible replies.
+
+## Install
+
+The skill is published in the [chatwoot/cli](https://github.com/chatwoot/cli) repository. Use the [skills CLI](https://skills.sh) to install it into whichever AI tool you use:
+
+```bash
+npx skills add chatwoot/cli
+```
+
+The skills CLI auto-detects the coding agents you have installed and offers to install the skill into each. Add `--global` (or `-g`) to install the skill once for every project:
+
+```bash
+npx skills add chatwoot/cli --global
+```
+
+The skill activates automatically when you ask the agent to do something Chatwoot-related — _"triage my inbox"_, _"reply to conv 123"_, _"find conversations tagged refund"_.
+
+## Authenticate the agent
+
+Coding agents run commands non-interactively, so `chatwoot auth login` has to be run separately. In certain scenarios, agents might be run in a sandbox environment so the API token may not be accessible to them. In this case, you can set the `CHATWOOT_API_KEY` in your shell or the agent's environment:
+
+```bash
+export CHATWOOT_API_KEY=your_token_here
+```
+
+## What the skill teaches the agent
+
+- **The id-first grammar** — `chatwoot conv 123 reply "..."` instead of guessing flag layouts.
+- **The output contract** — parse `-o json`, never the human-readable text format.
+- **Safety rules** — `reply` is customer-visible and irreversible, so the agent shows the full text and asks before sending.
+- **Common pitfalls** — `label` replaces rather than appends, `--query` searches message content (not contacts), `assign --agent <name>` is a case-insensitive substring match, list endpoints paginate.
+- **Composable patterns** — `-q | xargs` for bulk operations, `jq` chaining for lookups.
+
+The full skill source lives at [chatwoot/cli/skills/chatwoot-cli](https://github.com/chatwoot/cli/tree/main/skills/chatwoot-cli) read it directly to see exactly what behavior is shaped.
+
+## Example prompts
+
+Once the skill is installed, prompts like these work without further setup:
+
+- _"What's in my open inbox today? Group by priority."_
+- _"Find conversations tagged `refund` that have been pending for more than 48 hours and assign them to Alice."_
+- _"Read the last five messages on conv 412 and draft a reply — show it to me before sending."_
+- _"Resolve every open conversation tagged `spam`."_
+
+The agent composes `chatwoot` commands, parses JSON, and stops to confirm before any write that affects customers.
+
+## Remove the skill
+
+```bash
+npx skills remove chatwoot-cli                    # all agents
+npx skills remove chatwoot-cli --agent claude-code  # one agent
+```

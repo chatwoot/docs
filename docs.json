@@ -35,6 +35,16 @@
         "pages": ["introduction"]
       },
       {
+        "anchor": "Chatwoot CLI",
+        "icon": "terminal",
+        "pages": [
+          {
+            "group": "Getting Started",
+            "pages": ["cli", "cli/commands", "cli/scripting", "cli/agent-skill"]
+          }
+        ]
+      },
+      {
         "anchor": "Installation & Setup",
         "icon": "server",
         "pages": [

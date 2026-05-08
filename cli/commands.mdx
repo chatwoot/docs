@@ -1,0 +1,118 @@
+---
+title: CLI Commands
+description: Learn the Chatwoot CLI command grammar and commonly used commands.
+sidebarTitle: Commands
+---
+
+Full command reference. New here? Start with **[Getting started](/cli)**. For output formats and automation, see **[Scripting & output](/cli/scripting)**.
+
+## Grammar at a glance
+
+- **Plural noun = list:** `chatwoot convs`, `chatwoot contacts`, `chatwoot agents`
+- **Singular + id = view:** `chatwoot conv 123` shows conversation 123
+- **Singular + id + verb = act:** `chatwoot conv 123 reply "thanks"` — id before verb, the way you'd say it
+
+Verb-first form (`chatwoot conv reply 123 "thanks"`) also works.
+
+## Conversations
+
+### List
+
+```bash
+chatwoot convs                                 # open conversations assigned to you (default)
+chatwoot convs -s resolved                     # by status: open | resolved | pending | snoozed
+chatwoot convs --assignee all                  # me (default) | unassigned | all | <name> | <id>
+chatwoot convs --inbox 5                       # filter by inbox ID
+chatwoot convs -l billing,urgent               # filter by labels
+chatwoot convs --query "refund"                # search by message content
+```
+
+### Act on one
+
+```bash
+chatwoot conv 123                              # view (default)
+chatwoot conv 123 messages                     # list messages
+```
+
+**Reply:**
+
+```bash
+chatwoot conv 123 reply "Thanks, looking into it"
+chatwoot conv 123 reply "internal note" --private
+```
+
+**Status:**
+
+```bash
+chatwoot conv 123 resolve
+chatwoot conv 123 open
+chatwoot conv 123 pending
+chatwoot conv 123 snooze                       # snooze until next reply
+chatwoot conv 123 snooze --until 24h           # 7d, 2026-05-10, ...
+```
+
+**Assignment:**
+
+```bash
+chatwoot conv 123 assign --agent me            # yourself
+chatwoot conv 123 assign --agent alice         # case-insensitive substring on name
+chatwoot conv 123 assign --agent 42            # by agent ID
+chatwoot conv 123 assign --team 7              # assign to a team
+chatwoot conv 123 unassign
+```
+
+**Labels & priority:**
+
+```bash
+chatwoot conv 123 label billing,urgent         # sets labels (replaces existing)
+chatwoot conv 123 priority urgent              # urgent | high | medium | low | none
+```
+
+## Contacts
+
+```bash
+chatwoot contacts                              # list
+chatwoot contacts --search "john"              # name, email, or phone
+chatwoot contact 456                           # view
+chatwoot contact 456 conversations             # this contact's conversations
+```
+
+## Inboxes, agents, labels, teams
+
+```bash
+chatwoot inboxes                               # list inboxes
+chatwoot inbox 5                               # view one
+chatwoot agents                                # list agents
+chatwoot labels                                # list account-level labels
+chatwoot teams                                 # list teams
+```
+
+## Profile
+
+```bash
+chatwoot me                                    # your profile (alias of auth status)
+chatwoot whoami                                # same
+```
+
+## Auth & config
+
+```bash
+chatwoot auth login                            # interactive login (caches user_id)
+chatwoot auth logout                           # remove saved credentials
+chatwoot auth status                           # current user and instance
+chatwoot config path                           # print config file path
+chatwoot config view                           # print config and credential source
+```
+
+## Global flags
+
+| Flag | Short | Description |
+|------|-------|-------------|
+| `--output` | `-o` | Output format: `text`, `json`, `csv` |
+| `--account` | `-a` | Override account ID |
+| `--quiet` | `-q` | Print only IDs (for scripting) |
+| `--no-color` | | Disable colored output |
+| `--verbose` | `-v` | Show request/response details |
+| `--version` | | Print version |
+
+For pipelines and exports using these flags, see **[Scripting & output](/cli/scripting)**.
