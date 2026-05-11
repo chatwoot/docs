@@ -68,6 +68,12 @@ chatwoot conv 123 label billing,urgent         # sets labels (replaces existing)
 chatwoot conv 123 priority urgent              # urgent | high | medium | low | none
 ```
 
+**Contact:**
+
+```bash
+chatwoot conv 123 contact                      # view the contact (sender) for this conversation
+```
+
 ## Contacts
 
 ```bash
@@ -102,6 +108,14 @@ chatwoot auth logout                           # remove saved credentials
 chatwoot auth status                           # current user and instance
 chatwoot config path                           # print config file path
 chatwoot config view                           # print config and credential source
+```
+
+## Version
+
+```bash
+chatwoot version                               # print the CLI version
+chatwoot version --check                       # check GitHub for a newer release
+chatwoot --version                             # same as `version`, as a flag
 ```
 
 ## Global flags
