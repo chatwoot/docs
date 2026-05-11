@@ -76,3 +76,21 @@ chatwoot convs --help
 ```
 
 Issues and feedback: [github.com/chatwoot/cli](https://github.com/chatwoot/cli).
+
+## Uninstalling
+
+```bash
+chatwoot auth logout              # remove API key from the OS keyring
+rm -rf ~/.chatwoot                # delete config (~/.chatwoot/config.yaml)
+rm "$(command -v chatwoot)"       # delete the binary
+```
+
+If you set up shell completions, also remove them:
+
+```bash
+rm -f ~/.local/share/bash-completion/completions/chatwoot   # bash
+rm -f ~/.config/fish/completions/chatwoot.fish              # fish
+# zsh: delete the `source <(... completion zsh -c)` line from ~/.zshrc
+```
+
+On Windows, delete the extracted `chatwoot.exe` and the `%USERPROFILE%\.chatwoot` folder. If `CHATWOOT_API_KEY` is set in your environment, unset it in your shell rc — `auth logout` can't remove env-provided credentials.
