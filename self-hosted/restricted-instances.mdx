@@ -37,13 +37,31 @@ This wildcard approach ensures all necessary widget functionalities such as conv
 
 ### Widget Assets
 
-Make sure that static assets required by the ChatWidget are accessible. These are typically served from:
+Make sure that all static and media assets the widget loads are accessible. The widget pulls from four paths:
 
 ```
 https://yourdomain.com/packs
+https://yourdomain.com/vite/assets
+https://yourdomain.com/brand-assets
+https://yourdomain.com/rails/active_storage
 ```
 
-Ensure all paths under this directory are accessible to support the widget fully.
+- **`/packs`** — the SDK loader script (`packs/js/sdk.js`) embedded into the parent page.
+- **`/vite/assets`** — JavaScript and CSS bundles loaded inside the widget iframe. Chatwoot migrated this UI from Webpack to Vite, so older guides referring only to `/packs` are incomplete for newer deployments.
+- **`/brand-assets`** — installation-level branding (logo, favicon) shown inside the widget.
+- **`/rails/active_storage`** — image and file attachments. Used for both visitor uploads and any media the agent sends back. Without this, attachments display as broken images on the visitor side.
+
+All four paths must be publicly accessible to support the widget fully.
+
+### Widget Page
+
+The Chatwoot SDK loads the chat UI by injecting an iframe whose `src` points to `/widget`. This path must also be publicly accessible for the widget to render:
+
+```
+https://yourdomain.com/widget
+```
+
+Without this, the SDK script loads correctly but the iframe fails to load, resulting in a missing chat bubble. This commonly affects deployments behind authentication gateways such as Cloudflare Access, basic auth, or other ZTNA proxies.
 
 ## SMTP Configuration for Emails
 
