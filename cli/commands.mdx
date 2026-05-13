@@ -68,6 +68,12 @@ chatwoot conv 123 label billing,urgent         # sets labels (replaces existing)
 chatwoot conv 123 priority urgent              # urgent | high | medium | low | none
 ```
 
+**Contact:**
+
+```bash
+chatwoot conv 123 contact                      # view the contact (sender) for this conversation
+```
+
 ## Contacts
 
 ```bash
@@ -94,6 +100,18 @@ chatwoot me                                    # your profile (alias of auth sta
 chatwoot whoami                                # same
 ```
 
+## Raw API
+
+Use `chatwoot api` for authenticated API calls that do not have a first-class CLI command yet. Account-relative paths are expanded under `/api/v1/accounts/<account_id>`, so do not include the `/api/v1/accounts/...` prefix.
+
+```bash
+chatwoot api /conversations/123                # GET /api/v1/accounts/<id>/conversations/123
+chatwoot api -X PATCH /conversations/123 --data '{"status":"open"}'
+chatwoot api --exact /api/v1/profile           # non-account-scoped endpoint
+```
+
+Use the application Swagger as the endpoint reference before raw API calls: [application_swagger.json](https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/application_swagger.json).
+
 ## Auth & config
 
 ```bash
@@ -102,6 +120,14 @@ chatwoot auth logout                           # remove saved credentials
 chatwoot auth status                           # current user and instance
 chatwoot config path                           # print config file path
 chatwoot config view                           # print config and credential source
+```
+
+## Version
+
+```bash
+chatwoot version                               # print the CLI version
+chatwoot version --check                       # check GitHub for a newer release
+chatwoot --version                             # same as `version`, as a flag
 ```
 
 ## Global flags
