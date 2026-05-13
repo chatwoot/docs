@@ -100,6 +100,18 @@ chatwoot me                                    # your profile (alias of auth sta
 chatwoot whoami                                # same
 ```
 
+## Raw API
+
+Use `chatwoot api` for authenticated API calls that do not have a first-class CLI command yet. Account-relative paths are expanded under `/api/v1/accounts/<account_id>`, so do not include the `/api/v1/accounts/...` prefix.
+
+```bash
+chatwoot api /conversations/123                # GET /api/v1/accounts/<id>/conversations/123
+chatwoot api -X PATCH /conversations/123 --data '{"status":"open"}'
+chatwoot api --exact /api/v1/profile           # non-account-scoped endpoint
+```
+
+Use the application Swagger as the endpoint reference before raw API calls: [application_swagger.json](https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/application_swagger.json).
+
 ## Auth & config
 
 ```bash

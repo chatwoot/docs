@@ -36,7 +36,7 @@ export CHATWOOT_API_KEY=your_token_here
 - **The output contract** — parse `-o json`, never the human-readable text format.
 - **Safety rules** — `reply` is customer-visible and irreversible, so the agent shows the full text and asks before sending.
 - **Common pitfalls** — `label` replaces rather than appends, `--query` searches message content (not contacts), `assign --agent <name>` is a case-insensitive substring match, list endpoints paginate.
-- **Composable patterns** — `-q | xargs` for bulk operations, `jq` chaining for lookups.
+- **Composable patterns** — `-q | xargs` for bulk operations, `jq` chaining for lookups, and `chatwoot api` for authenticated raw API reads when no first-class command exists.
 
 The full skill source lives at [chatwoot/cli/skills/chatwoot-cli](https://github.com/chatwoot/cli/tree/main/skills/chatwoot-cli) read it directly to see exactly what behavior is shaped.
 
@@ -50,6 +50,8 @@ Once the skill is installed, prompts like these work without further setup:
 - _"Resolve every open conversation tagged `spam`."_
 
 The agent composes `chatwoot` commands, parses JSON, and stops to confirm before any write that affects customers.
+
+For raw API calls, agents should check the application Swagger first: [application_swagger.json](https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/application_swagger.json).
 
 ## Remove the skill
 
