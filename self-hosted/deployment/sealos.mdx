@@ -1,0 +1,43 @@
+---
+title: Sealos Chatwoot deployment guide
+description: Deploy Chatwoot using Sealos one-click templates
+sidebarTitle: Sealos
+---
+
+## Deploy to Sealos with one-click
+
+[![Deploy on Sealos](https://sealos.io/Deploy-on-Sealos.svg)](https://sealos.io/products/app-store/chatwoot/)
+
+The Sealos template provisions the Chatwoot web service, Sidekiq worker, PostgreSQL, Redis, ingress, and persistent storage for `/app/storage`.
+
+<Note>
+This is a community contributed installation setup. This will only have community support for any issues in future.
+</Note>
+
+## Prerequisites
+
+- A Sealos account
+- A domain or the generated Sealos app URL for `FRONTEND_URL`
+- SMTP credentials if you want to send outbound emails
+- Object storage credentials if you want to use external attachment storage instead of the default local storage
+
+## Deploy Chatwoot on Sealos
+
+1. Open the [Chatwoot template on Sealos](https://sealos.io/products/app-store/chatwoot/).
+2. Click **Deploy** and review the generated application name and host.
+3. Wait for Sealos to create the Chatwoot web service, Sidekiq worker, PostgreSQL, Redis, ingress, and storage volume.
+4. Open the generated Chatwoot URL and complete the first account setup.
+
+## Configure Chatwoot
+
+The template generates the required `SECRET_KEY_BASE` and configures PostgreSQL, Redis, `RAILS_ENV`, `NODE_ENV`, and `FRONTEND_URL` for the deployed Sealos URL.
+
+After deployment, configure production features such as email, object storage, and channel integrations using the [Environment variables](/self-hosted/configuration/environment-variables) guide.
+
+## Storage
+
+The template uses Chatwoot local storage and persists `/app/storage` with a Sealos volume. For production installations that need external attachment storage, configure one of the supported storage providers in the [storage guide](/self-hosted/deployment/storage/supported-providers).
+
+## Updating Chatwoot
+
+The template uses the Chatwoot Docker image configured by the Sealos template. To upgrade, update the image version in your Sealos deployment or redeploy from an updated template, then run the required Chatwoot database preparation or migration step for the target version.
