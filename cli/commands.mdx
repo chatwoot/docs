@@ -87,6 +87,21 @@ chatwoot labels                                # list account-level labels
 chatwoot teams                                 # list teams
 ```
 
+## Help centers
+
+`hc articles` uses the saved default help center and locale. Pass `--portal` or `--locale` when you want to override them for one command.
+
+```bash
+chatwoot hcs                                   # list help centers
+chatwoot hc default user-guide                 # save default help center and locale
+chatwoot hc default                            # show current default
+chatwoot hc default --clear                    # clear current default
+chatwoot hc articles --query "api channel"     # search articles
+chatwoot hc articles --category channels       # list/search within a category
+chatwoot hc article 1677839703-how-to-create-an-api-channel-inbox
+chatwoot hc articles --portal user-guide --locale en
+```
+
 ## Profile
 
 ```bash

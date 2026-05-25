@@ -4,7 +4,7 @@ description: Install the Chatwoot CLI agent skill so coding tools like Claude Co
 sidebarTitle: Agent skill
 ---
 
-The Chatwoot CLI ships with an [agent skill](https://skills.sh) — a small instruction file that teaches AI coding tools (Claude Code, Cursor, Codex, Gemini CLI, and 50+ others) how to use `chatwoot` correctly. With the skill installed, a prompt like _"find conversations tagged refund and assign the unassigned ones to me"_ runs the right commands, parses JSON properly, and pauses for confirmation before sending customer-visible replies.
+The Chatwoot CLI ships with an [agent skill](https://skills.sh) — a small instruction file that teaches AI coding tools (Claude Code, Cursor, Codex, Gemini CLI, and 50+ others) how to use `chatwoot` correctly. With the skill installed, a prompt like _"find conversations tagged refund and assign the unassigned ones to me"_ runs the right commands, parses JSON properly, and pauses for confirmation before sending customer-visible replies. It can also search help center articles when you explicitly ask for knowledge-base context.
 
 ## Install
 
@@ -20,7 +20,7 @@ The skills CLI auto-detects the coding agents you have installed and offers to i
 npx skills add chatwoot/cli --global
 ```
 
-The skill activates automatically when you ask the agent to do something Chatwoot-related — _"triage my inbox"_, _"reply to conv 123"_, _"find conversations tagged refund"_.
+The skill activates automatically when you ask the agent to do something Chatwoot-related — _"triage my inbox"_, _"reply to conv 123"_, _"find conversations tagged refund"_, _"search the help center for API channel docs"_.
 
 ## Authenticate the agent
 
@@ -34,6 +34,7 @@ export CHATWOOT_API_KEY=your_token_here
 
 - **The id-first grammar** — `chatwoot conv 123 reply "..."` instead of guessing flag layouts.
 - **The output contract** — parse `-o json`, never the human-readable text format.
+- **Help center lookup** — use `hc articles` and `hc article` when the user asks for help center content, without making it the default step for ordinary triage.
 - **Safety rules** — `reply` is customer-visible and irreversible, so the agent shows the full text and asks before sending.
 - **Common pitfalls** — `label` replaces rather than appends, `--query` searches message content (not contacts), `assign --agent <name>` is a case-insensitive substring match, list endpoints paginate.
 - **Composable patterns** — `-q | xargs` for bulk operations, `jq` chaining for lookups.
@@ -47,6 +48,7 @@ Once the skill is installed, prompts like these work without further setup:
 - _"What's in my open inbox today? Group by priority."_
 - _"Find conversations tagged `refund` that have been pending for more than 48 hours and assign them to Alice."_
 - _"Read the last five messages on conv 412 and draft a reply — show it to me before sending."_
+- _"Search the help center for API channel setup docs."_
 - _"Resolve every open conversation tagged `spam`."_
 
 The agent composes `chatwoot` commands, parses JSON, and stops to confirm before any write that affects customers.

@@ -4,9 +4,9 @@ description: Install and configure the Chatwoot CLI to manage your inbox from th
 sidebarTitle: Overview
 ---
 
-A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. It's also handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, or automate repetitive triage, without needing a custom integration.
+A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. You can also search help center articles from the terminal. It's handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, search help center content when asked, or automate repetitive triage, without needing a custom integration.
 
-- **[Commands](/cli/commands)** — the full command reference: conversations, contacts, inboxes, agents.
+- **[Commands](/cli/commands)** — the full command reference: conversations, contacts, inboxes, agents, help centers.
 - **[Scripting & output](/cli/scripting)** — JSON / CSV / quiet mode, shell completions, automation recipes.
 
 ## Install
@@ -73,6 +73,7 @@ Restart your shell (or `source` your rc file). Tab-completion works for commands
 chatwoot --help
 chatwoot conv --help
 chatwoot convs --help
+chatwoot hc --help
 ```
 
 Issues and feedback: [github.com/chatwoot/cli](https://github.com/chatwoot/cli).
