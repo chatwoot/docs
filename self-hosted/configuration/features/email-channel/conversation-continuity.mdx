@@ -1,0 +1,53 @@
+---
+title: Conversation Continuity
+description: Continue conversations between website live chat and email
+sidebarTitle: Conversation Continuity
+---
+
+When a customer starts a conversation on your website, you don’t want the thread to break just because the user went offline. Chatwoot automatically maintains continuity between the website live chat and email, so the conversation stays in one place for both your agents and your customers.
+
+This guide explains how that flow works and what you should set up to ensure everything stays seamless.
+
+### How Conversation Continuity Works
+
+#### 1. Customer starts a conversation
+
+The customer interacts with your widget and starts a conversation.
+If Email Collect is enabled, the widget asks the customer for their email address.
+This email becomes the identifier for all future messages.
+
+#### 2. Customer goes offline, agent replies
+
+If the agent replies when the customer is no longer online, Chatwoot delivers the agent’s reply to the customer via email.
+This ensures the user doesn’t miss the update.
+
+#### 3. Customer replies from their email
+
+The user sees your message in their inbox and simply replies to that email like any normal thread.
+They don’t need to come back to your website manually — replying from email is enough.
+
+#### 4. Chatwoot processes the email and links it to the conversation
+
+When Chatwoot receives the user’s email:
+	•	It reads the email headers (Message-ID / References / custom thread identifiers)
+	•	It maps the email to the correct conversation thread
+	•	It adds the user’s reply as a new message inside the same live-chat conversation
+
+To the agent, it looks like the user never left.
+To the user, it feels like replying to any normal email thread.
+
+### What You Need to Enable
+
+#### 1. Email Collect Hook
+Make sure the widget is configured to collect the user’s email early in the conversation.
+This is the key to linking email replies back to the same thread.
+
+#### 2. Email channel configuration
+Make sure email forwarding is enabled as per this guide: [Forwarding Emails to Chatwoot](./forwarding-emails-to-chatwoot).
+
+#### 3. Mailer configuration
+Outbound emails should be properly configured so Chatwoot can notify the customer when the agent replies offline.
+
+<img src="https://user-images.githubusercontent.com/73185/109548415-a1ca5c00-7af2-11eb-9b1d-fd636cf5189c.png" height="300px" />
+
+After finishing the set up, the mail sent from Chatwoot will have a `replyto:` in the following format `reply+<random-hex>@<your-domain.com>` and reply to those would get appended to your conversation.

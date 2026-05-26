@@ -1,0 +1,168 @@
+---
+title: "Supported Features on Channels"
+description: "Comprehensive reference for supported features, message types, and limitations across all Chatwoot channels"
+---
+
+## Supported message type
+
+| Channel   | Incoming/Outgoing message | Activity message |
+| --------- | ------------------------- | ---------------- |
+| Website   | Yes                       | Yes              |
+| Facebook  | Yes                       | Yes              |
+| Instagram | Yes                       | Yes              |
+| SMS       | Yes                       | Yes              |
+| Whatsapp  | Yes                       | Yes              |
+| Email     | Yes                       | Yes              |
+| Telegram  | Yes                       | Yes              |
+| Line      | Yes                       | Yes              |
+| TikTok    | Yes                       | Yes              |
+| API       | Yes                       | Yes              |
+
+## Maximum message size (number of characters)
+
+| Channel            | Maximum message size |
+| ------------------ | -------------------- |
+| Website            | 10,000               |
+| Facebook           | 2000                 |
+| Instagram          | 1000                 |
+| Twilio SMS         | 320                  |
+| Twilio WhatsApp    | 1600                 |
+| Whatsapp Cloud     | 4096                 |
+| 360Dialog WhatsApp | 1600                 |
+| Bandwidth SMS      | 160                  |
+| Email              | 25,000               |
+| Telegram           | 4096                 |
+| Line               | 2000                 |
+| TikTok             | 950                  |
+| API                | 10,000               |
+
+## Outbound conversation restriction
+
+| Channel   | Restriction                                                                                                     |
+| --------- | --------------------------------------------------------------------------------------------------------------- |
+| Website   | You can create outbound conversations to verified contacts                                                      |
+| Facebook  | Cannot create outbound conversations. First message should be from the contact                                  |
+| Instagram | Cannot create outbound conversations. First message should be from the contact                                  |
+| SMS       | No restriction                                                                                                  |
+| Whatsapp  | Cannot send any message other than Whatsapp approved template messages 24 hours after the last incoming message |
+| Email     | No restriction                                                                                                  |
+| Telegram  | Cannot create outbound conversations. First message should be from the contact                                  |
+| Line      | Cannot create outbound conversations. First message should be from the contact                                  |
+| TikTok    | Cannot create outbound conversations. First message should be from the contact                                  |
+| API       | No restriction                                                                                                  |
+
+## Outgoing message restriction
+
+| Channel   | Restriction                                                                                                     |
+| --------- | --------------------------------------------------------------------------------------------------------------- |
+| Website   | No restriction                                                                                                  |
+| Facebook  | Cannot send promotional messages 24 hours after the last incoming message (7 days if Human agent enabled)       |
+| Instagram | Cannot send promotional messages 24 hours after the last incoming message (7 days if Human agent enabled)       |
+| Whatsapp  | Cannot send any message other than Whatsapp approved template messages 24 hours after the last incoming message |
+| SMS       | No restriction                                                                                                  |
+| Email     | No restriction                                                                                                  |
+| Telegram  | No restriction                                                                                                  |
+| Line      | No restriction                                                                                                  |
+| TikTok    | Cannot send messages 48 hours after the last incoming message                                                    |
+| API       | Custom time depends on Agent reply time window                                                                  |
+
+## Outgoing message delivery status
+
+| Channel            | Sent status | Read status   | Delivered status | Failed status |
+| ------------------ | ----------- | ------------- | ---------------- | ------------- |
+| Website            | Yes         | Yes           | Yes              | Yes           |
+| API                | Yes         | Yes           | Yes              | Yes           |
+| Official WhatsApp  | Yes         | Yes           | Yes              | Yes           |
+| Twilio WhatsApp    | Yes         | Yes           | Yes              | Yes           |
+| 360Dialog WhatsApp | Yes         | Yes           | Yes              | Yes           |
+| Twilio SMS         | Yes         | Yes           | Not supported    | Yes           |
+| Bandwidth SMS      | Yes         | Yes           | Not supported    | Yes           |
+| Facebook           | Yes         | Yes           | Yes              | Yes           |
+| Instagram          | Yes         | Not supported | Yes              | Yes           |
+| Line               | Yes         | Not supported | Not supported    | Yes           |
+| Telegram           | Yes         | Not supported | Not supported    | Yes           |
+| TikTok             | Yes         | Yes           | Yes              | Yes           |
+| Email              | Yes         | Not supported | Not supported    | Not supported |
+
+## Reply to message
+
+| Channel         | Reply to incoming message | Reply to outgoing message |
+| --------------- | ------------------------- | ------------------------- |
+| Website         | Yes                       | Yes                       |
+| Facebook        | Yes                       | No                        |
+| Instagram       | Yes                       | No                        |
+| SMS             | No                        | No                        |
+| Whatsapp Cloud  | Yes                       | Yes                       |
+| Twilio WhatsApp | No                        | No                        |
+| Email           | No                        | No                        |
+| Telegram        | Yes                       | Yes                       |
+| Line            | No                        | No                        |
+| TikTok          | Yes                       | Yes                       |
+| API             | Yes                       | Yes                       |
+
+## Outgoing attachments supported file types
+
+<Note>
+The default maximum file size limit is 40MB.
+</Note>
+
+| Channel         | Audio                     | Image                | Video                          | Document      |
+| --------------- | ------------------------- | -------------------- | ------------------------------ | ------------- |
+| Website         | All                       | All                  | All                            | All           |
+| Instagram       | aac, m4a, wav, mp4 (25mb) | png, jpeg, gif (16mb)| mp4, ogg, avi, mov, web (25mb) | Not supported |
+| Facebook        | aac, m4a, wav, mp4 (25mb) | png, jpeg, gif (8mb) | mp4, ogg, avi, mov, webm (25mb)| pdf, xls(x), doc(x), ppt(x) (25mb) |
+| WhatsApp Cloud  | aac, amr, mp3, m4a, ogg  (16mb) | png, jpeg (5mb)| 3gp, mp4 (16mb)                | pdf, xls(x), doc(x), ppt(x) (100mb) |
+| WhatsApp Twilio | mpeg, opus, ogg, amr(5mb) | png, jpeg (5mb)      | mp4 (5mb)                      | pdf (5mb)     |
+| Twilio SMS      | All(5mb) | png, jpeg (5mb)| All (5mb)            | All (5mb)                      | All(5mb)     |
+| Email           | All                       | All                  | All                            | All           |
+| Telegram        | All                       | All                  | All                            | All           |
+| Line            | Not supported             | png, jpeg (10mg)     | mp4 (40mb)                     | Not supported |
+| TikTok          | Not supported             | jpeg, png (3mb)      | Not supported                  | Not supported |
+| API             | All                       | All                  | All                            | All           |
+
+<Note>
+"All" means the channel supports all standard file types listed below:
+
+**Standard File Types**
+
+- **Video:** `ogg`, `mp4`, `mov`, `webm`, `quicktime`, `avi`
+- **Audio:** `mp3`, `mpeg`, `opus`, `ogg`, `amr`, `aac`, `m4a`, `wav`
+- **Image:** `png`, `jpeg`, `gif`, `bmp`, `webp`
+- **Document:** `pdf`, `doc`, `docx`, `xls`, `xlsx`, `ppt`, `pptx`, `zip`, `7z`, `rar`, `tar`, `xml`, `csv`, `json`, `rtf`, `txt`, `plain`, `.3gpp`, `x-7z-compressed`, `vnd.rar`, `x-tar`, `msword`
+</Note>
+
+## Available features
+
+| Channel   | Channel greeting | Attachments | Agent Auto assignment | Slack |
+| --------- | ---------------- | ----------- | --------------------- | ----- |
+| Website   | Yes              | Yes         | Yes                   | Yes   |
+| Facebook  | Yes              | Yes         | Yes                   | Yes   |
+| Instagram | Yes              | Yes         | Yes                   | Yes   |
+| SMS       | Yes              | No          | Yes                   | Yes   |
+| Whatsapp  | Yes              | Yes         | Yes                   | Yes   |
+| Email     | Yes              | Yes         | Yes                   | Yes   |
+| Telegram  | Yes              | Yes         | Yes                   | Yes   |
+| Line      | Yes              | No          | Yes                   | Yes   |
+| TikTok    | Yes              | Yes         | Yes                   | Yes   |
+| API       | Yes              | Yes         | Yes                   | Yes   | 
+
+
+## Editor formatting support
+
+The editor supports rich text formatting across channels. Features are dynamically enabled or disabled based on each channel's capabilities. Unsupported formats are treated as plain text.
+
+| Channel    | Bold | Italics | Strike | Code | Link | Bullet List | Ordered List | Code Block | Blockquote |
+| ---------- | ---- | ------- | ------ | ---- | ---- | ----------- | ------------ | ---------- | ---------- |
+| Website    | Yes  | Yes     | Yes    | Yes  | Yes  | Yes         | Yes          | Yes        | Yes        |
+| Email      | Yes  | Yes     | No     | Yes  | Yes  | Yes         | Yes          | Yes        | Yes        |
+| Facebook   | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | Yes        | No         |
+| Instagram  | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | No         | No         |
+| Whatsapp   | Yes  | Yes     | Yes    | Yes  | No   | Yes         | Yes          | Yes        | No         |
+| Telegram   | Yes  | Yes     | No     | Yes  | Yes  | No          | No           | No         | No         |
+| Line       | Yes  | Yes     | Yes    | Yes  | No   | No          | No           | Yes        | No         |
+| TikTok     | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| Twitter    | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| SMS        | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| Twilio SMS | No   | No      | No     | No   | No   | No          | No           | No         | No         |
+| API        | Yes  | Yes     | No     | No   | No   | No          | No           | No         | No         |
+| Voice      | No   | No      | No     | No   | No   | No          | No           | No         | No
