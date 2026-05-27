@@ -40,10 +40,10 @@ docker compose pull
 docker compose up -d
 ```
 
-Run the `rails db:chatwoot_prepare` option after accessing the console from one of the containers running the latest image.
+Run the database preparation task after starting the containers with the updated image.
 
 ```bash
-docker exec -it $(basename $(pwd))-rails-1 sh -c 'RAILS_ENV=production bundle exec rails db:chatwoot_prepare'
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare
 ```
 
 ## Helm(Kubernetes)
