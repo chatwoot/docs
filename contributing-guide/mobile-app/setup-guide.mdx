@@ -113,54 +113,11 @@ npx expo install package-name
 pnpm install package-name
 ```
 
-## Push notification
+## Push notifications
 
-If you are using the community edition of Chatwoot, you can now use the [official mobile app](https://www.chatwoot.com/mobile-apps) with push notifications without any additional configuration. 
+If you are using the community edition of Chatwoot with the [official mobile app](https://www.chatwoot.com/mobile-apps), push notifications work out of the box with no additional configuration.
 
-For more details, please refer to the [push notification documentation](https://www.chatwoot.com/hc/handbook/articles/1687935909-push-notification).
-
-## Build & Submit using EAS
-
-We use Expo Application Services (EAS) for building, deploying, and submitting the app to app stores. EAS Build and Submit is available to anyone with an Expo account, regardless of whether you pay for EAS or use our Free plan. 
-
-You can sign up at [Expo EAS](https://expo.dev/eas).
-
-### Build the app
-
-#### iOS Build
-
-```bash
-pnpm run build:ios:local
-```
-
-#### Android Build
-
-```bash
-pnpm run build:android:local
-```
-
-### Submit the app
-
-#### iOS Submission
-
-```bash
-pnpm submit:ios
-```
-
-#### Android Submission
-
-```bash
-pnpm submit:android
-```
-
-When you run the above command, you will be prompted to provide a path to a local app binary file. Please select the file that you built in the previous step:
-
-- **iOS**: `.ipa` file
-- **Android**: `.aab` file
-
-<Note>
-It may take a while to complete the submission process. You will see the status of the submission on your terminal.
-</Note>
+If you are building a custom-branded app, refer to the [custom mobile app guide](/self-hosted/custom-mobile-app) for Firebase, deep linking, and build setup.
 
 ## Troubleshooting
 

@@ -1,0 +1,35 @@
+---
+title: Introduction to Email Channel Configuration
+description: Overview of email channel configuration for self-hosted Chatwoot
+sidebarTitle: Introduction
+---
+
+Email is one of the core channels in Chatwoot, and for self-hosted installations the configuration depends entirely on how your mail infrastructure is set up. Different teams use different providers—Google Workspace, Microsoft 365, custom SMTP/IMAP servers, or even forwarding-based workflows. Because of this, Chatwoot provides multiple ways to connect a mailbox, each with slightly different requirements, security properties, and operational trade-offs.
+
+This guide introduces the five supported configurations available in Chatwoot for setting up email channels in a self-hosted environment. All of these methods allow Chatwoot to send and receive email, but the authentication flow, inbound routing, and outbound delivery differ based on your setup.
+
+### Google (OAuth based)
+
+If you are using Gmail or Google Workspace, you can connect your mailbox using Google OAuth. This provides a secure, standards-based authentication flow without managing app passwords. Chatwoot will use Google's SMTP and IMAP servers for sending and receiving.
+
+Click here to learn more about [Google Workspace Setup](./google-workspace-setup).
+
+### Microsoft (OAuth based)
+
+For organizations using Microsoft 365 or Outlook, you can connect your mailbox using Microsoft OAuth. Chatwoot integrates with Microsoft’s SMTP and IMAP endpoints for full send/receive capability.
+
+Click here to learn more about [Microsoft Setup](./azure-app-setup).
+
+### Standard SMTP + IMAP
+
+This configuration supports any custom mail provider by allowing you to set standard SMTP credentials for outbound mail and IMAP credentials for inbound. This works with on‑prem servers, commercial providers, or any setup that supports username/password authentication.
+
+### Forwarding Rule (Email → Chatwoot Ingress)
+
+Instead of configuring IMAP, some teams prefer to forward incoming emails directly to Chatwoot. If your mail provider supports forwarding rules, you can send inbound email to Chatwoot’s ingress address, which Chatwoot will process as incoming messages. Outbound email will use your configured SMTP provider.
+
+### IMAP (Inbound Only) + Chatwoot Mailer (Outbound)
+
+In this mode, Chatwoot pulls inbound email through IMAP but sends outbound messages using Chatwoot’s mailer configuration. This is useful when your mail provider imposes SMTP restrictions or when you want a consistent outbound delivery method across channels.
+
+You just need to configure IMAP settings here.
