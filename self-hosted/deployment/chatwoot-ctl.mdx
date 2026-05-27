@@ -53,12 +53,16 @@ sudo cwctl --upgrade
 This will upgrade your Chatwoot instance to the latest stable release. If you are running a custom branch in production do not use this to upgrade.
 </Note>
 
-### Upgrading to a specific version
+### Upgrading to a specific version or branch
 
-`cwctl` also supports experimental upgrades to a specific Chatwoot version. This is useful when an instance is several releases behind and needs to be upgraded through intermediate versions instead of jumping directly to the latest release.
+`cwctl` also supports experimental upgrades to a specific Chatwoot version or branch. This is useful when an instance is several releases behind and needs to be upgraded through intermediate versions instead of jumping directly to the latest release. You can also use this to upgrade from a branch such as `develop`.
 
 ```bash
+# Upgrade to a specific released version
 sudo cwctl -U v4.3.0
+
+# Upgrade from a branch
+sudo cwctl -U develop
 ```
 
 <Warning>
