@@ -53,17 +53,19 @@ sudo cwctl --upgrade
 This will upgrade your Chatwoot instance to the latest stable release. If you are running a custom branch in production do not use this to upgrade.
 </Note>
 
-To upgrade to a specific Chatwoot version, use `-U`/`--Upgrade` with a git ref.
+### Upgrading to a specific version
+
+`cwctl` also supports experimental upgrades to a specific Chatwoot version. This is useful when an instance is several releases behind and needs to be upgraded through intermediate versions instead of jumping directly to the latest release.
 
 ```bash
-sudo cwctl -U <VERSION>
-# example
 sudo cwctl -U v4.3.0
 ```
 
-<Note>
-`-u`/`--upgrade` upgrades to latest stable (`master`), while `-U`/`--Upgrade` upgrades to a specific git ref and is currently experimental. Upgrades can fail when your Chatwoot repo has local code changes, so keep production changes clean and take backups before upgrading. Under the hood, `-U` performs a `git checkout <VERSION>` followed by `git pull`.
-</Note>
+<Warning>
+`-U`/`--Upgrade` is experimental and is not recommended for production environments without testing. When using a release tag like `v4.3.0`, Git may print a pull warning because tags are checked out in a detached HEAD state.
+</Warning>
+
+Before upgrading, take a backup, review the release notes for the target version, and keep the Chatwoot repository clean. The upgrade will abort if local code changes are detected.
 
 ### Setup Nginx with SSL after installation
 

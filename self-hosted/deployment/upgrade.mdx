@@ -9,7 +9,7 @@ sidebarTitle: Upgrade
 Whenever a new version of Chatwoot is released, use the following steps to upgrade your instance.
 
 <Note>
-To install `cwctl`, refer [this](#install-or-upgrade-chatwoot-cli) section below.
+To install `cwctl`, refer to the [Chatwoot CTL guide](/self-hosted/deployment/chatwoot-ctl#install-or-upgrade-chatwoot-ctl).
 </Note>
 
 <Note>
@@ -17,18 +17,22 @@ If you are on an older version of Chatwoot(< 2.7), follow the [manual upgrade st
 </Note>
 
 ```bash
-cwctl --upgrade
+sudo cwctl --upgrade
 ```
 
 <Note>
-To reduce risk of breakages, upgrade iteratively across versions instead of skipping many releases in one jump (for example, avoid upgrading directly from `v4.1` to `v4.10`).
+Before upgrading, review the release notes for versions between your current installation and the target version. If your installation is very old, upgrade iteratively through intermediate versions instead of jumping directly to the latest release. This helps you apply required migrations and configuration changes in the expected order. Test the upgrade on a staging instance first.
 </Note>
 
-This upgrade method is applicable for all manual linux installations including installation using aws marketplace.
+This upgrade method is applicable for all manual Linux installations, including installations using AWS Marketplace.
 
 ## Docker
 
 Update the images using the latest image from chatwoot.
+
+<Note>
+If your installation is very old, upgrade iteratively through intermediate Docker image tags instead of jumping directly to the latest image. Review the release notes between versions, update the image tag in your Docker Compose file for each target version, and run the database preparation step after each upgrade.
+</Note>
 
 ```bash
 docker-compose down
