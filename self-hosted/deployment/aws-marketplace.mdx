@@ -85,6 +85,18 @@ The following is the guide for deploying Chatwoot on AWS using the marketplace l
 
 ![Access Chatwoot](/self-hosted/images/aws-ami/awsmp-12-chatwoot.png)
 
+### Step 13: Configure Production URL and SSL
+
+For production deployments, associate an Elastic IP with the EC2 instance so the public IP does not change after restarts. Then create a DNS `A` record for your domain or subdomain pointing to that Elastic IP.
+
+After the DNS record resolves, connect to the instance and run:
+
+```bash
+sudo cwctl --webserver
+```
+
+This configures Nginx and SSL for your Chatwoot instance.
+
 ## Configuring Chatwoot
 
 To configure Chatwoot, we need to SSH into the instance. We will use **AWS Console Connect** for this.
@@ -112,7 +124,7 @@ vi .env
 ```
 
 <Note>
-It is recommended to configure a proxy server like Nginx and set up SSL. Make sure to modify the security group created in step 6 accordingly.
+For production, configure Nginx and SSL after pointing your domain to the instance. See [Chatwoot CTL](/self-hosted/deployment/chatwoot-ctl#setup-nginx-with-ssl-after-installation).
 </Note>
 
 ## Updating the Instance
@@ -167,4 +179,4 @@ Please follow the Chatwoot update process in the standard [Linux VM setup](/self
 
 ---
 
-The AWS Marketplace AMI provides a quick way to deploy Chatwoot with pre-configured settings. For production use, ensure you implement proper security measures and backup strategies. 
+The AWS Marketplace AMI provides a quick way to deploy Chatwoot with pre-configured settings. For production use, ensure you implement proper security measures and backup strategies.
