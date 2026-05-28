@@ -159,7 +159,7 @@ We publish our base images to the Docker hub. You should be able to build your C
 FROM chatwoot/chatwoot:latest
 RUN chmod +x docker/entrypoints/rails.sh
 ENTRYPOINT ["docker/entrypoints/rails.sh"]
-CMD bundle exec bundle exec rails s -b 0.0.0.0 -p 3000
+CMD bundle exec rails s -b 0.0.0.0 -p 3000
 ```
 
 ### Worker
@@ -180,6 +180,10 @@ To set up the database for the first time, you must run `rails db:chatwoot_prepa
 ## Upgrading
 
 If you're not using the `latest` or `latest-ce` tag, you first need to change the desired tag in your docker-compose file.
+
+<Note>
+If your installation is very old, upgrade iteratively through intermediate Docker image tags instead of jumping directly to the latest image. Review the release notes between versions and run `rails db:chatwoot_prepare` after each upgrade.
+</Note>
 
 After that you can pull the new image and start using them:
 
