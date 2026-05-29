@@ -138,7 +138,7 @@ Persistent volumes are not deleted automatically. They need to be removed manual
 | `env.AWS_ACCESS_KEY_ID`             | Amazon access key ID                                                 | `""`                                                       |
 | `env.AWS_REGION`                    | Amazon region                                                        | `""`                                                       |
 | `env.AWS_SECRET_ACCESS_KEY`         | Amazon secret key ID                                                 | `""`                                                       |
-| `env.FB_APP_ID`                     | For facebook channel https://developers.chatwoot.com/self-hosted/configuration/features/integrations/facebook-channel-setup    | `""`                                                       |
+| `env.FB_APP_ID`                     | For facebook channel, see [Facebook setup](/self-hosted/configuration/features/integrations/facebook-channel-setup) | `""`                                                       |
 | `env.FB_APP_SECRET`                 | For facebook channel                                                 | `""`                                                       |
 | `env.FB_VERIFY_TOKEN`               | For facebook channel                                                 | `""`                                                       |
 | `env.SLACK_CLIENT_ID`               | For slack integration                                                | `""`                                                       |
@@ -231,4 +231,4 @@ Make sure the "Persistent Volume Claims" can be satisfied. Refer to [prerequisit
 ActionController::InvalidAuthenticityToken HTTP Origin header (https://mydomain.com) didn't match request.base_url (http://mydomain.com)
 ```
 
-If you are recieving the above error when trying to access the superadmin panel, configure your ingress controller to forward the protocol of the origin request. For `nginx` ingress, you can do this by setting the `proxy_set_header X-Forwarded-Proto https;` config. Refer this [issue](https://github.com/chatwoot/chatwoot/issues/5506) to learn more. 
+If you are recieving the above error when trying to access the superadmin panel, configure your ingress controller to forward the protocol of the origin request. For `nginx` ingress, you can do this by setting the `proxy_set_header X-Forwarded-Proto https;` config. Refer this [issue](https://github.com/chatwoot/chatwoot/issues/5506) to learn more.

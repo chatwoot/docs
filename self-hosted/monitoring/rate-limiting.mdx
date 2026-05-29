@@ -9,11 +9,19 @@ You could customize the configuration to suit your needs by updating, [`config/i
 
 ## Default Rate Limits
 
-- Chatwoot will throttles requests by IP at `60rpm`, Unless the request is from an allowed IP `['127.0.0.1', '::1']`
+- Chatwoot throttles requests by IP at `3000 requests` per `1 minute`, unless the request is from an allowed IP such as `127.0.0.1` or `::1`.
 - Signup Requests are limited by IP at `5 requests` per `5 minutes`.
 - SignIn Requests are limited by IP at `5 requests` per `20 seconds`.
 - SignIn Requests are limited by email address at `20 requests` per `5 minutes` for a specific email.
 - Reset Password Requests are limited at `5 requests` per `1 hour` for a specific email.
+
+## Widget API Rate Limits
+
+When `ENABLE_RACK_ATTACK_WIDGET_API` is enabled, Chatwoot also applies the following widget API limits by IP:
+
+- Widget conversation creation is limited to `6 requests` per `12 hours`.
+- Widget contact updates are limited to `60 requests` per `1 hour`.
+- New widget sessions without an existing conversation token are limited to `5 requests` per `1 hour`.
 
 ## Attachment Restrictions 
 
