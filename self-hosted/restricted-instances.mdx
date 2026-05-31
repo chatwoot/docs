@@ -49,9 +49,11 @@ https://yourdomain.com/rails/active_storage
 - **`/packs`** — the SDK loader script (`packs/js/sdk.js`) embedded into the parent page.
 - **`/vite/assets`** — JavaScript and CSS bundles loaded inside the widget iframe. Chatwoot migrated this UI from Webpack to Vite, so older guides referring only to `/packs` are incomplete for newer deployments.
 - **`/brand-assets`** — installation-level branding (logo, favicon) shown inside the widget.
-- **`/rails/active_storage`** — image and file attachments. Used for both visitor uploads and any media the agent sends back. Without this, attachments display as broken images on the visitor side.
+- **`/rails/active_storage`** — stored image and file attachment URLs. Without this, attachments can display as broken images or inaccessible files in the widget.
 
 All four paths must be publicly accessible to support the widget fully.
+
+Visitor file uploads are handled through the widget API endpoints covered above. If you use an external storage service such as S3, GCS, Azure Storage, or another S3-compatible provider, Chatwoot still generates `/rails/active_storage/...` URLs first and then redirects the browser to the storage provider's signed URL. In that setup, make sure visitors can also reach the storage provider or CDN hostname.
 
 ### Widget Page
 
@@ -93,4 +95,4 @@ Implement comprehensive monitoring and logging solutions to swiftly detect and a
 
 <Note>
 By following these detailed instructions, your Chatwoot deployment can effectively operate within restricted network environments, ensuring a robust and secure customer support platform.
-</Note> 
+</Note>
