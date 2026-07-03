@@ -1,21 +1,23 @@
 ---
-title: Instagram via Instagram Business Login
-description: Set up Instagram integration using Instagram Business Login authentication (recommended method)
-sidebarTitle: Instagram via Instagram Business Login
+title: Set up Instagram Business Login for Chatwoot
+description: Configure the Chatwoot Instagram integration for a self-hosted installation using Meta's recommended Instagram Business Login flow.
+sidebarTitle: Instagram Business Login setup
 ---
 
 <Note>
 Please ensure you have installed version v4.1 or above. If not, please refer to this [guide](./instagram-channel-setup) for the Facebook Login method.
 </Note>
 
+Use this guide to connect Instagram professional accounts to a self-hosted Chatwoot installation using Instagram Business Login. This is the recommended authentication method for Chatwoot Instagram inboxes from v4.1 onwards.
+
 ## Prerequisites
 
-1. A valid facebook account.
-2. A valid instagram professional account.
+1. A valid Facebook account.
+2. A valid Instagram professional account.
 
-## Register A Facebook App
+## Register a Facebook app
 
-To use Instagram Channel, you have to create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](./facebook-channel-setup).
+To use the Chatwoot Instagram channel, create a Facebook app in the developer portal. You can find more details about creating Facebook apps [here](./facebook-channel-setup).
 
 1. Click on the "Create App" button
 
@@ -69,11 +71,11 @@ Set Redirect URL as `{your_chatwoot_url}/instagram/callback`
 
 5. Create a new Instagram tester account
 
-## Create Instagram Inbox
+## Create an Instagram inbox in Chatwoot
 
-Head over to Chatwoot and create a Instagram inbox. Please refer to this [guide](https://chatwoot.help/hc/user-guide/articles/1744361165-how-to-setup-an-instagram-channel-via-instagram-login) for more details on creating a Instagram inbox in Chatwoot.
+Head over to Chatwoot and create an Instagram inbox. Please refer to this [guide](https://chatwoot.help/hc/user-guide/articles/1744361165-how-to-setup-an-instagram-channel-via-instagram-login) for more details on creating an Instagram inbox in Chatwoot.
 
-## How to test the Instagram before going to live
+## Test the Instagram integration before going live
 
 1. Add Instagram Testers by clicking "Add People" button.
 
@@ -103,8 +105,8 @@ Please configure the Frontend URL. The Frontend URL does not match the authoriza
 
 ### Instagram Channel creation Error: Failed to exchange token
 
-Please make sure that tester account has been added to the facebook app settings.
+Please make sure that the tester account has been added to the Facebook app settings.
 
-### 400: Session Invalid when connecting the instagram channel
+### 400: Session Invalid when connecting the Instagram channel
 
-This might be issue from facebook side. Please try again after some time. 
+This might be an issue from Facebook's side. Please try again after some time.
