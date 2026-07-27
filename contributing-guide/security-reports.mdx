@@ -22,6 +22,14 @@ Please try your best to describe a clear and realistic impact for your report, a
 Please use the email for questions related to the process. Disclosures should be done via [GitHub](https://github.com/chatwoot/chatwoot/security/advisories/new).
 </Note>
 
+## Report Quality and Duplicates
+
+Please include clear steps to reproduce, a realistic impact, the affected version, and any required configuration details.
+
+We may close reports that are theoretical, scanner-only, AI-generated without verification, or missing enough detail for us to reproduce the issue.
+
+If the same vulnerability was reported before, we will close later reports as duplicates and link them to the canonical report. The canonical report is the earliest valid report we received for that issue.
+
 ## Supported Versions
 
 | Version  | Supported |
@@ -59,7 +67,6 @@ We consider the following out of scope, though there may be exceptions:
 - Weak SSL/TLS/SSH algorithms or protocols
 - Attacks involving physical access to a user's device or a device or network that's already seriously compromised (e.g., man-in-the-middle)
 - The user attacks themselves
-- Incomplete/Missing SPF/DKIM
 - Denial of Service attacks
 - Brute force attacks
 - DNSSEC
@@ -83,6 +90,32 @@ After triage, the team will start working on the issue based on the following se
 | High          | 30 Days   |
 | Medium        | 60 Days   |
 | Low           | 90 Days   |
+
+## Advisory and CVE Publishing
+
+We publish security advisories and CVEs at [GitHub Security Advisories](https://github.com/chatwoot/chatwoot/security).
+
+We request or publish a CVE when the issue is a confirmed, externally exploitable vulnerability in a supported Chatwoot release, and users or operators need a stable public identifier to assess impact, upgrade, or track exposure.
+
+We usually request a CVE for:
+
+- Critical or high-impact vulnerabilities such as remote command execution, SQL injection, authentication bypass, privilege escalation, meaningful XSS, or CSRF with real impact
+- Cross-tenant data exposure, token or credential exposure, and account takeover paths
+- Fixed vulnerabilities where affected versions and patched versions are known
+- Unrelated vulnerabilities reported together, if they are independently fixable
+
+We do not request a new CVE for:
+
+- Duplicate reports of an already-covered vulnerability
+- Scanner-only or theoretical reports without demonstrated exploitability
+- Out-of-scope items such as missing headers, SPF/DKIM, brute force, DNSSEC, or broad denial-of-service reports
+- Issues that only affect unsupported old versions, unless there is strong public coordination value
+- Dependency vulnerabilities already covered by an upstream CVE
+- Pure hardening or defense-in-depth changes without a demonstrated vulnerability
+
+Multiple reports of the same issue will be covered by one advisory or CVE, using the canonical earliest report.
+
+During triage and fix work, we keep the GitHub Security Advisory private. Once the issue is confirmed and likely publishable, we may request or reserve a CVE. We publish the advisory and CVE when the fix is released, ideally with affected versions, the patched version, impact, workaround, and credits. If there is active exploitation or unavoidable disclosure pressure, we may publish earlier with mitigation guidance.
 
 ## Security Best Practices
 
