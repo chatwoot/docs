@@ -1,0 +1,277 @@
+---
+title: Asset CDN Setup
+description: Publish Chatwoot's static assets to any CDN (Bunny, Cloudflare R2, AWS S3 + CloudFront, custom) by setting ASSET_CDN_HOST.
+sidebarTitle: Asset CDN Setup
+---
+
+This guide covers the CDN-agnostic setup for serving Chatwoot's static assets from a CDN of your choice. For the AWS CloudFront distribution wizard specifically, see the [CloudFront CDN guide](/self-hosted/deployment/performance/cloudfront-cdn) — the asset-upload steps below apply when you use an object-storage origin (S3, R2, Bunny Storage); they're not needed when CloudFront / Cloudflare / Bunny is configured to pull from the Chatwoot Rails origin.
+
+<Note>
+Original `ASSET_CDN_HOST` support shipped in **Chatwoot v1.8.0**. The runtime resolution mechanism described here (no rebuild required for the Vite chunk base) ships in versions containing [chatwoot/chatwoot#14581](https://github.com/chatwoot/chatwoot/pull/14581). On Vite-era versions before #14581, you can still set `ASSET_CDN_HOST` to route Rails-emitted asset URLs, but Vite chunk imports stay bound to the build-time base — getting full coverage there requires a custom rebuild or build-time CDN wiring.
+</Note>
+
+## When to use a CDN
+
+A CDN reduces load on your Rails origin and speeds up asset delivery for geographically distributed users. It's particularly valuable for the **widget embed** (loaded on every page view of your customers' websites). Dashboard and admin-console traffic is smaller in volume but also benefits from cache hits.
+
+## What goes on the CDN
+
+The following directories under `public/` from a Chatwoot image are static assets and should live on your CDN:
+
+| Path | What it contains |
+|---|---|
+| `public/vite/` | Vite-bundled JS/CSS chunks (the main bundle output) |
+| `public/packs/js/sdk.js` | Widget SDK IIFE loaded by third-party websites |
+| `public/audio/widget/` | Widget notification sounds |
+| `public/audio/dashboard/` | Dashboard notification sounds |
+| `public/dashboard/images/` | Onboarding and integration thumbnails |
+| `public/brand-assets/` | Default Chatwoot logos |
+| `public/assets/` | Sprockets-compiled assets — top-level `actioncable-*.js`, `manifest-*.js`, `trix-*.css`, `belongs_to_search-*.js`, the `administrate/` subdir, the `images/` subdir (Captain, year-in-review, profile images), etc. Upload the whole `assets/` tree, not just specific subdirs — the super-admin pages reference top-level files like `belongs_to_search-<hash>.js` directly via `<script>` tags. |
+| `public/integrations/` | Slack/Dyte fallback avatars |
+| Root-level `favicon-*.png`, `apple-icon*.png`, `apple-touch-icon*.png`, `android-icon-*.png`, `ms-icon-*.png`, `browserconfig.xml` | PWA + favicon files (includes the runtime `favicon-badge-*.png` variants used by the unread-message badge switcher) |
+
+## What stays on the Rails origin
+
+A few files **must not** be served from a CDN:
+
+- `public/sw.js` — the [Service Worker spec](https://w3c.github.io/ServiceWorker/#dom-serviceworkercontainer-register) requires the script URL to be same-origin with the registering client. A CDN-served service worker fails to register.
+- `public/manifest.json` — the PWA manifest's `start_url: "/"` is resolved **relative to the manifest URL**. A CDN-served manifest would launch installed PWAs to the CDN root instead of your Chatwoot app.
+
+Chatwoot's templates already handle these correctly — they're not referenced through the asset-host pipeline.
+
+## No rebuild required
+
+Chatwoot resolves the Vite chunk base **at runtime**, not at build time. The same `chatwoot/chatwoot:latest` image works for any `ASSET_CDN_HOST` value — flip it in `.env`, restart, done. No `--build-arg` flag, no custom image.
+
+The mechanism: each rendered page emits `<script>window.__VITE_BASE__ = "<ASSET_CDN_HOST>/vite/";</script>` before the Vite tag, and Vite's compiled chunks read that global to resolve their imports. This uses Vite's [`experimental.renderBuiltUrl`](https://vite.dev/guide/build#advanced-base-options) (still flagged experimental in current Vite docs) to emit a runtime resolver expression instead of a build-time baked base. `__VITE_BASE__` is the name Chatwoot picked, not a Vite-defined global.
+
+## Step 1: Extract the asset bundle from a Chatwoot image
+
+You can use the official `chatwoot/chatwoot:latest` (or any pinned tag) — no need to rebuild.
+
+```bash
+docker create --name extract chatwoot/chatwoot:latest
+docker cp extract:/app/public ./cdn-out
+docker rm extract
+```
+
+The `./cdn-out` directory now mirrors what would be served from `/public` at runtime. You only need to upload the asset subdirectories listed above; the Rails-generated dynamic responses (`/api/*`, `/widget?...`, etc.) stay on origin.
+
+## Step 2: Upload to your CDN
+
+The upload mechanics depend on your provider:
+
+<CodeGroup>
+
+```bash Bunny Storage (HTTP API)
+# Set BUNNY_STORAGE_ZONE + BUNNY_ACCESS_KEY in your environment.
+
+# Map common file extensions to MIME types so Bunny serves them with the
+# right `Content-Type`. Without this, `curl --data-binary` defaults to
+# `application/x-www-form-urlencoded`, and browsers refuse to execute the
+# response as an ES module or apply it as CSS.
+content_type_for() {
+  case "${1##*.}" in
+    js|mjs)   echo "application/javascript" ;;
+    css)      echo "text/css" ;;
+    json|map) echo "application/json" ;;
+    svg)      echo "image/svg+xml" ;;
+    png)      echo "image/png" ;;
+    jpg|jpeg) echo "image/jpeg" ;;
+    gif)      echo "image/gif" ;;
+    webp)     echo "image/webp" ;;
+    ico)      echo "image/x-icon" ;;
+    woff)     echo "font/woff" ;;
+    woff2)    echo "font/woff2" ;;
+    ttf)      echo "font/ttf" ;;
+    mp3)      echo "audio/mpeg" ;;
+    xml)      echo "application/xml" ;;
+    *)        echo "application/octet-stream" ;;
+  esac
+}
+
+# Upload the asset directories
+for dir in vite packs audio assets dashboard brand-assets integrations; do
+  find ./cdn-out/$dir -type f 2>/dev/null | while read f; do
+    rel="${f#./cdn-out/}"
+    curl -X PUT "https://storage.bunnycdn.com/${BUNNY_STORAGE_ZONE}/${rel}" \
+         -H "AccessKey: ${BUNNY_ACCESS_KEY}" \
+         -H "Content-Type: $(content_type_for "$f")" \
+         --data-binary @"$f"
+  done
+done
+
+# Upload root-level icons + PWA secondary files. Use a glob so new icon
+# variants in future Chatwoot releases (e.g. additional android-icon sizes
+# or favicon-badge-*.png used by the runtime unread-badge switcher) are
+# picked up automatically.
+find ./cdn-out -maxdepth 1 -type f \( \
+    -name 'browserconfig.xml' \
+    -o -name 'favicon-*.png' \
+    -o -name 'apple-icon*.png' \
+    -o -name 'apple-touch-icon*.png' \
+    -o -name 'android-icon-*.png' \
+    -o -name 'ms-icon-*.png' \
+  \) | while read f; do
+  rel="${f#./cdn-out/}"
+  curl -X PUT "https://storage.bunnycdn.com/${BUNNY_STORAGE_ZONE}/${rel}" \
+       -H "AccessKey: ${BUNNY_ACCESS_KEY}" \
+       -H "Content-Type: $(content_type_for "$f")" \
+       --data-binary @"$f"
+done
+```
+
+```bash AWS S3 + CloudFront
+# Hashed Vite chunks — long-lived + immutable. The content hash in each
+# filename guarantees uniqueness across releases, so browsers can cache
+# these forever without ever needing to revalidate.
+aws s3 sync ./cdn-out/vite/ s3://your-bucket/vite/ \
+  --cache-control "public, max-age=31536000, immutable"
+
+# Everything else — stable URLs (sdk.js, audio, brand-assets, favicons).
+# Do NOT mark these immutable: their URLs don't change between releases,
+# so a browser that cached them under `immutable` would keep the old
+# version even after you upload a new one (CloudFront invalidation only
+# clears the edge cache, not browser caches). Short browser TTL +
+# long CDN TTL gives you both fast user revalidation and CDN efficiency.
+aws s3 sync ./cdn-out/ s3://your-bucket/ \
+  --exclude "sw.js" \
+  --exclude "manifest.json" \
+  --exclude "vite/*" \
+  --cache-control "public, max-age=3600, s-maxage=31536000"
+
+# Invalidate every stable URL on the CDN edge after each upload. Note the
+# globs are dashless (`/apple-icon*`, `/apple-touch-icon*`) so they catch
+# both the sized variants (`apple-icon-180x180.png`) and the un-sized
+# `apple-icon.png` / `apple-touch-icon.png` / `*-precomposed.png` files.
+aws cloudfront create-invalidation --distribution-id YOUR_DIST_ID \
+  --paths '/packs/*' '/audio/*' '/assets/*' '/brand-assets/*' \
+          '/dashboard/*' '/integrations/*' \
+          '/favicon*' '/apple-icon*' '/apple-touch-icon*' \
+          '/android-icon-*' '/ms-icon-*' \
+          '/browserconfig.xml'
+```
+
+```bash rsync over SSH
+rsync -av --progress \
+  --exclude=sw.js --exclude=manifest.json \
+  ./cdn-out/ user@cdn-host:/var/www/cdn/
+```
+
+</CodeGroup>
+
+<Note>
+Each CloudFront invalidation path counts against the [free invalidation quota of 1,000 paths/month](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-invalidations). For high-frequency releases, prefer content-hashed URLs (the `/vite/assets/*` chunks need no invalidation) over wildcard invalidations.
+</Note>
+
+## Step 3: Configure ASSET_CDN_HOST at runtime
+
+Add the CDN host to your Chatwoot `.env`:
+
+```bash
+ASSET_CDN_HOST=https://cdn.example.com
+```
+
+Restart the application. The runtime now:
+
+- Injects `<script>window.__VITE_BASE__ = "https://cdn.example.com/vite/";</script>` before each `vite_client_tag`. Vite chunks read this and load from the CDN.
+- Prefixes Rails `image_tag` / `asset_url` output with the CDN host (via `config.action_controller.asset_host`).
+- Exposes the CDN host to the frontend through `window.globalConfig.ASSET_CDN_HOST`, used by the `useAssetUrl()` composable for hardcoded asset paths.
+- Adds a `cdnUrl` field to the generated widget SDK snippet (the snippet rendered in Chatwoot inbox settings). The SDK uses this for widget audio. Widget iframe chunks load from the CDN because the widget HTML itself emits the same `window.__VITE_BASE__` script — the iframe is served by Chatwoot's `widgets_controller`.
+
+To revert, remove `ASSET_CDN_HOST` from `.env` and restart. Chunks fall back to `/vite/` (origin-relative) with no rebuild needed.
+
+## CORS
+
+Some asset loads trigger a CORS check when fetched from a hostname different from the page that requested them — specifically ES module imports (the Vite chunks under `/vite/`), web fonts (`@font-face` with `crossorigin`), and canvas readback of brand-asset images (the share-modal case). Plain `<img>` and `<link rel="stylesheet">` loads don't require CORS. Three deployment shapes need different CORS setup:
+
+### 1. Pull CDN proxying the Rails origin
+
+Examples: Bunny Pull Zone, AWS CloudFront with origin pointed at your Chatwoot server, Cloudflare proxy. The CDN issues a GET to your Rails host on each cache miss and mirrors the response headers back.
+
+Chatwoot ships a CORS allowlist for the asset paths it serves: `/vite/*`, `/packs/*`, `/audio/*`, `/assets/*`, `/brand-assets/*`, `/dashboard/*`, `/integrations/*`. Rails responds with `Access-Control-Allow-Origin: *`, the CDN passes that header through, and the browser is satisfied. **No CDN-side CORS configuration needed.**
+
+<Note>
+The full asset-path allowlist (`/vite/*`, `/assets/*`, `/brand-assets/*`, `/dashboard/*`, `/integrations/*`) is available in Chatwoot versions containing [chatwoot/chatwoot#14581](https://github.com/chatwoot/chatwoot/pull/14581). Older versions only allowlist `/packs/*` and `/audio/*`; for those, CSS/font loads from `/vite/assets/*` need CDN-side CORS headers (set via your CDN's response-header configuration).
+</Note>
+
+### 2. CDN hostname CNAME'd directly to the Rails origin
+
+This shape comes up during CDN migrations: you flip `cdn.example.com` away from provider A (so traffic skips the CDN while you reconfigure provider B), pointing the CNAME at your Rails server, then switch the CNAME again to point at provider B. In that "no CDN in the path" window, the CDN is not adding `Access-Control-*` headers — Rails is serving the response directly, and the hostname mismatch (browser at `helpdesk.example.com` requesting `https://cdn.example.com/vite/assets/chunk.js`) triggers the cross-origin module-load check.
+
+Chatwoot's built-in CORS allowlist (same one used in case 1) lets ES modules and fonts load. **No extra configuration needed.** This is why the `/vite/*` and `/assets/*` entries were added to the asset allowlist alongside the existing `/packs/*` and `/audio/*` — without them, the migration window would break the dashboard for everyone.
+
+### 3. Object-storage CDN (no Rails in the path)
+
+Examples: Bunny Storage (push), AWS S3 + CloudFront with S3 origin, Cloudflare R2, Google Cloud Storage with public buckets. Rails is **never** in the request path for asset fetches — the storage backend serves files directly. Rails' CORS allowlist does not apply.
+
+You must configure CORS at the storage layer itself:
+
+```
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+```
+
+Provider-specific paths:
+
+- **AWS S3**: bucket → Permissions → Cross-origin resource sharing (CORS) configuration. **If a CloudFront distribution sits in front of the bucket** (the `AWS S3 + CloudFront` upload example above), bucket-level CORS alone is not enough — CloudFront by default doesn't forward the `Origin` header to S3 and caches a single response variant for all origins. Pick one:
+  - **(a) Attach the AWS-managed [`CORS-With-Preflight`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-response-headers-policies.html#managed-response-headers-policies-cors-preflight) response-headers policy** to the cache behavior. CloudFront adds the managed CORS headers (`Access-Control-Allow-Origin: *`, `Allow-Methods`, `Expose-Headers`) unless S3 already supplies them. Works without S3 bucket CORS for simple GET/HEAD asset loads; full preflight (OPTIONS) responses still need S3 CORS or an edge function.
+  - **(b) Attach the AWS-managed [`CORS-S3Origin`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html) origin-request policy** to the cache behavior. This forwards `Origin`, `Access-Control-Request-Headers`, `Access-Control-Request-Method` to S3 and varies the cache by them, so S3's bucket-level CORS response reaches the browser. (The legacy "Whitelist" headers UI works too — see the [CloudFront CDN guide → Configure a Cloudfront distribution](/self-hosted/deployment/performance/cloudfront-cdn#configure-a-cloudfront-distribution).)
+
+  After changing either policy, invalidate the cache so previously-cached no-CORS variants stop being served. `Access-Control-Allow-Origin: *` is appropriate for non-credentialed static asset loads (no cookies); use a specific origin if you need credentialed fetches.
+- **Bunny Storage** (served via Pull Zone): in the Pull Zone dashboard, Headers → CORS response headers.
+- **Cloudflare R2**: dashboard, or `wrangler r2 bucket cors set <BUCKET_NAME> --file cors.json` (the file is the JSON shape documented at [Cloudflare R2 CORS](https://developers.cloudflare.com/r2/buckets/cors/)).
+- **Google Cloud Storage**: `gcloud storage buckets update gs://BUCKET_NAME --cors-file=cors.json`.
+
+### When nginx/Apache serves /public
+
+If your deployment puts a reverse proxy in front of Rails and that proxy serves `/public` files directly without passing the request to Rails (a common nginx setup for static assets), the CORS headers must come from the proxy, not from Rails. Add the same allowlist there. The example below assumes the standard `upstream backend` declaration from Chatwoot's [`deployment/nginx_chatwoot.conf`](https://github.com/chatwoot/chatwoot/blob/develop/deployment/nginx_chatwoot.conf):
+
+```nginx
+location ~ ^/(vite|packs|audio|assets|brand-assets|dashboard|integrations)/ {
+    add_header Access-Control-Allow-Origin *;
+    add_header Access-Control-Allow-Methods "GET, HEAD, OPTIONS";
+    try_files $uri @backend;
+}
+location @backend {
+    proxy_pass http://backend;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
+
+## Updating assets after a release
+
+Each Chatwoot release ships new Vite chunks with new content hashes (e.g., `chunk-abc123.js` → `chunk-def456.js`). Repeat steps 1–2 with the new image:
+
+- **Don't delete old hashed chunks** for at least 24 hours after upload. Browsers and HTML caches may still hold references to old `<script src="...chunk-old.js">` URLs and would break if the file disappears before clients refresh.
+- **Invalidate stable URLs** on your CDN cache after each upload: `/packs/js/sdk.js`, `/audio/widget/*`, `/audio/dashboard/*`, `/assets/*`, `/brand-assets/*`, `/dashboard/*`, `/integrations/*`, plus the root icons (`/favicon*`, `/apple-icon*`, `/apple-touch-icon*`, `/android-icon-*`, `/ms-icon-*`, `/browserconfig.xml`). Their URLs don't change between releases, so cached old versions persist forever until explicitly invalidated. (`manifest.json` itself stays on the Rails origin per the same-origin requirements above — it's not on the CDN, so nothing to invalidate there.)
+- **Hashed Vite chunks** under `/vite/assets/<hash>.js` don't need invalidation — the hash in the filename guarantees uniqueness, so new chunks become new URLs.
+
+## Troubleshooting
+
+### Dashboard breaks for users behind a closed firewall
+
+If your LAN restricts internet egress, dashboard JS chunks won't load from an external CDN. Either:
+
+- Allowlist the CDN hostname in your egress firewall, or
+- Don't set `ASSET_CDN_HOST` (assets stay on the Rails origin).
+
+Chatwoot currently has one `ASSET_CDN_HOST` that applies to widget, dashboard, and super-admin. There is no per-surface CDN toggle today — Vite's chunk graph is shared across all three entrypoints. See the [issue tracker](https://github.com/chatwoot/chatwoot/issues) if you need to split.
+
+### Assets are still fetched from the Rails origin
+
+If you set `ASSET_CDN_HOST` but chunks still load from your Chatwoot host, confirm:
+
+- The application was fully restarted after the `.env` change. Rails reads `ASSET_CDN_HOST` at boot for `config.action_controller.asset_host`.
+- The asset directories listed above have actually been uploaded to the CDN. If a CDN returns 404, the browser surfaces a load error — it does **not** automatically retry the Rails origin. Pull CDNs (Bunny Pull Zone, CloudFront with Rails origin, Cloudflare proxy) will quietly proxy origin on cache miss, so a missed upload there is invisible to users; object-storage CDNs (S3, R2, Bunny Storage) will just return 404.
+- The CDN responds with a valid `Content-Type` for JS/CSS. Some object stores default to `application/octet-stream`, which browsers refuse to execute as ES modules.
+
+### Widget on customer sites still loads from Rails origin
+
+The snippet emitted by `Channel::WebWidget#web_widget_script` (rendered in the Chatwoot inbox settings) automatically adapts when `ASSET_CDN_HOST` is configured. If you ship a hand-rolled snippet to customers, update two pieces:
+
+- Change `g.src = BASE_URL + "/packs/js/sdk.js"` to `g.src = "https://cdn.example.com/packs/js/sdk.js"` so the SDK loader downloads from the CDN, not the Rails host.
+- Add `cdnUrl: "https://cdn.example.com"` to the `chatwootSDK.run({...})` call so the SDK routes widget audio through the CDN.
