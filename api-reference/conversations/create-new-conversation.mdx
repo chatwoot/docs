@@ -1,0 +1,50 @@
+---
+title: "Create New Conversation"
+openapi: "POST /api/v1/accounts/{account_id}/conversations"
+---
+
+## Email inboxes
+
+When the target inbox is an **Email** inbox, a few extra fields control the subject line and the recipients of the outgoing email. They map to the fields an agent fills in when composing a new email conversation from the dashboard.
+
+| Dashboard field | API field                            | Notes                                                                       |
+| --------------- | ------------------------------------ | --------------------------------------------------------------------------- |
+| **Via** (From)  | `inbox_id`                           | Not set directly. The From address is resolved from the inbox's configuration. |
+| **To**          | `source_id` + `contact_id`           | For an Email inbox, `source_id` is the contact's email address.             |
+| **Subject**     | `additional_attributes.mail_subject` | Stored on the conversation and reused for the whole thread.                 |
+| **Cc**          | `message.cc_emails`                  | Comma-separated list.                                                       |
+| **Bcc**         | `message.bcc_emails`                 | Comma-separated list.                                                       |
+| —               | `message.to_emails`                  | Comma-separated list. Overrides the contact's email as the recipient.       |
+
+```bash
+curl --request POST \
+  --url https://app.chatwoot.com/api/v1/accounts/{account_id}/conversations \
+  --header 'api_access_token: <your-access-token>' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "source_id": "john@example.com",
+    "inbox_id": 1,
+    "contact_id": 1,
+    "additional_attributes": {
+      "mail_subject": "Issue with my recent order"
+    },
+    "message": {
+      "content": "Hi John, could you share your order number?",
+      "cc_emails": "billing@example.com, support@example.com",
+      "bcc_emails": "archive@example.com"
+    }
+  }'
+```
+
+<Note>
+  `cc_emails`, `bcc_emails` and `to_emails` belong to the `message` object, not to
+  `additional_attributes`. They are only processed for Email inboxes and are ignored on every
+  other channel.
+</Note>
+
+A few things to keep in mind:
+
+- All three email lists take a **comma-separated string**, not an array. Whitespace around the addresses is stripped. If any address is not a valid email, the request fails with `Invalid email address`.
+- `mail_subject` applies to the whole conversation, not just the first message. The first email goes out with the subject as-is; from the second message onwards, replies are sent as `Re: <subject>`. Private notes and activity messages are not counted.
+- If you omit `mail_subject`, Chatwoot falls back to `[#<conversation_display_id>] New messages on this conversation`.
+- The From address cannot be set per request. It is resolved from the inbox and channel configuration — for inboxes using SMTP or OAuth it is the channel's email address, otherwise it is the inbox's configured email address, falling back to the account's support email.
