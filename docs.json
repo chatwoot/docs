@@ -99,6 +99,7 @@
                 "group": "Performance",
                 "pages": [
                   "self-hosted/deployment/performance/optimizing-configurations",
+                  "self-hosted/deployment/performance/asset-cdn-setup",
                   "self-hosted/deployment/performance/cloudfront-cdn"
                 ]
               },

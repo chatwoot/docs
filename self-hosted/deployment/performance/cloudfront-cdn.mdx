@@ -6,24 +6,28 @@ sidebarTitle: Cloudfront CDN
 
 This document helps you to configure Cloudfront as the asset host for Chatwoot. If you have a high traffic website, we would recommend setting up a CDN for Chatwoot.
 
+<Note>
+This guide covers the CloudFront distribution setup. For the asset-upload workflow (extracting `public/` from the Chatwoot image, uploading to S3, configuring `ASSET_CDN_HOST` at runtime) and CDN-agnostic notes that apply to any provider, see the [Asset CDN Setup guide](/self-hosted/deployment/performance/asset-cdn-setup).
+</Note>
+
 ## Configure a Cloudfront distribution
 
 **Step 1**: Create a Cloudfront distribution.
 
 ![create-distribution](/self-hosted/images/cloudfront/create-distribution.png)
 
-**Step 2**: Select "Web" as delivery method for your content.
+<Note>
+CloudFront used to offer separate "Web" and "RTMP" distribution types. [RTMP distributions were retired on 2020-12-31](https://repost.aws/questions/QUoUZgHZh7SEWlnQUPlBmVNQ), so the modern create-distribution wizard no longer asks you to pick a delivery method — just create the distribution and continue with the steps below.
+</Note>
 
-![web-delivery-method](/self-hosted/images/cloudfront/web-delivery-method.png)
-
-**Step 3**: Configure the Origin Settings as the following.
+**Step 2**: Configure the Origin Settings as the following.
 
 ![origin-settings](/self-hosted/images/cloudfront/origin-settings.png)
 
 - Provide your Chatwoot Installation URL under Origin Domain Name.
 - Select "Origin Protocol Policy" as Match Viewer.
 
-**Step 4**: Configure Cache behaviour.
+**Step 3**: Configure Cache behaviour.
 
 ![cache-behaviour](/self-hosted/images/cloudfront/cache-behaviour.png)
 
@@ -37,21 +41,21 @@ This document helps you to configure Cloudfront as the asset host for Chatwoot. 
   - **Origin**
 - Set the **Response headers policy** to **CORS-With-Preflight**
 
-**Step 5**: Click on **Create Distribution**. You will be able to see the distribution as shown below. Use the **Domain name** listed in the details as the **ASSET_CDN_HOST** in Chatwoot.
+**Step 4**: Click on **Create Distribution**. You will be able to see the distribution as shown below. Use the **Domain name** listed in the details as the **ASSET_CDN_HOST** in Chatwoot.
 
 ![cdn-distribution-settings](/self-hosted/images/cloudfront/cdn-distribution-settings.png)
 
 ## Add ASSET_CDN_HOST in Chatwoot
 
-Your Cloudfront URL will be of the format `<distribution>.cloudfront.net`.
-
-Set
+Your CloudFront distribution exposes a domain in the format `<distribution>.cloudfront.net`. Set `ASSET_CDN_HOST` to the **full URL including the `https://` scheme**:
 
 ```bash
-ASSET_CDN_HOST=<distribution>.cloudfront.net
+ASSET_CDN_HOST=https://<distribution>.cloudfront.net
 ```
 
-in the environment variables.
+<Note>
+A scheme (`https://` or `http://`) is required. Chatwoot's runtime injects `ASSET_CDN_HOST` verbatim into `window.__VITE_BASE__` and into the widget SDK snippet, so a bare host like `d123.cloudfront.net` produces URLs like `d123.cloudfront.net/vite/chunk.js` — browsers treat those as relative paths and fail to load the chunks. Use the same scheme your Chatwoot app is served on (HTTPS for production).
+</Note>
 
 ## Benefits of Using CDN
 
@@ -71,12 +75,10 @@ Using a CDN provides several benefits for your Chatwoot installation:
 
 If you encounter CORS issues after setting up CloudFront:
 
-1. Ensure the CORS headers are properly configured in CloudFront
-2. Verify that your `CORS_ORIGINS` environment variable includes your CDN domain:
+- If CloudFront's origin is your Chatwoot Rails server (pull-CDN mode), Rails already emits `Access-Control-Allow-Origin: *` for asset paths (`/vite/*`, `/packs/*`, `/audio/*`, `/assets/*`, `/brand-assets/*`, `/dashboard/*`, `/integrations/*`). Confirm CloudFront is forwarding the `Origin` request header (Step 4 above) and not stripping the response header in your cache policy. See the [CORS section in the Asset CDN Setup guide](/self-hosted/deployment/performance/asset-cdn-setup#cors) for the full breakdown of pull-CDN vs. object-storage CDN scenarios.
+- If CloudFront's origin is an S3 bucket (object-storage mode), Rails is not in the request path — set the CORS allowlist on the S3 bucket directly via bucket → Permissions → Cross-origin resource sharing.
 
-```bash
-CORS_ORIGINS=https://yourdomain.com,https://d1234567890.cloudfront.net
-```
+`CORS_ORIGINS` is a separate setting that controls API CORS for `/api/*`, not asset CORS. You generally don't need to set it for asset delivery.
 
 ### Cache Invalidation
 

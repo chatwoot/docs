@@ -210,7 +210,13 @@ FB_APP_ID=
 
 ## Using CDN for asset delivery
 
-With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup a CDN for your asset delivery. Read setting up [CloudFront as your CDN](/self-hosted/deployment/performance/cloudfront-cdn) guide.
+`ASSET_CDN_HOST` support shipped in **Chatwoot v1.8.0**. If you have a high-traffic website, we recommend serving Chatwoot's static assets from a CDN. Set `ASSET_CDN_HOST` to the public URL of your CDN:
+
+```bash
+ASSET_CDN_HOST=https://cdn.example.com
+```
+
+For the full workflow (extracting assets from the built image, uploading to your CDN, and configuring CORS) see the [Asset CDN Setup guide](/self-hosted/deployment/performance/asset-cdn-setup). AWS users can follow the [CloudFront CDN guide](/self-hosted/deployment/performance/cloudfront-cdn) for distribution-specific steps.
 
 ## Enable new account signup
 
