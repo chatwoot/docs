@@ -237,7 +237,7 @@
           {
             "group": "Getting Started",
             "description": "Learn about Chatwoot APIs and how to use them",
-            "pages": ["api-reference/introduction"]
+            "pages": ["api-reference/introduction", "api-reference/webhook-verification"]
           },
           {
             "group": "Application APIs",
