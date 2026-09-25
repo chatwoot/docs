@@ -8,18 +8,17 @@ Full command reference. New here? Start with **[Getting started](/cli)**. For ou
 
 ## Grammar at a glance
 
-- **Plural noun = list:** `chatwoot convs`, `chatwoot contacts`, `chatwoot agents`
-- **Singular + id = view:** `chatwoot conv 123` shows conversation 123
-- **Singular + id + verb = act:** `chatwoot conv 123 reply "thanks"` — id before verb, the way you'd say it
+Every command reads left to right, the way you'd say it: **where**, **what**, **which one**, then **what to do**.
 
-Verb-first form (`chatwoot conv reply 123 "thanks"`) also works.
+| Shape | Means | Example |
+|---|---|---|
+| Plural noun | list | `chatwoot convs`, `chatwoot contacts`, `chatwoot agents` |
+| Singular noun + id | view | `chatwoot conv 123` |
+| Singular noun + id + verb | act (id before verb, the way you'd say it) | `chatwoot conv 123 reply "thanks"` |
+| `@account` + any of the above | the same, in another account (leave it out for your default) | `chatwoot @acme conv 123 reply "thanks"` |
+| Dashboard link + verb | the link is account + noun + id in one | `chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123 reply "thanks"` |
 
-Two shortcuts work in front of any command:
-
-- **`@name` picks the account:** `chatwoot @acme conv 123 reply "thanks"`
-- **A pasted dashboard link replaces the noun and id:** `chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123 reply "thanks"`
-
-See **[Multiple accounts](/cli/accounts)** for how accounts are named and chosen.
+Verb-first form (`chatwoot conv reply 123 "thanks"`) also works. See **[Multiple accounts](/cli/accounts)** for how accounts are named and chosen.
 
 ## Conversations
 
