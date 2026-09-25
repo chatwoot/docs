@@ -51,6 +51,12 @@ chatwoot convs --assignee all -o csv > "convs-$(date +%F).csv"
 chatwoot convs -q | xargs -I{} chatwoot conv {} resolve
 ```
 
+If you use more than one account, name it on **both** sides of the pipe. IDs from one account mean different conversations in another:
+
+```bash
+chatwoot @acme convs -q | xargs -I{} chatwoot @acme conv {} resolve
+```
+
 ## Headless / CI use
 
 The OS keyring isn't available in most CI environments. Set `CHATWOOT_API_KEY` to override the saved token:
@@ -59,6 +65,10 @@ The OS keyring isn't available in most CI environments. Set `CHATWOOT_API_KEY` t
 export CHATWOOT_API_KEY=your_token_here
 chatwoot convs --assignee all -o json
 ```
+
+<Note>
+`CHATWOOT_API_KEY` replaces the token for **every** account. Tokens belong to one user on one instance, so only use it with accounts on that instance, and set it per job rather than globally if you script against several instances.
+</Note>
 
 Name the account on every command in a script, so it doesn't depend on whatever the default happens to be:
 
@@ -71,6 +81,16 @@ chatwoot -a 42 convs -o json                   # an account ID works too
 
 `chatwoot accounts -o json` lists the registered accounts, and `chatwoot accounts -q` prints just their names. See [Multiple accounts](/cli/accounts).
 
+### Across every account
+
+Loop over `accounts -q` to run the same command in each account:
+
+```bash
+for acct in $(chatwoot accounts -q); do
+  echo "$acct: $(chatwoot @"$acct" convs --assignee all -s open -o json | jq '.data.meta.all_count')"
+done
+```
+
 Add `-v` / `--verbose` to print every HTTP request and response to stderr — handy when something looks wrong.
 
 ## Tips
@@ -78,5 +98,6 @@ Add `-v` / `--verbose` to print every HTTP request and response to stderr — ha
 - `-q` is your friend — every list command supports it, every `xargs` pipeline starts with it.
 - Pipe to `jq` early and aggressively; `-o json` returns the full Chatwoot response, not a slimmed-down view.
 - Writes to a non-default account print `→ <name>` to stderr before running. It never touches stdout, so `-o json` and pipes stay clean.
+- Don't call `chatwoot use` from a script: it changes the default for every other terminal and job on the machine. Pass `@name`, `-a`, or `CHATWOOT_ACCOUNT` instead.
 - Use `--no-color` when redirecting text output to a file or another program that doesn't strip ANSI codes.
 - `chatwoot --help` and `chatwoot <command> --help` are exhaustive — the CLI's help is generated from the same definitions that drive the binary.

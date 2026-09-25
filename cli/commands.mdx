@@ -32,6 +32,7 @@ chatwoot convs --assignee all                  # me (default) | unassigned | all
 chatwoot convs --inbox 5                       # filter by inbox ID
 chatwoot convs -l billing,urgent               # filter by labels
 chatwoot convs --query "refund"                # search by message content
+chatwoot @acme convs --assignee all            # any command: @name runs it in another account
 ```
 
 ### Act on one
@@ -40,6 +41,17 @@ chatwoot convs --query "refund"                # search by message content
 chatwoot conv 123                              # view (default)
 chatwoot conv 123 messages                     # list messages
 ```
+
+Copied a link from the dashboard, Slack, or an alert? Use it in place of `conv 123`. It carries its own account, so it works whichever account is your default:
+
+```bash
+chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123 messages
+chatwoot https://app.chatwoot.com/app/accounts/1/inbox/5/conversations/123 resolve
+```
+
+<Tip>
+Conversation IDs are only unique within an account, so `conv 123` on staging and production are different conversations. When you write to an account other than your default, the CLI prints `→ <name>` to stderr first so you can see where it went.
+</Tip>
 
 **Reply:**
 
@@ -88,6 +100,7 @@ chatwoot contacts                              # list
 chatwoot contacts --search "john"              # name, email, or phone
 chatwoot contact 456                           # view
 chatwoot contact 456 conversations             # this contact's conversations
+chatwoot https://app.chatwoot.com/app/accounts/1/contacts/456   # or from a pasted link
 ```
 
 ## Inboxes, agents, labels, teams
@@ -100,9 +113,11 @@ chatwoot labels                                # list account-level labels
 chatwoot teams                                 # list teams
 ```
 
+These all list the current account's resources. Add `@name` to look at another account, for example `chatwoot @acme agents`.
+
 ## Help centers
 
-`hc articles` uses the saved default help center and locale. Defaults are saved per account. Pass `--portal` or `--locale` when you want to override them for one command.
+`hc articles` uses the saved default help center and locale. Defaults are saved per account, so each account can have its own (`chatwoot @acme hc default acme-help`). Pass `--portal` or `--locale` when you want to override them for one command.
 
 ```bash
 chatwoot hcs                                   # list help centers
@@ -120,16 +135,20 @@ chatwoot hc articles --portal user-guide --locale en
 ```bash
 chatwoot me                                    # your profile (alias of auth status)
 chatwoot whoami                                # same
+chatwoot @staging whoami                       # who you are on another account
 ```
+
+The output includes the instance and account the command ran against, which is the quickest way to check where a command will go.
 
 ## Raw API
 
-Use `chatwoot api` for authenticated API calls that do not have a first-class CLI command yet. Account-relative paths are expanded under `/api/v1/accounts/<account_id>`, so do not include the `/api/v1/accounts/...` prefix.
+Use `chatwoot api` for authenticated API calls that do not have a first-class CLI command yet. Account-relative paths are expanded under `/api/v1/accounts/<account_id>` for the current account (the default, or the one you name with `@name`), so do not include the `/api/v1/accounts/...` prefix.
 
 ```bash
 chatwoot api /conversations/123                # GET /api/v1/accounts/<id>/conversations/123
 chatwoot api -X PATCH /conversations/123 --data '{"status":"open"}'
 chatwoot api --exact /api/v1/profile           # non-account-scoped endpoint
+chatwoot @staging api /conversations/123       # same call, on another account
 ```
 
 Use the application Swagger as the endpoint reference before raw API calls: [application_swagger.json](https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/application_swagger.json).

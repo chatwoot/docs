@@ -24,11 +24,15 @@ The skill activates automatically when you ask the agent to do something Chatwoo
 
 ## Authenticate the agent
 
-Coding agents run commands non-interactively, so `chatwoot auth login` has to be run separately. In certain scenarios, agents might be run in a sandbox environment so the API token may not be accessible to them. In this case, you can set the `CHATWOOT_API_KEY` in your shell or the agent's environment:
+Coding agents run commands non-interactively, so `chatwoot auth login` has to be run separately. Once you've logged in, the agent can use every account you have, and it will name the account on each command (`@acme`) rather than relying on your default. Mention the account or instance in your prompt ("on staging…") when it matters, or paste a dashboard link.
+
+In certain scenarios, agents might be run in a sandbox environment so the API token may not be accessible to them. In this case, you can set the `CHATWOOT_API_KEY` in your shell or the agent's environment:
 
 ```bash
 export CHATWOOT_API_KEY=your_token_here
 ```
+
+That token applies to every account, so it only works for accounts on the instance it was created on.
 
 ## What the skill teaches the agent
 

@@ -4,7 +4,7 @@ description: Install and configure the Chatwoot CLI to manage your inbox from th
 sidebarTitle: Overview
 ---
 
-A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. You can also search help center articles from the terminal. It's handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, search help center content when asked, or automate repetitive triage, without needing a custom integration.
+A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. You can also search help center articles from the terminal. It works across every account you belong to, on as many instances as you use (Chatwoot Cloud, staging, self-hosted), and you can paste a dashboard link straight into a command. It's handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, search help center content when asked, or automate repetitive triage, without needing a custom integration.
 
 - **[Commands](/cli/commands)** — the full command reference: conversations, contacts, inboxes, agents, help centers.
 - **[Multiple accounts](/cli/accounts)** — several accounts and instances, `@name`, and pasted dashboard links.
@@ -49,6 +49,17 @@ chatwoot auth logout     # remove saved credentials
 chatwoot config view     # show config and credential source
 ```
 
+## First commands
+
+```bash
+chatwoot convs                                 # your open conversations
+chatwoot conv 123 reply "Looking into it"      # reply to one
+chatwoot @acme convs                           # same list, in another account
+chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123   # paste a dashboard link
+```
+
+Commands run against your default account unless you name another with `@name`. See [Multiple accounts](/cli/accounts).
+
 ## Shell completions
 
 The install script offers to set this up interactively. To do it manually:
@@ -73,6 +84,7 @@ chatwoot --help
 chatwoot conv --help
 chatwoot convs --help
 chatwoot hc --help
+chatwoot accounts --help
 ```
 
 Issues and feedback: [github.com/chatwoot/cli](https://github.com/chatwoot/cli).

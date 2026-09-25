@@ -143,6 +143,10 @@ You rarely need it: an unknown `@name` refreshes once automatically before faili
 
 Logging in again on the same instance with **another user's** token adds a second login instead of replacing the first, for example your admin user and a test agent. Accounts both users can see appear twice, once per user (`acme` and `acme-test-agent`).
 
+## Scripts and agents
+
+In a script, name the account on every command instead of relying on the default, and never call `chatwoot use`. [Scripting & output](/cli/scripting) has recipes, including running a command across every account. The [agent skill](/cli/agent-skill) teaches coding agents the same rules.
+
 ## Log out
 
 ```bash
