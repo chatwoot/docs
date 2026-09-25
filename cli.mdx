@@ -4,9 +4,10 @@ description: Install and configure the Chatwoot CLI to manage your inbox from th
 sidebarTitle: Overview
 ---
 
-A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. You can also search help center articles from the terminal. It's handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, search help center content when asked, or automate repetitive triage, without needing a custom integration.
+A terminal client for Chatwoot. Most things you'd do in the agent dashboard (read conversations, reply, assign, resolve) work as commands you can script or pipe into other tools. You can also search help center articles from the terminal. It works across every account you belong to, on as many instances as you use (Chatwoot Cloud, staging, self-hosted), and you can paste a dashboard link straight into a command. It's handy with coding agents: tools like Claude Code or Cursor can call `chatwoot` directly to look up conversations, post replies, search help center content when asked, or automate repetitive triage, without needing a custom integration.
 
 - **[Commands](/cli/commands)** — the full command reference: conversations, contacts, inboxes, agents, help centers.
+- **[Multiple accounts](/cli/accounts)** — several accounts and instances, `@name`, and pasted dashboard links.
 - **[Scripting & output](/cli/scripting)** — JSON / CSV / quiet mode, shell completions, automation recipes.
 
 ## Install
@@ -33,22 +34,31 @@ go install github.com/chatwoot/cli/cmd/chatwoot@latest
 ## Log in
 
 ```bash
-chatwoot auth login
+chatwoot auth login                          # asks for the URL (default: https://app.chatwoot.com)
+chatwoot auth login staging.chatwoot.com     # or pass it; any dashboard link works too
 ```
 
-You'll be asked for:
+You'll be asked for your **access token**, from your profile settings in Chatwoot. The CLI validates it, then registers every account you belong to on that instance under a short name (`acme`, `globex-inc`) and asks which one is your default. Log in again to add another instance; see [Multiple accounts](/cli/accounts).
 
-- **Base URL** — your Chatwoot instance, e.g. `https://app.chatwoot.com`
-- **API Key** — from your agent profile → API access token
-- **Account ID** — the number in your dashboard URL
-
-Credentials are validated before saving. The API key is stored in your OS keyring; non-secret config lives at `~/.chatwoot/config.yaml`. For CI or headless use, set `CHATWOOT_API_KEY` to override the saved token.
+The token is stored in your OS keyring; non-secret config lives at `~/.chatwoot/config.yaml`. For CI or headless use, set `CHATWOOT_API_KEY` to override the saved token.
 
 ```bash
-chatwoot auth status     # who am I, which instance
+chatwoot auth status     # who am I, which instance and account
+chatwoot accounts        # your accounts (* = default)
 chatwoot auth logout     # remove saved credentials
 chatwoot config view     # show config and credential source
 ```
+
+## First commands
+
+```bash
+chatwoot convs                                 # your open conversations
+chatwoot conv 123 reply "Looking into it"      # reply to one
+chatwoot @acme convs                           # same list, in another account
+chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123   # paste a dashboard link
+```
+
+Commands run against your default account unless you name another with `@name`. See [Multiple accounts](/cli/accounts).
 
 ## Shell completions
 
@@ -74,6 +84,7 @@ chatwoot --help
 chatwoot conv --help
 chatwoot convs --help
 chatwoot hc --help
+chatwoot accounts --help
 ```
 
 Issues and feedback: [github.com/chatwoot/cli](https://github.com/chatwoot/cli).
@@ -82,7 +93,7 @@ Issues and feedback: [github.com/chatwoot/cli](https://github.com/chatwoot/cli).
 
 ```bash
 chatwoot auth logout              # remove API key from the OS keyring
-rm -rf ~/.chatwoot                # delete config (~/.chatwoot/config.yaml)
+rm -rf ~/.chatwoot                # delete config (~/.chatwoot/config.yaml and its backup)
 rm "$(command -v chatwoot)"       # delete the binary
 ```
 
@@ -94,4 +105,4 @@ rm -f ~/.config/fish/completions/chatwoot.fish              # fish
 # zsh: delete the `source <(... completion zsh -c)` line from ~/.zshrc
 ```
 
-On Windows, delete the extracted `chatwoot.exe` and the `%USERPROFILE%\.chatwoot` folder. If `CHATWOOT_API_KEY` is set in your environment, unset it in your shell rc — `auth logout` can't remove env-provided credentials.
+On Windows, delete the extracted `chatwoot.exe` and the `%USERPROFILE%\.chatwoot` folder. If `CHATWOOT_API_KEY` or `CHATWOOT_ACCOUNT` is set in your environment, unset it in your shell rc — `auth logout` can't remove env-provided credentials.
