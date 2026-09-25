@@ -34,6 +34,7 @@ export CHATWOOT_API_KEY=your_token_here
 
 - **The id-first grammar** — `chatwoot conv 123 reply "..."` instead of guessing flag layouts.
 - **The output contract** — parse `-o json`, never the human-readable text format.
+- **Pinning the account** — check `chatwoot accounts`, then put `@name` on every command once it knows which account (or instance, like staging) you mean, and never change your default with `chatwoot use`.
 - **Help center lookup** — use `hc articles` and `hc article` when the user asks for help center content, without making it the default step for ordinary triage.
 - **Safety rules** — `reply` is customer-visible and irreversible, so the agent shows the full text and asks before sending.
 - **Common pitfalls** — `label` replaces rather than appends, `--query` searches message content (not contacts), `assign --agent <name>` is a case-insensitive substring match, list endpoints paginate.
@@ -50,6 +51,8 @@ Once the skill is installed, prompts like these work without further setup:
 - _"Read the last five messages on conv 412 and draft a reply — show it to me before sending."_
 - _"Search the help center for API channel setup docs."_
 - _"Resolve every open conversation tagged `spam`."_
+- _"On staging, list the unassigned conversations in the Acme account."_
+- _"Summarize https://app.chatwoot.com/app/accounts/1/conversations/4521."_
 
 The agent composes `chatwoot` commands, parses JSON, and stops to confirm before any write that affects customers.
 

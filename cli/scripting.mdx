@@ -60,11 +60,16 @@ export CHATWOOT_API_KEY=your_token_here
 chatwoot convs --assignee all -o json
 ```
 
-Combine with `--account` to target a specific account:
+Name the account on every command in a script, so it doesn't depend on whatever the default happens to be:
 
 ```bash
-chatwoot --account 42 convs -o csv > convs.csv
+chatwoot @acme convs -o csv > convs.csv
+chatwoot -a acme convs -o csv > convs.csv      # same, as a flag
+CHATWOOT_ACCOUNT=acme chatwoot convs -o json   # or for the whole job
+chatwoot -a 42 convs -o json                   # an account ID works too
 ```
+
+`chatwoot accounts -o json` lists the registered accounts, and `chatwoot accounts -q` prints just their names. See [Multiple accounts](/cli/accounts).
 
 Add `-v` / `--verbose` to print every HTTP request and response to stderr — handy when something looks wrong.
 
@@ -72,5 +77,6 @@ Add `-v` / `--verbose` to print every HTTP request and response to stderr — ha
 
 - `-q` is your friend — every list command supports it, every `xargs` pipeline starts with it.
 - Pipe to `jq` early and aggressively; `-o json` returns the full Chatwoot response, not a slimmed-down view.
+- Writes to a non-default account print `→ <name>` to stderr before running. It never touches stdout, so `-o json` and pipes stay clean.
 - Use `--no-color` when redirecting text output to a file or another program that doesn't strip ANSI codes.
 - `chatwoot --help` and `chatwoot <command> --help` are exhaustive — the CLI's help is generated from the same definitions that drive the binary.
