@@ -122,7 +122,7 @@ server {
     proxy_buffering off;
 
     # Allow large OAuth response headers, such as session cookies.
-    # proxy_buffers keeps Nginx's buffer-size validation valid on 4k-page systems.
+    # Keep proxy_buffers large enough for Nginx's buffer-size checks.
     proxy_buffer_size 32k;
     proxy_buffers 8 16k;
 
