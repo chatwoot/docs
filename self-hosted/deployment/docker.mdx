@@ -121,6 +121,11 @@ server {
     proxy_http_version 1.1;
     proxy_buffering off;
 
+    # Allow large OAuth response headers, such as session cookies.
+    proxy_buffer_size 32k;
+    proxy_buffers 8 16k;
+    proxy_busy_buffers_size 32k;
+
     client_max_body_size 0;
     proxy_read_timeout 36000s;
     proxy_redirect off;
