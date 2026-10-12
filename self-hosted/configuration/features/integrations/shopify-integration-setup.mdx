@@ -4,34 +4,123 @@ description: Configure Shopify integration to track orders and customer informat
 sidebarTitle: Shopify
 ---
 
-Setting up Chatwoot Shopify integration involves 5 steps.
+Setting up Chatwoot Shopify integration involves these steps.
 
-1. Create a Shopify app in the [shopify partner dashboard](https://partners.shopify.com/).
-2. Add necessary details and save the app.
-3. Configure Chatwoot with the `Client ID` and `Client secret` obtained from the Shopify app.
-4. Open Chatwoot UI, navigate to integrations, select Shopify, and click connect.
-5. Voila! You should now be able to use Shopify in your Chatwoot account.
+1. Create the app (Partner Dashboard) or create it via the Shopify CLI.
+2. Initialize/link the app locally using the Shopify CLI.
+3. Edit `shopify.app.toml` to use your Chatwoot URL and callback.
+4. Deploy the app configuration with the Shopify CLI.
+5. In Chatwoot Super Admin, set the Shopify Client ID and Client Secret.
+6. Enable the `shopify_integration` feature for your account.
+7. In Chatwoot, go to Integrations → Shopify and click Connect.
 
-## Register and configure the Shopify app
+## Register and configure the Shopify app (CLI)
 
-To use Shopify Integration, you need to create a Shopify app in the [shopify partner dashboard](https://partners.shopify.com/). You can find more details about creating Shopify apps at the [Shopify developer portal](https://shopify.dev/docs/apps/build).
+Shopify app configuration is managed via the Shopify CLI (config-as-code). See the Shopify docs for details: https://shopify.dev/docs/apps/build/dev-dashboard/migrate-from-partners#use-cli-managed-app-configuration
 
-1. Create a Shopify app.
+You can still create the app in the Shopify Partner Dashboard, then link and update it via the CLI.
+
+1. Create the app in the Partner Dashboard:
 
 ![shopify_app_create](/self-hosted/images/shopify/create-app.png)
 
-2. Obtain the `Client ID` and `Client Secret` for the app and configure it in your app config via `{Chatwoot installation url}/super_admin/app_config?config=shopify`
+2. Install the Shopify CLI: https://shopify.dev/docs/api/shopify-cli
 
-![shopify_app_domain](/self-hosted/images/shopify/configure-app.png)
+3. Initialize/link the app locally via CLI:
 
-3. Configure the redirect URL as `{Chatwoot installation url}/shopify/callback` in app configuration.
+Existing app flow (recommended if you created it in the Partner Dashboard):
 
-![shopify_app_redirect](/self-hosted/images/shopify/callback.png)
+```bash
+shopify login                      # authenticate to your Partner org
+shopify app init                   # create project and select existing app when prompted
+```
 
-<Note>
-Shopify will only show up in the integrations section once you have configured these values.
-</Note>
+Create a new app entirely via CLI (alternative):
+
+```bash
+shopify login                      # authenticate to your Partner org
+shopify app init                   # choose to create a new app when prompted
+```
+
+4. Edit the `shopify.app.toml` file to point to your Chatwoot instance.
+
+Example `shopify.app.toml` (replace placeholders):
+
+```toml
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "<your_shopify_app_client_id>"
+name = "<your_app_name>"
+application_url = "https://<your-chatwoot-self-hosted-domain>"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-10"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_orders"
+optional_scopes = []
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = ["https://<your-chatwoot-self-hosted-domain>/shopify/callback"]
+```
+
+After editing, deploy or update configuration via the CLI:
+
+```bash
+shopify app deploy
+```
+
+5. After deploy, find your Client ID and Client Secret in the Dev Dashboard: `https://dev.shopify.com/dashboard` → Apps → your app (for example, Chatwoot) → Settings.
+
+## Configure Chatwoot (Super Admin)
+
+In your Chatwoot installation, navigate to Super Admin → Settings → Shopify and set:
+
+- SHOPIFY_CLIENT_ID
+- SHOPIFY_CLIENT_SECRET
+
+Note: If you created the app via the CLI (new app flow), the Client ID and Client Secret will be available only after the first successful `shopify app deploy`.
+
+Ensure the environment variable `FRONTEND_URL` is set for the Chatwoot web process to your public URL (for example, `https://<your-chatwoot-self-hosted-domain>`), then restart the service.
+
+## Enable the Shopify integration for your account
+
+Open the Rails console on your server, then enable the feature:
+
+```bash
+# SSH into your server, then switch to the chatwoot user and app directory
+sudo -i -u chatwoot
+cd ~/chatwoot
+
+# Start Rails console in production
+RAILS_ENV=production bundle exec rails c
+```
+
+Enable the account feature flag `shopify_integration`:
+
+To find your account ID quickly, run `Account.first.id` in the console.
+
+```ruby
+account = Account.find(<ACCOUNT_ID>)
+account.enable_features!("shopify_integration")
+```
+
+Restart the Chatwoot service if needed:
+
+```bash
+sudo systemctl restart chatwoot.target
+```
 
 ## Connect Chatwoot with your Shopify account
 
-Follow this [guide](https://chatwoot.help/hc/user-guide/articles/1742395545-how-to-track-orders-with-shopify-integration) to complete the Shopify integration. 
+Go to Account → Settings → Integrations → Shopify and click Connect. Follow this guide to complete the Shopify integration: https://chatwoot.help/hc/user-guide/articles/1742395545-how-to-track-orders-with-shopify-integration
+
+<Note>
+Shopify will appear in the Integrations section only after the account feature `shopify_integration` is enabled and `SHOPIFY_CLIENT_ID` is configured. Both are required for visibility.
+</Note> 
