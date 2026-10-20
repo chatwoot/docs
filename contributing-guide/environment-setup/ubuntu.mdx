@@ -101,10 +101,12 @@ npm --version
 
 ## Install pnpm
 
-We use `pnpm` as the package manager:
+We use `pnpm` as the package manager. Install it in a user-owned directory so this step does not require `sudo`:
 
 ```bash
-npm install -g pnpm@10
+npm install --global --prefix "$HOME/.local/npm" pnpm@10
+echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 Verify pnpm installation:

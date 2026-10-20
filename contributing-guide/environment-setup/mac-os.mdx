@@ -108,11 +108,10 @@ Chatwoot requires Node.js version 24:
 brew install node@24
 ```
 
-If you need to link Node.js 24:
+Add the versioned formula to your shell PATH so Node.js 24 is available in new terminal sessions:
 
 ```bash
-brew link node@24
-echo 'export PATH="/opt/homebrew/opt/node@24/bin:$PATH"' >> ~/.zshrc
+echo "export PATH=\"$(brew --prefix node@24)/bin:\$PATH\"" >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -128,7 +127,9 @@ node --version
 We use `pnpm` as our package manager for better performance:
 
 ```bash
-npm install -g pnpm@10
+npm install --global --prefix "$HOME/.local/npm" pnpm@10
+echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 Verify pnpm installation:

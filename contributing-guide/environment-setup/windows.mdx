@@ -132,8 +132,10 @@ node --version
 We use `pnpm` as the package manager for better performance:
 
 ```bash
-# Install pnpm globally
-npm install -g pnpm@10
+# Install pnpm in a user-owned directory
+npm install --global --prefix "$HOME/.local/npm" pnpm@10
+echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 
 # Verify installation
 pnpm --version

@@ -219,12 +219,15 @@ pnpm: command not found
 
 **Solutions**:
 ```bash
-# Install the supported pnpm major version
-npm install -g pnpm@10
+# Install the supported pnpm major version in a user-owned directory
+npm install --global --prefix "$HOME/.local/npm" pnpm@10
+export PATH="$HOME/.local/npm/bin:$PATH"
 
 # Verify installation
 pnpm --version
 ```
+
+Add the `export PATH` line to your shell startup file (`~/.bashrc` for Bash or `~/.zshrc` for Zsh) so pnpm is also available in new terminal sessions.
 </Accordion>
 
 <Accordion title="Package installation failures">

@@ -49,8 +49,11 @@ Before setting up Chatwoot locally, ensure you have the following installed:
 
     # Install Node.js and pnpm
     brew install node@24
-    export PATH="$(brew --prefix node@24)/bin:$PATH"
-    npm install -g pnpm@10
+    echo "export PATH=\"$(brew --prefix node@24)/bin:\$PATH\"" >> ~/.zshrc
+    source ~/.zshrc
+    npm install --global --prefix "$HOME/.local/npm" pnpm@10
+    echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.zshrc
+    source ~/.zshrc
 
     # Start services
     brew services start postgresql@15
@@ -76,7 +79,9 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     sudo apt install -y nodejs
 
     # Install pnpm
-    npm install -g pnpm@10
+    npm install --global --prefix "$HOME/.local/npm" pnpm@10
+    echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.bashrc
+    source ~/.bashrc
 
     # Start services
     sudo systemctl start postgresql
@@ -108,7 +113,9 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     sudo yum install -y nodejs
 
     # Install pnpm
-    npm install -g pnpm@10
+    npm install --global --prefix "$HOME/.local/npm" pnpm@10
+    echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.bashrc
+    source ~/.bashrc
 
     # Start services
     sudo systemctl start postgresql
