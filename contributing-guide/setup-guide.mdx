@@ -30,7 +30,7 @@ make burn
 This would install all required dependencies for Chatwoot application.
 
 <Warning>
-If you face issue with pg gem, please refer to [Common Errors](/contributing-guide/common-errors#pg-gem-installation-error)
+If you face issue with pg gem, please refer to [Common Errors](/contributing-guide/common-errors#bundle-install-fails-with-native-extension-errors)
 </Warning>
 
 ## Setup environment variables
@@ -88,7 +88,7 @@ bundle exec rails assets:precompile
 Follow this section only if you are trying to setup Chatwoot via docker. Else skip this.
 </Note>
 
-The first time you start your development environment run the following two commands:
+For a new development environment, build the images, prepare the database with a one-off Rails container, then start the services:
 
 ```bash
 # build base image first
@@ -98,9 +98,10 @@ docker compose build base
 docker compose build
 
 # prepare the database
-docker compose exec rails bundle exec rails db:chatwoot_prepare
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare
 
-# docker compose up
+# start the services
+docker compose up
 ```
 
 Then browse http://localhost:3000
@@ -123,7 +124,7 @@ The docker-compose environment consists of:
 - chatwoot server
 - postgres
 - redis
-- webpacker-dev-server
+- Vite dev server
 
 If in case you encounter a seeding issue or you want reset the database you can do it using the following command:
 
@@ -143,27 +144,9 @@ docker compose exec rails bundle exec rails assets:precompile
 
 Then use the URLs from [#testing-chat-widget-in-your-local-environment](/contributing-guide/project-setup#testing-chat-widget-in-your-local-environment)
 
-### Running Cypress Tests
+## Running end-to-end tests
 
-First,compile the assets. Run:
-
-```bash
-docker compose exec rails bundle exec rails assets:precompile
-```
-
-
-## Running Cypress Tests
-
-Refer the docs to learn how to write cypress specs:
-- https://github.com/shakacode/cypress-on-rails
-- https://docs.cypress.io/guides/overview/why-cypress.html
-
-```bash
-# in terminal tab1
-overmind start -f Procfile.test
-# in terminal tab2
-pnpm cypress open --project ./test
-```
+The browser E2E tests live in `tests/playwright/` and use Playwright. Follow the [Playwright testing guide](/contributing-guide/tests/playwright) to install its dependencies, configure a local test account and run the suite.
 
 ## Debugging Docker for production
 

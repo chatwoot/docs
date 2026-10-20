@@ -8,6 +8,10 @@ sidebarTitle: Windows Setup
 
 This guide will walk you through setting up your Windows development environment for contributing to Chatwoot. We'll use Windows Subsystem for Linux 2 (WSL2) which provides the best development experience on Windows.
 
+<Note>
+These commands target the current Chatwoot development branch: Ruby 3.4.4, Node.js 24 and pnpm 10. For another release, use the versions in that checkout's `.ruby-version`, `.nvmrc` and `package.json`.
+</Note>
+
 ## Requirements
 
 You need to install the Windows Subsystem for Linux 2 (WSL2) on your Windows machine.
@@ -87,7 +91,7 @@ Install additional dependencies required for RVM:
 sudo apt-get install -y libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
 ```
 
-Install RVM & Ruby version 3.2.2:
+Install RVM & Ruby version 3.4.4:
 
 ```bash
 # Add RVM GPG keys
@@ -99,9 +103,9 @@ curl -sSL https://get.rvm.io | bash -s stable
 # Load RVM into current session
 source ~/.rvm/scripts/rvm
 
-# Install Ruby 3.2.2
-rvm install 3.2.2
-rvm use 3.2.2 --default
+# Install Ruby 3.4.4
+rvm install 3.4.4
+rvm use 3.4.4 --default
 
 # Verify installation
 ruby -v
@@ -109,10 +113,10 @@ ruby -v
 
 ## Install Node.js
 
-Chatwoot requires Node.js version 20. Install Node.js from NodeSource using the following commands:
+Chatwoot requires Node.js version 24. Install Node.js from NodeSource using the following commands:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -120,7 +124,7 @@ Verify Node.js installation:
 
 ```bash
 node --version
-# Should output: v20.x.x
+# Should output: v24.x.x
 ```
 
 ## Install pnpm
@@ -129,7 +133,7 @@ We use `pnpm` as the package manager for better performance:
 
 ```bash
 # Install pnpm globally
-npm install -g pnpm
+npm install -g pnpm@10
 
 # Verify installation
 pnpm --version
@@ -246,9 +250,9 @@ Verify all installations are working correctly:
 
 ```bash
 # Check all versions
-ruby --version        # Should be 3.2.2
-node --version         # Should be v20.x.x
-pnpm --version        # Should show pnpm version
+ruby --version        # Should be 3.4.4
+node --version         # Should be v24.x.x
+pnpm --version        # Should show 10.x.x
 psql --version        # Should show PostgreSQL version
 redis-cli ping        # Should output: PONG
 convert --version     # Should show ImageMagick version

@@ -8,6 +8,10 @@ sidebarTitle: Common Errors
 
 This guide covers the most common errors encountered during Chatwoot development setup and their solutions. Use this as a quick reference when troubleshooting issues.
 
+<Note>
+The runtime remedies below target the current Chatwoot development branch. Check `.ruby-version`, `.nvmrc` and `package.json` in your checkout before installing versions for an older release.
+</Note>
+
 ## Installation and Setup Errors
 
 ### Ruby and Bundler Issues
@@ -72,7 +76,7 @@ bundle install
 <Accordion title="Ruby version mismatch">
 **Error Message**:
 ```
-Your Ruby version is 3.1.0, but your Gemfile specified 3.3.3
+Your Ruby version is 3.1.0, but your Gemfile specified 3.4.4
 ```
 
 **Cause**: Wrong Ruby version installed.
@@ -83,10 +87,10 @@ Your Ruby version is 3.1.0, but your Gemfile specified 3.3.3
 <Tab title="rbenv">
 ```bash
 # Install correct Ruby version
-rbenv install 3.3.3
+rbenv install 3.4.4
 
 # Set as global version
-rbenv global 3.3.3
+rbenv global 3.4.4
 
 # Verify version
 ruby --version
@@ -99,10 +103,10 @@ rbenv rehash
 <Tab title="RVM">
 ```bash
 # Install correct Ruby version
-rvm install 3.3.3
+rvm install 3.4.4
 
 # Use the version
-rvm use 3.3.3 --default
+rvm use 3.4.4 --default
 
 # Verify version
 ruby --version
@@ -112,10 +116,10 @@ ruby --version
 <Tab title="asdf">
 ```bash
 # Install correct Ruby version
-asdf install ruby 3.3.3
+asdf install ruby 3.4.4
 
 # Set as global version
-asdf global ruby 3.3.3
+asdf global ruby 3.4.4
 
 # Verify version
 ruby --version
@@ -167,13 +171,13 @@ error @chatwoot/chatwoot@1.0.0: The engine "node" is incompatible with this modu
 <Tab title="nvm">
 ```bash
 # Install correct Node.js version
-nvm install 20
+nvm install 24
 
 # Use the version
-nvm use 20
+nvm use 24
 
 # Set as default
-nvm alias default 20
+nvm alias default 24
 
 # Verify version
 node --version
@@ -183,7 +187,7 @@ node --version
 <Tab title="n">
 ```bash
 # Install correct Node.js version
-n 20
+n 24
 
 # Verify version
 node --version
@@ -193,10 +197,10 @@ node --version
 <Tab title="asdf">
 ```bash
 # Install correct Node.js version
-asdf install nodejs 20.10.0
+asdf install nodejs 24.13.0
 
 # Set as global version
-asdf global nodejs 20.10.0
+asdf global nodejs 24.13.0
 
 # Verify version
 node --version
@@ -215,15 +219,8 @@ pnpm: command not found
 
 **Solutions**:
 ```bash
-# Install pnpm globally
-npm install -g pnpm
-
-# Or using corepack (Node.js 16.10+)
-corepack enable
-corepack prepare pnpm@latest --activate
-
-# Or using Homebrew (macOS)
-brew install pnpm
+# Install the supported pnpm major version
+npm install -g pnpm@10
 
 # Verify installation
 pnpm --version

@@ -22,19 +22,19 @@ Chatwoot is developed for Linux-based operating systems. Please consider using a
 
 ### Ruby versions
 
-- Ruby 3.2 and later is required.
+- Use the Ruby version pinned in Chatwoot's `.ruby-version` and `Gemfile`. The current release uses Ruby 3.4.4.
 
 You must use the standard MRI implementation of Ruby. Chatwoot needs several Gems that have native extensions.
 
 ### Node.js versions
 
-We only support Node.js 10.13.0 or higher.
+The current release requires Node.js 24.x. Use `.nvmrc` and the `engines` field in `package.json` from the release you are installing to select the supported version.
 
-We recommend Node 20.x, as it's faster and the latest.
+Chatwoot uses Vite to compile frontend assets. Check your installed Node.js version with `node --version`. Installation instructions are available on the [Node.js website](https://nodejs.org/en/download/).
 
-Chatwoot uses [webpack](https://webpack.js.org/) to compile frontend assets, which requires a minimum version of Node.js 20.x.0.
+### pnpm versions
 
-You can check which version you're running with `node -v`. If you're running a version older than `v10.13.0`, you need to update it to a newer version. You can find instructions to install from community maintained packages or compile from source at the [Node.js website](https://nodejs.org/en/download/).
+The current release requires pnpm 10.x. The `packageManager` field in `package.json` records the pinned version for the checkout. Check your installation with `pnpm --version`.
 
 ## Hardware requirements
 
@@ -105,4 +105,4 @@ Chatwoot supports the following web browsers:
 
 <Note>
 We don't support running Chatwoot with JavaScript disabled in the browser.
-</Note> 
+</Note>

@@ -8,6 +8,10 @@ sidebarTitle: Local Development
 
 This guide will help you set up Chatwoot for local development on your machine. Follow these steps to get a complete development environment running.
 
+<Note>
+These commands target the current Chatwoot development branch: Ruby 3.4.4, Node.js 24 and pnpm 10. For another release, use the versions in that checkout's `.ruby-version`, `.nvmrc` and `package.json`.
+</Note>
+
 ## Prerequisites
 
 Before setting up Chatwoot locally, ensure you have the following installed:
@@ -16,10 +20,10 @@ Before setting up Chatwoot locally, ensure you have the following installed:
 
 <CardGroup cols={2}>
   <Card title="Ruby" icon="gem">
-    Ruby 3.3.3 (managed with rbenv or RVM)
+    Ruby 3.4.4 (managed with rbenv or RVM)
   </Card>
   <Card title="Node.js" icon="node-js">
-    Node.js 20+ with pnpm package manager
+    Node.js 24 with pnpm 10
   </Card>
   <Card title="PostgreSQL" icon="database">
     PostgreSQL 13+ for the database
@@ -44,8 +48,9 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     brew install rbenv ruby-build
 
     # Install Node.js and pnpm
-    brew install node
-    npm install -g pnpm
+    brew install node@24
+    export PATH="$(brew --prefix node@24)/bin:$PATH"
+    npm install -g pnpm@10
 
     # Start services
     brew services start postgresql@15
@@ -67,11 +72,11 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 
     # Install Node.js (using NodeSource)
-    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+    curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
     sudo apt install -y nodejs
 
     # Install pnpm
-    npm install -g pnpm
+    npm install -g pnpm@10
 
     # Start services
     sudo systemctl start postgresql
@@ -99,11 +104,11 @@ Before setting up Chatwoot locally, ensure you have the following installed:
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 
     # Install Node.js
-    curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+    curl -fsSL https://rpm.nodesource.com/setup_24.x | sudo bash -
     sudo yum install -y nodejs
 
     # Install pnpm
-    npm install -g pnpm
+    npm install -g pnpm@10
 
     # Start services
     sudo systemctl start postgresql
@@ -124,13 +129,13 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 
-# Install Ruby 3.3.3
-rbenv install 3.3.3
-rbenv global 3.3.3
+# Install Ruby 3.4.4
+rbenv install 3.4.4
+rbenv global 3.4.4
 
 # Verify installation
 ruby --version
-# Should output: ruby 3.3.3
+# Should output: ruby 3.4.4
 
 # Install bundler
 gem install bundler
@@ -143,9 +148,9 @@ gem install bundler
 curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
-# Install Ruby 3.3.3
-rvm install 3.3.3
-rvm use 3.3.3 --default
+# Install Ruby 3.4.4
+rvm install 3.4.4
+rvm use 3.4.4 --default
 
 # Verify installation
 ruby --version
@@ -217,9 +222,6 @@ bundle install
 
 # Install Node.js dependencies
 pnpm install
-
-# Install Playwright for E2E tests (optional)
-pnpm exec playwright install
 ```
 
 ### Environment Configuration
@@ -359,12 +361,11 @@ bundle exec rspec spec/models/user_spec.rb
 # Run JavaScript tests
 pnpm run test
 
-# Run E2E tests
-pnpm run test:e2e
-
 # Run tests with coverage
 COVERAGE=true bundle exec rspec
 ```
+
+For browser E2E tests, follow the [Playwright testing guide](/contributing-guide/tests/playwright). Its dependencies and configuration live in `tests/playwright/`, separately from the application root.
 
 ### Database Operations
 
