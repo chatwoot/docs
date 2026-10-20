@@ -1,0 +1,103 @@
+---
+title: Verify webhook signatures
+description: Verify Chatwoot webhook requests using the signing secret, timestamp, and original request body.
+sidebarTitle: Webhook verification
+---
+
+Before processing a webhook, verify its signature using the signing secret for
+the source that sent it. A successful JSON parse or a matching account ID does
+not authenticate a request.
+
+## Choose the correct secret
+
+The following mapping is based on Chatwoot v4.17.1:
+
+| Webhook source | Signing secret |
+| --- | --- |
+| Account webhook configured under Integrations | The webhook's `secret`, returned by the Webhooks API |
+| API inbox webhook | The API channel's `secret` |
+| AgentBot webhook | The AgentBot's `secret` |
+
+The API access token and the contact identity-validation `hmac_token` serve
+different purposes. Do not substitute either for the webhook signing secret.
+For self-hosted installations, check the behavior of the version you deployed;
+older versions may not sign all three webhook types.
+
+The source-specific secrets are passed by
+[WebhookListener](https://github.com/chatwoot/chatwoot/blob/v4.17.1/app/listeners/webhook_listener.rb)
+and
+[AgentBotListener](https://github.com/chatwoot/chatwoot/blob/v4.17.1/app/listeners/agent_bot_listener.rb).
+
+## Preserve the signed bytes
+
+A signed delivery includes:
+
+- `X-Chatwoot-Timestamp`: the Unix timestamp in seconds.
+- `X-Chatwoot-Signature`: `sha256=` followed by the hexadecimal HMAC-SHA256 digest.
+- `X-Chatwoot-Delivery`: a delivery identifier, when available.
+
+The signature input is the timestamp, a period, and the **original request body**:
+
+```text
+HMAC-SHA256(signing_secret, timestamp + "." + raw_request_body)
+```
+
+Read the body as bytes before your framework parses JSON. Do not decode and
+re-encode it, normalize whitespace, or change JSON key order before verification.
+Signing the body alone omits the timestamp and produces a different digest.
+See the [signing implementation](https://github.com/chatwoot/chatwoot/blob/v4.17.1/lib/webhooks/trigger.rb).
+
+## Python example
+
+This example uses the Python standard library. Supply exactly one timestamp header
+and one signature header; reject missing or duplicate headers in your HTTP handler
+before calling it. Load the secret from your server's configuration, never from
+the webhook body or query string.
+
+```python
+import hashlib
+import hmac
+import math
+import re
+import time
+
+
+def verify_webhook(raw_body: bytes, timestamp: str, signature: str, secret: str) -> bool:
+    if not secret or re.fullmatch(r"[0-9]{1,20}", timestamp) is None:
+        return False
+    if re.fullmatch(r"sha256=[0-9a-f]{64}", signature) is None:
+        return False
+
+    # Example receiver policy: accept up to five minutes of age and 30 seconds
+    # of future clock skew. Adjust deliberately and keep server clocks synced.
+    now = time.time()
+    age = now - int(timestamp)
+    if not math.isfinite(now) or not -30 <= age <= 300:
+        return False
+
+    signed_payload = timestamp.encode("ascii") + b"." + raw_body
+    digest = hmac.new(secret.encode("utf-8"), signed_payload, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(signature, "sha256=" + digest)
+```
+
+Return an authentication error on failure without processing the event. Only after
+verification succeeds should your handler parse the JSON and validate its expected
+account, inbox, event type, and payload shape. Enforce a request body size limit
+and request timeout in your HTTP server as well.
+
+## Handle retries separately
+
+A valid signature proves authenticity; it does not make processing idempotent.
+Persist an application-level deduplication key appropriate to the event before
+performing side effects. For a `message_created` consumer, this can include the
+Chatwoot instance, account ID, event type, and message ID from the verified body.
+If you also consume updates, define a key that distinguishes those updates.
+
+The delivery header is not part of the HMAC input. Do not use it as an
+authenticated identity or assume it is a stable key for all redeliveries of the
+same logical event. Reject conflicting content for an already recorded event key,
+and acknowledge retries without repeating replies or other side effects.
+
+Keep verification, durable acceptance, and slow downstream processing separate.
+Only acknowledge a request as queued after it has been stored durably. If a
+downstream request times out, reconcile its result before retrying the side effect.
