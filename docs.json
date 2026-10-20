@@ -2,6 +2,11 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "Chatwoot Developer Docs",
   "description": "Official developer documentation for Chatwoot - the open-source customer support platform. Learn about our APIs, integrations, and development guidelines.",
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-DFH8WSE67F"
+    }
+  },
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
