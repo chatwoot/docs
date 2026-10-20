@@ -1,0 +1,84 @@
+---
+title: End-to-end testing with Playwright
+description: Set up and run Chatwoot's browser end-to-end tests with Playwright
+sidebarTitle: Playwright Testing
+---
+
+Chatwoot's current browser E2E tests live in `tests/playwright/`. They have their own dependencies, configuration and package scripts, separate from the application root.
+
+<Note>
+These instructions apply to the current development branch. For an older checkout, follow the testing configuration and README included in that version.
+</Note>
+
+## Start a local Chatwoot instance
+
+Complete the [Project Setup Guide](/contributing-guide/setup-guide) or [Docker Development Setup](/contributing-guide/environment-setup/docker), then leave the application running at `http://localhost:3000`.
+
+You need an existing administrator account for the login and settings tests. Use a local development or test instance: E2E scenarios can create agents and inboxes.
+
+## Install the test dependencies
+
+From the Chatwoot repository root:
+
+```bash
+cd tests/playwright
+pnpm install --frozen-lockfile
+pnpm exec playwright install chromium
+cp .env.example .env
+```
+
+The current configuration runs the Chromium project. On Linux, if Playwright reports missing browser system dependencies, follow its [browser dependency instructions](https://playwright.dev/docs/browsers#install-system-dependencies).
+
+## Configure the test account
+
+Edit `tests/playwright/.env` and set:
+
+```dotenv
+BASE_URL=http://localhost:3000
+TEST_USER_EMAIL=your-local-admin@example.com
+TEST_USER_PASSWORD="your-local-admin-password"
+```
+
+Use the credentials of the administrator account in your local instance. Keep this file local; do not commit credentials.
+
+The suite reads these values through `playwright.config.ts`. If your local application uses a different port, update `BASE_URL` to match it.
+
+## Run the tests
+
+Run commands from `tests/playwright/`, with Chatwoot still running in another terminal.
+
+### Run the suite
+
+```bash
+pnpm run playwright:run
+```
+
+### Use the test runner UI
+
+```bash
+pnpm run playwright:open
+```
+
+### Run one test file
+
+```bash
+pnpm exec playwright test tests/e2e/ui/login-flow-ui-validation.spec.ts
+```
+
+### List tests without running them
+
+```bash
+pnpm exec playwright test --list
+```
+
+The current project launches a visible browser by default. For an environment without a desktop, set `use.headless` to `true` in `playwright.config.ts`.
+
+## Write and maintain tests
+
+The test project uses TypeScript and page components under `components/ui/`. Add browser scenarios under `tests/e2e/ui/` and reuse those components for login and navigation.
+
+- [E2E project README](https://github.com/chatwoot/chatwoot/blob/develop/tests/playwright/README.md)
+- [Testing patterns and project documentation](https://github.com/chatwoot/chatwoot/blob/develop/tests/playwright/DOCS.md)
+- [Playwright documentation](https://playwright.dev/docs/intro)
+
+For JavaScript unit tests, use `pnpm test` from the Chatwoot application root. For Ruby tests, use `bundle exec rspec`.

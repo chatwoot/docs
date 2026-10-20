@@ -8,6 +8,10 @@ sidebarTitle: macOS Setup
 
 This guide will help you set up your macOS development environment for contributing to Chatwoot. Open Terminal app and run the following commands.
 
+<Note>
+These commands target the current Chatwoot development branch: Ruby 3.4.4, Node.js 24 and pnpm 10. For another release, use the versions in that checkout's `.ruby-version`, `.nvmrc` and `package.json`.
+</Note>
+
 ## Installing the Standalone Command Line Tools
 
 Open Terminal app and run:
@@ -68,21 +72,21 @@ source ~/.zshrc
 
 ## Install Ruby
 
-Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.2.2.
+Chatwoot APIs are built on Ruby on Rails. You need to install Ruby 3.4.4.
 
 ### If using RVM:
 
 ```bash
-rvm install ruby-3.2.2
-rvm use 3.2.2 --default
+rvm install ruby-3.4.4
+rvm use 3.4.4 --default
 source ~/.rvm/scripts/rvm
 ```
 
 ### If using rbenv:
 
 ```bash
-rbenv install 3.2.2
-rbenv global 3.2.2
+rbenv install 3.4.4
+rbenv global 3.4.4
 ```
 
 <Info>
@@ -93,22 +97,21 @@ Verify Ruby installation:
 
 ```bash
 ruby --version
-# Should output: ruby 3.2.2
+# Should output: ruby 3.4.4
 ```
 
 ## Install Node.js
 
-Chatwoot requires Node.js version 20:
+Chatwoot requires Node.js version 24:
 
 ```bash
-brew install node@20
+brew install node@24
 ```
 
-If you need to link Node.js 20:
+Add the versioned formula to your shell PATH so Node.js 24 is available in new terminal sessions:
 
 ```bash
-brew link node@20
-echo 'export PATH="/opt/homebrew/opt/node@20/bin:$PATH"' >> ~/.zshrc
+echo "export PATH=\"$(brew --prefix node@24)/bin:\$PATH\"" >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -116,7 +119,7 @@ Verify Node.js installation:
 
 ```bash
 node --version
-# Should output: v20.x.x
+# Should output: v24.x.x
 ```
 
 ## Install pnpm
@@ -124,7 +127,9 @@ node --version
 We use `pnpm` as our package manager for better performance:
 
 ```bash
-brew install pnpm
+npm install --global --prefix "$HOME/.local/npm" pnpm@10
+echo 'export PATH="$HOME/.local/npm/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 Verify pnpm installation:
@@ -235,9 +240,9 @@ Verify all installations are working:
 
 ```bash
 # Check versions
-ruby --version        # Should be 3.2.2
-node --version         # Should be v20.x.x
-pnpm --version        # Should show pnpm version
+ruby --version        # Should be 3.4.4
+node --version         # Should be v24.x.x
+pnpm --version        # Should show 10.x.x
 psql --version        # Should show PostgreSQL version
 redis-cli --version   # Should show Redis version
 convert --version     # Should show ImageMagick version
@@ -277,7 +282,7 @@ sudo chown -R $(whoami) /opt/homebrew
 ```bash
 # Install missing dependencies
 brew install openssl readline libyaml
-rvm reinstall 3.2.2 --with-openssl-dir=$(brew --prefix openssl)
+rvm reinstall 3.4.4 --with-openssl-dir=$(brew --prefix openssl)
 ```
 </Accordion>
 

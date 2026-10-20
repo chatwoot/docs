@@ -134,7 +134,7 @@ We use comprehensive testing to ensure code quality:
 ### Test Types
 - **Unit Tests**: Test individual components and functions
 - **Integration Tests**: Test component interactions
-- **End-to-End Tests**: Test complete user workflows with [Cypress](/contributing-guide/tests/cypress)
+- **End-to-End Tests**: Test complete user workflows with [Playwright](/contributing-guide/tests/playwright)
 
 ### Running Tests
 
@@ -145,8 +145,8 @@ bundle exec rspec
 # Run specific test file
 bundle exec rspec spec/models/user_spec.rb
 
-# Run Cypress tests
-npm run cypress:open
+# Run browser E2E tests after completing the Playwright setup
+pnpm --dir tests/playwright run playwright:run
 ```
 
 ## Documentation and Translation

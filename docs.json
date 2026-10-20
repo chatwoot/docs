@@ -217,7 +217,7 @@
           },
           {
             "group": "Testing",
-            "pages": ["contributing-guide/tests/cypress"]
+            "pages": ["contributing-guide/tests/playwright"]
           },
           {
             "group": "Others",
@@ -302,5 +302,11 @@
       "github": "https://github.com/chatwoot",
       "linkedin": "https://www.linkedin.com/company/chatwoot"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/contributing-guide/tests/cypress",
+      "destination": "/contributing-guide/tests/playwright"
+    }
+  ]
 }
