@@ -4,34 +4,127 @@ description: Configure Shopify integration to track orders and customer informat
 sidebarTitle: Shopify
 ---
 
-Setting up Chatwoot Shopify integration involves 5 steps.
+Setting up Chatwoot Shopify integration involves the following steps.
 
-1. Create a Shopify app in the [shopify partner dashboard](https://partners.shopify.com/).
-2. Add necessary details and save the app.
-3. Configure Chatwoot with the `Client ID` and `Client secret` obtained from the Shopify app.
-4. Open Chatwoot UI, navigate to integrations, select Shopify, and click connect.
-5. Voila! You should now be able to use Shopify in your Chatwoot account.
+1. Create a Shopify app in the [Shopify Partner Dashboard](https://partners.shopify.com/).
+2. Obtain the `Client ID` and `Client Secret`.
+3. Request protected customer data access.
+4. Create a new app version and configure scopes and redirect URL.
+5. Configure Chatwoot with the credentials.
+6. Connect the integration from the Chatwoot UI.
 
-## Register and configure the Shopify app
+## Step 1: Create a Shopify app
 
-To use Shopify Integration, you need to create a Shopify app in the [shopify partner dashboard](https://partners.shopify.com/). You can find more details about creating Shopify apps at the [Shopify developer portal](https://shopify.dev/docs/apps/build).
+Go to the [Shopify Partner Dashboard](https://partners.shopify.com/) and navigate to **Apps**. Click **Create app** and select **Start from Dev Dashboard**. Enter a name for your app (e.g., `Chatwoot`) and click **Create**.
 
-1. Create a Shopify app.
+![Create Shopify App](/self-hosted/images/shopify/create-app.png)
 
-![shopify_app_create](/self-hosted/images/shopify/create-app.png)
+## Step 2: Obtain the Client ID and Client Secret
 
-2. Obtain the `Client ID` and `Client Secret` for the app and configure it in your app config via `{Chatwoot installation url}/super_admin/app_config?config=shopify`
+After creating the app, go to **Settings** in the left sidebar. Under the **Credentials** section, you will find the `Client ID` and `Client Secret`. Copy these values — you will need them later.
 
-![shopify_app_domain](/self-hosted/images/shopify/configure-app.png)
+![App Settings](/self-hosted/images/shopify/app-settings.png)
 
-3. Configure the redirect URL as `{Chatwoot installation url}/shopify/callback` in app configuration.
+## Step 3: Request protected customer data access
 
-![shopify_app_redirect](/self-hosted/images/shopify/callback.png)
+Shopify requires apps to be approved for protected customer data access before they can use customer and order scopes. Without this, API calls will fail with a "merchant approval" error.
+
+1. In the app sidebar, go to the **Protected customer data access** page. You can find this under the "Request access" link on the app version page.
+2. Under **Step 1: Select your data use and reasons**, click **Select** next to **Protected customer data** and choose **Customer service** as the reason.
+3. Expand **Protected customer fields (optional)** and select the fields your app needs: **Email**, **Phone**, and **Name**.
+4. Under **Step 2: Provide your data protection details**, click **Provide details** and answer **Yes** to all the data protection questions across the Purpose, Consent, Storage, and Access sections.
+5. Click **Save**.
+
+<Note>
+For apps installed on development stores, you can access protected customer data immediately after selecting your data use in Step 1 — no review is required. For production apps distributed via the App Store, Shopify will review your request.
+</Note>
+
+## Step 4: Create a new app version
+
+Go to **Versions** in the left sidebar and click **New version** to create a new app version with the required configuration.
+
+![App Version Configuration](/self-hosted/images/shopify/app-version.png)
+
+Configure the following:
+
+**Access Scopes** — Click **Select scopes** and add the following scopes:Only select scopes from Admin API)
+
+```
+read_customers, read_orders, read_fulfillments
+```
+
+**Redirect URLs** — Add your Chatwoot callback URL:
+
+```
+{Your Chatwoot URL}/shopify/callback
+```
+
+For example: `https://app.chatwoot.com/shopify/callback`
+
+**URLs** — Set the **App URL** to your Chatwoot installation URL (e.g., `https://app.chatwoot.com`). Uncheck **Embed app in Shopify admin**.
+
+Click **Release** to save and activate the version.
+
+## Step 5: Configure Chatwoot
+
+Navigate to `{Your Chatwoot URL}/super_admin/app_config?config=shopify` and enter the `Client ID` and `Client Secret` you copied in Step 2.
+
+![Configure Chatwoot](/self-hosted/images/shopify/configure-app.png)
 
 <Note>
 Shopify will only show up in the integrations section once you have configured these values.
 </Note>
 
-## Connect Chatwoot with your Shopify account
+## Step 6: Connect the integration
 
-Follow this [guide](https://chatwoot.help/hc/user-guide/articles/1742395545-how-to-track-orders-with-shopify-integration) to complete the Shopify integration. 
+1. In Chatwoot, go to **Settings** → **Integrations** → **Shopify** and click **Connect**.
+2. Enter your Shopify store URL (e.g., `my-store.myshopify.com`).
+3. You will be redirected to Shopify to authorize the app. The consent screen should show access to **View personal data** (Customers) and **View store data** (Orders and Customers).
+
+![Install App](/self-hosted/images/shopify/api-access.png)
+
+4. Click **Install** to authorize.
+5. You will be redirected back to Chatwoot. The integration is now active.
+
+Once connected, agents will see Shopify order information in the conversation sidebar for contacts whose email or phone number matches a Shopify customer.
+
+Follow this [guide](https://chatwoot.help/hc/user-guide/articles/1742395545-how-to-track-orders-with-shopify-integration) for more details on using the integration.
+
+## Compliance webhooks (required for App Store submission)
+
+If you are submitting your app to the Shopify App Store, Shopify requires three GDPR compliance webhooks to be declared in your app configuration. Without this, the automated review checks for **"Provides mandatory compliance webhooks"** and **"Verifies webhooks with HMAC signatures"** will fail.
+
+Chatwoot handles all three compliance events at `POST /webhooks/shopify` using the `X-Shopify-Topic` header to identify the event type. You need to declare these URLs in a `shopify.app.toml` file and deploy them via the Shopify CLI.
+
+### Step 1: Install Shopify CLI and link your app
+
+```bash
+npm install -g @shopify/cli
+shopify app config link
+```
+
+Select your organization and connect to the existing app. This generates a `shopify.app.toml` file in your project root.
+
+### Step 2: Add compliance webhook URLs
+
+Open `shopify.app.toml` and add the `privacy_compliance` section under `[webhooks]`:
+
+```toml
+[webhooks]
+api_version = "2024-01"
+
+[webhooks.privacy_compliance]
+customer_data_request_url = "https://{your-chatwoot-url}/webhooks/shopify"
+customer_deletion_url = "https://{your-chatwoot-url}/webhooks/shopify"
+shop_deletion_url = "https://{your-chatwoot-url}/webhooks/shopify"
+```
+
+Replace `{your-chatwoot-url}` with your Chatwoot installation URL (e.g., `app.chatwoot.com`).
+
+### Step 3: Deploy the configuration
+
+```bash
+shopify app deploy
+```
+
+When prompted to release a new version, select **Yes**. Once deployed, re-run the automated checks in the Partner Dashboard — both compliance checks should pass.
