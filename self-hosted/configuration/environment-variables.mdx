@@ -163,6 +163,20 @@ SMTP_USERNAME=<Your SMTP username displayed under Settings -> SMTP & API info>
 SMTP_PASSWORD=<Any valid API key, create an API key under Settings -> SMTP & API Info>
 ```
 
+### Mailtrap
+
+If you would like to use Mailtrap to send your transactional emails, use the following environment variables:
+
+```bash
+SMTP_ADDRESS=live.smtp.mailtrap.io
+SMTP_AUTHENTICATION=plain
+SMTP_DOMAIN=<Your verified domain in Mailtrap>
+SMTP_ENABLE_STARTTLS_AUTO=true
+SMTP_PORT=587
+SMTP_USERNAME=api
+SMTP_PASSWORD=<Your Mailtrap API token>
+```
+
 ## Configure default language
 
 ```bash
