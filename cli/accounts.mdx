@@ -1,0 +1,167 @@
+---
+title: Multiple accounts
+description: Use the Chatwoot CLI with several accounts and instances, pick an account per command, and act on pasted dashboard links.
+sidebarTitle: Multiple accounts
+---
+
+The CLI works with every account you belong to, across as many Chatwoot instances as you use (Chatwoot Cloud, staging, self-hosted). You log in once per instance, and each account gets a short name you can use on any command.
+
+## Log in once per instance
+
+```bash
+chatwoot auth login                            # asks for the URL (default: Chatwoot Cloud)
+chatwoot auth login staging.chatwoot.com       # or pass it
+```
+
+After you enter your access token, every account you can see on that instance is registered under its own name:
+
+```
+✓ Logged in as Shivam Mishra (shivam@chatwoot.com)
+
+  Found 3 accounts:
+    chatwoot     #1
+    acme         #42
+    globex-inc   #77
+
+Default account (chatwoot):
+✓ Default set to chatwoot. Switch per command with @acme, or: chatwoot use acme
+```
+
+The URL can be a bare host (`staging.chatwoot.com`), a base URL, or any link copied from the dashboard. If the link points at an account (`…/app/accounts/42/…`), that account becomes the default on your first login.
+
+Chatwoot access tokens belong to your user, not to one account, so one login covers every account you're a member of on that instance.
+
+## Account names
+
+Names come from the account name in Chatwoot: lowercased, with spaces turned into dashes (`Globex Inc` → `globex-inc`).
+
+| Situation | Name |
+|---|---|
+| Same name on another instance | the host is added: `chatwoot-staging` |
+| Same account seen by a second user on the same instance | the user's name is added: `acme-test-agent` |
+| Name is empty or only digits | `account-<id>` |
+
+Names never change once they're given, even if the account is renamed in Chatwoot, so scripts keep working. To pick your own:
+
+```bash
+chatwoot accounts rename chatwoot-staging stg
+```
+
+## List accounts
+
+```bash
+chatwoot accounts
+```
+
+```
+  NAME               HOST                   ID   USER
+* chatwoot           app.chatwoot.com       1    Shivam Mishra
+  acme               app.chatwoot.com       42   Shivam Mishra
+  chatwoot-staging   staging.chatwoot.com   1    Shivam Mishra
+```
+
+`*` marks the default. `-o json` and `-q` (names only) work for scripts.
+
+## Pick an account
+
+Put `@name` before the command. A unique prefix is enough:
+
+```bash
+chatwoot @acme convs
+chatwoot @stg conv 123 reply "on it"
+chatwoot @ac convs                             # error if more than one name starts with "ac"
+```
+
+The same, as a flag or an environment variable:
+
+```bash
+chatwoot -a acme convs
+CHATWOOT_ACCOUNT=acme chatwoot convs           # one shell session, or CI
+```
+
+Without any of these, commands use the **default account**. Change it with `use`:
+
+```bash
+chatwoot use acme                              # change the saved default
+chatwoot use                                   # show the current default
+```
+
+<Note>
+`chatwoot use` changes the default for every terminal and every script on your machine. To switch for a single session, export `CHATWOOT_ACCOUNT` instead.
+</Note>
+
+`-a` also accepts an account ID, as before: `-a 42` means account 42 on your default account's instance.
+
+When a command could pick up the account from more than one place, the first match wins:
+
+1. A pasted dashboard link
+2. `@name` or `-a`
+3. `CHATWOOT_ACCOUNT`
+4. The default account
+
+## Paste a dashboard link
+
+Copy a link from the browser, Slack, or an alert and pass it in place of the noun and ID. The link already says which instance, account, and record you mean:
+
+```bash
+chatwoot https://app.chatwoot.com/app/accounts/1/conversations/4521
+chatwoot https://app.chatwoot.com/app/accounts/1/conversations/4521 reply "on it"
+chatwoot https://app.chatwoot.com/app/accounts/1/contacts/88 conversations
+```
+
+| Link | Runs |
+|---|---|
+| `…/conversations/<id>`, including inbox, label, team, mention, and custom-view scoped links | `conv <id>` |
+| `…/contacts/<id>` | `contact <id>` |
+| `…/inbox/<id>` or `…/settings/inboxes/<id>` | `inbox <id>` |
+| any other page in an account | selects the account; lists conversations if nothing follows |
+
+If you aren't logged in to that instance yet, the CLI offers to log in first and then runs the command. In a script it stops and prints the `auth login` command to run instead.
+
+## Stay on the right account
+
+- A write (`reply`, `resolve`, `assign`, `label`, a non-GET `api` call, …) to an account other than your default prints the target to stderr before it runs, for example `→ acme`. Nothing is printed for the default account, and stdout stays clean for `-o json` and pipes.
+- If a token stops working, the error says which user and instance it belongs to and how to log in again.
+
+## Keep accounts up to date
+
+Accounts you join or leave after logging in are picked up with:
+
+```bash
+chatwoot accounts --refresh
+```
+
+```
+  app.chatwoot.com       + initech   #91
+                         - globex-inc   (no longer a member)
+  staging.chatwoot.com   no changes
+```
+
+You rarely need it: an unknown `@name` refreshes once automatically before failing.
+
+## More than one user on an instance
+
+Logging in again on the same instance with **another user's** token adds a second login instead of replacing the first, for example your admin user and a test agent. Accounts both users can see appear twice, once per user (`acme` and `acme-test-agent`).
+
+## Scripts and agents
+
+In a script, name the account on every command instead of relying on the default, and never call `chatwoot use`. [Scripting & output](/cli/scripting) has recipes, including running a command across every account. The [agent skill](/cli/agent-skill) teaches coding agents the same rules.
+
+## Log out
+
+```bash
+chatwoot auth logout staging.chatwoot.com      # one instance: its accounts and tokens
+chatwoot auth logout                           # everything
+```
+
+## Upgrading from an earlier version
+
+Nothing to do. On the first run after upgrading, your existing login keeps working as your default account, and the CLI tells you once about any other accounts it found:
+
+```
+✓ Multiple accounts are here. You also have access to:
+    acme #42, globex-inc #77
+  Use one with: chatwoot @acme convs      (see: chatwoot accounts)
+```
+
+Your previous config is saved as `~/.chatwoot/config.yaml.bak`. Older CLI versions can't read the new config format; to go back to one, restore that file.

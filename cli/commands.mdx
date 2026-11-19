@@ -8,11 +8,17 @@ Full command reference. New here? Start with **[Getting started](/cli)**. For ou
 
 ## Grammar at a glance
 
-- **Plural noun = list:** `chatwoot convs`, `chatwoot contacts`, `chatwoot agents`
-- **Singular + id = view:** `chatwoot conv 123` shows conversation 123
-- **Singular + id + verb = act:** `chatwoot conv 123 reply "thanks"` — id before verb, the way you'd say it
+Every command reads left to right, the way you'd say it: **where**, **what**, **which one**, then **what to do**.
 
-Verb-first form (`chatwoot conv reply 123 "thanks"`) also works.
+| Shape | Means | Example |
+|---|---|---|
+| Plural noun | list | `chatwoot convs`, `chatwoot contacts`, `chatwoot agents` |
+| Singular noun + id | view | `chatwoot conv 123` |
+| Singular noun + id + verb | act (id before verb, the way you'd say it) | `chatwoot conv 123 reply "thanks"` |
+| `@account` + any of the above | the same, in another account (leave it out for your default) | `chatwoot @acme conv 123 reply "thanks"` |
+| Dashboard link + verb | the link is account + noun + id in one | `chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123 reply "thanks"` |
+
+Verb-first form (`chatwoot conv reply 123 "thanks"`) also works. See **[Multiple accounts](/cli/accounts)** for how accounts are named and chosen.
 
 ## Conversations
 
@@ -25,6 +31,7 @@ chatwoot convs --assignee all                  # me (default) | unassigned | all
 chatwoot convs --inbox 5                       # filter by inbox ID
 chatwoot convs -l billing,urgent               # filter by labels
 chatwoot convs --query "refund"                # search by message content
+chatwoot @acme convs --assignee all            # any command: @name runs it in another account
 ```
 
 ### Act on one
@@ -33,6 +40,17 @@ chatwoot convs --query "refund"                # search by message content
 chatwoot conv 123                              # view (default)
 chatwoot conv 123 messages                     # list messages
 ```
+
+Copied a link from the dashboard, Slack, or an alert? Use it in place of `conv 123`. It carries its own account, so it works whichever account is your default:
+
+```bash
+chatwoot https://app.chatwoot.com/app/accounts/1/conversations/123 messages
+chatwoot https://app.chatwoot.com/app/accounts/1/inbox/5/conversations/123 resolve
+```
+
+<Tip>
+Conversation IDs are only unique within an account, so `conv 123` on staging and production are different conversations. When you write to an account other than your default, the CLI prints `→ <name>` to stderr first so you can see where it went.
+</Tip>
 
 **Reply:**
 
@@ -81,6 +99,7 @@ chatwoot contacts                              # list
 chatwoot contacts --search "john"              # name, email, or phone
 chatwoot contact 456                           # view
 chatwoot contact 456 conversations             # this contact's conversations
+chatwoot https://app.chatwoot.com/app/accounts/1/contacts/456   # or from a pasted link
 ```
 
 ## Inboxes, agents, labels, teams
@@ -93,9 +112,11 @@ chatwoot labels                                # list account-level labels
 chatwoot teams                                 # list teams
 ```
 
+These all list the current account's resources. Add `@name` to look at another account, for example `chatwoot @acme agents`.
+
 ## Help centers
 
-`hc articles` uses the saved default help center and locale. Pass `--portal` or `--locale` when you want to override them for one command.
+`hc articles` uses the saved default help center and locale. Defaults are saved per account, so each account can have its own (`chatwoot @acme hc default acme-help`). Pass `--portal` or `--locale` when you want to override them for one command.
 
 ```bash
 chatwoot hcs                                   # list help centers
@@ -113,26 +134,43 @@ chatwoot hc articles --portal user-guide --locale en
 ```bash
 chatwoot me                                    # your profile (alias of auth status)
 chatwoot whoami                                # same
+chatwoot @staging whoami                       # who you are on another account
 ```
+
+The output includes the instance and account the command ran against, which is the quickest way to check where a command will go.
 
 ## Raw API
 
-Use `chatwoot api` for authenticated API calls that do not have a first-class CLI command yet. Account-relative paths are expanded under `/api/v1/accounts/<account_id>`, so do not include the `/api/v1/accounts/...` prefix.
+Use `chatwoot api` for authenticated API calls that do not have a first-class CLI command yet. Account-relative paths are expanded under `/api/v1/accounts/<account_id>` for the current account (the default, or the one you name with `@name`), so do not include the `/api/v1/accounts/...` prefix.
 
 ```bash
 chatwoot api /conversations/123                # GET /api/v1/accounts/<id>/conversations/123
 chatwoot api -X PATCH /conversations/123 --data '{"status":"open"}'
 chatwoot api --exact /api/v1/profile           # non-account-scoped endpoint
+chatwoot @staging api /conversations/123       # same call, on another account
 ```
 
 Use the application Swagger as the endpoint reference before raw API calls: [application_swagger.json](https://raw.githubusercontent.com/chatwoot/chatwoot/develop/swagger/tag_groups/application_swagger.json).
 
+## Accounts
+
+```bash
+chatwoot accounts                              # list accounts (* = default)
+chatwoot accounts --refresh                    # pick up accounts joined or left since login
+chatwoot accounts rename chatwoot-staging stg  # give an account your own name
+chatwoot use acme                              # change the saved default account
+chatwoot use                                   # show the current default
+chatwoot @acme convs                           # use an account for one command
+```
+
 ## Auth & config
 
 ```bash
-chatwoot auth login                            # interactive login (caches user_id)
-chatwoot auth logout                           # remove saved credentials
-chatwoot auth status                           # current user and instance
+chatwoot auth login                            # interactive login; registers every account
+chatwoot auth login staging.chatwoot.com       # log in to another instance
+chatwoot auth logout                           # remove all saved credentials
+chatwoot auth logout staging.chatwoot.com      # log out of one instance
+chatwoot auth status                           # current user, instance, and account
 chatwoot config path                           # print config file path
 chatwoot config view                           # print config and credential source
 ```
@@ -150,7 +188,7 @@ chatwoot --version                             # same as `version`, as a flag
 | Flag | Short | Description |
 |------|-------|-------------|
 | `--output` | `-o` | Output format: `text`, `json`, `csv` |
-| `--account` | `-a` | Override account ID |
+| `--account` | `-a` | Account for this command: a name or unique prefix from `chatwoot accounts` (same as `@name`), or an account ID. Env: `CHATWOOT_ACCOUNT` |
 | `--quiet` | `-q` | Print only IDs (for scripting) |
 | `--no-color` | | Disable colored output |
 | `--verbose` | `-v` | Show request/response details |
