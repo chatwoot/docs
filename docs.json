@@ -307,6 +307,16 @@
     {
       "source": "/contributing-guide/tests/cypress",
       "destination": "/contributing-guide/tests/playwright"
+    },
+    {
+      "source": "/self-hosted/configuration/enable-ip-logging",
+      "destination": "/self-hosted/runbooks/enable-ip-logging",
+      "permanent": true
+    },
+    {
+      "source": "/self-hosted/configuration/features/enable-ip-logging",
+      "destination": "/self-hosted/runbooks/enable-ip-logging",
+      "permanent": true
     }
   ]
 }
